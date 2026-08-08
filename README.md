@@ -1,61 +1,46 @@
-# Educational Apps — Privacy Policy
+# Prameya App Privacy Policies
 
-**Public privacy policy for Prameya LLC educational apps** that do **not** collect regulated personal information, do **not** require accounts, and do **not** accept user uploads of personal/sensitive content.
+Public privacy policies for **Prameya LLC** apps, published as a static site via GitHub Pages.
 
-## Use this URL in App Store Connect / Play Console
+**Live site:** https://prameyallc.github.io/privacy/
 
-### Preferred (readable page)
+## Why one policy per app
 
-After GitHub Pages is enabled (see below):
+These apps do genuinely different things with data — one takes intraoral photographs, one reads
+HealthKit, one ingests privileged legal documents, one serves ads. A single shared policy cannot be
+accurate for all of them, and an inaccurate privacy disclosure is both an App Review problem and an
+FTC Act §5 problem. So each app gets its own policy, written from an audit of that app's actual
+code (`PrivacyInfo.xcprivacy`, entitlements, `Info.plist` purpose strings, and the network,
+HealthKit, CloudKit and camera call sites).
 
-```
-https://prameyallc.github.io/edu-app-privacy/
-```
+## URLs for App Store Connect
 
-### Also valid (GitHub-rendered Markdown)
+| App | Privacy Policy URL | Consumer Health Data Policy |
+|-----|--------------------|------------------------------|
+| OmniSalub  | https://prameyallc.github.io/privacy/omnisalub/  | https://prameyallc.github.io/privacy/omnisalub/health-data/ |
+| OmniDent   | https://prameyallc.github.io/privacy/omnident/   | https://prameyallc.github.io/privacy/omnident/health-data/ |
+| OmniDerm   | https://prameyallc.github.io/privacy/omniderm/   | https://prameyallc.github.io/privacy/omniderm/health-data/ |
+| OmniRx     | https://prameyallc.github.io/privacy/omnirx/     | https://prameyallc.github.io/privacy/omnirx/health-data/ |
+| OmniLex    | https://prameyallc.github.io/privacy/omnilex/    | — |
+| OmniWealth | https://prameyallc.github.io/privacy/omniwealth/ | — |
+| OmniMath   | https://prameyallc.github.io/privacy/omnimath/   | — |
+| OmniBuild  | https://prameyallc.github.io/privacy/omnibuild/  | — |
 
-```
-https://github.com/prameyallc/edu-app-privacy/blob/main/PRIVACY.md
-```
+### Consumer health data
 
-### User Privacy Choices URL (optional)
+Four apps process consumer health data. Washington's My Health My Data Act
+(RCW 19.373.020) requires a **separate** consumer health data privacy policy, linked
+distinctly — not a section inside the main policy. Those live at `/<app>/health-data/` and are
+linked from the hub and from each app's main policy. Nevada SB 370 imposes analogous duties.
 
-Leave **blank**, or reuse the Privacy Policy URL above.
+## How the site is built
 
-## Scope (when this policy applies)
+Static HTML with `.nojekyll` — no build step on GitHub's side, so nothing can silently fail to
+render. (The previous version of this repo served `PRIVACY.md` as raw `text/markdown`.)
 
-Use for apps that:
-
-- Are educational / learning / reference  
-- Store progress on-device only  
-- Have no user accounts  
-- Have no upload of PII, health, finance, or ID documents  
-- May optionally show ads (e.g. AdMob) or crash diagnostics  
-
-**Do not** use alone if the app adds login, cloud sync of personal data, user-generated content hosting, payments with personal billing data stored by you, or child-directed collection under COPPA without further legal review.
-
-## Files
-
-| File | Purpose |
-|------|---------|
-| [`PRIVACY.md`](./PRIVACY.md) | Full privacy policy text |
-| [`index.html`](./index.html) | Simple public HTML page for store listings / GitHub Pages |
-
-## Enable GitHub Pages (one-time, org owner)
-
-1. Open **https://github.com/prameyallc/edu-app-privacy/settings/pages**  
-2. **Source:** Deploy from branch **`main`** / folder **`/` (root)**  
-3. Save — after a minute, open `https://prameyallc.github.io/edu-app-privacy/`  
-
-## Apps that can link here
-
-Examples: OmniMath and other Prameya educational titles that match the scope above.
+Sources live in the generator, not here; pages are committed as built output. Each page is
+responsive, supports light and dark, and has a print stylesheet.
 
 ## Contact
 
-**Prameya LLC** · bobby@prameya.legal  
-Org: [https://github.com/prameyallc](https://github.com/prameyallc)
-
-## License
-
-Policy text © Prameya LLC. You may link to this repository from App Store / Play listings for covered apps.
+**Prameya LLC** · bobby@prameya.legal
