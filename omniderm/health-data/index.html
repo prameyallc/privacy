@@ -102,17 +102,17 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <hr />
 <h2 id="the-short-version">The short version</h2>
 <ul>
-<li>OmniDerm processes information about your skin and your skin-care habits. Under Washington law that is <strong>consumer health data</strong>, even though it stays on your phone.</li>
+<li>OmniDerm processes information about your skin-care habits. Under Washington law that is <strong>consumer health data</strong>, even though it stays on your phone.</li>
 <li><strong>We do not receive any of it.</strong> Prameya has no server that takes it, no database that holds it, and no account that identifies you.</li>
 <li><strong>We share it with no one.</strong> Not affiliates, not processors, not advertisers, not data brokers, not researchers, not AI companies.</li>
 <li><strong>We do not sell it.</strong> We never have and we will not.</li>
-<li>Your skin photos are worked on in your phone's memory and are never saved, uploaded, or synced.</li>
+<li><strong>The photo self-check is switched off in the shipping app.</strong> The screen that would take a photo of your skin sits behind a clearance gate that is closed, so the app does not open your photo library, does not read an image, and infers nothing from one.</li>
 <li>You can withdraw consent and delete everything yourself, immediately, without asking us.</li>
 </ul>
 <hr />
 <h2 id="why-this-policy-exists-even-though-nothing-leaves-your-device">Why this policy exists even though nothing leaves your device</h2>
 <p>Apple's App Store privacy labels define "collect" as <strong>transmitting data off the device</strong>. By that definition, OmniDerm collects almost nothing.</p>
-<p><strong>Washington's definition is much broader.</strong> Under RCW 19.373.010, "collect" means to buy, rent, access, retain, receive, acquire, <strong>infer, derive, or otherwise process</strong> consumer health data in any manner. That reaches data that is merely accessed on your device, and it reaches anything a model <strong>infers or derives</strong> from a photograph of your own skin.</p>
+<p><strong>Washington's definition is much broader.</strong> Under RCW 19.373.010, "collect" means to buy, rent, access, retain, receive, acquire, <strong>infer, derive, or otherwise process</strong> consumer health data in any manner. That reaches data that is merely accessed on your device, and it would reach anything a model <strong>infers or derives</strong> from a photograph of your own skin.</p>
 <p>So we do not use the Apple definition to argue our way out of Washington law, and we are not going to tell you that state health-privacy rules do not apply because nothing is uploaded. They apply. This policy is written to them.</p>
 <hr />
 <h2 id="1-categories-of-consumer-health-data-collected-and-why">1. Categories of consumer health data collected, and why</h2>
@@ -128,13 +128,13 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <tbody>
 <tr>
 <td><strong>Images of your skin</strong></td>
-<td>A photo you choose from your photo library showing a mole, a lesion, or an area of skin</td>
-<td>To display it to you on screen. In the shipping configuration, the app produces no assessment of it.</td>
+<td>A photo of a mole, a lesion, or an area of skin</td>
+<td><strong>Not processed in the shipping app.</strong> The photo screen is behind a clearance gate that is switched off and cannot be opened, so the app does not read an image at all. If the gate were ever opened, the image would come only from Apple's photo picker, one image you chose, held in memory and never saved or uploaded.</td>
 </tr>
 <tr>
 <td><strong>Inferences derived from a skin image</strong></td>
 <td>Any observation a model might produce about an image</td>
-<td><strong>None in the shipping configuration.</strong> The feature that would generate this sits behind a clearance gate that is switched off.</td>
+<td><strong>None.</strong> The shipping app produces no observations, flags or ratings about a photo, and does not contain the image model that would generate them.</td>
 </tr>
 <tr>
 <td><strong>Skin-care habit records</strong></td>
@@ -163,11 +163,8 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 </tr>
 </tbody>
 </table></div>
-<p><strong>Not collected, in any sense:</strong> your location (precise or approximate), biometric identifiers, genetic data, contacts, microphone or audio, clinical health records from any provider, prescriptions, diagnoses, insurance or payment information, gender-affirming or reproductive health information, or any identifier that would let anyone link this app's data to you by name.</p>
+<p><strong>Not collected, in any sense:</strong> your location (precise or approximate), biometric identifiers, genetic data, contacts, microphone or audio, camera input, clinical health records from any provider, prescriptions, diagnoses, insurance or payment information, gender-affirming or reproductive health information, or any identifier that would let anyone link this app's data to you by name.</p>
 <p>The app does not use geofencing of any kind, and does not use a geofence around any health care facility.</p>
-<blockquote>
-<p>⚠️ <strong>TO VERIFY BEFORE PUBLISHING:</strong> the "no inference from images in the shipping configuration" statement depends on a Wave 2 change. The 2026-08-08 audit found <code>Features/Learn/LearnView.swift</code> still shipping a vision-model path that generated ABCDE observations about a photo, and found no default-off clearance gate in the source. Confirm the gate exists and defaults to off, or rewrite the first two rows of the table above.</p>
-</blockquote>
 <h2 id="2-sources-of-the-data">2. Sources of the data</h2>
 <div class="tablewrap"><table>
 <thead>
@@ -182,12 +179,12 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <td>Habit logs, goals, notes — everything you type or tap</td>
 </tr>
 <tr>
-<td><strong>Your photo library</strong>, through Apple's photo picker, one image at a time, only when you pick it</td>
-<td>The skin image you selected. The app cannot browse or read the rest of your library.</td>
+<td><strong>Your photo library</strong></td>
+<td>Nothing, in the shipping app: the photo screen cannot be opened, so no image is read. If the gate were ever opened, Apple's picker would hand the app only the one image you chose, and the app still could not browse or read the rest of your library.</td>
 </tr>
 <tr>
 <td><strong>Apple Health on your device</strong>, only with your separate permission</td>
-<td>Steps, sleep, active energy for the last 7 days</td>
+<td>Steps, sleep, active energy for the last 7 days, read only</td>
 </tr>
 <tr>
 <td><strong>The app itself, on your device</strong></td>
@@ -221,7 +218,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <tr>
 <td><strong>Apple</strong></td>
 <td>Distributes the app; provides iOS, on-device storage, Apple Health and, if you enable it, the private iCloud database inside <strong>your own</strong> Apple Account</td>
-<td><strong>None from us.</strong> If you turn on iCloud sync, non-health preferences and screen state go to your own private iCloud, which we cannot read.</td>
+<td><strong>None from us.</strong> If you turn on iCloud sync, only non-health preferences go to your own private iCloud, which we cannot read.</td>
 </tr>
 <tr>
 <td><strong>Hugging Face</strong></td>
@@ -230,20 +227,18 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 </tr>
 </tbody>
 </table></div>
+<p><strong>What iCloud sync can carry, precisely.</strong> Sync is off unless you switch it on, and when it is on it is limited in code to seven settings: appearance mode, whether reminders are on, the reminder hour, the tab the app opens on, which AI model you selected, whether you have acknowledged the app's disclosure, and whether citations are expanded by default. Each of those accepts only a fixed set of values, so free text cannot travel with them. Habit logs, streaks, consistency scores, goals, photos and Apple Health data are on an explicit deny list, and none of the app's local database is mirrored to iCloud. Records go to the private database in your own Apple Account, which Prameya cannot read.</p>
 <p>We have no affiliates. We use no processors, no analytics vendor, no cloud provider that touches your data, no advertising network, and no AI service provider. We do not disclose consumer health data to law enforcement or anyone else, because we do not have it — a demand made to Prameya for your health data cannot be satisfied.</p>
-<blockquote>
-<p>⚠️ <strong>TO VERIFY BEFORE PUBLISHING:</strong> the restriction of iCloud sync to non-health data is a Wave 2 change. As of 2026-08-08, <code>Domain/Services/CloudSyncService.swift</code> synced streak and consistency values derived from skin-habit logs, which are consumer health data under RCW 19.373.010. Confirm no health-derived field syncs before this policy goes live.</p>
-</blockquote>
 <h2 id="6-selling-consumer-health-data">6. Selling consumer health data</h2>
 <p><strong>We do not sell consumer health data, and we will not.</strong></p>
 <p>Washington law requires a separate, signed authorization with specific contents before any sale of consumer health data. We have never asked anyone for one and do not intend to. If that ever changed, it would require your explicit, separate, written authorization, revocable at any time — not a buried checkbox and not a policy update.</p>
 <h2 id="7-consent-and-how-to-withdraw-it">7. Consent, and how to withdraw it</h2>
-<p><strong>How consent works in OmniDerm.</strong> Everything is opt-in at the moment you use it:</p>
+<p><strong>How consent works in OmniDerm.</strong></p>
 <ul>
-<li>Picking a skin photo requires you to open the feature and choose the image.</li>
+<li>The photo feature is <strong>not available at all</strong> in this version — the clearance gate is closed, so there is nothing to consent to and no image is read.</li>
 <li>Apple Health is <strong>off</strong> until you switch it on, and iOS then asks you separately.</li>
 <li>iCloud sync is <strong>off</strong> until you switch it on.</li>
-<li>Reminders are a toggle.</li>
+<li>Reminders are a toggle, and it <strong>starts on</strong>. They are local notifications from your own phone; iOS still asks you separately before it can show you one, and you can switch them off in the app or in iOS Settings at any time.</li>
 <li>Habit logging happens only when you tap the toggles.</li>
 </ul>
 <p><strong>How to withdraw consent — all of these are immediate and do not require contacting us:</strong></p>
@@ -257,7 +252,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <tbody>
 <tr>
 <td>Photo access</td>
-<td>iOS Settings → Privacy &amp; Security → Photos → OmniDerm → None. Any image in memory is released when you leave the screen.</td>
+<td>Nothing is needed for this version, since the app does not read photos. If you want the permission closed off regardless: iOS Settings → Privacy &amp; Security → Photos → OmniDerm → None.</td>
 </tr>
 <tr>
 <td>Apple Health access</td>
@@ -294,7 +289,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <li><strong>Do we sell it?</strong> No, and never have.</li>
 <li><strong>List of third parties we shared with or sold to?</strong> Empty.</li>
 <li><strong>Can you access it?</strong> Yes — from the app itself, at any time. <strong>Settings → Export Full Data (JSON)</strong> gives you a complete file of your habit logs, your streak snapshot and your goals.</li>
-<li><strong>Can you delete it?</strong> Yes, and you do not need us. <strong>Settings → Clear All Local Data</strong> deletes your habit logs, goals and reminder settings and cancels pending reminders. Deleting the app removes everything else, including downloaded models and stored keys. Photos were never saved, so there is nothing to delete. If you enabled iCloud sync, remove the app's iCloud data in iOS Settings → your name → iCloud → Manage Account Storage.</li>
+<li><strong>Can you delete it?</strong> Yes, and you do not need us. <strong>Settings → Clear All Local Data</strong> deletes your habit logs, goals and reminder settings and cancels pending reminders. Deleting the app removes everything else, including downloaded models and stored keys. No photo was ever read or saved, so there is nothing to delete there. If you enabled iCloud sync, remove the app's iCloud data in iOS Settings → your name → iCloud → Manage Account Storage.</li>
 <li><strong>Do we hold backups or archives of your data?</strong> No. We have no copy to restore, so there is no archive for a deletion request to miss.</li>
 </ul>
 <p><strong>How to make a request.</strong> Email <strong>admin@prameya.legal</strong>. Say what you want and which state you are in. There is no form and no account to create.</p>
@@ -309,8 +304,9 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <p><strong>Enforcement.</strong> A violation of the My Health My Data Act is an unfair or deceptive practice under Washington's Consumer Protection Act (RCW ch. 19.86), which carries a private right of action under <strong>RCW 19.86.090</strong>. In other words, you are not limited to complaining to a regulator.</p>
 <h2 id="9-how-we-protect-it">9. How we protect it</h2>
 <ul>
-<li>Consumer health data stays on your device, inside the app's sandbox, protected by iOS and by your device passcode or Face ID.</li>
-<li>Skin photos are held in working memory only, for as long as the screen is open, and are never written to a file.</li>
+<li>Consumer health data stays on your device, inside the app's sandbox, and your device passcode or Face ID is the main protection for it.</li>
+<li><strong>What we do not claim:</strong> the app does not enable iOS's strictest file-protection level, the one that would keep its files unreadable the whole time your device is locked. Its stored files get the standard protection iOS gives app data and nothing beyond it.</li>
+<li>No skin photo is read or written at all in this version, and no code path in the app writes an image to a file, a database, the Keychain, or iCloud.</li>
 <li>Sensitive keys and flags are stored in the device Keychain, marked <strong>this device only</strong>, so they never travel to another device.</li>
 <li>All network traffic uses HTTPS; the app refuses unencrypted connections.</li>
 <li>Access inside Prameya is limited by architecture rather than by policy: <strong>no employee, contractor or system of ours can access your consumer health data, because it never reaches us.</strong></li>
@@ -324,6 +320,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <p>OmniDerm is not directed to children and has no accounts, no ads, no purchases and no way for anyone to send us anything. We do not knowingly collect consumer health data from anyone under 13. If you believe a child has sent us information, email admin@prameya.legal and we will delete it.</p>
 <h2 id="12-changes-to-this-policy">12. Changes to this policy</h2>
 <p>If we change how OmniDerm handles consumer health data, we will update this policy and change the effective date at the top <strong>before</strong> the change takes effect in the app, and we will tell you inside the app.</p>
+<p><strong>What changed on 8 August 2026.</strong> This revision corrected the policy against the code that actually ships. Internal review notes that had been published by mistake were removed, and the statements they questioned were rewritten to match the shipping build: the photo rows now say the feature is gated off and reads no image at all rather than describing processing that does not happen, and the iCloud section now names the exact seven non-health settings that can sync. We also removed a security statement the app does not support. Nothing in this document describes a capability the shipping app does not have.</p>
 <p>Washington law does not allow us to collect, use or share consumer health data beyond what this policy discloses, and any new category, purpose, or recipient requires your fresh, affirmative consent. We will ask. We will not treat continued use of the app as agreement to a new use of your health data.</p>
 <p>Previous versions remain available at <a href="https://prameyallc.github.io/privacy/">https://prameyallc.github.io/privacy/</a>.</p>
 <h2 id="13-contact">13. Contact</h2>

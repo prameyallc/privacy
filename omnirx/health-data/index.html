@@ -104,7 +104,9 @@ All Prameya app policies: <a href="https://prameyallc.github.io/privacy/">pramey
 <hr />
 <h2 id="the-short-version">The short version</h2>
 <p>OmniRx stores what you log about your medicines and how you feel <strong>on your own device</strong>. Prameya runs<br />
-no server that receives it. We do not share it. We do not sell it. Nobody at Prameya can see it.</p>
+no server that receives it. We do not share it. We do not sell it. Nobody at Prameya can see it. None<br />
+of it syncs to iCloud.</p>
+<p>You can delete all of it yourself, from inside the app, in two taps: Settings → "Delete all my data".</p>
 <p>We still treat it as consumer health data and still give you the rights below, because Washington and<br />
 Nevada define "collect" broadly enough to reach data that is processed on your device — not only data<br />
 that is sent somewhere.</p>
@@ -134,7 +136,7 @@ mental health status. In OmniRx that means the things you log about your medicin
 <tbody>
 <tr>
 <td><strong>Medication adherence records</strong></td>
-<td>Whether you took today's dose; a label you choose for your regimen; the date</td>
+<td>Whether you marked today's dose as taken, and the date</td>
 <td>So you can see your own pattern</td>
 <td>Shown back to you; used to compute your adherence percentage and streak</td>
 </tr>
@@ -142,58 +144,50 @@ mental health status. In OmniRx that means the things you log about your medicin
 <td><strong>Barriers to taking medicine</strong></td>
 <td>"Forgot", "Cost", "Side effect concern", "Regimen complexity", "Ran out", "Other"</td>
 <td>So you can see what actually gets in the way</td>
-<td>Shown back to you; used to suggest general topics to raise with your pharmacist</td>
+<td>Shown back to you; used to suggest general topics to raise with your pharmacist. Selecting "Side effect concern" is also stored as a side-effect entry on that day's journal record</td>
 </tr>
 <tr>
 <td><strong>Free-text notes</strong></td>
-<td>Anything you type in a notes field</td>
+<td>Anything you type in the daily notes field</td>
 <td>Your own record</td>
-<td>Stored and shown back to you</td>
+<td>Stored with both the adherence record and the journal record, and shown back to you</td>
 </tr>
 <tr>
 <td><strong>Wellness journal</strong></td>
-<td>Mood (1–5), energy (1–5), hours of sleep</td>
+<td>Mood (1–5) and energy (1–5), set with steppers</td>
 <td>Habit and wellness tracking</td>
 <td>Averaged into descriptive trends over the last two weeks</td>
 </tr>
 <tr>
-<td><strong>Symptoms and side effects</strong></td>
-<td>Words you enter, e.g. "headache", "nausea"</td>
-<td>Your own record, to discuss with a professional</td>
-<td>Stored and shown back to you</td>
-</tr>
-<tr>
-<td><strong>Habit logs</strong></td>
-<td>Took meds on time, exercised, ate well, hydrated</td>
+<td><strong>Habit records</strong></td>
+<td>Whether the dose was taken on time — written from your adherence entry, not asked separately</td>
 <td>General wellness tracking</td>
-<td>Shown back to you; contributes to streaks</td>
+<td>Stored on the device; contributes to streaks</td>
 </tr>
 <tr>
-<td><strong>Profile information</strong></td>
-<td>Age; goals; and, where the app provides the fields, health conditions and current medications</td>
+<td><strong>Profile record</strong></td>
+<td>A record the app creates on first launch holding two default goals</td>
 <td>Personalizing your own view of your own record</td>
 <td>Stored on the device</td>
 </tr>
 <tr>
 <td><strong>Values the app calculates</strong></td>
-<td>Adherence percentage, streak length, wellness average, "trends to discuss" text</td>
+<td>Adherence percentage, current streak, days logged, mood/energy average, "trends to discuss" text</td>
 <td>Feedback on your own logging</td>
 <td>Displayed in the app</td>
 </tr>
-<tr>
-<td><strong>Text you give to the on-device AI</strong>, if you enable it</td>
-<td>Whatever you type into an AI feature</td>
-<td>To generate a general educational answer on your device</td>
-<td>Processed by a model running on your device; not transmitted</td>
-</tr>
 </tbody>
 </table></div>
-<blockquote>
-<p><strong>TO VERIFY BEFORE PUBLISHING.</strong> In the code audited on 2026-08-08, <em>health conditions</em> and <em>current<br />
-medications</em> existed as data model fields with no screen for entering them, and no AI feature was<br />
-wired to a user-facing text box. Confirm the shipping build and edit those rows to describe exactly<br />
-what the app actually offers.</p>
-</blockquote>
+<p><strong>Fields the app does not let you fill in.</strong> The app's data model also contains fields for hours of<br />
+sleep, symptoms, health conditions and current medications. <strong>No screen in the shipping app fills any<br />
+of them in.</strong> Sleep is stored at a fixed default value you cannot set, symptoms are stored empty, and<br />
+the conditions and current-medicines fields are never written. We list them here so that this policy<br />
+describes the store honestly, not to suggest the app collects them.</p>
+<p><strong>On-device AI.</strong> OmniRx can download and run a small open-weight language model on your device, but<br />
+<strong>no screen in the app currently sends anything you have written to that model.</strong> If a feature that<br />
+does is ever added, the text would be processed by the model running on your device and would not be<br />
+transmitted to us or to anyone else — there is no code path that could transmit it — and we would<br />
+describe the feature here first.</p>
 <p><strong>Purpose, stated once and plainly:</strong> every purpose above is <em>showing your own information back to you</em><br />
 and <em>helping you prepare to talk to a pharmacist or physician</em>. There is no secondary purpose. We do<br />
 not use this data for advertising, marketing, profiling, product analytics, research, model training,<br />
@@ -205,7 +199,10 @@ will disclose the new category here and ask for your consent before collecting i
 <p>There is one source: <strong>you</strong>, typing into the app on your own device.</p>
 <p>OmniRx does <strong>not</strong> obtain health data from:</p>
 <ul>
-<li>Apple Health or HealthKit — the app contains no HealthKit code;</li>
+<li>Apple Health or HealthKit — the app contains no HealthKit code and holds no HealthKit entitlement.<br />
+  An earlier build of the project declared HealthKit and Clinical Health Records entitlements that no<br />
+  code used; those declarations have been removed. If HealthKit is ever genuinely added, this policy<br />
+  must be rewritten and your consent obtained first;</li>
 <li>Clinical or electronic health records;</li>
 <li>Pharmacies, prescribers, insurers, or health plans;</li>
 <li>Data brokers, list vendors, or advertising networks;</li>
@@ -213,12 +210,6 @@ will disclose the new category here and ask for your consent before collecting i
 <li>Photographs — the app has no camera or photo-library access;</li>
 <li>Your location — the app does not use location services at all.</li>
 </ul>
-<blockquote>
-<p><strong>TO VERIFY BEFORE PUBLISHING.</strong> The audited project file still declared HealthKit and Clinical<br />
-Health Records entitlements that no code used; removing them is a wave-2 task (repo issues RX-005 and<br />
-RX-006). This policy is written for the post-removal build. If HealthKit is ever genuinely added,<br />
-this policy must be rewritten and your consent obtained first.</p>
-</blockquote>
 <hr />
 <h2 id="categories-of-consumer-health-data-shared">Categories of consumer health data shared</h2>
 <p><strong>None.</strong></p>
@@ -229,13 +220,24 @@ affiliates, not with service providers or processors.</p>
 <p>Prameya has no affiliates. We use no processor, contractor or service provider that touches consumer<br />
 health data, because no such data reaches us.</p>
 <h3 id="about-hugging-face-read-this-so-the-list-above-is-not-misleading">About Hugging Face — read this so the list above is not misleading</h3>
-<p>If you enable the on-device AI feature, OmniRx downloads model files from <strong>Hugging Face</strong>. That is a<br />
-network connection, and Hugging Face's servers see your device's IP address like any web server would.</p>
+<p>If you turn on the on-device AI switch and the separate model-download switch — both are off when you<br />
+install the app — OmniRx downloads model files from <strong>Hugging Face</strong>. That is a network connection, and<br />
+Hugging Face's servers see your device's IP address like any web server would.</p>
 <p><strong>Hugging Face does not receive any consumer health data.</strong> The connection carries a request for model<br />
-files only. Your medication logs, journal entries, symptoms and notes are never part of it. After the<br />
-download, the model runs on your device and your text stays there.</p>
+files only. Your medication logs, journal entries, notes and barriers are never part of it. After the<br />
+download, the model runs on your device.</p>
 <p>We mention this because a "we share nothing" claim would be incomplete without explaining the one<br />
 network connection the app does make.</p>
+<h3 id="about-icloud-so-the-same-claim-is-not-misleading-either">About iCloud — so the same claim is not misleading either</h3>
+<p><strong>No consumer health data is placed in iCloud by the app.</strong> The database holding what you log is<br />
+created local-only, with iCloud sync switched off for it.</p>
+<p>OmniRx does retain an iCloud container reserved for ordinary app preferences. Its schema is an<br />
+allow-list containing exactly one non-health record type; your medication logs, journal entries, habit<br />
+records and profile record are excluded, a test in the codebase asserts they are absent, and the app<br />
+refuses to build the sync container at all if that ever stops being true. As the app ships today<br />
+nothing is written to that container, so nothing actually syncs.</p>
+<p>Separately from anything the app does, Apple's whole-device <strong>iCloud Backup</strong> can include the app's<br />
+data if you have that turned on — see <a href="#3-the-right-to-delete">the right to delete</a> below.</p>
 <hr />
 <h2 id="selling-consumer-health-data">Selling consumer health data</h2>
 <p><strong>We have never sold consumer health data and we will not.</strong></p>
@@ -268,12 +270,21 @@ to give you a list of all third parties and affiliates we have shared or sold it
 <p>Our answer, in advance: <strong>we are not collecting it on any server, we have never shared it, we have never<br />
 sold it, and the list of third parties is empty.</strong> Ask anyway if you would like it in writing — email<br />
 <strong>admin@prameya.legal</strong> and we will send it.</p>
+<p>You can also see what the app holds without asking us: your entries are shown back to you in the app,<br />
+and Settings → <strong>"Export my logs as text"</strong> produces a plain-text summary — adherence percentage,<br />
+streak, days logged, and the reasons you recorded for missed doses — generated on your device and<br />
+displayed in the app, where you can select and copy it. Nothing is uploaded and we never receive a<br />
+copy. There is no share sheet and no exported file; moving the text anywhere is your action.</p>
 <h3 id="2-the-right-to-withdraw-consent">2. The right to withdraw consent</h3>
 <p>You can withdraw consent to our collection and sharing of your consumer health data at any time.</p>
 <p>In practice, you can do all of this yourself, immediately:</p>
 <ul>
 <li><strong>Stop logging</strong> — the app never records anything you do not enter.</li>
-<li><strong>Turn off the on-device AI</strong> in Settings, and delete downloaded model files.</li>
+<li><strong>Turn off "Use on-device AI"</strong> in Settings. Doing so also withdraws your permission for the model<br />
+  download, so nothing further is fetched. The app has an "Unload" control that removes the model from<br />
+  memory; it has <strong>no</strong> button that deletes model files already downloaded — deleting the app removes<br />
+  the app's storage from your device.</li>
+<li><strong>Delete everything you have logged</strong> — Settings → <strong>"Delete all my data"</strong>.</li>
 <li><strong>Delete the app</strong> — this removes all of its data from your device.</li>
 </ul>
 <p>You may also email <strong>admin@prameya.legal</strong> to withdraw consent in writing. We will confirm and record<br />
@@ -281,14 +292,20 @@ it. Withdrawing consent does not undo processing that already happened on your o
 <h3 id="3-the-right-to-delete">3. The right to delete</h3>
 <p>You can ask us to delete your consumer health data.</p>
 <ul>
-<li><strong>You can do it now, without asking us.</strong> Delete individual entries in the app, or delete the app<br />
-  itself, which removes its entire data store from your device.</li>
+<li><strong>You can do it now, without asking us.</strong> Settings → <strong>"Delete all my data"</strong> asks you to confirm,<br />
+  then permanently removes every medication log, journal entry, habit record and profile record from<br />
+  the device and resets the figures the app calculated from them back to empty. It cannot be undone.</li>
+<li><strong>It is all-or-nothing.</strong> The app does <strong>not</strong> offer deletion or editing of individual entries today.<br />
+  If you want to remove one day's entry only, the app cannot do that — the choices are deleting<br />
+  everything or keeping it.</li>
+<li><strong>Deleting the app</strong> also removes its entire data store from your device.</li>
 <li><strong>We hold no copy to delete.</strong> There is no server database, no backup, no archive, and no analytics<br />
   store containing your health data. When you ask, we will tell you exactly that, in writing.</li>
 <li><strong>We have not shared it with anyone</strong>, so there is no third party for us to instruct to delete it.</li>
-<li>If you have iCloud Backup turned on in iOS, Apple's device backup may contain a copy of the app's<br />
-  data as part of your whole-device backup. That backup is between you and Apple; you can manage or<br />
-  delete it in your iOS settings. We have no access to it.</li>
+<li><strong>iCloud Backup is the one copy we cannot reach and neither can the app's delete button.</strong> OmniRx does<br />
+  not exclude its data store from iOS device backup, so if you have iCloud Backup turned on, Apple's<br />
+  whole-device backup may contain a copy of the app's data. That backup is between you and Apple; you<br />
+  can manage or delete it in your iOS settings. We have no access to it.</li>
 </ul>
 <h3 id="4-the-right-not-to-be-discriminated-against">4. The right not to be discriminated against</h3>
 <p>Using any of these rights does not change the app. There is no reduced-functionality tier, no penalty,<br />
@@ -319,22 +336,28 @@ to wait for the Attorney General to act.</p>
 right of action.</p>
 <hr />
 <h2 id="how-long-your-data-is-kept">How long your data is kept</h2>
-<p>For as long as you keep it. It is on your device, so you decide. Deleting the app deletes it.</p>
+<p>For as long as you keep it. It is on your device, so you decide. Deleting it in the app removes it, and<br />
+deleting the app deletes it.</p>
 <p>We keep nothing, so there is nothing for us to retain or to age out.</p>
 <hr />
 <h2 id="consent">Consent</h2>
 <p>OmniRx collects consumer health data only when you type it in, and only for the purposes listed above.<br />
 Before the app processes your health data for any new purpose, or collects a new category of it, we<br />
 will disclose that here and ask for your affirmative consent first.</p>
-<blockquote>
-<p><strong>TO VERIFY BEFORE PUBLISHING.</strong> A first-run disclosure and acknowledgement screen is a wave-2 task<br />
-(repo issue RX-050). Confirm it ships, and describe here exactly what it asks and records.</p>
-</blockquote>
+<p><strong>What the app asks you at first run.</strong> The first time you open OmniRx, before you reach the rest of<br />
+the app, it shows a disclosure screen explaining what OmniRx is, what it will not do (no diagnosis, no<br />
+dosing, no interaction checking, no pill identification), and that what you log stays on your device.<br />
+You acknowledge that screen to continue, and the app records the acknowledgement together with a<br />
+version number for the disclosure text. If we materially change what that screen says, the version<br />
+number increases and the screen is shown again, so you see the change rather than being carried past<br />
+it. The model download is a separate, later choice, made with two switches in Settings that are both<br />
+off until you turn them on.</p>
 <hr />
 <h2 id="what-omnirx-is-not">What OmniRx is not</h2>
 <p>OmniRx is educational and habit-support software. It is <strong>not medical advice</strong>. It does not diagnose,<br />
 does not calculate doses, does not check drug interactions, does not produce tapering plans, and does<br />
-not identify medicines from photographs. Talk to your pharmacist or physician about your medicines.</p>
+not identify medicines from photographs. It also does not remind you to take a dose — it schedules no<br />
+reminders and sends no notifications. Talk to your pharmacist or physician about your medicines.</p>
 <p><strong>HIPAA does not apply.</strong> Prameya is not a health care provider, health plan, or business associate,<br />
 and OmniRx is not provided to you through one. We claim no HIPAA compliance. What protects your data<br />
 here is that it stays on your device — and the rights in this policy.</p>
@@ -344,6 +367,15 @@ here is that it stays on your device — and the rights in this policy.</p>
 date above, and summarize what changed at the top. We will not collect, use, or share a new category of<br />
 consumer health data, or use it for a new purpose, without disclosing it here first and obtaining your<br />
 affirmative consent.</p>
+<p><strong>What changed in this revision (August 8, 2026):</strong> this version corrects statements so they match the<br />
+code that actually ships. In particular: the right to delete no longer says you can delete individual<br />
+entries, because the app offers all-or-nothing deletion (Settings → "Delete all my data") plus app<br />
+deletion; the category table now describes only what the app actually records, and names the fields<br />
+that exist in the data model with no screen to fill them in; the AI row now says plainly that no screen<br />
+sends your text to the model today; the iCloud position is stated exactly (no health data syncs, and a<br />
+preferences-only container exists that nothing currently writes to); the iCloud Backup limitation is<br />
+stated as a limitation on deletion; the first-run disclosure is described as it ships; and internal<br />
+review markers that were mistakenly published have been removed.</p>
 <p>Prior versions are available on request from <strong>admin@prameya.legal</strong>.</p>
 <hr />
 <h2 id="contact">Contact</h2>

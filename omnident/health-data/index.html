@@ -103,7 +103,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <h2 id="why-this-is-a-separate-document">Why this is a separate document</h2>
 <p>Washington State's <strong>My Health My Data Act</strong> (RCW ch. 19.373) requires any business that collects consumer health data to maintain a <strong>consumer health data privacy policy that is separate and distinct</strong> from its general privacy policy, and to link to it prominently. Nevada's <strong>SB 370</strong> (codified in NRS ch. 603A) imposes closely analogous duties.</p>
 <p>This is that document. It applies to everyone who uses OmniDent, and it gives specific rights to residents of <strong>Washington</strong> and <strong>Nevada</strong>.</p>
-<p><strong>It is separate from, and additional to, the <a href="https://prameyallc.github.io/privacy/omnident/">main OmniDent Privacy Policy</a>.</strong> Read both.</p>
+<p><strong>It is separate from, and additional to, the <a href="https://prameyallc.github.io/privacy/omnident/">main OmniDent Privacy Policy</a>.</strong> Read both. Both are also linked separately inside the app, in Settings.</p>
 <hr />
 <h2 id="a-note-about-the-word-collect">A note about the word "collect"</h2>
 <p>Apple's App Store privacy labels use "collect" to mean <em>transmitting data off the device</em>. Under that definition, OmniDent would collect very little.</p>
@@ -163,6 +163,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 </tr>
 </tbody>
 </table></div>
+<p>One clarification about the Studio screen's unfinished <strong>Regenerative Projection</strong> feature, because it shows percentages next to terms taken from your own scans: those percentages ("X–Y% chance of meaningful recovery in ~N months") are <strong>fixed placeholder values written into the app</strong>. They are not derived from your photographs, your profile or your habits, and they are not a prediction about your health. The terms listed come from your own on-device records; the numbers come from the app's source code.</p>
 <p><strong>Purposes, stated completely.</strong> All of the above is collected for one purpose: to operate the features of OmniDent that you choose to use, on your device, for you.</p>
 <p>It is <strong>not</strong> used for advertising, for marketing, for profiling, for research, for training AI models, for sale, or for any secondary purpose whatsoever. There is no secondary purpose. If that ever changes, RCW 19.373.020(1)(d) requires us to disclose the new purpose and obtain your affirmative consent <strong>before</strong> processing for it, and we will.</p>
 <hr />
@@ -181,11 +182,9 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <li><strong>On your device.</strong> Photographs are stored as files in OmniDent's private app container, encrypted at rest by iOS Data Protection at the Complete level. Everything else is in the app's local database on the same device.</li>
 <li><strong>Not on any Prameya system.</strong> Prameya operates no server that receives your consumer health data. We have no user database and no copy of anything described above.</li>
 <li><strong>Not sent for AI processing.</strong> The AI runs on your device's own chip. Photographs and text are never transmitted for analysis.</li>
-<li><strong>Not in iCloud.</strong> OmniDent's iCloud sync is restricted to non-health data — app preferences and interface state. No health-derived field syncs.</li>
+<li><strong>Not in iCloud through OmniDent.</strong> OmniDent's iCloud sync carries app preferences and interface state only. No health-derived field is in its sync schema, and the set of records permitted to sync is pinned by an allow-list in the app that switches sync off entirely if anything ever drifts from it.</li>
 </ul>
-<blockquote>
-<p><strong>TO VERIFY BEFORE PUBLISHING:</strong> the restriction of iCloud sync to non-health data is a Wave 2 change. The build audited on 8 August 2026 still synced the oral-health profile, habit logs and cost trajectory snapshots to the app's private CloudKit container (<code>ISSUES.md</code> DENT-010). <strong>Confirm the sync schema has been reduced to preferences and interface state before this policy is published.</strong> If any health-derived field still syncs, this section and the sharing section below must be rewritten to disclose Apple as a recipient of consumer health data, and Washington's affirmative-consent requirement for sharing (RCW 19.373.030) is triggered.</p>
-</blockquote>
+<p>One honest limit on that last point: OmniDent does not mark its scan folder as excluded from your device backup. If you back your device up to iCloud or to a computer, those files are included in <strong>your own</strong> backup, under your Apple Account or on your own machine, governed by Apple's terms rather than ours. That is your backup of your device, not a transfer of data to us or to anyone else by the app.</p>
 <hr />
 <h2 id="consumer-health-data-that-is-shared-and-with-whom">Consumer health data that is shared, and with whom</h2>
 <p>RCW 19.373.020(1)(a)(iii) requires the categories of consumer health data shared, and (1)(a)(iv) requires a list of the categories of third parties and the specific affiliates we share it with.</p>
@@ -225,6 +224,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 </tbody>
 </table></div>
 <p>There is no advertising network, no analytics vendor, no crash-reporting vendor, no data broker, no dental practice, no insurer, and no research partner in that list, because there is none in the app.</p>
+<p>The Studio screen shows a toggle offering "private collective priors" with an optional anonymised contribution. <strong>That feature is not built.</strong> Turning it on only substitutes different fixed numbers already inside the app; nothing about you is transmitted to us or to anyone else, and no shared dataset exists.</p>
 <p><strong>We have never shared consumer health data with anyone.</strong></p>
 <hr />
 <h2 id="selling-consumer-health-data">Selling consumer health data</h2>
@@ -236,7 +236,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <p>RCW 19.373.020(1)(a)(v) requires us to explain how you exercise the rights in RCW 19.373.040. Nevada provides closely comparable rights.</p>
 <h3 id="1-the-right-to-confirm-and-access">1. The right to confirm and access</h3>
 <p>You may ask whether we are collecting, sharing or selling your consumer health data, and to access it — including a list of all third parties and affiliates with whom we have shared it, and contact information for each.</p>
-<p><strong>Fastest route (immediate, no waiting):</strong> <strong>Settings → Privacy &amp; Security → Export My Data</strong> in the app produces a complete JSON file of your data, generated on your device. Your photographs are already in the app, and in your Photos library if you enabled auto-save.</p>
+<p><strong>Fastest route (immediate, no waiting):</strong> <strong>Settings → Privacy &amp; Security → Export My Data</strong> in the app produces a JSON file of your on-device records — scan metadata, habit logs, trajectory scenarios and your profile — generated on your device. It contains metadata only: not the raw photographs, which are already in the app and, if you enabled auto-save, in your Photos library, and not the text of your notes.</p>
 <p><strong>Formal route:</strong> email <strong>admin@prameya.legal</strong>. We will confirm in writing that we hold no consumer health data about you on any Prameya system, that we have shared none, and that we have sold none.</p>
 <h3 id="2-the-right-to-withdraw-consent">2. The right to withdraw consent</h3>
 <p>You may withdraw consent to our collection and sharing of your consumer health data at any time, for any part of it or all of it.</p>
@@ -291,12 +291,12 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <td>Scan details → Delete</td>
 </tr>
 <tr>
-<td>All app data on this device</td>
+<td>All app data on this device, including your oral-health profile</td>
 <td>Settings → Privacy &amp; Security → Delete All Scans &amp; Data</td>
 </tr>
 <tr>
-<td>Your account, your synced records, and your Apple sign-in token</td>
-<td>Settings → Account → Delete Account</td>
+<td>Your Sign in with Apple association, the app's records in your private iCloud database, and all local data</td>
+<td>Settings → iCloud Sync → Delete Account &amp; All Data</td>
 </tr>
 <tr>
 <td>Data written into Apple Health</td>
@@ -308,10 +308,8 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 </tr>
 </tbody>
 </table></div>
-<p><strong>Formal route:</strong> email <strong>admin@prameya.legal</strong>. Because we hold no consumer health data on any Prameya system, there is nothing on our side to delete and no backup or archived copy of it anywhere in our network. We will confirm that in writing. Washington permits up to six months for deletion from archived or backup systems solely to allow restoration; <strong>we have no such systems containing your consumer health data</strong>, so that extension never applies to us.</p>
-<blockquote>
-<p><strong>TO VERIFY BEFORE PUBLISHING:</strong> two gaps in the audited build. (1) "Delete All Scans &amp; Data" does not yet clear the stored oral-health profile — the code carries a "Future: also clear UserProfile" comment. (2) In-app account deletion with Sign in with Apple token revocation does not exist yet (<code>ISSUES.md</code> DENT-012). <strong>Both must be fixed before this policy is published</strong>, because both are described above as available deletion routes.</p>
-</blockquote>
+<p>On that third row, one thing should be stated precisely rather than implied. Apple's deletion rule for apps offering Sign in with Apple also requires token revocation <strong>where the app exchanges Apple's authorization code for tokens on its own server</strong>. OmniDent has no server and never performs that exchange, so no Apple token for OmniDent exists and the app makes no revocation call — the app-scoped identifier in your device's Keychain is the entire association, and deleting it is the entire deletion. If you also want OmniDent removed from your Apple Account's Sign in with Apple list, that is Apple's own control, at <strong>iOS Settings → your name → Sign in with Apple → OmniDent</strong>.</p>
+<p><strong>Formal route:</strong> email <strong>admin@prameya.legal</strong>. Because we hold no consumer health data on any Prameya system, there is nothing on our side to delete and no backup or archived copy of it anywhere in our network. We will confirm that in writing. Washington permits up to six months for deletion from archived or backup systems solely to allow restoration; <strong>we have no such systems containing your consumer health data</strong>, so that extension never applies to us. Backups you make of your own device are yours, held under your Apple Account or on your own computer, and we cannot reach into them.</p>
 <h3 id="4-timing-and-how-to-appeal">4. Timing, and how to appeal</h3>
 <ul>
 <li>We respond to a request <strong>within 45 days</strong> of receiving it.</li>
@@ -349,7 +347,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <hr />
 <h2 id="enforcement">Enforcement</h2>
 <p>A violation of Washington's My Health My Data Act is a violation of the Washington Consumer Protection Act, RCW ch. 19.86. That means it may be enforced by the Washington State Attorney General and may also be pursued by an individual under <strong>RCW 19.86.090</strong>.</p>
-<p>We take that seriously, and it is the reason this document describes what the app actually does rather than what would be convenient to claim. Where a statement here is contingent on a code change that has not yet shipped, it is flagged inline as <strong>TO VERIFY BEFORE PUBLISHING</strong> rather than asserted.</p>
+<p>We take that seriously, and it is the reason this document describes what the app actually does rather than what would be convenient to claim. Where a statement here would otherwise depend on a change that has not shipped, we describe the behaviour of the app as it exists today instead — including where that is less flattering.</p>
 <hr />
 <h2 id="changes-to-this-policy">Changes to this policy</h2>
 <p>If we change the categories of consumer health data we collect, add a source, add a purpose, or add anyone we share it with, we will:</p>
@@ -358,6 +356,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <li><strong>obtain your affirmative consent before collecting or processing for the new category or purpose</strong>, as RCW 19.373.020(1)(c) and (1)(d) require — before the change takes effect, not after;</li>
 <li>show an in-app notice describing what changed.</li>
 </ol>
+<p><strong>This 8 August 2026 revision was a correction pass rather than a change of practice.</strong> We re-read the shipping source code and rewrote every statement that did not match it. The deletion section previously said that deleting your account revokes your Sign in with Apple token; it does not, because the app has no server, never exchanges the authorization code, and therefore has no token in existence to revoke. That section now states what deletion actually does. We also corrected the name of the deletion control, described the placeholder percentages in the Studio Regenerative Projection feature, noted that scan files are not excluded from your own device backup, described the export file accurately, and confirmed the statements that had been pending internal verification and are now true of the build. Nothing in this document now describes a feature that has not shipped.</p>
 <p>Previous versions are available on request. We do not make material changes quietly.</p>
 <hr />
 <h2 id="contact">Contact</h2>

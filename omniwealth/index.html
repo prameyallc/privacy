@@ -113,7 +113,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <td>No. There is nothing to sign up for.</td>
 </tr>
 <tr>
-<td>Where does my budget, habit and goal data live?</td>
+<td>Where does what I log live?</td>
 <td>On your device, in the app's own storage.</td>
 </tr>
 <tr>
@@ -126,7 +126,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 </tr>
 <tr>
 <td>Is my financial information sent to an AI service?</td>
-<td>No. Once the model is downloaded, all AI processing happens on your device.</td>
+<td>No. The model runs on your device; nothing you enter is sent anywhere.</td>
 </tr>
 <tr>
 <td>Do you use ads, analytics, or trackers?</td>
@@ -157,49 +157,41 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <p>We mention this in a privacy policy for a reason: because the app gives no personalised advice, it never needs to build a profile of you, and it never does.</p>
 <hr />
 <h2 id="what-stays-on-your-device">What stays on your device</h2>
-<p>Everything you type into OmniWealth is stored locally on your device and stays there.</p>
+<p>Everything you enter into OmniWealth is stored locally on your device and stays there.</p>
 <div class="tablewrap"><table>
 <thead>
 <tr>
-<th>What you can enter</th>
+<th>What you can enter today</th>
 <th>Examples</th>
 <th>Where it goes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Habit log</td>
-<td>Whether you reviewed your budget, made a contribution, reviewed your allocation, avoided an impulse purchase, plus any note you write</td>
+<td>Daily habit checklist</td>
+<td>Four yes/no toggles — whether you reviewed your budget, made a planned contribution, reviewed your allocation, avoided an impulse purchase — recorded with the date</td>
 <td>Local app database</td>
 </tr>
 <tr>
-<td>Budget entries</td>
-<td>Date, category, amount, income or expense, note</td>
-<td>Local app database</td>
-</tr>
-<tr>
-<td>Goal profile</td>
-<td>Monthly income, target monthly contribution, stated risk tolerance, goals</td>
-<td>Local app database</td>
-</tr>
-<tr>
-<td>Illustration inputs</td>
-<td>Monthly contribution and time horizon you enter for the compounding arithmetic</td>
-<td>Local app database</td>
+<td>Compounding arithmetic inputs</td>
+<td>The monthly amount, number of years, and the annual rate you choose to test</td>
+<td>Held in memory while that screen is open; not saved to the database</td>
 </tr>
 <tr>
 <td>App preferences</td>
-<td>Appearance setting, which AI model you selected</td>
+<td>Appearance setting, which AI model you selected, and whether you have allowed model downloads</td>
 <td>Device settings storage</td>
 </tr>
 </tbody>
 </table></div>
+<p>That is the whole list. The shipping app has no free-text field anywhere: no notes box, no budget-entry form, no goal or income form, and no place to type a question. The app's local database additionally defines record types for budget entries, statement scans, trajectory snapshots and a goal profile — leftovers from features that are not in the shipping version. No screen in the app can create one. They are named here only because the delete control described below clears them too.</p>
 <p>This data is written to the app's private storage area, which iOS and macOS protect from other apps. It is never uploaded to Prameya. We could not read it if we wanted to.</p>
 <p><strong>Financial information is sensitive.</strong> We treat it that way. The design principle for OmniWealth is that the safest place for your money data is the device in your hand, and the safest amount for us to hold is none.</p>
 <hr />
 <h2 id="what-leaves-your-device">What leaves your device</h2>
 <p>One thing, and only one thing: <strong>a request to Hugging Face to download AI model files.</strong></p>
 <p>OmniWealth's AI features run a language model directly on your device. Those model files are large (roughly 420 MB for the text model, around 1.2 GB for the vision-capable one), so they are not shipped inside the app. When you choose to download a model in Settings, the app connects to <code>huggingface.co</code>, operated by Hugging Face, Inc., and downloads the weight files.</p>
+<p><strong>You have to allow it first.</strong> Both models in the app's catalogue are larger than 100 MB, and the app refuses any download above that threshold until you give permission in Settings, where the model and its size are named. Your answer is recorded on the device, and the same screen lets you withdraw it at any time. Nothing downloads on first launch or in the background.</p>
 <p><strong>What that request contains:</strong></p>
 <ul>
 <li>The name of the model repository being requested (for example, <code>mlx-community/Qwen2-VL-2B-Instruct-4bit</code>) and the specific files being fetched.</li>
@@ -208,14 +200,12 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 </ul>
 <p><strong>What that request does not contain:</strong></p>
 <ul>
-<li>None of your budget entries, habit logs, goals, notes, amounts, or questions.</li>
+<li>None of your habit logs, amounts, or preferences.</li>
 <li>Nothing derived from them.</li>
 </ul>
 <p>The request is the same one any other user downloading the same model would make. Hugging Face handles it under its own privacy policy, as an ordinary file download.</p>
-<p><strong>After the download, the internet is not involved.</strong> Your questions and your data are processed by the model on your own device. They are not sent to Hugging Face, to Prameya, or to any AI provider. This is a genuine privacy benefit and it is the main reason the app is built this way — but we state it precisely: the app does connect to the internet, once, for model files.</p>
-<blockquote>
-<p><strong>TO VERIFY BEFORE PUBLISHING:</strong> wave 2 adds an explicit consent prompt before a large model download, naming the model and its size. Confirm that has shipped before relying on the "you choose to download" framing above. In the audited build the download only starts when the user taps the download control in Settings, but the size-threshold consent check is hardcoded to approve.</p>
-</blockquote>
+<p><strong>After the download, the internet is not involved.</strong> The model runs on your own device. Nothing you enter is sent to Hugging Face, to Prameya, or to any AI provider. This is a genuine privacy benefit and it is the main reason the app is built this way — but we state it precisely: the app does connect to the internet, for model files, when you allow it.</p>
+<p>We should also be precise about what the model is used for today. The summaries the app shows you — your streak, how many days you logged, how many boxes you ticked — are counts of your own records, produced by ordinary arithmetic on your device. There is no chat feature and no question box in the shipping version.</p>
 <hr />
 <h2 id="what-we-do-not-do">What we do not do</h2>
 <p>Each of these is a flat "no", not a "we limit this":</p>
@@ -230,32 +220,27 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <li><strong>No purchases or transfers.</strong> The app cannot move money.</li>
 <li><strong>No location tracking.</strong></li>
 <li><strong>No contacts, calendar, or microphone access.</strong></li>
-<li><strong>No camera or photo library access, and no document import,</strong> in the shipping version. The app cannot ingest a photo or PDF of a statement.</li>
+<li><strong>No Keychain storage.</strong> The app puts nothing in the device Keychain.</li>
+<li><strong>No camera or photo library access, and no document import.</strong> The app cannot ingest a photo or PDF of a statement. There is no capture or import path in it, and it does not hold the file-access entitlement that would allow one.</li>
 </ul>
-<blockquote>
-<p><strong>TO VERIFY BEFORE PUBLISHING:</strong> the app's product code contains an unused statement-scanning data structure and a vision-capable model in its catalogue, and some in-app copy still refers to "uploaded statements." No import or capture path exists in the shipping build. Confirm that copy is corrected in wave 2. If a statement-import feature ships later, this policy must be updated first to describe photo/file access, and the App Store privacy label updated with it.</p>
-</blockquote>
+<p>On that last point, plainly: an earlier build shipped copy that referred to "uploaded statements," and the app's database still defines an unused record type for statement scans. That copy has been corrected, and no screen in the shipping app can capture or import a document. If a statement-import feature ships later, this policy will be updated to describe photo or file access before it is used, and the App Store privacy label updated with it.</p>
 <hr />
 <h2 id="icloud-and-syncing">iCloud and syncing</h2>
 <p><strong>OmniWealth does not sync your financial or habit data to iCloud.</strong> Your data is stored in a local, non-syncing database on the device where you entered it. If you use OmniWealth on two devices, the two copies are separate and do not share data.</p>
+<p>This is enforced in two places, not just described: the app's local databases are created with cloud syncing explicitly disabled, and the signed app no longer carries any iCloud or CloudKit entitlement or container, so it could not write a record to iCloud even if code tried to.</p>
 <p>If we ever add sync, it will be <strong>off by default</strong>, will require you to switch it on, and this policy will say exactly which fields sync before it ships.</p>
-<blockquote>
-<p><strong>TO VERIFY BEFORE PUBLISHING:</strong> the app's signing entitlements still request iCloud capabilities (CloudKit and CloudDocuments) that the code does not use, and some project documentation incorrectly describes iCloud sync as on by default. The audited code stores everything with cloud syncing explicitly disabled and never writes a record to iCloud. Wave 2 should remove the unused entitlements. Confirm before publishing, because the statement above must remain true of the binary that is actually submitted.</p>
-</blockquote>
 <hr />
 <h2 id="health-data-we-do-not-process-it">Health data: we do not process it</h2>
 <p>OmniWealth does not collect, receive, access, derive, or infer any health data. It does not read Apple Health, it has no Health integration, it asks you nothing about your health, and it makes no inference about your physical or mental condition from your spending.</p>
+<p>The shipping app carries no HealthKit entitlement, no Health usage description, no HealthKit framework, and no Health code of any kind.</p>
 <p>This matters legally, not just descriptively. Washington's My Health My Data Act (RCW ch. 19.373) and Nevada's consumer health data law (SB 370, 2023) define "consumer health data" and "collect" very broadly — broadly enough to reach data that is merely accessed, processed, or derived, not only data that is transmitted to a company. Because OmniWealth does none of those things with health data, those statutes do not apply to it, and no separate consumer health data privacy policy is required for this app.</p>
-<p>We say this plainly because earlier internal versions of this app's technical configuration wrongly labelled budget and habit logs as "health" data. That label was a mistake. <strong>Budgeting information is financial information, not health information.</strong> The label is being corrected.</p>
-<blockquote>
-<p><strong>TO VERIFY BEFORE PUBLISHING:</strong> the audited build still carried HealthKit entitlements — including the clinical medical records entitlement — with no Health code behind them, and displayed placeholder step and sleep numbers that were hardcoded, not read from Health. Wave 2 removes the entitlements, the Health usage string, and the placeholder feature. This policy must not be published until that removal is confirmed in the submitted build, because the sentence "it does not read Apple Health" must be true of the binary.</p>
-</blockquote>
+<p>We say this plainly because earlier internal versions of this app's technical configuration wrongly labelled budget and habit logs as "health" data, and an earlier build displayed placeholder step and sleep numbers that were hardcoded rather than read from Health. That label was a mistake and the placeholder feature is gone. <strong>Budgeting information is financial information, not health information.</strong> The app's privacy manifest now declares no collected data types at all.</p>
 <h2 id="hipaa-does-not-apply">HIPAA does not apply</h2>
 <p>HIPAA (45 CFR Parts 160 and 164) governs health plans, health care clearinghouses, most health care providers, and their business associates. Prameya is none of those, OmniWealth handles no health information, and you have no patient relationship with us. <strong>HIPAA does not apply to this app, and we do not claim HIPAA compliance.</strong></p>
 <hr />
 <h2 id="permissions-the-app-asks-for">Permissions the app asks for</h2>
 <p>OmniWealth asks for no runtime permissions. There is no permission prompt for location, camera, photos, contacts, Health, or tracking, because the app uses none of those.</p>
-<p>It does not currently request permission to send you notifications, and it does not send any.</p>
+<p>It does not request permission to send you notifications, and it sends none. There are no reminders in the app in any form.</p>
 <hr />
 <h2 id="children">Children</h2>
 <p>OmniWealth is a general-audience product for adults managing their own money. It is not directed to children, it is not designed to appeal to children, it contains no advertising, and it collects no personal information from anyone — including anyone under 13. Because the app transmits no personal information to us at all, there is nothing that COPPA (15 U.S.C. §§6501–6506; 16 CFR Part 312) would require us to obtain parental consent for.</p>
@@ -264,15 +249,13 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <h2 id="your-choices-and-controls">Your choices and controls</h2>
 <p>Because your data never leaves your device, you control it directly.</p>
 <ul>
-<li><strong>See it:</strong> it is all visible in the app, on the screens where you entered it.</li>
-<li><strong>Delete individual entries:</strong> delete them in the app.</li>
-<li><strong>Delete everything:</strong> delete the app. That removes the app's local database, its preferences, and any downloaded model files from your device.</li>
-<li><strong>Free up space without losing your log:</strong> unload or remove a downloaded model in Settings.</li>
+<li><strong>See it:</strong> your logged days are shown in the app, on the Home and Progress screens.</li>
+<li><strong>Delete everything you have entered:</strong> Settings → Data → <strong>"Delete all data in this app"</strong>. After a confirmation prompt, this permanently deletes every habit log and every other record the app's database holds — budget entries, statement records, trajectory snapshots, and the profile record — from this device. It cannot be undone. It does <strong>not</strong> remove your app preferences (appearance, selected model, download permission) or any AI model files you downloaded; deleting the app removes those.</li>
+<li><strong>Deleting one entry at a time is not possible.</strong> The app does not currently offer per-entry deletion — there is no swipe-to-delete and no delete control on an individual row. Deletion is all-or-nothing: the control above, or deleting the app.</li>
+<li><strong>Delete everything, including preferences and models:</strong> delete the app. That removes the app's local database, its preferences, and any downloaded model files from your device.</li>
+<li><strong>Free up memory:</strong> Settings → On-Device AI → <strong>"Unload"</strong> releases the loaded model from memory. It does not delete the downloaded files from disk, and the app does not currently offer a control to delete downloaded model files. Deleting the app removes them.</li>
 <li><strong>Ask us to delete your data:</strong> there is nothing for us to delete. We have never received it. If you write to us asking for deletion, that will be our honest answer.</li>
 </ul>
-<blockquote>
-<p><strong>TO VERIFY BEFORE PUBLISHING:</strong> the audited build had no single in-app "delete all my data" control. Either add one in wave 2 or confirm that per-entry deletion plus app deletion is the accurate description above.</p>
-</blockquote>
 <hr />
 <h2 id="your-privacy-rights">Your privacy rights</h2>
 <p>We honour the rights below regardless of whether Prameya meets the size thresholds that make those laws mandatory for a company. In practice, the honest answer to most requests is the same: <strong>we do not hold your personal information</strong>, so there is nothing to disclose, correct, delete, or opt out of.</p>
@@ -281,7 +264,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <p>Our position for OmniWealth:</p>
 <ul>
 <li><strong>Personal information we collect:</strong> none. The app transmits nothing about you to us.</li>
-<li><strong>Sensitive personal information we collect:</strong> none. California's definition of sensitive personal information (Cal. Civ. Code §1798.140(ae)) includes certain financial data, such as an account number together with an access code. OmniWealth never receives any of it — it has no account linking, and we receive nothing you type.</li>
+<li><strong>Sensitive personal information we collect:</strong> none. California's definition of sensitive personal information (Cal. Civ. Code §1798.140(ae)) includes certain financial data, such as an account number together with an access code. OmniWealth never receives any of it — it has no account linking, and we receive nothing you enter.</li>
 <li><strong>Sale or sharing of personal information:</strong> we do not sell or share personal information, and we never have. We do not use or disclose sensitive personal information for any purpose that would trigger the right to limit.</li>
 <li><strong>Retention:</strong> we retain nothing, because we receive nothing. Your own data stays on your device until you delete it.</li>
 <li><strong>Non-discrimination:</strong> we do not treat anyone differently for exercising a privacy right.</li>
@@ -292,21 +275,16 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <h3 id="other-us-states">Other US states</h3>
 <p>Several other states have comprehensive privacy laws granting access, correction, deletion, portability, and opt-out rights, and treating precise financial account data as sensitive. Our answer under all of them is the same: we do not collect, sell, share, or process your personal information, and we do no profiling or targeted advertising. Write to admin@prameya.legal with any request.</p>
 <h3 id="if-you-are-in-the-uk-eu-or-eea">If you are in the UK, EU, or EEA</h3>
-<blockquote>
-<p><strong>TO VERIFY BEFORE PUBLISHING:</strong> confirm the App Store territories OmniWealth is actually released in. If it is US-only, say so here instead of the section below.</p>
-</blockquote>
+<p>This policy does not state which App Store territories OmniWealth is released in; check the App Store listing for the countries where it is available.</p>
 <p>Where the UK GDPR or EU GDPR applies, note that Prameya does not act as a controller of any personal data from your use of OmniWealth, because we receive none. Your entries are processed only by software running on your own device, under your control. We do not process special category data (GDPR Article 9); financial information is not a special category, and we hold no health data in any event. Downloading a model file involves your device connecting to Hugging Face, Inc. in the United States, exactly as visiting a website would; Hugging Face acts as an independent controller of that request under its own policy. If you believe we hold personal data about you, contact admin@prameya.legal, and you may complain to your national data protection authority.</p>
 <hr />
 <h2 id="security">Security</h2>
 <ul>
-<li>Your data is stored in the app's private storage, which the operating system isolates from other apps, and is protected by your device passcode and disk encryption.</li>
+<li>Your data is stored in the app's private storage, which the operating system isolates from other apps, and is protected by your device passcode and disk encryption. That is the operating system's default protection; the app does not add a stronger file-protection class on top of it, and we will not describe it as more than it is.</li>
 <li>Model downloads use HTTPS. The app does not permit unencrypted network connections.</li>
 <li>The strongest control is architectural: there is no server holding your financial information, so there is no server to be breached.</li>
 </ul>
 <p>We do not claim any security certification, audit, or standard we do not hold.</p>
-<blockquote>
-<p><strong>TO VERIFY BEFORE PUBLISHING:</strong> wave 2 should set full file protection on the app's local database. Confirm before describing at-rest protection in stronger terms than the OS default.</p>
-</blockquote>
 <hr />
 <h2 id="third-parties">Third parties</h2>
 <div class="tablewrap"><table>
@@ -340,6 +318,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <li>We will describe what changed in plain language.</li>
 <li>The previous version will remain available at this address's history.</li>
 </ul>
+<p><strong>This revision (8 August 2026)</strong> corrected statements in the previous version so that every claim matches the code that actually ships. Specifically: the previous version said you could delete individual entries in the app, which was not true — deletion is all-or-nothing, and the section above now says so; the list of what you can enter was narrowed to what the app actually offers; the description of what you can do with a downloaded model was corrected to "unload from memory," since the app has no control that deletes model files; the newly added in-app "delete all data" control was documented, along with what it does not remove; the model-download permission step was documented; and internal review notes that should never have been visible on a published page were resolved and removed. Where a promise could not be made true in the code, the promise was removed rather than softened.</p>
 <p>Material changes — for example, adding statement import, adding sync, or adding any feature that sends your content off the device — will also be disclosed inside the app before that feature is used.</p>
 <h2 id="contact">Contact</h2>
 <p>Questions, requests, or corrections: <strong>admin@prameya.legal</strong></p>

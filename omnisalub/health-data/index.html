@@ -118,7 +118,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <tbody>
 <tr>
 <td><strong>Vital signs and bodily functions</strong></td>
-<td>Blood pressure, heart rate, resting and walking heart rate, heart-rate variability, atrial-fibrillation burden, oxygen saturation, respiratory rate, body temperature</td>
+<td>Blood pressure, heart rate, resting and walking heart rate, heart-rate recovery, heart-rate variability, atrial-fibrillation burden, oxygen saturation, respiratory rate, body temperature (including basal and wrist temperature), peripheral perfusion index</td>
 <td>To show your readings over time, and to compare them with published guideline thresholds so the app can tell you when to contact a clinician</td>
 </tr>
 <tr>
@@ -153,28 +153,23 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 </tr>
 <tr>
 <td><strong>Sleep, activity and mobility</strong></td>
-<td>Sleep records, exercise minutes, steps, energy, distances, workouts, walking speed and steadiness, falls, six-minute walk distance</td>
+<td>Sleep records (time in bed, time asleep, sleep stages), exercise minutes, move and stand time, steps, energy, flights climbed, distances, workouts, time in daylight, UV exposure, walking speed and steadiness, falls, six-minute walk distance</td>
 <td>Functional decline is clinically meaningful in heart failure and kidney disease</td>
 </tr>
 <tr>
 <td><strong>Nutrition and diet</strong></td>
-<td>Energy, macronutrients, water, caffeine, and minerals including <strong>sodium and potassium</strong></td>
+<td>Energy, macronutrients, cholesterol, water, caffeine, and minerals including <strong>sodium and potassium</strong></td>
 <td>Sodium and potassium have specific dietary rules in hypertension and kidney disease</td>
 </tr>
 <tr>
-<td><strong>Reproductive and sexual health</strong></td>
-<td>Menstrual and cycle records, intermenstrual bleeding, ovulation, pregnancy and progesterone test results, cervical mucus, contraceptive use, lactation, pregnancy status, sexual activity</td>
-<td>These are included in the Apple Health permission request because the app asks for the full ordinary read set. <strong>You can decline every one of them individually and the app still works.</strong> The app does not require them, does not build features on them, and never transmits them</td>
+<td><strong>Cardiac event notifications from an Apple Watch</strong></td>
+<td>Exactly four record types: high heart-rate, low heart-rate, irregular-rhythm and low-cardio-fitness notifications</td>
+<td>Available from an Apple Watch; shown alongside your other readings. These are consumer notifications, not diagnoses</td>
 </tr>
 <tr>
-<td><strong>Hearing and cardiac event records</strong></td>
-<td>Audio exposure, audiograms, electrocardiograms, high and low heart-rate events, irregular rhythm notifications</td>
-<td>Available from an Apple Watch; shown alongside your other readings</td>
-</tr>
-<tr>
-<td><strong>Profile facts</strong></td>
-<td>Date of birth, biological sex, blood type, skin type, wheelchair use</td>
-<td>Some guideline thresholds are age- or sex-specific</td>
+<td><strong>Hearing exposure</strong></td>
+<td>Environmental and headphone audio-exposure levels</td>
+<td>Read as ordinary measurements alongside the rest; audiograms are not requested</td>
 </tr>
 <tr>
 <td><strong>Inferences the app makes</strong></td>
@@ -185,14 +180,20 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 </table></div>
 <p><strong>Purposes, stated completely.</strong> The app uses this data to (a) display your own health record back to you, (b) compare readings against published clinical guideline bands, (c) raise a care-seeking prompt when a rule fires, (d) generate a summary you can give a clinician, and (e) answer your questions using an assistant that runs on your device. <strong>That is the full list.</strong> It is not used for advertising, marketing, profiling, research, product analytics, model training, or sale — none of which the app or Prameya does at all.</p>
 <h3 id="what-the-app-does-not-handle">What the app does not handle</h3>
+<p>An earlier version of this policy listed reproductive and sexual health data and profile facts among the categories the app requested from Apple Health, because at that time it asked for the full ordinary read set. <strong>It no longer does.</strong> The permission request has been narrowed to the types the app actually consumes, and automated tests fail the build if a removed type comes back. The following are not requested, and therefore cannot be read:</p>
 <ul>
+<li><strong>Reproductive and sexual health data.</strong> None of it: menstrual flow, intermenstrual bleeding, cycle-irregularity records, ovulation, pregnancy and progesterone test results, cervical mucus, contraceptive use, lactation, pregnancy, sexual activity. Fourteen record types in total. This is the most sensitive category under Washington's law, and the app has no consumer for any of it.</li>
+<li><strong>Profile facts</strong> — date of birth, biological sex, blood type, Fitzpatrick skin type, wheelchair use, activity move mode. Not requested, and there is no code anywhere in the app that reads them.</li>
+<li><strong>Electrocardiograms and audiograms.</strong> Not requested.</li>
+<li><strong>Mindful sessions, Apple's stand-hour records, audio-exposure event notifications, toothbrushing and handwashing records.</strong> Not requested.</li>
 <li><strong>Precise location.</strong> Never requested and there is no location code in the app. Precise location is expressly consumer health data under Washington's law, and we intend to keep it that way by not having it.</li>
-<li><strong>Medications and dose records.</strong> The shipping build does not read them; the capability is off.</li>
-<li><strong>Clinical Health Records</strong> — labs and records from a hospital or clinic. Not requested, not read.</li>
+<li><strong>Medications and dose records.</strong> The shipping build does not read them; the capability is hard-coded off and the code path returns without asking.</li>
+<li><strong>Clinical Health Records</strong> — labs and records from a hospital or clinic. Not requested, not read; that capability is hard-coded off as well.</li>
 <li><strong>Genetic data.</strong> Never stored, in any form.</li>
 <li><strong>Biometric identifiers.</strong> Face ID and Touch ID are handled entirely by Apple's Secure Enclave; the app never receives a fingerprint or face template.</li>
 <li><strong>Gender-affirming care records, and data about seeking or obtaining health services</strong>, beyond what you personally choose to log.</li>
 </ul>
+<p>You also remain free to decline any part of what the app <em>does</em> ask for. Apple's permission sheet has an individual toggle for every category, and the app works with whatever subset you allow.</p>
 <hr />
 <h2 id="2-categories-of-sources">2. Categories of sources</h2>
 <p>The app obtains consumer health data from exactly three sources:</p>
@@ -223,7 +224,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <ul>
 <li><strong>Where.</strong> In an encrypted database in the app's private storage on your device. On iPhone and iPad it is set to iOS Data Protection "complete", so it is encrypted with a key derived from your device passcode and is unreadable while the device is locked. On a Mac it is protected by the app sandbox and by FileVault if you have FileVault on.</li>
 <li><strong>Not in iCloud.</strong> Health data is never stored in iCloud by this app. The health database is created with iCloud syncing explicitly disabled, and an automated test blocks any health record from reaching the part of the app that does sync. Only five non-health preferences (theme, guideline set, onboarding state, app lock, timestamp) can sync, and only if you turn that on — it is off by default.</li>
-<li><strong>Backups.</strong> The health database is excluded from device backup. <em>(TO VERIFY BEFORE PUBLISHING: the widget's display snapshot, which holds your most recent reading in formatted form, does not currently carry the same exclusion. Confirm the shipped behaviour and correct this bullet if needed.)</em></li>
+<li><strong>Backups.</strong> The health database is excluded from device backup. So is the widget's display snapshot — the small file holding your most recent reading in formatted form — and that exclusion is re-applied every time the app writes the file, so snapshots left by older versions of the app are covered too. On iPhone and iPad the snapshot is encrypted at rest until the first time you unlock the device after a restart, rather than being re-locked whenever the screen locks; the Home Screen widget could not redraw your latest reading otherwise. It is the one value on the device with slightly weaker at-rest protection than the health database, and you can avoid it entirely by not using the widget.</li>
 <li><strong>The assistant.</strong> If you install it, the model runs on your device. The app assembles a summary of your logged data as context for it. That context never leaves your device and is not sent to us, to Apple or to any AI provider. Cloud and third-party inference modes are hard-wired off in this version.</li>
 <li><strong>Retention.</strong> Your data stays until you delete it. We retain nothing, so there is no retention schedule on our side to describe.</li>
 <li><strong>Activity log.</strong> The app keeps a tamper-evident local log of when health data was read, written, exported or erased. It records event types and short identifiers only — never a value you recorded. You can view it in Settings.</li>
@@ -258,7 +259,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <tr>
 <td><strong>Delete</strong></td>
 <td>Have your consumer health data deleted, including from backups and archives</td>
-<td>In the app: <strong>Settings → Delete all data on this device</strong>, or delete the app, which removes everything it stored. To delete what the app previously wrote to Apple Health, use the Health app — that copy is yours and is not ours to remove. We hold no copies, no backups and no archives, so there is nothing on our side to delete</td>
+<td>In the app: <strong>Settings → Delete all data on this device</strong>, which also clears the widget snapshot, or delete the app, which removes everything it stored. To delete what the app previously wrote to Apple Health, use the Health app — that copy is yours and is not ours to remove. We hold no copies, no backups and no archives, so there is nothing on our side to delete</td>
 </tr>
 <tr>
 <td><strong>Appeal</strong></td>
@@ -280,13 +281,14 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <h2 id="9-consent">9. Consent</h2>
 <ul>
 <li><strong>Consent is how this works.</strong> The app does not read anything from Apple Health until you grant permission through Apple's own sheet, category by category. It does not sync settings until you switch that on. It does not download the assistant model until you tap the button. Each is separately revocable.</li>
-<li><strong>We will not collect or share consumer health data beyond what this policy describes without first obtaining your affirmative, voluntary consent</strong> — a clear, specific, opt-in choice, freely given, that is not buried in other terms and is not a condition of using the app.</li>
+<li><strong>We will not collect or share consumer health data beyond what this policy describes without first obtaining your affirmative, voluntary consent</strong> — a clear, specific, opt-in choice, freely given, that is not buried in other terms and is not a condition of using the app. That includes asking Apple Health for any category listed under "what the app does not handle" in section 1: adding one back to the permission request would be a change to this policy, made before the build ships, not after.</li>
 <li><strong>Sharing would require its own separate consent</strong>, naming the categories of data, the purpose, and the categories of recipients. Today there is no sharing, so there is nothing to consent to.</li>
 </ul>
 <hr />
 <h2 id="10-changes-to-this-policy">10. Changes to this policy</h2>
 <p>If we change this policy, we will update the effective date above and publish the new version at <a href="https://prameyallc.github.io/privacy/omnisalub/health-data/">prameyallc.github.io/privacy/omnisalub/health-data</a>.</p>
-<p><strong>Material changes get more than a new date.</strong> If a future version of the app would collect, process or share consumer health data in a way this policy does not already describe — for example transmitting health data off the device, adding an account, or enabling cloud or third-party AI processing — we will describe the change in the app and obtain your affirmative consent <strong>before</strong> it takes effect, and before any data is handled under the new terms. A change to this policy will never be applied retroactively to data already collected.</p>
+<p>This revision corrected statements in the previous version so that they match the code that actually ships. The main correction is in section 1: the category table previously listed reproductive and sexual health data and profile facts as data the app requests from Apple Health, on the basis that the app asked for the full ordinary read set. The read request has since been narrowed and those categories are no longer requested, so they have been moved to the list of data the app does not handle. Section 7 also replaces a placeholder note about the widget snapshot with a statement of what the shipping app does.</p>
+<p><strong>Material changes get more than a new date.</strong> If a future version of the app would collect, process or share consumer health data in a way this policy does not already describe — for example transmitting health data off the device, adding an account, enabling cloud or third-party AI processing, or widening the Apple Health permission request — we will describe the change in the app and obtain your affirmative consent <strong>before</strong> it takes effect, and before any data is handled under the new terms. A change to this policy will never be applied retroactively to data already collected.</p>
 <hr />
 <h2 id="11-contact">11. Contact</h2>
 <p><strong>admin@prameya.legal</strong><br />

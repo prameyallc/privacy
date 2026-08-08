@@ -160,21 +160,21 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <p>Apple's normal device backup (iCloud Backup or an encrypted computer backup) may include app data, because that is how iOS backups work for every app. That is a setting you control in iOS, between you and Apple. Prameya has no access to your backups.</p>
 <hr />
 <h2 id="the-one-time-omnibuild-uses-the-network">The one time OmniBuild uses the network</h2>
-<p>OmniBuild has one, and only one, outbound internet connection.</p>
+<p>OmniBuild makes one, and only one, outbound internet connection of its own.</p>
 <p><strong>Downloading the AI model.</strong> The on-device AI is optional and off until you turn it on. When you tap to download and load the model in Settings, the app fetches the model files over HTTPS from <strong>Hugging Face</strong> (huggingface.co), which hosts open-weight models. Concretely:</p>
 <ul>
 <li><strong>What is sent:</strong> a request for a specific, public model repository — currently a small open-weight model, roughly 420 MB. Plus the ordinary technical information any web request necessarily reveals to the server it contacts: your device's IP address and standard HTTP headers.</li>
 <li><strong>What is <em>not</em> sent:</strong> your logs, your notes, your questions, your device identifiers, or any content you created. None of it. The request is for a file; it carries nothing about you beyond the connection itself.</li>
 <li><strong>Who sees it:</strong> Hugging Face, the company operating that service. Prameya does not see the request and receives no report about it. Hugging Face is an independent company and its own privacy policy governs what it does with the connection information it receives.</li>
-<li><strong>When:</strong> only when you start it. The app does not download the model in the background or on first launch.</li>
+<li><strong>When:</strong> only when you start it. The app does not download the model in the background or on first launch — it declares no background modes and uses no background download session.</li>
 <li><strong>How often:</strong> once per model. After the files are on your device, the app does not need to contact Hugging Face again to use that model.</li>
 </ul>
-<p>The app also watches your device's own network status (for example, whether you are on cellular or a constrained connection) so it can pause a large download and not burn your data plan. That check happens entirely on the device and sends nothing anywhere.</p>
+<p>The app also watches your device's own network status (for example, whether you are on a constrained or expensive connection) so it can pause a large download and not burn your data plan. That check happens entirely on the device and sends nothing anywhere.</p>
 <p>All connections are made over HTTPS. The app is configured to refuse unencrypted connections.</p>
-<p><strong>That is the complete list.</strong> There is no other network call. Prameya operates no backend for this app. There is no endpoint that could receive your content, because we did not build one.</p>
+<p><strong>That is the whole picture for the code we wrote.</strong> The model download is the only network call in Prameya's own source code, and no code path anywhere in the app transmits your content. Prameya operates no backend for this app. There is no endpoint that could receive your content, because we did not build one. The app also compiles in open-source libraries whose internal network behaviour we have not yet finished auditing; we say what we can and cannot vouch for about those under <strong>Third parties</strong> below.</p>
 <hr />
 <h2 id="where-the-ai-runs">Where the AI runs</h2>
-<p>The AI runs on your device, using Apple's MLX framework and the model file you downloaded. Your prompts, your logs, and the summaries the app generates are processed locally in the app's memory and storage.</p>
+<p>The AI runs on your device, using Apple's MLX framework and the model file you downloaded. Your prompts, your logs, and the summaries the app generates are processed locally in the app's memory and storage. The app ships a single text-only model in its catalogue and calls no third-party AI service.</p>
 <p>We want to be precise rather than flattering here:</p>
 <ul>
 <li>Your content is <strong>not</strong> transmitted to Prameya. We could not read it if we wanted to.</li>
@@ -228,9 +228,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 </tbody>
 </table></div>
 <p><strong>A note about jobsite features.</strong> OmniBuild is described as jobsite support. That support is informational — reference content, citations, and your own logs. It does <strong>not</strong> involve photographing a site, geotagging work, or tracking where you are. If that ever changes, this policy will change first and the app will ask for the permission at the moment it is needed.</p>
-<blockquote>
-<p><strong>TO VERIFY BEFORE PUBLISHING.</strong> The Xcode project currently injects unused camera and photo-library purpose strings into the app's build settings, left over from a template. No code in the app requests either permission, so no prompt can appear. Wave 2 removes these strings. Confirm they are gone from the shipping build so the app's declared permissions match this policy exactly.</p>
-</blockquote>
+<p>An earlier version of the Xcode project injected unused camera and photo-library purpose strings into the app's build settings, left over from a template. Those strings have been removed. The current build declares no permission purpose strings at all and contains no code that requests a permission, so no permission prompt can appear.</p>
 <hr />
 <h2 id="health-data-omnibuild-does-not-handle-any">Health data — OmniBuild does not handle any</h2>
 <p><strong>OmniBuild does not collect, receive, access, process, derive, store, share, or sell health data of any kind.</strong> It has no connection to Apple Health, it asks no health questions, and it produces no health, wellness, fitness, or medical output.</p>
@@ -238,25 +236,20 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <ul>
 <li>The app contains <strong>no HealthKit code at all</strong>. Not a partial implementation — none.</li>
 <li>Earlier builds nonetheless carried Apple HealthKit entitlements, including the restricted health-records entitlement, and a permission description about steps and sleep. Those describe a feature that does not exist and never existed.</li>
-<li>An earlier build also displayed a line of text about "activity context" containing step and sleep numbers. Those numbers were <strong>hardcoded placeholder values written into the source code</strong>. They were not your data, they were not anyone's data, and they should never have been shown. They are being removed.</li>
+<li>An earlier build also displayed a line of text about "activity context" containing step and sleep numbers. Those numbers were <strong>hardcoded placeholder values written into the source code</strong>. They were not your data, they were not anyone's data, and they should never have been shown.</li>
 </ul>
+<p>All of that is gone from the current build: the HealthKit entitlements (including health-records and background delivery), the health permission descriptions in both the Info.plist and the Xcode build settings, the background-fetch mode, and the hardcoded step/sleep narrative have all been removed.</p>
 <p>Because OmniBuild processes no health data:</p>
 <ul>
 <li>It does not process <strong>consumer health data</strong> as Washington's My Health My Data Act (RCW ch. 19.373) defines that term — a definition that is deliberately much broader than Apple's, and reaches data that is merely accessed, processed, or derived, not only data that is transmitted. Even under that broad reading, there is nothing here. For the same reason, OmniBuild does not publish a separate Consumer Health Data Privacy Policy: that duty attaches to apps that handle consumer health data, and this one does not.</li>
 <li>The same conclusion applies under <strong>Nevada SB 370</strong> (NRS ch. 603A), which imposes comparable duties on consumer health data.</li>
 <li><strong>HIPAA does not apply to OmniBuild.</strong> HIPAA covers health plans, health care clearinghouses, most health care providers, and their business associates. Prameya is none of those, and OmniBuild has no relationship with any of them. We are not saying OmniBuild is "HIPAA compliant" — that phrase would be meaningless here. We are saying the law does not reach this app, and no protected health information is involved.</li>
 </ul>
-<blockquote>
-<p><strong>TO VERIFY BEFORE PUBLISHING.</strong> Wave 2 removes the HealthKit entitlements (including health-records and background delivery), the health permission descriptions in both the Info.plist and the Xcode build settings, the background-fetch mode, and the hardcoded step/sleep narrative. Confirm all of it is gone from the submitted binary before this policy goes live.</p>
-</blockquote>
 <hr />
 <h2 id="accounts-sign-in-and-cloud-sync-none-of-them">Accounts, sign-in, and cloud sync — none of them</h2>
-<p>OmniBuild has <strong>no account system</strong>. There is nothing to register, no password, no email address to hand over, no Sign in with Apple, and no profile held by us.</p>
+<p>OmniBuild has <strong>no account system</strong>. There is nothing to register, no password, no email address to hand over, no Sign in with Apple, and no profile held by us. There is no authentication code in the app at all.</p>
 <p>OmniBuild also does <strong>no cloud sync</strong>. Your logs do not travel between your devices through the app, and they do not reach iCloud through anything the app does.</p>
-<p>An earlier build shipped a dormant sync component and iCloud entitlements. It set a timestamp and wrote a log line; it transmitted no records to anywhere. It was never reachable from any screen — there was no working "Sync Now" button a user could press. It is being removed along with the entitlements. If we ever build real sync, it will be off by default, it will be explained here before it ships, and this policy will say exactly what syncs.</p>
-<blockquote>
-<p><strong>TO VERIFY BEFORE PUBLISHING.</strong> Wave 2 removes the dormant sync service, the iCloud container and CloudKit/CloudDocuments entitlements, and the unused Sign in with Apple import and keychain accessors. Confirm the shipping build declares no iCloud entitlements.</p>
-</blockquote>
+<p>An earlier build shipped a dormant sync component and iCloud entitlements. It set a timestamp and wrote a log line; it transmitted no records to anywhere. It was never reachable from any screen — there was no working "Sync Now" button a user could press. That component has been deleted, along with the iCloud container and the CloudKit and CloudDocuments entitlements, and the unused Sign in with Apple import and keychain accessors. The current build declares only two entitlements: the iOS app sandbox and outbound network client access. If we ever build real sync, it will be off by default, it will be explained here before it ships, and this policy will say exactly what syncs.</p>
 <hr />
 <h2 id="things-omnibuild-does-not-do">Things OmniBuild does not do</h2>
 <p>One line each, because each one deserves a plain answer.</p>
@@ -277,9 +270,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <p>OmniBuild is a general-audience reference app about construction and the skilled trades, intended for adults and for apprentices and students in the trades. It is not designed for or directed to children, it is not offered in Apple's Kids Category, and it contains no advertising, no in-app purchases, and no social or messaging features.</p>
 <p>The Children's Online Privacy Protection Act (COPPA) restricts the online collection of personal information from children under 13. <strong>OmniBuild collects no personal information from anyone, of any age</strong>, because nothing you enter is transmitted off your device to us. There is therefore no children's personal information for us to hold, use, disclose, or delete.</p>
 <p>If you believe a child has somehow provided personal information to us — for example by emailing our support address — write to admin@prameya.legal and we will delete it.</p>
-<blockquote>
-<p><strong>TO VERIFY BEFORE PUBLISHING.</strong> The App Store age-rating questionnaire for this app has not yet been completed. The answers filed there must match this section. In particular, once the fabricated health narrative described above is removed, the honest answer on medical and wellness topics is "none".</p>
-</blockquote>
+<p>The App Store age rating for OmniBuild has not been filed yet. When we file it, the answers will match this section: with no health, wellness, or medical feature in the app, the honest answer on medical and wellness topics is "none".</p>
 <hr />
 <h2 id="when-you-contact-us">When you contact us</h2>
 <p>If you email <strong>admin@prameya.legal</strong>, we receive your email address and whatever you choose to put in the message. That is the only route by which we ever hold information about a user of this app.</p>
@@ -302,7 +293,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <li><strong>Remove the downloaded AI model:</strong> deleting the app removes the model files, which live inside the app's own storage.</li>
 <li><strong>Erase everything:</strong> delete OmniBuild from your device. Nothing survives on our side, because nothing was ever on our side.</li>
 </ol>
-<p>There is no request to file and no waiting period, because there is no account for us to look up. If you want written confirmation of any of this, email admin@prameya.legal and we will send it.</p>
+<p>There is no request to file and no waiting period, because there is no account for us to look up, and no server-side copy for us to delete. If you want written confirmation of any of this, email admin@prameya.legal and we will send it.</p>
 <hr />
 <h2 id="data-retention">Data retention</h2>
 <p>We retain nothing from your use of the app, because we receive nothing. Your on-device data is retained for exactly as long as you keep it. Support correspondence is retained as described above.</p>
@@ -312,7 +303,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <ul>
 <li>The app runs inside the iOS application sandbox, so its data is isolated from other apps and protected by iOS file-level encryption and your device passcode.</li>
 <li>The one network connection the app makes uses HTTPS. The app is configured to refuse unencrypted connections.</li>
-<li>Where the app uses the device Keychain, items are stored so they are available only after first unlock and are marked as not leaving this device — they do not sync to iCloud Keychain.</li>
+<li>The app does not currently store anything in the device Keychain. It has no passwords, tokens, or credentials to store, because it has no account system.</li>
 <li>Because we hold no copy of your data, there is no Prameya server that could be breached and expose it. That is the single largest security property of this design, and it comes from the architecture rather than from any product we bought.</li>
 </ul>
 <p>No system is perfectly secure, and the strongest protection for your on-device data is your device passcode or biometric lock.</p>
@@ -341,10 +332,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <h3 id="other-us-states">Other US states</h3>
 <p>Residents of Colorado, Connecticut, Virginia, Utah, Texas, Oregon, Montana, and other states with comprehensive privacy laws have broadly similar rights to access, correct, delete, and obtain a portable copy of personal data, and to opt out of targeted advertising, sale, and certain profiling. We do not engage in targeted advertising, sale, or profiling. Use the same email address for any request. Some states provide a right to appeal a denied request — if we deny yours, we will tell you why and how to appeal.</p>
 <h3 id="if-you-are-in-the-eu-the-uk-or-switzerland">If you are in the EU, the UK, or Switzerland</h3>
-<blockquote>
-<p><strong>TO VERIFY BEFORE PUBLISHING.</strong> Confirm the App Store territories OmniBuild will actually ship to. If distribution is US-only at launch, this subsection should be shortened accordingly; if the app is available in the EU or UK, it stands as written.</p>
-</blockquote>
-<p>Where the GDPR or UK GDPR applies:</p>
+<p>The App Store territories OmniBuild will be offered in are still being decided, so this subsection is written to cover the broadest case. Where the app is available to you and the GDPR or UK GDPR applies:</p>
 <ul>
 <li>Your use of the app does not result in Prameya processing your personal data, because nothing reaches us. For app usage, there is no controller-held dataset, no international transfer by us, and no automated decision-making about you.</li>
 <li>The model download exposes your IP address to Hugging Face, which acts as an independent controller for that connection. It is not a transfer by us and we receive nothing from it.</li>
@@ -383,10 +371,10 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 </tbody>
 </table></div>
 <p>Nobody else. No advertiser, no data broker, no analytics vendor, no AI provider.</p>
-<p>The app also builds on open-source software libraries — Apple's MLX machine-learning framework and supporting Swift packages. These are code compiled into the app, not services. They do not receive your data and they do not phone home.</p>
+<p>The app also builds on open-source software libraries — Apple's MLX machine-learning framework and the supporting Swift packages that load and download models. These are code compiled into the app, not services we have a relationship with, and nothing in our own code hands them your logs, your notes, or anything you typed. We have not yet completed an independent audit of the network behaviour of every one of those packages and their transitive dependencies, so we are not going to tell you flatly that none of them ever contacts a server. What we can tell you is what we have checked: in the code Prameya wrote, the Hugging Face model download is the only outbound connection, and no code path transmits your content anywhere. When that dependency audit is finished, we will update this paragraph to say what it found.</p>
 <hr />
 <h2 id="app-store-privacy-labels-a-note-on-wording">App Store privacy labels — a note on wording</h2>
-<p>OmniBuild's App Store privacy label reads "Data Not Collected". That is accurate under Apple's definition, which treats "collect" as transmitting data off the device in a way that lets the developer or its partners access it beyond servicing the request in real time. Nothing about your content is transmitted, so nothing is collected.</p>
+<p>The App Store privacy label answer we will file for OmniBuild is "Data Not Collected". The app has not been submitted yet, so that answer is not yet on the App Store listing; when it is filed, it will be that one. It is accurate under Apple's definition, which treats "collect" as transmitting data off the device in a way that lets the developer or its partners access it beyond servicing the request in real time. Nothing about your content is transmitted, so nothing is collected. It also matches the privacy manifest shipped inside the app, which declares no tracking, no tracking domains, and no collected data types.</p>
 <p>We want to flag one thing about that phrase, because it is easy to over-read. Apple's definition governs the <strong>App Store label</strong> and nothing else. It does not narrow what any state or national privacy law requires of us, and several laws — Washington's My Health My Data Act most obviously — define "collect" far more broadly, reaching data that is merely accessed, processed, or derived. We are not using Apple's definition to dodge anything. In OmniBuild's case the answer is the same under either definition, because the app genuinely does not handle the categories those laws are aimed at.</p>
 <hr />
 <h2 id="changes-to-this-policy">Changes to this policy</h2>
@@ -395,6 +383,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <li>For <strong>material</strong> changes — for example, adding an account system, adding cloud sync, adding any feature that transmits your content off the device, adding advertising or analytics, or using a permission the app does not use today — we will not do it quietly. We will update this policy <strong>before</strong> the change ships, describe plainly what changed, keep the previous version available, and where the change requires your consent, ask for it inside the app rather than assuming it.</li>
 <li>For minor changes such as clarified wording or a corrected contact detail, we will update the effective date.</li>
 </ul>
+<p><strong>This revision (August 8, 2026)</strong> corrected statements in this policy so that they match the code that actually ships. Internal review notes that had been left visible in the published text were removed. Where a removal described here has been completed in the shipping build — the HealthKit entitlements and hardcoded health narrative, the dormant sync component and iCloud entitlements, the unused camera and photo purpose strings — the wording was changed from "is being removed" to a statement of fact. Where a claim had not been independently checked, it was narrowed rather than left standing: the assertion that the bundled open-source libraries "do not phone home" was replaced with a scoped statement about our own code plus an open item for the dependency audit; the App Store label wording now says the answer has not been filed yet; the Keychain sentence now says plainly that the app stores nothing there; and the EU/UK section now says the distribution territories are still being decided.</p>
 <p>The current version always lives at <a href="https://prameyallc.github.io/privacy/omnibuild/">https://prameyallc.github.io/privacy/omnibuild/</a>. Policies for all Prameya apps are listed at <a href="https://prameyallc.github.io/privacy/">https://prameyallc.github.io/privacy/</a>.</p>
 <hr />
 <h2 id="questions">Questions</h2>

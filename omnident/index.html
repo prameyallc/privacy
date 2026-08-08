@@ -113,7 +113,7 @@ If you live in Washington or Nevada, please read it. It applies to you in additi
 <li><strong>The app does connect to the internet in three narrow ways</strong>, and we describe each one below: downloading AI model files from Hugging Face when you ask it to, syncing a small amount of non-health data through your own iCloud account, and Apple's push service telling the app that iCloud data changed.</li>
 <li><strong>No ads. No analytics. No trackers. No third-party SDK that phones home.</strong> We do not sell your data. We have never sold your data.</li>
 <li><strong>Prameya has no user database.</strong> We do not know who you are. There is no account on our systems to look you up in.</li>
-<li>Sign in with Apple is optional. If you use it, you can delete your account and revoke Apple's token from inside the app.</li>
+<li>Sign in with Apple is optional. If you use it, you can delete your account and everything on the device from inside the app. Because OmniDent has no server and never exchanges Apple's authorization code, no Apple token for OmniDent exists — deletion clears the association held on your device and removes the app's records from your own iCloud, and there is no token for the app to revoke.</li>
 <li>OmniDent is an educational wellness app. It is <strong>not a medical device</strong>, it does not diagnose anything, and <strong>HIPAA does not apply to it</strong>.</li>
 </ul>
 <hr />
@@ -127,10 +127,12 @@ If you live in Washington or Nevada, please read it. It applies to you in additi
 <li>read general information about oral health;</li>
 <li>optionally share brushing and dietary-sugar entries with Apple Health.</li>
 </ul>
-<p><strong>In the configuration OmniDent ships in, the app does not give you a diagnosis, does not name a dental disease as a finding about your photograph, and does not attach a confidence or probability score to anything about your mouth.</strong> Analysis of dental images for clinical purposes is a regulated activity in the United States. Any feature that would produce a clinical or diagnostic finding is disabled by default and stays disabled unless and until the relevant regulatory clearance is in place.</p>
-<blockquote>
-<p><strong>TO VERIFY BEFORE PUBLISHING:</strong> confirm that the default-OFF clearance gate has shipped and that the placeholder finding strings in the Studio screen (<code>Features/Studio/StudioView.swift</code>) and the <code>.caries</code> analysis capability have been removed, as required by <code>ISSUES.md</code> DENT-001 and DENT-004. Until those changes are in the build, this paragraph is not yet true of the binary.</p>
-</blockquote>
+<p><strong>In the configuration OmniDent ships in, the app does not give you a diagnosis and does not name a dental disease as a finding about your photograph.</strong> Analysis of dental images for clinical purposes is a regulated activity in the United States. Any feature that would produce a clinical or diagnostic finding is disabled by default and stays disabled unless and until the relevant regulatory clearance is in place.</p>
+<p>Two things in the shipping app are worth stating plainly, because they involve numbers and disease words even though they are not findings about you:</p>
+<ul>
+<li>The Studio screen contains an unfinished <strong>Regenerative Projection</strong> feature. It lists terms drawn from your own scan history and shows a percentage range — "X–Y% chance of meaningful recovery in ~N months". <strong>Those percentages are fixed placeholder values written into the app.</strong> They are not measured from your photographs, they are not calculated from anything about you, and they are not a prediction about your health. Do not rely on them.</li>
+<li>Some feature descriptions in the app still use dental-condition wording — "caries, erosion, stain &amp; gum risks", "gingival inflammation" — to describe what a feature is about. That is subject-matter wording, not a finding the app has made about your mouth.</li>
+</ul>
 <hr />
 <h2 id="2-photographs-of-your-mouth">2. Photographs of your mouth</h2>
 <p>Photographs of a person's mouth are sensitive. Here is exactly what happens to them.</p>
@@ -143,6 +145,7 @@ If you live in Washington or Nevada, please read it. It applies to you in additi
 <li><strong>They are not synced to iCloud by OmniDent.</strong> The app's iCloud sync deliberately excludes photos and analysis. The local photo database is configured with cloud sync switched off entirely.</li>
 <li>They are not sent to Hugging Face, to any AI provider, to any partner, or to any advertiser.</li>
 </ul>
+<p>One thing this does <strong>not</strong> mean: OmniDent does not mark the <code>Documents/Scans</code> folder as excluded from your device backup. If you back your iPhone or iPad up to iCloud or to a computer, those files are part of that backup, in your own Apple Account or on your own computer, under Apple's terms rather than ours.</p>
 <h3 id="one-important-exception-your-own-photos-library">One important exception: your own Photos library</h3>
 <p>OmniDent has a setting called <strong>auto-save captures to Photos</strong>. When it is on, every new photo you take in the app is also copied into your device's system Photos library, the same place your ordinary camera photos go.</p>
 <p><strong>This setting is ON by default.</strong></p>
@@ -153,12 +156,9 @@ If you live in Washington or Nevada, please read it. It applies to you in additi
 <h3 id="deleting-photos">Deleting photos</h3>
 <ul>
 <li>A single photo: open the scan and delete it. The JPEG file and its database record are both removed.</li>
-<li>Everything: <strong>Settings → Privacy &amp; Security → Delete All Scans &amp; Data</strong>. This is immediate and permanent.</li>
+<li>Everything: <strong>Settings → Privacy &amp; Security → Delete All Scans &amp; Data</strong>. This is immediate and permanent, and it includes your stored oral-health profile (age, brushing frequency, sugar intake, smoking, diabetes, dry mouth, goals).</li>
 <li>If you turned on auto-save to Photos, copies in your Photos library are yours to delete in the Photos app. OmniDent cannot reach into your Photos library to remove them, and does not try to.</li>
 </ul>
-<blockquote>
-<p><strong>TO VERIFY BEFORE PUBLISHING:</strong> the current "Delete All Scans &amp; Data" routine deletes scans, habit logs, trajectory snapshots, reset progress and promo claims, but the code does not yet clear the stored health profile (<code>AppDataService.deleteAllUserData()</code> carries a "Future: also clear UserProfile" comment). Either fix that before publishing, or this section must say so.</p>
-</blockquote>
 <hr />
 <h2 id="3-the-on-device-ai-and-the-one-thing-it-downloads">3. The on-device AI, and the one thing it downloads</h2>
 <h3 id="analysis-happens-on-your-device">Analysis happens on your device</h3>
@@ -196,10 +196,8 @@ If you live in Washington or Nevada, please read it. It applies to you in additi
 </tr>
 </tbody>
 </table></div>
+<p>The app does <strong>not</strong> currently show a disclosure sheet naming the download host, the file size and the model licence before a download begins. This section is that disclosure.</p>
 <p>Hugging Face is not our processor and receives nothing about you from us. Your connection to them is governed by their own privacy policy.</p>
-<blockquote>
-<p><strong>TO VERIFY BEFORE PUBLISHING:</strong> confirm the model catalogue shipping in the released build matches the list above, and confirm whether the pre-download disclosure sheet naming the host, the file size and the model licence (<code>ISSUES.md</code> DENT-015) has shipped.</p>
-</blockquote>
 <hr />
 <h2 id="4-sign-in-with-apple-and-how-to-delete-your-account">4. Sign in with Apple, and how to delete your account</h2>
 <p>Signing in is <strong>optional</strong>. OmniDent works fully without it.</p>
@@ -210,17 +208,17 @@ If you live in Washington or Nevada, please read it. It applies to you in additi
 </ul>
 <p>All three are stored in your device's <strong>Keychain</strong>. They are used for one thing: to associate your device with your own private iCloud data so it can roam between your devices. <strong>They are not sent to Prameya.</strong> We have no account record for you, no profile database, and no way to look you up.</p>
 <h3 id="deleting-your-account">Deleting your account</h3>
-<p>Apple requires that an app offering sign-in also offers deletion inside the app, and that deletion actually revokes the token rather than just deactivating the account. In OmniDent, <strong>Settings → Account → Delete Account</strong> does all of the following:</p>
+<p>Apple requires that an app offering Sign in with Apple also lets you start account deletion from inside the app. Where an app has exchanged Apple's authorization code for tokens on its own server, Apple additionally requires those tokens to be revoked through Apple's Sign in with Apple REST API.</p>
+<p><strong>OmniDent has no server and never exchanges the authorization code.</strong> No access token and no refresh token for OmniDent is ever minted, so none exists anywhere to revoke, and <strong>the app makes no revocation call</strong>. The only thing that ever exists is the app-scoped identifier sitting in the Keychain on your own device, and deleting that is the whole of the deletion rather than part of it.</p>
+<p>In OmniDent, <strong>Settings → iCloud Sync → Delete Account &amp; All Data</strong> does all of the following:</p>
 <ol>
-<li>deletes your locally stored data, including the photo files in <code>Documents/Scans</code>;</li>
-<li>deletes the records held in your private iCloud database for this app;</li>
-<li><strong>revokes your Sign in with Apple token</strong> through Apple's Sign in with Apple REST API, so the association is genuinely severed and not merely switched off;</li>
-<li>clears the Apple user identifier, name and email from the Keychain.</li>
+<li>clears the Apple user identifier, name and email from this device's Keychain, ending the association;</li>
+<li>removes the records this app placed in your private iCloud database, by deleting the app's CloudKit zone — if you are not signed into iCloud, are offline, or the zone was never created, there is nothing there to remove and the step simply completes;</li>
+<li>turns iCloud sync off;</li>
+<li>deletes your local data, including the photo files in <code>Documents/Scans</code>, your scans and analyses, habit logs, trajectory scenarios, programme progress and your oral-health profile.</li>
 </ol>
+<p>If you also want OmniDent removed from the list of apps you have used Sign in with Apple with, that control belongs to Apple, not to us: <strong>iOS Settings → your name → Sign in with Apple → OmniDent</strong>. You can use it at any time, before or after deleting in the app.</p>
 <p>You can also sign out without deleting, which clears the Keychain entries on that device but leaves your data in place.</p>
-<blockquote>
-<p><strong>TO VERIFY BEFORE PUBLISHING — this is the most important flag in this document.</strong> As of the audit on 8 August 2026 the shipped app has sign-out only. There is <strong>no in-app account deletion and no token revocation call</strong> (<code>ISSUES.md</code> DENT-012, a submission blocker under App Store Review Guideline 5.1.1(v)). This section describes the intended post-Wave-2 behaviour. <strong>Do not publish this policy until the deletion and revocation flow is actually in the build</strong>, because publishing it earlier would be a false statement about a feature users rely on.</p>
-</blockquote>
 <hr />
 <h2 id="5-icloud-sync">5. iCloud sync</h2>
 <p>OmniDent can sync a small amount of data between your own devices using <strong>CloudKit</strong>, Apple's iCloud service. Two things are true of this and both matter:</p>
@@ -259,11 +257,9 @@ If you live in Washington or Nevada, please read it. It applies to you in additi
 </tr>
 </tbody>
 </table></div>
+<p>That list is not a description of good intentions: the set of records permitted to sync is pinned in the app by an allow-list, and if anything ever drifts from it, sync switches itself off entirely rather than send something it should not.</p>
 <p>You can turn sync off entirely at <strong>Settings → iCloud Sync</strong>.</p>
 <p>Because sync uses CloudKit, iOS uses Apple's push service to tell the app that something changed. That is a silent, content-free signal. <strong>OmniDent sends no marketing or promotional push notifications, and Prameya sends you no push notifications at all.</strong></p>
-<blockquote>
-<p><strong>TO VERIFY BEFORE PUBLISHING:</strong> the build audited on 8 August 2026 still syncs the health profile, habit logs and trajectory snapshots (<code>ISSUES.md</code> DENT-010). The restriction to non-health data only is a Wave 2 change. Confirm the sync schema in <code>App/OmniDentApp.swift</code> has been reduced to preferences and interface state before this section is published. Note that Apple's Review Guideline 5.1.3(ii) forbids storing personal health information in iCloud, so this change is required in any event.</p>
-</blockquote>
 <hr />
 <h2 id="6-apple-health">6. Apple Health</h2>
 <p>Apple Health integration is <strong>off until you turn it on</strong> and grant permission through iOS.</p>
@@ -294,8 +290,8 @@ If you live in Washington or Nevada, please read it. It applies to you in additi
 </tr>
 <tr>
 <td>Apple iCloud (CloudKit), your private database</td>
-<td>App preferences and interface state</td>
-<td>While iCloud Sync is on</td>
+<td>App preferences and interface state; a request to delete the app's zone when you delete your account</td>
+<td>While iCloud Sync is on, and at account deletion</td>
 <td>No health data</td>
 </tr>
 <tr>
@@ -306,23 +302,21 @@ If you live in Washington or Nevada, please read it. It applies to you in additi
 </tr>
 <tr>
 <td>Apple (Sign in with Apple)</td>
-<td>The sign-in exchange, and a token revocation when you delete your account</td>
-<td>Only if you sign in / delete</td>
+<td>The sign-in exchange itself, handled by iOS</td>
+<td>Only if you choose to sign in</td>
 <td>No</td>
 </tr>
 </tbody>
 </table></div>
+<p>There is no token-revocation request in that list, because there is no OmniDent token to revoke — see section 4.</p>
 <p>All connections use HTTPS. The app disallows unencrypted connections at the platform level.</p>
-<p><strong>That is the whole list.</strong> There is no analytics endpoint, no crash-reporting endpoint, no advertising network, no attribution SDK, no remote AI service, and no Prameya server of any kind.</p>
+<p><strong>That is the whole list.</strong> There is no analytics endpoint, no crash-reporting endpoint, no advertising network, no attribution SDK, no remote AI service, and no Prameya server of any kind. The app's privacy manifest declares no crash data, no tracking and no tracking domains, and no crash-reporting SDK is built into the app.</p>
 <h3 id="what-prameya-does-receive">What Prameya does receive</h3>
 <p>Almost nothing, and none of it from the app:</p>
 <ul>
 <li><strong>Aggregate App Store statistics from Apple</strong> — downloads, territories, crash counts. Apple provides these in aggregate. They do not identify you. If you have Apple's "Share with App Developers" analytics setting enabled at the system level, Apple may include your device's crash reports in what it shares with us; you control that in iOS Settings → Privacy &amp; Security → Analytics &amp; Improvements.</li>
 <li><strong>Emails you send us.</strong> If you write to admin@prameya.legal, we have your email and whatever you put in it. We keep support correspondence only as long as needed to handle it.</li>
 </ul>
-<blockquote>
-<p><strong>TO VERIFY BEFORE PUBLISHING:</strong> the app's privacy manifest currently declares a "Crash Data" type, but no crash-reporting SDK is linked into the project. Either remove that declaration from <code>PrivacyInfo.xcprivacy</code> (<code>ISSUES.md</code> DENT-013) or, if a crash reporter is added before release, this policy must be rewritten to name that vendor and describe what it transmits.</p>
-</blockquote>
 <hr />
 <h2 id="8-things-we-do-not-do">8. Things we do not do</h2>
 <p>One line each, because the honest answer is short.</p>
@@ -335,13 +329,13 @@ If you live in Washington or Nevada, please read it. It applies to you in additi
 <li><strong>We do not build a profile of you.</strong> We have no database in which to put one.</li>
 <li><strong>We do not use your photographs or your data to train AI models.</strong> Not ours, not anyone's.</li>
 <li><strong>We do not share your data with dentists, insurers, employers, or the "partner" offers shown in the app.</strong> Those offers are informational only; tapping one records a note on your device and transmits nothing.</li>
-<li><strong>We do not use geofencing</strong> around dental offices, hospitals, pharmacies or any other health care facility.</li>
-<li><strong>We do not contribute your data to any shared or "collective" dataset.</strong></li>
+<li><strong>We do not use geofencing</strong> around dental offices, hospitals, pharmacies or any other health care facility. The app requests no location permission and contains no location code.</li>
+<li><strong>We do not contribute your data to any shared or "collective" dataset.</strong> The Studio screen shows a toggle offering "private collective priors" with an optional anonymised contribution. That feature is not built: switching it on only swaps in different fixed numbers already inside the app, and nothing is transmitted to us or to anyone else.</li>
 </ul>
 <hr />
 <h2 id="9-retention-export-and-deletion">9. Retention, export and deletion</h2>
 <p><strong>Retention.</strong> Because your content lives on your device, you decide how long it is kept. We impose no retention period because we hold nothing to retain. If you delete the app, iOS deletes its container and everything in it. Data synced to your private iCloud database is removed when you delete your account in the app, or when you delete the app's iCloud data from iOS Settings → your name → iCloud.</p>
-<p><strong>Export.</strong> <strong>Settings → Privacy &amp; Security → Export My Data</strong> produces a JSON file, generated entirely on your device, containing your scan metadata, habit logs, trajectory scenarios and profile. It contains metadata and notes — not the raw photographs, which you already have in the app and, if you enabled auto-save, in your Photos library.</p>
+<p><strong>Export.</strong> <strong>Settings → Privacy &amp; Security → Export My Data</strong> produces a JSON file, generated entirely on your device, containing your scan metadata, habit logs, trajectory scenarios and profile. It contains metadata only — not the raw photographs, which you already have in the app and, if you enabled auto-save, in your Photos library, and not the text of your notes.</p>
 <p><strong>Deletion.</strong></p>
 <div class="tablewrap"><table>
 <thead>
@@ -360,8 +354,12 @@ If you live in Washington or Nevada, please read it. It applies to you in additi
 <td>Settings → Privacy &amp; Security → Delete All Scans &amp; Data</td>
 </tr>
 <tr>
-<td>Your account, your iCloud records, and your Apple sign-in token</td>
-<td>Settings → Account → Delete Account</td>
+<td>Your Sign in with Apple association, your iCloud records for this app, and all local data</td>
+<td>Settings → iCloud Sync → Delete Account &amp; All Data</td>
+</tr>
+<tr>
+<td>OmniDent from your Apple Account's Sign in with Apple list</td>
+<td>iOS Settings → your name → Sign in with Apple → OmniDent</td>
 </tr>
 <tr>
 <td>Data written to Apple Health</td>
@@ -425,7 +423,7 @@ If you live in Washington or Nevada, please read it. It applies to you in additi
 <hr />
 <h2 id="13-washington-and-nevada-residents-consumer-health-data">13. Washington and Nevada residents — consumer health data</h2>
 <p>Washington's My Health My Data Act (RCW ch. 19.373) and Nevada's SB 370 give you rights over consumer health data, and Washington requires a separate, distinctly linked policy for it.</p>
-<p><strong>That policy is here: <a href="https://prameyallc.github.io/privacy/omnident/health-data/">OmniDent Consumer Health Data Privacy Policy</a>.</strong></p>
+<p><strong>That policy is here: <a href="https://prameyallc.github.io/privacy/omnident/health-data/">OmniDent Consumer Health Data Privacy Policy</a>.</strong> Both policies are also linked inside the app, as two distinct links, in Settings.</p>
 <p>Two points worth stating in this document as well:</p>
 <ul>
 <li><strong>Washington's definition of "collect" is much broader than Apple's.</strong> Apple's App Store privacy labels use "collect" to mean transmitting data off your device. Washington's statute defines it as to "buy, rent, access, retain, receive, acquire, infer, derive, or otherwise process" consumer health data in any manner. <strong>We do not use the narrow App Store definition to claim state health-privacy law does not reach us.</strong> Under Washington's definition, OmniDent collects consumer health data, and the separate policy is written on that basis.</li>
@@ -444,10 +442,8 @@ If you live in Washington or Nevada, please read it. It applies to you in additi
 <li><strong>Your rights</strong> — access, rectification, erasure, restriction, portability, objection, and to complain to your supervisory authority. Exercise them in-app or at admin@prameya.legal.</li>
 <li><strong>International transfers.</strong> Your content is not transferred anywhere, because it is not transmitted anywhere. The only cross-border flows are your own connection to Hugging Face for a model file and your own iCloud data under Apple's arrangements.</li>
 <li><strong>Automated decision-making.</strong> The on-device AI does not make decisions producing legal or similarly significant effects about you. Its output is educational information.</li>
+<li><strong>Representative.</strong> Prameya LLC has not appointed an Article 27 or UK representative, and none is named in this policy today. If OmniDent is released in the EEA or the United Kingdom and a representative is required, we will appoint one and name them here before the app becomes available in those territories.</li>
 </ul>
-<blockquote>
-<p><strong>TO VERIFY BEFORE PUBLISHING:</strong> confirm which App Store territories OmniDent will actually be released in. If it is released in the EEA or the UK, take advice on whether an Article 27 / UK representative must be appointed and named in this policy, and add the name here. If the release is US-only, this section should say so plainly instead.</p>
-</blockquote>
 <hr />
 <h2 id="16-hipaa-does-not-apply">16. HIPAA does not apply</h2>
 <p>We say this clearly because it is genuinely useful to know, and because plenty of health apps are vague about it.</p>
@@ -461,13 +457,14 @@ If you live in Washington or Nevada, please read it. It applies to you in additi
 <hr />
 <h2 id="17-not-a-medical-device-not-medical-advice">17. Not a medical device, not medical advice</h2>
 <p>OmniDent gives general educational information about oral health. It does not diagnose, treat, cure, mitigate or prevent any disease or condition. It is not a substitute for examination by a licensed dentist, and it cannot see what a dentist sees.</p>
-<p>Analysis of dental images is a regulated activity in the United States, and FDA has authorised specific devices for it. OmniDent is not one of them and does not claim to be. Features that would produce a clinical or diagnostic finding are switched off by default and remain off pending appropriate regulatory clearance.</p>
+<p>Analysis of dental images is a regulated activity in the United States, and FDA has authorised specific devices for it. OmniDent is not one of them and does not claim to be. Features that would produce a clinical or diagnostic finding are switched off by default and remain off pending appropriate regulatory clearance. The percentage ranges shown by the Studio screen's Regenerative Projection feature are placeholder values built into the app and are not a clinical estimate of anything (section 1).</p>
 <p>If something in your mouth hurts, bleeds, changes, or worries you, see a dentist. Do not wait for an app.</p>
 <hr />
 <h2 id="18-changes-to-this-policy">18. Changes to this policy</h2>
 <p>We will update this policy when the app's behaviour changes — and we will update it <strong>before</strong> the change ships, not after.</p>
 <ul>
 <li>The effective date at the top always reflects the current version.</li>
+<li><strong>This 8 August 2026 revision was a correction pass.</strong> We re-read the shipping source code and rewrote every statement that did not match it. In particular: the previous version said that deleting your account revokes your Sign in with Apple token through Apple's REST API. It does not, and it never did — the app has no server and mints no token, so there is nothing to revoke; section 4 now describes what deletion actually does. We also corrected the name of the deletion control, described the Studio Regenerative Projection placeholder percentages, stated that scan files are not excluded from your device backup, recorded that no pre-download disclosure sheet exists, and confirmed the items that had been marked as pending internal verification and are now in the build. Nothing in this document describes a feature that has not shipped.</li>
 <li>For any material change — a new destination the app connects to, a new category of data, a new third party, a change to what syncs, or the addition of any advertising or analytics — we will show an in-app notice and, where the law requires it, ask for your consent before the change takes effect. Under Washington's My Health My Data Act, collecting a new category of consumer health data, or using it for a new purpose, requires your affirmative consent first, and we will obtain it first.</li>
 <li>Previous versions are available on request from admin@prameya.legal.</li>
 <li>Continuing to use the app after a non-material change means the updated policy applies. That is not how we will handle a material one.</li>

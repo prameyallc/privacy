@@ -105,12 +105,13 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <ul>
 <li><strong>We have no server.</strong> Prameya operates no backend that receives your data. There is no account, no login, no user database, and no profile of you anywhere at Prameya.</li>
 <li><strong>Your readings stay on your device</strong>, and in your own Apple Health app if you allow that.</li>
+<li><strong>The app asks Apple Health only for the data types it actually uses.</strong> It does not ask for reproductive or sexual health data, and it does not ask for your date of birth, biological sex or blood type. Section 2.1 lists exactly what it asks for and what it does not.</li>
 <li><strong>We do not sell, rent, share or trade your information.</strong> We do not run ads and there is no advertising, analytics or crash-reporting SDK in the app.</li>
 <li><strong>The app does connect to the internet in two situations</strong>, and only these two: if you choose to install the optional on-device assistant, the app downloads model files from Hugging Face; and if you turn on settings sync, your app <em>preferences</em> (not health data) go to your own iCloud account. Details in section 5.</li>
 <li><strong>The assistant runs on your device.</strong> Your health data is not sent to us, to Hugging Face, or to any AI company.</li>
 <li><strong>HIPAA does not apply to this app.</strong> We are not a doctor, hospital, insurer or their contractor. See section 14.</li>
 </ul>
-<p>Where this policy says "we do not do X", it means the capability is absent from the software — not that it exists and we choose not to use it.</p>
+<p>Where this policy says "we do not do X", it means the capability is absent from the software — or, where we say so explicitly, that it exists in the code but is hard-wired off and fails closed.</p>
 <hr />
 <h2 id="1-who-we-are-and-what-this-covers">1. Who we are and what this covers</h2>
 <p>Prameya LLC is a US limited liability company. OmniSalub is a direct-to-consumer app. You buy or download it from Apple; you do not create an account with us, and we do not know who you are.</p>
@@ -119,19 +120,20 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <h2 id="2-apple-health-healthkit">2. Apple Health (HealthKit)</h2>
 <p>This is the most important section, so it is the longest.</p>
 <h3 id="21-what-the-app-asks-to-read">2.1 What the app asks to read</h3>
-<p>If you tap "Connect Apple Health", iOS shows you Apple's own permission sheet. <strong>OmniSalub asks for the full set of health data types that Apple lets an ordinary app read.</strong> That is deliberate: the app is built to show you readings that a cuff, a watch, a glucose meter or another app already saved, without you retyping them, and it cannot know in advance which of those you use.</p>
+<p>If you tap "Connect Apple Health", iOS shows you Apple's own permission sheet. <strong>OmniSalub asks only for the health data types it actually uses.</strong></p>
+<p>An earlier version of this policy said the app "asks for the full set of health data types that Apple lets an ordinary app read". That described an earlier build and <strong>it is no longer true</strong>. The read request has been narrowed to the types the app consumes, and the narrowing is enforced by automated tests that fail the build if a removed type comes back.</p>
 <p>Concretely, the request covers:</p>
 <div class="tablewrap"><table>
 <thead>
 <tr>
 <th>Group</th>
-<th>Examples</th>
+<th>What is requested</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Vitals</td>
-<td>Blood pressure, heart rate, resting and walking heart rate, heart rate variability, AFib burden, oxygen saturation, respiratory rate, body temperature</td>
+<td>Blood pressure, heart rate, resting and walking heart rate, heart-rate recovery, heart rate variability, AFib burden, oxygen saturation, respiratory rate, body temperature (including basal and wrist temperature), peripheral perfusion index</td>
 </tr>
 <tr>
 <td>Body</td>
@@ -147,60 +149,63 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 </tr>
 <tr>
 <td>Activity and fitness</td>
-<td>Steps, exercise minutes, energy burned, distances, flights climbed, VO₂ max, workouts, running and cycling metrics</td>
+<td>Steps, exercise minutes, move and stand time, energy burned, flights climbed, distances (walking and running, cycling, swimming, wheelchair, snow sports), push count, swimming strokes, VO₂ max, time in daylight, UV exposure, running and cycling metrics</td>
+</tr>
+<tr>
+<td>Workouts</td>
+<td>Workout records, from which the app reads duration, active energy and distance</td>
 </tr>
 <tr>
 <td>Mobility</td>
-<td>Walking speed and steadiness, step length, asymmetry, stair speeds, six-minute walk distance, times fallen</td>
+<td>Walking speed and steadiness, step length, asymmetry, double-support percentage, stair speeds, six-minute walk distance, times fallen</td>
 </tr>
 <tr>
-<td>Sleep and mindfulness</td>
-<td>Sleep analysis, stand hours, mindful sessions</td>
+<td>Sleep</td>
+<td>Sleep analysis records — time in bed, time asleep, and sleep stages</td>
 </tr>
 <tr>
 <td>Heart events from a Watch</td>
-<td>High and low heart rate events, irregular rhythm notifications, low cardio fitness, electrocardiograms</td>
+<td>Exactly four record types: high heart rate, low heart rate, irregular rhythm notification, low cardio fitness</td>
 </tr>
 <tr>
 <td>Hearing</td>
-<td>Environmental and headphone audio exposure, audiograms</td>
+<td>Environmental and headphone audio-exposure levels</td>
 </tr>
 <tr>
 <td>Nutrition</td>
-<td>Energy, carbohydrates, protein, fats, fibre, sugar, water, caffeine, and minerals including <strong>sodium and potassium</strong> (both matter clinically in hypertension and kidney disease)</td>
+<td>Energy, carbohydrates, protein, fats, cholesterol, fibre, sugar, water, caffeine, and minerals including <strong>sodium and potassium</strong> (both matter clinically in hypertension and kidney disease), plus calcium, iron, magnesium and zinc</td>
 </tr>
 <tr>
 <td>Symptoms</td>
-<td>Breathlessness, chest tightness or pain, dizziness, palpitations, fainting, nausea, vomiting, fever, diarrhoea, cramps, bloating, constipation, heartburn, fatigue, headache, mood changes, appetite changes, sleep changes</td>
-</tr>
-<tr>
-<td>Reproductive health</td>
-<td>Menstrual flow and cycle records, intermenstrual bleeding, ovulation, pregnancy and progesterone test results, cervical mucus, contraceptive use, lactation, pregnancy, sexual activity</td>
-</tr>
-<tr>
-<td>Profile facts</td>
-<td>Date of birth, biological sex, blood type, skin type, wheelchair use, activity move mode</td>
-</tr>
-<tr>
-<td>Hygiene and misc.</td>
-<td>Toothbrushing and handwashing events</td>
+<td>The symptom records the app can represent: breathlessness, chest tightness or pain, dizziness, palpitations, fainting, nausea, vomiting, fever, diarrhoea, abdominal cramps, bloating, constipation, heartburn, fatigue, headache, mood changes, appetite changes, sleep changes</td>
 </tr>
 </tbody>
 </table></div>
+<p>The first-run request names the measurement types in that table. Routine background refreshes ask for less: only the measurement types belonging to the conditions you have chosen to track, plus the fixed set of records the app reads on every refresh (sleep, the four Watch heart-event types, the symptom records above, and workouts).</p>
+<p><strong>What the app does not ask for.</strong> These types were in an earlier build's request and have been removed from it:</p>
+<ul>
+<li><strong>All reproductive and sexual health records</strong> — menstrual flow, intermenstrual bleeding, infrequent, irregular, persistent or prolonged cycle records, ovulation, pregnancy and progesterone test results, cervical mucus, contraceptive use, lactation, pregnancy, sexual activity. Fourteen record types in total, none of which the app can request.</li>
+<li><strong>All profile facts</strong> — date of birth, biological sex, blood type, Fitzpatrick skin type, wheelchair use, activity move mode. The app contains no code that reads any of them.</li>
+<li><strong>Electrocardiograms and audiograms.</strong></li>
+<li><strong>Mindful sessions, Apple's stand-hour records, audio-exposure event notifications, toothbrushing and handwashing records.</strong></li>
+<li><strong>Medications, dose records and Clinical Health Records</strong> — see section 2.3.</li>
+</ul>
+<p>None of these can appear on the permission sheet. Four automated tests in the source — <code>noReproductiveHealthTypeIsEverRequested</code>, <code>noCharacteristicTypeIsEverRequested</code>, <code>unconsumedCategoryFamiliesStayOutOfTheRequest</code> and <code>readRequestHonoursTheCallersMetrics</code> — fail the build if any of them returns to the request.</p>
 <p><strong>You are not obliged to grant any of it.</strong> Apple's sheet has an individual toggle for every category, and the app works with whatever subset you allow. If you only want blood pressure to come through, turn on only blood pressure.</p>
-<p>We are naming the reproductive-health and profile categories explicitly because a broad permission request should not be a surprise, and because that data is treated as especially sensitive under state health-privacy law.</p>
+<p>We are listing the removed categories explicitly, rather than quietly dropping them, because the previous version of this policy told you the app asked for them. It no longer does, and you should be able to check that against the permission sheet.</p>
 <h3 id="22-what-the-app-writes-back-to-health">2.2 What the app writes back to Health</h3>
 <p>The app writes back a much narrower set, and only readings <strong>you typed into OmniSalub yourself</strong>:</p>
 <ul>
 <li>Systolic and diastolic blood pressure, heart rate, body weight, height, blood glucose, oxygen saturation.</li>
-<li>The twenty symptoms above, and only where the symptom means exactly the same thing in Apple Health.</li>
+<li>The symptom types listed in the table above, and only where the symptom means exactly the same thing in Apple Health.</li>
 </ul>
 <p>Readings that came <em>from</em> Health are never written back, so the app cannot create duplicates of your own data. Symptoms carrying an extra clinical qualifier — "breathlessness on waking", for example — stay only on your device, because writing them as a plain symptom would misrepresent what you recorded.</p>
 <p>Writing to Health is how your readings reach your other Apple devices. Data inside Health is managed by Apple under Apple's terms and encryption. <strong>We never see it.</strong></p>
 <h3 id="23-what-the-app-does-not-read">2.3 What the app does <em>not</em> read</h3>
 <ul>
-<li><strong>Medications and dose records.</strong> The shipping app does <strong>not</strong> read your medication list or your record of doses taken or skipped. Those are gated Apple capabilities and the capability flag in this build is off. If that ever changes, this policy will be updated before that version ships.</li>
-<li><strong>Clinical Health Records</strong> — lab results and other records imported from a participating hospital or clinic. The app does not request the entitlement and does not query them.</li>
+<li><strong>Medications and dose records.</strong> The shipping app does <strong>not</strong> read your medication list or your record of doses taken or skipped. Those are gated Apple capabilities; the capability flag in this build is hard-coded off and the code path returns without asking for anything. If that ever changes, this policy will be updated before that version ships.</li>
+<li><strong>Clinical Health Records</strong> — lab results and other records imported from a participating hospital or clinic. The app does not request the entitlement and does not query them; that capability flag is hard-coded off as well.</li>
+<li><strong>Everything listed under "what the app does not ask for" in section 2.1.</strong> It is not requested, so it cannot be read.</li>
 </ul>
 <h3 id="24-withdrawing-permission">2.4 Withdrawing permission</h3>
 <p>Go to <strong>Settings → Privacy &amp; Security → Health → OmniSalub</strong>, or use the Health app. Revoking permission stops future reads and writes. It does not delete anything already in Health — you control that in the Health app.</p>
@@ -210,6 +215,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <li><strong>5.1.3(i)</strong> — health and fitness data must not be used or disclosed for advertising, marketing or other use-based data mining. We do none of those things at all, with any data.</li>
 <li><strong>5.1.3(ii)</strong> — apps must not write false or inaccurate data into HealthKit, and <strong>may not store personal health information in iCloud</strong>. The app's health database is created with iCloud syncing explicitly disabled, and an automated test blocks any health record type from being added to the part of the app that does sync.</li>
 <li>We disclose the specific health data the app collects from the device — that is section 2.1 above.</li>
+<li>Guideline 5.1.1(i) also requires an app to request only the data it needs. Narrowing the read request, as described in section 2.1, is how we meet that.</li>
 </ul>
 <hr />
 <h2 id="3-what-is-stored-on-your-device">3. What is stored on your device</h2>
@@ -265,9 +271,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 </tbody>
 </table></div>
 <p>The health database is stored in Application Support (not a user-visible folder). On iPhone and iPad it is set to iOS Data Protection "complete", which means the operating system encrypts it with a key tied to your device passcode and it cannot be read while the device is locked. The database and its two working files are marked as excluded from iCloud backup.</p>
-<blockquote>
-<p><strong>TO VERIFY BEFORE PUBLISHING:</strong> the widget's snapshot file, which holds your most recent reading in display form (for example "132/84"), currently does <strong>not</strong> carry the same backup exclusion as the main health database. Until it does, that one value can be included in an ordinary encrypted device backup. Either apply the exclusion in code and delete this note, or replace this paragraph with an accurate statement of the behaviour that ships.</p>
-</blockquote>
+<p>The widget's snapshot file — which holds your most recent reading in display form, for example "132/84" — is also <strong>excluded from device backup</strong>, and the exclusion is re-applied every time the app writes the file, so snapshots left behind by older versions of the app are covered too. On iPhone and iPad that file is encrypted at rest <strong>until the first time you unlock the device after a restart</strong>, rather than being locked again whenever the screen locks. That is a deliberate difference from the health database: the Home Screen widget has to be able to redraw your latest reading while the phone is locked, and it could not do that under the stronger setting. Treat the widget snapshot as the one value on your device with slightly weaker protection than the rest, and turn the widget off if you would rather it did not exist at all.</p>
 <hr />
 <h2 id="4-icloud">4. iCloud</h2>
 <p><strong>Your health data is never stored in iCloud by this app.</strong> That is an architectural boundary, not a setting, and it is also required by Apple's Guideline 5.1.3(ii).</p>
@@ -300,11 +304,12 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <ul>
 <li><strong>Apple Health</strong> moves your data between your own devices, under Apple's encryption.</li>
 <li><strong>Siri and Shortcuts.</strong> The app offers spoken shortcuts such as logging a blood pressure reading. When you speak to Siri, Apple handles the speech, under Apple's privacy policy. The app receives the resulting values and stores them locally.</li>
-<li><strong>iCloud Backup</strong>, if you use it, backs up your device under Apple's terms. The health database is excluded from it.</li>
+<li><strong>iCloud Backup</strong>, if you use it, backs up your device under Apple's terms. The health database is excluded from it, as is the widget snapshot.</li>
 <li><strong>"Share With App Developers"</strong>, if you have it on in iOS Settings, may give Apple's aggregated crash reports to us. That is Apple's mechanism and it contains no health data.</li>
 </ul>
 <h3 id="54-what-does-not-exist">5.4 What does not exist</h3>
 <p>There is <strong>no Prameya server</strong>. No API, no backend, no endpoint that receives your data. We could not read your readings if we wanted to. There is no analytics SDK, no advertising SDK, no crash-reporting SDK, no attribution SDK, and no third-party code in the app that transmits user content.</p>
+<p>The Mac version of the app carries macOS's outgoing-network entitlement, and it is there for the two connections named above and no others we have built: iCloud settings sync, and the optional Hugging Face model download. Neither carries health data or anything you have written.</p>
 <p>The app also contains <strong>no</strong> code for location, camera, photo library, contacts, microphone recording, the advertising identifier, App Tracking Transparency, or in-app purchases.</p>
 <p>An unfinished multi-device sync engine exists in the public source tree. <strong>It is not built into any shipping app</strong> — no app target links it. If it is ever completed, this policy will be updated before that build ships.</p>
 <hr />
@@ -319,7 +324,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <hr />
 <h2 id="7-widgets-the-lock-screen-and-siri">7. Widgets, the Lock Screen and Siri</h2>
 <ul>
-<li>The <strong>Home Screen widget</strong> shows your latest reading. To do that, the app saves a small display snapshot — a formatted headline such as "132/84", a timestamp, and what to log next — into a container shared between the app and the widget. It stays on the device and never goes to iCloud.</li>
+<li>The <strong>Home Screen widget</strong> shows your latest reading. To do that, the app saves a small display snapshot — a formatted headline such as "132/84", a timestamp, and what to log next — into a container shared between the app and the widget. It stays on the device, is excluded from backup, and never goes to iCloud. See section 3 for how it is protected.</li>
 <li>The <strong>Live Activity</strong> shown during a measurement session carries the session's state: which measurement, how many readings so far, positioning guidance and a countdown. It does not carry your values, and it is drawn on your device. The app sends no push notifications, and holds no push capability.</li>
 <li><strong>Siri shortcuts</strong> let you log a reading or start a measurement by voice. See section 5.3 for what that means.</li>
 </ul>
@@ -340,6 +345,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <p><strong>This version records no usage analytics.</strong> There is no counter, no event log of what you tapped, and nothing to send even if there were a place to send it.</p>
 <p>On iPhone and iPad the app subscribes to Apple's <strong>MetricKit</strong>, which delivers performance and crash diagnostics for the app to the app itself. OmniSalub counts these reports and discards them. Nothing from MetricKit is stored, inspected or transmitted. The Mac app does not use MetricKit.</p>
 <p>The app does contain the scaffolding for future on-device usage counting, built so that any event name must come from a fixed, closed list — a reading could not end up in one even by mistake — kept only on your device and deleted after 180 days. <strong>Nothing switches it on today.</strong> If a future version does, this section will be updated before that version ships.</p>
+<p>The app's privacy manifest, which Apple ships inside the app and which anyone can inspect, declares that the app does <strong>no tracking</strong> and collects <strong>no data types</strong>. It declares two of Apple's "required reason" API uses: storing your settings in UserDefaults, and checking available disk space before a download or an import.</p>
 <hr />
 <h2 id="11-the-activity-log">11. The activity log</h2>
 <p>The app keeps a local log of security-relevant events: when health data was read, written, exported or erased; when permissions were requested, granted or denied; when settings sync was turned on or off; when the app was unlocked.</p>
@@ -358,7 +364,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <li><strong>Mac.</strong> macOS does not offer the same per-file protection. On a Mac the database is protected by the app sandbox and by <strong>FileVault, if you have FileVault turned on.</strong> We recommend turning it on in System Settings → Privacy &amp; Security.</li>
 <li><strong>App lock.</strong> You can require Face ID, Touch ID or your device passcode to open the app. Your fingerprint or face data is handled entirely by Apple's Secure Enclave; the app never receives it and never stores it.</li>
 <li><strong>Keys.</strong> Any encryption key the app uses is held in the device Keychain, marked so it is available only when the device is unlocked and never leaves that device.</li>
-<li><strong>Backups.</strong> The health database is excluded from iCloud backup (but see the note in section 3).</li>
+<li><strong>Backups.</strong> The health database and the widget snapshot are both excluded from iCloud backup. The widget snapshot's at-rest protection is weaker than the database's, for the reason given in section 3.</li>
 </ul>
 <p>No security measure is absolute. Because your data lives on your device, its safety depends heavily on that device having a passcode and up-to-date software.</p>
 <hr />
@@ -366,7 +372,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <p><strong>We hold nothing, so there is nothing at Prameya to delete.</strong> On your device:</p>
 <ul>
 <li>Readings, symptoms and alerts are kept until you delete them.</li>
-<li><strong>Settings → Delete all data on this device</strong> erases them immediately.</li>
+<li><strong>Settings → Delete all data on this device</strong> erases them immediately. It also clears the widget snapshot.</li>
 <li><strong>Deleting the app</strong> removes all of its local data, including the health database, the activity log, the widget snapshot and any downloaded model files.</li>
 <li>You can remove the assistant model files on their own in Settings.</li>
 <li>If you turned on settings sync, turning it off stops future syncing. You can remove what is already stored through <strong>Settings → [your name] → iCloud → Manage Account Storage</strong> on your device.</li>
@@ -422,10 +428,8 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <h3 id="other-us-states">Other US states</h3>
 <p>Several other states (Colorado, Connecticut, Virginia, Texas, Oregon and others) give residents rights of access, correction, deletion, portability and opt-out, with extra protection for health data. The same answer applies everywhere: we hold no personal data about you, we run no targeted advertising, we do no profiling, and we do not sell data. Requests can be sent to admin@prameya.legal.</p>
 <h3 id="if-you-are-in-the-eu-eea-or-uk-gdpr-uk-gdpr">If you are in the EU, EEA or UK (GDPR / UK GDPR)</h3>
-<blockquote>
-<p><strong>TO VERIFY BEFORE PUBLISHING:</strong> the release plan recommends setting App Store availability to <strong>United States only</strong> for version 1.0. If that is what ships, this subsection can say the app is not offered in the EEA or UK. Confirm the App Store Connect territory setting and keep or trim this subsection accordingly — and note that offering the app in the EEA brings EU medical-device and AI-Act questions that are outside this policy.</p>
-</blockquote>
 <p>For the processing that happens entirely on your device, Prameya LLC is the controller. Our lawful basis is your consent (Article 6(1)(a)) and, because health data is a special category, your <strong>explicit</strong> consent (Article 9(2)(a)) — given through the in-app acknowledgements and through iOS's own Health permission sheet. You may withdraw consent at any time as described in section 13, without affecting anything that already happened. You have rights of access, rectification, erasure, restriction, portability and objection; in practice you exercise all of them directly in the app, because we hold no copy. You may complain to your supervisory authority.</p>
+<p>Where the app is available is set on the App Store, not here, and can change. This subsection applies to you if you obtained the app in the EEA or the UK.</p>
 <h3 id="hipaa-plainly">HIPAA — plainly</h3>
 <p><strong>HIPAA does not apply to OmniSalub.</strong> HIPAA covers healthcare providers, health plans and clearinghouses, and the contractors that handle data for them. Prameya is none of those, and we are not a business associate of any of them. You are using a consumer app you chose yourself, not a service arranged by your doctor or insurer.</p>
 <p>We say this because it matters: it means the protection your data has here comes from this app's design and from consumer-protection law, not from HIPAA. It also means we do not claim HIPAA compliance and you should be sceptical of any consumer app that does. If OmniSalub is ever distributed through a clinic, employer or insurer, that analysis changes and this policy will change with it.</p>
@@ -442,6 +446,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <h2 id="17-changes-to-this-policy">17. Changes to this policy</h2>
 <p>If this policy changes, we will change the effective date at the top and publish the new version at <a href="https://prameyallc.github.io/privacy/omnisalub/">prameyallc.github.io/privacy/omnisalub</a>.</p>
 <p>Where a change materially affects how your data is handled — in particular if any future version were to transmit health data off your device, add an account, add a server, or enable cloud or third-party AI processing — we will show you the change in the app and ask for your consent <strong>before</strong> it takes effect. We will not quietly widen what we do and rely on you re-reading this page.</p>
+<p>This revision corrected statements in the previous version so that they match the code that actually ships. The main correction narrows the description of what the app asks to read from Apple Health: the earlier text described a much broader permission request than the app now makes, including reproductive-health and profile categories that have been removed from it (section 2.1). Section 3 also replaces a placeholder note about the widget snapshot with a statement of what the shipping app does.</p>
 <p>Material changes are also described in the Consumer Health Data Privacy Policy, which has its own change process.</p>
 <hr />
 <h2 id="18-contact">18. Contact</h2>
@@ -450,7 +455,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 Prameya LLC<br />
 Postal address available on request by email.</p>
 <hr />
-<p><em>This policy describes OmniSalub version 1.0 and later. It replaces the previous OmniSalub privacy policy dated 7 August 2026, which incorrectly stated that the app makes no network requests and that it reads your medication records. Neither statement was true of the shipping app; both are corrected above.</em></p><div class="callout distinct"><h3>Consumer Health Data Privacy Policy</h3><p>OmniSalub processes consumer health data. Washington State law requires a separate policy for that data, published at its own address:</p><p><strong><a href="https://prameyallc.github.io/privacy/omnisalub/health-data/">OmniSalub Consumer Health Data Privacy Policy</a></strong></p></div>
+<p><em>This policy describes OmniSalub version 1.0 and later. It replaces the previous OmniSalub privacy policy dated 7 August 2026, which incorrectly stated that the app makes no network requests and that it reads your medication records — neither was true of the shipping app — and it corrects the earlier description of the Apple Health permission request, which described a broader request than the app now makes.</em></p><div class="callout distinct"><h3>Consumer Health Data Privacy Policy</h3><p>OmniSalub processes consumer health data. Washington State law requires a separate policy for that data, published at its own address:</p><p><strong><a href="https://prameyallc.github.io/privacy/omnisalub/health-data/">OmniSalub Consumer Health Data Privacy Policy</a></strong></p></div>
 </main>
 <footer class="site"><div class="wrap">
   <p>Prameya LLC · <a href="mailto:admin@prameya.legal">admin@prameya.legal</a></p>
