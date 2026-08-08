@@ -43,4 +43,4 @@ responsive, supports light and dark, and has a print stylesheet.
 
 ## Contact
 
-**Prameya LLC** · bobby@prameya.legal
+**Prameya LLC** · admin@prameya.legal
