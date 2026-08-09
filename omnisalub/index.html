@@ -120,9 +120,23 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <h2 id="2-apple-health-healthkit">2. Apple Health (HealthKit)</h2>
 <p>This is the most important section, so it is the longest.</p>
 <h3 id="21-what-the-app-asks-to-read">2.1 What the app asks to read</h3>
-<p>If you tap "Connect Apple Health", iOS shows you Apple's own permission sheet. <strong>OmniSalub asks only for the health data types it actually uses.</strong></p>
-<p>An earlier version of this policy said the app "asks for the full set of health data types that Apple lets an ordinary app read". That described an earlier build and <strong>it is no longer true</strong>. The read request has been narrowed to the types the app consumes, and the narrowing is enforced by automated tests that fail the build if a removed type comes back.</p>
-<p>Concretely, the request covers:</p>
+<p>If you tap "Connect Apple Health", iOS shows you Apple's own permission sheet. <strong>OmniSalub asks only for the health data types the conditions you have switched on actually use.</strong></p>
+<p>This has been narrowed twice, and the second narrowing is the one you will notice.</p>
+<p><strong>2026-08-08, first narrowing.</strong> An earlier version of this policy said the app "asks for the full set of health data types that Apple lets an ordinary app read". That described an earlier build and it is no longer true: the set of types the app is <em>capable</em> of requesting was cut to the ones it actually consumes.</p>
+<p><strong>2026-08-08, second narrowing.</strong> The first change fixed what the app could ask for; it did not fix what it <em>did</em> ask for. Every user was still shown the whole capability regardless of which condition they had chosen. Now the request is built from your active conditions.</p>
+<p><strong>What that means concretely.</strong> If you chose blood pressure and nothing else, the permission sheet asks for <strong>eight</strong> types:</p>
+<ul>
+<li>systolic blood pressure</li>
+<li>diastolic blood pressure</li>
+<li>body weight</li>
+<li>exercise minutes</li>
+<li>chest tightness or pain</li>
+<li>shortness of breath</li>
+<li>dizziness</li>
+<li>fainting</li>
+</ul>
+<p>Those last four are there because the app's emergency rule checks them alongside a very high reading. <strong>It previously asked for twenty-nine types.</strong> It does not ask for your sleep, your workouts, your Watch heart-rhythm notifications, your nutrition, or your cycling data, because nothing in a blood-pressure programme reads them. Switch on another condition and only that condition's types are added.</p>
+<p>The table below is therefore a <strong>ceiling, not a request</strong>: it is everything the app could ever ask for, across all of its condition programmes combined. You will only ever see the part that belongs to what you switched on — unless you use <strong>Settings → Import all Health history</strong>, a deliberate one-off action that does ask for the whole table, because a partial import of "all my history" would be a false promise. You never have to use it.</p>
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -142,6 +156,10 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <tr>
 <td>Glucose and related</td>
 <td>Blood glucose, insulin delivery, blood alcohol content</td>
+</tr>
+<tr>
+<td>Alcohol</td>
+<td><strong>Number of alcoholic drinks</strong></td>
 </tr>
 <tr>
 <td>Breathing tests</td>
@@ -177,11 +195,12 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 </tr>
 <tr>
 <td>Symptoms</td>
-<td>The symptom records the app can represent: breathlessness, chest tightness or pain, dizziness, palpitations, fainting, nausea, vomiting, fever, diarrhoea, abdominal cramps, bloating, constipation, heartburn, fatigue, headache, mood changes, appetite changes, sleep changes</td>
+<td>The symptom records the app can represent: breathlessness, chest tightness or pain, dizziness, palpitations, <strong>skipped heartbeat</strong>, fainting, nausea, vomiting, fever, diarrhoea, abdominal cramps, bloating, constipation, heartburn, fatigue, headache, mood changes, appetite changes, sleep changes</td>
 </tr>
 </tbody>
 </table></div>
-<p>The first-run request names the measurement types in that table. Routine background refreshes ask for less: only the measurement types belonging to the conditions you have chosen to track, plus the fixed set of records the app reads on every refresh (sleep, the four Watch heart-event types, the symptom records above, and workouts).</p>
+<p><strong>Added on 2026-08-08:</strong> <em>number of alcoholic drinks</em> and the <em>skipped heartbeat</em> symptom record. The alcohol-use programme previously had no Apple Health source at all, so every drink had to be entered twice; and Apple Health records a skipped heartbeat separately from palpitations, which made it the one cardiac symptom the app could not import. Both are requested only when a condition that uses them is active.</p>
+<p>Background refreshes use the same scope as the first-run request — there is no separate, wider set read on every refresh. An earlier version of this policy described "the fixed set of records the app reads on every refresh (sleep, the four Watch heart-event types, the symptom records above, and workouts)". That fixed set is gone: sleep is requested only if something you switched on reads sleep, each Watch heart-event type only if something reads that event, workouts only if something reads workouts, and a symptom record only if one of your active conditions' rules checks it.</p>
 <p><strong>What the app does not ask for.</strong> These types were in an earlier build's request and have been removed from it:</p>
 <ul>
 <li><strong>All reproductive and sexual health records</strong> — menstrual flow, intermenstrual bleeding, infrequent, irregular, persistent or prolonged cycle records, ovulation, pregnancy and progesterone test results, cervical mucus, contraceptive use, lactation, pregnancy, sexual activity. Fourteen record types in total, none of which the app can request.</li>
@@ -190,7 +209,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <li><strong>Mindful sessions, Apple's stand-hour records, audio-exposure event notifications, toothbrushing and handwashing records.</strong></li>
 <li><strong>Medications, dose records and Clinical Health Records</strong> — see section 2.3.</li>
 </ul>
-<p>None of these can appear on the permission sheet. Four automated tests in the source — <code>noReproductiveHealthTypeIsEverRequested</code>, <code>noCharacteristicTypeIsEverRequested</code>, <code>unconsumedCategoryFamiliesStayOutOfTheRequest</code> and <code>readRequestHonoursTheCallersMetrics</code> — fail the build if any of them returns to the request.</p>
+<p>None of these can appear on the permission sheet, and the bans are asserted against the <strong>widest</strong> request the app can build — not a narrow one that would pass for the wrong reason. The tests that fail the build if any of them returns are <code>noReproductiveHealthTypeIsEverRequested</code>, <code>noCharacteristicTypeIsEverRequested</code>, <code>unconsumedCategoryFamiliesStayOutOfTheRequest</code> and <code>readRequestHonoursTheCallersMetrics</code>, joined on 2026-08-08 by <code>categoryTypesAreScopedToTheirConsumers</code>, <code>consumedCategoriesAreRequestedWhenSomethingConsumesThem</code> and <code>hypertensionScopeDoesNotReachIntoOtherConditions</code>, which assert the second narrowing above.</p>
 <p><strong>You are not obliged to grant any of it.</strong> Apple's sheet has an individual toggle for every category, and the app works with whatever subset you allow. If you only want blood pressure to come through, turn on only blood pressure.</p>
 <p>We are listing the removed categories explicitly, rather than quietly dropping them, because the previous version of this policy told you the app asked for them. It no longer does, and you should be able to check that against the permission sheet.</p>
 <h3 id="22-what-the-app-writes-back-to-health">2.2 What the app writes back to Health</h3>

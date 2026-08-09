@@ -132,13 +132,18 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <td>Diabetes and kidney disease frequently travel with the conditions this app covers</td>
 </tr>
 <tr>
+<td><strong>Alcohol consumption</strong></td>
+<td>Number of alcoholic drinks</td>
+<td>Added 2026-08-08 for the alcohol-use programme, which previously had no Apple Health source and required every entry to be typed twice. Requested only if you switch that programme on</td>
+</tr>
+<tr>
 <td><strong>Lung function</strong></td>
 <td>FEV1, forced vital capacity, peak flow, inhaler use</td>
 <td>Breathlessness has cardiac and respiratory causes</td>
 </tr>
 <tr>
 <td><strong>Symptoms you report</strong></td>
-<td>Breathlessness, chest pain or tightness, dizziness, palpitations, fainting, nausea, vomiting, fever, gastrointestinal symptoms, fatigue, headache, mood changes, appetite changes, sleep changes, and more specific variants defined by the condition you track</td>
+<td>Breathlessness, chest pain or tightness, dizziness, palpitations, skipped heartbeat, fainting, nausea, vomiting, fever, gastrointestinal symptoms, fatigue, headache, mood changes, appetite changes, sleep changes, and more specific variants defined by the condition you track</td>
 <td>Symptoms drive the app's escalation rules — several are the difference between "log it" and "seek care today"</td>
 </tr>
 <tr>
@@ -178,6 +183,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 </tr>
 </tbody>
 </table></div>
+<p><strong>This table is a ceiling, not a description of your device.</strong> As of 2026-08-08 the app asks Apple Health only for the categories belonging to the conditions <strong>you</strong> have switched on. If you track blood pressure and nothing else, the app requests eight record types — blood pressure (systolic and diastolic), weight, exercise minutes, and the four symptom records its emergency rule checks. It previously requested twenty-nine. Sleep, workouts, Watch cardiac notifications, nutrition and mobility are requested only if something you switched on reads them. The single exception is <strong>Settings → Import all Health history</strong>, an explicit one-off action that does request the whole table, because a partial import of "all my history" would be a false promise.</p>
 <p><strong>Purposes, stated completely.</strong> The app uses this data to (a) display your own health record back to you, (b) compare readings against published clinical guideline bands, (c) raise a care-seeking prompt when a rule fires, (d) generate a summary you can give a clinician, and (e) answer your questions using an assistant that runs on your device. <strong>That is the full list.</strong> It is not used for advertising, marketing, profiling, research, product analytics, model training, or sale — none of which the app or Prameya does at all.</p>
 <h3 id="what-the-app-does-not-handle">What the app does not handle</h3>
 <p>An earlier version of this policy listed reproductive and sexual health data and profile facts among the categories the app requested from Apple Health, because at that time it asked for the full ordinary read set. <strong>It no longer does.</strong> The permission request has been narrowed to the types the app actually consumes, and automated tests fail the build if a removed type comes back. The following are not requested, and therefore cannot be read:</p>
