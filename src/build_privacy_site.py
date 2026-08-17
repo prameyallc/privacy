@@ -224,6 +224,19 @@ def build(content_dir, out_dir, site_root):
             continue
         body_md = open(src, encoding="utf-8").read()
 
+        # ⛔ THE FOOTER DATE USED TO BE ONE GLOBAL CONSTANT FOR ALL EIGHT APPS. That is a drift
+        #    generator: correcting one policy either stamped the other seven with a date they had
+        #    not earned, or left the corrected page contradicting its own body. OmniMath hit
+        #    exactly this — its body says 16 August 2026 while EFFECTIVE still said 8 August.
+        #    Each policy now carries its own date, read from the "**Effective date:**" line it
+        #    already states to the reader, so the footer cannot disagree with the text above it.
+        app_effective = EFFECTIVE
+        m_eff = re.search(r"^\*\*Effective date:\*\*\s*(.+?)\s*$", body_md, re.MULTILINE)
+        if m_eff:
+            app_effective = m_eff.group(1)
+        else:
+            warnings.append(f"{name}: no '**Effective date:**' line; footer falls back to {EFFECTIVE}")
+
         hd_src = os.path.join(content_dir, slug, "health-data.md")
         has_hd = os.path.exists(hd_src) and open(hd_src, encoding="utf-8").read().strip()
 
@@ -248,7 +261,7 @@ def build(content_dir, out_dir, site_root):
             root=site_root,
             crumb=f'<a href="{site_root}/">← All policies</a>',
             body=render_md(body_md) + extra,
-            effective=EFFECTIVE,
+            effective=app_effective,
         )
         write(os.path.join(out_dir, slug, "index.html"), page)
         built.append(f"{slug}/")
@@ -263,7 +276,7 @@ def build(content_dir, out_dir, site_root):
                 root=site_root,
                 crumb=f'<a href="{site_root}/{slug}/">← {name} privacy policy</a>',
                 body=render_md(hd_md),
-                effective=EFFECTIVE,
+                effective=app_effective,
             )
             write(os.path.join(out_dir, slug, "health-data", "index.html"), hp)
             built.append(f"{slug}/health-data/")
