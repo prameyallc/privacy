@@ -1,6 +1,6 @@
 # OmniMath Privacy Policy
 
-**Effective date:** 8 August 2026
+**Effective date:** 16 August 2026
 **Publisher:** Prameya LLC ("Prameya", "we", "us")
 **App:** OmniMath for iPhone — bundle ID `legal.prameya.OmniMath`
 **Contact:** admin@prameya.legal
@@ -12,34 +12,42 @@
 
 - **There are no accounts.** No sign-in, no email address, no name, no profile. There is nothing to fill in.
 - **Your learning progress stays on your phone.** Completed chapters and Insight Stars are written to your device's local storage. We do not run a server that receives them. We have no database of users.
-- **OmniMath shows ads.** They come from Google AdMob. This is the only part of the app that sends anything off your device, and it starts when you open the app.
-- **The ad software collects device and advertising information**, including your device's advertising identifier if you allow tracking. The exact list is below, taken from Google's own published declarations.
-- **We do not sell your personal information for money.** But when you allow tracking, an advertising identifier is disclosed to Google for personalised advertising, and California law calls that "sharing". We say so plainly rather than hiding behind "we don't sell data".
+- **OmniMath makes no network requests at all.** Not to us, not to anyone. Every lesson, concept and worked example ships inside the app download.
+- **OmniMath has no ads and no App Tracking Transparency prompt.** AdMob, Google's User Messaging Platform, and the advertising identifier request were removed on 12 August 2026 in commit `df7919f`. The last ad-injection code in the app's view layer was removed on 16 August 2026.
+- **There is no advertising identifier (IDFA) collection, and no third party receives anything.** The app ships no third-party SDKs of any kind.
 - **The app asks for no other permissions.** No camera, photos, microphone, location, contacts, health or files.
-- **There is no AI model in OmniMath and it downloads none.** Nothing you read or tap is sent to us or to any model.
-- **OmniMath is built for a general audience** — computer-science students, self-learners and adults. It is not a children's app and is not in the App Store Kids Category.
+- **There is no AI model in OmniMath and it downloads none.** Nothing you read, tap or type is sent to us or to any model.
+- **There is nothing to buy today.** No paywall, purchase screen or subscription prompt is reachable in this build.
+- **OmniMath is built for a general audience** — computer-science students, self-learners and adults. It is not in the App Store Kids Category.
 - **No health data of any kind** is involved. See "Health data" below.
 
 ---
 
 ## What OmniMath is
 
-OmniMath teaches discrete mathematics for computer science through written lessons, a searchable Codex of concepts, and interactive demonstrations. All of the learning content ships inside the app. It is free, and advertising is what pays for it.
+OmniMath teaches discrete mathematics for computer science through written lessons, a searchable Codex of concepts, and interactive demonstrations. All of the learning content ships inside the app.
+
+It is free, and at present nothing pays for it. Until 12 August 2026 advertising did, and earlier versions of this policy said so. That business model was removed from the code, not merely disabled. The app's source contains a `Monetization` module holding StoreKit product identifiers for a possible "OmniMath Plus" subscription, but no screen in the app presents them — there is no reachable purchase route, so the app takes no money from you by any means. If that changes, this policy will be updated before the purchase route ships.
 
 ---
 
 ## What stays on your device
 
-OmniMath writes four things to your iPhone's local app storage (Apple's `UserDefaults`):
+OmniMath writes the following to your iPhone's local app storage (Apple's `UserDefaults`):
 
 | What | Why |
 |---|---|
 | Which chapters you have completed | To show your Journey progress |
+| Which knowledge packs you have worked through | Same |
 | Your Insight Star count | Same |
-| The last chapter you visited | To take you back where you were |
+| The last chapter you visited, and the realm it belongs to | To take you back where you were |
+| Which step of that lesson you had reached | Same |
+| The last knowledge pack you opened | Same |
 | Whether you have seen the intro screens | So onboarding shows once |
 
 That is the complete list. It never leaves your phone through OmniMath. We cannot see it, and we have no way to request it.
+
+*Correction, 16 August 2026:* earlier versions of this policy described "four things". That undercounted — the app also records the realm, the lesson step and the last knowledge pack. None of it is transmitted anywhere, so nothing about what the app discloses changed, but the list was wrong and is now complete.
 
 Two ordinary caveats that are true of any iPhone app:
 
@@ -53,80 +61,36 @@ Two ordinary caveats that are true of any iPhone app:
 One line each, because the honest answer is short.
 
 - No user accounts, and no way to create one.
-- No in-app purchases or subscriptions.
-- No uploads. Nothing you write, draw, tap or search is transmitted anywhere.
+- No ads of any kind — no banners, no interstitials, no rewarded ads.
+- No advertising identifier (IDFA), no `AdSupport`, no SKAdNetwork entries, no App Tracking Transparency prompt.
+- No third-party SDKs. Every code module in the app is written by us.
+- No network requests. There is no upload path, no download path, and no server for the app to talk to.
+- Nothing you write, draw, tap, search or type in the Ask box is transmitted anywhere.
 - No camera, photo library, microphone, contacts, calendar, or file access.
-- No location permission is requested, and the app uses no location APIs. (Google's ad software still estimates a coarse location from your IP address — see below.)
+- No location permission is requested, and the app uses no location APIs. Nothing in the app estimates your location by any other means either.
 - No health, fitness or medical data of any kind.
 - No iCloud or CloudKit sync.
-- No analytics or crash-reporting service of ours.
+- No analytics or crash-reporting service — ours or anyone else's.
 - No AI model, no on-device inference, and no model downloads.
+- Nothing to buy: no paywall, purchase screen or subscription prompt is reachable.
 
 ---
 
-## Advertising — the one place data leaves your device
+## Advertising — removed
 
-OmniMath displays banner ads and occasional full-screen (interstitial) ads through **Google AdMob**. Interstitials are rate-limited: at most one after every second chapter you complete, and never within 90 seconds of the last one.
+**OmniMath shows no ads, and no data leaves your device for advertising or for anything else.**
 
-Ad loading begins **when you open the app**, before you tap anything. That is worth knowing, and we say it because it is true rather than because it is flattering.
+This section used to be the longest in the policy, because it was the one place data left your device. It described banner and interstitial ads served by Google AdMob, ad loading that began the moment you opened the app, Google's consent form for the EEA and UK, the advertising identifier being used for cross-app tracking, a coarse location Google's ad software estimated from your IP address, SKAdNetwork install measurement, and an in-app control for reporting a bad ad.
 
-We choose to show ads. We do not choose which ads you see. Google's systems decide that.
+None of that is true of the shipping app, and every word of it is deleted here:
 
-### What the ad software collects
+- **12 August 2026, commit `df7919f`** — the Google Mobile Ads SDK, the User Messaging Platform (consent) SDK, the whole `App/OmniMath/Ads` tree, the `NSUserTrackingUsageDescription` string, the SKAdNetwork identifier list and the ATT request were removed from the app. The **Settings → Ads → Ad privacy choices** row was removed with them; there is no consent form left for it to reopen. The in-app ad report control went at the same time, with the ad container that hosted it.
+- **16 August 2026** — `MathAds.swift`, the last ad-injection seam in the view layer (banner and interstitial slots, `AdTileView`), was deleted. Nothing referenced it.
+- The build now enforces this. `ci_scripts/ci_post_clone.sh` **fails the build** if `ThirdParty/GoogleAdsSPM` or `App/OmniMath/Ads` is ever restored, and a test suite asserts that no ad symbols are linked.
 
-Google publishes a machine-readable declaration inside the Mobile Ads SDK we ship. Taken directly from it, the Google Mobile Ads SDK collects:
+**Google receives nothing from this app.** Google is no longer a recipient of any data from OmniMath, because the app contacts no server at all. The links to Google's privacy policy and ad settings that used to appear here have been removed rather than left as decoration: pointing you at a third party's controls implies that third party has something of yours, and it does not.
 
-| Category | Linked to you? | Used for |
-|---|---|---|
-| Device ID (your advertising identifier, when available) | Yes | Third-party advertising, analytics — **and this is the item Google marks as used for tracking** |
-| Advertising data (ads shown, tapped, ad interactions) | Yes | Third-party advertising, analytics |
-| Coarse location (estimated from your IP address, not from GPS) | Yes | Third-party advertising, analytics |
-| Product interaction | Yes | Analytics, advertising |
-| Performance data | No | Advertising, analytics |
-| Crash data | No | Analytics |
-| Other diagnostic data | No | Advertising, analytics |
-
-Google's consent software (the "User Messaging Platform") additionally handles coarse location, performance data and product-interaction data for the limited purpose of making the consent form work.
-
-This data goes to Google, not to us. **We never receive it.** We see only aggregate revenue and impression counts in the AdMob dashboard — no identifiers, no per-user records.
-
-What Google does with it is governed by Google's own terms:
-
-- Google Privacy Policy — <https://policies.google.com/privacy>
-- How Google uses information from sites or apps that use our services — <https://policies.google.com/technologies/partner-sites>
-
-### App Tracking Transparency
-
-The first time you open OmniMath, iOS shows Apple's tracking permission dialog.
-
-- **Allow** — Google may use your device's advertising identifier (IDFA) to personalise ads and measure them across apps.
-- **Ask App Not to Track** — the identifier is withheld by iOS. The app works exactly the same and still shows ads, but they are not personalised using that identifier.
-
-You can change your answer at any time in **iOS Settings → Privacy & Security → Tracking**.
-
-### The Google consent form (EEA, UK and other regions)
-
-Where the law requires it — the European Economic Area and the UK in particular — Google's consent form appears before ads load, asking for your choices about personalised advertising and related purposes. That form is where your advertising consent is given or refused.
-
-You can change or withdraw those choices at any time: open **Settings** (the gear in the Codex tab) → **Ads** → **Ad privacy choices**, which reopens the same consent form. That row appears whenever the consent framework requires an entry point (normally the EEA and UK); elsewhere the form does not apply and the row is not shown.
-
-### How to limit personalised ads
-
-1. Turn off tracking for OmniMath: **iOS Settings → Privacy & Security → Tracking**.
-2. If the Google consent form was shown to you, change your answers there (**Settings → Ads → Ad privacy choices** inside the app).
-3. Review and change what Google uses about you at **<https://adssettings.google.com>**.
-
-Ads will still appear. They will simply be less targeted. There is no paid ad-free version of OmniMath today.
-
-### Install measurement (SKAdNetwork)
-
-OmniMath includes Apple's SKAdNetwork identifiers so ad networks can tell that an install happened without learning who you are. This is Apple's privacy-preserving attribution system; it reports aggregate, delayed results and does not identify you individually.
-
-### Reporting an ad
-
-If an ad is inappropriate, misleading, or wrong for this app's audience, tap the report control on the ad container, or use **Settings → Ads**. It opens an email to **admin@prameya.legal** containing only what you type plus the app version and build number — no identifiers, no learning progress. We escalate reports to Google.
-
-We ask Google to cap ad content at the **"G" (general audiences)** rating. That is a request Google honours for ads it serves; it is not a guarantee about every buyer in the auction, which is why the reporting route exists.
+**This part is on us, not on the reader.** The top of this policy was corrected on 12 August 2026 to say the ads were gone, while the body below it went on describing them in the present tense for four days. A policy that contradicts itself in one file is worse than one that is merely out of date, because a reader cannot tell which half to believe. The whole document has now been read against the shipping binary.
 
 ---
 
@@ -134,35 +98,29 @@ We ask Google to cap ad content at the **"G" (general audiences)** rating. That 
 
 Some apps download machine-learning model files on first use. **OmniMath does not.** It contains no model, downloads nothing from any model host, and performs no inference. Every explanation and worked example in the app was written by a person and ships inside the download from the App Store.
 
-The app's source contains an unused programming interface reserved for a possible future on-device model. It is inert, has no implementation, and adds no network access. If that ever changes, this policy will change first.
+The Codex has an **Ask** box. What it does is a deterministic keyword lookup over the lessons and concept entries already on your phone: it finds the closest passage and shows you that passage, copied word for word from the shipped curriculum. It generates no prose of its own, and it sends your question nowhere — there is no network code in the app for it to use. Your question is not stored either.
+
+The source also contains an inert programming interface reserved for a possible future on-device model. It has no model behind it, links no model runtime, and adds no network access. If that ever changes, this policy will change first.
 
 ---
 
 ## If you email us
 
-If you write to admin@prameya.legal — an ad report, a question, a rights request — we receive your email address and whatever you put in the message. We keep it only as long as we need it to deal with your message and to keep a record that we did, and you can ask us to delete it. That mailbox is the only place Prameya holds anything about a user of this app.
+If you write to admin@prameya.legal — a question, a bug report, a rights request — we receive your email address and whatever you put in the message. We keep it only as long as we need it to deal with your message and to keep a record that we did, and you can ask us to delete it. That mailbox is the only place Prameya holds anything about a user of this app.
 
 ---
 
 ## Children and OmniMath
 
-This matters more here than in our other apps, because this is the one app that shows ads.
-
 **Who OmniMath is for.** University and later-secondary computer-science students, self-taught programmers, and adults who want to understand discrete mathematics. It is a general-audience educational app. It is not in the App Store Kids Category, it is not designed or marketed for young children, and its content, artwork and language are aimed at older students and adults.
 
-**What that means in practice, stated honestly.** Ads load when the app opens, before anyone is asked anything. If a young child uses OmniMath on a device where tracking is allowed, an advertising identifier can be transmitted to Google in the same way it would be for any other user. We do not have a way to detect a child's age, and we do not ask for one.
+**What that means in practice, stated plainly.** Nothing is collected from anyone who uses OmniMath, at any age. There is no identifier to transmit, no advertising network to transmit it to, and no network request of any kind. A child using this app is in the same position as an adult using it: their progress is written to their own phone and stays there.
 
-**What parents and guardians can do.**
+**What we do not do.** We do not knowingly collect personal information from children — we collect nothing from anyone, because there is nothing to collect and nowhere for it to go. We do not build profiles. We do not use any school, classroom or ClassKit data; the app has no such integration.
 
-- Turn off tracking for OmniMath in **iOS Settings → Privacy & Security → Tracking**, or turn off "Allow Apps to Request to Track" device-wide.
-- Use **Screen Time** to manage which apps a child can use.
-- Write to us at admin@prameya.legal with any concern about a child's use of the app.
+**On the signal that used to be sent to the ad network.** Google's ad software let a publisher flag an app as directed to children, flag it as not directed to children, or send no flag at all. OmniMath sent no flag. That decision no longer has anything to attach to: the ad SDK is gone, so no flag of any kind is transmitted or transmittable.
 
-**What we do not do.** We do not knowingly collect personal information from children ourselves — we collect nothing from anyone directly, because there is nothing to collect and nowhere for it to go. We do not build profiles. We do not use any school, classroom or ClassKit data; the app has no such integration.
-
-**On the signal we send the ad network.** Google's software lets a publisher flag an app as directed to children, flag it as not directed to children, or send no flag at all. OmniMath sends **no flag**. Sending "not directed to children" would be a formal certification, and we do not make certifications we have not properly assessed — we have not made that certification, here or anywhere else. Leaving it unset is the accurate option, not an evasive one.
-
-If you believe a child under 13 has used OmniMath in a way that concerns you, contact us and we will help with whatever is within our control — which, given that we hold no user data, is chiefly helping you switch off tracking and pointing you to Google's controls.
+**What parents and guardians can do.** Use **Screen Time** to manage which apps a child can use, and write to us at admin@prameya.legal with any concern. The tracking-permission advice this section used to give is obsolete: OmniMath no longer appears under **iOS Settings → Privacy & Security → Tracking**, because it never asks to track.
 
 ---
 
@@ -182,58 +140,60 @@ OmniMath processes **no consumer health data**. It has no health, wellness, symp
 
 ## Your privacy rights
 
-Because we hold almost nothing, most requests have a very short answer — but the routes are real and we will use them.
+Because we hold nothing, most requests have a very short answer — but the routes are real and we will use them.
 
 ### Everyone
 
 - **See what we hold about you.** Ask us. The answer is normally "your email to us, if you sent one, and nothing else".
 - **Delete it.** Ask us to delete your correspondence. For your on-device learning data, use **Progress → Reset All Progress**, or delete the app — that is a genuine deletion, not a request to us.
-- **Control advertising.** Use the three steps in "How to limit personalised ads" above.
-- Write to **admin@prameya.legal**. That is a small publisher mailbox rather than a staffed support desk; we aim to answer within 30 days, and if we need longer we will say so.
+- **Advertising controls.** There are none to give you, and none needed: no advertising happens in this app, and no advertising identifier is requested.
+- Write to **admin@prameya.legal**. We aim to respond within 30 days.
 
 ### California (CCPA / CPRA)
 
 California residents have the rights to know, delete, correct, and to opt out of the sale or sharing of personal information, and not to be discriminated against for exercising them.
 
-**Do Not Sell or Share My Personal Information.** We do not sell personal information for money. We do disclose advertising identifiers and ad-interaction data to Google for personalised advertising when you have allowed tracking. Under California law that is **"sharing" for cross-context behavioural advertising**, and some other state laws would call it a "sale". We are telling you that directly. **Your opt-out is to deny tracking** — iOS Settings → Privacy & Security → Tracking. Once denied, the identifier is not available to be shared. The same disclosure appears in the app itself, under Settings → Ads.
+**Do Not Sell or Share My Personal Information.** We do not sell personal information, and we do not share it for cross-context behavioural advertising. Until 12 August 2026 this section said the opposite, and it was accurate then: advertising identifiers and ad-interaction data were disclosed to Google for personalised advertising, which California calls "sharing". That disclosure stopped when the ad SDK was removed. There is now no recipient, no identifier and no transmission, so there is nothing to opt out of. The opt-out this section used to name — denying tracking under iOS Settings → Privacy & Security → Tracking — no longer applies either, because OmniMath never asks to track and so does not appear in that list.
 
-**Categories.** The categories involved are *identifiers* (advertising identifier), *internet or network activity* (ad interactions, app interaction data), and *coarse geolocation inferred from IP address*. The source is your device. The business purpose is advertising and the measurement of advertising. The category of third party receiving it is the advertising network (Google). We do not collect the other CCPA categories at all — no name, contact details, financial information, biometric, health, precise geolocation, employment or education records.
+**Categories.** We collect none of the CCPA categories. No identifiers, no internet or network activity, no geolocation of any precision, no name, contact details, financial information, biometric, health, employment or education records. The only personal information Prameya ever holds about a user of this app is an email you choose to send us, at the address above.
 
 **Sensitive personal information.** OmniMath does not collect sensitive personal information as California defines it. There is nothing here for a "Limit the Use of My Sensitive Personal Information" control to limit.
 
-**Minors.** We do not knowingly sell or share the personal information of consumers under 16.
+**Minors.** We do not sell or share the personal information of consumers under 16 — or of anyone else, at any age.
 
-**Global Privacy Control.** GPC is a browser signal and there is no established equivalent for native iOS apps. Apple's tracking permission is the effective control here, and denying it stops the sharing described above.
+**Global Privacy Control.** GPC is a browser signal and there is no established equivalent for native iOS apps. It makes no difference here: there is no sale or sharing for a GPC signal to stop.
 
 **A candid note on scope.** Prameya is a very small company and may fall below the revenue and volume thresholds that make the CCPA legally binding. We describe and honour these choices regardless of whether we are required to.
 
 ### Other US states
 
-Virginia, Colorado, Connecticut, Texas, Oregon, Montana and a growing number of other states give residents rights to access, correct, delete and port personal data, and specifically to **opt out of targeted advertising** and profiling. If any of those laws applies to us, the same mechanisms answer it: deny tracking on your device to stop targeted advertising, and email us for anything else. Some of these states offer an appeal if we refuse a request — if we ever refuse yours, we will tell you how to appeal and how to contact your state Attorney General.
+Virginia, Colorado, Connecticut, Texas, Oregon, Montana and a growing number of other states give residents rights to access, correct, delete and port personal data, and specifically to opt out of targeted advertising and profiling. If any of those laws applies to us, the answer is the same one: no targeted advertising occurs in OmniMath, no profiling occurs, and no personal data is collected to access, correct, delete or port. Email us for anything else. Some of these states offer an appeal if we refuse a request — if we ever refuse yours, we will tell you how to appeal and how to contact your state Attorney General.
 
 ### EEA and United Kingdom (GDPR / UK GDPR)
 
 OmniMath is available worldwide, so this section applies if you are in the EEA or the UK.
 
-**Controller.** Prameya LLC, contact admin@prameya.legal, is the controller for the very limited processing it carries out — that is, correspondence you send us. Google acts as an independent controller for the advertising data it collects through its own software; its policies and its rights processes govern that data.
+**Controller.** Prameya LLC, contact admin@prameya.legal, is the controller for the only processing it carries out — correspondence you send us. There is no joint controller and no processor: as of 12 August 2026 no third party receives personal data through this app. Google was previously an independent controller for advertising data collected through its own software in the app; it no longer receives anything.
 
 **Legal bases.**
 
-- *Personalised advertising:* your **consent**, collected through the Google consent form. You may withdraw it at any time, through **Settings → Ads → Ad privacy choices** in the app wherever that form applies to you.
-- *Non-personalised (contextual) ad delivery, fraud prevention and basic ad measurement:* **legitimate interests** in funding a free app, balanced against the limited data involved.
 - *Answering your email:* legitimate interests, or the steps needed to respond to you.
 
-**Profiling.** Personalised advertising involves profiling for advertising purposes. It has no legal or similarly significant effect on you, and you can switch it off at any time.
+That is the whole list. The advertising entries that used to sit above it — consent for personalised advertising, and legitimate interests in funding a free app through contextual ads — are gone because the processing they described is gone.
+
+**Consent.** No consent form appears in OmniMath. Google's consent form (the User Messaging Platform) was removed on 12 August 2026 along with the advertising it gated. There is no advertising consent to give, withdraw or re-open.
+
+**Profiling.** None. No automated decision-making of any kind takes place, and nothing in the app builds a profile of you.
 
 **Special-category data (Article 9).** None is processed. There is no health, biometric, racial, religious, political, trade-union or sexual-life data anywhere in this app.
 
-**Your rights.** Access, rectification, erasure, restriction, portability, objection to processing based on legitimate interests, and withdrawal of consent. Because we hold no user records, requests about advertising data need to go to Google, and we will point you there and help where we can.
+**Your rights.** Access, rectification, erasure, restriction, portability, objection to processing based on legitimate interests, and withdrawal of consent. In practice these reach only an email you have sent us, because that is all that exists.
 
-**International transfers.** We do not transfer your data internationally, because we do not hold it. Google's transfers are covered by Google's own safeguards.
+**International transfers.** None. We do not transfer your data internationally, because we do not hold it and the app sends nothing anywhere.
 
 **Complaints.** You may complain to your national data protection authority, or to the UK Information Commissioner's Office if you are in the UK.
 
-**Children in Europe.** Where consent is the legal basis for processing a child's data, GDPR requires the child to be at least 16, or younger only with the consent of a parent or guardian, subject to each member state's lower age limit (never below 13). OmniMath is aimed at older students and adults; see "Children and OmniMath" above for the controls available to parents.
+**Children in Europe.** Where consent is the legal basis for processing a child's data, GDPR requires the child to be at least 16, or younger only with the consent of a parent or guardian, subject to each member state's lower age limit (never below 13). No consent-based processing of anyone's data occurs in OmniMath. See "Children and OmniMath" above.
 
 ---
 
@@ -242,7 +202,7 @@ OmniMath is available worldwide, so this section applies if you are in the EEA o
 There is not much to secure, and that is the design.
 
 - Your learning data stays in your app's private storage on your device, protected by iOS and your passcode. Use a passcode and keep iOS up to date.
-- All network traffic from the advertising software is encrypted in transit using standard iOS transport security.
+- The app makes no network requests, so there is no traffic to intercept. As of 16 August 2026, a search of the compiled sources for `URLSession`, `URLRequest` and `dataTask` returns nothing at all. The transport-security discussion that used to sit here covered the advertising SDK's traffic; there is no such traffic now.
 - We operate no server holding user data, so there is no user database of ours that could be breached.
 
 We make no claim to unbreakable security. No system is perfectly secure.
@@ -253,15 +213,13 @@ We make no claim to unbreakable security. No system is perfectly secure.
 
 - **On your device:** kept until you clear it (Progress → Reset All Progress) or delete the app.
 - **With us:** only emails you send us, kept as long as needed to handle your message and to record that we handled it. Ask and we will delete yours.
-- **With Google:** governed by Google's retention practices, described in Google's privacy policy.
+- **With anyone else:** nothing. No third party receives anything from this app, so no third party has anything to retain.
 
 ---
 
 ## App Store privacy labels — one clarification
 
-Apple's App Store privacy labels use Apple's own definition of "collect", which turns on data leaving your device. That definition is useful for reading the labels and nothing more. It does not shrink our duties under state or national privacy law, and we have not used it to narrow anything in this policy. If you ever find the labels on our App Store page saying less than this policy does, this policy is the fuller account — tell us and we will correct the listing.
-
-**The app's own privacy manifest.** The shipping build includes an Apple privacy manifest (`PrivacyInfo.xcprivacy`). It declares the one "required reason" API OmniMath uses — Apple's `UserDefaults`, for the four on-device items listed near the top of this policy — and declares no data collected by the app itself, because the app itself collects none. It does **not** declare app tracking, for a reason worth stating plainly: Apple requires a list of tracking domains alongside such a declaration, and Google publishes none for the Mobile Ads SDK. Do not read our manifest as a promise that no advertising identifier ever leaves your device — it can, exactly as described in the Advertising section above. The advertising collection is declared in Google's own manifests inside its SDKs, which Apple combines with ours.
+Apple's App Store privacy labels use Apple's own definition of "collect", which turns on data leaving your device. That definition is useful for reading the labels and nothing more. It does not shrink our duties under state or national privacy law, and we have not used it to narrow anything in this policy.
 
 ---
 
@@ -269,9 +227,9 @@ Apple's App Store privacy labels use Apple's own definition of "collect", which 
 
 We will update this policy when the app changes — and, where we can, before the change ships. When we do, we will change the effective date at the top and describe what changed. If a change materially expands what is collected or who receives it, we will surface it in the app rather than relying on you to re-read this page.
 
-**This revision (8 August 2026)** corrected statements in the previous version so that they match the code that actually ships. Specifically: the paragraph about withdrawing advertising consent now describes the **Settings → Ads → Ad privacy choices** row that exists in the build, instead of describing it as forthcoming; the paragraph about the app's privacy manifest now describes what that manifest actually declares, replacing an earlier statement that it would declare tracking as enabled with Google's advertising domains — it does not; and two internal review notes that should never have been published were removed. Nothing about what the app collects or who receives it changed in this revision; the description of it got more accurate.
+**16 August 2026 — what changed.** Advertising was removed from OmniMath in commit `df7919f` on 12 August 2026, and the last ad-injection code in the view layer was removed on 16 August 2026. On 12 August the summary at the top of this policy was corrected, but the body was not: for four days this file said "no ads" in its first section and then described banner ads, interstitials, ad load timing, Google's data-collection table, the advertising identifier, IP-derived coarse location, SKAdNetwork and an ad-reporting control in the present tense. Every one of those passages has now been deleted or rewritten, along with the advertising legal bases under GDPR, the California "sharing" disclosure and its tracking-based opt-out, the ad-related retention entry, the ad-traffic security claim, and the ad-dependent reasoning in the children's section. The on-device data table was also corrected: it had listed four stored items where the app stores eight. This update removes disclosures; it adds no collection.
 
-The current version of this policy, and the policies for Prameya's other apps, are always at <https://prameyallc.github.io/privacy/>.
+Older versions are kept in the public repository behind <https://prameyallc.github.io/privacy/>.
 
 ---
 
@@ -281,7 +239,5 @@ The current version of this policy, and the policies for Prameya's other apps, a
 Email: **admin@prameya.legal**
 Privacy policies for all Prameya apps: <https://prameyallc.github.io/privacy/>
 This policy: <https://prameyallc.github.io/privacy/omnimath/>
-
-This page is also reachable from inside the app: **Settings** (the gear in the Codex tab toolbar) → **Privacy** → **Privacy Policy**.
 
 If you are writing about a privacy right, say which right and which app, and we will get to it faster.
