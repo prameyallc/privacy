@@ -35,6 +35,7 @@ APPS = [
     ("omniwealth", "OmniWealth", "Financial education and habit support",    "#816B22", "#9B853C", False),
     ("omnimath",   "OmniMath",   "Discrete mathematics for computer science","#6D28D9", "#A78BFA", False),
     ("omnibuild",  "OmniBuild",  "Construction and skilled-trades reference","#854200", "#F28C06", False),
+    ("omniops",    "OmniOps",    "Personal operating discipline and habits", "#0B7D6E", "#159485", False),
 ]
 
 # --------------------------------------------------------------------------- contrast
