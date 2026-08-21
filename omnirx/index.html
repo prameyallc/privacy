@@ -108,11 +108,11 @@ and wellness information you enter into this app.</p>
 <li><strong>We run no server.</strong> Prameya has no database of users, no profile store, and nowhere for your data to go.</li>
 <li><strong>Everything you type stays on your iPhone or iPad.</strong> Your medication logs, barriers, notes, mood and energy entries are written to a private database inside the app on your device, created with iCloud sync switched off for that database.</li>
 <li><strong>Nothing you type goes to iCloud.</strong> No medication log, no journal entry, no profile field syncs to iCloud.</li>
-<li><strong>The app does make one kind of network connection.</strong> If you turn on the on-device AI switch <em>and</em> the separate model-download switch — both are off when you install the app — OmniRx downloads model files from Hugging Face. That connection carries a request for model files. It does not carry anything you typed.</li>
-<li><strong>After the download, the AI runs on your device.</strong> Your text and logs are not sent to us, to Hugging Face, or to any AI provider.</li>
+<li><strong>The app does make one kind of network connection:</strong> preference sync through <strong>your</strong> iCloud account (appearance, disclosure acknowledgement). There is no model download and no Hugging Face request.</li>
+<li><strong>Your questions and logs stay on your device.</strong> They are not sent to us or to any AI provider.</li>
 <li><strong>No ads. No analytics. No trackers.</strong> OmniRx contains no advertising SDK, no analytics SDK, and no crash-reporting SDK.</li>
 <li><strong>No camera, no photos, no microphone, no location, no contacts.</strong> The app does not ask for these and cannot use them.</li>
-<li><strong>No reminders and no notifications.</strong> The app does not schedule or send any.</li>
+<li><strong>You can set one daily reminder</strong> in Settings to log Taken or Skipped. The lock screen says “Reminder”, not a medicine name.</li>
 <li><strong>You can delete everything from inside the app.</strong> Settings → "Delete all my data".</li>
 <li><strong>We do not sell your data.</strong> We could not — we do not have it.</li>
 <li><strong>This is an education and habit-tracking app, not medical advice.</strong> It does not diagnose, does not calculate doses, does not check interactions, and does not identify medicines from photographs.</li>
@@ -210,36 +210,19 @@ up, you can turn off iCloud Backup for OmniRx in iOS Settings, or turn off iClou
 <hr />
 <h2 id="network-connections-omnirx-makes">Network connections OmniRx makes</h2>
 <p><strong>We do not claim that OmniRx never uses the internet. It does, for one purpose.</strong></p>
-<h3 id="downloading-ai-model-files-from-hugging-face">Downloading AI model files from Hugging Face</h3>
-<p>OmniRx uses Apple's MLX framework to run a small language model locally. The model files are not<br />
-bundled in the app — they are downloaded from <strong>Hugging Face</strong> (<code>huggingface.co</code> and its<br />
-content-delivery hosts).</p>
-<ul>
-<li><strong>What is sent:</strong> a request for a specific model repository and its files. As with any web request,<br />
-  Hugging Face's servers see your device's IP address and standard connection information.</li>
-<li><strong>What is not sent:</strong> nothing you typed. No medication log, no journal entry, no note, no question.<br />
-  The download layer only asks for files.</li>
-<li><strong>When:</strong> only after you turn on <strong>two</strong> separate switches in Settings — "Use on-device AI" and the<br />
-  model-download switch under it. Both are off when you install the app, and the download code checks<br />
-  both before it will fetch anything. The app records the date you gave permission and shows it back to<br />
-  you, and turning the AI switch off withdraws the download permission with it. Until you turn both on,<br />
-  nothing downloads.</li>
-<li><strong>How big:</strong> the only model in the app's catalogue is Qwen3 0.6B, roughly 420 MB. Settings states the<br />
-  size next to the switch before you agree. It is large enough to sit above the size at which the app<br />
-  requires your explicit permission, which is why nothing can download silently. The second, larger<br />
-  vision model that a previous draft of this policy mentioned has been removed; there is one text model<br />
-  and nothing else.</li>
-<li><strong>Data plan:</strong> the download is large. Use Wi-Fi if you are on a limited plan.</li>
-<li>Hugging Face is an independent company with its own privacy policy. We have no agreement with them<br />
-  about you, and we send them nothing about you.</li>
-</ul>
-<h3 id="after-the-download-on-device-inference">After the download: on-device inference</h3>
-<p>Once the model is on your device, it runs there. Text you give the app is processed by your device's<br />
-own processor. It is not transmitted to Prameya, to Hugging Face, or to any AI provider. There is no<br />
-cloud fallback, no remote retrieval endpoint, and no "ask the server when it's hard" path.</p>
-<p>This is a real privacy benefit and we state it precisely: <strong>your content is processed locally and is<br />
-not transmitted to us.</strong> We do not say "nothing ever leaves the device", because model files do come<br />
-in over the network.</p>
+<h3 id="preference-sync-through-your-icloud-account">Preference sync through your iCloud account</h3>
+<p>The only outbound connection in the shipping app is CloudKit sync of <strong>non-health preferences</strong>
+through <strong>your</strong> private iCloud database: appearance mode, a leftover on-device-AI flag with no
+Settings control (default off), a text-size preference, and the version of the first-run notice you
+acknowledged. Medication logs, journal entries, and profile records are excluded by an allow-list
+enforced by tests.</p>
+<p>There is no model download, no Hugging Face client, and no reachable path to <code>huggingface.co</code>.</p>
+<h3 id="on-device-processing">On-device processing</h3>
+<p>Text you give the app is processed on your device. It is not transmitted to Prameya or to any AI
+provider. There is no cloud fallback and no remote retrieval endpoint.</p>
+<p>This is a real privacy benefit and we state it precisely: <strong>your content is processed locally and is
+not transmitted to us.</strong> We do not say "nothing ever leaves the device", because preference sync
+uses your iCloud account.</p>
 <h3 id="nothing-else">Nothing else</h3>
 <p>There is no other outbound connection in the app. No telemetry endpoint, no ad request, no attribution<br />
 call, no license check.</p>
@@ -302,21 +285,12 @@ you recorded for missed doses.</p>
 <hr />
 <h2 id="on-device-ai-what-it-is-and-what-it-is-not">On-device AI: what it is and what it is not</h2>
 <ul>
-<li>The model is <strong>Qwen3 0.6B, an open-weight third-party model</strong> downloaded from Hugging Face and run<br />
-  locally through Apple's MLX framework. It is the only model the app offers.</li>
-<li><strong>As the app ships today, no screen sends what you write to the model.</strong> Turning on on-device AI lets<br />
-  you download, load and unload the model in Settings; no feature in the app currently feeds your<br />
-  medication logs, notes or questions into it. If that changes, inference still runs on your device.</li>
-<li>Because inference is local, <strong>no personal data is sent to a third-party AI provider</strong>. Apple's<br />
-  requirement to name a third-party AI provider and obtain your permission before sharing personal data<br />
-  with one does not arise here, because no such sharing happens.</li>
-<li>The model has real limits. It can be wrong. Nothing it produces is medical advice, and the app is<br />
-  built to refuse dosing, interaction checking, tapering, pill identification, diagnosis, and any answer<br />
-  tailored to your specific medication list.</li>
-<li><strong>We do not publish a separate AI model disclosure page.</strong> What we can tell you about the model — its<br />
-  name, its size, that it is open-weight, where it is downloaded from, and that it runs locally — is<br />
-  stated here and in the app's Settings screen. If we publish a fuller disclosure page later, we will<br />
-  link it from this policy.</li>
+<li><strong>The shipping app has no on-device model.</strong> Unused Intelligence (MLX / Hugging Face) was
+  deleted. Settings does not offer a download.</li>
+<li>Because nothing is sent to a third-party AI provider, Apple's requirement to name one and obtain
+  your permission before sharing personal data with one does not arise.</li>
+<li>The app still refuses dosing, interaction checking, tapering, pill identification, diagnosis, and
+  any answer tailored to your specific medication list — those are not things OmniRx does.</li>
 </ul>
 <hr />
 <h2 id="consumer-health-data">Consumer health data</h2>
@@ -377,8 +351,6 @@ OmniRx is available where you live:</p>
   created and held on your own device, under your control.</li>
 <li>For the one thing we do receive — support email — our lawful basis is our legitimate interest in<br />
   answering you, or performance of a contract if your question concerns the app you installed.</li>
-<li>The model download connects you to Hugging Face, which is an independent controller for the request<br />
-  logs its own servers generate.</li>
 <li>You have rights of access, rectification, erasure, restriction, objection and portability against us<br />
   for anything we hold. Because that is limited to support email, those requests are quick to answer.<br />
   You may also complain to your national data protection authority.</li>
@@ -404,7 +376,7 @@ consent.</p>
   device passcode or biometric lock.</li>
 <li>Sensitive internal values are held in the iOS Keychain and marked device-only, so they do not<br />
   transfer to other devices.</li>
-<li>Network requests to Hugging Face use HTTPS.</li>
+<li>Preference sync uses Apple's CloudKit over HTTPS, through your own iCloud account.</li>
 <li><strong>The strongest security property of this app is architectural:</strong> there is no server holding your<br />
   medication history, so there is no server to breach. We make no claims about "military-grade" or<br />
   "unbreakable" security, and we hold no certifications we have not earned.</li>

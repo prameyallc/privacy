@@ -112,18 +112,11 @@ affiliates, not with service providers or processors.
 Prameya has no affiliates. We use no processor, contractor or service provider that touches consumer
 health data, because no such data reaches us.
 
-### About Hugging Face — read this so the list above is not misleading
+### About network connections — so the list above is not misleading
 
-If you turn on the on-device AI switch and the separate model-download switch — both are off when you
-install the app — OmniRx downloads model files from **Hugging Face**. That is a network connection, and
-Hugging Face's servers see your device's IP address like any web server would.
-
-**Hugging Face does not receive any consumer health data.** The connection carries a request for model
-files only. Your medication logs, journal entries, notes and barriers are never part of it. After the
-download, the model runs on your device.
-
-We mention this because a "we share nothing" claim would be incomplete without explaining the one
-network connection the app does make.
+The shipping app does not contact Hugging Face or any other third party with consumer health data.
+The only optional network path is preference sync through the reader’s own iCloud account, which
+does not include health records.
 
 ### About iCloud — so the same claim is not misleading either
 
@@ -202,11 +195,8 @@ You can withdraw consent to our collection and sharing of your consumer health d
 In practice, you can do all of this yourself, immediately:
 
 - **Stop logging** — the app never records anything you do not enter.
-- **Turn off "Use on-device AI"** in Settings. Doing so also withdraws your permission for the model
-  download, so nothing further is fetched. The app has an "Unload" control that removes the model from
-  memory; it has **no** button that deletes model files already downloaded — deleting the app removes
-  the app's storage from your device.
-- **Delete everything you have logged** — Settings → **"Delete all my data"**.
+- **Delete everything you have logged** — Settings → **"Delete all my data"**. This also clears any
+  leftover on-device model cache from older builds.
 - **Delete the app** — this removes all of its data from your device.
 
 You may also email **admin@prameya.legal** to withdraw consent in writing. We will confirm and record

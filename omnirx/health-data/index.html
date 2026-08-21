@@ -219,15 +219,10 @@ affiliates, not with service providers or processors.</p>
 <p><strong>None. The list is empty.</strong></p>
 <p>Prameya has no affiliates. We use no processor, contractor or service provider that touches consumer<br />
 health data, because no such data reaches us.</p>
-<h3 id="about-hugging-face-read-this-so-the-list-above-is-not-misleading">About Hugging Face — read this so the list above is not misleading</h3>
-<p>If you turn on the on-device AI switch and the separate model-download switch — both are off when you<br />
-install the app — OmniRx downloads model files from <strong>Hugging Face</strong>. That is a network connection, and<br />
-Hugging Face's servers see your device's IP address like any web server would.</p>
-<p><strong>Hugging Face does not receive any consumer health data.</strong> The connection carries a request for model<br />
-files only. Your medication logs, journal entries, notes and barriers are never part of it. After the<br />
-download, the model runs on your device.</p>
-<p>We mention this because a "we share nothing" claim would be incomplete without explaining the one<br />
-network connection the app does make.</p>
+<h3 id="about-network-connections-so-the-list-above-is-not-misleading">About network connections — so the list above is not misleading</h3>
+<p>The shipping app does not contact Hugging Face or any other third party with consumer health data.
+The only optional network path is preference sync through the reader’s own iCloud account, which
+does not include health records.</p>
 <h3 id="about-icloud-so-the-same-claim-is-not-misleading-either">About iCloud — so the same claim is not misleading either</h3>
 <p><strong>No consumer health data is placed in iCloud by the app.</strong> The database holding what you log is<br />
 created local-only, with iCloud sync switched off for it.</p>
@@ -280,11 +275,7 @@ copy. There is no share sheet and no exported file; moving the text anywhere is 
 <p>In practice, you can do all of this yourself, immediately:</p>
 <ul>
 <li><strong>Stop logging</strong> — the app never records anything you do not enter.</li>
-<li><strong>Turn off "Use on-device AI"</strong> in Settings. Doing so also withdraws your permission for the model<br />
-  download, so nothing further is fetched. The app has an "Unload" control that removes the model from<br />
-  memory; it has <strong>no</strong> button that deletes model files already downloaded — deleting the app removes<br />
-  the app's storage from your device.</li>
-<li><strong>Delete everything you have logged</strong> — Settings → <strong>"Delete all my data"</strong>.</li>
+<li><strong>Delete everything you have logged</strong> — Settings → <strong>"Delete all my data"</strong>. This also clears any leftover on-device model cache from older builds.</li>
 <li><strong>Delete the app</strong> — this removes all of its data from your device.</li>
 </ul>
 <p>You may also email <strong>admin@prameya.legal</strong> to withdraw consent in writing. We will confirm and record<br />
