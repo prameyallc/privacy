@@ -1,6 +1,7 @@
 # OmniBuild Privacy Policy
 
-**Effective date:** August 8, 2026
+**Effective date:** August 8, 2026  
+**Last updated:** August 21, 2026
 **Publisher:** Prameya LLC ("Prameya", "we", "us"), a United States limited liability company
 **App:** OmniBuild for iPhone and iPad
 **Contact:** admin@prameya.legal
@@ -14,11 +15,11 @@ This policy covers the OmniBuild app only. Other Prameya apps have their own pol
 - **We never receive your data.** Prameya runs no server that receives anything from OmniBuild. We have no user database and no user accounts.
 - **There is no account and no login.** Every feature works the moment you open the app.
 - **Your project logs, maintenance logs, decisions and notes stay on your iPhone or iPad.** They are stored in the app's own storage on your device. They are not uploaded, backed up to us, or synced to any cloud service by the app.
-- **The AI runs on your device.** OmniBuild uses Apple's MLX framework to run a small open-weight language model locally. What you type and what you log is processed on the device and is not sent to us or to any AI company.
-- **The app does connect to the internet once, for one thing.** To get the AI model, OmniBuild downloads the model file from Hugging Face over HTTPS. You start that download yourself in Settings. The request asks for a public model file. It does not contain your logs, your notes, or anything you typed.
+- **The app makes no outbound network requests.** There is no AI model download, no analytics endpoint, and no server. Everything it shows you ships inside the app.
+- **There is no on-device AI feature.** Earlier builds linked an unused MLX stack; that code is gone. The app does not generate answers.
 - **No ads, no analytics, no tracking, no crash reporting.** There is no advertising SDK, no analytics SDK, and no third-party tracking code in the app.
 - **No camera, no photos, no location, no microphone, no health data.** OmniBuild does not use any of them.
-- **Deleting is easy.** Settings has a button that erases your logs. Deleting the app removes everything, including the downloaded model.
+- **Deleting is easy.** Settings has a button that erases your logs. Deleting the app removes everything.
 
 ---
 
@@ -46,7 +47,7 @@ Everything in this table lives in OmniBuild's own storage area on your device. N
 | Maintenance and habit logs | The kind of task, the date, how thorough you were, minutes spent, your notes | App database on device |
 | Decision entries | A title, the framework you used, the options you considered, what you chose, and your later reflection | App database on device |
 | A small profile | How many projects you are aiming for per quarter and which areas you are focused on | App database on device |
-| App preferences | Light/dark appearance choice, which AI model you selected, which models you have already downloaded, and download resume information so an interrupted download can continue | Device settings storage |
+| App preferences | Light/dark appearance choice | Device settings storage |
 
 The cost figures in your project and decision logs are numbers **you** type. They are your own estimates. The app does no lookup and no comparison against any pricing database.
 
@@ -54,37 +55,21 @@ Apple's normal device backup (iCloud Backup or an encrypted computer backup) may
 
 ---
 
-## The one time OmniBuild uses the network
+## Network access — there is none
 
-OmniBuild makes one, and only one, outbound internet connection of its own.
+**OmniBuild makes no network requests.** It has no server to talk to, no analytics endpoint, no update channel and no content feed. Everything it displays ships inside the app bundle.
 
-**Downloading the AI model.** The on-device AI is optional and off until you turn it on. When you tap to download and load the model in Settings, the app fetches the model files over HTTPS from **Hugging Face** (huggingface.co), which hosts open-weight models. Concretely:
+The only thing that reaches the network is your own browser, when *you* tap "Read the full policy online" in Settings. That hand-off is an ordinary link: your browser makes the request, and nothing about you is attached to it by us.
 
-- **What is sent:** a request for a specific, public model repository — currently a small open-weight model, roughly 420 MB. Plus the ordinary technical information any web request necessarily reveals to the server it contacts: your device's IP address and standard HTTP headers.
-- **What is *not* sent:** your logs, your notes, your questions, your device identifiers, or any content you created. None of it. The request is for a file; it carries nothing about you beyond the connection itself.
-- **Who sees it:** Hugging Face, the company operating that service. Prameya does not see the request and receives no report about it. Hugging Face is an independent company and its own privacy policy governs what it does with the connection information it receives.
-- **When:** only when you start it. The app does not download the model in the background or on first launch — it declares no background modes and uses no background download session.
-- **How often:** once per model. After the files are on your device, the app does not need to contact Hugging Face again to use that model.
-
-The app also watches your device's own network status (for example, whether you are on a constrained or expensive connection) so it can pause a large download and not burn your data plan. That check happens entirely on the device and sends nothing anywhere.
-
-All connections are made over HTTPS. The app is configured to refuse unencrypted connections.
-
-**That is the whole picture for the code we wrote.** The model download is the only network call in Prameya's own source code, and no code path anywhere in the app transmits your content. Prameya operates no backend for this app. There is no endpoint that could receive your content, because we did not build one. The app also compiles in open-source libraries whose internal network behaviour we have not yet finished auditing; we say what we can and cannot vouch for about those under **Third parties** below.
+**How to check this rather than take our word for it.** No code reachable from the app's user interface references `URLSession`, `URLRequest` or Apple's `Network` framework. The macOS build declares no `com.apple.security.network.client` sandbox entitlement.
 
 ---
 
-## Where the AI runs
+## On-device AI — removed
 
-The AI runs on your device, using Apple's MLX framework and the model file you downloaded. Your prompts, your logs, and the summaries the app generates are processed locally in the app's memory and storage. The app ships a single text-only model in its catalogue and calls no third-party AI service.
+**OmniBuild contains no AI feature.** Earlier builds carried an on-device language model (Apple's MLX framework) behind a Settings control. Nothing in the app could put a question to that model — no shipping screen consumed its output — so the control, the download, and the model code were removed. The app answers nothing generatively; it shows you sourced regulatory text and cites it.
 
-We want to be precise rather than flattering here:
-
-- Your content is **not** transmitted to Prameya. We could not read it if we wanted to.
-- Your content is **not** sent to OpenAI, Anthropic, Google, Hugging Face, or any other AI provider. There is no third-party AI service in this app.
-- The one thing that does leave your device is the model *download* described above — a file request, not your content.
-
-So "nothing you write leaves your device" is true. "The app never touches the internet" would be false, and we are not going to tell you that.
+Versions of this policy before 21 August 2026 described "the one network request" — an HTTPS download of AI model weights from Hugging Face, said to start when you tapped a button in Settings. **That button did not exist** in the shipping UI, and the code behind it is gone. A privacy policy that describes data flows the app cannot perform is not a safe document in either direction.
 
 ---
 
@@ -135,7 +120,7 @@ OmniBuild has **no account system**. There is nothing to register, no password, 
 
 OmniBuild also does **no cloud sync**. Your logs do not travel between your devices through the app, and they do not reach iCloud through anything the app does.
 
-An earlier build shipped a dormant sync component and iCloud entitlements. It set a timestamp and wrote a log line; it transmitted no records to anywhere. It was never reachable from any screen — there was no working "Sync Now" button a user could press. That component has been deleted, along with the iCloud container and the CloudKit and CloudDocuments entitlements, and the unused Sign in with Apple import and keychain accessors. The current build declares only two entitlements: the iOS app sandbox and outbound network client access. If we ever build real sync, it will be off by default, it will be explained here before it ships, and this policy will say exactly what syncs.
+An earlier build shipped a dormant sync component and iCloud entitlements. It set a timestamp and wrote a log line; it transmitted no records to anywhere. It was never reachable from any screen — there was no working "Sync Now" button a user could press. That component has been deleted, along with the iCloud container and the CloudKit and CloudDocuments entitlements, and the unused Sign in with Apple import and keychain accessors. The current build declares the iOS app sandbox and does **not** declare outbound network client access. If we ever build real sync, it will be off by default, it will be explained here before it ships, and this policy will say exactly what syncs.
 
 ---
 
@@ -193,8 +178,7 @@ Because OmniBuild is distributed through the App Store, Apple may provide us wit
 Because your data is on your device, deletion is under your control and is immediate.
 
 1. **Erase your logs:** open Settings inside OmniBuild and tap **Clear All My Logs & Decisions**. This deletes your project logs, maintenance logs, and decision entries. It cannot be undone.
-2. **Remove the downloaded AI model:** deleting the app removes the model files, which live inside the app's own storage.
-3. **Erase everything:** delete OmniBuild from your device. Nothing survives on our side, because nothing was ever on our side.
+2. **Erase everything:** delete OmniBuild from your device. Nothing survives on our side, because nothing was ever on our side.
 
 There is no request to file and no waiting period, because there is no account for us to look up, and no server-side copy for us to delete. If you want written confirmation of any of this, email admin@prameya.legal and we will send it.
 
@@ -211,7 +195,7 @@ We retain nothing from your use of the app, because we receive nothing. Your on-
 Honest, specific statements only:
 
 - The app runs inside the iOS application sandbox, so its data is isolated from other apps and protected by iOS file-level encryption and your device passcode.
-- The one network connection the app makes uses HTTPS. The app is configured to refuse unencrypted connections.
+- OmniBuild makes no network connections of its own. The macOS sandbox does not grant network-client access.
 - The app does not currently store anything in the device Keychain. It has no passwords, tokens, or credentials to store, because it has no account system.
 - Because we hold no copy of your data, there is no Prameya server that could be breached and expose it. That is the single largest security property of this design, and it comes from the architecture rather than from any product we bought.
 
@@ -255,7 +239,7 @@ Residents of Colorado, Connecticut, Virginia, Utah, Texas, Oregon, Montana, and 
 The App Store territories OmniBuild will be offered in are still being decided, so this subsection is written to cover the broadest case. Where the app is available to you and the GDPR or UK GDPR applies:
 
 - Your use of the app does not result in Prameya processing your personal data, because nothing reaches us. For app usage, there is no controller-held dataset, no international transfer by us, and no automated decision-making about you.
-- The model download exposes your IP address to Hugging Face, which acts as an independent controller for that connection. It is not a transfer by us and we receive nothing from it.
+- The in-app "Read the full policy online" link opens this page in your browser. That request is made by the browser, not by OmniBuild, and we receive nothing from it.
 - If you email us, we process your email address and message on the basis of our **legitimate interests** in responding to you (Article 6(1)(f)), or to comply with a legal obligation where a privacy request is involved (Article 6(1)(c)).
 - **Article 9 special-category data, including health data, is not involved.** The app does not process it. We ask that you do not send it to us by email either.
 - You have the rights of access, rectification, erasure, restriction, portability, and objection, and the right to complain to your national supervisory authority.
@@ -270,13 +254,12 @@ The app itself contains no third-party services that receive your data. For comp
 
 | Who | What they get | Why |
 |---|---|---|
-| **Hugging Face** | An HTTPS request for a public AI model file, plus your IP address and standard HTTP headers | It hosts the open-weight model the app runs on your device |
 | **Apple** | Your App Store activity, and your device backups if you enable them | It operates the App Store and iOS |
 | **Our email provider** | Only what you send to our support address | It carries our email |
 
-Nobody else. No advertiser, no data broker, no analytics vendor, no AI provider.
+Nobody else. No advertiser, no data broker, no analytics vendor, no AI provider, no Hugging Face download.
 
-The app also builds on open-source software libraries — Apple's MLX machine-learning framework and the supporting Swift packages that load and download models. These are code compiled into the app, not services we have a relationship with, and nothing in our own code hands them your logs, your notes, or anything you typed. We have not yet completed an independent audit of the network behaviour of every one of those packages and their transitive dependencies, so we are not going to tell you flatly that none of them ever contacts a server. What we can tell you is what we have checked: in the code Prameya wrote, the Hugging Face model download is the only outbound connection, and no code path transmits your content anywhere. When that dependency audit is finished, we will update this paragraph to say what it found.
+The shipping binary links no third-party SPM packages. Unused MLX / Hugging Face code was deleted. No code path transmits your content anywhere.
 
 ---
 
