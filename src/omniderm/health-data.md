@@ -1,6 +1,6 @@
 # Consumer Health Data Privacy Policy — OmniDerm
 
-**Effective date:** 8 August 2026
+**Effective date:** 21 August 2026
 **Publisher:** Prameya LLC ("Prameya", "we", "us"), a United States limited liability company
 **Contact:** admin@prameya.legal
 **Applies to:** the OmniDerm iOS app
@@ -17,7 +17,7 @@ It applies to everyone who uses OmniDerm. Washington and Nevada residents have s
 - **We do not receive any of it.** Prameya has no server that takes it, no database that holds it, and no account that identifies you.
 - **We share it with no one.** Not affiliates, not processors, not advertisers, not data brokers, not researchers, not AI companies.
 - **We do not sell it.** We never have and we will not.
-- **The photo self-check is switched off in the shipping app.** The screen that would take a photo of your skin sits behind a clearance gate that is closed, so the app does not open your photo library, does not read an image, and infers nothing from one.
+- **The photo self-check is switched off in the shipping app.** The app produces no observations about a photograph. You can still save a journal photograph to this device; it is not analysed.
 - You can withdraw consent and delete everything yourself, immediately, without asking us.
 
 ---
@@ -38,13 +38,12 @@ So we do not use the Apple definition to argue our way out of Washington law, an
 
 | Category | What it actually is | Why the app processes it |
 |---|---|---|
-| **Images of your skin** | A photo of a mole, a lesion, or an area of skin | **Not processed in the shipping app.** The photo screen is behind a clearance gate that is switched off and cannot be opened, so the app does not read an image at all. If the gate were ever opened, the image would come only from Apple's photo picker, one image you chose, held in memory and never saved or uploaded. |
+| **Journal photographs of your skin** | A photo you attach to a journal entry | Shown back to you on your journal timeline. Stored as JPEGs on this device, excluded from backup, never uploaded, never assessed. |
 | **Inferences derived from a skin image** | Any observation a model might produce about an image | **None.** The shipping app produces no observations, flags or ratings about a photo, and does not contain the image model that would generate them. |
 | **Skin-care habit records** | Date, and whether you did morning sunscreen, reapplied, did barrier care, did a self-check | To show your history, streak and consistency in the app |
 | **Derived habit measures** | Streak length, 30-day consistency percentage, a plain-language summary | Computed on your device from your own habit records, to show you your own patterns |
-| **Health and fitness data from Apple Health** | Step count, sleep analysis, active energy — last 7 days only, **read only**, and only if you switch it on | To show, on your device, how activity and sleep line up with your logged habits |
 | **Your stated goals** | Free text you type, such as "build daily SPF habit" | To personalise the cards the app shows you |
-| **Bodily or health-adjacent status you type in** | Anything you choose to write into a goal or note | Only what you choose to enter |
+| **Journal notes** | Dated notes you type | Shown back to you on your journal timeline |
 
 **Not collected, in any sense:** your location (precise or approximate), biometric identifiers, genetic data, contacts, microphone or audio, camera input, clinical health records from any provider, prescriptions, diagnoses, insurance or payment information, gender-affirming or reproductive health information, or any identifier that would let anyone link this app's data to you by name.
 
@@ -55,8 +54,7 @@ The app does not use geofencing of any kind, and does not use a geofence around 
 | Source | What comes from it |
 |---|---|
 | **You** | Habit logs, goals, notes — everything you type or tap |
-| **Your photo library** | Nothing, in the shipping app: the photo screen cannot be opened, so no image is read. If the gate were ever opened, Apple's picker would hand the app only the one image you chose, and the app still could not browse or read the rest of your library. |
-| **Apple Health on your device**, only with your separate permission | Steps, sleep, active energy for the last 7 days, read only |
+| **Your photo library** | Only the one image you pick for a journal entry, via Apple's photo picker. The app cannot browse the rest of your library. Journal JPEGs stay on this device and are not assessed. |
 | **The app itself, on your device** | Streaks, consistency and summaries computed from your own habit logs |
 
 There are no other sources. We do not buy data, rent data, receive data from data brokers, or obtain anything about you from advertising networks, social platforms, affiliates, or public records.
@@ -82,10 +80,10 @@ We share no consumer health data, of any category, with anyone. There is no cate
 
 | Party | Role | Consumer health data they receive |
 |---|---|---|
-| **Apple** | Distributes the app; provides iOS, on-device storage, Apple Health and, if you enable it, the private iCloud database inside **your own** Apple Account | **None from us.** If you turn on iCloud sync, only non-health preferences go to your own private iCloud, which we cannot read. |
+| **Apple** | Distributes the app; provides iOS, on-device storage, and, if you enable it, the private iCloud database inside **your own** Apple Account | **None from us.** If you turn on iCloud sync, only non-health preferences go to your own private iCloud, which we cannot read. |
 | **Hugging Face** | Hosts the AI model files the app downloads to your phone | **None.** The request is for a model file. It carries no photo, no habit log, no health data, no identifier of you. |
 
-**What iCloud sync can carry, precisely.** Sync is off unless you switch it on, and when it is on it is limited in code to seven settings: appearance mode, whether reminders are on, the reminder hour, the tab the app opens on, which AI model you selected, whether you have acknowledged the app's disclosure, and whether citations are expanded by default. Each of those accepts only a fixed set of values, so free text cannot travel with them. Habit logs, streaks, consistency scores, goals, photos and Apple Health data are on an explicit deny list, and none of the app's local database is mirrored to iCloud. Records go to the private database in your own Apple Account, which Prameya cannot read.
+**What iCloud sync can carry, precisely.** Sync is off unless you switch it on, and when it is on it is limited in code to seven settings: appearance mode, whether reminders are on, the reminder hour, the tab the app opens on, which AI model you selected, whether you have acknowledged the app's disclosure, and whether citations are expanded by default. Each of those accepts only a fixed set of values, so free text cannot travel with them. Habit logs, streaks, consistency scores, goals and journal photographs are on an explicit deny list, and none of the app's local database is mirrored to iCloud. Records go to the private database in your own Apple Account, which Prameya cannot read.
 
 We have no affiliates. We use no processors, no analytics vendor, no cloud provider that touches your data, no advertising network, and no AI service provider. We do not disclose consumer health data to law enforcement or anyone else, because we do not have it — a demand made to Prameya for your health data cannot be satisfied.
 
@@ -99,18 +97,18 @@ Washington law requires a separate, signed authorization with specific contents 
 
 **How consent works in OmniDerm.**
 
-- The photo feature is **not available at all** in this version — the clearance gate is closed, so there is nothing to consent to and no image is read.
-- Apple Health is **off** until you switch it on, and iOS then asks you separately.
+- Photo **assessment** is not available — the clearance gate is closed.
+- Journal photographs are saved only when you pick one.
+- OmniDerm does **not** read Apple Health.
 - iCloud sync is **off** until you switch it on.
-- Reminders are a toggle, and it **starts on**. They are local notifications from your own phone; iOS still asks you separately before it can show you one, and you can switch them off in the app or in iOS Settings at any time.
+- Reminders are a toggle, and it **starts off**. They are local notifications from your own phone; permission is requested only from Settings.
 - Habit logging happens only when you tap the toggles.
 
 **How to withdraw consent — all of these are immediate and do not require contacting us:**
 
 | To withdraw | Do this |
 |---|---|
-| Photo access | Nothing is needed for this version, since the app does not read photos. If you want the permission closed off regardless: iOS Settings → Privacy & Security → Photos → OmniDerm → None. |
-| Apple Health access | Switch the toggle off in the app, or iOS Settings → Health → Data Access & Devices → OmniDerm → turn off. |
+| Photo library (journal) | iOS Settings → Privacy & Security → Photos → OmniDerm → None. Journal JPEGs already saved are deleted with Clear All Local Data or by deleting the app. |
 | iCloud sync | Switch the sync toggle off in the app's Settings. |
 | Reminders | Switch reminders off in the app, or in iOS Settings → Notifications. |
 | Everything at once | Delete the app. |
