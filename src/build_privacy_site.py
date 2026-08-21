@@ -29,7 +29,7 @@ EFFECTIVE = "2026-08-08"
 APPS = [
     ("omnisalub",  "OmniSalub",  "Chronic-condition companion",              "#1577A8", "#318CB9", True),
     ("omnident",   "OmniDent",   "Dental photo analysis and coaching",       "#037C84", "#2AA3AB", True),
-    ("omniderm",   "OmniDerm",   "Skin analysis and tracking",               "#875FA9", "#9975B8", True),
+    ("omniderm",   "OmniDerm",   "Private skin journal and sun-care education", "#875FA9", "#9975B8", True),
     ("omnirx",     "OmniRx",     "Medication education and habit support",   "#3547EB", "#7E89EA", True),
     ("omnilex",    "OmniLex",    "On-device legal document assistant",       "#2D4D77", "#7B93B2", False),
     ("omniwealth", "OmniWealth", "Financial education and habit support",    "#816B22", "#9B853C", False),

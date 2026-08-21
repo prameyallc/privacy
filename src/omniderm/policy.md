@@ -1,6 +1,6 @@
 # OmniDerm Privacy Policy
 
-**Effective date:** 8 August 2026
+**Effective date:** 21 August 2026 *(supersedes the 8 August 2026 version: journal photographs, HealthKit removed, reminders off by default, no Settings model download)*
 **Publisher:** Prameya LLC ("Prameya", "we", "us"), a United States limited liability company
 **Contact:** admin@prameya.legal
 **This policy covers:** the OmniDerm iOS app only.
@@ -15,15 +15,14 @@
 
 ## The short version
 
-- **The photo self-check is switched off in the version you can install.** It sits behind a regulatory clearance gate that is closed, so the shipping app produces no observations, flags, ratings or any other output about a photo of your skin — and the photo screen cannot be opened at all.
+- **The photo self-check (any assessment of a skin photograph) is switched off.** It sits behind a regulatory clearance gate that is closed, so the shipping app produces no observations, flags, ratings or any other output about a photo of your skin.
+- **You can still save a journal photograph.** That is a picture you picked, stored on this device, shown back to you. It is not analysed.
 - **There is no account and no password.** We do not know who you are.
 - **Prameya runs no server that receives your data.** We have no database of users. There is nothing on our side to hack, subpoena, or sell.
-- **The app does connect to one outside service:** Hugging Face, to download the AI model files that run on your phone. That download carries a request for a file. It does not carry your photos, your notes, or anything else about you.
-- **The AI runs on your phone**, not in the cloud.
+- **The shipping app does not download an on-device model.** Settings has no download control. A Hugging Face download would start only if the gated generate surface ran, and that surface is off.
 - **No ads. No analytics. No tracking. We do not sell your data**, and we never will.
-- **Apple Health is off unless you turn it on.** iCloud sync is off unless you turn it on. **Reminders start on** — they are local notifications from your own phone, and you can switch them off.
+- **OmniDerm does not read Apple Health.** iCloud sync is off unless you turn it on. **Reminders start off** — they are local notifications from your own phone, and you turn them on in Settings.
 - **OmniDerm does not diagnose anything.** It is not a substitute for a dermatologist. See "What OmniDerm will not do" below.
-- **Skin-analysis AI is known to work less well on darker skin.** We explain that honestly below because you deserve to know it.
 
 ---
 
@@ -35,9 +34,9 @@ OmniDerm is published by Prameya LLC, a US limited liability company. You can re
 
 OmniDerm is a consumer app for skin-care habits and education. It helps you:
 
+- keep a private journal of notes and optional photographs on this device;
 - log daily habits (sunscreen in the morning, reapplying, barrier care, doing a self-check) and see your streak and consistency;
-- learn about sun protection and the ABCDE self-check ideas;
-- optionally see how activity and sleep from Apple Health line up with your habits.
+- learn about sun protection and the ABCDE self-check ideas.
 
 ## What OmniDerm will not do
 
@@ -53,27 +52,22 @@ If you notice a new spot, a changing spot, or anything that worries you, see a l
 
 ## Your skin photos
 
-This is the most sensitive thing OmniDerm could touch, so it gets its own section.
+Two different things used to be described as if they were one. They are not.
 
-**In the shipping app, it touches none.** Because the clearance gate is closed, there is no screen from which you can hand OmniDerm a photo. The app does not open your photo library, does not read an image, and does not analyse one.
+**Journal photographs (shipping).** You can attach a photo from your library to a journal entry. OmniDerm stores that JPEG on this device under Application Support (`OmniDerm/JournalPhotos`), excluded from device backup, never uploaded, never synced to iCloud by this app, and never assessed. Clear All Local Data deletes those files. The app does not ask for camera access — intake is Apple's photo picker only.
 
-**If the gate were ever opened**, this is how the feature is built, and this is what we would be bound by:
+**Photo self-check / on-device generate (not shipping).** Features that would produce an observation about a photograph sit behind an FDA clearance gate that is off. The shipping catalogue does not include a vision model. That gated screen is not reachable.
+
+**If the gate were ever opened**, this is how the assessment path is built:
 
 | Question | Answer |
 |---|---|
-| Where would a photo come from? | Only from you, through Apple's standard photo picker, one image at a time. The picker hands the app only the image you chose; the app cannot browse, index or read the rest of your library. |
+| Where would a photo come from? | Only from you, through Apple's standard photo picker, one image at a time. |
 | Is the photo uploaded to Prameya? | No. We have no server that could receive it. |
 | Is the photo sent to any AI company or cloud model? | No. Any processing happens on your phone. |
-| Is the photo saved into the app's own storage? | No. No code path writes an image to a file, a database, the Keychain, or iCloud. |
-| Is the photo synced to iCloud by OmniDerm? | No. Photos are on the explicit list of things that are never synced. |
-| Is the photo backed up as part of the app's data? | No, because the app does not store it. |
-| How long would the app keep it? | Only while the screen is open. It is held in the phone's working memory and released when you leave the screen or close the app. |
+| Is a journal photo uploaded? | No. Journal JPEGs stay on this device. |
 
-**The app does not ask for camera access.** There is no camera permission request in OmniDerm and no photo-capture code in it.
-
-**How to remove a photo from OmniDerm.** There is nothing to remove — the app never made a copy. If you want an original gone, delete it in Apple's Photos app; that is your photo library, which OmniDerm does not control.
-
-**One honest caveat.** Your own iPhone backup and your own iCloud Photos settings are Apple's, not ours. If your photo library syncs to iCloud, your skin photos are in your iCloud like every other photo you take. That is a setting in iOS, and you control it.
+**One honest caveat.** Your own iPhone backup and your own iCloud Photos settings are Apple's, not ours. Journal JPEGs are excluded from this app's backup; originals in Apple Photos follow your Photos settings.
 
 ---
 
@@ -86,7 +80,7 @@ This is the most sensitive thing OmniDerm could touch, so it gets its own sectio
 | Which AI model you chose, and which models are downloaded | On your device, in app preferences | No |
 | Downloaded AI model files | On your device, in app storage | No (they came *to* the device) |
 | Small security flags and keys | Your device Keychain, set to this-device-only | No |
-| Skin photos | Nothing is stored: the photo screen is gated off, so no image is read at all | No |
+| Journal photographs you save | On your device, as JPEG files under Application Support (`OmniDerm/JournalPhotos`). Excluded from device backup. Deleted with Clear All Local Data. Never uploaded, never assessed. | No |
 | Diagnostic log messages | Apple's on-device system log | No |
 | Preferences and screen state, **if** you switch iCloud sync on | Your own private iCloud, in your Apple Account | Yes — to your iCloud, not to us |
 
@@ -96,43 +90,19 @@ We do not build a profile of you. We could not: we receive nothing.
 
 ## The one outside connection: AI model downloads
 
-OmniDerm's AI runs on your phone. To do that, it first has to get the model files. When you choose to use the on-device AI, the app downloads model weights over HTTPS from **Hugging Face** (huggingface.co), a third-party model host.
+**The shipping app does not download a model.** Settings has no download control, and the generate surface is behind an FDA clearance gate that is off. Nothing in a shipping session starts a Hugging Face pull.
 
-**What that request contains:** the name of the model file the app wants. In the shipping app there is exactly one model in the catalogue — a text model of roughly **420 MB**. Like any internet request, it also reveals your device's IP address and standard network information to Hugging Face.
-
-**What that request does not contain:** your photos, your habit logs, your Apple Health data, your notes, your goals, your identity, or anything else about you. It is a file download, not an upload.
-
-**There is no vision model to download.** The larger image model that a photo feature would need is not in the shipping catalogue at all; it is compiled out until and unless the feature is cleared.
-
-**What we do not do before that download, so you are not surprised by it.** Settings names the model and shows its approximate download size before anything happens, and the download only starts when you tap the download button. Beyond that there is no confirmation step: OmniDerm does **not** warn you about download size thresholds and does **not** check whether you are on cellular data or Wi-Fi. If you are on a metered connection, the download will use it. If that matters to you, start it on Wi-Fi.
-
-After the files are on your phone, everything the model does happens locally. Nothing you feed the model is transmitted anywhere.
-
-Hugging Face is an independent company with its own privacy practices. We do not send them anything about you, but the connection itself is theirs to log, as with any website you visit.
+If that gated surface were ever opened, model weights would download over HTTPS from **Hugging Face** (huggingface.co). That request would carry the name of a file, not your photos, notes, or identity. The shipping catalogue has no vision model.
 
 The app is configured to refuse non-HTTPS connections entirely.
 
-**This is the only non-Apple server OmniDerm talks to.** There is no analytics endpoint, no crash-reporting SDK, no ad network, no remote "ask the cloud" fallback for hard cases. If that ever changes, we will change this policy first and tell you in the app.
+**This is the only non-Apple server OmniDerm would talk to.** There is no analytics endpoint, no crash-reporting SDK, no ad network, no remote "ask the cloud" fallback. If that ever changes, we will change this policy first and tell you in the app.
 
 ---
 
 ## Apple Health (HealthKit)
 
-**Off by default.** OmniDerm asks for Apple Health only if you turn the toggle on in Settings, and iOS then asks you separately.
-
-If you allow it, OmniDerm **reads** three things from the last seven days:
-
-- step count
-- sleep analysis
-- active energy burned
-
-It uses them on your device to show how your activity and sleep line up with your logged habits. That is all.
-
-- OmniDerm **never writes** anything into Apple Health. It asks for read access only, with nothing on the write list.
-- OmniDerm **does not read your clinical health records** — not lab results, not medications, not visits, not anything from a health provider. The app does not hold the Clinical Health Records capability at all.
-- OmniDerm does not hold the HealthKit **background delivery** capability either, so it cannot receive Health data while you are not using it.
-- Apple Health data is **never** sent to Prameya, never uploaded, and never included in iCloud sync by this app.
-- You can revoke access any time in **iOS Settings → Health → Data Access & Devices → OmniDerm**, or by switching the toggle off in the app.
+**OmniDerm does not read Apple Health.** The HealthKit entitlement, purpose string, and Settings toggle were removed: a previous toggle authorised a seven-day steps/sleep read whose only consumers were two log lines, and no screen rendered a correlation. If a Health integration returns, it returns with the screen that renders it, and this policy gains its row back in the same change.
 
 ## iCloud sync
 
@@ -140,7 +110,7 @@ It uses them on your device to show how your activity and sleep line up with you
 
 **What syncs:** seven settings, and nothing else. Appearance mode, whether reminders are on, the reminder hour, which tab the app opens on, which AI model you selected, whether you have acknowledged the app's disclosure, and whether citations are expanded by default. That list is enforced in code, not just described here, and each field only accepts a fixed set of values, so free text cannot ride along.
 
-**What never syncs:** photos. Habit logs. Anything derived from your habit logs, including streaks, consistency scores, goals, and any observation about your skin. Anything from Apple Health. Those are on an explicit deny list, and no part of the app's local database is mirrored to iCloud.
+**What never syncs:** journal photographs. Habit logs. Anything derived from your habit logs, including streaks, consistency scores, goals, and any observation about your skin. Those are on an explicit deny list, and no part of the app's local database is mirrored to iCloud.
 
 **Who can read it:** you. Records go to the private database in your Apple Account. Prameya has no ability to read, list, or recover them — that is how Apple's private databases work, not a promise we are asking you to take on faith.
 
@@ -148,7 +118,7 @@ It uses them on your device to show how your activity and sleep line up with you
 
 ## Notifications
 
-**Reminders start on.** The reminder setting in the app is on when you first open it, and iOS still asks you separately before the app can show you anything. When reminders are on, they are **local notifications** scheduled by your own phone. There is no push server, and no notification is triggered by us. Turn them off in the app or in iOS Settings.
+**Reminders start off.** Permission is requested only from the Settings control. When reminders are on, they are **local notifications** scheduled by your own phone. There is no push server, and no notification is triggered by us. Turn them off in the app or in iOS Settings.
 
 ---
 
@@ -184,7 +154,7 @@ If you write to admin@prameya.legal, we will have your email address and whateve
 - Data the app stores stays in the app's own sandbox on your device, protected by iOS.
 - Sensitive flags and keys are held in the device Keychain, marked as **this device only**, so they are not carried into iCloud Keychain or restored to another device.
 - All network traffic is HTTPS. The app refuses to make unencrypted connections.
-- **What we do not claim:** OmniDerm does not turn on iOS's strictest file-protection level, the one that would keep the app's own files unreadable the whole time your device is locked. Its stored files get the standard protection iOS gives app data and nothing beyond it. We would rather say that plainly than let you assume more.
+- OmniDerm declares `NSFileProtectionComplete` (`com.apple.developer.default-data-protection`), so journal photographs, notes, body sites and habit logs are unreadable while your device is locked. The app declares no background modes.
 - Your device passcode or Face ID is the main protection for everything on your phone, including this app's data. Please use one.
 
 No system is perfect, and we will not pretend otherwise. What we can say plainly is that we hold nothing of yours on a server, so a breach of Prameya cannot expose your skin photos or your health data.
@@ -195,12 +165,11 @@ No system is perfect, and we will not pretend otherwise. What we can say plainly
 
 We do not retain your data, because we never receive it. On your device:
 
-- **Delete your habit logs, goals and settings:** open **Settings → Export & Data Management → Clear All Local Data**. This deletes all habit logs, clears your goals and reminder preference, and cancels pending reminders.
-- **Delete a photo:** there is nothing to delete inside OmniDerm — no image is ever stored, and in this version none is ever read. To remove an original, use Apple's Photos app.
-- **Delete downloaded AI models:** remove them from the on-device AI section in Settings, or delete the app.
-- **Delete everything:** delete the app. That removes the app's database, preferences, cached models and Keychain items.
+- **Delete your habit logs, journal entries, photographs, goals and settings:** open **Settings → Export & Data Management → Clear All Local Data**. If a later file removal fails after the store is emptied, the app says so rather than claiming a complete delete.
+- **Delete a single journal photograph:** delete that journal entry in the app, or use Clear All Local Data. Originals in Apple Photos are yours — delete them there if you want them gone.
+- **Delete everything:** delete the app. That removes the app's database, preferences, journal JPEGs, cached models if any, and Keychain items.
 - **Delete synced data:** if you used iCloud sync, remove the app's iCloud data in iOS Settings as described above.
-- **Take your data with you first:** **Settings → Export Full Data (JSON)** produces a file with your habit logs, your streak snapshot and your goals, which you can save or share wherever you like.
+- **Take your data with you first:** **Settings → Export Full Data (JSON)** produces a file with your habit logs, journal notes (not photographs), your consistency snapshot and your goals, and presents the iOS share sheet.
 
 ---
 
@@ -281,7 +250,9 @@ If we change how OmniDerm handles your data, we will update this policy and chan
 - tell you inside the app, and
 - ask for your consent again where the law requires it, including a fresh consent for any new collection or sharing of consumer health data under Washington's My Health My Data Act.
 
-**What changed on 8 August 2026.** This revision corrected the policy against the code that actually ships. Statements that the app's behaviour did not support were rewritten or removed rather than left standing: internal review notes that had been published by mistake were taken out, the photo section now says the feature is gated off rather than describing it as if it ran, the model download section names the one model that ships and states that there is no download-size or cellular-data prompt, and the security section no longer implies file protection the app does not enable. Where the code now does what the policy said, we say so plainly. Nothing here describes a capability the shipping app does not have.
+**What changed on 21 August 2026.** Journal photographs you save are stored on this device (they always were; the previous page said the app touched none). HealthKit is not used. Reminders start off. Settings does not offer a model download. File protection is `NSFileProtectionComplete`. The photo self-check remains gated off.
+
+**What changed on 8 August 2026.** An earlier revision corrected internal review notes, gated the photo-assessment feature, and named the model-download host. Some of those sentences were already stale by 21 August and are superseded above.
 
 We will keep previous versions available at [https://prameyallc.github.io/privacy/](https://prameyallc.github.io/privacy/) so you can see what changed.
 
