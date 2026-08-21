@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>OmniOps Privacy Policy — Prameya LLC</title>
-<meta name="description" content="Effective date: 17 August 2026">
+<meta name="description" content="Effective 17 August 2026. Last updated 21 August 2026.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://prameyallc.github.io/privacy/omniops/">
 <style>
@@ -94,8 +94,9 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <main id="main" class="wrap">
 <h1 id="omniops-privacy-policy">OmniOps — Privacy Policy</h1>
 <p><strong>Effective date:</strong> 17 August 2026<br />
+<strong>Last updated:</strong> 21 August 2026<br />
 <strong>Publisher:</strong> Prameya LLC (“Prameya”, “we”, “us”)<br />
-<strong>App:</strong> OmniOps for iPhone, iPad and Mac — bundle ID <code>legal.prameya.OmniOps</code><br />
+<strong>App:</strong> OmniOps for iPhone, iPad, Mac and Apple Vision Pro — bundle ID <code>legal.prameya.OmniOps</code><br />
 <strong>Contact:</strong> admin@prameya.legal<br />
 <strong>Scope:</strong> This policy covers the OmniOps app and nothing else. Prameya's other apps have their own policies, because they work differently. Index: <a href="https://prameyallc.github.io/privacy/">https://prameyallc.github.io/privacy/</a></p>
 <p>This policy describes <strong>the app you actually install</strong> — what the shipping build does, not what<br />
@@ -112,16 +113,21 @@ not declare HealthKit entitlements, and contains no HealthKit code.</p>
 <p><strong>No Hugging Face traffic in this build.</strong> There is no model download and no inference<br />
 client. If that ever changes, download will be user-initiated and stored in the app<br />
 container, and this policy will be updated in the same commit.</p>
-<p>The compiled screen is <code>OmniOpsRootView</code>. It renders <code>OpsDisclaimerView</code> (educational +<br />
-habit support; not consulting / audit / certification).</p>
+<p>The compiled root is four tabs (Act / Understand / Do / More) plus the on-screen<br />
+disclaimer (educational + habit support; not consulting / audit / certification).<br />
+Understand reads on-device knowledge packs. Do writes a local journal. Nothing is<br />
+uploaded to us.</p>
 <hr />
 <h2 id="1-who-publishes-this">1. Who publishes this</h2>
 <p>Prameya LLC. Privacy contact: <strong>admin@prameya.legal</strong>.</p>
 <hr />
 <h2 id="2-what-the-app-stores-on-your-device">2. What the app stores on your device</h2>
-<p>The shipping UI is a disclaimer and a single sentence of product copy. It does <strong>not</strong><br />
-write a process journal, decision log, habit record, or user profile — those types exist<br />
-in <code>OpsCore</code> as a model, and no compiled persistence layer saves them yet.</p>
+<p>The shipping UI writes a process journal when you log work, a decision, a reflection,<br />
+or a habit. That journal is JSON in this app’s Application Support folder. Which<br />
+readings you have opened is stored beside it. On iPhone, iPad and Apple Vision Pro<br />
+those files are encrypted at rest while the device is locked. On Mac they sit inside<br />
+the sandboxed app container and are covered by FileVault if it is on. There is no<br />
+SwiftData store and no Keychain write.</p>
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -131,8 +137,20 @@ in <code>OpsCore</code> as a model, and no compiled persistence layer saves them
 </thead>
 <tbody>
 <tr>
-<td>Your typed notes, logs, or profile</td>
-<td><strong>Not stored.</strong> No SwiftData store, no file export, no Keychain write on the compiled path</td>
+<td>Your typed journal (work, decisions, reflections, habits)</td>
+<td><strong>On this device</strong>, in the app’s Application Support folder</td>
+</tr>
+<tr>
+<td>Which readings you opened</td>
+<td><strong>On this device</strong>, next to the journal</td>
+</tr>
+<tr>
+<td>A journal export you asked for</td>
+<td><strong>On this device</strong>, temporary folder, only while More is on screen</td>
+</tr>
+<tr>
+<td>The journal as it was just before an import</td>
+<td><strong>On this device</strong>, next to the journal</td>
 </tr>
 <tr>
 <td>Model weights / Hugging Face cache</td>
@@ -144,10 +162,17 @@ in <code>OpsCore</code> as a model, and no compiled persistence layer saves them
 </tr>
 </tbody>
 </table></div>
+<p>Export is a file you choose to share (Share sheet). It is written only when you tap<br />
+“Export my journal”, into a temporary folder of its own, and it is deleted when you<br />
+leave the More screen. Import replaces the on-device journal with a previously exported<br />
+file you choose; a file that does not decode is refused. Nothing is uploaded to us.</p>
 <p>If iCloud Backup is enabled in iOS Settings, Apple’s device backup may include the app<br />
-container. That is Apple’s processing, not ours. OmniOps itself performs no cloud sync.</p>
-<p>Deleting the app removes the container on iOS. This build writes nothing you would need<br />
-to delete by hand.</p>
+container, including the journal. That is Apple’s processing, not ours. OmniOps itself<br />
+performs no cloud sync.</p>
+<p>Deleting the app removes the container on iPhone, iPad and Apple Vision Pro, including<br />
+the journal. On Mac the sandbox container under<br />
+<code>~/Library/Containers/legal.prameya.OmniOps</code> outlives the app and has to be removed<br />
+separately.</p>
 <hr />
 <h2 id="3-what-the-app-does-not-do">3. What the app does not do</h2>
 <p>Checked against compiled sources (<code>OmniOpsKit/Sources</code>, <code>App/OmniOps</code>) and the App<br />
@@ -156,7 +181,8 @@ shell entitlements / Info.plist / PrivacyInfo:</p>
 <li>❌ <strong>No HealthKit.</strong> No <code>import HealthKit</code>, no <code>HKHealthStore</code>, no usage description,<br />
   no health-records entitlement. Unused HealthKit claims from old placeholder plists<br />
   are gone.</li>
-<li>❌ <strong>No CloudKit / iCloud container.</strong> Entitlements file is empty. No <code>import CloudKit</code>.</li>
+<li>❌ <strong>No CloudKit / iCloud container.</strong> The iOS entitlements file is empty; the macOS one
+  requests the App Sandbox and nothing else.</li>
 <li>❌ <strong>No analytics, advertising, crash reporting, or tracking.</strong> No ATT prompt.</li>
 <li>❌ <strong>No account, Sign in with Apple, or server login.</strong></li>
 <li>❌ <strong>No location, camera, microphone, photos, contacts, calendar, or notifications.</strong></li>
@@ -180,15 +206,12 @@ no first-party API.</p>
 </ol>
 <hr />
 <h2 id="5-knowledge-packs">5. Knowledge packs</h2>
-<p>Packs are authored in <code>KNOWLEDGE/packs/</code> and synced into the <code>Knowledge</code> module<br />
-(<code>Bundle.module</code>). The kit product currently holds <strong>six</strong> NIST-derived packs. The<br />
-compiled App shell does <strong>not</strong> link <code>Knowledge</code>, so those files are not in the<br />
-shipping binary. Adding a pack does not, by itself, send data off device.</p>
+<p>Nineteen packs ship in the app and appear on Understand. They are bundled in the<br />
+binary. Adding a pack does not, by itself, send data off device. The app does not<br />
+fetch packs from the network.</p>
 <hr />
 <h2 id="6-monetization">6. Monetization</h2>
-<p>A StoreKit paywall exists as a <strong>compiled kit product</strong> (<code>Monetization</code>) so the tree is<br />
-not dead. The App shell links <code>DesignSystem</code> and <code>AppSurfaces</code> only. <code>AppSurfaces</code> does<br />
-not depend on <code>Monetization</code>. This binary does not present a paywall and does not talk<br />
+<p>There is no StoreKit paywall. This binary does not present a paywall and does not talk<br />
 to the App Store for in-app purchase.</p>
 <hr />
 <h2 id="7-children">7. Children</h2>
@@ -221,7 +244,7 @@ change that affects what is stored or what leaves the device is described here i
 </main>
 <footer class="site"><div class="wrap">
   <p>Prameya LLC · <a href="mailto:admin@prameya.legal">admin@prameya.legal</a></p>
-  <p>Effective 17 August 2026. <a href="https://prameyallc.github.io/privacy/">All app privacy policies</a></p>
+  <p>Effective 17 August 2026. Last updated 21 August 2026. <a href="https://prameyallc.github.io/privacy/">All app privacy policies</a></p>
 </div></footer>
 </body>
 </html>

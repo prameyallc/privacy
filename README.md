@@ -25,6 +25,7 @@ HealthKit, CloudKit and camera call sites).
 | OmniWealth | https://prameyallc.github.io/privacy/omniwealth/ | — |
 | OmniMath   | https://prameyallc.github.io/privacy/omnimath/   | — |
 | OmniBuild  | https://prameyallc.github.io/privacy/omnibuild/  | — |
+| OmniOps    | https://prameyallc.github.io/privacy/omniops/    | — |
 
 ### Consumer health data
 

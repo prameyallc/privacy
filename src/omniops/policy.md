@@ -1,9 +1,10 @@
 # OmniOps — Privacy Policy
 
-**Effective date:** 17 August 2026
-**Publisher:** Prameya LLC (“Prameya”, “we”, “us”)
-**App:** OmniOps for iPhone, iPad and Mac — bundle ID `legal.prameya.OmniOps`
-**Contact:** admin@prameya.legal
+**Effective date:** 17 August 2026  
+**Last updated:** 21 August 2026  
+**Publisher:** Prameya LLC (“Prameya”, “we”, “us”)  
+**App:** OmniOps for iPhone, iPad, Mac and Apple Vision Pro — bundle ID `legal.prameya.OmniOps`  
+**Contact:** admin@prameya.legal  
 **Scope:** This policy covers the OmniOps app and nothing else. Prameya's other apps have their own policies, because they work differently. Index: <https://prameyallc.github.io/privacy/>
 
 This policy describes **the app you actually install** — what the shipping build does, not what
@@ -26,8 +27,10 @@ not declare HealthKit entitlements, and contains no HealthKit code.
 client. If that ever changes, download will be user-initiated and stored in the app
 container, and this policy will be updated in the same commit.
 
-The compiled screen is `OmniOpsRootView`. It renders `OpsDisclaimerView` (educational +
-habit support; not consulting / audit / certification).
+The compiled root is four tabs (Act / Understand / Do / More) plus the on-screen
+disclaimer (educational + habit support; not consulting / audit / certification).
+Understand reads on-device knowledge packs. Do writes a local journal. Nothing is
+uploaded to us.
 
 ---
 
@@ -39,38 +42,52 @@ Prameya LLC. Privacy contact: **admin@prameya.legal**.
 
 ## 2. What the app stores on your device
 
-The shipping UI is a disclaimer and a single sentence of product copy. It does **not**
-write a process journal, decision log, habit record, or user profile — those types exist
-in `OpsCore` as a model, and no compiled persistence layer saves them yet.
+The shipping UI writes a process journal when you log work, a decision, a reflection,
+or a habit. That journal is JSON in this app’s Application Support folder. Which
+readings you have opened is stored beside it. On iPhone, iPad and Apple Vision Pro
+those files are encrypted at rest while the device is locked. On Mac they sit inside
+the sandboxed app container and are covered by FileVault if it is on. There is no
+SwiftData store and no Keychain write.
 
 | What | Where |
 |---|---|
-| Your typed notes, logs, or profile | **Not stored.** No SwiftData store, no file export, no Keychain write on the compiled path |
+| Your typed journal (work, decisions, reflections, habits) | **On this device**, in the app’s Application Support folder |
+| Which readings you opened | **On this device**, next to the journal |
+| A journal export you asked for | **On this device**, temporary folder, only while More is on screen |
+| The journal as it was just before an import | **On this device**, next to the journal |
 | Model weights / Hugging Face cache | **Not stored.** No download feature |
 | Analytics identifiers | **None** |
 
-If iCloud Backup is enabled in iOS Settings, Apple’s device backup may include the app
-container. That is Apple’s processing, not ours. OmniOps itself performs no cloud sync.
+Export is a file you choose to share (Share sheet). It is written only when you tap
+“Export my journal”, into a temporary folder of its own, and it is deleted when you
+leave the More screen. The file includes the journal JSON and the on-screen disclaimer
+text. Import replaces the on-device journal with a previously exported file you choose;
+it asks you to confirm first, and a file that does not decode is refused and the journal
+is not changed. Nothing is uploaded to us.
 
-Deleting the app removes the container on iOS. This build writes nothing you would need
-to delete by hand.
+If iCloud Backup is enabled in iOS Settings, Apple’s device backup may include the app
+container, including the journal. That is Apple’s processing, not ours. OmniOps itself
+performs no cloud sync.
+
+Deleting the app removes the container on iPhone, iPad and Apple Vision Pro, including
+the journal. On Mac the sandbox container under
+`~/Library/Containers/legal.prameya.OmniOps` outlives the app and has to be removed
+separately.
 
 ---
 
 ## 3. What the app does not do
 
-Checked against compiled sources (`OmniOpsKit/Sources`, `App/OmniOps`) and the App
-shell entitlements / Info.plist / PrivacyInfo:
+Checked against compiled sources and the App shell entitlements / Info.plist / PrivacyInfo:
 
-- ❌ **No HealthKit.** No `import HealthKit`, no `HKHealthStore`, no usage description,
-  no health-records entitlement. Unused HealthKit claims from old placeholder plists
-  are gone.
-- ❌ **No CloudKit / iCloud container.** Entitlements file is empty. No `import CloudKit`.
+- ❌ **No HealthKit.** No HealthKit permission, no usage description, no health-records entitlement.
+- ❌ **No CloudKit / iCloud container.** The iOS entitlements file is empty; the macOS one
+  requests the App Sandbox and nothing else.
 - ❌ **No analytics, advertising, crash reporting, or tracking.** No ATT prompt.
 - ❌ **No account, Sign in with Apple, or server login.**
 - ❌ **No location, camera, microphone, photos, contacts, calendar, or notifications.**
 - ❌ **No sale or share of personal information** — we hold none.
-- ❌ **HIPAA does not apply** (not a covered entity, no PHI). See `REGULATORY.md` §5.
+- ❌ **HIPAA does not apply** (not a covered entity, no PHI).
 
 Apple’s App Privacy label for this binary is **Data Not Collected.**
 
@@ -96,18 +113,15 @@ If on-device model weights are added later:
 
 ## 5. Knowledge packs
 
-Packs are authored in `KNOWLEDGE/packs/` and synced into the `Knowledge` module
-(`Bundle.module`). The kit product currently holds **six** NIST-derived packs. The
-compiled App shell does **not** link `Knowledge`, so those files are not in the
-shipping binary. Adding a pack does not, by itself, send data off device.
+Nineteen packs ship in the app and appear on Understand. They are bundled in the
+binary. Adding a pack does not, by itself, send data off device. The app does not
+fetch packs from the network.
 
 ---
 
 ## 6. Monetization
 
-A StoreKit paywall exists as a **compiled kit product** (`Monetization`) so the tree is
-not dead. The App shell links `DesignSystem` and `AppSurfaces` only. `AppSurfaces` does
-not depend on `Monetization`. This binary does not present a paywall and does not talk
+There is no StoreKit paywall. This binary does not present a paywall and does not talk
 to the App Store for in-app purchase.
 
 ---
@@ -123,8 +137,9 @@ collect information.
 ## 8. Your rights
 
 There is nothing of yours on our servers to access, correct, or delete. Deleting the
-app removes the on-device container. Rights under the GDPR / UK GDPR / CCPA-CPRA are
-exercised on your device; if you believe we hold something, write to the contact in §1.
+app removes the on-device container (on Mac, also remove the sandbox container named
+above). Rights under the GDPR / UK GDPR / CCPA-CPRA are exercised on your device; if
+you believe we hold something, write to the contact in §1.
 
 We do not respond to “Do Not Track” signals, because we do not track.
 
@@ -142,7 +157,7 @@ The compiled screen renders, verbatim:
 > management-system standard.
 
 OmniOps does not ship aggregated avoided-cost totals or unsourced occupational /
-ROI figures. See `REGULATORY.md`.
+ROI figures.
 
 ---
 
