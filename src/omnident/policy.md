@@ -1,6 +1,6 @@
 # OmniDent Privacy Policy
 
-**Effective date:** 8 August 2026
+**Effective date:** 21 August 2026
 **Publisher:** Prameya LLC, a United States limited liability company ("Prameya", "we", "us")
 **Contact:** admin@prameya.legal
 **This policy lives at:** https://prameyallc.github.io/privacy/omnident/
@@ -22,7 +22,7 @@
 - **No ads. No analytics. No trackers. No third-party SDK that phones home.** We do not sell your data. We have never sold your data.
 - **Prameya has no user database.** We do not know who you are. There is no account on our systems to look you up in.
 - Sign in with Apple is optional. If you use it, you can delete your account and everything on the device from inside the app. Because OmniDent has no server and never exchanges Apple's authorization code, no Apple token for OmniDent exists — deletion clears the association held on your device and removes the app's records from your own iCloud, and there is no token for the app to revoke.
-- OmniDent is an educational wellness app. It is **not a medical device**, it does not diagnose anything, and **HIPAA does not apply to it**.
+- OmniDent is an educational wellness app with **no FDA authorization of any kind**, and **HIPAA does not apply to it**. What the photo analysis puts on your screen is a written note about the image, with no condition name and no confidence score. Do not use it to decide whether to seek or delay dental care.
 
 ---
 
@@ -37,11 +37,11 @@ OmniDent is a direct-to-consumer app for your own oral care. It lets you:
 - read general information about oral health;
 - optionally share brushing and dietary-sugar entries with Apple Health.
 
-**In the configuration OmniDent ships in, the app does not give you a diagnosis and does not name a dental disease as a finding about your photograph.** Analysis of dental images for clinical purposes is a regulated activity in the United States. Any feature that would produce a clinical or diagnostic finding is disabled by default and stays disabled unless and until the relevant regulatory clearance is in place.
+**OmniDent has no FDA authorization.** Analysis of dental images for clinical purposes is a regulated activity in the United States. What the photo analysis puts on your screen today is a written note about the image, with no condition name and no confidence score. We are not replacing that description with a blanket "the app does not diagnose" claim — a free-text on-device chat can still name a condition, and nothing in the app filters that output. Do not act on chat or photo-note text. Ask a dentist.
 
 Two things in the shipping app are worth stating plainly, because they involve numbers and disease words even though they are not findings about you:
 
-- The Studio screen contains an unfinished **Regenerative Projection** feature. It lists terms drawn from your own scan history and shows a percentage range — "X–Y% chance of meaningful recovery in ~N months". **Those percentages are fixed placeholder values written into the app.** They are not measured from your photographs, they are not calculated from anything about you, and they are not a prediction about your health. Do not rely on them.
+- The Studio screen contains an unfinished **Regenerative Projection** feature. It lists terms drawn from your own scan history and shows a percentage range — "X–Y% chance of meaningful recovery in ~N months". **Those percentages are fixed values written into the app** and they are not a prediction about your health. The numbers themselves are constants, but *which* constant you see is chosen by matching terms in your own scan history. Do not rely on them.
 - Some feature descriptions in the app still use dental-condition wording — "caries, erosion, stain & gum risks", "gingival inflammation" — to describe what a feature is about. That is subject-matter wording, not a finding the app has made about your mouth.
 
 ---
@@ -68,11 +68,11 @@ One thing this does **not** mean: OmniDent does not mark the `Documents/Scans` f
 
 OmniDent has a setting called **auto-save captures to Photos**. When it is on, every new photo you take in the app is also copied into your device's system Photos library, the same place your ordinary camera photos go.
 
-**This setting is ON by default.**
+**This setting is off by default.** You have to turn it on.
 
-If you use iCloud Photos, that means new mouth photos will be backed up to your personal iCloud Photo Library, under your Apple Account, subject to Apple's terms — not ours. This is still your data in your account, and Prameya still never sees it. But it does leave OmniDent's protected container, and you should know that.
+If you turn it on and you use iCloud Photos, that means new mouth photos will be backed up to your personal iCloud Photo Library, under your Apple Account, subject to Apple's terms — not ours. This is still your data in your account, and Prameya still never sees it. But it does leave OmniDent's protected container, and you should know that.
 
-You can turn it off at **Settings → Photos** inside OmniDent. You can also revoke OmniDent's permission to add to your Photos library at any time in iOS Settings → Privacy & Security → Photos.
+You can turn it on at **Settings → Photos** inside OmniDent. You can also revoke OmniDent's permission to add to your Photos library at any time in iOS Settings → Privacy & Security → Photos.
 
 ### Photos you pick from your library
 
@@ -336,11 +336,18 @@ If OmniDent is ever offered through a dental practice or a dental service organi
 
 ---
 
-## 17. Not a medical device, not medical advice
+## 17. No FDA authorization, and not medical advice
 
-OmniDent gives general educational information about oral health. It does not diagnose, treat, cure, mitigate or prevent any disease or condition. It is not a substitute for examination by a licensed dentist, and it cannot see what a dentist sees.
+**OmniDent has no FDA authorization, clearance or approval of any kind.** It is not a substitute for examination by a licensed dentist, and it cannot see what a dentist sees. Analysis of dental images is a regulated activity in the United States. OmniDent is not an authorized device and does not claim to be.
 
-Analysis of dental images is a regulated activity in the United States, and FDA has authorised specific devices for it. OmniDent is not one of them and does not claim to be. Features that would produce a clinical or diagnostic finding are switched off by default and remain off pending appropriate regulatory clearance. The percentage ranges shown by the Studio screen's Regenerative Projection feature are placeholder values built into the app and are not a clinical estimate of anything (section 1).
+We are not replacing that with a blanket "the app does not diagnose" claim. What can be checked:
+
+- **Nothing the app shows you has been reviewed or authorized by any regulator.**
+- **What the analysis produces is a written description of the photograph, with no condition name and no confidence score.**
+- **The on-device chat is not filtered.** It can name a dental condition, describe it as yours, or suggest a treatment. Do not act on chat output. Ask a dentist.
+- **Do not use anything on those screens to decide whether to seek or delay dental care.**
+
+The percentage ranges shown by the Studio screen's Regenerative Projection feature are fixed values built into the app and are not a clinical estimate of anything (section 1).
 
 If something in your mouth hurts, bleeds, changes, or worries you, see a dentist. Do not wait for an app.
 
@@ -351,7 +358,8 @@ If something in your mouth hurts, bleeds, changes, or worries you, see a dentist
 We will update this policy when the app's behaviour changes — and we will update it **before** the change ships, not after.
 
 - The effective date at the top always reflects the current version.
-- **This 8 August 2026 revision was a correction pass.** We re-read the shipping source code and rewrote every statement that did not match it. In particular: the previous version said that deleting your account revokes your Sign in with Apple token through Apple's REST API. It does not, and it never did — the app has no server and mints no token, so there is nothing to revoke; section 4 now describes what deletion actually does. We also corrected the name of the deletion control, described the Studio Regenerative Projection placeholder percentages, stated that scan files are not excluded from your device backup, recorded that no pre-download disclosure sheet exists, and confirmed the items that had been marked as pending internal verification and are now in the build. Nothing in this document describes a feature that has not shipped.
+- **This 21 August 2026 revision** matches the shipping code on auto-save captures to Photos (**off** by default), withdraws the blanket "does not diagnose" wording in favour of describing the photo note and the unfiltered chat, and corrects the Studio Regenerative Projection percentages: the values are constants, but which constant you see is keyed on your own scan history.
+- **The 8 August 2026 revision was a correction pass.** We re-read the shipping source code and rewrote every statement that did not match it. In particular: the previous version said that deleting your account revokes your Sign in with Apple token through Apple's REST API. It does not, and it never did — the app has no server and mints no token, so there is nothing to revoke; section 4 now describes what deletion actually does. We also corrected the name of the deletion control, described the Studio Regenerative Projection placeholder percentages, stated that scan files are not excluded from your device backup, recorded that no pre-download disclosure sheet exists, and confirmed the items that had been marked as pending internal verification and are now in the build.
 - For any material change — a new destination the app connects to, a new category of data, a new third party, a change to what syncs, or the addition of any advertising or analytics — we will show an in-app notice and, where the law requires it, ask for your consent before the change takes effect. Under Washington's My Health My Data Act, collecting a new category of consumer health data, or using it for a new purpose, requires your affirmative consent first, and we will obtain it first.
 - Previous versions are available on request from admin@prameya.legal.
 - Continuing to use the app after a non-material change means the updated policy applies. That is not how we will handle a material one.

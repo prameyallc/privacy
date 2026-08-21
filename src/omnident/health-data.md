@@ -1,6 +1,6 @@
 # OmniDent Consumer Health Data Privacy Policy
 
-**Effective date:** 8 August 2026
+**Effective date:** 21 August 2026
 **Publisher:** Prameya LLC, a United States limited liability company ("Prameya", "we", "us")
 **Contact:** admin@prameya.legal
 **This policy lives at:** https://prameyallc.github.io/privacy/omnident/health-data/
@@ -228,7 +228,7 @@ If we change the categories of consumer health data we collect, add a source, ad
 2. **obtain your affirmative consent before collecting or processing for the new category or purpose**, as RCW 19.373.020(1)(c) and (1)(d) require — before the change takes effect, not after;
 3. show an in-app notice describing what changed.
 
-**This 8 August 2026 revision was a correction pass rather than a change of practice.** We re-read the shipping source code and rewrote every statement that did not match it. The deletion section previously said that deleting your account revokes your Sign in with Apple token; it does not, because the app has no server, never exchanges the authorization code, and therefore has no token in existence to revoke. That section now states what deletion actually does. We also corrected the name of the deletion control, described the placeholder percentages in the Studio Regenerative Projection feature, noted that scan files are not excluded from your own device backup, described the export file accurately, and confirmed the statements that had been pending internal verification and are now true of the build. Nothing in this document now describes a feature that has not shipped.
+**This 21 August 2026 revision** restates auto-save captures to Photos as **off** until you turn it on (the main policy is the source for that setting). **The 8 August 2026 revision was a correction pass rather than a change of practice.** We re-read the shipping source code and rewrote every statement that did not match it. The deletion section previously said that deleting your account revokes your Sign in with Apple token; it does not, because the app has no server, never exchanges the authorization code, and therefore has no token in existence to revoke. That section now states what deletion actually does. We also corrected the name of the deletion control, described the placeholder percentages in the Studio Regenerative Projection feature, noted that scan files are not excluded from your own device backup, described the export file accurately, and confirmed the statements that had been pending internal verification and are now true of the build.
 
 Previous versions are available on request. We do not make material changes quietly.
 
