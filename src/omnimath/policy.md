@@ -1,6 +1,6 @@
 # OmniMath Privacy Policy
 
-**Effective date:** 16 August 2026
+**Effective date:** 21 August 2026
 **Publisher:** Prameya LLC ("Prameya", "we", "us")
 **App:** OmniMath for iPhone — bundle ID `legal.prameya.OmniMath`
 **Contact:** admin@prameya.legal
@@ -27,7 +27,7 @@
 
 OmniMath teaches discrete mathematics for computer science through written lessons, a searchable Codex of concepts, and interactive demonstrations. All of the learning content ships inside the app.
 
-It is free, and at present nothing pays for it. Until 12 August 2026 advertising did, and earlier versions of this policy said so. That business model was removed from the code, not merely disabled. The app's source contains a `Monetization` module holding StoreKit product identifiers for a possible "OmniMath Plus" subscription, but no screen in the app presents them — there is no reachable purchase route, so the app takes no money from you by any means. If that changes, this policy will be updated before the purchase route ships.
+It is free, and at present nothing pays for it. Until 12 August 2026 advertising did, and earlier versions of this policy said so. That business model was removed from the code, not merely disabled. There is no in-app purchase, paywall, or StoreKit product identifier in the app — there is no reachable purchase route, so the app takes no money from you by any means. If that changes, this policy will be updated before the purchase route ships.
 
 ---
 
@@ -226,6 +226,8 @@ Apple's App Store privacy labels use Apple's own definition of "collect", which 
 ## Changes to this policy
 
 We will update this policy when the app changes — and, where we can, before the change ships. When we do, we will change the effective date at the top and describe what changed. If a change materially expands what is collected or who receives it, we will surface it in the app rather than relying on you to re-read this page.
+
+**21 August 2026 — what changed.** The unused StoreKit scaffold that this policy used to describe as a `Monetization` module with product identifiers was deleted from the app. There is still nothing to buy. The live URL for this page is <https://prameyallc.github.io/privacy/omnimath/>.
 
 **16 August 2026 — what changed.** Advertising was removed from OmniMath in commit `df7919f` on 12 August 2026, and the last ad-injection code in the view layer was removed on 16 August 2026. On 12 August the summary at the top of this policy was corrected, but the body was not: for four days this file said "no ads" in its first section and then described banner ads, interstitials, ad load timing, Google's data-collection table, the advertising identifier, IP-derived coarse location, SKAdNetwork and an ad-reporting control in the present tense. Every one of those passages has now been deleted or rewritten, along with the advertising legal bases under GDPR, the California "sharing" disclosure and its tracking-based opt-out, the ad-related retention entry, the ad-traffic security claim, and the ad-dependent reasoning in the children's section. The on-device data table was also corrected: it had listed four stored items where the app stores eight. This update removes disclosures; it adds no collection.
 
