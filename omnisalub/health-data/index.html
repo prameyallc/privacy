@@ -94,150 +94,59 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <main id="main" class="wrap">
 <h1 id="omnisalub-consumer-health-data-privacy-policy">OmniSalub Consumer Health Data Privacy Policy</h1>
 <p><strong>Effective date:</strong> 8 August 2026<br />
+<strong>Last updated:</strong> 21 August 2026<br />
 <strong>Publisher:</strong> Prameya LLC ("Prameya", "we", "us")<br />
-<strong>Applies to:</strong> OmniSalub for iPhone, iPad and Mac<br />
+<strong>Applies to:</strong> OmniSalub for iPhone, iPad and Mac (bundle identifier <code>legal.prameya.omnisalub</code>)<br />
 <strong>Contact:</strong> admin@prameya.legal</p>
 <p>This is a <strong>separate, distinctly-labelled consumer health data privacy policy</strong>, published as required by Washington's My Health My Data Act (RCW ch. 19.373) and drafted to satisfy Nevada's consumer health data law (SB 370, NRS ch. 603A) at the same time. It sits alongside — and does not replace — the <a href="https://prameyallc.github.io/privacy/omnisalub/">OmniSalub Privacy Policy</a>.</p>
 <p>If you are a Washington or Nevada resident, this is the document written for you. Everyone else is welcome to read it; it describes what actually happens either way.</p>
 <hr />
-<h2 id="read-this-first">Read this first</h2>
-<p>OmniSalub is a chronic-condition companion. It handles health data about you — that is its entire purpose. What matters is where that data goes.</p>
-<p><strong>Prameya operates no server. No health data about you is ever transmitted to Prameya. We have no copy of it, no database of users, and no ability to obtain it.</strong> The app processes your health data on your own device, under your control.</p>
-<p>Washington's law defines "collect" broadly — it reaches data that is accessed, processed, derived or inferred, not only data that is received by a company. Apple's App Store privacy labels use a narrower definition ("collect" = transmitted off the device). <strong>We are not relying on Apple's narrower definition here.</strong> This policy describes everything the app does with your health data on your device, and treats it as within scope. We do not assert that we are outside the Act.</p>
+<h2 id="the-short-version">The short version</h2>
+<p><strong>We do not collect, receive, store, share, sell or process any consumer health data.</strong> OmniSalub has no servers. What you record stays in the app's private storage on your own device, and — only if you allow it — in your own Apple Health account, which Apple operates and we cannot read.</p>
+<p>Apple's App Privacy nutrition label for this app is <strong>Data Not Collected</strong>. That matches this policy: Prameya LLC is not a recipient of your health data.</p>
+<p>The sections below answer each disclosure the statute asks for, including the ones where the honest answer is "none". We have written those out rather than omitting them, because a missing element and a "none" element look identical to a reader and are not the same thing.</p>
+<p>This revision (21 August 2026) retracts an earlier published table that listed thirteen categories under "consumer health data we collect". That table described what the <strong>app stores on your device</strong>, not what Prameya collects. Publishing both framings under the same statutory heading was SALUB-072. The governing answer is <strong>None</strong>.</p>
 <hr />
-<h2 id="1-categories-of-consumer-health-data-and-why-the-app-handles-them">1. Categories of consumer health data, and why the app handles them</h2>
-<p>All of the following is processed <strong>on your device</strong>. None of it is transmitted to Prameya.</p>
-<div class="tablewrap"><table>
-<thead>
-<tr>
-<th>Category of consumer health data</th>
-<th>What that means here</th>
-<th>Why the app handles it</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Vital signs and bodily functions</strong></td>
-<td>Blood pressure, heart rate, resting and walking heart rate, heart-rate recovery, heart-rate variability, atrial-fibrillation burden, oxygen saturation, respiratory rate, body temperature (including basal and wrist temperature), peripheral perfusion index</td>
-<td>To show your readings over time, and to compare them with published guideline thresholds so the app can tell you when to contact a clinician</td>
-</tr>
-<tr>
-<td><strong>Body measurements</strong></td>
-<td>Weight, BMI, body fat, lean mass, height, waist circumference</td>
-<td>Weight change is a core heart-failure signal; the rest give context</td>
-</tr>
-<tr>
-<td><strong>Blood glucose and related</strong></td>
-<td>Blood glucose, insulin delivery, blood alcohol content</td>
-<td>Diabetes and kidney disease frequently travel with the conditions this app covers</td>
-</tr>
-<tr>
-<td><strong>Alcohol consumption</strong></td>
-<td>Number of alcoholic drinks</td>
-<td>Added 2026-08-08 for the alcohol-use programme, which previously had no Apple Health source and required every entry to be typed twice. Requested only if you switch that programme on</td>
-</tr>
-<tr>
-<td><strong>Lung function</strong></td>
-<td>FEV1, forced vital capacity, peak flow, inhaler use</td>
-<td>Breathlessness has cardiac and respiratory causes</td>
-</tr>
-<tr>
-<td><strong>Symptoms you report</strong></td>
-<td>Breathlessness, chest pain or tightness, dizziness, palpitations, skipped heartbeat, fainting, nausea, vomiting, fever, gastrointestinal symptoms, fatigue, headache, mood changes, appetite changes, sleep changes, and more specific variants defined by the condition you track</td>
-<td>Symptoms drive the app's escalation rules — several are the difference between "log it" and "seek care today"</td>
-</tr>
-<tr>
-<td><strong>Diagnoses and conditions</strong></td>
-<td>Which conditions you have chosen to track (for example hypertension, heart failure, chronic kidney disease)</td>
-<td>Determines which measurements the app asks for and which guideline rules apply</td>
-</tr>
-<tr>
-<td><strong>Health-related alerts</strong></td>
-<td>Which guideline rule fired, when, and at which rule-set version</td>
-<td>So you and, if you choose, your clinician can see the history</td>
-</tr>
-<tr>
-<td><strong>Sleep, activity and mobility</strong></td>
-<td>Sleep records (time in bed, time asleep, sleep stages), exercise minutes, move and stand time, steps, energy, flights climbed, distances, workouts, time in daylight, UV exposure, walking speed and steadiness, falls, six-minute walk distance</td>
-<td>Functional decline is clinically meaningful in heart failure and kidney disease</td>
-</tr>
-<tr>
-<td><strong>Nutrition and diet</strong></td>
-<td>Energy, macronutrients, cholesterol, water, caffeine, and minerals including <strong>sodium and potassium</strong></td>
-<td>Sodium and potassium have specific dietary rules in hypertension and kidney disease</td>
-</tr>
-<tr>
-<td><strong>Cardiac event notifications from an Apple Watch</strong></td>
-<td>Exactly four record types: high heart-rate, low heart-rate, irregular-rhythm and low-cardio-fitness notifications</td>
-<td>Available from an Apple Watch; shown alongside your other readings. These are consumer notifications, not diagnoses</td>
-</tr>
-<tr>
-<td><strong>Hearing exposure</strong></td>
-<td>Environmental and headphone audio-exposure levels</td>
-<td>Read as ordinary measurements alongside the rest; audiograms are not requested</td>
-</tr>
-<tr>
-<td><strong>Inferences the app makes</strong></td>
-<td>Whether a reading falls inside or outside a published guideline band, trend direction, and whether an escalation rule fired</td>
-<td>This is a derived health inference, so we list it: Washington's definition reaches derived data too</td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>This table is a ceiling, not a description of your device.</strong> As of 2026-08-08 the app asks Apple Health only for the categories belonging to the conditions <strong>you</strong> have switched on. If you track blood pressure and nothing else, the app requests eight record types — blood pressure (systolic and diastolic), weight, exercise minutes, and the four symptom records its emergency rule checks. It previously requested twenty-nine. Sleep, workouts, Watch cardiac notifications, nutrition and mobility are requested only if something you switched on reads them. The single exception is <strong>Settings → Import all Health history</strong>, an explicit one-off action that does request the whole table, because a partial import of "all my history" would be a false promise.</p>
-<p><strong>Purposes, stated completely.</strong> The app uses this data to (a) display your own health record back to you, (b) compare readings against published clinical guideline bands, (c) raise a care-seeking prompt when a rule fires, (d) generate a summary you can give a clinician, and (e) answer your questions using an assistant that runs on your device. <strong>That is the full list.</strong> It is not used for advertising, marketing, profiling, research, product analytics, model training, or sale — none of which the app or Prameya does at all.</p>
-<h3 id="what-the-app-does-not-handle">What the app does not handle</h3>
-<p>An earlier version of this policy listed reproductive and sexual health data and profile facts among the categories the app requested from Apple Health, because at that time it asked for the full ordinary read set. <strong>It no longer does.</strong> The permission request has been narrowed to the types the app actually consumes, and automated tests fail the build if a removed type comes back. The following are not requested, and therefore cannot be read:</p>
-<ul>
-<li><strong>Reproductive and sexual health data.</strong> None of it: menstrual flow, intermenstrual bleeding, cycle-irregularity records, ovulation, pregnancy and progesterone test results, cervical mucus, contraceptive use, lactation, pregnancy, sexual activity. Fourteen record types in total. This is the most sensitive category under Washington's law, and the app has no consumer for any of it.</li>
-<li><strong>Profile facts</strong> — date of birth, biological sex, blood type, Fitzpatrick skin type, wheelchair use, activity move mode. Not requested, and there is no code anywhere in the app that reads them.</li>
-<li><strong>Electrocardiograms and audiograms.</strong> Not requested.</li>
-<li><strong>Mindful sessions, Apple's stand-hour records, audio-exposure event notifications, toothbrushing and handwashing records.</strong> Not requested.</li>
-<li><strong>Precise location.</strong> Never requested and there is no location code in the app. Precise location is expressly consumer health data under Washington's law, and we intend to keep it that way by not having it.</li>
-<li><strong>Medications and dose records.</strong> The shipping build does not read them; the capability is hard-coded off and the code path returns without asking.</li>
-<li><strong>Clinical Health Records</strong> — labs and records from a hospital or clinic. Not requested, not read; that capability is hard-coded off as well.</li>
-<li><strong>Genetic data.</strong> Never stored, in any form.</li>
-<li><strong>Biometric identifiers.</strong> Face ID and Touch ID are handled entirely by Apple's Secure Enclave; the app never receives a fingerprint or face template.</li>
-<li><strong>Gender-affirming care records, and data about seeking or obtaining health services</strong>, beyond what you personally choose to log.</li>
-</ul>
-<p>You also remain free to decline any part of what the app <em>does</em> ask for. Apple's permission sheet has an individual toggle for every category, and the app works with whatever subset you allow.</p>
-<hr />
-<h2 id="2-categories-of-sources">2. Categories of sources</h2>
-<p>The app obtains consumer health data from exactly three sources:</p>
-<ol>
-<li><strong>You.</strong> Anything you type into the app: readings, symptoms, the conditions you track, and questions you ask the assistant.</li>
-<li><strong>Apple Health on your device</strong>, if you grant permission. Whatever is in Health has typically been put there by you, by a blood-pressure cuff, a scale, a glucose meter, an Apple Watch, or another app you use. Permission is per-category and you can withdraw it at any time.</li>
-<li><strong>The app's own rule engine</strong>, which derives inferences (band classification, trend, whether an alert fired) from the two sources above.</li>
-</ol>
-<p>There is no fourth source. We buy no data, receive no data from data brokers, and obtain nothing from advertising networks, partners or affiliates — we have none.</p>
-<hr />
-<h2 id="3-categories-of-consumer-health-data-that-we-share">3. Categories of consumer health data that we share</h2>
+<h2 id="1-categories-of-consumer-health-data-we-collect-and-the-purpose-of-collection">1. Categories of consumer health data we collect, and the purpose of collection</h2>
 <p><strong>None.</strong></p>
-<p>Prameya shares no consumer health data with anyone, for any purpose, because Prameya never receives it. There is no server, no analytics service, no advertising network, no crash-reporting service, no marketing platform, and no research partner.</p>
-<h2 id="4-categories-of-third-parties-and-specific-affiliates-we-share-it-with">4. Categories of third parties and specific affiliates we share it with</h2>
-<p><strong>None.</strong> Prameya has no affiliates and no subsidiaries, and we share consumer health data with no third parties.</p>
-<p>Three things are worth naming precisely, because a reader should be able to check this against how the app behaves:</p>
+<p>The app records measurements, symptoms and settings that <em>would</em> be consumer health data if we received them. We do not receive them. There is no account, no server of ours, no analytics endpoint, no advertising SDK, and no code path that transmits what you record to us or to anyone else. Data written to Apple Health is written into <em>your</em> Apple account under Apple's terms, not ours.</p>
+<p>Because we collect nothing, there is no collection purpose to state.</p>
+<hr />
+<h2 id="2-categories-of-sources-from-which-consumer-health-data-is-collected">2. Categories of sources from which consumer health data is collected</h2>
+<p><strong>None.</strong> We are not a recipient of any of the sources the app reads from (your own entries, or Apple Health with your permission).</p>
+<hr />
+<h2 id="3-categories-of-consumer-health-data-that-is-shared">3. Categories of consumer health data that is shared</h2>
+<p><strong>None.</strong> We do not share, sell, rent, trade or disclose consumer health data, because we do not have any. We have never sold consumer health data and we do not intend to.</p>
+<hr />
+<h2 id="4-a-list-of-the-categories-of-third-parties-and-specific-affiliates-with-whom-we-share-consumer-health-data">4. A list of the categories of third parties, and specific affiliates, with whom we share consumer health data</h2>
+<p><strong>None — the list is empty.</strong></p>
+<p>For completeness, and because we would rather over-disclose than have you discover it elsewhere, these are the only third parties involved in the app at all, none of whom receives consumer health data from us:</p>
 <ul>
-<li><strong>Apple.</strong> If you allow it, health data moves between OmniSalub and Apple Health on your own device, and Apple syncs Health between your own devices. That is a transfer within your own account and under Apple's terms, not a disclosure to us or to anyone else. We do not receive it and cannot see it.</li>
-<li><strong>Hugging Face, Inc.</strong> If you choose to install the optional on-device assistant, the app downloads model files from huggingface.co. <strong>That request contains no health data.</strong> It asks for a named public model and, like any web request, carries your IP address. No consumer health data is sent to Hugging Face at any time.</li>
-<li><strong>Anyone you send an export to.</strong> The app can produce a PDF, CSV or FHIR file for your clinician. That is you disclosing your own data to a recipient you choose, using the system share sheet. The app does not upload it and we never see it. Once it leaves, the recipient's terms govern it.</li>
+<li><strong>Apple Inc.</strong> — operates the App Store, Apple Health and iCloud. If you turn on settings sync, non-health preferences (theme, guideline set, app-lock state) are stored in <em>your</em> iCloud account. Health data is never placed in iCloud; that is a fixed architectural boundary and an automated test enforces it.</li>
+<li><strong>Hugging Face, Inc.</strong> — hosts the optional on-device language model's weight files. If, and only if, you choose to install the model, your device downloads those files. That request carries the model's repository identifier and your IP address. It carries no health data of any kind, and we are not a party to it.</li>
 </ul>
+<p>We have no affiliates.</p>
+<hr />
 <h2 id="5-sale-of-consumer-health-data">5. Sale of consumer health data</h2>
-<p><strong>We do not sell consumer health data, and we never have.</strong> Washington and Nevada both require a signed, specific written authorization before any sale. We have never sought one and have no plans to. If that ever changed, it would require your separate, revocable, written authorization — and we would have to tell you before it happened.</p>
+<p><strong>We do not sell consumer health data, and we never have.</strong> Washington and Nevada both require a signed, specific written authorization before any sale. We have never sought one and have no plans to.</p>
+<hr />
 <h2 id="6-geofencing">6. Geofencing</h2>
 <p>We do not use geofencing at all, anywhere. The app contains no location code. Both Washington and Nevada prohibit geofencing around healthcare facilities; we are nowhere near that line.</p>
 <hr />
-<h2 id="7-how-the-data-is-processed-stored-and-protected">7. How the data is processed, stored and protected</h2>
+<h2 id="7-precise-location">7. Precise location</h2>
+<p>The app <strong>never</strong> requests or uses precise location. It contains no location code at all, and an automated build check fails the project if any is added. Precise location is expressly consumer health data under the Washington statute, and we would rather the answer be structural than promised.</p>
+<hr />
+<h2 id="8-how-the-data-is-processed-stored-and-protected-on-your-device-not-by-us">8. How the data is processed, stored and protected — on your device, not by us</h2>
 <ul>
 <li><strong>Where.</strong> In an encrypted database in the app's private storage on your device. On iPhone and iPad it is set to iOS Data Protection "complete", so it is encrypted with a key derived from your device passcode and is unreadable while the device is locked. On a Mac it is protected by the app sandbox and by FileVault if you have FileVault on.</li>
 <li><strong>Not in iCloud.</strong> Health data is never stored in iCloud by this app. The health database is created with iCloud syncing explicitly disabled, and an automated test blocks any health record from reaching the part of the app that does sync. Only five non-health preferences (theme, guideline set, onboarding state, app lock, timestamp) can sync, and only if you turn that on — it is off by default.</li>
-<li><strong>Backups.</strong> The health database is excluded from device backup. So is the widget's display snapshot — the small file holding your most recent reading in formatted form — and that exclusion is re-applied every time the app writes the file, so snapshots left by older versions of the app are covered too. On iPhone and iPad the snapshot is encrypted at rest until the first time you unlock the device after a restart, rather than being re-locked whenever the screen locks; the Home Screen widget could not redraw your latest reading otherwise. It is the one value on the device with slightly weaker at-rest protection than the health database, and you can avoid it entirely by not using the widget.</li>
-<li><strong>The assistant.</strong> If you install it, the model runs on your device. The app assembles a summary of your logged data as context for it. That context never leaves your device and is not sent to us, to Apple or to any AI provider. Cloud and third-party inference modes are hard-wired off in this version.</li>
+<li><strong>Backups.</strong> The health database is excluded from device backup. So is the widget's display snapshot. On iPhone and iPad the snapshot is encrypted at rest until the first time you unlock the device after a restart, rather than being re-locked whenever the screen locks; the Home Screen widget could not redraw your latest reading otherwise.</li>
+<li><strong>The assistant.</strong> If you install it, the model runs on your device. Context assembled for it never leaves your device and is not sent to us, to Apple or to any AI provider. Cloud and third-party inference modes are hard-wired off in this version.</li>
 <li><strong>Retention.</strong> Your data stays until you delete it. We retain nothing, so there is no retention schedule on our side to describe.</li>
-<li><strong>Activity log.</strong> The app keeps a tamper-evident local log of when health data was read, written, exported or erased. It records event types and short identifiers only — never a value you recorded. You can view it in Settings.</li>
 </ul>
 <hr />
-<h2 id="8-your-rights-and-how-to-exercise-them">8. Your rights, and how to exercise them</h2>
-<p>You have the following rights under RCW 19.373.040 and NRS 603A.505:</p>
+<h2 id="9-how-to-exercise-your-rights">9. How to exercise your rights</h2>
+<p>Washington residents have the rights below under RCW 19.373.040. Nevada residents have broadly parallel rights under Nevada SB 370. We honour these requests from anyone who asks, regardless of where they live.</p>
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -260,43 +169,38 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <tr>
 <td><strong>Withdraw consent</strong></td>
 <td>Withdraw consent to collection and to sharing</td>
-<td>In the app: turn off Health access in <strong>Settings → Privacy &amp; Security → Health → OmniSalub</strong>; turn off settings sync in the app's Settings; delete the assistant model. Each is independent and reversible</td>
+<td>There is no consent to withdraw from us. Permissions the app itself uses are yours to revoke in <strong>Settings → Privacy &amp; Security → Health → OmniSalub</strong>; settings sync can be turned off in the app's own Settings</td>
 </tr>
 <tr>
 <td><strong>Delete</strong></td>
-<td>Have your consumer health data deleted, including from backups and archives</td>
-<td>In the app: <strong>Settings → Delete all data on this device</strong>, which also clears the widget snapshot, or delete the app, which removes everything it stored. To delete what the app previously wrote to Apple Health, use the Health app — that copy is yours and is not ours to remove. We hold no copies, no backups and no archives, so there is nothing on our side to delete</td>
+<td>Have your consumer health data deleted</td>
+<td>Because we hold nothing, there is nothing for us to delete. On your device: <strong>Settings → Delete all data on this device</strong>, or delete the app. Data already in Apple Health is managed by you in the Health app</td>
 </tr>
 <tr>
 <td><strong>Appeal</strong></td>
 <td>Appeal if we refuse a request</td>
-<td>Reply to our response, or email <strong>admin@prameya.legal</strong> with "Appeal" in the subject. We will respond in writing with our reasoning within 45 days</td>
+<td>Reply to our response, or email <strong>admin@prameya.legal</strong> with "Appeal" in the subject. We will respond in writing within 45 days</td>
 </tr>
 </tbody>
 </table></div>
-<p><strong>How to make a request.</strong> Email <strong>admin@prameya.legal</strong>. Tell us which right you are exercising. You do not need an account with us — we do not have accounts — and we will not ask you to create one or to give us extra personal data to "verify" you. If a request would require us to identify you and we cannot, we will say so plainly rather than collect information about you in order to answer.</p>
-<p><strong>Timing.</strong> We will respond <strong>without undue delay and within 45 days</strong> of receiving your request. If it is genuinely complex we may take one extension of a further 45 days, and we will tell you why within the first 45.</p>
+<p><strong>How to make a request.</strong> Email <strong>admin@prameya.legal</strong> with "Consumer health data request" in the subject line. We do not require an account, and we will not ask you to create one.</p>
+<p><strong>Timing.</strong> We will respond <strong>within 45 days of receiving your request</strong>. If we need more time, we may extend once by a further 45 days, and we will tell you within the first 45 days that we are doing so and why.</p>
 <p><strong>Cost.</strong> Free, up to twice a year, as the law provides.</p>
-<p><strong>If we refuse and you disagree.</strong> After our appeal decision, you may complain to your Attorney General:</p>
+<hr />
+<h2 id="10-if-we-refuse-appeal-and-then-the-regulator">10. If we refuse — appeal, and then the regulator</h2>
+<p>If we decline to act on your request we will tell you why, and we will give you a way to appeal. Appeal by replying to our decision, or by emailing <strong>admin@prameya.legal</strong> with "Appeal" in the subject line. <strong>We will decide an appeal within 45 days of receiving it</strong> and explain the reasons in writing.</p>
+<p>If the appeal is denied, we will provide a link or a means to submit a complaint to your state Attorney General:</p>
 <ul>
 <li><strong>Washington:</strong> the Attorney General's office accepts consumer complaints online at <a href="https://www.atg.wa.gov/file-complaint">atg.wa.gov/file-complaint</a>.</li>
 <li><strong>Nevada:</strong> the Attorney General's Bureau of Consumer Protection accepts complaints at <a href="https://ag.nv.gov/">ag.nv.gov</a>.</li>
 </ul>
-<p>Washington residents should also know that a violation of the My Health My Data Act is an unfair or deceptive act under the Washington Consumer Protection Act (RCW ch. 19.86), which carries a private right of action under <strong>RCW 19.86.090</strong> — that is, you can sue in your own name. Nevada's law is enforced by the Attorney General and does not provide a private right of action.</p>
+<p>Washington residents should also know that a violation of the My Health My Data Act is an unfair or deceptive act under the Washington Consumer Protection Act (RCW ch. 19.86), which carries a private right of action under <strong>RCW 19.86.090</strong>. Nevada's law is enforced by the Attorney General and does not provide a private right of action.</p>
 <hr />
-<h2 id="9-consent">9. Consent</h2>
-<ul>
-<li><strong>Consent is how this works.</strong> The app does not read anything from Apple Health until you grant permission through Apple's own sheet, category by category. It does not sync settings until you switch that on. It does not download the assistant model until you tap the button. Each is separately revocable.</li>
-<li><strong>We will not collect or share consumer health data beyond what this policy describes without first obtaining your affirmative, voluntary consent</strong> — a clear, specific, opt-in choice, freely given, that is not buried in other terms and is not a condition of using the app. That includes asking Apple Health for any category listed under "what the app does not handle" in section 1: adding one back to the permission request would be a change to this policy, made before the build ships, not after.</li>
-<li><strong>Sharing would require its own separate consent</strong>, naming the categories of data, the purpose, and the categories of recipients. Today there is no sharing, so there is nothing to consent to.</li>
-</ul>
+<h2 id="11-changes-to-this-policy">11. Changes to this policy</h2>
+<p>If we change this policy, we will update the "Last updated" date above and publish the new version at <a href="https://prameyallc.github.io/privacy/omnisalub/health-data/">prameyallc.github.io/privacy/omnisalub/health-data</a>.</p>
+<p>If a change ever means we begin to collect consumer health data, we will say so in plain terms, obtain consent where the law requires it, and publish it before the version that does so is released — not after.</p>
 <hr />
-<h2 id="10-changes-to-this-policy">10. Changes to this policy</h2>
-<p>If we change this policy, we will update the effective date above and publish the new version at <a href="https://prameyallc.github.io/privacy/omnisalub/health-data/">prameyallc.github.io/privacy/omnisalub/health-data</a>.</p>
-<p>This revision corrected statements in the previous version so that they match the code that actually ships. The main correction is in section 1: the category table previously listed reproductive and sexual health data and profile facts as data the app requests from Apple Health, on the basis that the app asked for the full ordinary read set. The read request has since been narrowed and those categories are no longer requested, so they have been moved to the list of data the app does not handle. Section 7 also replaces a placeholder note about the widget snapshot with a statement of what the shipping app does.</p>
-<p><strong>Material changes get more than a new date.</strong> If a future version of the app would collect, process or share consumer health data in a way this policy does not already describe — for example transmitting health data off the device, adding an account, enabling cloud or third-party AI processing, or widening the Apple Health permission request — we will describe the change in the app and obtain your affirmative consent <strong>before</strong> it takes effect, and before any data is handled under the new terms. A change to this policy will never be applied retroactively to data already collected.</p>
-<hr />
-<h2 id="11-contact">11. Contact</h2>
+<h2 id="12-contact">12. Contact</h2>
 <p><strong>admin@prameya.legal</strong><br />
 Prameya LLC<br />
 Postal address available on request by email.</p>

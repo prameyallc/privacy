@@ -1,11 +1,12 @@
 # OmniSalub Privacy Policy
 
 **Effective date:** 8 August 2026
+**Last updated:** 21 August 2026
 **Publisher:** Prameya LLC ("Prameya", "we", "us")
 **Applies to:** OmniSalub for iPhone, iPad and Mac (bundle identifier `legal.prameya.omnisalub`)
 **Contact:** admin@prameya.legal
 
-**Washington and Nevada residents — and anyone who wants the health-specific detail:** we publish a separate [Consumer Health Data Privacy Policy](https://prameyallc.github.io/privacy/omnisalub/health-data/). It is required by Washington's My Health My Data Act and it covers your health data specifically. Please read it alongside this one.
+**Washington and Nevada residents — and anyone who wants the health-specific detail:** we publish a separate [Consumer Health Data Privacy Policy](https://prameyallc.github.io/privacy/omnisalub/health-data/). **Prameya collects no consumer health data**; processing is on-device. Apple's App Privacy label is **Data Not Collected**. Please read the separate policy alongside this one.
 
 Other Prameya app policies: [prameyallc.github.io/privacy](https://prameyallc.github.io/privacy/).
 
@@ -321,7 +322,7 @@ Washington's My Health My Data Act (RCW ch. 19.373) and Nevada's consumer health
 
 **→ [OmniSalub Consumer Health Data Privacy Policy](https://prameyallc.github.io/privacy/omnisalub/health-data/)**
 
-It describes the categories of health data the app handles, where it comes from, why, who it goes to, and how to exercise your rights, including withdrawing consent and requesting deletion. Please read it. Washington's law also makes a violation an unfair practice under the Washington Consumer Protection Act (RCW ch. 19.86), which gives individuals their own right to sue under RCW 19.86.090.
+**Prameya collects no consumer health data.** Readings stay on your device (and in your own Apple Health account if you allow that). We receive nothing. Apple's App Privacy nutrition label for this app is **Data Not Collected**. The separate policy states that same position, plus how to exercise your rights, including deletion and appeal. Please read it. Washington's law also makes a violation an unfair practice under the Washington Consumer Protection Act (RCW ch. 19.86), which gives individuals their own right to sue under RCW 19.86.090.
 
 ### Other US states
 
