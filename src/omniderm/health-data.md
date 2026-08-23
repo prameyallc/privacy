@@ -1,6 +1,6 @@
 # Consumer Health Data Privacy Policy — OmniDerm
 
-**Effective date:** 21 August 2026
+**Effective date:** 23 August 2026
 **Publisher:** Prameya LLC ("Prameya", "we", "us"), a United States limited liability company
 **Contact:** admin@prameya.legal
 **Applies to:** the OmniDerm iOS app
@@ -66,7 +66,7 @@ There are no other sources. We do not buy data, rent data, receive data from dat
 - To provide the educational content and reminders you asked for.
 - Nothing else. Not to advertise to you, not to profile you, not to train any model, not to build a data set, not for research, and not for any purpose we have not described here.
 
-**Nothing is used to train AI.** The AI models in OmniDerm are downloaded already-trained and are never updated with your data.
+**Nothing is used to train AI.** The shipping app does not run a generate path and does not download a model. If that gated surface ever opened, weights would already be trained; your journal would not update them.
 
 ## 4. Categories of consumer health data that are shared
 
@@ -81,7 +81,7 @@ We share no consumer health data, of any category, with anyone. There is no cate
 | Party | Role | Consumer health data they receive |
 |---|---|---|
 | **Apple** | Distributes the app; provides iOS, on-device storage, and, if you enable it, the private iCloud database inside **your own** Apple Account | **None from us.** If you turn on iCloud sync, only non-health preferences go to your own private iCloud, which we cannot read. |
-| **Hugging Face** | Hosts the AI model files the app downloads to your phone | **None.** The request is for a model file. It carries no photo, no habit log, no health data, no identifier of you. |
+| **Hugging Face** | Not contacted in the shipping app (no Settings download; generate is gated off) | **None.** |
 
 **What iCloud sync can carry, precisely.** Sync is off unless you switch it on, and when it is on it is limited in code to seven settings: appearance mode, whether reminders are on, the reminder hour, the tab the app opens on, which AI model you selected, whether you have acknowledged the app's disclosure, and whether citations are expanded by default. Each of those accepts only a fixed set of values, so free text cannot travel with them. Habit logs, streaks, consistency scores, goals and journal photographs are on an explicit deny list, and none of the app's local database is mirrored to iCloud. Records go to the private database in your own Apple Account, which Prameya cannot read.
 
@@ -133,7 +133,7 @@ Nevada's SB 370 provides substantially the same rights to Nevada residents. Resi
 - **Do we sell it?** No, and never have.
 - **List of third parties we shared with or sold to?** Empty.
 - **Can you access it?** Yes — from the app itself, at any time. **Settings → Export Full Data (JSON)** gives you a complete file of your habit logs, your streak snapshot and your goals.
-- **Can you delete it?** Yes, and you do not need us. **Settings → Clear All Local Data** deletes your habit logs, goals and reminder settings and cancels pending reminders. Deleting the app removes everything else, including downloaded models and stored keys. No photo was ever read or saved, so there is nothing to delete there. If you enabled iCloud sync, remove the app's iCloud data in iOS Settings → your name → iCloud → Manage Account Storage.
+- **Can you delete it?** Yes, and you do not need us. **Settings → Clear All Local Data** deletes your habit logs, journal entries, journal JPEGs, goals and reminder settings and cancels pending reminders. Deleting the app removes everything else, including leftover cached models if any and stored keys. Journal photographs **are** saved on this device until you delete them that way. If you enabled iCloud sync, remove the app's iCloud data in iOS Settings → your name → iCloud → Manage Account Storage.
 - **Do we hold backups or archives of your data?** No. We have no copy to restore, so there is no archive for a deletion request to miss.
 
 **How to make a request.** Email **admin@prameya.legal**. Say what you want and which state you are in. There is no form and no account to create.
@@ -152,7 +152,7 @@ Nevada's SB 370 provides substantially the same rights to Nevada residents. Resi
 
 - Consumer health data stays on your device, inside the app's sandbox, and your device passcode or Face ID is the main protection for it.
 - **What we do not claim:** the app does not enable iOS's strictest file-protection level, the one that would keep its files unreadable the whole time your device is locked. Its stored files get the standard protection iOS gives app data and nothing beyond it.
-- No skin photo is read or written at all in this version, and no code path in the app writes an image to a file, a database, the Keychain, or iCloud.
+- Journal photographs you save are stored as JPEG files on this device, excluded from backup, and never uploaded or synced. The assessment / generate path does not run.
 - Sensitive keys and flags are stored in the device Keychain, marked **this device only**, so they never travel to another device.
 - All network traffic uses HTTPS; the app refuses unencrypted connections.
 - Access inside Prameya is limited by architecture rather than by policy: **no employee, contractor or system of ours can access your consumer health data, because it never reaches us.**
@@ -175,7 +175,9 @@ OmniDerm is not directed to children and has no accounts, no ads, no purchases a
 
 If we change how OmniDerm handles consumer health data, we will update this policy and change the effective date at the top **before** the change takes effect in the app, and we will tell you inside the app.
 
-**What changed on 8 August 2026.** This revision corrected the policy against the code that actually ships. Internal review notes that had been published by mistake were removed, and the statements they questioned were rewritten to match the shipping build: the photo rows now say the feature is gated off and reads no image at all rather than describing processing that does not happen, and the iCloud section now names the exact seven non-health settings that can sync. We also removed a security statement the app does not support. Nothing in this document describes a capability the shipping app does not have.
+**What changed on 23 August 2026.** Journal JPEGs you save are stored on this device. This page no longer says no photo was ever saved. Photo **assessment** remains gated off. Hugging Face is not contacted in the shipping build.
+
+**What changed on 8 August 2026.** An earlier revision corrected internal review notes and named iCloud’s seven non-health settings. Sentences from that date that said the app reads no image at all are superseded above.
 
 Washington law does not allow us to collect, use or share consumer health data beyond what this policy discloses, and any new category, purpose, or recipient requires your fresh, affirmative consent. We will ask. We will not treat continued use of the app as agreement to a new use of your health data.
 

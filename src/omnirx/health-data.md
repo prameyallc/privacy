@@ -1,6 +1,6 @@
 # OmniRx Consumer Health Data Privacy Policy
 
-**Effective date:** August 8, 2026
+**Effective date:** 23 August 2026
 **App:** OmniRx (iOS)
 **Publisher:** Prameya LLC ("Prameya", "we", "us"), a US limited liability company
 **Contact:** admin@prameya.legal
@@ -63,11 +63,9 @@ of them in.** Sleep is stored at a fixed default value you cannot set, symptoms 
 the conditions and current-medicines fields are never written. We list them here so that this policy
 describes the store honestly, not to suggest the app collects them.
 
-**On-device AI.** OmniRx can download and run a small open-weight language model on your device, but
-**no screen in the app currently sends anything you have written to that model.** If a feature that
-does is ever added, the text would be processed by the model running on your device and would not be
-transmitted to us or to anyone else — there is no code path that could transmit it — and we would
-describe the feature here first.
+**On-device AI.** The shipping app has **no** on-device model and **no** Hugging Face download.
+Unused Intelligence / MLX code was deleted. If a generate feature is ever added, this policy is
+rewritten first.
 
 **Purpose, stated once and plainly:** every purpose above is *showing your own information back to you*
 and *helping you prepare to talk to a pharmacist or physician*. There is no secondary purpose. We do

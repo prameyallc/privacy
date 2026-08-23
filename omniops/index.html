@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>OmniOps Privacy Policy — Prameya LLC</title>
-<meta name="description" content="Effective 17 August 2026. Last updated 21 August 2026.">
+<meta name="description" content="Effective date: 17 August 2026">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://prameyallc.github.io/privacy/omniops/">
 <style>
@@ -164,8 +164,10 @@ SwiftData store and no Keychain write.</p>
 </table></div>
 <p>Export is a file you choose to share (Share sheet). It is written only when you tap<br />
 “Export my journal”, into a temporary folder of its own, and it is deleted when you<br />
-leave the More screen. Import replaces the on-device journal with a previously exported<br />
-file you choose; a file that does not decode is refused. Nothing is uploaded to us.</p>
+leave the More screen. The file includes the journal JSON and the on-screen disclaimer<br />
+text. Import replaces the on-device journal with a previously exported file you choose;<br />
+it asks you to confirm first, and a file that does not decode is refused and the journal<br />
+is not changed. Nothing is uploaded to us.</p>
 <p>If iCloud Backup is enabled in iOS Settings, Apple’s device backup may include the app<br />
 container, including the journal. That is Apple’s processing, not ours. OmniOps itself<br />
 performs no cloud sync.</p>
@@ -175,19 +177,16 @@ the journal. On Mac the sandbox container under<br />
 separately.</p>
 <hr />
 <h2 id="3-what-the-app-does-not-do">3. What the app does not do</h2>
-<p>Checked against compiled sources (<code>OmniOpsKit/Sources</code>, <code>App/OmniOps</code>) and the App<br />
-shell entitlements / Info.plist / PrivacyInfo:</p>
+<p>Checked against compiled sources and the App shell entitlements / Info.plist / PrivacyInfo:</p>
 <ul>
-<li>❌ <strong>No HealthKit.</strong> No <code>import HealthKit</code>, no <code>HKHealthStore</code>, no usage description,<br />
-  no health-records entitlement. Unused HealthKit claims from old placeholder plists<br />
-  are gone.</li>
-<li>❌ <strong>No CloudKit / iCloud container.</strong> The iOS entitlements file is empty; the macOS one
+<li>❌ <strong>No HealthKit.</strong> No HealthKit permission, no usage description, no health-records entitlement.</li>
+<li>❌ <strong>No CloudKit / iCloud container.</strong> The iOS entitlements file is empty; the macOS one<br />
   requests the App Sandbox and nothing else.</li>
 <li>❌ <strong>No analytics, advertising, crash reporting, or tracking.</strong> No ATT prompt.</li>
 <li>❌ <strong>No account, Sign in with Apple, or server login.</strong></li>
 <li>❌ <strong>No location, camera, microphone, photos, contacts, calendar, or notifications.</strong></li>
 <li>❌ <strong>No sale or share of personal information</strong> — we hold none.</li>
-<li>❌ <strong>HIPAA does not apply</strong> (not a covered entity, no PHI). See <code>REGULATORY.md</code> §5.</li>
+<li>❌ <strong>HIPAA does not apply</strong> (not a covered entity, no PHI).</li>
 </ul>
 <p>Apple’s App Privacy label for this binary is <strong>Data Not Collected.</strong></p>
 <p><code>PrivacyInfo.xcprivacy</code> declares no tracking, no collected data types, and no accessed<br />
@@ -221,8 +220,9 @@ collect information.</p>
 <hr />
 <h2 id="8-your-rights">8. Your rights</h2>
 <p>There is nothing of yours on our servers to access, correct, or delete. Deleting the<br />
-app removes the on-device container. Rights under the GDPR / UK GDPR / CCPA-CPRA are<br />
-exercised on your device; if you believe we hold something, write to the contact in §1.</p>
+app removes the on-device container (on Mac, also remove the sandbox container named<br />
+above). Rights under the GDPR / UK GDPR / CCPA-CPRA are exercised on your device; if<br />
+you believe we hold something, write to the contact in §1.</p>
 <p>We do not respond to “Do Not Track” signals, because we do not track.</p>
 <hr />
 <h2 id="9-what-this-app-is-not">9. What this app is not</h2>
@@ -235,7 +235,7 @@ consulting, not an audit, and not a conformity assessment or certification again
 management-system standard.</p>
 </blockquote>
 <p>OmniOps does not ship aggregated avoided-cost totals or unsourced occupational /<br />
-ROI figures. See <code>REGULATORY.md</code>.</p>
+ROI figures.</p>
 <hr />
 <h2 id="10-changes">10. Changes</h2>
 <p>Material changes update the “Last updated” date at the top of this file. A behaviour<br />
@@ -243,8 +243,9 @@ change that affects what is stored or what leaves the device is described here i
 <strong>same commit</strong> as the code.</p>
 </main>
 <footer class="site"><div class="wrap">
-  <p>Prameya LLC · <a href="mailto:admin@prameya.legal">admin@prameya.legal</a></p>
-  <p>Effective 17 August 2026. Last updated 21 August 2026. <a href="https://prameyallc.github.io/privacy/">All app privacy policies</a></p>
+  <p>Prameya LLC · <a href="mailto:admin@prameya.legal">admin@prameya.legal</a>
+  · <a href="https://prameyallc.github.io/privacy/support/">Support</a></p>
+  <p>Effective 17 August 2026. <a href="https://prameyallc.github.io/privacy/">All app privacy policies</a></p>
 </div></footer>
 </body>
 </html>

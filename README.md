@@ -23,9 +23,10 @@ HealthKit, CloudKit and camera call sites).
 | OmniRx     | https://prameyallc.github.io/privacy/omnirx/     | https://prameyallc.github.io/privacy/omnirx/health-data/ |
 | OmniLex    | https://prameyallc.github.io/privacy/omnilex/    | — |
 | OmniWealth | https://prameyallc.github.io/privacy/omniwealth/ | — |
-| OmniMath   | https://prameyallc.github.io/privacy/omnimath/   | — |
+| OmniMathematics | https://prameyallc.github.io/privacy/omnimath/ | — |
 | OmniBuild  | https://prameyallc.github.io/privacy/omnibuild/  | — |
 | OmniOps    | https://prameyallc.github.io/privacy/omniops/    | — |
+| OmniAero   | https://prameyallc.github.io/privacy/omniaero/   | — |
 | OmniPhysics | https://prameyallc.github.io/privacy/omniphysics/ | — |
 
 ### Consumer health data
@@ -42,6 +43,10 @@ render. (The previous version of this repo served `PRIVACY.md` as raw `text/mark
 
 Sources live in the generator, not here; pages are committed as built output. Each page is
 responsive, supports light and dark, and has a print stylesheet.
+
+## Support
+
+How to email us: https://prameyallc.github.io/privacy/support/
 
 ## Contact
 

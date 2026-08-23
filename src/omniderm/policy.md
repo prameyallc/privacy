@@ -44,7 +44,7 @@ OmniDerm is **not a medical device** and does **not** diagnose, screen for, or d
 
 Features that would produce an assessment of a photograph of your skin are behind a **clearance gate that is switched off**. In the version of OmniDerm on the App Store, the app does not produce observations, flags, ratings, or any other output about a photo of your skin. The gate is enforced in three places — the button that would open the feature, the screen behind it, and the type that carries the result — and the shipping app does not even include the vision model such a feature would need. That gate stays off unless and until the feature has the regulatory clearance it would need.
 
-In practice this means the photo screen cannot be opened in the shipping app. Where the Learn section would offer it, you see an explanation of why it is switched off instead.
+In practice this means the **assessment** screen cannot be opened in the shipping app. You can still save a journal photograph. Where Learn would offer a self-check of an image, you see an explanation of why that assessment is switched off instead.
 
 If you notice a new spot, a changing spot, or anything that worries you, see a licensed clinician. Do not use this app to decide not to.
 
@@ -77,8 +77,7 @@ Two different things used to be described as if they were one. They are not.
 |---|---|---|
 | Habit logs (date, and whether you did morning SPF, reapplied, barrier care, a self-check) | On your device, in the app's local database | No |
 | Your goals list, reminder setting | On your device, in app preferences | No |
-| Which AI model you chose, and which models are downloaded | On your device, in app preferences | No |
-| Downloaded AI model files | On your device, in app storage | No (they came *to* the device) |
+| Downloaded AI model files | **Not a shipping feature.** Settings has no download control | No |
 | Small security flags and keys | Your device Keychain, set to this-device-only | No |
 | Journal photographs you save | On your device, as JPEG files under Application Support (`OmniDerm/JournalPhotos`). Excluded from device backup. Deleted with Clear All Local Data. Never uploaded, never assessed. | No |
 | Diagnostic log messages | Apple's on-device system log | No |
@@ -218,7 +217,7 @@ If OmniDerm is available where you are in the EEA, UK or Switzerland:
 - Prameya is not in a position to access, export, or erase device-resident data — you control it directly, and the deletion steps above are complete and immediate.
 - For the little we might ever hold — an email you choose to send us — the legal basis is our legitimate interest in answering you, and you may ask us to delete it.
 - You have rights of access, rectification, erasure, restriction, portability and objection, and the right to complain to your national data protection authority.
-- Model files are downloaded from Hugging Face, which may involve a connection to servers outside your country. No personal data of yours is included in that request.
+- The shipping app does not download model files. If the gated generate surface were ever opened, that download would be a connection from your device to Hugging Face, which may be outside your country. No personal data of yours would be included in that request.
 
 ### Children
 

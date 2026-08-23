@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>OmniRx Privacy Policy — Prameya LLC</title>
-<meta name="description" content="Effective date: August 8, 2026">
+<meta name="description" content="Effective date: 23 August 2026">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://prameyallc.github.io/privacy/omnirx/">
 <style>
@@ -93,7 +93,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 </div></header>
 <main id="main" class="wrap">
 <h1 id="omnirx-privacy-policy">OmniRx Privacy Policy</h1>
-<p><strong>Effective date:</strong> August 8, 2026<br />
+<p><strong>Effective date:</strong> 23 August 2026<br />
 <strong>App:</strong> OmniRx (iOS)<br />
 <strong>Publisher:</strong> Prameya LLC ("Prameya", "we", "us"), a US limited liability company<br />
 <strong>Contact:</strong> admin@prameya.legal</p>
@@ -135,7 +135,7 @@ whether you took your doses and what got in the way.</p>
 <li>check for drug interactions;</li>
 <li>produce tapering or stopping plans;</li>
 <li>identify a pill or a label from a photograph;</li>
-<li>remind you to take or log a dose — it schedules no reminders and sends no notifications;</li>
+<li>send a critical alert, or put a medicine name on the lock screen — the optional daily reminder is Settings-only and the lock screen says “Reminder”;</li>
 <li>give you advice about your own specific medicines.</li>
 </ul>
 <p>It is not a substitute for a licensed pharmacist or physician.</p>
@@ -211,17 +211,17 @@ up, you can turn off iCloud Backup for OmniRx in iOS Settings, or turn off iClou
 <h2 id="network-connections-omnirx-makes">Network connections OmniRx makes</h2>
 <p><strong>We do not claim that OmniRx never uses the internet. It does, for one purpose.</strong></p>
 <h3 id="preference-sync-through-your-icloud-account">Preference sync through your iCloud account</h3>
-<p>The only outbound connection in the shipping app is CloudKit sync of <strong>non-health preferences</strong>
-through <strong>your</strong> private iCloud database: appearance mode, a leftover on-device-AI flag with no
-Settings control (default off), a text-size preference, and the version of the first-run notice you
-acknowledged. Medication logs, journal entries, and profile records are excluded by an allow-list
+<p>The only outbound connection in the shipping app is CloudKit sync of <strong>non-health preferences</strong><br />
+through <strong>your</strong> private iCloud database: appearance mode, a leftover on-device-AI flag with no<br />
+Settings control (default off), a text-size preference, and the version of the first-run notice you<br />
+acknowledged. Medication logs, journal entries, and profile records are excluded by an allow-list<br />
 enforced by tests.</p>
 <p>There is no model download, no Hugging Face client, and no reachable path to <code>huggingface.co</code>.</p>
 <h3 id="on-device-processing">On-device processing</h3>
-<p>Text you give the app is processed on your device. It is not transmitted to Prameya or to any AI
+<p>Text you give the app is processed on your device. It is not transmitted to Prameya or to any AI<br />
 provider. There is no cloud fallback and no remote retrieval endpoint.</p>
-<p>This is a real privacy benefit and we state it precisely: <strong>your content is processed locally and is
-not transmitted to us.</strong> We do not say "nothing ever leaves the device", because preference sync
+<p>This is a real privacy benefit and we state it precisely: <strong>your content is processed locally and is<br />
+not transmitted to us.</strong> We do not say "nothing ever leaves the device", because preference sync<br />
 uses your iCloud account.</p>
 <h3 id="nothing-else">Nothing else</h3>
 <p>There is no other outbound connection in the app. No telemetry endpoint, no ad request, no attribution<br />
@@ -265,11 +265,10 @@ exists rather than claiming a blanket "no iCloud". If preference syncing is ever
 carry preferences and interface state only. <strong>No health-derived field — no medication log, no journal<br />
 entry, no condition, no medication name — may ever sync.</strong></p>
 <h3 id="reminders-and-notifications">Reminders and notifications</h3>
-<p><strong>OmniRx does not send reminders or notifications.</strong> There is no notification or calendar code in the<br />
-app, and it never asks for notification permission. Some wording inside the app still describes<br />
-reminding you to log doses; that describes an intention, not a shipping feature, and we are correcting<br />
-it. If reminders are ever added, they would be local notifications scheduled by your device, and this<br />
-policy would be updated before they ship.</p>
+<p><strong>You can set one optional daily reminder in Settings.</strong> Permission is requested only from that<br />
+Settings control, never at launch. The lock screen says “Reminder”, not a medicine name. Actions are<br />
+Taken, Skipped, and Snooze. It is a local notification scheduled by your device — not a critical<br />
+alert, and not a push from our servers. Turning the reminder off cancels it.</p>
 <h3 id="exporting-your-logs">Exporting your logs</h3>
 <p>Settings → <strong>"Export my logs as text"</strong> builds a plain-text summary on your device and shows it to you<br />
 in a sheet inside the app. The summary contains the share of doses you recorded as taken and over how<br />
@@ -285,11 +284,11 @@ you recorded for missed doses.</p>
 <hr />
 <h2 id="on-device-ai-what-it-is-and-what-it-is-not">On-device AI: what it is and what it is not</h2>
 <ul>
-<li><strong>The shipping app has no on-device model.</strong> Unused Intelligence (MLX / Hugging Face) was
+<li><strong>The shipping app has no on-device model.</strong> Unused Intelligence (MLX / Hugging Face) was<br />
   deleted. Settings does not offer a download.</li>
-<li>Because nothing is sent to a third-party AI provider, Apple's requirement to name one and obtain
+<li>Because nothing is sent to a third-party AI provider, Apple's requirement to name one and obtain<br />
   your permission before sharing personal data with one does not arise.</li>
-<li>The app still refuses dosing, interaction checking, tapering, pill identification, diagnosis, and
+<li>The app still refuses dosing, interaction checking, tapering, pill identification, diagnosis, and<br />
   any answer tailored to your specific medication list — those are not things OmniRx does.</li>
 </ul>
 <hr />
@@ -416,15 +415,10 @@ out of those laws, and you should not read our App Store label as saying we did.
 top. Meaningful changes — a new network connection, a new permission, anything involving your health<br />
 data — will be described in a short summary of what changed, at the top of this page, and will be<br />
 announced in the app's release notes.</p>
-<p><strong>What changed in this revision (August 8, 2026):</strong> this version corrects statements that described<br />
-intentions rather than the code that actually ships. Specifically, we now say plainly that the app<br />
-keeps an iCloud container for non-health preferences (rather than claiming no iCloud at all) and that<br />
-nothing is currently written to it; that no health data syncs; that the app schedules no reminders or<br />
-notifications; that export displays a plain-text summary in the app rather than using a share sheet;<br />
-that deletion is all-or-nothing and there is no per-entry deletion; that there is no screen for<br />
-entering age, conditions or current medicines; that the data store is not excluded from iCloud device<br />
-backup; and that no separate AI model disclosure page exists. Internal review markers that were<br />
-mistakenly published have been removed and replaced with what the code does.</p>
+<p><strong>What changed in this revision (23 August 2026):</strong> short and long versions now agree. Settings<br />
+offers one optional daily reminder (lock screen says “Reminder”). There is no Hugging Face / on-device<br />
+model download in the shipping app. The 8 August 2026 sentences that said the app “schedules no<br />
+reminders” were wrong for this binary and are removed.</p>
 <p>If a change would require your consent under a law that applies to you, we will ask for it before the<br />
 change takes effect, not after.</p>
 <p>Older versions of this policy are available on request from <strong>admin@prameya.legal</strong>.</p>
@@ -442,8 +436,9 @@ Email: <strong>admin@prameya.legal</strong></p>
 </ul><div class="callout distinct"><h3>Consumer Health Data Privacy Policy</h3><p>OmniRx processes consumer health data. Washington State law requires a separate policy for that data, published at its own address:</p><p><strong><a href="https://prameyallc.github.io/privacy/omnirx/health-data/">OmniRx Consumer Health Data Privacy Policy</a></strong></p></div>
 </main>
 <footer class="site"><div class="wrap">
-  <p>Prameya LLC · <a href="mailto:admin@prameya.legal">admin@prameya.legal</a></p>
-  <p>Effective August 8, 2026. <a href="https://prameyallc.github.io/privacy/">All app privacy policies</a></p>
+  <p>Prameya LLC · <a href="mailto:admin@prameya.legal">admin@prameya.legal</a>
+  · <a href="https://prameyallc.github.io/privacy/support/">Support</a></p>
+  <p>Effective 23 August 2026. <a href="https://prameyallc.github.io/privacy/">All app privacy policies</a></p>
 </div></footer>
 </body>
 </html>

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>OmniWealth Privacy Policy — Prameya LLC</title>
-<meta name="description" content="Effective date: 21 August 2026">
+<meta name="description" content="Effective date: 23 August 2026">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://prameyallc.github.io/privacy/omniwealth/">
 <style>
@@ -93,7 +93,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 </div></header>
 <main id="main" class="wrap">
 <h1 id="omniwealth-privacy-policy">OmniWealth Privacy Policy</h1>
-<p><strong>Effective date:</strong> 21 August 2026<br />
+<p><strong>Effective date:</strong> 23 August 2026<br />
 <strong>Publisher:</strong> Prameya LLC ("Prameya", "we", "us"), a United States limited liability company<br />
 <strong>Contact:</strong> admin@prameya.legal<br />
 <strong>Applies to:</strong> the OmniWealth iOS and macOS app</p>
@@ -126,7 +126,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 </tr>
 <tr>
 <td>Is my financial information sent to an AI service?</td>
-<td>No. Nothing you enter is sent anywhere. There is no on-device model and no cloud AI provider.</td>
+<td>No. There is no AI advisor, no on-device model, and no cloud AI provider.</td>
 </tr>
 <tr>
 <td>Do you use ads, analytics, or trackers?</td>
@@ -152,9 +152,9 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 </table></div>
 <hr />
 <h2 id="what-omniwealth-is-and-what-it-is-not">What OmniWealth is, and what it is not</h2>
-<p>OmniWealth is a personal-finance <strong>education and habit-tracking</strong> app. It explains general concepts — how fees work, what diversification means, how compounding arithmetic works — and it lets you log your own habits, such as whether you reviewed your budget or made a planned contribution.</p>
-<p>OmniWealth is <strong>not</strong> an investment adviser, a broker, a financial planner, or a robo-adviser. It does not recommend, rate, or rank any stock, fund, ETF, or ticker. It does not build you a portfolio, tell you to buy, sell, hold, or rebalance anything, or produce advice tailored to your circumstances. Nothing in the app is investment, tax, or legal advice. For decisions about your money, talk to a qualified professional.</p>
-<p>We mention this in a privacy policy for a reason: because the app gives no personalised advice, it never needs to build a profile of you, and it never does.</p>
+<p>OmniWealth is a personal-finance <strong>education and habit-tracking</strong> app. It explains general concepts — how fees work, what diversification means, how compounding arithmetic works — and it lets you log your own habits and a simple envelope / budget log you type yourself.</p>
+<p>OmniWealth is <strong>not</strong> an investment adviser, a broker, a financial planner, a robo-adviser, or an AI advisor. It does not recommend, rate, or rank any stock, fund, ETF, or ticker. It does not build you a portfolio, tell you to buy, sell, hold, or rebalance anything, or produce advice tailored to your circumstances. Nothing in the app is investment, tax, or legal advice. For decisions about your money, talk to a qualified professional.</p>
+<p>We mention this in a privacy policy for a reason: because the app gives no personalised advice, it never needs to build a profile of you, and it never does. <strong>There is no Goals surface</strong> in this build.</p>
 <hr />
 <h2 id="what-stays-on-your-device">What stays on your device</h2>
 <p>Everything you enter into OmniWealth is stored locally on your device and stays there.</p>
@@ -173,6 +173,11 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <td>Local app database</td>
 </tr>
 <tr>
+<td>Envelope / budget log</td>
+<td>A name you type and amounts you log (assigned vs spent). Arithmetic on that envelope, not a recommendation</td>
+<td>Local app database</td>
+</tr>
+<tr>
 <td>Compounding arithmetic inputs</td>
 <td>The monthly amount, number of years, and the annual rate you choose to test</td>
 <td>Held in memory while that screen is open; not saved to the database</td>
@@ -184,7 +189,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 </tr>
 </tbody>
 </table></div>
-<p>That is the whole list. The shipping app has no free-text field anywhere: no notes box, no budget-entry form, no goal or income form, and no place to type a question. The app's local database additionally defines record types for budget entries, statement scans, trajectory snapshots and a goal profile — leftovers from features that are not in the shipping version. No screen in the app can create one. They are named here only because the delete control described below clears them too.</p>
+<p>There is no Goals form, no income form, and no place to type a question for an advisor. The app's local database additionally defines leftover record types (statement scans, trajectory snapshots, a goal-profile row) from features that are <strong>not</strong> in the shipping UI. No screen creates a Goals surface. They are named here only because the delete control described below clears them too.</p>
 <p>This data is written to the app's private storage area, which iOS and macOS protect from other apps. It is never uploaded to Prameya. We could not read it if we wanted to.</p>
 <p><strong>Financial information is sensitive.</strong> We treat it that way. The design principle for OmniWealth is that the safest place for your money data is the device in your hand, and the safest amount for us to hold is none.</p>
 <hr />
@@ -192,7 +197,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <p><strong>No Hugging Face or model-download traffic.</strong> Earlier versions of this page described an on-device AI model you could download from <code>huggingface.co</code>. That offer is not in the app, and the unused download / inference code was deleted. There is no control that starts a download, and no screen that sends a question to a model. If on-device generation is ever added, this policy is rewritten first.</p>
 <p><strong>Local notifications.</strong> Notification permission is requested only from <strong>Settings → Reminders</strong>, never at launch. If you continue and grant it, the app schedules one weekly local check-in that says “Time for this week's check-in.” It is not a performance claim. Turning the reminder off cancels it.</p>
 <p><strong>There is no iCloud sync.</strong> Both of the app's data stores are created with cloud syncing disabled, and the app holds no iCloud entitlement. If you use OmniWealth on two devices, the two copies are separate.</p>
-<p>The summaries the app shows you — how many days you logged, how many boxes you ticked — are counts of your own records, produced by ordinary arithmetic on your device. There is no chat feature and no question box.</p>
+<p>The summaries the app shows you — how many days you logged, how many boxes you ticked, remaining cents on an envelope — are counts of your own records, produced by ordinary arithmetic on your device. There is no chat feature, no question box, and no AI advisor.</p>
 <hr />
 <h2 id="what-we-do-not-do">What we do not do</h2>
 <p>Each of these is a flat "no", not a "we limit this":</p>
@@ -209,8 +214,9 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <li><strong>No contacts, calendar, or microphone access.</strong></li>
 <li><strong>No Keychain storage.</strong> The app puts nothing in the device Keychain.</li>
 <li><strong>No camera or photo library access, and no document import.</strong> The app cannot ingest a photo or PDF of a statement. There is no capture or import path in it, and it does not hold the file-access entitlement that would allow one.</li>
+<li><strong>No AI advisor and no model download.</strong></li>
 </ul>
-<p>On that last point, plainly: an earlier build shipped copy that referred to "uploaded statements," and the app's database still defines an unused record type for statement scans. That copy has been corrected, and no screen in the shipping app can capture or import a document. If a statement-import feature ships later, this policy will be updated to describe photo or file access before it is used, and the App Store privacy label updated with it.</p>
+<p>On the document-import point, plainly: an earlier build shipped copy that referred to "uploaded statements," and the app's database still defines an unused record type for statement scans. That copy has been corrected, and no screen in the shipping app can capture or import a document. If a statement-import feature ships later, this policy will be updated to describe photo or file access before it is used, and the App Store privacy label updated with it.</p>
 <hr />
 <h2 id="icloud-and-syncing">iCloud and syncing</h2>
 <p><strong>OmniWealth does not sync your financial or habit data to iCloud.</strong> Your data is stored in a local, non-syncing database on the device where you entered it. If you use OmniWealth on two devices, the two copies are separate and do not share data.</p>
@@ -236,8 +242,8 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <h2 id="your-choices-and-controls">Your choices and controls</h2>
 <p>Because your data never leaves your device, you control it directly.</p>
 <ul>
-<li><strong>See it:</strong> your logged days are shown in the app, on the Home and Progress screens.</li>
-<li><strong>Delete everything you have entered:</strong> Settings → Data → <strong>"Delete all data in this app"</strong>. After a confirmation prompt, this permanently deletes every habit log, budget entry, statement record and profile stored on this device, plus leftover on-device model cache from older installs (and the App Group container if one is ever entitled). If a later file removal fails after the store is emptied, the app says so rather than claiming a complete delete. It cannot be undone.</li>
+<li><strong>See it:</strong> your logged days and envelope arithmetic are shown in the app.</li>
+<li><strong>Delete everything you have entered:</strong> Settings → Data → <strong>"Delete all data in this app"</strong>. After a confirmation prompt, this permanently deletes every habit log, envelope / budget entry, leftover statement record and profile stored on this device, plus leftover on-device model cache from older installs (and the App Group container if one is ever entitled). If a later file removal fails after the store is emptied, the app says so rather than claiming a complete delete. It cannot be undone.</li>
 <li><strong>Deleting one entry at a time is not possible.</strong> The app does not currently offer per-entry deletion — there is no swipe-to-delete and no delete control on an individual row. Deletion is all-or-nothing: the control above, or deleting the app.</li>
 <li><strong>Delete everything, including preferences:</strong> delete the app. That removes the app's local database and its preferences from your device.</li>
 <li><strong>Ask us to delete your data:</strong> there is nothing for us to delete. We have never received it. If you write to us asking for deletion, that will be our honest answer.</li>
@@ -299,15 +305,16 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <li>We will describe what changed in plain language.</li>
 <li>The previous version will remain available at this address's history.</li>
 </ul>
-<p><strong>This revision (21 August 2026)</strong> removes Hugging Face / on-device model download claims. The unused Intelligence / MLX stack is deleted; there is no generate path and no model-download control. Notification permission is requested from Settings → Reminders only. MLX / Hugging Face are not linked. Where a promise could not be made true in the code, the promise was removed rather than softened.</p>
+<p><strong>This revision (23 August 2026)</strong> records the shipping envelope / budget log (a name and amounts you type; arithmetic only) and states that there is no Goals surface and no AI advisor. Hugging Face / on-device model download claims stay removed: the unused Intelligence / MLX stack is deleted. Notification permission is requested from Settings → Reminders only.</p>
 <p>Material changes — for example, adding statement import, adding sync, or adding any feature that sends your content off the device — will also be disclosed inside the app before that feature is used.</p>
 <h2 id="contact">Contact</h2>
 <p>Questions, requests, or corrections: <strong>admin@prameya.legal</strong></p>
 <p>Prameya LLC, United States. Other app policies: <a href="https://prameyallc.github.io/privacy/">prameyallc.github.io/privacy</a>.</p>
 </main>
 <footer class="site"><div class="wrap">
-  <p>Prameya LLC · <a href="mailto:admin@prameya.legal">admin@prameya.legal</a></p>
-  <p>Effective 21 August 2026. <a href="https://prameyallc.github.io/privacy/">All app privacy policies</a></p>
+  <p>Prameya LLC · <a href="mailto:admin@prameya.legal">admin@prameya.legal</a>
+  · <a href="https://prameyallc.github.io/privacy/support/">Support</a></p>
+  <p>Effective 23 August 2026. <a href="https://prameyallc.github.io/privacy/">All app privacy policies</a></p>
 </div></footer>
 </body>
 </html>

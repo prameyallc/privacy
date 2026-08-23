@@ -5,13 +5,14 @@ them and must not be hand-edited** — the next build would silently overwrite t
 
 Until 2026-08-09 this source existed **only in a session temp directory** while the generated
 HTML was the sole thing under version control. The published policies are legally operative
-documents for eight apps; had that directory been cleared, they would have had to be
+documents for the published apps; had that directory been cleared, they would have had to be
 reverse-engineered from rendered HTML. That is the reason this directory exists.
 
 ## Layout
 
     src/<app>/policy.md        the app's privacy policy
     src/<app>/health-data.md   its consumer health data policy (WA MHMDA), where it has one
+    src/support.md             how to email admin@prameya.legal (/support/)
     src/build_privacy_site.py  the generator
 
 ## Building
