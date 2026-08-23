@@ -1,6 +1,6 @@
 # OmniRx Privacy Policy
 
-**Effective date:** August 8, 2026
+**Effective date:** 23 August 2026
 **App:** OmniRx (iOS)
 **Publisher:** Prameya LLC ("Prameya", "we", "us"), a US limited liability company
 **Contact:** admin@prameya.legal
@@ -52,7 +52,7 @@ OmniRx does **not**:
 - check for drug interactions;
 - produce tapering or stopping plans;
 - identify a pill or a label from a photograph;
-- remind you to take or log a dose — it schedules no reminders and sends no notifications;
+- send a critical alert, or put a medicine name on the lock screen — the optional daily reminder is Settings-only and the lock screen says “Reminder”;
 - give you advice about your own specific medicines.
 
 It is not a substitute for a licensed pharmacist or physician.
@@ -191,11 +191,10 @@ entry, no condition, no medication name — may ever sync.**
 
 ### Reminders and notifications
 
-**OmniRx does not send reminders or notifications.** There is no notification or calendar code in the
-app, and it never asks for notification permission. Some wording inside the app still describes
-reminding you to log doses; that describes an intention, not a shipping feature, and we are correcting
-it. If reminders are ever added, they would be local notifications scheduled by your device, and this
-policy would be updated before they ship.
+**You can set one optional daily reminder in Settings.** Permission is requested only from that
+Settings control, never at launch. The lock screen says “Reminder”, not a medicine name. Actions are
+Taken, Skipped, and Snooze. It is a local notification scheduled by your device — not a critical
+alert, and not a push from our servers. Turning the reminder off cancels it.
 
 ### Exporting your logs
 
@@ -376,15 +375,10 @@ top. Meaningful changes — a new network connection, a new permission, anything
 data — will be described in a short summary of what changed, at the top of this page, and will be
 announced in the app's release notes.
 
-**What changed in this revision (August 8, 2026):** this version corrects statements that described
-intentions rather than the code that actually ships. Specifically, we now say plainly that the app
-keeps an iCloud container for non-health preferences (rather than claiming no iCloud at all) and that
-nothing is currently written to it; that no health data syncs; that the app schedules no reminders or
-notifications; that export displays a plain-text summary in the app rather than using a share sheet;
-that deletion is all-or-nothing and there is no per-entry deletion; that there is no screen for
-entering age, conditions or current medicines; that the data store is not excluded from iCloud device
-backup; and that no separate AI model disclosure page exists. Internal review markers that were
-mistakenly published have been removed and replaced with what the code does.
+**What changed in this revision (23 August 2026):** short and long versions now agree. Settings
+offers one optional daily reminder (lock screen says “Reminder”). There is no Hugging Face / on-device
+model download in the shipping app. The 8 August 2026 sentences that said the app “schedules no
+reminders” were wrong for this binary and are removed.
 
 If a change would require your consent under a law that applies to you, we will ask for it before the
 change takes effect, not after.

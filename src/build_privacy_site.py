@@ -23,7 +23,7 @@ import datetime
 
 import markdown
 
-EFFECTIVE = "2026-08-08"
+EFFECTIVE = "23 August 2026"
 
 # (light accent, dark accent) — taken from each app's shipped brand file.
 APPS = [
@@ -33,10 +33,11 @@ APPS = [
     ("omnirx",     "OmniRx",     "Medication education and habit support",   "#3547EB", "#7E89EA", True),
     ("omnilex",    "OmniLex",    "On-device legal document assistant",       "#2D4D77", "#7B93B2", False),
     ("omniwealth", "OmniWealth", "Financial education and habit support",    "#816B22", "#9B853C", False),
-    ("omnimath",   "OmniMath",   "Discrete mathematics for computer science","#6D28D9", "#A78BFA", False),
+    ("omnimath",   "OmniMathematics", "Discrete mathematics for computer science","#6D28D9", "#A78BFA", False),
     ("omnibuild",  "OmniBuild",  "Construction and skilled-trades reference","#854200", "#F28C06", False),
     ("omniops",    "OmniOps",    "Personal operating discipline and habits", "#0B7D6E", "#159485", False),
-    ("omniphysics","OmniPhysics","Interactive physics labs and lessons",     "#0A6E80", "#40D9F2", False),
+    ("omniaero",   "OmniAero",   "ACS ground school on this device",         "#0C7A71", "#15998D", False),
+    ("omniphysics","OmniPhysics","Interactive physics lessons on this device","#0E7490", "#22D3EE", False),
 ]
 
 # --------------------------------------------------------------------------- contrast
@@ -162,7 +163,8 @@ PAGE = """<!doctype html>
 {body}
 </main>
 <footer class="site"><div class="wrap">
-  <p>Prameya LLC · <a href="mailto:admin@prameya.legal">admin@prameya.legal</a></p>
+  <p>Prameya LLC · <a href="mailto:admin@prameya.legal">admin@prameya.legal</a>
+  · <a href="{root}/support/">Support</a></p>
   <p>Effective {effective}. <a href="{root}/">All app privacy policies</a></p>
 </div></footer>
 </body>
@@ -202,6 +204,7 @@ def build(content_dir, out_dir, site_root):
     # Wipe only the generated surface; keep .git and README.
     for slug, *_ in APPS:
         shutil.rmtree(os.path.join(out_dir, slug), ignore_errors=True)
+    shutil.rmtree(os.path.join(out_dir, "support"), ignore_errors=True)
     for stale in ("PRIVACY.md",):
         p = os.path.join(out_dir, stale)
         if os.path.exists(p):
@@ -303,14 +306,17 @@ do genuinely different things with data. Pick the app you use.</p>
 <div class="callout">
 <h2 style="border:0;padding-top:0;margin-top:0">How these apps are built</h2>
 <p>Prameya apps run their analysis <strong>on your device</strong>. We do not operate a server that
-receives your content, and we do not keep user profiles. Some apps download an AI model from
-Hugging Face the first time you use a feature that needs one — that download requests a model, it
-does not send your content anywhere.</p>
+receives your content, and we do not keep user profiles. Three apps — OmniLex, OmniDent, and
+OmniSalub — can download AI model weights from Hugging Face when you tap to install them in
+Settings. That request is for a model file; it does not send your content anywhere. The other
+apps on this page (including OmniAero, OmniBuild, OmniDerm, OmniRx, OmniWealth, OmniMathematics,
+OmniOps, and OmniPhysics) do not download weights in the shipping build.</p>
 <p>Where an app touches health information, US state law requires a separate consumer health data
 policy. Those are linked above and from each app's policy.</p>
 </div>
 <h2>Contact</h2>
-<p>Prameya LLC · <a href="mailto:admin@prameya.legal">admin@prameya.legal</a></p>
+<p>Prameya LLC · <a href="mailto:admin@prameya.legal">admin@prameya.legal</a>
+· <a href="{site_root}/support/">Support</a></p>
 """
     write(os.path.join(out_dir, "index.html"), PAGE.format(
         title="App Privacy Policies — Prameya LLC",
@@ -320,6 +326,24 @@ policy. Those are linked above and from each app's policy.</p>
         root=site_root, crumb="", body=hub_body, effective=EFFECTIVE,
     ))
     built.append("/ (hub)")
+
+    support_src = os.path.join(content_dir, "support.md")
+    if os.path.exists(support_src):
+        support_md = open(support_src, encoding="utf-8").read()
+        support_page = PAGE.format(
+            title="Support — Prameya LLC",
+            desc="How to email Prameya LLC at admin@prameya.legal.",
+            canonical=f"{site_root}/support/",
+            css=CSS, al="#1577A8", ad="#318CB9", ail="#ffffff", aid="#10151a",
+            root=site_root,
+            crumb=f'<a href="{site_root}/">← All policies</a>',
+            body=render_md(support_md),
+            effective=EFFECTIVE,
+        )
+        write(os.path.join(out_dir, "support", "index.html"), support_page)
+        built.append("support/")
+    else:
+        missing.append("support.md")
 
     return built, missing, warnings
 

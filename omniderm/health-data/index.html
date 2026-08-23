@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>OmniDerm Consumer Health Data Privacy Policy — Prameya LLC</title>
-<meta name="description" content="Effective date: 21 August 2026">
+<meta name="description" content="Effective date: 23 August 2026">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://prameyallc.github.io/privacy/omniderm/health-data/">
 <style>
@@ -93,7 +93,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 </div></header>
 <main id="main" class="wrap">
 <h1 id="consumer-health-data-privacy-policy-omniderm">Consumer Health Data Privacy Policy — OmniDerm</h1>
-<p><strong>Effective date:</strong> 21 August 2026<br />
+<p><strong>Effective date:</strong> 23 August 2026<br />
 <strong>Publisher:</strong> Prameya LLC ("Prameya", "we", "us"), a United States limited liability company<br />
 <strong>Contact:</strong> admin@prameya.legal<br />
 <strong>Applies to:</strong> the OmniDerm iOS app</p>
@@ -191,7 +191,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <li>To provide the educational content and reminders you asked for.</li>
 <li>Nothing else. Not to advertise to you, not to profile you, not to train any model, not to build a data set, not for research, and not for any purpose we have not described here.</li>
 </ul>
-<p><strong>Nothing is used to train AI.</strong> The AI models in OmniDerm are downloaded already-trained and are never updated with your data.</p>
+<p><strong>Nothing is used to train AI.</strong> The shipping app does not run a generate path and does not download a model. If that gated surface ever opened, weights would already be trained; your journal would not update them.</p>
 <h2 id="4-categories-of-consumer-health-data-that-are-shared">4. Categories of consumer health data that are shared</h2>
 <p><strong>None.</strong></p>
 <p>We share no consumer health data, of any category, with anyone. There is no category to list because the list is empty.</p>
@@ -213,8 +213,8 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 </tr>
 <tr>
 <td><strong>Hugging Face</strong></td>
-<td>Hosts the AI model files the app downloads to your phone</td>
-<td><strong>None.</strong> The request is for a model file. It carries no photo, no habit log, no health data, no identifier of you.</td>
+<td>Not contacted in the shipping app (no Settings download; generate is gated off)</td>
+<td><strong>None.</strong></td>
 </tr>
 </tbody>
 </table></div>
@@ -277,7 +277,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <li><strong>Do we sell it?</strong> No, and never have.</li>
 <li><strong>List of third parties we shared with or sold to?</strong> Empty.</li>
 <li><strong>Can you access it?</strong> Yes — from the app itself, at any time. <strong>Settings → Export Full Data (JSON)</strong> gives you a complete file of your habit logs, your streak snapshot and your goals.</li>
-<li><strong>Can you delete it?</strong> Yes, and you do not need us. <strong>Settings → Clear All Local Data</strong> deletes your habit logs, goals and reminder settings and cancels pending reminders. Deleting the app removes everything else, including downloaded models and stored keys. No photo was ever read or saved, so there is nothing to delete there. If you enabled iCloud sync, remove the app's iCloud data in iOS Settings → your name → iCloud → Manage Account Storage.</li>
+<li><strong>Can you delete it?</strong> Yes, and you do not need us. <strong>Settings → Clear All Local Data</strong> deletes your habit logs, journal entries, journal JPEGs, goals and reminder settings and cancels pending reminders. Deleting the app removes everything else, including leftover cached models if any and stored keys. Journal photographs <strong>are</strong> saved on this device until you delete them that way. If you enabled iCloud sync, remove the app's iCloud data in iOS Settings → your name → iCloud → Manage Account Storage.</li>
 <li><strong>Do we hold backups or archives of your data?</strong> No. We have no copy to restore, so there is no archive for a deletion request to miss.</li>
 </ul>
 <p><strong>How to make a request.</strong> Email <strong>admin@prameya.legal</strong>. Say what you want and which state you are in. There is no form and no account to create.</p>
@@ -294,7 +294,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <ul>
 <li>Consumer health data stays on your device, inside the app's sandbox, and your device passcode or Face ID is the main protection for it.</li>
 <li><strong>What we do not claim:</strong> the app does not enable iOS's strictest file-protection level, the one that would keep its files unreadable the whole time your device is locked. Its stored files get the standard protection iOS gives app data and nothing beyond it.</li>
-<li>No skin photo is read or written at all in this version, and no code path in the app writes an image to a file, a database, the Keychain, or iCloud.</li>
+<li>Journal photographs you save are stored as JPEG files on this device, excluded from backup, and never uploaded or synced. The assessment / generate path does not run.</li>
 <li>Sensitive keys and flags are stored in the device Keychain, marked <strong>this device only</strong>, so they never travel to another device.</li>
 <li>All network traffic uses HTTPS; the app refuses unencrypted connections.</li>
 <li>Access inside Prameya is limited by architecture rather than by policy: <strong>no employee, contractor or system of ours can access your consumer health data, because it never reaches us.</strong></li>
@@ -308,7 +308,8 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <p>OmniDerm is not directed to children and has no accounts, no ads, no purchases and no way for anyone to send us anything. We do not knowingly collect consumer health data from anyone under 13. If you believe a child has sent us information, email admin@prameya.legal and we will delete it.</p>
 <h2 id="12-changes-to-this-policy">12. Changes to this policy</h2>
 <p>If we change how OmniDerm handles consumer health data, we will update this policy and change the effective date at the top <strong>before</strong> the change takes effect in the app, and we will tell you inside the app.</p>
-<p><strong>What changed on 8 August 2026.</strong> This revision corrected the policy against the code that actually ships. Internal review notes that had been published by mistake were removed, and the statements they questioned were rewritten to match the shipping build: the photo rows now say the feature is gated off and reads no image at all rather than describing processing that does not happen, and the iCloud section now names the exact seven non-health settings that can sync. We also removed a security statement the app does not support. Nothing in this document describes a capability the shipping app does not have.</p>
+<p><strong>What changed on 23 August 2026.</strong> Journal JPEGs you save are stored on this device. This page no longer says no photo was ever saved. Photo <strong>assessment</strong> remains gated off. Hugging Face is not contacted in the shipping build.</p>
+<p><strong>What changed on 8 August 2026.</strong> An earlier revision corrected internal review notes and named iCloud’s seven non-health settings. Sentences from that date that said the app reads no image at all are superseded above.</p>
 <p>Washington law does not allow us to collect, use or share consumer health data beyond what this policy discloses, and any new category, purpose, or recipient requires your fresh, affirmative consent. We will ask. We will not treat continued use of the app as agreement to a new use of your health data.</p>
 <p>Previous versions remain available at <a href="https://prameyallc.github.io/privacy/">https://prameyallc.github.io/privacy/</a>.</p>
 <h2 id="13-contact">13. Contact</h2>
@@ -319,7 +320,8 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <p><em>Main policy: <a href="https://prameyallc.github.io/privacy/omniderm/">OmniDerm Privacy Policy</a> · All Prameya app policies: <a href="https://prameyallc.github.io/privacy/">https://prameyallc.github.io/privacy/</a></em></p>
 </main>
 <footer class="site"><div class="wrap">
-  <p>Prameya LLC · <a href="mailto:admin@prameya.legal">admin@prameya.legal</a></p>
+  <p>Prameya LLC · <a href="mailto:admin@prameya.legal">admin@prameya.legal</a>
+  · <a href="https://prameyallc.github.io/privacy/support/">Support</a></p>
   <p>Effective 21 August 2026 *(supersedes the 8 August 2026 version: journal photographs, HealthKit removed, reminders off by default, no Settings model download)*. <a href="https://prameyallc.github.io/privacy/">All app privacy policies</a></p>
 </div></footer>
 </body>

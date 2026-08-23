@@ -1,6 +1,6 @@
 # OmniPhysics Privacy Policy
 
-**Effective date:** 21 August 2026
+**Effective date:** 23 August 2026
 **Publisher:** Prameya LLC ("Prameya", "we", "us")
 **App:** OmniPhysics for iPhone, iPad, Mac and Apple Vision Pro — bundle ID `legal.prameya.OmniPhysics`
 **Contact:** admin@prameya.legal

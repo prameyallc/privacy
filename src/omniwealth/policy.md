@@ -1,6 +1,6 @@
 # OmniWealth Privacy Policy
 
-**Effective date:** 8 August 2026
+**Effective date:** 23 August 2026
 **Publisher:** Prameya LLC ("Prameya", "we", "us"), a United States limited liability company
 **Contact:** admin@prameya.legal
 **Applies to:** the OmniWealth iOS and macOS app
@@ -16,8 +16,8 @@ This policy covers OmniWealth only. Other Prameya apps have their own policies, 
 | Do you have accounts or logins? | No. There is nothing to sign up for. |
 | Where does what I log live? | On your device, in the app's own storage. |
 | Does Prameya receive it? | No. We run no server that could receive it. We have no database of users. |
-| Does the app connect to the internet? | Yes, for one thing: downloading the AI model files, from Hugging Face. Nothing else. |
-| Is my financial information sent to an AI service? | No. The model runs on your device; nothing you enter is sent anywhere. |
+| Does the app connect to the internet? | Not for your data. There is no model download and no Hugging Face traffic in this build. Opening the privacy-policy link uses your browser. |
+| Is my financial information sent to an AI service? | No. There is no AI advisor, no on-device model, and no cloud AI provider. |
 | Do you use ads, analytics, or trackers? | No. None. |
 | Do you connect to my bank or brokerage? | No. The app has no ability to link a financial account. |
 | Do you sell or share my data? | No. We do not have it. |
@@ -28,11 +28,11 @@ This policy covers OmniWealth only. Other Prameya apps have their own policies, 
 
 ## What OmniWealth is, and what it is not
 
-OmniWealth is a personal-finance **education and habit-tracking** app. It explains general concepts — how fees work, what diversification means, how compounding arithmetic works — and it lets you log your own habits, such as whether you reviewed your budget or made a planned contribution.
+OmniWealth is a personal-finance **education and habit-tracking** app. It explains general concepts — how fees work, what diversification means, how compounding arithmetic works — and it lets you log your own habits and a simple envelope / budget log you type yourself.
 
-OmniWealth is **not** an investment adviser, a broker, a financial planner, or a robo-adviser. It does not recommend, rate, or rank any stock, fund, ETF, or ticker. It does not build you a portfolio, tell you to buy, sell, hold, or rebalance anything, or produce advice tailored to your circumstances. Nothing in the app is investment, tax, or legal advice. For decisions about your money, talk to a qualified professional.
+OmniWealth is **not** an investment adviser, a broker, a financial planner, a robo-adviser, or an AI advisor. It does not recommend, rate, or rank any stock, fund, ETF, or ticker. It does not build you a portfolio, tell you to buy, sell, hold, or rebalance anything, or produce advice tailored to your circumstances. Nothing in the app is investment, tax, or legal advice. For decisions about your money, talk to a qualified professional.
 
-We mention this in a privacy policy for a reason: because the app gives no personalised advice, it never needs to build a profile of you, and it never does.
+We mention this in a privacy policy for a reason: because the app gives no personalised advice, it never needs to build a profile of you, and it never does. **There is no Goals surface** in this build.
 
 ---
 
@@ -43,10 +43,11 @@ Everything you enter into OmniWealth is stored locally on your device and stays 
 | What you can enter today | Examples | Where it goes |
 |---|---|---|
 | Daily habit checklist | Four yes/no toggles — whether you reviewed your budget, made a planned contribution, reviewed your allocation, avoided an impulse purchase — recorded with the date | Local app database |
+| Envelope / budget log | A name you type and amounts you log (assigned vs spent). Arithmetic on that envelope, not a recommendation | Local app database |
 | Compounding arithmetic inputs | The monthly amount, number of years, and the annual rate you choose to test | Held in memory while that screen is open; not saved to the database |
-| App preferences | Appearance setting, which AI model you selected, and whether you have allowed model downloads | Device settings storage |
+| App preferences | Appearance setting, whether you have acknowledged the disclosure, and whether the weekly check-in reminder is on | Device settings storage |
 
-That is the whole list. The shipping app has no free-text field anywhere: no notes box, no budget-entry form, no goal or income form, and no place to type a question. The app's local database additionally defines record types for budget entries, statement scans, trajectory snapshots and a goal profile — leftovers from features that are not in the shipping version. No screen in the app can create one. They are named here only because the delete control described below clears them too.
+There is no Goals form, no income form, and no place to type a question for an advisor. The app's local database additionally defines leftover record types (statement scans, trajectory snapshots, a goal-profile row) from features that are **not** in the shipping UI. No screen creates a Goals surface. They are named here only because the delete control described below clears them too.
 
 This data is written to the app's private storage area, which iOS and macOS protect from other apps. It is never uploaded to Prameya. We could not read it if we wanted to.
 
@@ -56,28 +57,13 @@ This data is written to the app's private storage area, which iOS and macOS prot
 
 ## What leaves your device
 
-One thing, and only one thing: **a request to Hugging Face to download AI model files.**
+**No Hugging Face or model-download traffic.** Earlier versions of this page described an on-device AI model you could download from `huggingface.co`. That offer is not in the app, and the unused download / inference code was deleted. There is no control that starts a download, and no screen that sends a question to a model. If on-device generation is ever added, this policy is rewritten first.
 
-OmniWealth's AI features run a language model directly on your device. Those model files are large (roughly 420 MB for the text model, around 1.2 GB for the vision-capable one), so they are not shipped inside the app. When you choose to download a model in Settings, the app connects to `huggingface.co`, operated by Hugging Face, Inc., and downloads the weight files.
+**Local notifications.** Notification permission is requested only from **Settings → Reminders**, never at launch. If you continue and grant it, the app schedules one weekly local check-in that says “Time for this week's check-in.” It is not a performance claim. Turning the reminder off cancels it.
 
-**You have to allow it first.** Both models in the app's catalogue are larger than 100 MB, and the app refuses any download above that threshold until you give permission in Settings, where the model and its size are named. Your answer is recorded on the device, and the same screen lets you withdraw it at any time. Nothing downloads on first launch or in the background.
+**There is no iCloud sync.** Both of the app's data stores are created with cloud syncing disabled, and the app holds no iCloud entitlement. If you use OmniWealth on two devices, the two copies are separate.
 
-**What that request contains:**
-
-- The name of the model repository being requested (for example, `mlx-community/Qwen2-VL-2B-Instruct-4bit`) and the specific files being fetched.
-- Normal technical information that any web request carries: your IP address, and your device and operating-system type.
-- Nothing else. The app sends no account, no identifier, and no login token — the requests are anonymous.
-
-**What that request does not contain:**
-
-- None of your habit logs, amounts, or preferences.
-- Nothing derived from them.
-
-The request is the same one any other user downloading the same model would make. Hugging Face handles it under its own privacy policy, as an ordinary file download.
-
-**After the download, the internet is not involved.** The model runs on your own device. Nothing you enter is sent to Hugging Face, to Prameya, or to any AI provider. This is a genuine privacy benefit and it is the main reason the app is built this way — but we state it precisely: the app does connect to the internet, for model files, when you allow it.
-
-We should also be precise about what the model is used for today. The summaries the app shows you — your streak, how many days you logged, how many boxes you ticked — are counts of your own records, produced by ordinary arithmetic on your device. There is no chat feature and no question box in the shipping version.
+The summaries the app shows you — how many days you logged, how many boxes you ticked, remaining cents on an envelope — are counts of your own records, produced by ordinary arithmetic on your device. There is no chat feature, no question box, and no AI advisor.
 
 ---
 
@@ -97,8 +83,9 @@ Each of these is a flat "no", not a "we limit this":
 - **No contacts, calendar, or microphone access.**
 - **No Keychain storage.** The app puts nothing in the device Keychain.
 - **No camera or photo library access, and no document import.** The app cannot ingest a photo or PDF of a statement. There is no capture or import path in it, and it does not hold the file-access entitlement that would allow one.
+- **No AI advisor and no model download.**
 
-On that last point, plainly: an earlier build shipped copy that referred to "uploaded statements," and the app's database still defines an unused record type for statement scans. That copy has been corrected, and no screen in the shipping app can capture or import a document. If a statement-import feature ships later, this policy will be updated to describe photo or file access before it is used, and the App Store privacy label updated with it.
+On the document-import point, plainly: an earlier build shipped copy that referred to "uploaded statements," and the app's database still defines an unused record type for statement scans. That copy has been corrected, and no screen in the shipping app can capture or import a document. If a statement-import feature ships later, this policy will be updated to describe photo or file access before it is used, and the App Store privacy label updated with it.
 
 ---
 
@@ -130,9 +117,9 @@ HIPAA (45 CFR Parts 160 and 164) governs health plans, health care clearinghouse
 
 ## Permissions the app asks for
 
-OmniWealth asks for no runtime permissions. There is no permission prompt for location, camera, photos, contacts, Health, or tracking, because the app uses none of those.
+OmniWealth asks for no runtime permissions for location, camera, photos, contacts, Health, or tracking, because the app uses none of those.
 
-It does not request permission to send you notifications, and it sends none. There are no reminders in the app in any form.
+Notification permission is requested only from **Settings → Reminders**, never at launch. If you grant it, the app schedules one weekly local check-in. Turning the reminder off cancels it.
 
 ---
 
@@ -148,11 +135,10 @@ If you are a parent or guardian and have a question about this app, write to adm
 
 Because your data never leaves your device, you control it directly.
 
-- **See it:** your logged days are shown in the app, on the Home and Progress screens.
-- **Delete everything you have entered:** Settings → Data → **"Delete all data in this app"**. After a confirmation prompt, this permanently deletes every habit log and every other record the app's database holds — budget entries, statement records, trajectory snapshots, and the profile record — from this device. It cannot be undone. It does **not** remove your app preferences (appearance, selected model, download permission) or any AI model files you downloaded; deleting the app removes those.
+- **See it:** your logged days and envelope arithmetic are shown in the app.
+- **Delete everything you have entered:** Settings → Data → **"Delete all data in this app"**. After a confirmation prompt, this permanently deletes every habit log, envelope / budget entry, leftover statement record and profile stored on this device, plus leftover on-device model cache from older installs (and the App Group container if one is ever entitled). If a later file removal fails after the store is emptied, the app says so rather than claiming a complete delete. It cannot be undone.
 - **Deleting one entry at a time is not possible.** The app does not currently offer per-entry deletion — there is no swipe-to-delete and no delete control on an individual row. Deletion is all-or-nothing: the control above, or deleting the app.
-- **Delete everything, including preferences and models:** delete the app. That removes the app's local database, its preferences, and any downloaded model files from your device.
-- **Free up memory:** Settings → On-Device AI → **"Unload"** releases the loaded model from memory. It does not delete the downloaded files from disk, and the app does not currently offer a control to delete downloaded model files. Deleting the app removes them.
+- **Delete everything, including preferences:** delete the app. That removes the app's local database and its preferences from your device.
 - **Ask us to delete your data:** there is nothing for us to delete. We have never received it. If you write to us asking for deletion, that will be our honest answer.
 
 ---
@@ -187,14 +173,14 @@ Several other states have comprehensive privacy laws granting access, correction
 
 This policy does not state which App Store territories OmniWealth is released in; check the App Store listing for the countries where it is available.
 
-Where the UK GDPR or EU GDPR applies, note that Prameya does not act as a controller of any personal data from your use of OmniWealth, because we receive none. Your entries are processed only by software running on your own device, under your control. We do not process special category data (GDPR Article 9); financial information is not a special category, and we hold no health data in any event. Downloading a model file involves your device connecting to Hugging Face, Inc. in the United States, exactly as visiting a website would; Hugging Face acts as an independent controller of that request under its own policy. If you believe we hold personal data about you, contact admin@prameya.legal, and you may complain to your national data protection authority.
+Where the UK GDPR or EU GDPR applies, note that Prameya does not act as a controller of any personal data from your use of OmniWealth, because we receive none. Your entries are processed only by software running on your own device, under your control. We do not process special category data (GDPR Article 9); financial information is not a special category, and we hold no health data in any event. If you believe we hold personal data about you, contact admin@prameya.legal, and you may complain to your national data protection authority.
 
 ---
 
 ## Security
 
 - Your data is stored in the app's private storage, which the operating system isolates from other apps, and is protected by your device passcode and disk encryption. That is the operating system's default protection; the app does not add a stronger file-protection class on top of it, and we will not describe it as more than it is.
-- Model downloads use HTTPS. The app does not permit unencrypted network connections.
+- There is no model download in this build, so there is no Hugging Face request to encrypt.
 - The strongest control is architectural: there is no server holding your financial information, so there is no server to be breached.
 
 We do not claim any security certification, audit, or standard we do not hold.
@@ -205,12 +191,11 @@ We do not claim any security certification, audit, or standard we do not hold.
 
 | Third party | Role | What it receives |
 |---|---|---|
-| Hugging Face, Inc. | Hosts the open-weight AI model files the app downloads | The model file request, your IP address, and standard request metadata. No user content. |
 | Apple | Distributes the app | Whatever Apple collects for App Store distribution, under Apple's own privacy policy. We receive no personal information from Apple. |
 
 There are no others. No analytics vendor, no ad network, no cloud AI provider, no data broker, no payment processor.
 
-The app is built on open-source software components (including Apple's MLX machine-learning framework and Hugging Face's Swift libraries). These are libraries compiled into the app; apart from the model download described above, they do not send data anywhere.
+The app ships Apple platform frameworks and in-repo Swift packages only. MLX and Hugging Face libraries were removed; they are not linked.
 
 ---
 
@@ -222,7 +207,7 @@ If we change how OmniWealth handles data, we will update this policy before the 
 - We will describe what changed in plain language.
 - The previous version will remain available at this address's history.
 
-**This revision (8 August 2026)** corrected statements in the previous version so that every claim matches the code that actually ships. Specifically: the previous version said you could delete individual entries in the app, which was not true — deletion is all-or-nothing, and the section above now says so; the list of what you can enter was narrowed to what the app actually offers; the description of what you can do with a downloaded model was corrected to "unload from memory," since the app has no control that deletes model files; the newly added in-app "delete all data" control was documented, along with what it does not remove; the model-download permission step was documented; and internal review notes that should never have been visible on a published page were resolved and removed. Where a promise could not be made true in the code, the promise was removed rather than softened.
+**This revision (23 August 2026)** records the shipping envelope / budget log (a name and amounts you type; arithmetic only) and states that there is no Goals surface and no AI advisor. Hugging Face / on-device model download claims stay removed: the unused Intelligence / MLX stack is deleted. Notification permission is requested from Settings → Reminders only.
 
 Material changes — for example, adding statement import, adding sync, or adding any feature that sends your content off the device — will also be disclosed inside the app before that feature is used.
 
