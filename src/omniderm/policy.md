@@ -1,6 +1,6 @@
 # OmniDerm Privacy Policy
 
-**Effective date:** 21 August 2026 *(supersedes the 8 August 2026 version: journal photographs, HealthKit removed, reminders off by default, no Settings model download)*
+**Effective date:** 24 August 2026 *(supersedes the 21 August 2026 published version, and the unpublished 23 August 2026 revision: Settings does not download a model and the generate path is gated; Export now carries the journal photographs themselves rather than only naming them; "delete individual entries in the app at any time" is implemented rather than asserted. Journal JPEGs still stay on this device unless you share an export; nothing about collection, sharing or purposes changed.)*
 **Publisher:** Prameya LLC ("Prameya", "we", "us"), a United States limited liability company
 **Contact:** admin@prameya.legal
 **This policy covers:** the OmniDerm iOS app only.
@@ -164,11 +164,12 @@ No system is perfect, and we will not pretend otherwise. What we can say plainly
 
 We do not retain your data, because we never receive it. On your device:
 
+- **Delete individual entries:** open a journal entry from the timeline (or hold the row) to delete it or just its photograph, and open a logged day under **Do → Today's log → Days you have logged** to delete that day. Each list draws your 365 most recent records at a time and offers **Show older entries** / **Show older days** at its foot, so an older record is a page away rather than out of reach.
 - **Delete your habit logs, journal entries, photographs, goals and settings:** open **Settings → Export & Data Management → Clear All Local Data**. If a later file removal fails after the store is emptied, the app says so rather than claiming a complete delete.
-- **Delete a single journal photograph:** delete that journal entry in the app, or use Clear All Local Data. Originals in Apple Photos are yours — delete them there if you want them gone.
+- **Delete a single journal photograph:** open that journal entry and use **Delete the photograph** — the date, body area and note are kept. Deleting the entry deletes its photograph too, and Clear All Local Data deletes them all. Journal photographs are excluded from device backup and are never uploaded, so each of those deletes removes the only copy that exists. Originals in Apple Photos are yours — delete them there if you want them gone.
 - **Delete everything:** delete the app. That removes the app's database, preferences, journal JPEGs, cached models if any, and Keychain items.
 - **Delete synced data:** if you used iCloud sync, remove the app's iCloud data in iOS Settings as described above.
-- **Take your data with you first:** **Settings → Export Full Data (JSON)** produces a file with your habit logs, journal notes (not photographs), your consistency snapshot and your goals, and presents the iOS share sheet.
+- **Take your data with you first:** **Settings → Export Full Data** produces your habit logs, journal entries, your consistency snapshot and your goals, and presents the iOS share sheet. If you have saved journal photographs the export is a `.zip` holding that file **plus every photograph still on this device**, in a `Photographs` folder; with no photographs saved it is a plain JSON file. The export screen names how many photographs are included before you share. This is the only route by which a copy of a journal photograph ever leaves the device — read what the file contains before you send it anywhere.
 
 ---
 

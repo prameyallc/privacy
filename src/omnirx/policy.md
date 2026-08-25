@@ -198,16 +198,22 @@ alert, and not a push from our servers. Turning the reminder off cancels it.
 
 ### Exporting your logs
 
-Settings → **"Export my logs as text"** builds a plain-text summary on your device and shows it to you
-in a sheet inside the app. The summary contains the share of doses you recorded as taken and over how
-many logged days, your current streak, the days you logged in the window, and a count of the reasons
-you recorded for missed doses.
+Two exports, both produced on your device and displayed to you:
 
-- The text is generated on your device. Nothing is uploaded, and **we never receive a copy**.
-- You can select and copy the text and paste it wherever you want it — a note, an email to yourself, a
-  message to your pharmacist.
-- There is no share sheet and no file: the app displays the summary, and moving it anywhere is your
-  action, not the app's.
+- Settings → **"Export my logs as text"** produces a plain-text **summary** — a percentage over the
+  days you logged, a streak, a day count, and the reasons you recorded for missed doses. It is
+  written to be handed to a pharmacist.
+- Settings → **"Export every record as text"** produces **every record this app holds**, field by
+  field: each medication record with its date, its medicine name, whether you recorded it as
+  taken or skipped, the reasons and the note on it; each journal entry with its scores, anything
+  reported with it and its note; each habit record; and the profile row the app created for
+  itself. Nothing is summarised, sampled or truncated.
+
+There are no attachments to return, and the complete export says so: OmniRx cannot take or store
+a photograph, a scan, a recording or a file of any kind.
+
+Either export goes nowhere unless you choose to send it somewhere — at which point it is governed
+by whatever app you send it with.
 
 ---
 
@@ -345,8 +351,12 @@ consent.
 - **You can delete all of it inside the app.** Settings → **"Delete all my data"** asks you to confirm,
   then permanently removes every medication log, journal entry, habit record and profile record from
   the device and resets the figures the app calculated from them back to empty. It cannot be undone.
-- **This is all-or-nothing.** The app does not offer per-entry deletion or editing of past entries
-  today.
+- **You can also delete or correct one record at a time.** Settings → "Open, correct or delete
+  one record" lists every medication record, journal entry and habit record on the device. Each
+  opens; each can be deleted on its own behind a confirmation that names it. Medication records
+  and journal entries can be corrected in place — the date cannot, because the app can only
+  write a record for today. Habit records are written by the app from the medication record
+  beside them, so they are read-only and the screen says why; they can still be deleted.
 - **Deleting the app deletes the data with it.** iOS removes the app's storage container.
 - Because we never receive your medication or wellness data, we cannot delete it for you — and we have
   no copy to delete.

@@ -1,6 +1,6 @@
 # OmniDent Consumer Health Data Privacy Policy
 
-**Effective date:** 21 August 2026
+**Effective date:** 24 August 2026 *(supersedes the 21 August 2026 version; the access and deletion sections now match the per-record controls and the photograph-carrying export)*
 **Publisher:** Prameya LLC, a United States limited liability company ("Prameya", "we", "us")
 **Contact:** admin@prameya.legal
 **This policy lives at:** https://prameyallc.github.io/privacy/omnident/health-data/
@@ -121,7 +121,17 @@ RCW 19.373.020(1)(a)(v) requires us to explain how you exercise the rights in RC
 
 You may ask whether we are collecting, sharing or selling your consumer health data, and to access it — including a list of all third parties and affiliates with whom we have shared it, and contact information for each.
 
-**Fastest route (immediate, no waiting):** **Settings → Privacy & Security → Export My Data** in the app produces a JSON file of your on-device records — scan metadata, habit logs, trajectory scenarios and your profile — generated on your device. It contains metadata only: not the raw photographs, which are already in the app and, if you enabled auto-save, in your Photos library, and not the text of your notes.
+**Fastest route (immediate, no waiting):** **Settings → Privacy & Security → Export My Data** in the app produces a **`.zip` file** of your on-device records, generated on your device and handed to the standard iOS share sheet. Inside it:
+
+- `export.json` — your photo records, the caption and view tag you wrote on each one, your logged care days, your saved what-if scenarios, your claimed partner promotions, your 30-day programme progress, and your oral-health profile. Each scan entry also carries the coded dental vocabulary terms derived from that photo's analysis, the capability labels, and the number of findings.
+- `Photos/` — **every photograph you took in OmniDent, at full resolution.**
+- `Thumbnails/` — the small preview of each one.
+
+Where a photograph's file is no longer on your device, the record is still exported and marked `photoFileMissingOnDisk`, with the thumbnail, rather than dropped. Where a photograph is on your device and cannot be read, no file is produced at all and the app names the file: an export that looks complete and is short one picture is the failure this rule exists to prevent.
+
+The text of a note the on-device model attached to a photo is still not in the file.
+
+One limit worth knowing when you use it as an access request: the export reads the app's database, so the categories that live in the settings store — care-day history, profile names, Smile Points, widget snapshot, reminder schedule and the cost-model sliders — are **not** in the file. Email **admin@prameya.legal** if you want those too.
 
 **Formal route:** email **admin@prameya.legal**. We will confirm in writing that we hold no consumer health data about you on any Prameya system, that we have shared none, and that we have sold none.
 
@@ -148,13 +158,25 @@ You may have your consumer health data deleted, including from backups and archi
 
 | To delete | Where |
 |---|---|
-| A single photograph | Scan details → Delete |
-| All app data on this device, including your oral-health profile | Settings → Privacy & Security → Delete All Scans & Data |
-| Your Sign in with Apple association, the app's records in your private iCloud database, and all local data | Settings → iCloud Sync → Delete Account & All Data |
+| A single photograph — **any** of them, not only the most recent | Act → **All your photos** → tap the photo → **Delete this photo**. Press-and-hold a row, or swipe it, for the same control |
+| A single logged care day | Do → **Your care log** → tap the day → **Delete this care day**. Press-and-hold or swipe for the same control |
+| A single saved what-if scenario | More → What-if → Saved Scenarios → tap it → **Delete this scenario** |
+| A single claimed partner promotion | Settings → Privacy & Security → **Claimed offers** → **Delete this claim**. The row appears only if you have one; the app no longer lists partner offers, so no new claim can be made |
+| Your 30-day programme progress — the start date and every ticked habit | 30-Day Reset → **Delete my 30-day progress** |
+| Your oral-health profile — age, brushing frequency, sugar and acid intake, smoking, diabetes, dry mouth, goals | Settings → Edit My Health Profile → **Delete my health profile** |
+| Your photographs and their analysis, scan history, trajectory snapshots, habit logs, claimed partner promotions, 30-day programme progress and oral-health profile — **but not everything; see the correction below** | Settings → Privacy & Security → Delete All Scans & Data |
+| Your Sign in with Apple association, the app's records in your private iCloud database, and the same set of local data as the row above | Settings → iCloud Sync → Delete Account & All Data |
+| **Everything without exception**, including the items the two controls above leave behind | Delete the app from your device — iOS removes the whole container |
 | Data written into Apple Health | The Apple Health app |
 | Photographs copied into your Photos library | The Photos app |
 
-On that third row, one thing should be stated precisely rather than implied. Apple's deletion rule for apps offering Sign in with Apple also requires token revocation **where the app exchanges Apple's authorization code for tokens on its own server**. OmniDent has no server and never performs that exchange, so no Apple token for OmniDent exists and the app makes no revocation call — the app-scoped identifier in your device's Keychain is the entire association, and deleting it is the entire deletion. If you also want OmniDent removed from your Apple Account's Sign in with Apple list, that is Apple's own control, at **iOS Settings → your name → Sign in with Apple → OmniDent**.
+The first six rows are per-record controls. Every record type you can create now opens as its own screen and deletes on its own, behind a confirmation that names exactly what goes and says what the deletion cannot reach — an Apple Health sample OmniDent wrote, or a copy of a photograph in your own Photos library.
+
+**Correcting rather than deleting.** Two of these records can be corrected in place instead: a logged care day, because it is your own account of a day and you are the only source it ever had, and the caption and view tag on a photograph, because you typed them. The rest are records of something that happened — a projection that was run from particular inputs on a particular day, a promotion you claimed — and editing one would leave it claiming a result that did not come from the inputs shown. Those say so on screen and offer deletion instead. Whichever it is, the screen tells you which.
+
+"Delete All Scans & Data" removes the scan records **and the JPEG files on disk**, the analysis attached to each scan, trajectory snapshots, habit logs, claimed partner promotions, 30-day programme progress, the oral-health profile itself, App Group leftovers, and the on-device Hugging Face / MLX model cache under Application Support. A save or file failure is shown in Settings rather than reported as success. It also clears the app's settings store: care-day history, profile names, Smile Points, widget snapshot, reminder schedule, and the self-reported care and risk inputs for the cost model. The one thing the control deliberately leaves is the bookkeeping recording which AI model files are already downloaded to this device — it contains none of your data. Deleting the app removes them along with everything else.
+
+On the Sign in with Apple row, one thing should be stated precisely rather than implied. Apple's deletion rule for apps offering Sign in with Apple also requires token revocation **where the app exchanges Apple's authorization code for tokens on its own server**. OmniDent has no server and never performs that exchange, so no Apple token for OmniDent exists and the app makes no revocation call — the app-scoped identifier in your device's Keychain is the entire association, and deleting it is the entire deletion. If you also want OmniDent removed from your Apple Account's Sign in with Apple list, that is Apple's own control, at **iOS Settings → your name → Sign in with Apple → OmniDent**.
 
 **Formal route:** email **admin@prameya.legal**. Because we hold no consumer health data on any Prameya system, there is nothing on our side to delete and no backup or archived copy of it anywhere in our network. We will confirm that in writing. Washington permits up to six months for deletion from archived or backup systems solely to allow restoration; **we have no such systems containing your consumer health data**, so that extension never applies to us. Backups you make of your own device are yours, held under your Apple Account or on your own computer, and we cannot reach into them.
 
@@ -228,7 +250,7 @@ If we change the categories of consumer health data we collect, add a source, ad
 2. **obtain your affirmative consent before collecting or processing for the new category or purpose**, as RCW 19.373.020(1)(c) and (1)(d) require — before the change takes effect, not after;
 3. show an in-app notice describing what changed.
 
-**This 21 August 2026 revision** restates auto-save captures to Photos as **off** until you turn it on (the main policy is the source for that setting). **The 8 August 2026 revision was a correction pass rather than a change of practice.** We re-read the shipping source code and rewrote every statement that did not match it. The deletion section previously said that deleting your account revokes your Sign in with Apple token; it does not, because the app has no server, never exchanges the authorization code, and therefore has no token in existence to revoke. That section now states what deletion actually does. We also corrected the name of the deletion control, described the placeholder percentages in the Studio Regenerative Projection feature, noted that scan files are not excluded from your own device backup, described the export file accurately, and confirmed the statements that had been pending internal verification and are now true of the build.
+**This 24 August 2026 revision** replaces the export description and the single-photograph deletion route so they match the shipping app: the export is a `.zip` carrying every photograph at full resolution, and the deletion table names the per-record controls. **No category of data changed, no new source was added, and nothing new is collected.** **The 21 August 2026 revision** restates auto-save captures to Photos as **off** until you turn it on (the main policy is the source for that setting). **The 8 August 2026 revision was a correction pass rather than a change of practice.** We re-read the shipping source code and rewrote every statement that did not match it. The deletion section previously said that deleting your account revokes your Sign in with Apple token; it does not, because the app has no server, never exchanges the authorization code, and therefore has no token in existence to revoke. That section now states what deletion actually does. We also corrected the name of the deletion control, described the placeholder percentages in the Studio Regenerative Projection feature, noted that scan files are not excluded from your own device backup, described the export file accurately, and confirmed the statements that had been pending internal verification and are now true of the build.
 
 Previous versions are available on request. We do not make material changes quietly.
 

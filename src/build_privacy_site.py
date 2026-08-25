@@ -186,10 +186,39 @@ def render_md(text):
     return out
 
 
+_EFF_RE = re.compile(
+    r"^\*\*Effective date(?: of this privacy policy)?:\*\*\s*(.+?)\s*$",
+    re.MULTILINE,
+)
+
+
+def effective_from(md_text, fallback):
+    """Return (footer_date, found).
+
+    The body may carry a markdown parenthetical after the date (*supersedes …*).
+    That parenthetical is revision history for the reader of the policy; the
+    footer stamp is the date only, so asterisks and superseded dates cannot
+    contradict the page they sit on.
+    """
+    m = _EFF_RE.search(md_text)
+    if not m:
+        return fallback, False
+    raw = m.group(1).strip()
+    date_only = re.split(r"\s+\*", raw, maxsplit=1)[0].strip()
+    return date_only or fallback, True
+
+
 def first_para(md_text):
     for line in md_text.splitlines():
         s = line.strip()
         if s and not s.startswith("#") and not s.startswith(">"):
+            # Revision parentheticals name superseded dates; keep those in the
+            # body, not in <meta name="description">.
+            if s.lower().startswith("**effective date"):
+                m = _EFF_RE.search(s)
+                if m:
+                    date_only = re.split(r"\s+\*", m.group(1).strip(), maxsplit=1)[0].strip()
+                    return f"Effective date: {date_only}"[:180]
             return re.sub(r"[*_`\[\]]|\(http[^)]*\)", "", s)[:180]
     return "Privacy policy."
 
@@ -235,11 +264,10 @@ def build(content_dir, out_dir, site_root):
         #    exactly this — its body says 16 August 2026 while EFFECTIVE still said 8 August.
         #    Each policy now carries its own date, read from the "**Effective date:**" line it
         #    already states to the reader, so the footer cannot disagree with the text above it.
-        app_effective = EFFECTIVE
-        m_eff = re.search(r"^\*\*Effective date:\*\*\s*(.+?)\s*$", body_md, re.MULTILINE)
-        if m_eff:
-            app_effective = m_eff.group(1)
-        else:
+        #    Health-data pages used to reuse policy.md's date; they now read their own line and
+        #    fall back to the general policy only when the health-data source has none.
+        app_effective, found_eff = effective_from(body_md, EFFECTIVE)
+        if not found_eff:
             warnings.append(f"{name}: no '**Effective date:**' line; footer falls back to {EFFECTIVE}")
 
         hd_src = os.path.join(content_dir, slug, "health-data.md")
@@ -273,6 +301,9 @@ def build(content_dir, out_dir, site_root):
 
         if has_hd:
             hd_md = open(hd_src, encoding="utf-8").read()
+            hd_effective, hd_found = effective_from(hd_md, app_effective)
+            if not hd_found:
+                hd_effective = app_effective
             hp = PAGE.format(
                 title=f"{name} Consumer Health Data Privacy Policy — Prameya LLC",
                 desc=html.escape(first_para(hd_md), quote=True),
@@ -281,7 +312,7 @@ def build(content_dir, out_dir, site_root):
                 root=site_root,
                 crumb=f'<a href="{site_root}/{slug}/">← {name} privacy policy</a>',
                 body=render_md(hd_md),
-                effective=app_effective,
+                effective=hd_effective,
             )
             write(os.path.join(out_dir, slug, "health-data", "index.html"), hp)
             built.append(f"{slug}/health-data/")
