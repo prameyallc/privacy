@@ -180,11 +180,15 @@ Our answer, in advance: **we are not collecting it on any server, we have never 
 sold it, and the list of third parties is empty.** Ask anyway if you would like it in writing — email
 **admin@prameya.legal** and we will send it.
 
-You can also see what the app holds without asking us: your entries are shown back to you in the app,
-and Settings → **"Export my logs as text"** produces a plain-text summary — adherence percentage,
-streak, days logged, and the reasons you recorded for missed doses — generated on your device and
-displayed in the app, where you can select and copy it. Nothing is uploaded and we never receive a
-copy. There is no share sheet and no exported file; moving the text anywhere is your action.
+You can also see what the app holds without asking us: Settings → **"Open, correct or delete one
+record"** lists every record the app holds and opens any of them. Settings → **"Export every record
+as text"** prints all of them, field by field — each medication record with its date, medicine name,
+whether you recorded it as taken or skipped, the reasons and the note on it; each journal entry with
+its scores, anything reported with it and its note; each habit record; and the profile row the app
+created for itself. Nothing is summarised, sampled or truncated. There are no attachments to return,
+and that export says so: OmniRx cannot take or store a photograph, a scan, a recording or a file of
+any kind. Settings → **"Export my logs as text"** remains available and is a shorter summary written
+to be handed to a pharmacist. Nothing is uploaded and we never receive a copy.
 
 ### 2. The right to withdraw consent
 
@@ -207,9 +211,12 @@ You can ask us to delete your consumer health data.
 - **You can do it now, without asking us.** Settings → **"Delete all my data"** asks you to confirm,
   then permanently removes every medication log, journal entry, habit record and profile record from
   the device and resets the figures the app calculated from them back to empty. It cannot be undone.
-- **It is all-or-nothing.** The app does **not** offer deletion or editing of individual entries today.
-  If you want to remove one day's entry only, the app cannot do that — the choices are deleting
-  everything or keeping it.
+- **Or one record at a time.** Settings → "Open, correct or delete one record" lists every
+  medication record, journal entry and habit record on the device. Each one opens, and each one
+  can be deleted on its own behind a confirmation that names it — which medicine, which day,
+  what was recorded on it. Medication records and journal entries can also be corrected in
+  place; a habit record is written by the app from the medication record beside it, so it is
+  read-only and the screen says why.
 - **Deleting the app** also removes its entire data store from your device.
 - **We hold no copy to delete.** There is no server database, no backup, no archive, and no analytics
   store containing your health data. When you ask, we will tell you exactly that, in writing.
@@ -301,15 +308,21 @@ date above, and summarize what changed at the top. We will not collect, use, or 
 consumer health data, or use it for a new purpose, without disclosing it here first and obtaining your
 affirmative consent.
 
+**What changed in this revision (August 24, 2026):** the app now offers per-record review,
+correction and deletion, and a complete per-field export, so sections 3 and 4 describe those
+controls instead of denying they exist. No category of consumer health data, no source, no
+recipient and no purpose changed, so the effective date is unchanged and no new consent is
+sought.
+
 **What changed in this revision (August 8, 2026):** this version corrects statements so they match the
-code that actually ships. In particular: the right to delete no longer says you can delete individual
-entries, because the app offers all-or-nothing deletion (Settings → "Delete all my data") plus app
-deletion; the category table now describes only what the app actually records, and names the fields
-that exist in the data model with no screen to fill them in; the AI row now says plainly that no screen
-sends your text to the model today; the iCloud position is stated exactly (no health data syncs, and a
-preferences-only container exists that nothing currently writes to); the iCloud Backup limitation is
-stated as a limitation on deletion; the first-run disclosure is described as it ships; and internal
-review markers that were mistakenly published have been removed.
+code that actually ships. In particular: the right to delete described all-or-nothing deletion only,
+which was accurate for the build shipping on that date; the category table now describes only what
+the app actually records, and names the fields that exist in the data model with no screen to fill
+them in; the AI row now says plainly that no screen sends your text to the model today; the iCloud
+position is stated exactly (no health data syncs, and a preferences-only container exists that
+nothing currently writes to); the iCloud Backup limitation is stated as a limitation on deletion;
+the first-run disclosure is described as it ships; and internal review markers that were mistakenly
+published have been removed.
 
 Prior versions are available on request from **admin@prameya.legal**.
 

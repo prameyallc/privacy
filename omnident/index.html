@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>OmniDent Privacy Policy — Prameya LLC</title>
-<meta name="description" content="Effective date: 21 August 2026">
+<meta name="description" content="Effective date: 24 August 2026">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://prameyallc.github.io/privacy/omnident/">
 <style>
@@ -93,7 +93,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 </div></header>
 <main id="main" class="wrap">
 <h1 id="omnident-privacy-policy">OmniDent Privacy Policy</h1>
-<p><strong>Effective date:</strong> 21 August 2026<br />
+<p><strong>Effective date:</strong> 24 August 2026 <em>(supersedes the 21 August 2026 version; section 9 now matches the per-record delete controls and the photograph-carrying export)</em><br />
 <strong>Publisher:</strong> Prameya LLC, a United States limited liability company ("Prameya", "we", "us")<br />
 <strong>Contact:</strong> admin@prameya.legal<br />
 <strong>This policy lives at:</strong> https://prameyallc.github.io/privacy/omnident/<br />
@@ -335,7 +335,14 @@ If you live in Washington or Nevada, please read it. It applies to you in additi
 <hr />
 <h2 id="9-retention-export-and-deletion">9. Retention, export and deletion</h2>
 <p><strong>Retention.</strong> Because your content lives on your device, you decide how long it is kept. We impose no retention period because we hold nothing to retain. If you delete the app, iOS deletes its container and everything in it. Data synced to your private iCloud database is removed when you delete your account in the app, or when you delete the app's iCloud data from iOS Settings → your name → iCloud.</p>
-<p><strong>Export.</strong> <strong>Settings → Privacy &amp; Security → Export My Data</strong> produces a JSON file, generated entirely on your device, containing your scan metadata, habit logs, trajectory scenarios and profile. It contains metadata only — not the raw photographs, which you already have in the app and, if you enabled auto-save, in your Photos library, and not the text of your notes.</p>
+<p><strong>Export.</strong> <strong>Settings → Privacy &amp; Security → Export My Data</strong> produces a <strong><code>.zip</code> file</strong>, generated entirely on your device, and hands it to the standard iOS share sheet so you can put it wherever you want. Inside it:</p>
+<ul>
+<li><code>export.json</code> — your photo records, the caption and view tag you wrote on each one, your logged care days, your saved what-if scenarios, your claimed partner promotions, your 30-day programme progress and your oral-health profile. The per-scan entries include the coded dental vocabulary terms derived from each photo's analysis, alongside the capability labels and the number of findings.</li>
+<li><code>Photos/</code> — <strong>every photograph you took in OmniDent, at full resolution</strong>, under the file name the matching scan entry gives as <code>photoFileInExport</code>.</li>
+<li><code>Thumbnails/</code> — the small preview of each one.</li>
+</ul>
+<p>If a photograph's file is missing from your device — it was removed outside the app, for example — the scan entry is still exported, marked <code>photoFileMissingOnDisk</code>, with the thumbnail. It is not quietly dropped, and the file does not claim a picture it does not carry. If a photograph is on your device and cannot be read, no file is produced at all and the app tells you which one: a short export that looks complete is worse than no export.</p>
+<p>The text of a note the on-device model attached to a photo is still not in the file.</p>
 <p><strong>Deletion.</strong></p>
 <div class="tablewrap"><table>
 <thead>
@@ -347,10 +354,30 @@ If you live in Washington or Nevada, please read it. It applies to you in additi
 <tbody>
 <tr>
 <td>One photo</td>
-<td>Scan details → Delete</td>
+<td>Act → All your photos → tap the photo → Delete this photo (or press-and-hold the row)</td>
 </tr>
 <tr>
-<td>All app data on this device</td>
+<td>One logged care day</td>
+<td>Do → Your care log → tap the day → Delete this care day (or press-and-hold the row)</td>
+</tr>
+<tr>
+<td>One saved what-if scenario</td>
+<td>More → What-if → Saved Scenarios → tap it → Delete this scenario</td>
+</tr>
+<tr>
+<td>One claimed partner promotion</td>
+<td>Settings → Privacy &amp; Security → Claimed offers → Delete this claim (the row is shown only if you have one)</td>
+</tr>
+<tr>
+<td>Your 30-day programme progress</td>
+<td>30-Day Reset → Delete my 30-day progress</td>
+</tr>
+<tr>
+<td>Your oral-health profile</td>
+<td>Settings → Edit My Health Profile → Delete my health profile</td>
+</tr>
+<tr>
+<td>Your scans, photo files, analyses, habit logs, trajectory scenarios, programme progress, claimed promotions and oral-health profile — <strong>and</strong> the settings store behind them: care-day history, profile names, Smile Points, widget snapshot, reminder schedule and cost-model sliders — <strong>and</strong> the on-device model cache</td>
 <td>Settings → Privacy &amp; Security → Delete All Scans &amp; Data</td>
 </tr>
 <tr>
@@ -471,6 +498,7 @@ If you live in Washington or Nevada, please read it. It applies to you in additi
 <p>We will update this policy when the app's behaviour changes — and we will update it <strong>before</strong> the change ships, not after.</p>
 <ul>
 <li>The effective date at the top always reflects the current version.</li>
+<li><strong>This 24 August 2026 revision</strong> updates section 9 so the export is a <code>.zip</code> that carries the photographs themselves, and so the deletion table names the per-record controls. No category of data, source, recipient or purpose changed.</li>
 <li><strong>This 21 August 2026 revision</strong> matches the shipping code on auto-save captures to Photos (<strong>off</strong> by default), withdraws the blanket "does not diagnose" wording in favour of describing the photo note and the unfiltered chat, and corrects the Studio Regenerative Projection percentages: the values are constants, but which constant you see is keyed on your own scan history.</li>
 <li><strong>The 8 August 2026 revision was a correction pass.</strong> We re-read the shipping source code and rewrote every statement that did not match it. In particular: the previous version said that deleting your account revokes your Sign in with Apple token through Apple's REST API. It does not, and it never did — the app has no server and mints no token, so there is nothing to revoke; section 4 now describes what deletion actually does. We also corrected the name of the deletion control, described the Studio Regenerative Projection placeholder percentages, stated that scan files are not excluded from your device backup, recorded that no pre-download disclosure sheet exists, and confirmed the items that had been marked as pending internal verification and are now in the build.</li>
 <li>For any material change — a new destination the app connects to, a new category of data, a new third party, a change to what syncs, or the addition of any advertising or analytics — we will show an in-app notice and, where the law requires it, ask for your consent before the change takes effect. Under Washington's My Health My Data Act, collecting a new category of consumer health data, or using it for a new purpose, requires your affirmative consent first, and we will obtain it first.</li>
@@ -488,7 +516,7 @@ OmniDent consumer health data policy: https://prameyallc.github.io/privacy/omnid
 <footer class="site"><div class="wrap">
   <p>Prameya LLC · <a href="mailto:admin@prameya.legal">admin@prameya.legal</a>
   · <a href="https://prameyallc.github.io/privacy/support/">Support</a></p>
-  <p>Effective 21 August 2026. <a href="https://prameyallc.github.io/privacy/">All app privacy policies</a></p>
+  <p>Effective 24 August 2026. <a href="https://prameyallc.github.io/privacy/">All app privacy policies</a></p>
 </div></footer>
 </body>
 </html>

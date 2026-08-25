@@ -1,6 +1,6 @@
 # OmniDent Privacy Policy
 
-**Effective date:** 21 August 2026
+**Effective date:** 24 August 2026 *(supersedes the 21 August 2026 version; section 9 now matches the per-record delete controls and the photograph-carrying export)*
 **Publisher:** Prameya LLC, a United States limited liability company ("Prameya", "we", "us")
 **Contact:** admin@prameya.legal
 **This policy lives at:** https://prameyallc.github.io/privacy/omnident/
@@ -227,14 +227,27 @@ One line each, because the honest answer is short.
 
 **Retention.** Because your content lives on your device, you decide how long it is kept. We impose no retention period because we hold nothing to retain. If you delete the app, iOS deletes its container and everything in it. Data synced to your private iCloud database is removed when you delete your account in the app, or when you delete the app's iCloud data from iOS Settings → your name → iCloud.
 
-**Export.** **Settings → Privacy & Security → Export My Data** produces a JSON file, generated entirely on your device, containing your scan metadata, habit logs, trajectory scenarios and profile. It contains metadata only — not the raw photographs, which you already have in the app and, if you enabled auto-save, in your Photos library, and not the text of your notes.
+**Export.** **Settings → Privacy & Security → Export My Data** produces a **`.zip` file**, generated entirely on your device, and hands it to the standard iOS share sheet so you can put it wherever you want. Inside it:
+
+- `export.json` — your photo records, the caption and view tag you wrote on each one, your logged care days, your saved what-if scenarios, your claimed partner promotions, your 30-day programme progress and your oral-health profile. The per-scan entries include the coded dental vocabulary terms derived from each photo's analysis, alongside the capability labels and the number of findings.
+- `Photos/` — **every photograph you took in OmniDent, at full resolution**, under the file name the matching scan entry gives as `photoFileInExport`.
+- `Thumbnails/` — the small preview of each one.
+
+If a photograph's file is missing from your device — it was removed outside the app, for example — the scan entry is still exported, marked `photoFileMissingOnDisk`, with the thumbnail. It is not quietly dropped, and the file does not claim a picture it does not carry. If a photograph is on your device and cannot be read, no file is produced at all and the app tells you which one: a short export that looks complete is worse than no export.
+
+The text of a note the on-device model attached to a photo is still not in the file.
 
 **Deletion.**
 
 | To delete | Where |
 |---|---|
-| One photo | Scan details → Delete |
-| All app data on this device | Settings → Privacy & Security → Delete All Scans & Data |
+| One photo | Act → All your photos → tap the photo → Delete this photo (or press-and-hold the row) |
+| One logged care day | Do → Your care log → tap the day → Delete this care day (or press-and-hold the row) |
+| One saved what-if scenario | More → What-if → Saved Scenarios → tap it → Delete this scenario |
+| One claimed partner promotion | Settings → Privacy & Security → Claimed offers → Delete this claim (the row is shown only if you have one) |
+| Your 30-day programme progress | 30-Day Reset → Delete my 30-day progress |
+| Your oral-health profile | Settings → Edit My Health Profile → Delete my health profile |
+| Your scans, photo files, analyses, habit logs, trajectory scenarios, programme progress, claimed promotions and oral-health profile — **and** the settings store behind them: care-day history, profile names, Smile Points, widget snapshot, reminder schedule and cost-model sliders — **and** the on-device model cache | Settings → Privacy & Security → Delete All Scans & Data |
 | Your Sign in with Apple association, your iCloud records for this app, and all local data | Settings → iCloud Sync → Delete Account & All Data |
 | OmniDent from your Apple Account's Sign in with Apple list | iOS Settings → your name → Sign in with Apple → OmniDent |
 | Data written to Apple Health | The Apple Health app |
@@ -358,6 +371,7 @@ If something in your mouth hurts, bleeds, changes, or worries you, see a dentist
 We will update this policy when the app's behaviour changes — and we will update it **before** the change ships, not after.
 
 - The effective date at the top always reflects the current version.
+- **This 24 August 2026 revision** updates section 9 so the export is a `.zip` that carries the photographs themselves, and so the deletion table names the per-record controls. No category of data, source, recipient or purpose changed.
 - **This 21 August 2026 revision** matches the shipping code on auto-save captures to Photos (**off** by default), withdraws the blanket "does not diagnose" wording in favour of describing the photo note and the unfiltered chat, and corrects the Studio Regenerative Projection percentages: the values are constants, but which constant you see is keyed on your own scan history.
 - **The 8 August 2026 revision was a correction pass.** We re-read the shipping source code and rewrote every statement that did not match it. In particular: the previous version said that deleting your account revokes your Sign in with Apple token through Apple's REST API. It does not, and it never did — the app has no server and mints no token, so there is nothing to revoke; section 4 now describes what deletion actually does. We also corrected the name of the deletion control, described the Studio Regenerative Projection placeholder percentages, stated that scan files are not excluded from your device backup, recorded that no pre-download disclosure sheet exists, and confirmed the items that had been marked as pending internal verification and are now in the build.
 - For any material change — a new destination the app connects to, a new category of data, a new third party, a change to what syncs, or the addition of any advertising or analytics — we will show an in-app notice and, where the law requires it, ask for your consent before the change takes effect. Under Washington's My Health My Data Act, collecting a new category of consumer health data, or using it for a new purpose, requires your affirmative consent first, and we will obtain it first.

@@ -270,17 +270,21 @@ Settings control, never at launch. The lock screen says “Reminder”, not a me
 Taken, Skipped, and Snooze. It is a local notification scheduled by your device — not a critical<br />
 alert, and not a push from our servers. Turning the reminder off cancels it.</p>
 <h3 id="exporting-your-logs">Exporting your logs</h3>
-<p>Settings → <strong>"Export my logs as text"</strong> builds a plain-text summary on your device and shows it to you<br />
-in a sheet inside the app. The summary contains the share of doses you recorded as taken and over how<br />
-many logged days, your current streak, the days you logged in the window, and a count of the reasons<br />
-you recorded for missed doses.</p>
+<p>Two exports, both produced on your device and displayed to you:</p>
 <ul>
-<li>The text is generated on your device. Nothing is uploaded, and <strong>we never receive a copy</strong>.</li>
-<li>You can select and copy the text and paste it wherever you want it — a note, an email to yourself, a<br />
-  message to your pharmacist.</li>
-<li>There is no share sheet and no file: the app displays the summary, and moving it anywhere is your<br />
-  action, not the app's.</li>
+<li>Settings → <strong>"Export my logs as text"</strong> produces a plain-text <strong>summary</strong> — a percentage over the<br />
+  days you logged, a streak, a day count, and the reasons you recorded for missed doses. It is<br />
+  written to be handed to a pharmacist.</li>
+<li>Settings → <strong>"Export every record as text"</strong> produces <strong>every record this app holds</strong>, field by<br />
+  field: each medication record with its date, its medicine name, whether you recorded it as<br />
+  taken or skipped, the reasons and the note on it; each journal entry with its scores, anything<br />
+  reported with it and its note; each habit record; and the profile row the app created for<br />
+  itself. Nothing is summarised, sampled or truncated.</li>
 </ul>
+<p>There are no attachments to return, and the complete export says so: OmniRx cannot take or store<br />
+a photograph, a scan, a recording or a file of any kind.</p>
+<p>Either export goes nowhere unless you choose to send it somewhere — at which point it is governed<br />
+by whatever app you send it with.</p>
 <hr />
 <h2 id="on-device-ai-what-it-is-and-what-it-is-not">On-device AI: what it is and what it is not</h2>
 <ul>
@@ -392,8 +396,12 @@ consent.</p>
 <li><strong>You can delete all of it inside the app.</strong> Settings → <strong>"Delete all my data"</strong> asks you to confirm,<br />
   then permanently removes every medication log, journal entry, habit record and profile record from<br />
   the device and resets the figures the app calculated from them back to empty. It cannot be undone.</li>
-<li><strong>This is all-or-nothing.</strong> The app does not offer per-entry deletion or editing of past entries<br />
-  today.</li>
+<li><strong>You can also delete or correct one record at a time.</strong> Settings → "Open, correct or delete<br />
+  one record" lists every medication record, journal entry and habit record on the device. Each<br />
+  opens; each can be deleted on its own behind a confirmation that names it. Medication records<br />
+  and journal entries can be corrected in place — the date cannot, because the app can only<br />
+  write a record for today. Habit records are written by the app from the medication record<br />
+  beside them, so they are read-only and the screen says why; they can still be deleted.</li>
 <li><strong>Deleting the app deletes the data with it.</strong> iOS removes the app's storage container.</li>
 <li>Because we never receive your medication or wellness data, we cannot delete it for you — and we have<br />
   no copy to delete.</li>

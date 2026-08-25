@@ -1,6 +1,6 @@
 # Consumer Health Data Privacy Policy — OmniDerm
 
-**Effective date:** 23 August 2026
+**Effective date:** 24 August 2026 *(supersedes 23 August 2026: disclosure (h) — "edit or delete any entry directly in the app at any time" — is now implemented rather than asserted; the per-entry, per-photograph and per-day delete controls are named; the export carries the journal photographs themselves)*
 **Publisher:** Prameya LLC ("Prameya", "we", "us"), a United States limited liability company
 **Contact:** admin@prameya.legal
 **Applies to:** the OmniDerm iOS app
@@ -132,8 +132,9 @@ Nevada's SB 370 provides substantially the same rights to Nevada residents. Resi
 - **Do we share it?** No, with no one.
 - **Do we sell it?** No, and never have.
 - **List of third parties we shared with or sold to?** Empty.
-- **Can you access it?** Yes — from the app itself, at any time. **Settings → Export Full Data (JSON)** gives you a complete file of your habit logs, your streak snapshot and your goals.
-- **Can you delete it?** Yes, and you do not need us. **Settings → Clear All Local Data** deletes your habit logs, journal entries, journal JPEGs, goals and reminder settings and cancels pending reminders. Deleting the app removes everything else, including leftover cached models if any and stored keys. Journal photographs **are** saved on this device until you delete them that way. If you enabled iCloud sync, remove the app's iCloud data in iOS Settings → your name → iCloud → Manage Account Storage.
+- **Can you access it?** Yes — from the app itself, at any time. **Settings → Export Full Data** gives you a complete file of your journal entries, your habit logs, your streak snapshot and your goals. If you have saved journal photographs, the export is a `.zip` holding that file **and every photograph still on this device**, in a `Photographs` folder; with no photographs saved it is the file on its own. The export screen tells you how many photographs are included before you share it. You can also open any journal entry from the timeline to see its photograph at full size.
+- **Can you delete it?** Yes, and you do not need us — and you can delete one record without deleting the rest. **One journal entry:** open it from the timeline and use Delete entry, or hold the row and choose Delete entry; its photograph is deleted with it. **Just the photograph on an entry:** open the entry and use Delete the photograph; the date, body area and note are kept. **One logged day:** open Do → Today's log → Days you have logged, open the day, and use Delete this logged day. **Everything:** **Settings → Clear All Local Data** deletes your habit logs, journal entries, journal JPEGs, goals and reminder settings and cancels pending reminders. Journal photographs are excluded from device backup and are never uploaded, so deleting one deletes the only copy that exists — the confirmation says so before you do it. Deleting the app removes everything else, including leftover cached models if any and stored keys. If you enabled iCloud sync, remove the app's iCloud data in iOS Settings → your name → iCloud → Manage Account Storage.
+- **Reaching an older record?** The journal timeline and the list of logged days each show your 365 most recent entries at a time, because that is as many as the screen will draw at once. When you have more than that, the foot of the list says how many are on screen and offers **Show older entries** (or **Show older days**), which brings in the next 365 — repeat it and you reach the first record you ever saved. Nothing is hidden or thinned by this: an export always contains every record, whatever is currently on screen.
 - **Do we hold backups or archives of your data?** No. We have no copy to restore, so there is no archive for a deletion request to miss.
 
 **How to make a request.** Email **admin@prameya.legal**. Say what you want and which state you are in. There is no form and no account to create.
