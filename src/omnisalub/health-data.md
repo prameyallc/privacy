@@ -87,7 +87,45 @@ The app **never** requests or uses precise location. It contains no location cod
 
 ---
 
-## 9. How to exercise your rights
+## 9. Subscription tiers and consumer health data
+
+### No new collection when you subscribe
+
+OmniSalub offers paid subscription tiers (Plus and Premium) in addition to the free tier. **Upgrading does NOT trigger new consumer health data collection.**
+
+All three tiers:
+- Process the same categories of consumer health data (listed above)
+- Use consumer health data for the same purpose (operating features you choose to use)
+- Store data in the same location (on your device)
+- Transmit data to the same recipients (none — no health data leaves your device)
+
+**Subscription unlocks features like longer history retention, auto HealthKit sync, and additional export formats. It does not change what data is collected, how it is processed, or where it goes.**
+
+### What changes between tiers
+
+| What subscription affects | What subscription does NOT affect |
+|---------------------------|-----------------------------------|
+| How long history is retained (30 days vs unlimited) | What health data types are read from HealthKit |
+| Whether HealthKit syncs automatically or manually | Where health data is stored (on-device in all tiers) |
+| Which export formats are available (none, PDF/JSON, or PDF/JSON/FHIR) | Whether health data syncs to iCloud (never, in any tier) |
+| Whether CloudKit syncs preferences (off, on, or on) | What the app processes or derives from your data |
+| What analytics are shown (current values, 30-day trends, or advanced correlations) | Whether device integrations (Omron, Withings) collect health data from you |
+
+### StoreKit data is not consumer health data
+
+When you purchase a subscription, the app receives a transaction ID, product ID, and purchase/expiration dates from Apple's StoreKit. **These are payment records, not consumer health data** under RCW 19.373.010.
+
+StoreKit transaction data:
+- Does not identify your health status, condition, disease, or treatment
+- Is used only to unlock tier-appropriate features
+- Is stored locally on your device (not synced to iCloud)
+- Is deleted when you use "Delete All Data"
+
+Apple separately processes your Apple Account ID and payment method when you subscribe. That processing is governed by Apple's terms, not ours.
+
+---
+
+## 10. How to exercise your rights
 
 Washington residents have the rights below under RCW 19.373.040. Nevada residents have broadly parallel rights under Nevada SB 370. We honour these requests from anyone who asks, regardless of where they live.
 
@@ -107,7 +145,7 @@ Washington residents have the rights below under RCW 19.373.040. Nevada resident
 
 ---
 
-## 10. If we refuse — appeal, and then the regulator
+## 11. If we refuse — appeal, and then the regulator
 
 If we decline to act on your request we will tell you why, and we will give you a way to appeal. Appeal by replying to our decision, or by emailing **admin@prameya.legal** with "Appeal" in the subject line. **We will decide an appeal within 45 days of receiving it** and explain the reasons in writing.
 
@@ -120,7 +158,7 @@ Washington residents should also know that a violation of the My Health My Data 
 
 ---
 
-## 11. Changes to this policy
+## 12. Changes to this policy
 
 If we change this policy, we will update the "Last updated" date above and publish the new version at [prameyallc.github.io/privacy/omnisalub/health-data](https://prameyallc.github.io/privacy/omnisalub/health-data/).
 
@@ -128,7 +166,7 @@ If a change ever means we begin to collect consumer health data, we will say so 
 
 ---
 
-## 12. Contact
+## 13. Contact
 
 **admin@prameya.legal**
 Prameya LLC

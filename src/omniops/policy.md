@@ -1,7 +1,7 @@
 # OmniOps — Privacy Policy
 
-**Effective date:** 17 August 2026  
-**Last updated:** 21 August 2026  
+**Effective date:** 17 August 2026
+**Last updated:** 26 August 2026  
 **Publisher:** Prameya LLC (“Prameya”, “we”, “us”)  
 **App:** OmniOps for iPhone, iPad, Mac and Apple Vision Pro — bundle ID `legal.prameya.OmniOps`  
 **Contact:** admin@prameya.legal  
@@ -31,6 +31,61 @@ The compiled root is four tabs (Act / Understand / Do / More) plus the on-screen
 disclaimer (educational + habit support; not consulting / audit / certification).
 Understand reads on-device knowledge packs. Do writes a local journal. Nothing is
 uploaded to us.
+
+---
+
+## Available tiers
+
+OmniOps offers three subscription tiers:
+
+| Tier | Price | What it unlocks |
+|---|---|---|
+| **Professional** | $39/year | Core process frameworks, basic habit tracking, foundational knowledge packs |
+| **Practice** | $99/year | Professional features + advanced frameworks, extended habit tracking, all 19 knowledge packs |
+| **Firm** | $199/year | Practice features + multi-project support, team-oriented decision logs, advanced reflection tools |
+
+**Your subscription tier controls which features and knowledge packs are available to you. It does not control what data is collected.** OmniOps transmits nothing to Prameya in any tier. No journal entries, decisions, reflections, or habit logs leave your device, regardless of which tier you subscribe to.
+
+## What Apple receives
+
+When you subscribe through the App Store:
+
+- **Apple processes the purchase**, not Prameya. Apple receives your payment information, processes the transaction, and manages the subscription lifecycle.
+- **We receive an anonymized transaction record** from Apple's StoreKit framework indicating that a subscription was purchased or renewed. This record contains a transaction identifier, the product identifier (e.g., `professional_annual`, `practice_annual`, `firm_annual`), and a timestamp. It does **not** contain your name, email address, payment details, or Apple ID.
+- **We cannot connect that transaction to anything you log in the app.** The StoreKit transaction lives in the app's local database alongside your journal data, but we never receive either one.
+
+Apple's handling of App Store purchases is governed by Apple's privacy policy, not this one. See [apple.com/legal/privacy](https://www.apple.com/legal/privacy/).
+
+## Data linked to you
+
+From Apple's perspective, your App Store purchase history is linked to your Apple ID. Apple knows you bought a subscription to OmniOps Professional, Practice, or Firm.
+
+From Prameya's perspective, **nothing is linked to you**, because we hold no account, no identifier, and no copy of your journal entries, decisions, reflections, or purchase record. We cannot identify you, we cannot connect a transaction to a person, and we cannot see what you entered into the app.
+
+## Free vs paid tier data collection
+
+**OmniOps does not offer a free tier**, but the principle remains the same across all three paid tiers: **the tier you choose does not change what data Prameya collects.** In all three tiers (Professional, Practice, Firm):
+
+- Your process journal (work, decisions, reflections, habits) stays on your device
+- No analytics, tracking, or telemetry
+- No server that receives your content
+- No account or login
+
+The difference between tiers is **feature access and knowledge pack availability**, not data handling. Firm unlocks advanced multi-project tools; it does not unlock data transmission.
+
+## Cancellation and refunds
+
+Subscriptions are managed entirely through your Apple ID:
+
+- **To cancel:** Open Settings on your iPhone or iPad → tap your name → Subscriptions → OmniOps → Cancel Subscription. On Mac, open the App Store app → Account (sign-in name) → View Information → Subscriptions → Manage. On Apple Vision Pro, open Settings → your name → Subscriptions → OmniOps → Cancel Subscription.
+- **Refund requests:** Handled by Apple, not Prameya. See [reportaproblem.apple.com](https://reportaproblem.apple.com/) or contact Apple Support. We have no access to your payment information and cannot issue refunds ourselves.
+- **What happens to your data when you cancel:** Nothing. Your on-device journal stays on your device. Canceling a subscription removes access to tier-specific features and knowledge packs; it does not delete your journal entries, decisions, or reflections. The app may revert to read-only mode or a base Professional tier, depending on implementation.
+
+## StoreKit transaction data
+
+The anonymized StoreKit transaction record described above is stored in the app's local database on your device. It is used to determine which features and knowledge packs to unlock. It is never uploaded to Prameya, and it is deleted when you delete the app (including the sandbox container on Mac at `~/Library/Containers/legal.prameya.OmniOps`).
+
+If you restore purchases on a new device (by tapping "Restore Purchases" in the app), StoreKit queries Apple's servers to retrieve your active subscriptions. That communication is between your device and Apple; Prameya is not involved and sees nothing from it.
 
 ---
 

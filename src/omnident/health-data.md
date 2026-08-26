@@ -76,6 +76,43 @@ One honest limit on that last point: OmniDent does not mark its scan folder as e
 
 ---
 
+## Subscription tiers and consumer health data
+
+### No new collection when you subscribe
+
+OmniDent offers paid subscription tiers (Plus and Premium) in addition to the free tier. **Upgrading does NOT trigger new consumer health data collection.**
+
+All three tiers:
+- Process the same categories of consumer health data (listed above)
+- Use consumer health data for the same purpose (operating features you choose to use)
+- Store data in the same location (on your device)
+- Transmit data to the same recipients (none — no health data leaves your device)
+
+**Subscription unlocks features like longer history retention and additional export formats. It does not change what data is collected, how it is processed, or where it goes.**
+
+### What changes between tiers
+
+| What subscription affects | What subscription does NOT affect |
+|---------------------------|-----------------------------------|
+| How long scan history is retained (30 days vs unlimited) | Whether photos are analyzed (yes in all tiers) |
+| Which export formats are available (none, PDF/JSON, or PDF/JSON/FHIR) | Where photos are stored (on-device in all tiers) |
+| Whether CloudKit syncs preferences (off, on, or on) | Whether health data syncs to iCloud (never, in any tier) |
+| Whether trend analytics are shown | What the AI can detect or describe |
+
+### StoreKit data is not consumer health data
+
+When you purchase a subscription, the app receives a transaction ID, product ID, and purchase/expiration dates from Apple's StoreKit. **These are payment records, not consumer health data** under RCW 19.373.010.
+
+StoreKit transaction data:
+- Does not identify your health status, condition, disease, or treatment
+- Is used only to unlock tier-appropriate features
+- Is stored locally on your device (not synced to iCloud)
+- Is deleted when you use "Delete All Data"
+
+Apple separately processes your Apple Account ID and payment method when you subscribe. That processing is governed by Apple's terms, not ours.
+
+---
+
 ## Consumer health data that is shared, and with whom
 
 RCW 19.373.020(1)(a)(iii) requires the categories of consumer health data shared, and (1)(a)(iv) requires a list of the categories of third parties and the specific affiliates we share it with.

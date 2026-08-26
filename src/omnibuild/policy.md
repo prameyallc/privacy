@@ -37,6 +37,64 @@ OmniBuild is educational software. It is not contracting, engineering, architect
 
 ---
 
+## Available tiers
+
+OmniBuild offers four subscription tiers:
+
+| Tier | Price | What it unlocks |
+|---|---|---|
+| **Free** | $0 | Federal building codes (IBC, IRC, NEC, NFPA) |
+| **Basic** | $29/year | Federal codes + 1 state building code of your choice |
+| **Pro** | $99/year | Federal codes + up to 5 state building codes |
+| **Expert** | $199/year | Federal codes + all 50 state building codes |
+
+**Your subscription tier controls which building code references you can read. It does not control what project data is collected.** Whether you use the free tier or subscribe to Expert, OmniBuild transmits nothing to Prameya. No project logs, maintenance records, or decision entries leave your device in any tier.
+
+The subscription unlocks **content access**, not data collection. An Expert subscriber can read California, Texas, and New York codes; a free user cannot. That difference is about which reference material the app displays, not about what happens to the logs you keep.
+
+## What Apple receives
+
+When you subscribe through the App Store:
+
+- **Apple processes the purchase**, not Prameya. Apple receives your payment information, processes the transaction, and manages the subscription lifecycle.
+- **We receive an anonymized transaction record** from Apple's StoreKit framework indicating that a subscription was purchased or renewed. This record contains a transaction identifier, the product identifier (e.g., `pro_annual`, `expert_annual`), and a timestamp. It does **not** contain your name, email address, payment details, or Apple ID.
+- **We cannot connect that transaction to anything you log in the app.** The StoreKit transaction lives in the app's local database alongside your project logs, but we never receive either one.
+
+Apple's handling of App Store purchases is governed by Apple's privacy policy, not this one. See [apple.com/legal/privacy](https://www.apple.com/legal/privacy/).
+
+## Data linked to you
+
+From Apple's perspective, your App Store purchase history is linked to your Apple ID. Apple knows you bought a subscription to OmniBuild Pro or Expert.
+
+From Prameya's perspective, **nothing is linked to you**, because we hold no account, no identifier, and no copy of your project logs, maintenance records, decision entries, or purchase record. We cannot identify you, we cannot connect a transaction to a person, and we cannot see what you entered into the app.
+
+## Free vs paid tier data collection
+
+**The tier you choose does not change what data Prameya collects from OmniBuild.** In all four tiers (Free, Basic, Pro, Expert):
+
+- Your project logs, maintenance logs, decision entries, and profile stay on your device
+- No analytics, tracking, or telemetry
+- No server that receives your content
+- No account or login
+
+The difference between tiers is **which building codes you can read**, not data handling. Expert unlocks all 50 state codes; it does not unlock data transmission.
+
+## Cancellation and refunds
+
+Subscriptions are managed entirely through your Apple ID:
+
+- **To cancel:** Open Settings on your iPhone or iPad → tap your name → Subscriptions → OmniBuild → Cancel Subscription.
+- **Refund requests:** Handled by Apple, not Prameya. See [reportaproblem.apple.com](https://reportaproblem.apple.com/) or contact Apple Support. We have no access to your payment information and cannot issue refunds ourselves.
+- **What happens to your data when you cancel:** Nothing. Your on-device logs stay on your device. Canceling a subscription removes access to paid-tier building codes; it does not delete your project logs or maintenance records. The app reverts to the free tier, and federal codes remain accessible.
+
+## StoreKit transaction data
+
+The anonymized StoreKit transaction record described above is stored in the app's local database on your device. It is used to determine which building code references to unlock. It is never uploaded to Prameya, and it is deleted when you delete the app or use the "Clear All My Logs & Decisions" control in Settings.
+
+If you restore purchases on a new device (by tapping "Restore Purchases" in the app), StoreKit queries Apple's servers to retrieve your active subscriptions. That communication is between your device and Apple; Prameya is not involved and sees nothing from it.
+
+---
+
 ## Information the app stores on your device
 
 Everything in this table lives in OmniBuild's own storage area on your device. None of it is sent to Prameya.

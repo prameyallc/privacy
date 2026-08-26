@@ -68,6 +68,45 @@ There are no other sources. We do not buy data, rent data, receive data from dat
 
 **Nothing is used to train AI.** The shipping app does not run a generate path and does not download a model. If that gated surface ever opened, weights would already be trained; your journal would not update them.
 
+---
+
+## Subscription tiers and consumer health data
+
+### No new collection when you subscribe
+
+OmniDerm offers paid subscription tiers (Plus and Premium) in addition to the free tier. **Upgrading does NOT trigger new consumer health data collection.**
+
+All three tiers:
+- Process the same categories of consumer health data (listed above)
+- Use consumer health data for the same purpose (operating features you choose to use)
+- Store data in the same location (on your device)
+- Transmit data to the same recipients (none — no health data leaves your device)
+
+**Subscription unlocks features like longer history retention and additional export formats. It does not change what data is collected, how it is processed, or where it goes.**
+
+### What changes between tiers
+
+| What subscription affects | What subscription does NOT affect |
+|---------------------------|-----------------------------------|
+| How long history is retained (30 days vs unlimited) | Whether journal photos are saved (yes in all tiers, on-device) |
+| Which export formats are available (none, PDF/JSON, or PDF/JSON/FHIR) | Where photos are stored (on-device in all tiers) |
+| Whether CloudKit syncs preferences (off, preferences only, or preferences only) | Whether health data syncs to iCloud (never, in any tier) |
+| Whether advanced analytics are shown | What categories of consumer health data are collected |
+
+### StoreKit data is not consumer health data
+
+When you purchase a subscription, the app receives a transaction ID, product ID, and purchase/expiration dates from Apple's StoreKit. **These are payment records, not consumer health data** under RCW 19.373.010.
+
+StoreKit transaction data:
+- Does not identify your health status, condition, disease, or treatment
+- Is used only to unlock tier-appropriate features
+- Is stored locally on your device (not synced to iCloud)
+- Is deleted when you use "Delete All Data"
+
+Apple separately processes your Apple Account ID and payment method when you subscribe. That processing is governed by Apple's terms, not ours.
+
+---
+
 ## 4. Categories of consumer health data that are shared
 
 **None.**

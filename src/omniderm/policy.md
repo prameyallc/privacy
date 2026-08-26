@@ -50,6 +50,73 @@ If you notice a new spot, a changing spot, or anything that worries you, see a l
 
 ---
 
+## Subscriptions and In-App Purchases
+
+### Available tiers
+
+OmniDerm offers three tiers:
+
+| Feature | Free | Plus ($9.99/mo or $99/yr) | Premium ($19.99/mo or $199/yr) |
+|---------|------|---------------------------|--------------------------------|
+| Tracking History | 30 days | Unlimited | Unlimited |
+| Journal Entries | Limited | Unlimited | Unlimited |
+| Data Export | None | PDF/JSON | PDF/JSON/FHIR |
+| CloudKit Sync | None | Preferences only | Preferences only |
+| Analytics | Current values | 30-day trends | Advanced correlations |
+
+**Critical: Journal photos NEVER sync in any tier.** This is required by Apple Guideline 5.1.3(ii). Photos stay on-device in Free, Plus, and Premium tiers.
+
+### What Apple receives
+
+All transactions go through Apple's App Store. When you subscribe:
+- **Apple receives:** Your Apple Account ID, payment method, transaction details
+- **Prameya receives:** A transaction ID from StoreKit, subscription status (active/expired), tier purchased
+- **Prameya does NOT receive:** Your name, email, payment card details, or Apple Account credentials
+
+### Data Linked to You
+
+Apple's privacy labels mark Purchase History as "Data Linked to User" for subscribers.
+
+**This does NOT mean your health data leaves your device.** Journal photos, habit logs, and health notes remain on-device only. StoreKit tells us you're a paying subscriber so we can unlock features — it does not transmit your photos, your journal entries, or any health information.
+
+### Free vs paid tier data collection
+
+**Both tiers process the same consumer health data** (listed in the [Consumer Health Data Privacy Policy](https://prameyallc.github.io/privacy/omniderm/health-data/)).
+
+- **Free tier:** Journal photos stored on-device, 30-day history limit, habits logged locally
+- **Plus/Premium tier:** Journal photos stored on-device (same location), unlimited history, habits logged locally, enhanced export formats
+
+In both tiers:
+- Photos stay on your device
+- No health data syncs to iCloud
+- No transmission of photos or journal entries to Prameya
+- Same on-device processing
+
+**Subscription unlocks features. It does not change what data is collected or where it goes.**
+
+### Cancellation and refunds
+
+Subscriptions are managed by Apple:
+- **Cancel:** iOS Settings → your name → Subscriptions → OmniDerm
+- **Refund requests:** reportaproblem.apple.com
+
+Prameya cannot cancel your subscription or issue refunds. Apple controls all billing.
+
+### StoreKit transaction data
+
+When you purchase a subscription, the app receives and stores locally on your device:
+- Transaction ID (an opaque identifier from Apple)
+- Product ID (which tier you purchased)
+- Purchase and expiration dates
+
+This data:
+- Is stored only on your device
+- Is NOT synced to iCloud
+- Is used only to unlock tier-appropriate features
+- Is deleted when you use "Delete All Data"
+
+---
+
 ## Your skin photos
 
 Two different things used to be described as if they were one. They are not.

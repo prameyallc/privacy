@@ -86,6 +86,71 @@ When you export a risk report, you choose where the PDF is saved. OmniLex writes
 
 ---
 
+## Subscriptions and In-App Purchases
+
+### Available tiers
+
+OmniLex offers three annual subscription tiers:
+
+| Feature | Clerk ($49/yr) | Associate ($149/yr) | Partner ($299/yr) |
+|---------|----------------|---------------------|-------------------|
+| Document Templates | Basic set | Extended set | Complete library |
+| Legal Research Access | Limited | Standard | Comprehensive |
+| Citation Tools | Basic | Advanced | Professional |
+| CloudKit Sync | Preferences only | Preferences + notes | Full sync |
+| Export Formats | PDF | PDF, DOCX | PDF, DOCX, RTF |
+
+### What Apple receives
+
+All transactions go through Apple's App Store. When you subscribe:
+- **Apple receives:** Your Apple Account ID, payment method, transaction details
+- **Prameya receives:** A transaction ID from StoreKit, subscription status (active/expired), tier purchased
+- **Prameya does NOT receive:** Your name, email, payment card details, or Apple Account credentials
+
+### Data Linked to You
+
+Apple's privacy labels mark Purchase History as "Data Linked to User" for subscribers.
+
+**This does NOT mean your legal documents are transmitted.** Documents, notes, and research history remain on-device only (or in your iCloud if you enable sync). StoreKit tells us you're a paying subscriber so we can unlock features — it does not transmit your documents or work product.
+
+### Subscription tier data collection
+
+**All tiers collect the same types of data** (documents you create, research queries, usage history).
+
+The difference is:
+- **What features are available** (template library size, research depth, export formats)
+- **Whether notes sync between devices** (varies by tier)
+
+In all tiers:
+- Documents stay on your device (or in your iCloud if enabled)
+- No transmission of documents or notes to Prameya
+- No analytics or tracking
+
+**Subscription unlocks professional features. It does not change what data is collected.**
+
+### Cancellation and refunds
+
+Subscriptions are managed by Apple:
+- **Cancel:** iOS Settings → your name → Subscriptions → OmniLex
+- **Refund requests:** reportaproblem.apple.com
+
+Prameya cannot cancel your subscription or issue refunds. Apple controls all billing.
+
+### StoreKit transaction data
+
+When you purchase a subscription, the app receives and stores locally on your device:
+- Transaction ID (an opaque identifier from Apple)
+- Product ID (which tier you purchased)
+- Purchase and expiration dates
+
+This data:
+- Is stored only on your device
+- Is NOT synced to iCloud
+- Is used only to unlock tier-appropriate features
+- Is deleted when you use "Delete All Data"
+
+---
+
 ## When OmniLex uses the network
 
 ### Downloading the AI model

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>OmniRx Privacy Policy — Prameya LLC</title>
-<meta name="description" content="Effective date: 23 August 2026">
+<meta name="description" content="Effective date: 26 August 2026">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://prameyallc.github.io/privacy/omnirx/">
 <style>
@@ -93,7 +93,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 </div></header>
 <main id="main" class="wrap">
 <h1 id="omnirx-privacy-policy">OmniRx Privacy Policy</h1>
-<p><strong>Effective date:</strong> 23 August 2026<br />
+<p><strong>Effective date:</strong> 26 August 2026<br />
 <strong>App:</strong> OmniRx (iOS)<br />
 <strong>Publisher:</strong> Prameya LLC ("Prameya", "we", "us"), a US limited liability company<br />
 <strong>Contact:</strong> admin@prameya.legal</p>
@@ -139,6 +139,88 @@ whether you took your doses and what got in the way.</p>
 <li>give you advice about your own specific medicines.</li>
 </ul>
 <p>It is not a substitute for a licensed pharmacist or physician.</p>
+<hr />
+<h2 id="subscriptions-and-in-app-purchases">Subscriptions and In-App Purchases</h2>
+<h3 id="available-tiers">Available tiers</h3>
+<p>OmniRx offers three tiers:</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Free</th>
+<th>Plus ($9.99/mo or $99/yr)</th>
+<th>Premium ($19.99/mo or $199/yr)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tracking History</td>
+<td>30 days</td>
+<td>Unlimited</td>
+<td>Unlimited</td>
+</tr>
+<tr>
+<td>Medication Logs</td>
+<td>Limited</td>
+<td>Unlimited</td>
+<td>Unlimited</td>
+</tr>
+<tr>
+<td>Data Export</td>
+<td>None</td>
+<td>PDF/JSON</td>
+<td>PDF/JSON/FHIR</td>
+</tr>
+<tr>
+<td>CloudKit Sync</td>
+<td>None</td>
+<td>Preferences only</td>
+<td>Preferences only</td>
+</tr>
+<tr>
+<td>Analytics</td>
+<td>Current values</td>
+<td>30-day trends</td>
+<td>Advanced correlations</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Critical: Medication data NEVER syncs to iCloud in any tier.</strong> All tiers store medication logs on-device only.</p>
+<h3 id="what-apple-receives">What Apple receives</h3>
+<p>All transactions go through Apple's App Store. When you subscribe:<br />
+- <strong>Apple receives:</strong> Your Apple Account ID, payment method, transaction details<br />
+- <strong>Prameya receives:</strong> A transaction ID from StoreKit, subscription status (active/expired), tier purchased<br />
+- <strong>Prameya does NOT receive:</strong> Your name, email, payment card details, or Apple Account credentials</p>
+<h3 id="data-linked-to-you">Data Linked to You</h3>
+<p>Apple's privacy labels mark Purchase History as "Data Linked to User" for subscribers.</p>
+<p><strong>This does NOT mean your health data leaves your device.</strong> Medication logs, adherence data, and journal entries remain on-device only. StoreKit tells us you're a paying subscriber so we can unlock features — it does not transmit your medication logs or any health information.</p>
+<h3 id="free-vs-paid-tier-data-collection">Free vs paid tier data collection</h3>
+<p><strong>Both tiers process the same consumer health data</strong> (listed in the <a href="https://prameyallc.github.io/privacy/omnirx/health-data/">Consumer Health Data Privacy Policy</a>).</p>
+<ul>
+<li><strong>Free tier:</strong> Medication logs stored on-device, 30-day history limit</li>
+<li><strong>Plus/Premium tier:</strong> Medication logs stored on-device (same location), unlimited history, enhanced export formats</li>
+</ul>
+<p>In both tiers:<br />
+- Medication logs stay on your device<br />
+- No health data syncs to iCloud<br />
+- No transmission of logs or adherence data to Prameya<br />
+- Same on-device processing</p>
+<p><strong>Subscription unlocks features. It does not change what data is collected or where it goes.</strong></p>
+<h3 id="cancellation-and-refunds">Cancellation and refunds</h3>
+<p>Subscriptions are managed by Apple:<br />
+- <strong>Cancel:</strong> iOS Settings → your name → Subscriptions → OmniRx<br />
+- <strong>Refund requests:</strong> reportaproblem.apple.com</p>
+<p>Prameya cannot cancel your subscription or issue refunds. Apple controls all billing.</p>
+<h3 id="storekit-transaction-data">StoreKit transaction data</h3>
+<p>When you purchase a subscription, the app receives and stores locally on your device:<br />
+- Transaction ID (an opaque identifier from Apple)<br />
+- Product ID (which tier you purchased)<br />
+- Purchase and expiration dates</p>
+<p>This data:<br />
+- Is stored only on your device<br />
+- Is NOT synced to iCloud<br />
+- Is used only to unlock tier-appropriate features<br />
+- Is deleted when you use "Delete All Data"</p>
 <hr />
 <h2 id="what-data-omnirx-handles-and-where-it-lives">What data OmniRx handles, and where it lives</h2>
 <h3 id="data-you-create-in-the-app">Data you create in the app</h3>
@@ -242,7 +324,7 @@ call, no license check.</p>
 <li><strong>Microphone:</strong> not used, and no permission is requested.</li>
 <li><strong>Location:</strong> not used. No geofencing of any kind, anywhere.</li>
 <li><strong>Contacts, calendars, messages:</strong> not used.</li>
-<li><strong>In-app purchases or payments:</strong> none.</li>
+<li><strong>In-app purchases or payments:</strong> Optional subscriptions (Plus, Premium) processed by Apple. See <a href="#subscriptions-and-in-app-purchases">Subscriptions and In-App Purchases</a> above.</li>
 <li><strong>Data brokers:</strong> we buy nothing and sell nothing.</li>
 </ul>
 <h3 id="apple-health-healthkit">Apple Health (HealthKit)</h3>
@@ -423,10 +505,16 @@ out of those laws, and you should not read our App Store label as saying we did.
 top. Meaningful changes — a new network connection, a new permission, anything involving your health<br />
 data — will be described in a short summary of what changed, at the top of this page, and will be<br />
 announced in the app's release notes.</p>
-<p><strong>What changed in this revision (23 August 2026):</strong> short and long versions now agree. Settings<br />
-offers one optional daily reminder (lock screen says “Reminder”). There is no Hugging Face / on-device<br />
-model download in the shipping app. The 8 August 2026 sentences that said the app “schedules no<br />
-reminders” were wrong for this binary and are removed.</p>
+<p><strong>What changed in this revision (26 August 2026):</strong> this revision adds subscription disclosures for<br />
+Plus and Premium tiers. OmniRx now offers paid subscriptions ($9.99/mo or $99/yr for Plus,<br />
+$19.99/mo or $199/yr for Premium) processed through Apple's App Store. Subscription unlocks features<br />
+like unlimited history and enhanced export formats, but does not change what consumer health data is<br />
+collected or where it goes. Medication logs remain on-device only in all tiers. The "In-app purchases<br />
+or payments" line is updated to reflect that subscriptions are now available.</p>
+<p><strong>What changed in the 23 August 2026 revision:</strong> short and long versions now agree. Settings<br />
+offers one optional daily reminder (lock screen says "Reminder"). There is no Hugging Face / on-device<br />
+model download in the shipping app. The 8 August 2026 sentences that said the app "schedules no<br />
+reminders" were wrong for this binary and are removed.</p>
 <p>If a change would require your consent under a law that applies to you, we will ask for it before the<br />
 change takes effect, not after.</p>
 <p>Older versions of this policy are available on request from <strong>admin@prameya.legal</strong>.</p>
@@ -446,7 +534,7 @@ Email: <strong>admin@prameya.legal</strong></p>
 <footer class="site"><div class="wrap">
   <p>Prameya LLC · <a href="mailto:admin@prameya.legal">admin@prameya.legal</a>
   · <a href="https://prameyallc.github.io/privacy/support/">Support</a></p>
-  <p>Effective 23 August 2026. <a href="https://prameyallc.github.io/privacy/">All app privacy policies</a></p>
+  <p>Effective 26 August 2026. <a href="https://prameyallc.github.io/privacy/">All app privacy policies</a></p>
 </div></footer>
 </body>
 </html>

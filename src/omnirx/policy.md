@@ -1,6 +1,6 @@
 # OmniRx Privacy Policy
 
-**Effective date:** 23 August 2026
+**Effective date:** 26 August 2026
 **App:** OmniRx (iOS)
 **Publisher:** Prameya LLC ("Prameya", "we", "us"), a US limited liability company
 **Contact:** admin@prameya.legal
@@ -56,6 +56,73 @@ OmniRx does **not**:
 - give you advice about your own specific medicines.
 
 It is not a substitute for a licensed pharmacist or physician.
+
+---
+
+## Subscriptions and In-App Purchases
+
+### Available tiers
+
+OmniRx offers three tiers:
+
+| Feature | Free | Plus ($9.99/mo or $99/yr) | Premium ($19.99/mo or $199/yr) |
+|---------|------|---------------------------|--------------------------------|
+| Tracking History | 30 days | Unlimited | Unlimited |
+| Medication Logs | Limited | Unlimited | Unlimited |
+| Data Export | None | PDF/JSON | PDF/JSON/FHIR |
+| CloudKit Sync | None | Preferences only | Preferences only |
+| Analytics | Current values | 30-day trends | Advanced correlations |
+
+**Critical: Medication data NEVER syncs to iCloud in any tier.** All tiers store medication logs on-device only.
+
+### What Apple receives
+
+All transactions go through Apple's App Store. When you subscribe:
+- **Apple receives:** Your Apple Account ID, payment method, transaction details
+- **Prameya receives:** A transaction ID from StoreKit, subscription status (active/expired), tier purchased
+- **Prameya does NOT receive:** Your name, email, payment card details, or Apple Account credentials
+
+### Data Linked to You
+
+Apple's privacy labels mark Purchase History as "Data Linked to User" for subscribers.
+
+**This does NOT mean your health data leaves your device.** Medication logs, adherence data, and journal entries remain on-device only. StoreKit tells us you're a paying subscriber so we can unlock features — it does not transmit your medication logs or any health information.
+
+### Free vs paid tier data collection
+
+**Both tiers process the same consumer health data** (listed in the [Consumer Health Data Privacy Policy](https://prameyallc.github.io/privacy/omnirx/health-data/)).
+
+- **Free tier:** Medication logs stored on-device, 30-day history limit
+- **Plus/Premium tier:** Medication logs stored on-device (same location), unlimited history, enhanced export formats
+
+In both tiers:
+- Medication logs stay on your device
+- No health data syncs to iCloud
+- No transmission of logs or adherence data to Prameya
+- Same on-device processing
+
+**Subscription unlocks features. It does not change what data is collected or where it goes.**
+
+### Cancellation and refunds
+
+Subscriptions are managed by Apple:
+- **Cancel:** iOS Settings → your name → Subscriptions → OmniRx
+- **Refund requests:** reportaproblem.apple.com
+
+Prameya cannot cancel your subscription or issue refunds. Apple controls all billing.
+
+### StoreKit transaction data
+
+When you purchase a subscription, the app receives and stores locally on your device:
+- Transaction ID (an opaque identifier from Apple)
+- Product ID (which tier you purchased)
+- Purchase and expiration dates
+
+This data:
+- Is stored only on your device
+- Is NOT synced to iCloud
+- Is used only to unlock tier-appropriate features
+- Is deleted when you use "Delete All Data"
 
 ---
 
@@ -161,7 +228,7 @@ One line each, because the honest answer is short.
 - **Microphone:** not used, and no permission is requested.
 - **Location:** not used. No geofencing of any kind, anywhere.
 - **Contacts, calendars, messages:** not used.
-- **In-app purchases or payments:** none.
+- **In-app purchases or payments:** Optional subscriptions (Plus, Premium) processed by Apple. See [Subscriptions and In-App Purchases](#subscriptions-and-in-app-purchases) above.
 - **Data brokers:** we buy nothing and sell nothing.
 
 ### Apple Health (HealthKit)
@@ -385,10 +452,17 @@ top. Meaningful changes — a new network connection, a new permission, anything
 data — will be described in a short summary of what changed, at the top of this page, and will be
 announced in the app's release notes.
 
-**What changed in this revision (23 August 2026):** short and long versions now agree. Settings
-offers one optional daily reminder (lock screen says “Reminder”). There is no Hugging Face / on-device
-model download in the shipping app. The 8 August 2026 sentences that said the app “schedules no
-reminders” were wrong for this binary and are removed.
+**What changed in this revision (26 August 2026):** this revision adds subscription disclosures for
+Plus and Premium tiers. OmniRx now offers paid subscriptions ($9.99/mo or $99/yr for Plus,
+$19.99/mo or $199/yr for Premium) processed through Apple's App Store. Subscription unlocks features
+like unlimited history and enhanced export formats, but does not change what consumer health data is
+collected or where it goes. Medication logs remain on-device only in all tiers. The "In-app purchases
+or payments" line is updated to reflect that subscriptions are now available.
+
+**What changed in the 23 August 2026 revision:** short and long versions now agree. Settings
+offers one optional daily reminder (lock screen says "Reminder"). There is no Hugging Face / on-device
+model download in the shipping app. The 8 August 2026 sentences that said the app "schedules no
+reminders" were wrong for this binary and are removed.
 
 If a change would require your consent under a law that applies to you, we will ask for it before the
 change takes effect, not after.

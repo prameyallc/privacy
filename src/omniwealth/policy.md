@@ -36,6 +36,60 @@ We mention this in a privacy policy for a reason: because the app gives no perso
 
 ---
 
+## Available tiers
+
+OmniWealth offers two tiers:
+
+| Tier | Price | What it unlocks |
+|---|---|---|
+| **Free** | $0 | Core educational content, daily habit checklist, envelope / budget log |
+| **Premium** | $99/year | Additional educational modules, advanced budgeting tools, extended habit tracking |
+
+**Your subscription tier controls which features are available to you. It does not control what data is collected.** Whether you use the free tier or subscribe to Premium, OmniWealth transmits nothing to Prameya. No user content leaves your device in either tier.
+
+## What Apple receives
+
+When you subscribe to Premium through the App Store:
+
+- **Apple processes the purchase**, not Prameya. Apple receives your payment information, processes the transaction, and manages the subscription lifecycle.
+- **We receive an anonymized transaction record** from Apple's StoreKit framework indicating that a subscription was purchased or renewed. This record contains a transaction identifier, the product identifier (e.g., `premium_annual`), and a timestamp. It does **not** contain your name, email address, payment details, or Apple ID.
+- **We cannot connect that transaction to anything you log in the app.** The StoreKit transaction lives in the app's local database alongside your other data, but we never receive either one.
+
+Apple's handling of App Store purchases is governed by Apple's privacy policy, not this one. See [apple.com/legal/privacy](https://www.apple.com/legal/privacy/).
+
+## Data linked to you
+
+From Apple's perspective, your App Store purchase history is linked to your Apple ID. Apple knows you bought a subscription to OmniWealth Premium.
+
+From Prameya's perspective, **nothing is linked to you**, because we hold no account, no identifier, and no copy of your habit logs, budget data, or purchase record. We cannot identify you, we cannot connect a transaction to a person, and we cannot see what you entered into the app.
+
+## Free vs paid tier data collection
+
+**The tier you choose does not change what data Prameya collects from OmniWealth.** In both the free tier and Premium:
+
+- Your habit logs, envelope entries, and compounding calculations stay on your device
+- No analytics, tracking, or telemetry
+- No server that receives your content
+- No account or login
+
+The difference between tiers is **feature access**, not data handling. Premium unlocks additional tools; it does not unlock data transmission.
+
+## Cancellation and refunds
+
+Subscriptions are managed entirely through your Apple ID:
+
+- **To cancel:** Open Settings on your iPhone or iPad → tap your name → Subscriptions → OmniWealth → Cancel Subscription. On Mac, open the App Store app → Account (sign-in name) → View Information → Subscriptions → Manage.
+- **Refund requests:** Handled by Apple, not Prameya. See [reportaproblem.apple.com](https://reportaproblem.apple.com/) or contact Apple Support. We have no access to your payment information and cannot issue refunds ourselves.
+- **What happens to your data when you cancel:** Nothing. Your on-device data stays on your device. Canceling a subscription removes access to Premium features; it does not delete your habit logs or budget entries.
+
+## StoreKit transaction data
+
+The anonymized StoreKit transaction record described above is stored in the app's local database on your device. It is used to determine which features to unlock. It is never uploaded to Prameya, and it is deleted when you delete the app or use the "Delete all data in this app" control in Settings.
+
+If you restore purchases on a new device (by tapping "Restore Purchases" in the app), StoreKit queries Apple's servers to retrieve your active subscriptions. That communication is between your device and Apple; Prameya is not involved and sees nothing from it.
+
+---
+
 ## What stays on your device
 
 Everything you enter into OmniWealth is stored locally on your device and stays there.

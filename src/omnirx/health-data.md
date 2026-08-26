@@ -77,6 +77,43 @@ will disclose the new category here and ask for your consent before collecting i
 
 ---
 
+## Subscription tiers and consumer health data
+
+### No new collection when you subscribe
+
+OmniRx offers paid subscription tiers (Plus and Premium) in addition to the free tier. **Upgrading does NOT trigger new consumer health data collection.**
+
+All three tiers:
+- Process the same categories of consumer health data (listed above)
+- Use consumer health data for the same purpose (showing your own information back to you and helping you prepare to talk to a pharmacist or physician)
+- Store data in the same location (on your device)
+- Transmit data to the same recipients (none — no health data leaves your device)
+
+**Subscription unlocks features like longer history retention and additional export formats. It does not change what data is collected, how it is processed, or where it goes.**
+
+### What changes between tiers
+
+| What subscription affects | What subscription does NOT affect |
+|---------------------------|-----------------------------------|
+| How long medication history is retained (30 days vs unlimited) | Whether medication logs are processed (yes in all tiers) |
+| Which export formats are available (none, PDF/JSON, or PDF/JSON/FHIR) | Where logs are stored (on-device in all tiers) |
+| Whether CloudKit syncs preferences (off, on, or on) | Whether health data syncs to iCloud (never, in any tier) |
+| Whether trend analytics are shown | What the app can track or calculate |
+
+### StoreKit data is not consumer health data
+
+When you purchase a subscription, the app receives a transaction ID, product ID, and purchase/expiration dates from Apple's StoreKit. **These are payment records, not consumer health data** under RCW 19.373.010.
+
+StoreKit transaction data:
+- Does not identify your health status, condition, disease, or treatment
+- Is used only to unlock tier-appropriate features
+- Is stored locally on your device (not synced to iCloud)
+- Is deleted when you use "Delete All Data"
+
+Apple separately processes your Apple Account ID and payment method when you subscribe. That processing is governed by Apple's terms, not ours.
+
+---
+
 ## Categories of sources
 
 There is one source: **you**, typing into the app on your own device.
@@ -310,9 +347,11 @@ affirmative consent.
 
 **What changed in this revision (August 24, 2026):** the app now offers per-record review,
 correction and deletion, and a complete per-field export, so sections 3 and 4 describe those
-controls instead of denying they exist. No category of consumer health data, no source, no
-recipient and no purpose changed, so the effective date is unchanged and no new consent is
-sought.
+controls instead of denying they exist. This revision also adds subscription tier disclosures
+(Plus and Premium tiers are now available), explaining that upgrading does not change what consumer
+health data is collected, how it is processed, or where it goes. No category of consumer health data,
+no source, no recipient and no purpose changed, so the effective date is unchanged and no new consent
+is sought.
 
 **What changed in this revision (August 8, 2026):** this version corrects statements so they match the
 code that actually ships. In particular: the right to delete described all-or-nothing deletion only,

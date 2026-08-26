@@ -131,6 +131,88 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <p>In practice this means the <strong>assessment</strong> screen cannot be opened in the shipping app. You can still save a journal photograph. Where Learn would offer a self-check of an image, you see an explanation of why that assessment is switched off instead.</p>
 <p>If you notice a new spot, a changing spot, or anything that worries you, see a licensed clinician. Do not use this app to decide not to.</p>
 <hr />
+<h2 id="subscriptions-and-in-app-purchases">Subscriptions and In-App Purchases</h2>
+<h3 id="available-tiers">Available tiers</h3>
+<p>OmniDerm offers three tiers:</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Free</th>
+<th>Plus ($9.99/mo or $99/yr)</th>
+<th>Premium ($19.99/mo or $199/yr)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tracking History</td>
+<td>30 days</td>
+<td>Unlimited</td>
+<td>Unlimited</td>
+</tr>
+<tr>
+<td>Journal Entries</td>
+<td>Limited</td>
+<td>Unlimited</td>
+<td>Unlimited</td>
+</tr>
+<tr>
+<td>Data Export</td>
+<td>None</td>
+<td>PDF/JSON</td>
+<td>PDF/JSON/FHIR</td>
+</tr>
+<tr>
+<td>CloudKit Sync</td>
+<td>None</td>
+<td>Preferences only</td>
+<td>Preferences only</td>
+</tr>
+<tr>
+<td>Analytics</td>
+<td>Current values</td>
+<td>30-day trends</td>
+<td>Advanced correlations</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Critical: Journal photos NEVER sync in any tier.</strong> This is required by Apple Guideline 5.1.3(ii). Photos stay on-device in Free, Plus, and Premium tiers.</p>
+<h3 id="what-apple-receives">What Apple receives</h3>
+<p>All transactions go through Apple's App Store. When you subscribe:<br />
+- <strong>Apple receives:</strong> Your Apple Account ID, payment method, transaction details<br />
+- <strong>Prameya receives:</strong> A transaction ID from StoreKit, subscription status (active/expired), tier purchased<br />
+- <strong>Prameya does NOT receive:</strong> Your name, email, payment card details, or Apple Account credentials</p>
+<h3 id="data-linked-to-you">Data Linked to You</h3>
+<p>Apple's privacy labels mark Purchase History as "Data Linked to User" for subscribers.</p>
+<p><strong>This does NOT mean your health data leaves your device.</strong> Journal photos, habit logs, and health notes remain on-device only. StoreKit tells us you're a paying subscriber so we can unlock features — it does not transmit your photos, your journal entries, or any health information.</p>
+<h3 id="free-vs-paid-tier-data-collection">Free vs paid tier data collection</h3>
+<p><strong>Both tiers process the same consumer health data</strong> (listed in the <a href="https://prameyallc.github.io/privacy/omniderm/health-data/">Consumer Health Data Privacy Policy</a>).</p>
+<ul>
+<li><strong>Free tier:</strong> Journal photos stored on-device, 30-day history limit, habits logged locally</li>
+<li><strong>Plus/Premium tier:</strong> Journal photos stored on-device (same location), unlimited history, habits logged locally, enhanced export formats</li>
+</ul>
+<p>In both tiers:<br />
+- Photos stay on your device<br />
+- No health data syncs to iCloud<br />
+- No transmission of photos or journal entries to Prameya<br />
+- Same on-device processing</p>
+<p><strong>Subscription unlocks features. It does not change what data is collected or where it goes.</strong></p>
+<h3 id="cancellation-and-refunds">Cancellation and refunds</h3>
+<p>Subscriptions are managed by Apple:<br />
+- <strong>Cancel:</strong> iOS Settings → your name → Subscriptions → OmniDerm<br />
+- <strong>Refund requests:</strong> reportaproblem.apple.com</p>
+<p>Prameya cannot cancel your subscription or issue refunds. Apple controls all billing.</p>
+<h3 id="storekit-transaction-data">StoreKit transaction data</h3>
+<p>When you purchase a subscription, the app receives and stores locally on your device:<br />
+- Transaction ID (an opaque identifier from Apple)<br />
+- Product ID (which tier you purchased)<br />
+- Purchase and expiration dates</p>
+<p>This data:<br />
+- Is stored only on your device<br />
+- Is NOT synced to iCloud<br />
+- Is used only to unlock tier-appropriate features<br />
+- Is deleted when you use "Delete All Data"</p>
+<hr />
 <h2 id="your-skin-photos">Your skin photos</h2>
 <p>Two different things used to be described as if they were one. They are not.</p>
 <p><strong>Journal photographs (shipping).</strong> You can attach a photo from your library to a journal entry. OmniDerm stores that JPEG on this device under Application Support (<code>OmniDerm/JournalPhotos</code>), excluded from device backup, never uploaded, never synced to iCloud by this app, and never assessed. Clear All Local Data deletes those files. The app does not ask for camera access — intake is Apple's photo picker only.</p>

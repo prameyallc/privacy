@@ -46,7 +46,74 @@ Two things in the shipping app are worth stating plainly, because they involve n
 
 ---
 
-## 2. Photographs of your mouth
+## 2. Subscriptions and In-App Purchases
+
+### Available tiers
+
+OmniDent offers three tiers:
+
+| Feature | Free | Plus ($9.99/mo or $99/yr) | Premium ($19.99/mo or $199/yr) |
+|---------|------|---------------------------|--------------------------------|
+| Tracking History | 30 days | Unlimited | Unlimited |
+| Photo Analysis | On-device AI | On-device AI | On-device AI |
+| Data Export | None | PDF/JSON | PDF/JSON/FHIR |
+| CloudKit Sync | None | Preferences + scan log | Preferences + scan log |
+| Analytics | Current values | 30-day trends | Advanced correlations |
+
+**Critical: AI features are identical across all tiers.** Photo analysis runs on your device in all tiers. Subscription tiers do not affect what the AI can do, only how long history is kept and what export formats are available.
+
+### What Apple receives
+
+All transactions go through Apple's App Store. When you subscribe:
+- **Apple receives:** Your Apple Account ID, payment method, transaction details
+- **Prameya receives:** A transaction ID from StoreKit, subscription status (active/expired), tier purchased
+- **Prameya does NOT receive:** Your name, email, payment card details, or Apple Account credentials
+
+### Data Linked to You
+
+Apple's privacy labels mark Purchase History as "Data Linked to User" for subscribers.
+
+**This does NOT mean your health data leaves your device.** Photographs, analysis results, and your oral-health profile remain on-device only. StoreKit tells us you're a paying subscriber so we can unlock features — it does not transmit your photos, your scans, or any health information.
+
+### Free vs paid tier data collection
+
+**Both tiers process the same consumer health data** (listed in the [Consumer Health Data Privacy Policy](https://prameyallc.github.io/privacy/omnident/health-data/)).
+
+- **Free tier:** Photos analyzed on-device, 30-day history limit, habits logged locally
+- **Plus/Premium tier:** Photos analyzed on-device (same AI), unlimited history, habits logged locally, enhanced export formats
+
+In both tiers:
+- Photos stay on your device
+- No health data syncs to iCloud
+- No transmission of photos or analysis to Prameya
+- Same AI models, same on-device processing
+
+**Subscription unlocks features. It does not change what data is collected or where it goes.**
+
+### Cancellation and refunds
+
+Subscriptions are managed by Apple:
+- **Cancel:** iOS Settings → your name → Subscriptions → OmniDent
+- **Refund requests:** reportaproblem.apple.com
+
+Prameya cannot cancel your subscription or issue refunds. Apple controls all billing.
+
+### StoreKit transaction data
+
+When you purchase a subscription, the app receives and stores locally on your device:
+- Transaction ID (an opaque identifier from Apple)
+- Product ID (which tier you purchased)
+- Purchase and expiration dates
+
+This data:
+- Is stored only on your device
+- Is NOT synced to iCloud
+- Is used only to unlock tier-appropriate features
+- Is deleted when you use "Delete All Data"
+
+---
+
+## 3. Photographs of your mouth
 
 Photographs of a person's mouth are sensitive. Here is exactly what happens to them.
 
@@ -86,7 +153,7 @@ Some screens let you attach a photo from your library to an on-device chat. That
 
 ---
 
-## 3. The on-device AI, and the one thing it downloads
+## 4. The on-device AI, and the one thing it downloads
 
 ### Analysis happens on your device
 
@@ -112,7 +179,7 @@ Hugging Face is not our processor and receives nothing about you from us. Your c
 
 ---
 
-## 4. Sign in with Apple, and how to delete your account
+## 5. Sign in with Apple, and how to delete your account
 
 Signing in is **optional**. OmniDent works fully without it.
 
@@ -142,12 +209,21 @@ You can also sign out without deleting, which clears the Keychain entries on tha
 
 ---
 
-## 5. iCloud sync
+## 6. iCloud sync — what is excluded
 
 OmniDent can sync a small amount of data between your own devices using **CloudKit**, Apple's iCloud service. Two things are true of this and both matter:
 
 1. The data goes into **your private iCloud database**, inside your own Apple Account. It does not go to Prameya. We cannot read it. We have no CloudKit administrative access to your private database.
-2. **Only non-health data syncs.** Your photographs, your analysis results, your oral-health profile and your habit history do not sync. They stay on the device that created them.
+2. **No health data syncs.** Your photographs, your analysis results, your oral-health profile and your habit history do not sync. They stay on the device that created them.
+
+### Why health data is excluded
+
+**This is required by Apple Guideline 5.1.3(ii)**, which prohibits storing personal health information in iCloud. OmniDent complies:
+
+1. The health database is created with `cloudKitDatabase: .none`
+2. Photographs, analysis results, and oral-health profile are excluded from the sync schema
+3. An automated test (`CloudKitBoundaryTests`) fails the build if any health record type is added to the sync container
+4. If the exclusion list ever drifts, sync switches itself off entirely rather than transmit something it should not
 
 What syncs:
 
@@ -167,7 +243,7 @@ Because sync uses CloudKit, iOS uses Apple's push service to tell the app that s
 
 ---
 
-## 6. Apple Health
+## 7. Apple Health
 
 Apple Health integration is **off until you turn it on** and grant permission through iOS.
 
@@ -182,7 +258,7 @@ OmniDent does not request access to Health Records (clinical records from a prov
 
 ---
 
-## 7. Everything the app sends over the network — the complete list
+## 8. Everything the app sends over the network — the complete list
 
 | Destination | What goes there | When | Contains your content? |
 |---|---|---|---|
@@ -206,7 +282,7 @@ Almost nothing, and none of it from the app:
 
 ---
 
-## 8. Things we do not do
+## 9. Things we do not do
 
 One line each, because the honest answer is short.
 
@@ -223,7 +299,7 @@ One line each, because the honest answer is short.
 
 ---
 
-## 9. Retention, export and deletion
+## 10. Retention, export and deletion
 
 **Retention.** Because your content lives on your device, you decide how long it is kept. We impose no retention period because we hold nothing to retain. If you delete the app, iOS deletes its container and everything in it. Data synced to your private iCloud database is removed when you delete your account in the app, or when you delete the app's iCloud data from iOS Settings → your name → iCloud.
 
@@ -257,7 +333,7 @@ If you want help with any of this, or you want us to confirm in writing that we 
 
 ---
 
-## 10. Security
+## 11. Security
 
 - Photographs and app data are stored with iOS Data Protection at the Complete level — encrypted at rest and inaccessible while the device is locked.
 - Your Apple sign-in identifier, name and email are stored in the iOS Keychain.
@@ -268,17 +344,17 @@ The strongest security property here is structural rather than technical: **ther
 
 ---
 
-## 11. Children
+## 12. Children
 
 OmniDent is intended for adults. It is not directed to children, we do not knowingly collect personal information from a child under 13, and there is no sign-up flow, no advertising, no analytics and no social feature through which a child's information could be collected or shared.
 
-The Children's Online Privacy Protection Act (COPPA) applies to operators of services directed to children under 13, or who have actual knowledge that they are collecting personal information from a child under 13. We believe neither applies to OmniDent. That said, oral hygiene is a subject parents share with children. If you believe a child under 13 has provided information through this app, write to admin@prameya.legal and we will help you remove it — although in almost every case the answer is that the information is on your own device and you can delete it yourself in seconds using the controls in section 9.
+The Children's Online Privacy Protection Act (COPPA) applies to operators of services directed to children under 13, or who have actual knowledge that they are collecting personal information from a child under 13. We believe neither applies to OmniDent. That said, oral hygiene is a subject parents share with children. If you believe a child under 13 has provided information through this app, write to admin@prameya.legal and we will help you remove it — although in almost every case the answer is that the information is on your own device and you can delete it yourself in seconds using the controls in section 10.
 
 A parent supervising a child's brushing should be aware that the app can photograph a child's mouth and store it on the device, and that with auto-save on, those photos also go to the device's Photos library.
 
 ---
 
-## 12. California residents
+## 13. California residents
 
 If you live in California, the California Consumer Privacy Act as amended by the California Privacy Rights Act (CCPA/CPRA) gives you specific rights.
 
@@ -300,7 +376,7 @@ We do not use personal information for automated decision-making that produces l
 
 ---
 
-## 13. Washington and Nevada residents — consumer health data
+## 14. Washington and Nevada residents — consumer health data
 
 Washington's My Health My Data Act (RCW ch. 19.373) and Nevada's SB 370 give you rights over consumer health data, and Washington requires a separate, distinctly linked policy for it.
 
@@ -313,7 +389,7 @@ Two points worth stating in this document as well:
 
 ---
 
-## 14. Other US states
+## 15. Other US states
 
 Several other states — including Colorado, Connecticut, Virginia, Utah, Texas, Oregon and Montana — give residents rights to access, correct, delete and port personal data, and to opt out of targeted advertising, sale, and profiling. Some require opt-in consent for sensitive data including health data.
 
@@ -321,7 +397,7 @@ We honour all of these. The mechanics are the same as everywhere else in this po
 
 ---
 
-## 15. Outside the United States
+## 16. Outside the United States
 
 If you use OmniDent in the European Economic Area, the United Kingdom or Switzerland, the GDPR or UK GDPR may apply. Prameya LLC is the controller for the limited processing described in this policy.
 
@@ -334,7 +410,7 @@ If you use OmniDent in the European Economic Area, the United Kingdom or Switzer
 
 ---
 
-## 16. HIPAA does not apply
+## 17. HIPAA does not apply
 
 We say this clearly because it is genuinely useful to know, and because plenty of health apps are vague about it.
 
@@ -349,7 +425,7 @@ If OmniDent is ever offered through a dental practice or a dental service organi
 
 ---
 
-## 17. No FDA authorization, and not medical advice
+## 18. No FDA authorization, and not medical advice
 
 **OmniDent has no FDA authorization, clearance or approval of any kind.** It is not a substitute for examination by a licensed dentist, and it cannot see what a dentist sees. Analysis of dental images is a regulated activity in the United States. OmniDent is not an authorized device and does not claim to be.
 
@@ -366,7 +442,7 @@ If something in your mouth hurts, bleeds, changes, or worries you, see a dentist
 
 ---
 
-## 18. Changes to this policy
+## 19. Changes to this policy
 
 We will update this policy when the app's behaviour changes — and we will update it **before** the change ships, not after.
 
@@ -380,7 +456,7 @@ We will update this policy when the app's behaviour changes — and we will upda
 
 ---
 
-## 19. Contact
+## 20. Contact
 
 **Prameya LLC**
 Privacy questions, data requests, complaints: **admin@prameya.legal**

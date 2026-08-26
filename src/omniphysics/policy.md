@@ -38,6 +38,72 @@ There is no account of ours. There is no third-party SDK.
 
 ---
 
+## Subscriptions and In-App Purchases
+
+### Available tiers
+
+OmniPhysics offers four purchase options:
+
+| Feature | Free | Foundation ($4.99/mo or $49/yr) | Scholar ($9.99/mo or $89/yr) | Lifetime ($79.99) |
+|---------|------|--------------------------------|------------------------------|-------------------|
+| Curriculum Access | 20-25% | 50% | 100% | 100% |
+| Interactive Lessons | 2-4 | 6-8 | All | All |
+| Offline Access | No | Yes | Yes | Yes |
+| CloudKit Sync | No | Progress only | All preferences | All preferences |
+| Future Updates | No | Yes | Yes | Yes |
+
+### What Apple receives
+
+All transactions go through Apple's App Store. When you purchase:
+- **Apple receives:** Your Apple Account ID, payment method, transaction details
+- **Prameya receives:** A transaction ID from StoreKit, purchase status, tier purchased
+- **Prameya does NOT receive:** Your name, email, payment card details, or Apple Account credentials
+
+### Data Linked to You
+
+Apple's privacy labels mark Purchase History as "Data Linked to User" for purchasers.
+
+**This does NOT mean your learning data is transmitted.** Your progress, quiz answers, and study history remain on-device only. StoreKit tells us you purchased access so we can unlock content — it does not transmit your learning data.
+
+### Free vs paid tier data collection
+
+**All tiers collect the same data** (progress tracking, quiz responses, lesson completion).
+
+The difference is:
+- **What content is available** (20% vs 50% vs 100% curriculum)
+- **Whether progress syncs between your devices** (Free: no sync; Paid: sync via your iCloud)
+
+In all tiers:
+- Quiz answers and progress stay on your device
+- No transmission of learning data to Prameya
+- No analytics or tracking
+
+**Purchase unlocks content. It does not change what data is collected.**
+
+### Cancellation and refunds
+
+Subscriptions are managed by Apple:
+- **Cancel:** iOS Settings → your name → Subscriptions → OmniPhysics
+- **Refund requests:** reportaproblem.apple.com
+- **Lifetime purchase:** One-time payment, no subscription to cancel
+
+Prameya cannot cancel your subscription or issue refunds. Apple controls all billing.
+
+### StoreKit transaction data
+
+When you purchase, the app receives and stores locally on your device:
+- Transaction ID (an opaque identifier from Apple)
+- Product ID (which tier you purchased)
+- Purchase and expiration dates (for subscriptions)
+
+This data:
+- Is stored only on your device
+- Is NOT synced to iCloud
+- Is used only to unlock tier-appropriate content
+- Is deleted when you use "Delete All Data"
+
+---
+
 ## iCloud sync
 
 When CloudKit is available and you are signed into iCloud:

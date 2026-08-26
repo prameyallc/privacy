@@ -180,6 +180,85 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <h3 id="pdf-reports">PDF reports</h3>
 <p>When you export a risk report, you choose where the PDF is saved. OmniLex writes the file to that location. It does not upload it. What you do with the file afterwards — email it, put it in a document management system — is outside this app and outside this policy.</p>
 <hr />
+<h2 id="subscriptions-and-in-app-purchases">Subscriptions and In-App Purchases</h2>
+<h3 id="available-tiers">Available tiers</h3>
+<p>OmniLex offers three annual subscription tiers:</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Clerk ($49/yr)</th>
+<th>Associate ($149/yr)</th>
+<th>Partner ($299/yr)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Document Templates</td>
+<td>Basic set</td>
+<td>Extended set</td>
+<td>Complete library</td>
+</tr>
+<tr>
+<td>Legal Research Access</td>
+<td>Limited</td>
+<td>Standard</td>
+<td>Comprehensive</td>
+</tr>
+<tr>
+<td>Citation Tools</td>
+<td>Basic</td>
+<td>Advanced</td>
+<td>Professional</td>
+</tr>
+<tr>
+<td>CloudKit Sync</td>
+<td>Preferences only</td>
+<td>Preferences + notes</td>
+<td>Full sync</td>
+</tr>
+<tr>
+<td>Export Formats</td>
+<td>PDF</td>
+<td>PDF, DOCX</td>
+<td>PDF, DOCX, RTF</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="what-apple-receives">What Apple receives</h3>
+<p>All transactions go through Apple's App Store. When you subscribe:<br />
+- <strong>Apple receives:</strong> Your Apple Account ID, payment method, transaction details<br />
+- <strong>Prameya receives:</strong> A transaction ID from StoreKit, subscription status (active/expired), tier purchased<br />
+- <strong>Prameya does NOT receive:</strong> Your name, email, payment card details, or Apple Account credentials</p>
+<h3 id="data-linked-to-you">Data Linked to You</h3>
+<p>Apple's privacy labels mark Purchase History as "Data Linked to User" for subscribers.</p>
+<p><strong>This does NOT mean your legal documents are transmitted.</strong> Documents, notes, and research history remain on-device only (or in your iCloud if you enable sync). StoreKit tells us you're a paying subscriber so we can unlock features — it does not transmit your documents or work product.</p>
+<h3 id="subscription-tier-data-collection">Subscription tier data collection</h3>
+<p><strong>All tiers collect the same types of data</strong> (documents you create, research queries, usage history).</p>
+<p>The difference is:<br />
+- <strong>What features are available</strong> (template library size, research depth, export formats)<br />
+- <strong>Whether notes sync between devices</strong> (varies by tier)</p>
+<p>In all tiers:<br />
+- Documents stay on your device (or in your iCloud if enabled)<br />
+- No transmission of documents or notes to Prameya<br />
+- No analytics or tracking</p>
+<p><strong>Subscription unlocks professional features. It does not change what data is collected.</strong></p>
+<h3 id="cancellation-and-refunds">Cancellation and refunds</h3>
+<p>Subscriptions are managed by Apple:<br />
+- <strong>Cancel:</strong> iOS Settings → your name → Subscriptions → OmniLex<br />
+- <strong>Refund requests:</strong> reportaproblem.apple.com</p>
+<p>Prameya cannot cancel your subscription or issue refunds. Apple controls all billing.</p>
+<h3 id="storekit-transaction-data">StoreKit transaction data</h3>
+<p>When you purchase a subscription, the app receives and stores locally on your device:<br />
+- Transaction ID (an opaque identifier from Apple)<br />
+- Product ID (which tier you purchased)<br />
+- Purchase and expiration dates</p>
+<p>This data:<br />
+- Is stored only on your device<br />
+- Is NOT synced to iCloud<br />
+- Is used only to unlock tier-appropriate features<br />
+- Is deleted when you use "Delete All Data"</p>
+<hr />
 <h2 id="when-omnilex-uses-the-network">When OmniLex uses the network</h2>
 <h3 id="downloading-the-ai-model">Downloading the AI model</h3>
 <p>OmniLex ships without an AI model. The first time you use an AI feature, you choose a model and the app downloads its weights from <strong>Hugging Face</strong>. The request starts at <code>huggingface.co</code>, which redirects the actual file transfer to Hugging Face's content delivery hosts (currently <code>*.cdn.hf.co</code>; the precise host varies by region, and the download links are signed and short-lived).</p>

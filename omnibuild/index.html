@@ -119,6 +119,72 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <p>OmniBuild is an educational reference app about construction, the skilled trades, and how construction work is regulated in the United States. It also lets you keep your own logs — projects you have worked on, recurring maintenance you have done, and decisions you have made — so you can see your own consistency over time.</p>
 <p>OmniBuild is educational software. It is not contracting, engineering, architectural, legal, or code-compliance advice, and it is not a substitute for a licensed professional. That is a product statement rather than a privacy statement, but it matters here for one reason: because the app is not providing professional services, it never needs to know who you are.</p>
 <hr />
+<h2 id="available-tiers">Available tiers</h2>
+<p>OmniBuild offers four subscription tiers:</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Price</th>
+<th>What it unlocks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Free</strong></td>
+<td>$0</td>
+<td>Federal building codes (IBC, IRC, NEC, NFPA)</td>
+</tr>
+<tr>
+<td><strong>Basic</strong></td>
+<td>$29/year</td>
+<td>Federal codes + 1 state building code of your choice</td>
+</tr>
+<tr>
+<td><strong>Pro</strong></td>
+<td>$99/year</td>
+<td>Federal codes + up to 5 state building codes</td>
+</tr>
+<tr>
+<td><strong>Expert</strong></td>
+<td>$199/year</td>
+<td>Federal codes + all 50 state building codes</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Your subscription tier controls which building code references you can read. It does not control what project data is collected.</strong> Whether you use the free tier or subscribe to Expert, OmniBuild transmits nothing to Prameya. No project logs, maintenance records, or decision entries leave your device in any tier.</p>
+<p>The subscription unlocks <strong>content access</strong>, not data collection. An Expert subscriber can read California, Texas, and New York codes; a free user cannot. That difference is about which reference material the app displays, not about what happens to the logs you keep.</p>
+<h2 id="what-apple-receives">What Apple receives</h2>
+<p>When you subscribe through the App Store:</p>
+<ul>
+<li><strong>Apple processes the purchase</strong>, not Prameya. Apple receives your payment information, processes the transaction, and manages the subscription lifecycle.</li>
+<li><strong>We receive an anonymized transaction record</strong> from Apple's StoreKit framework indicating that a subscription was purchased or renewed. This record contains a transaction identifier, the product identifier (e.g., <code>pro_annual</code>, <code>expert_annual</code>), and a timestamp. It does <strong>not</strong> contain your name, email address, payment details, or Apple ID.</li>
+<li><strong>We cannot connect that transaction to anything you log in the app.</strong> The StoreKit transaction lives in the app's local database alongside your project logs, but we never receive either one.</li>
+</ul>
+<p>Apple's handling of App Store purchases is governed by Apple's privacy policy, not this one. See <a href="https://www.apple.com/legal/privacy/">apple.com/legal/privacy</a>.</p>
+<h2 id="data-linked-to-you">Data linked to you</h2>
+<p>From Apple's perspective, your App Store purchase history is linked to your Apple ID. Apple knows you bought a subscription to OmniBuild Pro or Expert.</p>
+<p>From Prameya's perspective, <strong>nothing is linked to you</strong>, because we hold no account, no identifier, and no copy of your project logs, maintenance records, decision entries, or purchase record. We cannot identify you, we cannot connect a transaction to a person, and we cannot see what you entered into the app.</p>
+<h2 id="free-vs-paid-tier-data-collection">Free vs paid tier data collection</h2>
+<p><strong>The tier you choose does not change what data Prameya collects from OmniBuild.</strong> In all four tiers (Free, Basic, Pro, Expert):</p>
+<ul>
+<li>Your project logs, maintenance logs, decision entries, and profile stay on your device</li>
+<li>No analytics, tracking, or telemetry</li>
+<li>No server that receives your content</li>
+<li>No account or login</li>
+</ul>
+<p>The difference between tiers is <strong>which building codes you can read</strong>, not data handling. Expert unlocks all 50 state codes; it does not unlock data transmission.</p>
+<h2 id="cancellation-and-refunds">Cancellation and refunds</h2>
+<p>Subscriptions are managed entirely through your Apple ID:</p>
+<ul>
+<li><strong>To cancel:</strong> Open Settings on your iPhone or iPad → tap your name → Subscriptions → OmniBuild → Cancel Subscription.</li>
+<li><strong>Refund requests:</strong> Handled by Apple, not Prameya. See <a href="https://reportaproblem.apple.com/">reportaproblem.apple.com</a> or contact Apple Support. We have no access to your payment information and cannot issue refunds ourselves.</li>
+<li><strong>What happens to your data when you cancel:</strong> Nothing. Your on-device logs stay on your device. Canceling a subscription removes access to paid-tier building codes; it does not delete your project logs or maintenance records. The app reverts to the free tier, and federal codes remain accessible.</li>
+</ul>
+<h2 id="storekit-transaction-data">StoreKit transaction data</h2>
+<p>The anonymized StoreKit transaction record described above is stored in the app's local database on your device. It is used to determine which building code references to unlock. It is never uploaded to Prameya, and it is deleted when you delete the app or use the "Clear All My Logs &amp; Decisions" control in Settings.</p>
+<p>If you restore purchases on a new device (by tapping "Restore Purchases" in the app), StoreKit queries Apple's servers to retrieve your active subscriptions. That communication is between your device and Apple; Prameya is not involved and sees nothing from it.</p>
+<hr />
 <h2 id="information-the-app-stores-on-your-device">Information the app stores on your device</h2>
 <p>Everything in this table lives in OmniBuild's own storage area on your device. None of it is sent to Prameya.</p>
 <div class="tablewrap"><table>
