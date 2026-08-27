@@ -40,38 +40,32 @@ This policy covers the OmniSalub app on iPhone, iPad and Mac. It does not cover 
 
 ### Available tiers
 
-OmniSalub offers three tiers:
+There is one paid upgrade, **OmniSalub Pro**, sold as three products. Buying any one of
+them grants exactly the same Pro — there are no separate feature tiers.
 
-| Feature | Free | Plus ($9.99/mo or $99/yr) | Premium ($19.99/mo or $199/yr) |
-|---------|------|---------------------------|--------------------------------|
-| Tracking History | 30 days | Unlimited | Unlimited |
-| HealthKit Sync | Manual only | Auto | Auto |
-| Data Export | None | PDF/JSON | PDF/JSON/FHIR |
-| CloudKit Sync | None | Preferences + logs | Preferences + logs |
-| Analytics | Current values | 30-day trends | Advanced correlations |
-| Device Integration | None | None | Yes (Omron, Withings) |
+| Product | Price (US) | Billing |
+|---|---|---|
+| OmniSalub Pro Monthly | $4.99 | Auto-renews monthly. 7-day free trial. |
+| OmniSalub Pro Annual | $29.99 | Auto-renews yearly. 7-day free trial. |
+| OmniSalub Pro Lifetime | $79.99 | One-time purchase. Not a subscription. |
 
-**Critical: HealthKit data collection is identical across all tiers.** The app reads the same health data types in all tiers. Subscription unlocks features, not data access.
+Family Sharing is enabled on all three. Subscriptions renew until you cancel in
+Settings; Lifetime is a one-time non-consumable.
 
-### What Apple receives
+**The knowledge layer is free and stays free.** Without paying anything you get
+90 days of history, the full reference and your own readings, with no account and no time limit. Pro adds the visit pack, unlimited history and formatted export.
 
-All transactions go through Apple's App Store. When you subscribe:
-- **Apple receives:** Your Apple Account ID, payment method, transaction details
-- **Prameya receives:** A transaction ID from StoreKit, subscription status (active/expired), tier purchased
-- **Prameya does NOT receive:** Your name, email, payment card details, or Apple Account credentials
+**Pro does not add cloud sync, and there is no paid iCloud option.** OmniSalub stores your
+records on your device in every case, paid or not. If a subscription lapses you keep your
+own data and can still export it in its raw form; only the Pro tools stop.
 
-### Data Linked to You
-
-Apple's privacy labels mark Purchase History as "Data Linked to User" for subscribers.
-
-**This does NOT mean your health data leaves your device.** Health readings, symptoms, and vital signs remain on-device only (and in Apple Health if you enable it). StoreKit tells us you're a paying subscriber so we can unlock features — it does not transmit your health readings or any health information.
 
 ### Free vs paid tier data collection
 
 **Both tiers process the same consumer health data** (listed in the [Consumer Health Data Privacy Policy](https://prameyallc.github.io/privacy/omnisalub/health-data/)).
 
-- **Free tier:** Health data processed on-device, 30-day history limit, HealthKit manual sync
-- **Plus/Premium tier:** Health data processed on-device (same processing), unlimited history, HealthKit auto sync, device integrations
+- **Free:** Health data processed on-device, 90 days of history, the full reference, your own readings
+- **With Pro:** Health data processed on-device (identical processing), unlimited history, the visit pack and formatted export
 
 In both tiers:
 - Health readings stay on your device

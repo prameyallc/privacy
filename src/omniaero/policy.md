@@ -65,36 +65,33 @@ container. That is Apple's processing, not ours. OmniAero itself performs no clo
 
 ### Available tiers
 
-OmniAero offers four purchase options:
+There is one paid upgrade, **OmniAero Pro**, sold as three products. Buying any one of
+them grants exactly the same Pro — there are no separate feature tiers.
 
-| Feature | Free | Foundation ($4.99/mo or $49/yr) | Scholar ($9.99/mo or $89/yr) | Lifetime ($79.99) |
-|---------|------|--------------------------------|------------------------------|-------------------|
-| Curriculum Access | 20-25% | 50% | 100% | 100% |
-| Interactive Lessons | 2-4 | 6-8 | All | All |
-| Offline Access | No | Yes | Yes | Yes |
-| CloudKit Sync | No | Progress only | All preferences | All preferences |
-| Future Updates | No | Yes | Yes | Yes |
+| Product | Price (US) | Billing |
+|---|---|---|
+| OmniAero Pro Monthly | $5.99 | Auto-renews monthly. 7-day free trial. |
+| OmniAero Pro Annual | $39.99 | Auto-renews yearly. 7-day free trial. |
+| OmniAero Pro Lifetime | $99.99 | One-time purchase. Not a subscription. |
 
-### What Apple receives
+Family Sharing is enabled on all three. Subscriptions renew until you cancel in
+Settings; Lifetime is a one-time non-consumable.
 
-All transactions go through Apple's App Store. When you purchase:
-- **Apple receives:** Your Apple Account ID, payment method, transaction details
-- **Prameya receives:** A transaction ID from StoreKit, purchase status, tier purchased
-- **Prameya does NOT receive:** Your name, email, payment card details, or Apple Account credentials
+**The knowledge layer is free and stays free.** Without paying anything you get
+every ACS area of operation and the 14 CFR reference, with no account and no time limit. Pro adds ACS drills, missed-item review and oral-prep packs.
 
-### Data Linked to You
+**Pro does not add cloud sync, and there is no paid iCloud option.** OmniAero stores your
+records on your device in every case, paid or not. If a subscription lapses you keep your
+own data and can still export it in its raw form; only the Pro tools stop.
 
-Apple's privacy labels mark Purchase History as "Data Linked to User" for purchasers.
-
-**This does NOT mean your learning data is transmitted.** Your progress, quiz answers, and study history remain on-device only. StoreKit tells us you purchased access so we can unlock content — it does not transmit your learning data.
 
 ### Free vs paid tier data collection
 
-**All tiers collect the same data** (progress tracking, quiz responses, lesson completion).
+**Free and Pro collect the same data** (progress tracking, quiz responses, lesson completion) — which is to say, none of it reaches us.
 
 The difference is:
-- **What content is available** (20% vs 50% vs 100% curriculum)
-- **Whether progress syncs between your devices** (Free: no sync; Paid: sync via your iCloud)
+- **Which tools you get.** Every ACS area of operation and the 14 CFR reference are free; Pro adds drills, missed-item review and oral-prep packs.
+- **Nothing else.** Progress does not sync between your devices in either case — OmniAero has no cloud sync, free or paid.
 
 In all tiers:
 - Quiz answers and progress stay on your device

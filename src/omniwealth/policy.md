@@ -38,30 +38,25 @@ We mention this in a privacy policy for a reason: because the app gives no perso
 
 ## Available tiers
 
-OmniWealth offers two tiers:
+There is one paid upgrade, **OmniWealth Pro**, sold as three products. Buying any one of
+them grants exactly the same Pro — there are no separate feature tiers.
 
-| Tier | Price | What it unlocks |
+| Product | Price (US) | Billing |
 |---|---|---|
-| **Free** | $0 | Core educational content, daily habit checklist, envelope / budget log |
-| **Premium** | $99/year | Additional educational modules, advanced budgeting tools, extended habit tracking |
+| OmniWealth Pro Monthly | $4.99 | Auto-renews monthly. 7-day free trial. |
+| OmniWealth Pro Annual | $29.99 | Auto-renews yearly. 7-day free trial. |
+| OmniWealth Pro Lifetime | $79.99 | One-time purchase. Not a subscription. |
 
-**Your subscription tier controls which features are available to you. It does not control what data is collected.** Whether you use the free tier or subscribe to Premium, OmniWealth transmits nothing to Prameya. No user content leaves your device in either tier.
+Family Sharing is enabled on all three. Subscriptions renew until you cancel in
+Settings; Lifetime is a one-time non-consumable.
 
-## What Apple receives
+**The knowledge layer is free and stays free.** Without paying anything you get
+the full concept library and the basic calculators, with no account and no time limit. Pro adds saved scenarios, envelopes and worksheet export.
 
-When you subscribe to Premium through the App Store:
+**Pro does not add cloud sync, and there is no paid iCloud option.** OmniWealth stores your
+records on your device in every case, paid or not. If a subscription lapses you keep your
+own data and can still export it in its raw form; only the Pro tools stop.
 
-- **Apple processes the purchase**, not Prameya. Apple receives your payment information, processes the transaction, and manages the subscription lifecycle.
-- **We receive an anonymized transaction record** from Apple's StoreKit framework indicating that a subscription was purchased or renewed. This record contains a transaction identifier, the product identifier (e.g., `premium_annual`), and a timestamp. It does **not** contain your name, email address, payment details, or Apple ID.
-- **We cannot connect that transaction to anything you log in the app.** The StoreKit transaction lives in the app's local database alongside your other data, but we never receive either one.
-
-Apple's handling of App Store purchases is governed by Apple's privacy policy, not this one. See [apple.com/legal/privacy](https://www.apple.com/legal/privacy/).
-
-## Data linked to you
-
-From Apple's perspective, your App Store purchase history is linked to your Apple ID. Apple knows you bought a subscription to OmniWealth Premium.
-
-From Prameya's perspective, **nothing is linked to you**, because we hold no account, no identifier, and no copy of your habit logs, budget data, or purchase record. We cannot identify you, we cannot connect a transaction to a person, and we cannot see what you entered into the app.
 
 ## Free vs paid tier data collection
 

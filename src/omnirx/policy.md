@@ -63,37 +63,32 @@ It is not a substitute for a licensed pharmacist or physician.
 
 ### Available tiers
 
-OmniRx offers three tiers:
+There is one paid upgrade, **OmniRx Pro**, sold as three products. Buying any one of
+them grants exactly the same Pro — there are no separate feature tiers.
 
-| Feature | Free | Plus ($9.99/mo or $99/yr) | Premium ($19.99/mo or $199/yr) |
-|---------|------|---------------------------|--------------------------------|
-| Tracking History | 30 days | Unlimited | Unlimited |
-| Medication Logs | Limited | Unlimited | Unlimited |
-| Data Export | None | PDF/JSON | PDF/JSON/FHIR |
-| CloudKit Sync | None | Preferences only | Preferences only |
-| Analytics | Current values | 30-day trends | Advanced correlations |
+| Product | Price (US) | Billing |
+|---|---|---|
+| OmniRx Pro Monthly | $4.99 | Auto-renews monthly. 7-day free trial. |
+| OmniRx Pro Annual | $29.99 | Auto-renews yearly. 7-day free trial. |
+| OmniRx Pro Lifetime | $79.99 | One-time purchase. Not a subscription. |
 
-**Critical: Medication data NEVER syncs to iCloud in any tier.** All tiers store medication logs on-device only.
+Family Sharing is enabled on all three. Subscriptions renew until you cancel in
+Settings; Lifetime is a one-time non-consumable.
 
-### What Apple receives
+**The knowledge layer is free and stays free.** Without paying anything you get
+the full label library, the daily check and the refill field, with no account and no time limit. Pro adds a multi-medicine schedule.
 
-All transactions go through Apple's App Store. When you subscribe:
-- **Apple receives:** Your Apple Account ID, payment method, transaction details
-- **Prameya receives:** A transaction ID from StoreKit, subscription status (active/expired), tier purchased
-- **Prameya does NOT receive:** Your name, email, payment card details, or Apple Account credentials
+**Pro does not add cloud sync, and there is no paid iCloud option.** OmniRx stores your
+records on your device in every case, paid or not. If a subscription lapses you keep your
+own data and can still export it in its raw form; only the Pro tools stop.
 
-### Data Linked to You
-
-Apple's privacy labels mark Purchase History as "Data Linked to User" for subscribers.
-
-**This does NOT mean your health data leaves your device.** Medication logs, adherence data, and journal entries remain on-device only. StoreKit tells us you're a paying subscriber so we can unlock features — it does not transmit your medication logs or any health information.
 
 ### Free vs paid tier data collection
 
 **Both tiers process the same consumer health data** (listed in the [Consumer Health Data Privacy Policy](https://prameyallc.github.io/privacy/omnirx/health-data/)).
 
 - **Free tier:** Medication logs stored on-device, 30-day history limit
-- **Plus/Premium tier:** Medication logs stored on-device (same location), unlimited history, enhanced export formats
+- **With Pro:** Medication logs stored on-device (same location), and a multi-medicine schedule
 
 In both tiers:
 - Medication logs stay on your device
@@ -452,12 +447,18 @@ top. Meaningful changes — a new network connection, a new permission, anything
 data — will be described in a short summary of what changed, at the top of this page, and will be
 announced in the app's release notes.
 
-**What changed in this revision (26 August 2026):** this revision adds subscription disclosures for
-Plus and Premium tiers. OmniRx now offers paid subscriptions ($9.99/mo or $99/yr for Plus,
-$19.99/mo or $199/yr for Premium) processed through Apple's App Store. Subscription unlocks features
-like unlimited history and enhanced export formats, but does not change what consumer health data is
-collected or where it goes. Medication logs remain on-device only in all tiers. The "In-app purchases
-or payments" line is updated to reflect that subscriptions are now available.
+**What changed on 27 August 2026 (corrects the entry below):** the Plus and Premium tiers described
+in the 26 August entry were never offered for sale. OmniRx has one paid upgrade, OmniRx Pro, sold as
+monthly $4.99, annual $29.99 or lifetime $79.99 — see "Available tiers" above. The prices quoted in
+the 26 August entry ($9.99/$99 and $19.99/$199) were never charged to anyone. Nothing about data
+handling changed with this correction: medication logs remain on-device only, paid or not.
+
+**What changed in this revision (26 August 2026):** this revision added subscription disclosures.
+⚠️ It described a two-tier Plus/Premium catalogue that was never shipped; see the 27 August entry
+above for what is actually sold. What it said about data was and remains correct: a subscription
+unlocks features but does not change what consumer health data is collected or where it goes, and
+medication logs remain on-device only. The "In-app purchases or payments" line was updated to
+reflect that subscriptions are available.
 
 **What changed in the 23 August 2026 revision:** short and long versions now agree. Settings
 offers one optional daily reminder (lock screen says "Reminder"). There is no Hugging Face / on-device

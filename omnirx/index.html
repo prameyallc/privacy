@@ -142,63 +142,46 @@ whether you took your doses and what got in the way.</p>
 <hr />
 <h2 id="subscriptions-and-in-app-purchases">Subscriptions and In-App Purchases</h2>
 <h3 id="available-tiers">Available tiers</h3>
-<p>OmniRx offers three tiers:</p>
+<p>There is one paid upgrade, <strong>OmniRx Pro</strong>, sold as three products. Buying any one of<br />
+them grants exactly the same Pro — there are no separate feature tiers.</p>
 <div class="tablewrap"><table>
 <thead>
 <tr>
-<th>Feature</th>
-<th>Free</th>
-<th>Plus ($9.99/mo or $99/yr)</th>
-<th>Premium ($19.99/mo or $199/yr)</th>
+<th>Product</th>
+<th>Price (US)</th>
+<th>Billing</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Tracking History</td>
-<td>30 days</td>
-<td>Unlimited</td>
-<td>Unlimited</td>
+<td>OmniRx Pro Monthly</td>
+<td>$4.99</td>
+<td>Auto-renews monthly. 7-day free trial.</td>
 </tr>
 <tr>
-<td>Medication Logs</td>
-<td>Limited</td>
-<td>Unlimited</td>
-<td>Unlimited</td>
+<td>OmniRx Pro Annual</td>
+<td>$29.99</td>
+<td>Auto-renews yearly. 7-day free trial.</td>
 </tr>
 <tr>
-<td>Data Export</td>
-<td>None</td>
-<td>PDF/JSON</td>
-<td>PDF/JSON/FHIR</td>
-</tr>
-<tr>
-<td>CloudKit Sync</td>
-<td>None</td>
-<td>Preferences only</td>
-<td>Preferences only</td>
-</tr>
-<tr>
-<td>Analytics</td>
-<td>Current values</td>
-<td>30-day trends</td>
-<td>Advanced correlations</td>
+<td>OmniRx Pro Lifetime</td>
+<td>$79.99</td>
+<td>One-time purchase. Not a subscription.</td>
 </tr>
 </tbody>
 </table></div>
-<p><strong>Critical: Medication data NEVER syncs to iCloud in any tier.</strong> All tiers store medication logs on-device only.</p>
-<h3 id="what-apple-receives">What Apple receives</h3>
-<p>All transactions go through Apple's App Store. When you subscribe:<br />
-- <strong>Apple receives:</strong> Your Apple Account ID, payment method, transaction details<br />
-- <strong>Prameya receives:</strong> A transaction ID from StoreKit, subscription status (active/expired), tier purchased<br />
-- <strong>Prameya does NOT receive:</strong> Your name, email, payment card details, or Apple Account credentials</p>
-<h3 id="data-linked-to-you">Data Linked to You</h3>
-<p>Apple's privacy labels mark Purchase History as "Data Linked to User" for subscribers.</p>
-<p><strong>This does NOT mean your health data leaves your device.</strong> Medication logs, adherence data, and journal entries remain on-device only. StoreKit tells us you're a paying subscriber so we can unlock features — it does not transmit your medication logs or any health information.</p>
+<p>Family Sharing is enabled on all three. Subscriptions renew until you cancel in<br />
+Settings; Lifetime is a one-time non-consumable.</p>
+<p><strong>The knowledge layer is free and stays free.</strong> Without paying anything you get<br />
+the full label library, the daily check and the refill field, with no account and no time limit. Pro adds a multi-medicine schedule.</p>
+<p><strong>Pro does not add cloud sync, and there is no paid iCloud option.</strong> OmniRx stores your<br />
+records on your device in every case, paid or not. If a subscription lapses you keep your<br />
+own data and can still export it in its raw form; only the Pro tools stop.</p>
 <h3 id="free-vs-paid-tier-data-collection">Free vs paid tier data collection</h3>
 <p><strong>Both tiers process the same consumer health data</strong> (listed in the <a href="https://prameyallc.github.io/privacy/omnirx/health-data/">Consumer Health Data Privacy Policy</a>).</p>
 <ul>
 <li><strong>Free tier:</strong> Medication logs stored on-device, 30-day history limit</li>
-<li><strong>Plus/Premium tier:</strong> Medication logs stored on-device (same location), unlimited history, enhanced export formats</li>
+<li><strong>With Pro:</strong> Medication logs stored on-device (same location), and a multi-medicine schedule</li>
 </ul>
 <p>In both tiers:<br />
 - Medication logs stay on your device<br />
@@ -505,12 +488,17 @@ out of those laws, and you should not read our App Store label as saying we did.
 top. Meaningful changes — a new network connection, a new permission, anything involving your health<br />
 data — will be described in a short summary of what changed, at the top of this page, and will be<br />
 announced in the app's release notes.</p>
-<p><strong>What changed in this revision (26 August 2026):</strong> this revision adds subscription disclosures for<br />
-Plus and Premium tiers. OmniRx now offers paid subscriptions ($9.99/mo or $99/yr for Plus,<br />
-$19.99/mo or $199/yr for Premium) processed through Apple's App Store. Subscription unlocks features<br />
-like unlimited history and enhanced export formats, but does not change what consumer health data is<br />
-collected or where it goes. Medication logs remain on-device only in all tiers. The "In-app purchases<br />
-or payments" line is updated to reflect that subscriptions are now available.</p>
+<p><strong>What changed on 27 August 2026 (corrects the entry below):</strong> the Plus and Premium tiers described<br />
+in the 26 August entry were never offered for sale. OmniRx has one paid upgrade, OmniRx Pro, sold as<br />
+monthly $4.99, annual $29.99 or lifetime $79.99 — see "Available tiers" above. The prices quoted in<br />
+the 26 August entry ($9.99/$99 and $19.99/$199) were never charged to anyone. Nothing about data<br />
+handling changed with this correction: medication logs remain on-device only, paid or not.</p>
+<p><strong>What changed in this revision (26 August 2026):</strong> this revision added subscription disclosures.<br />
+⚠️ It described a two-tier Plus/Premium catalogue that was never shipped; see the 27 August entry<br />
+above for what is actually sold. What it said about data was and remains correct: a subscription<br />
+unlocks features but does not change what consumer health data is collected or where it goes, and<br />
+medication logs remain on-device only. The "In-app purchases or payments" line was updated to<br />
+reflect that subscriptions are available.</p>
 <p><strong>What changed in the 23 August 2026 revision:</strong> short and long versions now agree. Settings<br />
 offers one optional daily reminder (lock screen says "Reminder"). There is no Hugging Face / on-device<br />
 model download in the shipping app. The 8 August 2026 sentences that said the app "schedules no<br />

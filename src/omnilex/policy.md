@@ -90,36 +90,33 @@ When you export a risk report, you choose where the PDF is saved. OmniLex writes
 
 ### Available tiers
 
-OmniLex offers three annual subscription tiers:
+There is one paid upgrade, **OmniLex Pro**, sold as three products. Buying any one of
+them grants exactly the same Pro — there are no separate feature tiers.
 
-| Feature | Clerk ($49/yr) | Associate ($149/yr) | Partner ($299/yr) |
-|---------|----------------|---------------------|-------------------|
-| Document Templates | Basic set | Extended set | Complete library |
-| Legal Research Access | Limited | Standard | Comprehensive |
-| Citation Tools | Basic | Advanced | Professional |
-| CloudKit Sync | Preferences only | Preferences + notes | Full sync |
-| Export Formats | PDF | PDF, DOCX | PDF, DOCX, RTF |
+| Product | Price (US) | Billing |
+|---|---|---|
+| OmniLex Pro Monthly | $7.99 | Auto-renews monthly. 7-day free trial. |
+| OmniLex Pro Annual | $49.99 | Auto-renews yearly. 7-day free trial. |
+| OmniLex Pro Lifetime | $129.99 | One-time purchase. Not a subscription. |
 
-### What Apple receives
+Family Sharing is enabled on all three. Subscriptions renew until you cancel in
+Settings; Lifetime is a one-time non-consumable.
 
-All transactions go through Apple's App Store. When you subscribe:
-- **Apple receives:** Your Apple Account ID, payment method, transaction details
-- **Prameya receives:** A transaction ID from StoreKit, subscription status (active/expired), tier purchased
-- **Prameya does NOT receive:** Your name, email, payment card details, or Apple Account credentials
+**The knowledge layer is free and stays free.** Without paying anything you get
+the corpus, its citations and a three-document vault, with no account and no time limit. Pro adds an unlimited vault, on-device search and formatted PDF export.
 
-### Data Linked to You
+**Pro does not add cloud sync, and there is no paid iCloud option.** OmniLex stores your
+records on your device in every case, paid or not. If a subscription lapses you keep your
+own data and can still export it in its raw form; only the Pro tools stop.
 
-Apple's privacy labels mark Purchase History as "Data Linked to User" for subscribers.
-
-**This does NOT mean your legal documents are transmitted.** Documents, notes, and research history remain on-device only (or in your iCloud if you enable sync). StoreKit tells us you're a paying subscriber so we can unlock features — it does not transmit your documents or work product.
 
 ### Subscription tier data collection
 
-**All tiers collect the same types of data** (documents you create, research queries, usage history).
+**Free and Pro collect the same types of data** (documents you create, research queries, usage history) — all of it on your device.
 
 The difference is:
 - **What features are available** (template library size, research depth, export formats)
-- **Whether notes sync between devices** (varies by tier)
+- **Nothing syncs between devices, in either case.** OmniLex has no cloud sync, free or paid.
 
 In all tiers:
 - Documents stay on your device (or in your iCloud if enabled)

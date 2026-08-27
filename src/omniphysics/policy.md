@@ -14,7 +14,7 @@
 - Progress stays **on this device**. Optional Apple iCloud (CloudKit) sync only if you are signed in and the capability is on.
 - We do **not** sell personal data.
 - **HIPAA and FERPA do not apply.** This is not a school or health record.
-- **There is nothing to buy.** Unused in-app purchase code was removed; there is no paywall.
+- **There is one thing to buy.** OmniPhysics Pro, described below. The reasoning material and one sandbox are free; buying Pro sends nothing about you to us.
 
 ---
 
@@ -42,36 +42,33 @@ There is no account of ours. There is no third-party SDK.
 
 ### Available tiers
 
-OmniPhysics offers four purchase options:
+There is one paid upgrade, **OmniPhysics Pro**, sold as three products. Buying any one of
+them grants exactly the same Pro — there are no separate feature tiers.
 
-| Feature | Free | Foundation ($4.99/mo or $49/yr) | Scholar ($9.99/mo or $89/yr) | Lifetime ($79.99) |
-|---------|------|--------------------------------|------------------------------|-------------------|
-| Curriculum Access | 20-25% | 50% | 100% | 100% |
-| Interactive Lessons | 2-4 | 6-8 | All | All |
-| Offline Access | No | Yes | Yes | Yes |
-| CloudKit Sync | No | Progress only | All preferences | All preferences |
-| Future Updates | No | Yes | Yes | Yes |
+| Product | Price (US) | Billing |
+|---|---|---|
+| OmniPhysics Pro Monthly | $4.99 | Auto-renews monthly. 7-day free trial. |
+| OmniPhysics Pro Annual | $29.99 | Auto-renews yearly. 7-day free trial. |
+| OmniPhysics Pro Lifetime | $79.99 | One-time purchase. Not a subscription. |
 
-### What Apple receives
+Family Sharing is enabled on all three. Subscriptions renew until you cancel in
+Settings; Lifetime is a one-time non-consumable.
 
-All transactions go through Apple's App Store. When you purchase:
-- **Apple receives:** Your Apple Account ID, payment method, transaction details
-- **Prameya receives:** A transaction ID from StoreKit, purchase status, tier purchased
-- **Prameya does NOT receive:** Your name, email, payment card details, or Apple Account credentials
+**The knowledge layer is free and stays free.** Without paying anything you get
+the reasoning material and one sandbox, with no account and no time limit. Pro adds the full sandbox set, parameter ranges and lab export.
 
-### Data Linked to You
+**Pro does not add cloud sync, and there is no paid iCloud option.** OmniPhysics stores your
+records on your device in every case, paid or not. If a subscription lapses you keep your
+own data and can still export it in its raw form; only the Pro tools stop.
 
-Apple's privacy labels mark Purchase History as "Data Linked to User" for purchasers.
-
-**This does NOT mean your learning data is transmitted.** Your progress, quiz answers, and study history remain on-device only. StoreKit tells us you purchased access so we can unlock content — it does not transmit your learning data.
 
 ### Free vs paid tier data collection
 
-**All tiers collect the same data** (progress tracking, quiz responses, lesson completion).
+**Free and Pro collect the same data** (progress tracking, quiz responses, lesson completion) — which is to say, none of it reaches us.
 
 The difference is:
-- **What content is available** (20% vs 50% vs 100% curriculum)
-- **Whether progress syncs between your devices** (Free: no sync; Paid: sync via your iCloud)
+- **Which tools you get.** The reasoning material and one sandbox are free; Pro adds the full sandbox set, parameter ranges and lab export.
+- **Nothing else.** Progress does not sync between your devices in either case — OmniPhysics has no cloud sync, free or paid.
 
 In all tiers:
 - Quiz answers and progress stay on your device
@@ -124,7 +121,7 @@ If CloudKit is not available (not signed in, or the container is not provisioned
 - No camera, photos, microphone, contacts, or location APIs.
 - No health, fitness or medical data of any kind.
 - No on-device AI model and no model download.
-- No paywall, subscription prompt, or in-app purchase screen.
+- A paywall for OmniPhysics Pro, processed entirely by Apple's StoreKit. We receive a transaction identifier and entitlement status, never payment details.
 
 ---
 

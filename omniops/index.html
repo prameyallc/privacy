@@ -119,60 +119,56 @@ Understand reads on-device knowledge packs. Do writes a local journal. Nothing i
 uploaded to us.</p>
 <hr />
 <h2 id="available-tiers">Available tiers</h2>
-<p>OmniOps offers three subscription tiers:</p>
+<p>There is one paid upgrade, <strong>OmniOps Pro</strong>, sold as three products. Buying any one of<br />
+them grants exactly the same Pro — there are no separate feature tiers.</p>
 <div class="tablewrap"><table>
 <thead>
 <tr>
-<th>Tier</th>
-<th>Price</th>
-<th>What it unlocks</th>
+<th>Product</th>
+<th>Price (US)</th>
+<th>Billing</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Professional</strong></td>
-<td>$39/year</td>
-<td>Core process frameworks, basic habit tracking, foundational knowledge packs</td>
+<td>OmniOps Pro Monthly</td>
+<td>$5.99</td>
+<td>Auto-renews monthly. 7-day free trial.</td>
 </tr>
 <tr>
-<td><strong>Practice</strong></td>
-<td>$99/year</td>
-<td>Professional features + advanced frameworks, extended habit tracking, all 19 knowledge packs</td>
+<td>OmniOps Pro Annual</td>
+<td>$39.99</td>
+<td>Auto-renews yearly. 7-day free trial.</td>
 </tr>
 <tr>
-<td><strong>Firm</strong></td>
-<td>$199/year</td>
-<td>Practice features + multi-project support, team-oriented decision logs, advanced reflection tools</td>
+<td>OmniOps Pro Lifetime</td>
+<td>$99.99</td>
+<td>One-time purchase. Not a subscription.</td>
 </tr>
 </tbody>
 </table></div>
-<p><strong>Your subscription tier controls which features and knowledge packs are available to you. It does not control what data is collected.</strong> OmniOps transmits nothing to Prameya in any tier. No journal entries, decisions, reflections, or habit logs leave your device, regardless of which tier you subscribe to.</p>
-<h2 id="what-apple-receives">What Apple receives</h2>
-<p>When you subscribe through the App Store:</p>
-<ul>
-<li><strong>Apple processes the purchase</strong>, not Prameya. Apple receives your payment information, processes the transaction, and manages the subscription lifecycle.</li>
-<li><strong>We receive an anonymized transaction record</strong> from Apple's StoreKit framework indicating that a subscription was purchased or renewed. This record contains a transaction identifier, the product identifier (e.g., <code>professional_annual</code>, <code>practice_annual</code>, <code>firm_annual</code>), and a timestamp. It does <strong>not</strong> contain your name, email address, payment details, or Apple ID.</li>
-<li><strong>We cannot connect that transaction to anything you log in the app.</strong> The StoreKit transaction lives in the app's local database alongside your journal data, but we never receive either one.</li>
-</ul>
-<p>Apple's handling of App Store purchases is governed by Apple's privacy policy, not this one. See <a href="https://www.apple.com/legal/privacy/">apple.com/legal/privacy</a>.</p>
-<h2 id="data-linked-to-you">Data linked to you</h2>
-<p>From Apple's perspective, your App Store purchase history is linked to your Apple ID. Apple knows you bought a subscription to OmniOps Professional, Practice, or Firm.</p>
-<p>From Prameya's perspective, <strong>nothing is linked to you</strong>, because we hold no account, no identifier, and no copy of your journal entries, decisions, reflections, or purchase record. We cannot identify you, we cannot connect a transaction to a person, and we cannot see what you entered into the app.</p>
+<p>Family Sharing is enabled on all three. Subscriptions renew until you cancel in<br />
+Settings; Lifetime is a one-time non-consumable.</p>
+<p><strong>The knowledge layer is free and stays free.</strong> Without paying anything you get<br />
+all four logs unlimited, the streak and raw JSON export, with no account and no time limit. Pro adds review analytics, custom cadences and the review PDF.</p>
+<p><strong>Pro does not add cloud sync, and there is no paid iCloud option.</strong> OmniOps stores your<br />
+records on your device in every case, paid or not. If a subscription lapses you keep your<br />
+own data and can still export it in its raw form; only the Pro tools stop.</p>
 <h2 id="free-vs-paid-tier-data-collection">Free vs paid tier data collection</h2>
-<p><strong>OmniOps does not offer a free tier</strong>, but the principle remains the same across all three paid tiers: <strong>the tier you choose does not change what data Prameya collects.</strong> In all three tiers (Professional, Practice, Firm):</p>
+<p><strong>OmniOps is free to use</strong>, and buying Pro does not change what data Prameya collects. Free and Pro alike:</p>
 <ul>
 <li>Your process journal (work, decisions, reflections, habits) stays on your device</li>
 <li>No analytics, tracking, or telemetry</li>
 <li>No server that receives your content</li>
 <li>No account or login</li>
 </ul>
-<p>The difference between tiers is <strong>feature access and knowledge pack availability</strong>, not data handling. Firm unlocks advanced multi-project tools; it does not unlock data transmission.</p>
+<p>The difference is <strong>which tools you get</strong>, not data handling. All four logs, the streak and raw JSON export are free; Pro adds review analytics, custom cadences and the review PDF. Neither unlocks data transmission.</p>
 <h2 id="cancellation-and-refunds">Cancellation and refunds</h2>
 <p>Subscriptions are managed entirely through your Apple ID:</p>
 <ul>
 <li><strong>To cancel:</strong> Open Settings on your iPhone or iPad → tap your name → Subscriptions → OmniOps → Cancel Subscription. On Mac, open the App Store app → Account (sign-in name) → View Information → Subscriptions → Manage. On Apple Vision Pro, open Settings → your name → Subscriptions → OmniOps → Cancel Subscription.</li>
 <li><strong>Refund requests:</strong> Handled by Apple, not Prameya. See <a href="https://reportaproblem.apple.com/">reportaproblem.apple.com</a> or contact Apple Support. We have no access to your payment information and cannot issue refunds ourselves.</li>
-<li><strong>What happens to your data when you cancel:</strong> Nothing. Your on-device journal stays on your device. Canceling a subscription removes access to tier-specific features and knowledge packs; it does not delete your journal entries, decisions, or reflections. The app may revert to read-only mode or a base Professional tier, depending on implementation.</li>
+<li><strong>What happens to your data when you cancel:</strong> Nothing. Your on-device journal stays on your device. Cancelling removes the Pro tools; it does not delete your journal entries, decisions or reflections, and it does not lock you out of your own records. Every log stays readable and raw JSON export stays available, because those are free.</li>
 </ul>
 <h2 id="storekit-transaction-data">StoreKit transaction data</h2>
 <p>The anonymized StoreKit transaction record described above is stored in the app's local database on your device. It is used to determine which features and knowledge packs to unlock. It is never uploaded to Prameya, and it is deleted when you delete the app (including the sandbox container on Mac at <code>~/Library/Containers/legal.prameya.OmniOps</code>).</p>
@@ -270,8 +266,12 @@ binary. Adding a pack does not, by itself, send data off device. The app does no
 fetch packs from the network.</p>
 <hr />
 <h2 id="6-monetization">6. Monetization</h2>
-<p>There is no StoreKit paywall. This binary does not present a paywall and does not talk<br />
-to the App Store for in-app purchase.</p>
+<p>OmniOps presents a StoreKit paywall for OmniOps Pro (monthly $5.99, annual $39.99,<br />
+lifetime $99.99 — see "Available tiers" above). Apple processes the purchase. We receive a<br />
+transaction identifier and your entitlement status, and nothing else: no name, no email, no<br />
+payment card details, no Apple Account credentials.</p>
+<p>The knowledge layer is free. All four logs, the streak and raw JSON export cost nothing and<br />
+have no time limit.</p>
 <hr />
 <h2 id="7-children">7. Children</h2>
 <p>OmniOps is a general-audience adult tool. It is not in the Kids Category. We do not<br />
