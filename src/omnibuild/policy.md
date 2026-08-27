@@ -39,45 +39,36 @@ OmniBuild is educational software. It is not contracting, engineering, architect
 
 ## Available tiers
 
-OmniBuild offers four subscription tiers:
+There is one paid upgrade, **OmniBuild Pro**, sold as three products. Buying any one of
+them grants exactly the same Pro — there are no separate feature tiers.
 
-| Tier | Price | What it unlocks |
+| Product | Price (US) | Billing |
 |---|---|---|
-| **Free** | $0 | Federal building codes (IBC, IRC, NEC, NFPA) |
-| **Basic** | $29/year | Federal codes + 1 state building code of your choice |
-| **Pro** | $99/year | Federal codes + up to 5 state building codes |
-| **Expert** | $199/year | Federal codes + all 50 state building codes |
+| OmniBuild Pro Monthly | $4.99 | Auto-renews monthly. 7-day free trial. |
+| OmniBuild Pro Annual | $29.99 | Auto-renews yearly. 7-day free trial. |
+| OmniBuild Pro Lifetime | $79.99 | One-time purchase. Not a subscription. |
 
-**Your subscription tier controls which building code references you can read. It does not control what project data is collected.** Whether you use the free tier or subscribe to Expert, OmniBuild transmits nothing to Prameya. No project logs, maintenance records, or decision entries leave your device in any tier.
+Family Sharing is enabled on all three. Subscriptions renew until you cancel in
+Settings; Lifetime is a one-time non-consumable.
 
-The subscription unlocks **content access**, not data collection. An Expert subscriber can read California, Texas, and New York codes; a free user cannot. That difference is about which reference material the app displays, not about what happens to the logs you keep.
+**The knowledge layer is free and stays free.** Without paying anything you get
+the full standards library, including every state pack, with no account and no time limit. Pro adds multi-project support, inspection packs and the permit-counter PDF.
 
-## What Apple receives
+**Pro does not add cloud sync, and there is no paid iCloud option.** OmniBuild stores your
+records on your device in every case, paid or not. If a subscription lapses you keep your
+own data and can still export it in its raw form; only the Pro tools stop.
 
-When you subscribe through the App Store:
-
-- **Apple processes the purchase**, not Prameya. Apple receives your payment information, processes the transaction, and manages the subscription lifecycle.
-- **We receive an anonymized transaction record** from Apple's StoreKit framework indicating that a subscription was purchased or renewed. This record contains a transaction identifier, the product identifier (e.g., `pro_annual`, `expert_annual`), and a timestamp. It does **not** contain your name, email address, payment details, or Apple ID.
-- **We cannot connect that transaction to anything you log in the app.** The StoreKit transaction lives in the app's local database alongside your project logs, but we never receive either one.
-
-Apple's handling of App Store purchases is governed by Apple's privacy policy, not this one. See [apple.com/legal/privacy](https://www.apple.com/legal/privacy/).
-
-## Data linked to you
-
-From Apple's perspective, your App Store purchase history is linked to your Apple ID. Apple knows you bought a subscription to OmniBuild Pro or Expert.
-
-From Prameya's perspective, **nothing is linked to you**, because we hold no account, no identifier, and no copy of your project logs, maintenance records, decision entries, or purchase record. We cannot identify you, we cannot connect a transaction to a person, and we cannot see what you entered into the app.
 
 ## Free vs paid tier data collection
 
-**The tier you choose does not change what data Prameya collects from OmniBuild.** In all four tiers (Free, Basic, Pro, Expert):
+**Whether you buy Pro does not change what data Prameya collects from OmniBuild.** Free and Pro alike:
 
 - Your project logs, maintenance logs, decision entries, and profile stay on your device
 - No analytics, tracking, or telemetry
 - No server that receives your content
 - No account or login
 
-The difference between tiers is **which building codes you can read**, not data handling. Expert unlocks all 50 state codes; it does not unlock data transmission.
+The difference is **which tools you get**, not data handling. The standards library — including every state pack — is free; Pro adds multi-project support, inspection packs and the permit-counter PDF. Neither unlocks data transmission.
 
 ## Cancellation and refunds
 
@@ -201,7 +192,7 @@ One line each, because each one deserves a plain answer.
 
 ## Children
 
-OmniBuild is a general-audience reference app about construction and the skilled trades, intended for adults and for apprentices and students in the trades. It is not designed for or directed to children, it is not offered in Apple's Kids Category, and it contains no advertising, no in-app purchases, and no social or messaging features.
+OmniBuild is a general-audience reference app about construction and the skilled trades, intended for adults and for apprentices and students in the trades. It is not designed for or directed to children, it is not offered in Apple's Kids Category, and it contains no advertising and no social or messaging features. It does offer one in-app purchase, OmniBuild Pro, described above.
 
 The Children's Online Privacy Protection Act (COPPA) restricts the online collection of personal information from children under 13. **OmniBuild collects no personal information from anyone, of any age**, because nothing you enter is transmitted off your device to us. There is therefore no children's personal information for us to hold, use, disclose, or delete.
 

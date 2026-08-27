@@ -54,37 +54,32 @@ If you notice a new spot, a changing spot, or anything that worries you, see a l
 
 ### Available tiers
 
-OmniDerm offers three tiers:
+There is one paid upgrade, **OmniDerm Pro**, sold as three products. Buying any one of
+them grants exactly the same Pro — there are no separate feature tiers.
 
-| Feature | Free | Plus ($9.99/mo or $99/yr) | Premium ($19.99/mo or $199/yr) |
-|---------|------|---------------------------|--------------------------------|
-| Tracking History | 30 days | Unlimited | Unlimited |
-| Journal Entries | Limited | Unlimited | Unlimited |
-| Data Export | None | PDF/JSON | PDF/JSON/FHIR |
-| CloudKit Sync | None | Preferences only | Preferences only |
-| Analytics | Current values | 30-day trends | Advanced correlations |
+| Product | Price (US) | Billing |
+|---|---|---|
+| OmniDerm Pro Monthly | $4.99 | Auto-renews monthly. 7-day free trial. |
+| OmniDerm Pro Annual | $29.99 | Auto-renews yearly. 7-day free trial. |
+| OmniDerm Pro Lifetime | $79.99 | One-time purchase. Not a subscription. |
 
-**Critical: Journal photos NEVER sync in any tier.** This is required by Apple Guideline 5.1.3(ii). Photos stay on-device in Free, Plus, and Premium tiers.
+Family Sharing is enabled on all three. Subscriptions renew until you cancel in
+Settings; Lifetime is a one-time non-consumable.
 
-### What Apple receives
+**The knowledge layer is free and stays free.** Without paying anything you get
+your photos, your captions and the education library, with no account and no time limit. Pro adds the compare-overlay, an unlimited journal and the export pack.
 
-All transactions go through Apple's App Store. When you subscribe:
-- **Apple receives:** Your Apple Account ID, payment method, transaction details
-- **Prameya receives:** A transaction ID from StoreKit, subscription status (active/expired), tier purchased
-- **Prameya does NOT receive:** Your name, email, payment card details, or Apple Account credentials
+**Pro does not add cloud sync, and there is no paid iCloud option.** OmniDerm stores your
+records on your device in every case, paid or not. If a subscription lapses you keep your
+own data and can still export it in its raw form; only the Pro tools stop.
 
-### Data Linked to You
-
-Apple's privacy labels mark Purchase History as "Data Linked to User" for subscribers.
-
-**This does NOT mean your health data leaves your device.** Journal photos, habit logs, and health notes remain on-device only. StoreKit tells us you're a paying subscriber so we can unlock features — it does not transmit your photos, your journal entries, or any health information.
 
 ### Free vs paid tier data collection
 
 **Both tiers process the same consumer health data** (listed in the [Consumer Health Data Privacy Policy](https://prameyallc.github.io/privacy/omniderm/health-data/)).
 
 - **Free tier:** Journal photos stored on-device, 30-day history limit, habits logged locally
-- **Plus/Premium tier:** Journal photos stored on-device (same location), unlimited history, habits logged locally, enhanced export formats
+- **With Pro:** Journal photos stored on-device (same location), unlimited history, habits logged locally, the compare-overlay and the export pack
 
 In both tiers:
 - Photos stay on your device
@@ -289,7 +284,7 @@ If OmniDerm is available where you are in the EEA, UK or Switzerland:
 
 ### Children
 
-**OmniDerm is not directed to children.** It is written for adults managing their own skin-care habits, it has no ads, no accounts, no social features, no chat with other people, and no in-app purchases. We do not knowingly collect personal information from anyone, including anyone under 13, and there is no mechanism by which a child could send us information — we have no server.
+**OmniDerm is not directed to children.** It is written for adults managing their own skin-care habits, it has no ads, no accounts, no social features and no chat with other people. It does offer one in-app purchase, OmniDerm Pro, described above. We do not knowingly collect personal information from anyone, including anyone under 13, and there is no mechanism by which a child could send us information — we have no server.
 
 Under the Children's Online Privacy Protection Act (COPPA), an operator's obligations attach to collecting personal information online from children under 13. We collect none, from anyone.
 

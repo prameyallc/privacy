@@ -133,63 +133,46 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <hr />
 <h2 id="subscriptions-and-in-app-purchases">Subscriptions and In-App Purchases</h2>
 <h3 id="available-tiers">Available tiers</h3>
-<p>OmniDerm offers three tiers:</p>
+<p>There is one paid upgrade, <strong>OmniDerm Pro</strong>, sold as three products. Buying any one of<br />
+them grants exactly the same Pro — there are no separate feature tiers.</p>
 <div class="tablewrap"><table>
 <thead>
 <tr>
-<th>Feature</th>
-<th>Free</th>
-<th>Plus ($9.99/mo or $99/yr)</th>
-<th>Premium ($19.99/mo or $199/yr)</th>
+<th>Product</th>
+<th>Price (US)</th>
+<th>Billing</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Tracking History</td>
-<td>30 days</td>
-<td>Unlimited</td>
-<td>Unlimited</td>
+<td>OmniDerm Pro Monthly</td>
+<td>$4.99</td>
+<td>Auto-renews monthly. 7-day free trial.</td>
 </tr>
 <tr>
-<td>Journal Entries</td>
-<td>Limited</td>
-<td>Unlimited</td>
-<td>Unlimited</td>
+<td>OmniDerm Pro Annual</td>
+<td>$29.99</td>
+<td>Auto-renews yearly. 7-day free trial.</td>
 </tr>
 <tr>
-<td>Data Export</td>
-<td>None</td>
-<td>PDF/JSON</td>
-<td>PDF/JSON/FHIR</td>
-</tr>
-<tr>
-<td>CloudKit Sync</td>
-<td>None</td>
-<td>Preferences only</td>
-<td>Preferences only</td>
-</tr>
-<tr>
-<td>Analytics</td>
-<td>Current values</td>
-<td>30-day trends</td>
-<td>Advanced correlations</td>
+<td>OmniDerm Pro Lifetime</td>
+<td>$79.99</td>
+<td>One-time purchase. Not a subscription.</td>
 </tr>
 </tbody>
 </table></div>
-<p><strong>Critical: Journal photos NEVER sync in any tier.</strong> This is required by Apple Guideline 5.1.3(ii). Photos stay on-device in Free, Plus, and Premium tiers.</p>
-<h3 id="what-apple-receives">What Apple receives</h3>
-<p>All transactions go through Apple's App Store. When you subscribe:<br />
-- <strong>Apple receives:</strong> Your Apple Account ID, payment method, transaction details<br />
-- <strong>Prameya receives:</strong> A transaction ID from StoreKit, subscription status (active/expired), tier purchased<br />
-- <strong>Prameya does NOT receive:</strong> Your name, email, payment card details, or Apple Account credentials</p>
-<h3 id="data-linked-to-you">Data Linked to You</h3>
-<p>Apple's privacy labels mark Purchase History as "Data Linked to User" for subscribers.</p>
-<p><strong>This does NOT mean your health data leaves your device.</strong> Journal photos, habit logs, and health notes remain on-device only. StoreKit tells us you're a paying subscriber so we can unlock features — it does not transmit your photos, your journal entries, or any health information.</p>
+<p>Family Sharing is enabled on all three. Subscriptions renew until you cancel in<br />
+Settings; Lifetime is a one-time non-consumable.</p>
+<p><strong>The knowledge layer is free and stays free.</strong> Without paying anything you get<br />
+your photos, your captions and the education library, with no account and no time limit. Pro adds the compare-overlay, an unlimited journal and the export pack.</p>
+<p><strong>Pro does not add cloud sync, and there is no paid iCloud option.</strong> OmniDerm stores your<br />
+records on your device in every case, paid or not. If a subscription lapses you keep your<br />
+own data and can still export it in its raw form; only the Pro tools stop.</p>
 <h3 id="free-vs-paid-tier-data-collection">Free vs paid tier data collection</h3>
 <p><strong>Both tiers process the same consumer health data</strong> (listed in the <a href="https://prameyallc.github.io/privacy/omniderm/health-data/">Consumer Health Data Privacy Policy</a>).</p>
 <ul>
 <li><strong>Free tier:</strong> Journal photos stored on-device, 30-day history limit, habits logged locally</li>
-<li><strong>Plus/Premium tier:</strong> Journal photos stored on-device (same location), unlimited history, habits logged locally, enhanced export formats</li>
+<li><strong>With Pro:</strong> Journal photos stored on-device (same location), unlimited history, habits logged locally, the compare-overlay and the export pack</li>
 </ul>
 <p>In both tiers:<br />
 - Photos stay on your device<br />
@@ -390,7 +373,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <li>The shipping app does not download model files. If the gated generate surface were ever opened, that download would be a connection from your device to Hugging Face, which may be outside your country. No personal data of yours would be included in that request.</li>
 </ul>
 <h3 id="children">Children</h3>
-<p><strong>OmniDerm is not directed to children.</strong> It is written for adults managing their own skin-care habits, it has no ads, no accounts, no social features, no chat with other people, and no in-app purchases. We do not knowingly collect personal information from anyone, including anyone under 13, and there is no mechanism by which a child could send us information — we have no server.</p>
+<p><strong>OmniDerm is not directed to children.</strong> It is written for adults managing their own skin-care habits, it has no ads, no accounts, no social features and no chat with other people. It does offer one in-app purchase, OmniDerm Pro, described above. We do not knowingly collect personal information from anyone, including anyone under 13, and there is no mechanism by which a child could send us information — we have no server.</p>
 <p>Under the Children's Online Privacy Protection Act (COPPA), an operator's obligations attach to collecting personal information online from children under 13. We collect none, from anyone.</p>
 <p>If you are a parent or guardian and believe a child has somehow sent us information, email admin@prameya.legal and we will delete it.</p>
 <hr />
@@ -413,7 +396,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <h2 id="contact">Contact</h2>
 <p>Questions, requests, complaints, or corrections:</p>
 <p><strong>Prameya LLC</strong> — <strong>admin@prameya.legal</strong></p>
-<p>If you are exercising a privacy right, please say which state or country you are in, so we can apply the right rules. We will not ask you to create an account to make a request.</p><div class="callout distinct"><h3>Consumer Health Data Privacy Policy</h3><p>OmniDerm processes consumer health data. Washington State law requires a separate policy for that data, published at its own address:</p><p><strong><a href="https://prameyallc.github.io/privacy/omniderm/health-data/">OmniDerm Consumer Health Data Privacy Policy</a></strong></p></div>
+<p>If you are exercising a privacy right, please say which state or country you are in, so we can apply the right rules. We will not ask you to create an account to make a request.</p><div class="callout distinct"><h3>Consumer Health Data Privacy Policy</h3><p>OmniDerm processes consumer health data. Washington State law requires a separate policy for that data, published at its own address:</p><p><strong><a href="https://prameyallc.github.io/privacy/omniderm/health-data/">OmniDerm Consumer Health Data Privacy Policy</a></strong></p></div><div class="callout"><h3>Terms of Use</h3><p>The terms governing OmniDerm, including subscription auto-renewal and cancellation, and dispute resolution:</p><p><strong><a href="https://prameyallc.github.io/privacy/omniderm/terms/">OmniDerm Terms of Use</a></strong></p></div>
 </main>
 <footer class="site"><div class="wrap">
   <p>Prameya LLC · <a href="mailto:admin@prameya.legal">admin@prameya.legal</a>

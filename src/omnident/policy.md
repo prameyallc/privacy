@@ -50,37 +50,32 @@ Two things in the shipping app are worth stating plainly, because they involve n
 
 ### Available tiers
 
-OmniDent offers three tiers:
+There is one paid upgrade, **OmniDent Pro**, sold as three products. Buying any one of
+them grants exactly the same Pro — there are no separate feature tiers.
 
-| Feature | Free | Plus ($9.99/mo or $99/yr) | Premium ($19.99/mo or $199/yr) |
-|---------|------|---------------------------|--------------------------------|
-| Tracking History | 30 days | Unlimited | Unlimited |
-| Photo Analysis | On-device AI | On-device AI | On-device AI |
-| Data Export | None | PDF/JSON | PDF/JSON/FHIR |
-| CloudKit Sync | None | Preferences + scan log | Preferences + scan log |
-| Analytics | Current values | 30-day trends | Advanced correlations |
+| Product | Price (US) | Billing |
+|---|---|---|
+| OmniDent Pro Monthly | $4.99 | Auto-renews monthly. 7-day free trial. |
+| OmniDent Pro Annual | $29.99 | Auto-renews yearly. 7-day free trial. |
+| OmniDent Pro Lifetime | $79.99 | One-time purchase. Not a subscription. |
 
-**Critical: AI features are identical across all tiers.** Photo analysis runs on your device in all tiers. Subscription tiers do not affect what the AI can do, only how long history is kept and what export formats are available.
+Family Sharing is enabled on all three. Subscriptions renew until you cancel in
+Settings; Lifetime is a one-time non-consumable.
 
-### What Apple receives
+**The knowledge layer is free and stays free.** Without paying anything you get
+your routine, the reference library and a visit-prep outline, with no account and no time limit. Pro adds full photo history, cadence reminders and the visit sheet.
 
-All transactions go through Apple's App Store. When you subscribe:
-- **Apple receives:** Your Apple Account ID, payment method, transaction details
-- **Prameya receives:** A transaction ID from StoreKit, subscription status (active/expired), tier purchased
-- **Prameya does NOT receive:** Your name, email, payment card details, or Apple Account credentials
+**Pro does not add cloud sync, and there is no paid iCloud option.** OmniDent stores your
+records on your device in every case, paid or not. If a subscription lapses you keep your
+own data and can still export it in its raw form; only the Pro tools stop.
 
-### Data Linked to You
-
-Apple's privacy labels mark Purchase History as "Data Linked to User" for subscribers.
-
-**This does NOT mean your health data leaves your device.** Photographs, analysis results, and your oral-health profile remain on-device only. StoreKit tells us you're a paying subscriber so we can unlock features — it does not transmit your photos, your scans, or any health information.
 
 ### Free vs paid tier data collection
 
 **Both tiers process the same consumer health data** (listed in the [Consumer Health Data Privacy Policy](https://prameyallc.github.io/privacy/omnident/health-data/)).
 
-- **Free tier:** Photos analyzed on-device, 30-day history limit, habits logged locally
-- **Plus/Premium tier:** Photos analyzed on-device (same AI), unlimited history, habits logged locally, enhanced export formats
+- **Free:** Photos analysed on-device, your routine, the reference library and a visit-prep outline
+- **With Pro:** Photos analysed on-device (same models), full photo history, habits logged locally, cadence reminders and the visit sheet
 
 In both tiers:
 - Photos stay on your device

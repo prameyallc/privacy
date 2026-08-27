@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>OmniMathematics Privacy Policy — Prameya LLC</title>
-<meta name="description" content="Effective date: 23 August 2026">
+<meta name="description" content="Effective date: 27 August 2026">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://prameyallc.github.io/privacy/omnimath/">
 <style>
@@ -93,9 +93,9 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 </div></header>
 <main id="main" class="wrap">
 <h1 id="omnimathematics-privacy-policy">OmniMathematics Privacy Policy</h1>
-<p><strong>Effective date:</strong> 23 August 2026<br />
+<p><strong>Effective date:</strong> 27 August 2026<br />
 <strong>Publisher:</strong> Prameya LLC ("Prameya", "we", "us")<br />
-<strong>App:</strong> OmniMathematics for iPhone — bundle ID <code>legal.prameya.OmniMathematics</code><br />
+<strong>App:</strong> OmniMathematics for iPhone — bundle ID <code>legal.prameya.OmniMath</code><br />
 <strong>Contact:</strong> admin@prameya.legal<br />
 <strong>Scope:</strong> This policy covers the OmniMathematics iOS app and nothing else. Prameya's other apps have their own policies, because they work differently. Index: <a href="https://prameyallc.github.io/privacy/">https://prameyallc.github.io/privacy/</a><br />
 <strong>Canonical public URL (slug stays <code>omnimath</code>):</strong> <a href="https://prameyallc.github.io/privacy/omnimath/">https://prameyallc.github.io/privacy/omnimath/</a></p>
@@ -104,106 +104,19 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <ul>
 <li><strong>There are no accounts.</strong> No sign-in, no email address, no name, no profile. There is nothing to fill in.</li>
 <li><strong>Your learning progress stays on your phone.</strong> Completed chapters and pack progress are written to your device's local storage. We do not run a server that receives them. We have no database of users.</li>
-<li><strong>OmniMathematics makes no network requests at all.</strong> Not to us, not to anyone. Every lesson, concept and worked example ships inside the app download.</li>
+<li><strong>OmniMathematics does not talk to our servers.</strong> Every lesson, concept and worked example ships inside the app download. The one commerce path is StoreKit talking to Apple if you buy Pro.</li>
 <li><strong>OmniMathematics has no ads and no App Tracking Transparency prompt.</strong> AdMob, Google's User Messaging Platform, and the advertising identifier request were removed on 12 August 2026 in commit <code>df7919f</code>. The last ad-injection code in the app's view layer was removed on 16 August 2026.</li>
-<li><strong>There is no advertising identifier (IDFA) collection, and no third party receives anything.</strong> The app ships no third-party SDKs of any kind.</li>
+<li><strong>There is no advertising identifier (IDFA) collection, and nobody but Apple receives anything.</strong> The app ships no third-party SDKs of any kind. The single exception to "nobody" is Apple's own App Store: if you buy Pro, StoreKit tells Apple, and Apple tells the app that you are entitled. Nothing else, and nobody else.</li>
 <li><strong>The app asks for no other permissions.</strong> No camera, photos, microphone, location, contacts, health or files.</li>
 <li><strong>There is no AI model in OmniMathematics and it downloads none.</strong> Nothing you read, tap or type is sent to us or to any model.</li>
-<li><strong>There is nothing to buy today.</strong> No paywall, purchase screen or subscription prompt is reachable in this build.</li>
+<li><strong>Purchases go through Apple.</strong> If you buy OmniMathematics Pro, StoreKit talks to Apple to complete the purchase and to check that it is still valid. We receive a transaction identifier and entitlement status from Apple. We do not collect payment details. Chapters, Codex and your marks stay on the device either way.</li>
 <li><strong>OmniMathematics is built for a general audience</strong> — computer-science students, self-learners and adults. It is not in the App Store Kids Category.</li>
 <li><strong>No health data of any kind</strong> is involved. See "Health data" below.</li>
 </ul>
 <hr />
 <h2 id="what-omnimathematics-is">What OmniMathematics is</h2>
 <p>OmniMathematics teaches discrete mathematics for computer science through written lessons, a searchable Codex of concepts, and interactive demonstrations. All of the learning content ships inside the app.</p>
-<p>It is free, and at present nothing pays for it. Until 12 August 2026 advertising did, and earlier versions of this policy said so. That business model was removed from the code, not merely disabled. There is no in-app purchase, paywall, or StoreKit product identifier in the app — there is no reachable purchase route, so the app takes no money from you by any means. If that changes, this policy will be updated before the purchase route ships.</p>
-<hr />
-<h2 id="subscriptions-and-in-app-purchases">Subscriptions and In-App Purchases</h2>
-<h3 id="available-tiers">Available tiers</h3>
-<p>OmniMathematics offers four purchase options:</p>
-<div class="tablewrap"><table>
-<thead>
-<tr>
-<th>Feature</th>
-<th>Free</th>
-<th>Foundation ($4.99/mo or $49/yr)</th>
-<th>Scholar ($9.99/mo or $89/yr)</th>
-<th>Lifetime ($79.99)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Curriculum Access</td>
-<td>20-25%</td>
-<td>50%</td>
-<td>100%</td>
-<td>100%</td>
-</tr>
-<tr>
-<td>Interactive Lessons</td>
-<td>2-4</td>
-<td>6-8</td>
-<td>All</td>
-<td>All</td>
-</tr>
-<tr>
-<td>Offline Access</td>
-<td>No</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>CloudKit Sync</td>
-<td>No</td>
-<td>Progress only</td>
-<td>All preferences</td>
-<td>All preferences</td>
-</tr>
-<tr>
-<td>Future Updates</td>
-<td>No</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Yes</td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>COPPA Compliance:</strong> OmniMathematics is designed for students under 13. NO cloud sync of any learning data. Family Sharing is required for all paid tiers.</p>
-<h3 id="what-apple-receives">What Apple receives</h3>
-<p>All transactions go through Apple's App Store. When you purchase:<br />
-- <strong>Apple receives:</strong> Your Apple Account ID, payment method, transaction details<br />
-- <strong>Prameya receives:</strong> A transaction ID from StoreKit, purchase status, tier purchased<br />
-- <strong>Prameya does NOT receive:</strong> Your name, email, payment card details, or Apple Account credentials</p>
-<h3 id="data-linked-to-you">Data Linked to You</h3>
-<p>Apple's privacy labels mark Purchase History as "Data Linked to User" for purchasers.</p>
-<p><strong>This does NOT mean your learning data is transmitted.</strong> Your progress, quiz answers, and study history remain on-device only. StoreKit tells us you purchased access so we can unlock content — it does not transmit your learning data.</p>
-<h3 id="free-vs-paid-tier-data-collection">Free vs paid tier data collection</h3>
-<p><strong>All tiers collect the same data</strong> (progress tracking, quiz responses, lesson completion).</p>
-<p>The difference is:<br />
-- <strong>What content is available</strong> (20% vs 50% vs 100% curriculum)<br />
-- <strong>Whether progress syncs between your devices</strong> (Free: no sync; Paid: no sync ever)</p>
-<p>In all tiers:<br />
-- Quiz answers and progress stay on your device<br />
-- No transmission of learning data to Prameya<br />
-- No analytics or tracking</p>
-<p><strong>Purchase unlocks content. It does not change what data is collected.</strong></p>
-<h3 id="cancellation-and-refunds">Cancellation and refunds</h3>
-<p>Subscriptions are managed by Apple:<br />
-- <strong>Cancel:</strong> iOS Settings → your name → Subscriptions → OmniMathematics<br />
-- <strong>Refund requests:</strong> reportaproblem.apple.com<br />
-- <strong>Lifetime purchase:</strong> One-time payment, no subscription to cancel</p>
-<p>Prameya cannot cancel your subscription or issue refunds. Apple controls all billing.</p>
-<h3 id="storekit-transaction-data">StoreKit transaction data</h3>
-<p>When you purchase, the app receives and stores locally on your device:<br />
-- Transaction ID (an opaque identifier from Apple)<br />
-- Product ID (which tier you purchased)<br />
-- Purchase and expiration dates (for subscriptions)</p>
-<p>This data:<br />
-- Is stored only on your device<br />
-- Is NOT synced to iCloud<br />
-- Is used only to unlock tier-appropriate content<br />
-- Is deleted when you use "Delete All Data"</p>
+<p>Until 12 August 2026 advertising paid for it, and earlier versions of this policy said so. That business model was removed from the code, not merely disabled. As of 26 August 2026 the app offers OmniMathematics Pro (monthly, annual, or lifetime) through Apple's in-app purchase. Apple processes the payment. We do not collect payment card numbers or billing addresses. Knowledge — the chapters, the Codex, the sourced packs — stays free.</p>
 <hr />
 <h2 id="what-stays-on-your-device">What stays on your device</h2>
 <p>OmniMathematics writes the following to your iPhone's local app storage (Apple's <code>UserDefaults</code>):</p>
@@ -260,7 +173,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <li>No ads of any kind — no banners, no interstitials, no rewarded ads.</li>
 <li>No advertising identifier (IDFA), no <code>AdSupport</code>, no SKAdNetwork entries, no App Tracking Transparency prompt.</li>
 <li>No third-party SDKs. Every code module in the app is written by us.</li>
-<li>No network requests. There is no upload path, no download path, and no server for the app to talk to.</li>
+<li>No network requests to us. There is no upload path, no download path, and no server of ours for the app to talk to. StoreKit may talk to Apple if you buy or restore Pro.</li>
 <li>Nothing you write, draw, tap, search or type in the Ask box is transmitted anywhere.</li>
 <li>No camera, photo library, microphone, contacts, calendar, or file access.</li>
 <li>No location permission is requested, and the app uses no location APIs. Nothing in the app estimates your location by any other means either.</li>
@@ -268,7 +181,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <li>No iCloud or CloudKit sync.</li>
 <li>No analytics or crash-reporting service — ours or anyone else's.</li>
 <li>No AI model, no on-device inference, and no model downloads.</li>
-<li>Nothing to buy: no paywall, purchase screen or subscription prompt is reachable.</li>
+<li>Purchases, if you make one, go through Apple StoreKit. We do not collect payment details.</li>
 </ul>
 <hr />
 <h2 id="advertising-removed">Advertising — removed</h2>
@@ -280,12 +193,12 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <li><strong>16 August 2026</strong> — <code>MathAds.swift</code>, the last ad-injection seam in the view layer (banner and interstitial slots, <code>AdTileView</code>), was deleted. Nothing referenced it.</li>
 <li>The build now enforces this. <code>ci_scripts/ci_post_clone.sh</code> <strong>fails the build</strong> if <code>ThirdParty/GoogleAdsSPM</code> or <code>App/OmniMathematics/Ads</code> is ever restored, and a test suite asserts that no ad symbols are linked.</li>
 </ul>
-<p><strong>Google receives nothing from this app.</strong> Google is no longer a recipient of any data from OmniMathematics, because the app contacts no server at all. The links to Google's privacy policy and ad settings that used to appear here have been removed rather than left as decoration: pointing you at a third party's controls implies that third party has something of yours, and it does not.</p>
+<p><strong>Google receives nothing from this app.</strong> Google is no longer a recipient of any data from OmniMathematics. The app does not talk to our servers; StoreKit may talk to Apple if you buy Pro. The links to Google's privacy policy and ad settings that used to appear here have been removed rather than left as decoration: pointing you at a third party's controls implies that third party has something of yours, and it does not.</p>
 <p><strong>This part is on us, not on the reader.</strong> The top of this policy was corrected on 12 August 2026 to say the ads were gone, while the body below it went on describing them in the present tense for four days. A policy that contradicts itself in one file is worse than one that is merely out of date, because a reader cannot tell which half to believe. The whole document has now been read against the shipping binary.</p>
 <hr />
 <h2 id="no-ai-model-no-model-downloads">No AI model, no model downloads</h2>
 <p>Some apps download machine-learning model files on first use. <strong>OmniMathematics does not.</strong> It contains no model, downloads nothing from any model host, and performs no inference. Every explanation and worked example in the app was written by a person and ships inside the download from the App Store.</p>
-<p>The Codex has an <strong>Ask</strong> box. What it does is a deterministic keyword lookup over the lessons and concept entries already on your phone: it finds the closest passage and shows you that passage, copied word for word from the shipped curriculum. It generates no prose of its own, and it sends your question nowhere — there is no network code in the app for it to use. Your question is not stored either.</p>
+<p>The Codex has an <strong>Ask</strong> box. What it does is a deterministic keyword lookup over the lessons and concept entries already on your phone: it finds the closest passage and shows you that passage, copied word for word from the shipped curriculum. It generates no prose of its own, and it sends your question nowhere — Ask does not use StoreKit or any server of ours. Your question is not stored either.</p>
 <p>The source also contains an inert programming interface reserved for a possible future on-device model. It has no model behind it, links no model runtime, and adds no network access. If that ever changes, this policy will change first.</p>
 <hr />
 <h2 id="if-you-email-us">If you email us</h2>
@@ -293,7 +206,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <hr />
 <h2 id="children-and-omnimathematics">Children and OmniMathematics</h2>
 <p><strong>Who OmniMathematics is for.</strong> University and later-secondary computer-science students, self-taught programmers, and adults who want to understand discrete mathematics. It is a general-audience educational app. It is not in the App Store Kids Category, it is not designed or marketed for young children, and its content, artwork and language are aimed at older students and adults.</p>
-<p><strong>What that means in practice, stated plainly.</strong> Nothing is collected from anyone who uses OmniMathematics, at any age. There is no identifier to transmit, no advertising network to transmit it to, and no network request of any kind. A child using this app is in the same position as an adult using it: their progress is written to their own phone and stays there.</p>
+<p><strong>What that means in practice, stated plainly.</strong> Nothing is collected from anyone who uses OmniMathematics, at any age, by us. There is no identifier we transmit, no advertising network, and no server of ours. If a parent buys Pro, Apple processes that purchase (Family Sharing is on). A child using this app is in the same position as an adult using it for learning data: progress is written to their own phone and stays there.</p>
 <p><strong>What we do not do.</strong> We do not knowingly collect personal information from children — we collect nothing from anyone, because there is nothing to collect and nowhere for it to go. We do not build profiles. We do not use any school, classroom or ClassKit data; the app has no such integration.</p>
 <p><strong>On the signal that used to be sent to the ad network.</strong> Google's ad software let a publisher flag an app as directed to children, flag it as not directed to children, or send no flag at all. OmniMathematics sent no flag. That decision no longer has anything to attach to: the ad SDK is gone, so no flag of any kind is transmitted or transmittable.</p>
 <p><strong>What parents and guardians can do.</strong> Use <strong>Screen Time</strong> to manage which apps a child can use, and write to us at admin@prameya.legal with any concern. The tracking-permission advice this section used to give is obsolete: OmniMathematics no longer appears under <strong>iOS Settings → Privacy &amp; Security → Tracking</strong>, because it never asks to track.</p>
@@ -329,7 +242,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <p>Virginia, Colorado, Connecticut, Texas, Oregon, Montana and a growing number of other states give residents rights to access, correct, delete and port personal data, and specifically to opt out of targeted advertising and profiling. If any of those laws applies to us, the answer is the same one: no targeted advertising occurs in OmniMathematics, no profiling occurs, and no personal data is collected to access, correct, delete or port. Email us for anything else. Some of these states offer an appeal if we refuse a request — if we ever refuse yours, we will tell you how to appeal and how to contact your state Attorney General.</p>
 <h3 id="eea-and-united-kingdom-gdpr-uk-gdpr">EEA and United Kingdom (GDPR / UK GDPR)</h3>
 <p>OmniMathematics is available worldwide, so this section applies if you are in the EEA or the UK.</p>
-<p><strong>Controller.</strong> Prameya LLC, contact admin@prameya.legal, is the controller for the only processing it carries out — correspondence you send us. There is no joint controller and no processor: as of 12 August 2026 no third party receives personal data through this app. Google was previously an independent controller for advertising data collected through its own software in the app; it no longer receives anything.</p>
+<p><strong>Controller.</strong> Prameya LLC, contact admin@prameya.legal, is the controller for the only processing it carries out — correspondence you send us. There is no joint controller, and no processor: nobody processes personal data on our instructions. Google was previously an independent controller for advertising data collected through its own software in the app; since 12 August 2026 it receives nothing. Since 26 August 2026 one other party is in the picture: <strong>Apple</strong>, which runs the App Store checkout if you buy OmniMathematics Pro. Apple decides for itself what it does with that transaction; we do not direct it, we receive no payment details from it, and we receive nothing at all from it unless you buy.</p>
 <p><strong>Legal bases.</strong></p>
 <ul>
 <li><em>Answering your email:</em> legitimate interests, or the steps needed to respond to you.</li>
@@ -339,7 +252,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <p><strong>Profiling.</strong> None. No automated decision-making of any kind takes place, and nothing in the app builds a profile of you.</p>
 <p><strong>Special-category data (Article 9).</strong> None is processed. There is no health, biometric, racial, religious, political, trade-union or sexual-life data anywhere in this app.</p>
 <p><strong>Your rights.</strong> Access, rectification, erasure, restriction, portability, objection to processing based on legitimate interests, and withdrawal of consent. In practice these reach only an email you have sent us, because that is all that exists.</p>
-<p><strong>International transfers.</strong> None. We do not transfer your data internationally, because we do not hold it and the app sends nothing anywhere.</p>
+<p><strong>International transfers.</strong> None of yours, by us. We do not hold learning data to transfer. Purchases, if you make one, are processed by Apple.</p>
 <p><strong>Complaints.</strong> You may complain to your national data protection authority, or to the UK Information Commissioner's Office if you are in the UK.</p>
 <p><strong>Children in Europe.</strong> Where consent is the legal basis for processing a child's data, GDPR requires the child to be at least 16, or younger only with the consent of a parent or guardian, subject to each member state's lower age limit (never below 13). No consent-based processing of anyone's data occurs in OmniMathematics. See "Children and OmniMathematics" above.</p>
 <hr />
@@ -347,7 +260,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <p>There is not much to secure, and that is the design.</p>
 <ul>
 <li>Your learning data stays in your app's private storage on your device, protected by iOS and your passcode. Use a passcode and keep iOS up to date.</li>
-<li>The app makes no network requests, so there is no traffic to intercept. As of 16 August 2026, a search of the compiled sources for <code>URLSession</code>, <code>URLRequest</code> and <code>dataTask</code> returns nothing at all. The transport-security discussion that used to sit here covered the advertising SDK's traffic; there is no such traffic now.</li>
+<li>The app does not talk to our servers, so there is no traffic of yours to intercept on a path we run. As of 16 August 2026, a search of the compiled sources for <code>URLSession</code>, <code>URLRequest</code> and <code>dataTask</code> returns nothing at all. StoreKit is Apple's API and may contact the App Store if you buy or restore Pro. The transport-security discussion that used to sit here covered the advertising SDK's traffic; there is no such traffic now.</li>
 <li>We operate no server holding user data, so there is no user database of ours that could be breached.</li>
 </ul>
 <p>We make no claim to unbreakable security. No system is perfectly secure.</p>
@@ -356,7 +269,8 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <ul>
 <li><strong>On your device:</strong> kept until you clear it (More → Progress → Reset All Progress) or delete the app.</li>
 <li><strong>With us:</strong> only emails you send us, kept as long as needed to handle your message and to record that we handled it. Ask and we will delete yours.</li>
-<li><strong>With anyone else:</strong> nothing. No third party receives anything from this app, so no third party has anything to retain.</li>
+<li><strong>With Apple, if you buy Pro:</strong> Apple keeps its own record of the transaction, under Apple's terms and Apple's retention rules rather than ours. What we hold is the entitlement state StoreKit reports, and that stays on your device with everything else.</li>
+<li><strong>With anyone else:</strong> nothing. Nobody else receives anything from this app, so nobody else has anything to retain.</li>
 </ul>
 <hr />
 <h2 id="app-store-privacy-labels-one-clarification">App Store privacy labels — one clarification</h2>
@@ -364,8 +278,11 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <hr />
 <h2 id="changes-to-this-policy">Changes to this policy</h2>
 <p>We will update this policy when the app changes — and, where we can, before the change ships. When we do, we will change the effective date at the top and describe what changed. If a change materially expands what is collected or who receives it, we will surface it in the app rather than relying on you to re-read this page.</p>
-<p><strong>23 August 2026 — what changed.</strong> The legal name on this page is <strong>OmniMathematics</strong> (bundle ID <code>legal.prameya.OmniMathematics</code>). The public URL slug stays <code>omnimath</code>. User-facing “Insight Stars” copy is chapter and pack progress; reset is <strong>More → Progress → Reset All Progress</strong>.</p>
-<p><strong>21 August 2026 — what changed.</strong> The unused StoreKit scaffold that this policy used to describe as a <code>Monetization</code> module with product identifiers was deleted from the app. There is still nothing to buy. The live URL for this page is <a href="https://prameyallc.github.io/privacy/omnimath/">https://prameyallc.github.io/privacy/omnimath/</a>.</p>
+<p><strong>27 August 2026 — what changed (bundle identifier).</strong> The app's bundle identifier is <code>legal.prameya.OmniMath</code>. It was <code>legal.prameya.OmniMathematics</code> in this policy and in the project until today. A bundle identifier cannot be edited once Apple holds it, and the App ID Apple already holds for this listing (Apple ID 6789206341) is <code>legal.prameya.OmniMath</code> — so the two sides could only be reconciled by moving the one that can move, which is the binary. Registering the longer identifier as a second App ID would have orphaned this listing, its reviews, its ratings and this policy's own published URL. <strong>Nothing about what is collected, stored or transmitted changed with it</strong>: the identifier names the app to the operating system and to the App Store, and it is disclosed here only so that the app you install and the app this policy describes are the same app. The app name, the public URL slug <code>omnimath</code>, and this page's canonical address are all unchanged.</p>
+<p><strong>27 August 2026 — what changed.</strong> Three sentences left over from the no-commerce era were corrected, because they contradicted the StoreKit disclosures added the day before and a policy that contradicts itself in one file is worse than one that is merely out of date. The short version said "no third party receives anything" four bullets above the bullet describing Apple taking your money; the retention section said "no third party has anything to retain" when Apple retains the transaction record; the GDPR controller paragraph said "no third party receives personal data through this app". All three now name Apple's role in an App Store purchase. Nothing about what <em>we</em> collect changed — we still collect nothing — and no new recipient was added; the recipient added on 26 August was simply not carried through the whole document.</p>
+<p><strong>26 August 2026 — what changed.</strong> OmniMathematics Pro is offered through Apple StoreKit (monthly, annual, lifetime). Apple processes the purchase; we receive a transaction identifier and entitlement status; we do not collect payment details. StoreKit talking to Apple is the commerce path. Chapters stay free. The published Pages copy is updated in the privacy repository separately.</p>
+<p><strong>23 August 2026 — what changed.</strong> The legal name on this page is <strong>OmniMathematics</strong>. The public URL slug stays <code>omnimath</code>. ⚠️ This entry also quoted a bundle identifier, and that identifier changed on 27 August 2026 — see that entry. The quotation is removed rather than left standing beside a correction, because a change history that keeps asserting a retired identifier is a second place for a reader to be told the wrong one; the identifier is stated once, in the header at the top. User-facing “Insight Stars” copy is chapter and pack progress; reset is <strong>More → Progress → Reset All Progress</strong>.</p>
+<p><strong>21 August 2026 — what changed.</strong> The unused StoreKit scaffold that this policy used to describe as a <code>Monetization</code> module with product identifiers was deleted from the app. That deletion did not last: StoreKit Pro returned on 26 August 2026 (see that entry). The live URL for this page is <a href="https://prameyallc.github.io/privacy/omnimath/">https://prameyallc.github.io/privacy/omnimath/</a>.</p>
 <p><strong>16 August 2026 — what changed.</strong> Advertising was removed from OmniMathematics in commit <code>df7919f</code> on 12 August 2026, and the last ad-injection code in the view layer was removed on 16 August 2026. On 12 August the summary at the top of this policy was corrected, but the body was not: for four days this file said "no ads" in its first section and then described banner ads, interstitials, ad load timing, Google's data-collection table, the advertising identifier, IP-derived coarse location, SKAdNetwork and an ad-reporting control in the present tense. Every one of those passages has now been deleted or rewritten, along with the advertising legal bases under GDPR, the California "sharing" disclosure and its tracking-based opt-out, the ad-related retention entry, the ad-traffic security claim, and the ad-dependent reasoning in the children's section. The on-device data table was also corrected: it had listed four stored items where the app stores eight. This update removes disclosures; it adds no collection.</p>
 <p>Older versions are kept in the public repository behind <a href="https://prameyallc.github.io/privacy/">https://prameyallc.github.io/privacy/</a>.</p>
 <hr />
@@ -374,12 +291,12 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 Email: <strong>admin@prameya.legal</strong><br />
 Privacy policies for all Prameya apps: <a href="https://prameyallc.github.io/privacy/">https://prameyallc.github.io/privacy/</a><br />
 This policy: <a href="https://prameyallc.github.io/privacy/omnimath/">https://prameyallc.github.io/privacy/omnimath/</a></p>
-<p>If you are writing about a privacy right, say which right and which app, and we will get to it faster.</p>
+<p>If you are writing about a privacy right, say which right and which app, and we will get to it faster.</p><div class="callout"><h3>Terms of Use</h3><p>The terms governing OmniMathematics, including subscription auto-renewal and cancellation, and dispute resolution:</p><p><strong><a href="https://prameyallc.github.io/privacy/omnimath/terms/">OmniMathematics Terms of Use</a></strong></p></div>
 </main>
 <footer class="site"><div class="wrap">
   <p>Prameya LLC · <a href="mailto:admin@prameya.legal">admin@prameya.legal</a>
   · <a href="https://prameyallc.github.io/privacy/support/">Support</a></p>
-  <p>Effective 23 August 2026. <a href="https://prameyallc.github.io/privacy/">All app privacy policies</a></p>
+  <p>Effective 27 August 2026. <a href="https://prameyallc.github.io/privacy/">All app privacy policies</a></p>
 </div></footer>
 </body>
 </html>

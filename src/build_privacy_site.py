@@ -273,6 +273,9 @@ def build(content_dir, out_dir, site_root):
         hd_src = os.path.join(content_dir, slug, "health-data.md")
         has_hd = os.path.exists(hd_src) and open(hd_src, encoding="utf-8").read().strip()
 
+        tos_src = os.path.join(content_dir, slug, "terms.md")
+        has_tos = os.path.exists(tos_src) and open(tos_src, encoding="utf-8").read().strip()
+
         extra = ""
         if has_hd:
             # RCW 19.373.020 wants a distinct link, not a buried section.
@@ -283,6 +286,18 @@ def build(content_dir, out_dir, site_root):
                 f'separate policy for that data, published at its own address:</p>'
                 f'<p><strong><a href="{site_root}/{slug}/health-data/">'
                 f'{name} Consumer Health Data Privacy Policy</a></strong></p>'
+                "</div>"
+            )
+
+        if has_tos:
+            # Guideline 3.1.2 wants the terms reachable, not buried in the binary only.
+            extra += (
+                '<div class="callout">'
+                f'<h3>Terms of Use</h3>'
+                f'<p>The terms governing {name}, including subscription auto-renewal and '
+                f'cancellation, and dispute resolution:</p>'
+                f'<p><strong><a href="{site_root}/{slug}/terms/">'
+                f'{name} Terms of Use</a></strong></p>'
                 "</div>"
             )
 
@@ -316,6 +331,22 @@ def build(content_dir, out_dir, site_root):
             )
             write(os.path.join(out_dir, slug, "health-data", "index.html"), hp)
             built.append(f"{slug}/health-data/")
+
+        if has_tos:
+            tos_md = open(tos_src, encoding="utf-8").read()
+            tos_effective, _ = effective_from(tos_md, app_effective)
+            tp = PAGE.format(
+                title=f"{name} Terms of Use — Prameya LLC",
+                desc=html.escape(first_para(tos_md), quote=True),
+                canonical=f"{site_root}/{slug}/terms/",
+                css=CSS, al=al, ad=ad, ail="#ffffff", aid="#10151a",
+                root=site_root,
+                crumb=f'<a href="{site_root}/{slug}/">← {name} privacy policy</a>',
+                body=render_md(tos_md),
+                effective=tos_effective,
+            )
+            write(os.path.join(out_dir, slug, "terms", "index.html"), tp)
+            built.append(f"{slug}/terms/")
 
     # ------------------------------------------------------------------ hub
     cards = []

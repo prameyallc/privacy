@@ -36,42 +36,36 @@ uploaded to us.
 
 ## Available tiers
 
-OmniOps offers three subscription tiers:
+There is one paid upgrade, **OmniOps Pro**, sold as three products. Buying any one of
+them grants exactly the same Pro — there are no separate feature tiers.
 
-| Tier | Price | What it unlocks |
+| Product | Price (US) | Billing |
 |---|---|---|
-| **Professional** | $39/year | Core process frameworks, basic habit tracking, foundational knowledge packs |
-| **Practice** | $99/year | Professional features + advanced frameworks, extended habit tracking, all 19 knowledge packs |
-| **Firm** | $199/year | Practice features + multi-project support, team-oriented decision logs, advanced reflection tools |
+| OmniOps Pro Monthly | $5.99 | Auto-renews monthly. 7-day free trial. |
+| OmniOps Pro Annual | $39.99 | Auto-renews yearly. 7-day free trial. |
+| OmniOps Pro Lifetime | $99.99 | One-time purchase. Not a subscription. |
 
-**Your subscription tier controls which features and knowledge packs are available to you. It does not control what data is collected.** OmniOps transmits nothing to Prameya in any tier. No journal entries, decisions, reflections, or habit logs leave your device, regardless of which tier you subscribe to.
+Family Sharing is enabled on all three. Subscriptions renew until you cancel in
+Settings; Lifetime is a one-time non-consumable.
 
-## What Apple receives
+**The knowledge layer is free and stays free.** Without paying anything you get
+all four logs unlimited, the streak and raw JSON export, with no account and no time limit. Pro adds review analytics, custom cadences and the review PDF.
 
-When you subscribe through the App Store:
+**Pro does not add cloud sync, and there is no paid iCloud option.** OmniOps stores your
+records on your device in every case, paid or not. If a subscription lapses you keep your
+own data and can still export it in its raw form; only the Pro tools stop.
 
-- **Apple processes the purchase**, not Prameya. Apple receives your payment information, processes the transaction, and manages the subscription lifecycle.
-- **We receive an anonymized transaction record** from Apple's StoreKit framework indicating that a subscription was purchased or renewed. This record contains a transaction identifier, the product identifier (e.g., `professional_annual`, `practice_annual`, `firm_annual`), and a timestamp. It does **not** contain your name, email address, payment details, or Apple ID.
-- **We cannot connect that transaction to anything you log in the app.** The StoreKit transaction lives in the app's local database alongside your journal data, but we never receive either one.
-
-Apple's handling of App Store purchases is governed by Apple's privacy policy, not this one. See [apple.com/legal/privacy](https://www.apple.com/legal/privacy/).
-
-## Data linked to you
-
-From Apple's perspective, your App Store purchase history is linked to your Apple ID. Apple knows you bought a subscription to OmniOps Professional, Practice, or Firm.
-
-From Prameya's perspective, **nothing is linked to you**, because we hold no account, no identifier, and no copy of your journal entries, decisions, reflections, or purchase record. We cannot identify you, we cannot connect a transaction to a person, and we cannot see what you entered into the app.
 
 ## Free vs paid tier data collection
 
-**OmniOps does not offer a free tier**, but the principle remains the same across all three paid tiers: **the tier you choose does not change what data Prameya collects.** In all three tiers (Professional, Practice, Firm):
+**OmniOps is free to use**, and buying Pro does not change what data Prameya collects. Free and Pro alike:
 
 - Your process journal (work, decisions, reflections, habits) stays on your device
 - No analytics, tracking, or telemetry
 - No server that receives your content
 - No account or login
 
-The difference between tiers is **feature access and knowledge pack availability**, not data handling. Firm unlocks advanced multi-project tools; it does not unlock data transmission.
+The difference is **which tools you get**, not data handling. All four logs, the streak and raw JSON export are free; Pro adds review analytics, custom cadences and the review PDF. Neither unlocks data transmission.
 
 ## Cancellation and refunds
 
@@ -79,7 +73,7 @@ Subscriptions are managed entirely through your Apple ID:
 
 - **To cancel:** Open Settings on your iPhone or iPad → tap your name → Subscriptions → OmniOps → Cancel Subscription. On Mac, open the App Store app → Account (sign-in name) → View Information → Subscriptions → Manage. On Apple Vision Pro, open Settings → your name → Subscriptions → OmniOps → Cancel Subscription.
 - **Refund requests:** Handled by Apple, not Prameya. See [reportaproblem.apple.com](https://reportaproblem.apple.com/) or contact Apple Support. We have no access to your payment information and cannot issue refunds ourselves.
-- **What happens to your data when you cancel:** Nothing. Your on-device journal stays on your device. Canceling a subscription removes access to tier-specific features and knowledge packs; it does not delete your journal entries, decisions, or reflections. The app may revert to read-only mode or a base Professional tier, depending on implementation.
+- **What happens to your data when you cancel:** Nothing. Your on-device journal stays on your device. Cancelling removes the Pro tools; it does not delete your journal entries, decisions or reflections, and it does not lock you out of your own records. Every log stays readable and raw JSON export stays available, because those are free.
 
 ## StoreKit transaction data
 
@@ -176,8 +170,13 @@ fetch packs from the network.
 
 ## 6. Monetization
 
-There is no StoreKit paywall. This binary does not present a paywall and does not talk
-to the App Store for in-app purchase.
+OmniOps presents a StoreKit paywall for OmniOps Pro (monthly $5.99, annual $39.99,
+lifetime $99.99 — see "Available tiers" above). Apple processes the purchase. We receive a
+transaction identifier and your entitlement status, and nothing else: no name, no email, no
+payment card details, no Apple Account credentials.
+
+The knowledge layer is free. All four logs, the streak and raw JSON export cost nothing and
+have no time limit.
 
 ---
 
