@@ -34,7 +34,7 @@ OmniPhysics is an educational physics app (classical mechanics and waves) for le
 
 We do not collect precise location, contacts, advertising identifiers, or off-device analytics. We do not collect photos, camera or microphone input; the app plays bundled UI sounds and records nothing.
 
-There is no account of ours. There is no third-party SDK.
+There is no account of ours. The app links three third-party Swift packages — Apple's MLX, swift-transformers and swift-huggingface — which ship inside the app download. None of them is an analytics, advertising or crash-reporting SDK, and none of them sends us anything. They exist so that Ask can run a language model on your own device; see the next section.
 
 ---
 
@@ -120,7 +120,7 @@ If CloudKit is not available (not signed in, or the container is not provisioned
 - No third-party analytics or crash reporter.
 - No camera, photos, microphone, contacts, or location APIs.
 - No health, fitness or medical data of any kind.
-- No on-device AI model and no model download.
+- **Ask can download a language model, and it runs on your device.** When you use Ask, the app fetches model weights from Hugging Face and loads them locally. Hugging Face receives the repository identifier and your device's IP address, under their terms; we do not receive that request and we never see your question. Inference happens entirely on the device. On Apple TV there is no model and no download.
 - A paywall for OmniPhysics Pro, processed entirely by Apple's StoreKit. We receive a transaction identifier and entitlement status, never payment details.
 
 ---
