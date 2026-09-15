@@ -75,7 +75,7 @@ The Apple Watch app comes with the iPhone app. It lists topic packs, shows cards
 
 - **Ask the phone** sends the question you enter to OmniMathematics on your paired iPhone, over Apple's connection between the two devices. The iPhone answers while OmniMathematics is open on it, from the Codex and the topic packs only — never with the on-device model — and sends the answer back to the Watch.
 - **Cards** on the Watch send your tap (for example "Start" or "I'm done") to the iPhone, which applies each tap once.
-- The Watch reads the iCloud key-value store described above to offer where you left off and to match your appearance choice.
+- The Watch reads the iCloud key-value store described above to offer where you left off and to match your appearance choice, and opening a pack on the Watch updates where you left off.
 
 None of this reaches Prameya.
 

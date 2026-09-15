@@ -208,13 +208,21 @@ def effective_from(md_text, fallback):
     return date_only or fallback, True
 
 
-_TERMS_EFF_RE = re.compile(r"^\*\*Effective (\d{1,2} [A-Z][a-z]+ \d{4})\b", re.MULTILINE)
+_TERMS_EFF_RE = re.compile(r"^\*\*Effective (\d{1,2} [A-Z][a-z]+ \d{4}[^*]*)\*\*", re.MULTILINE)
 
 
 def terms_effective_from(md_text):
-    """Return (date, found) from a terms line such as '**Effective 27 August 2026 · Prameya LLC**'."""
+    """Return (effective, found) from a terms line such as '**Effective 27 August 2026 · Prameya LLC**'.
+
+    ⛔ THE WHOLE LINE, NOT ONLY THE FIRST DATE (2026-09-15). OmniMathematics' terms read "Effective 27 August 2026 ·
+    Sections 2–5 revised 15 September 2026 · Prameya LLC", and a footer that printed only "Effective 27 August 2026."
+    gave the page two different effective statements. The footer now carries everything before the publisher.
+    """
     m = _TERMS_EFF_RE.search(md_text)
-    return (m.group(1), True) if m else (None, False)
+    if not m:
+        return None, False
+    line = re.sub(r"\s*·\s*Prameya LLC\s*$", "", m.group(1).strip())
+    return line, True
 
 
 def first_para(md_text):

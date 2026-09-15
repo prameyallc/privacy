@@ -8,7 +8,7 @@ OmniMathematics is published by Prameya LLC, a Texas limited liability company. 
 
 ## 2. What OmniMathematics is, and is not
 
-OmniMathematics is an educational retelling of discrete mathematics, not a course or a credential. Explanations are compressed for intuition and can omit hypotheses that matter. Check anything you will be graded on against your course text.
+OmniMathematics is an educational retelling of discrete mathematics and related mathematics, not a course or a credential. Explanations are compressed for intuition and can omit hypotheses that matter. Check anything you will be graded on against your course text.
 
 Answers from the optional on-device Ask model are generated and can be wrong. OmniMathematics does not replace your course, your teacher or your own checking.
 
@@ -18,7 +18,7 @@ The marks you make and the files you export remain yours. Prameya claims no lice
 
 ## 4. What you agree not to do
 
-Use OmniMathematics lawfully. Do not resell it or redistribute its content as your own. Passages quoted from openly licensed works keep their own licences, which the app names in Settings ▸ Legal ▸ Acknowledgements & Sources; reuse them only on those terms. Nothing in these terms or in Apple's EULA limits what those licences let you do with those passages.
+Use OmniMathematics lawfully. Do not resell it or redistribute its content as your own. Passages quoted or adapted from openly licensed works keep their own licences, which the app names in Settings ▸ Legal ▸ Acknowledgements & Sources; reuse them only on those terms. Nothing in these terms or in Apple's EULA limits what those licences let you do with those passages.
 
 ## 5. Purchases, auto-renewal and cancellation
 
