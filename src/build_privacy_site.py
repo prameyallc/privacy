@@ -385,11 +385,9 @@ do genuinely different things with data. Pick the app you use.</p>
 <div class="callout">
 <h2 style="border:0;padding-top:0;margin-top:0">How these apps are built</h2>
 <p>Prameya apps run their analysis <strong>on your device</strong>. We do not operate a server that
-receives your content, and we do not keep user profiles. Some apps can download AI model files
-from Hugging Face, and only after you choose to: OmniLex, OmniDent and OmniSalub when you tap to
-install them in Settings, and OmniMathematics when you choose to download its optional Ask model.
-That request is for a model file; it does not send your content anywhere. Read the app's own
-policy for the details.</p>
+receives your content, and we do not keep user profiles. Some apps can download an optional AI
+model file from Hugging Face, and only after you choose to; each app's own policy says whether it
+does and when. That request is for a model file; it does not send your content anywhere.</p>
 <p>Where an app touches health information, US state law requires a separate consumer health data
 policy. Those are linked above and from each app's policy.</p>
 </div>

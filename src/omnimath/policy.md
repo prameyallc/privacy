@@ -48,6 +48,7 @@ OmniMathematics writes the following to its own storage on the device:
 | On iPhone: the ids and send times of recent Apple Watch taps it has already applied, at most 64, each forgotten after an hour | So a tap on the Watch applies once |
 | The optional Ask model's files (about 350 MB), only if you downloaded them | To run the model on the device |
 | A temporary copy of a file you export, which the app clears afterwards | To hand the file to the share sheet |
+| Two internal markers: that stored marks were moved to the current storage format, and which version of the chapter list the marks belong to | So the move happens once, and a mark from an older chapter list is not counted as a newer chapter |
 
 That is the complete list of what OmniMathematics itself stores. We cannot see it, and we have no way to request it. A file you export with **Export my marks**, or a Pro study report, goes wherever you choose to save or share it. What Apple's own services keep for the app — iCloud, Handoff, the connection to Apple Watch, the Home Screen widget and a scheduled reminder — is described below.
 
@@ -100,7 +101,7 @@ Your question is not stored as a record of its own, and it is never sent to us o
 
 ## Purchases
 
-OmniMathematics Pro is sold through Apple's in-app purchase as Monthly and Annual subscriptions, which renew automatically, and Lifetime, a one-time purchase. Apple processes the payment, handles refunds, and keeps its own record of the transaction under Apple's terms. StoreKit on your device checks with Apple whether you have Pro, and the answer stays on your device. The app sends nothing about a purchase to us. We do not collect payment details, and we never see them. Family Sharing is on for all three. The prices, the free trial and how to cancel are in the [OmniMathematics Terms of Use](https://prameyallc.github.io/privacy/omnimath/terms/).
+OmniMathematics Pro is sold through Apple's in-app purchase as Monthly and Annual subscriptions, which renew automatically, and Lifetime, a one-time purchase. Apple processes the payment, handles refunds, and keeps its own record of the transaction under Apple's terms. StoreKit on your device checks with Apple whether you have Pro, and the answer stays on your device. The app sends nothing about a purchase to us. We do not collect payment details, and we never see them. Family Sharing is on for all three. The prices, the free trial and how to cancel are shown on the paywall in the app and in the [OmniMathematics Terms of Use](https://prameyallc.github.io/privacy/omnimath/terms/); Apple's standard EULA also applies.
 
 ---
 
@@ -244,7 +245,7 @@ We will update this policy when the app changes — and, where we can, before th
 - It covers iPhone and iPad and the Apple Watch app, and no longer mentions Apple TV.
 - It says that the app asks to send notifications only when you turn on the daily study reminder in Settings.
 - It names the controls in More ▸ Progress as the app shows them: **Remove Every Mark**, confirmed with **Remove Everything**.
-- Its list of what the app stores now includes the record of applied Apple Watch taps on iPhone, the reminder switch, your Ask model choice and the model's files.
+- Its list of what the app stores now includes the record of applied Apple Watch taps on iPhone, the reminder switch, your Ask model choice, the model's files and two internal markers for moving stored marks to the current format.
 - It describes **Ask the phone** on Apple Watch, which sends your question to your paired iPhone.
 - It no longer says that we receive a transaction identifier or entitlement status from Apple: the app sends nothing about a purchase to us.
 - It no longer repeats the history of the app's development, including earlier corrections to this policy and the bundle-identifier changes.

@@ -86,3 +86,18 @@ OPEN (not decided by this audit):
 - The hub no longer lists which other apps do not download model files: every app's Package.swift in the workspace references Hugging Face or MLX packages, and that claim was not re-verified for the other ten apps.
 - The terms keep "Effective 27 August 2026" although sections 2–5 changed in build 24, because the in-app copy does; a new date needs an owner or counsel decision and a change to the in-app copy and its contract test first.
 - `docs/PRIVACY.md` in the OmniMathematics repo must be replaced with this body in the same change that publishes it, or `scripts/check-privacy-policy-published.sh` (gate 7) fails. That change must also update `DistroUXContractTests.inRepoPrivacyPolicyUsesTheBinaryName`, which still requires the retired "More → Progress → Reset All Progress"; the pin should require "Remove Every Mark" and "Remove Everything" and forbid "Reset All Progress". `UnifiedProCatalogContractTests.privacyPolicyNamesStoreKit` ("StoreKit", "transaction", "do not collect payment", "CloudKit", "Hugging Face", the "## Changes to this policy" heading) is satisfied by this body.
+
+## Build 24 App Review round 1 — 2026-09-15 (policy, terms and hub corrected before publishing)
+
+AUDIT METHOD: four review lenses read `hotfix/1.0-build-24` at `eeef10a`, this branch at `69ea9c2` and the marketing branch; the OmniMathematics fixes are on `hotfix/1.0-build-24` after `eeef10a`, and `docs/PRIVACY.md` there is this page's body.
+
+CHANGES:
+
+1. POLICY, STORAGE. The table said it was the complete list of what the app stores and left out two bookkeeping keys, `omnimathematics.migratedToSwiftData` and `omnimathematics.curriculumGeneration` (Persistence/ProgressStore.swift). They now have a row.
+2. POLICY, PURCHASES. "The prices, the free trial and how to cancel are in the OmniMathematics Terms of Use" pointed readers to Prameya's terms while the paywall's link opens Apple's standard EULA. The sentence now names the paywall and the terms, and says Apple's standard EULA also applies.
+3. TERMS, DATE. Sections 2–5 changed in build 24, and sections 4 and 5 again on 15 September, under "Effective 27 August 2026". The line now reads "Effective 27 August 2026 · Sections 2–5 revised 15 September 2026 · Prameya LLC", the same literal as `TermsOfUseCopy.effectiveLine`. Whether the revised sections need their own effective date is still an owner/counsel decision.
+4. TERMS, SECTION 4. CC BY-SA 4.0 §2(a)(5)(C) forbids adding terms that restrict what recipients may do with licensed material, and section 1 applies Apple's EULA. Section 4 now says nothing in these terms or in Apple's EULA limits what those licences allow.
+5. TERMS, SECTION 5. "7-day free trial for new subscribers" is now "for eligible new subscribers", as on the paywall.
+6. HUB. The hub listed OmniLex, OmniDent, OmniSalub and OmniMathematics as the apps that can download model files. OmniCadence (`OmniCadenceKit/Sources/AppSurfaces/Ask/OpsAskView.swift` calls `MLXLLMClient.shared.generate`) and OmniPhysics (`OmniPhysicsKit/Sources/Intelligence/PhysicsAskService.swift` injects `MLXLLMClient()`) also carry model clients, and whether each downloads in its release path was not verified. The hub no longer lists apps; it says each app's own policy says whether it downloads a model.
+
+OPEN: the effective date of this policy (14 September 2026) should be the day it is published; change it here and in `docs/PRIVACY.md` together if publishing is later.

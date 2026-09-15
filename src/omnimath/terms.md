@@ -1,6 +1,6 @@
 # OmniMathematics Terms of Use
 
-**Effective 27 August 2026 · Prameya LLC**
+**Effective 27 August 2026 · Sections 2–5 revised 15 September 2026 · Prameya LLC**
 
 ## 1. Who we are, and what this covers
 
@@ -18,14 +18,14 @@ The marks you make and the files you export remain yours. Prameya claims no lice
 
 ## 4. What you agree not to do
 
-Use OmniMathematics lawfully. Do not resell it or redistribute its content as your own. Passages quoted from openly licensed works keep their own licences, which the app names in Settings ▸ Legal ▸ Acknowledgements & Sources; reuse them only on those terms.
+Use OmniMathematics lawfully. Do not resell it or redistribute its content as your own. Passages quoted from openly licensed works keep their own licences, which the app names in Settings ▸ Legal ▸ Acknowledgements & Sources; reuse them only on those terms. Nothing in these terms or in Apple's EULA limits what those licences let you do with those passages.
 
 ## 5. Purchases, auto-renewal and cancellation
 
 OmniMathematics is free to use. **OmniMathematics Pro** is one upgrade sold as three products:
 
-- **Monthly — $4.99 (US).** Auto-renews every month. 7-day free trial for new subscribers.
-- **Annual — $29.99 (US).** Auto-renews every year. 7-day free trial for new subscribers.
+- **Monthly — $4.99 (US).** Auto-renews every month. 7-day free trial for eligible new subscribers.
+- **Annual — $29.99 (US).** Auto-renews every year. 7-day free trial for eligible new subscribers.
 - **Lifetime — $79.99 (US).** A one-time purchase. Not a subscription. Does not renew.
 
 Family Sharing is enabled on all three.
