@@ -1,6 +1,6 @@
 # OmniMathematics Privacy Policy
 
-**Effective date:** 14 September 2026
+**Effective date:** 15 September 2026
 **Publisher:** Prameya LLC ("Prameya", "we", "us")
 **App:** OmniMathematics for iPhone and iPad, with its Apple Watch app — bundle ID `legal.prameya.OmniMathematics`
 **Contact:** admin@prameya.legal
@@ -16,8 +16,8 @@
 - **OmniMathematics does not talk to a server of ours.** There is no such server. Everything you study ships inside the app. The only paths off the device are Apple's (the App Store for purchases, iCloud, Handoff, and the connection between your iPhone and your Apple Watch) and, only if you choose to download the optional Ask model, Hugging Face.
 - **No ads, no tracking, no analytics.** The app contains no advertising or analytics software, does not use the advertising identifier, and never shows the App Tracking Transparency prompt.
 - **One optional permission.** OmniMathematics asks to send notifications only if you turn on **More ▸ Settings ▸ Reminders ▸ Daily study reminder**, which is off until you turn it on. It asks for no other permission: no camera, photos, microphone, location, contacts, health or files.
-- **Ask answers from the app.** Ask shows a matching excerpt from the Codex and the topic packs on your device. If you choose to download the optional on-device model, Ask can rephrase that excerpt on the device and labels the result as generated. Your question is not sent to us or to any server.
-- **Purchases go through Apple.** StoreKit on your device completes and checks an OmniMathematics Pro purchase with Apple. The app sends nothing about your purchase to us, and we do not collect payment details. The topic packs, the Codex, the chapters, the interactives, Ask and your marks stay free either way.
+- **Ask answers from the app.** Ask shows a matching excerpt from Concepts (the app's built-in concept reference) and the topic packs on your device. On an iPhone or iPad with 8 GB of memory you can choose to download MiniCPM5 2B (about 1.4 GB); on 12 GB or more, Gemma 4 E2B (about 4.4 GB). If you do, Ask can rephrase that excerpt on the device and labels the result as generated. Devices with 6 GB or less are offered no download and always answer from Concepts and the packs. Your question is not sent to us or to any server.
+- **Purchases go through Apple.** StoreKit on your device completes and checks an OmniMathematics Pro purchase with Apple. The app sends nothing about your purchase to us, and we do not collect payment details. The topic packs, Concepts, the chapters, the interactives, Ask and your marks stay free either way.
 - **OmniMathematics is built for a general audience** — computer-science students, self-learners and adults. It is not in the App Store Kids Category.
 - **No health data of any kind** is involved. See "Health data" below.
 
@@ -25,7 +25,7 @@
 
 ## What OmniMathematics is
 
-OmniMathematics teaches discrete mathematics for computer science, and the mathematics around it, through topic packs with a cited source under each idea, a Codex of concepts, interactives, and a story tour of twenty chapters in six parts. All of the learning content ships inside the app.
+OmniMathematics teaches discrete mathematics for computer science, and the mathematics around it, through topic packs with a cited source under each idea, a built-in reference of concepts (Concepts), interactives, and a story tour of twenty chapters in six parts. All of the learning content ships inside the app.
 
 OmniMathematics Pro, sold through Apple's in-app purchase as a monthly or annual subscription or a one-time lifetime purchase, adds one feature: a formatted study report of your marks. Everything else stays free.
 
@@ -43,10 +43,11 @@ OmniMathematics writes the following to its own storage on the device:
 | The last day you studied, and how many days in a row you have studied | To show your streak |
 | Whether you have seen the intro screens, and when the first-run Legal & Safety notice was acknowledged | So they show once |
 | Your appearance choice | To apply it |
-| Your answer to "Download the Ask model?", or the position of the **On-device Ask model** switch | So Ask does not ask again |
+| Your answer to "Download the Ask model?", with the model and version it was given for, or the position of the **On-device Ask model** switch | So Ask does not ask again for the same model, and asks again if the model changes |
 | Whether the daily study reminder is on | To keep or remove the reminder |
 | On iPhone: the ids and send times of recent Apple Watch taps it has already applied, at most 64, each forgotten after an hour | So a tap on the Watch applies once |
-| The optional Ask model's files (about 350 MB), only if you downloaded them | To run the model on the device |
+| The optional Ask model's files (MiniCPM5 2B, about 1.4 GB, or Gemma 4 E2B, about 4.4 GB), only if your device was offered the download and you chose it | To run the model on the device |
+| A one-time marker that the files of the model used by versions before 1.0 (24) (Qwen3 0.6B, about 350 MB) were removed on the first launch, and how much space that freed | So the removal happens once |
 | A temporary copy of a file you export, which the app clears afterwards | To hand the file to the share sheet |
 | Two internal markers: that stored marks were moved to the current storage format, and which version of the chapter list the marks belong to | So the move happens once, and a mark from an older chapter list is not counted as a newer chapter |
 
@@ -73,7 +74,7 @@ If you are signed in to iCloud:
 
 The Apple Watch app comes with the iPhone app. It lists topic packs, shows cards the iPhone sends to it, and has **Ask the phone**.
 
-- **Ask the phone** sends the question you enter to OmniMathematics on your paired iPhone, over Apple's connection between the two devices. The iPhone answers while OmniMathematics is open on it, from the Codex and the topic packs only — never with the on-device model — and sends the answer back to the Watch.
+- **Ask the phone** sends the question you enter to OmniMathematics on your paired iPhone, over Apple's connection between the two devices. The iPhone answers while OmniMathematics is open on it, from Concepts and the topic packs only — never with the on-device model — and sends the answer back to the Watch.
 - **Cards** on the Watch send your tap (for example "Start" or "I'm done") to the iPhone, which applies each tap once.
 - The Watch reads the iCloud key-value store described above to offer where you left off and to match your appearance choice, and opening a pack on the Watch updates where you left off.
 
@@ -89,11 +90,17 @@ The reminder is off until you turn it on in **More ▸ Settings ▸ Reminders �
 
 ## Ask, and the optional on-device model
 
-Ask finds the closest passage in the Codex and the topic packs already on your device and shows it, labelled **From the Codex**.
+Ask finds the closest passage in Concepts and the topic packs already on your device and shows it, labelled **From Concepts**.
 
-Ask can also use a small language model that runs on the device to rephrase that passage: Qwen3 0.6B (4-bit), from the Hugging Face repository `mlx-community/Qwen3-0.6B-4bit`. It is not part of the app download. It is downloaded from Hugging Face — about 350 MB — only after you choose **Download (about 350 MB)** in Ask or turn on **On-device Ask model** in More ▸ Settings ▸ Ask model, and it may be downloaded again if the system clears storage space. Text it produces is labelled **On-device model** and carries a notice that it can be wrong. Ask shows the retrieved passage instead when the model is not downloaded or not allowed, when generation fails, is refused or does not finish a complete answer, and for every question sent from Apple Watch.
+Ask can also use a language model that runs on the device to rephrase that passage. Which model, if any, depends on how much memory the device has:
 
-Like any file download, the request to Hugging Face gives Hugging Face the device's IP address and names the model files requested, and Hugging Face handles it under its own terms. It does not include your question, your marks or anything you type. We do not receive that request. **Remove the downloaded model** in More ▸ Settings ▸ Ask model deletes the files and turns the switch off.
+- **iPhone and iPad with 8 GB of memory** are offered **MiniCPM5 2B**, from the Hugging Face repository `openbmb/MiniCPM5-2B-MLX` at commit `8a9ad753`, about 1.4 GB.
+- **iPhone and iPad with 12 GB of memory or more** are offered **Gemma 4 E2B**, from the Hugging Face repository `mlx-community/gemma-4-E2B-it-qat-4bit` at commit `42f62737`, about 4.4 GB.
+- **iPhone and iPad with 6 GB of memory or less**, and devices whose graphics hardware does not support Metal 3, are offered no model. On them Ask always answers from Concepts and the packs, and Settings shows no download switch.
+
+The model is not part of the app download. It is downloaded from Hugging Face only after you choose **Download** in Ask or turn on **On-device Ask model** in More ▸ Settings ▸ Ask model, only while OmniMathematics is open, and it may be downloaded again if the system clears storage space. The button names the model and its size (about 1.4 GB or about 4.4 GB). Before offering the download, and again before every use, the app checks that the device has enough free memory for the model; when it does not, Ask answers from Concepts and the packs and offers no download. The downloaded files are model weights, which the app verifies by size and checksum before it uses them: data the model reads, not code that runs. Text the model produces is labelled **On-device model** and carries a notice that it can be wrong. Ask shows the retrieved passage instead when no model is offered, downloaded or allowed, when generation fails, is refused or does not finish a complete answer, and for every question sent from Apple Watch. If an earlier version of OmniMathematics downloaded the smaller model it used then (Qwen3 0.6B, about 350 MB), 1.0 (24) removes those files on its first launch and asks you again before it downloads anything.
+
+Like any file download, the request to Hugging Face gives Hugging Face the device's IP address and names the model repository and the files requested, and Hugging Face handles it under its own terms. It does not include your question, your marks or anything you type. We do not receive that request. **Remove the downloaded model** in More ▸ Settings ▸ Ask model deletes the files and turns the switch off.
 
 Your question is not stored as a record of its own, and it is never sent to us or to a hosted AI service.
 
@@ -221,7 +228,7 @@ We make no claim to unbreakable security. No system is perfectly secure.
 
 ## Data retention
 
-- **On your device:** kept until you remove it in More ▸ Progress or delete the app. The Ask model's files stay until you remove them in More ▸ Settings ▸ Ask model, delete the app, or the system clears storage space. The record of applied Apple Watch taps keeps each one for up to an hour.
+- **On your device:** kept until you remove it in More ▸ Progress or delete the app. The Ask model's files, if your device downloaded them, stay until you remove them in More ▸ Settings ▸ Ask model, delete the app, or the system clears storage space. The record of applied Apple Watch taps keeps each one for up to an hour.
 - **In your iCloud, if you are signed in:** your marks, streak and where you left off, in your private database, and the key-value store entries described above, until you remove them in the app (which updates the iCloud copy), they are replaced, or you delete that iCloud data. Deleting the app on one device does not by itself empty iCloud.
 - **With us:** only emails you send us, kept as long as needed to handle your message and to record that we handled it. Ask and we will delete yours.
 - **With Apple, if you buy Pro:** Apple keeps its own record of the transaction, under Apple's terms and Apple's retention rules rather than ours.
@@ -240,6 +247,14 @@ Apple's App Store privacy labels use Apple's own definition of "collect", which 
 
 We will update this policy when the app changes — and, where we can, before the change ships. When we do, we will change the effective date at the top and describe what changed. If a change materially expands what is collected or who receives it, we will tell you in the app rather than relying on you to re-read this page.
 
+**15 September 2026 — what changed.** The optional Ask model is now chosen by the device's memory class, and this policy says so:
+
+- It names the model an iPhone or iPad with 8 GB of memory is offered (MiniCPM5 2B, from `openbmb/MiniCPM5-2B-MLX` at commit `8a9ad753`, about 1.4 GB) and the model an iPhone or iPad with 12 GB of memory or more is offered (Gemma 4 E2B, from `mlx-community/gemma-4-E2B-it-qat-4bit` at commit `42f62737`, about 4.4 GB), and says that devices with 6 GB or less, and devices without Metal 3, are offered no model and always answer from Concepts and the packs. Earlier versions of this policy described one model for every device (Qwen3 0.6B, about 350 MB), then a 12 GB-only Gemma 4 E2B offer while MiniCPM5 2B was held out of the ladder.
+- It says that the download runs only while the app is open, that the app checks free memory before offering the download and before every use, and that the downloaded files are verified model weights, not code.
+- Its list of what the app stores now says that your download choice is kept with the model and version it was given for, and that the first launch of 1.0 (24) removes the earlier model's files once and records that it did.
+
+Nothing else the app collects or sends changed.
+
 **14 September 2026 — what changed.** This policy was rewritten to describe only what OmniMathematics 1.0 does today:
 
 - It covers iPhone and iPad and the Apple Watch app, and no longer mentions Apple TV.
@@ -247,6 +262,7 @@ We will update this policy when the app changes — and, where we can, before th
 - It names the controls in More ▸ Progress as the app shows them: **Remove Every Mark**, confirmed with **Remove Everything**.
 - Its list of what the app stores now includes the record of applied Apple Watch taps on iPhone, the reminder switch, your Ask model choice, the model's files and two internal markers for moving stored marks to the current format.
 - It describes **Ask the phone** on Apple Watch, which sends your question to your paired iPhone.
+- It calls the app's built-in concept reference **Concepts**, as the app does from build 24; earlier drafts called it the Codex. The label on a retrieved Ask answer is **From Concepts**.
 - It no longer says that we receive a transaction identifier or entitlement status from Apple: the app sends nothing about a purchase to us.
 - It no longer repeats the history of the app's development, including earlier corrections to this policy and the bundle-identifier changes.
 
