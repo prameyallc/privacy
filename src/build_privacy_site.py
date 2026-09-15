@@ -208,6 +208,15 @@ def effective_from(md_text, fallback):
     return date_only or fallback, True
 
 
+_TERMS_EFF_RE = re.compile(r"^\*\*Effective (\d{1,2} [A-Z][a-z]+ \d{4})\b", re.MULTILINE)
+
+
+def terms_effective_from(md_text):
+    """Return (date, found) from a terms line such as '**Effective 27 August 2026 · Prameya LLC**'."""
+    m = _TERMS_EFF_RE.search(md_text)
+    return (m.group(1), True) if m else (None, False)
+
+
 def first_para(md_text):
     for line in md_text.splitlines():
         s = line.strip()
@@ -334,7 +343,15 @@ def build(content_dir, out_dir, site_root):
 
         if has_tos:
             tos_md = open(tos_src, encoding="utf-8").read()
-            tos_effective, _ = effective_from(tos_md, app_effective)
+            # ⛔ THE TERMS CARRY THEIR OWN DATE ("**Effective 27 August 2026 · Prameya LLC**"), which
+            #    the policy's "**Effective date:**" pattern does not match. The footer used to fall
+            #    back to the POLICY's date, so a terms page showed two effective dates: OmniMathematics'
+            #    said 27 August 2026 in its body and 30 August 2026 in its footer. Read the terms' own
+            #    line, and warn when a terms file has none.
+            tos_effective, tos_found = terms_effective_from(tos_md)
+            if not tos_found:
+                tos_effective, _ = effective_from(tos_md, app_effective)
+                warnings.append(f"{name}: terms.md has no '**Effective <date>' line; footer falls back to {tos_effective}")
             tp = PAGE.format(
                 title=f"{name} Terms of Use — Prameya LLC",
                 desc=html.escape(first_para(tos_md), quote=True),
@@ -368,11 +385,11 @@ do genuinely different things with data. Pick the app you use.</p>
 <div class="callout">
 <h2 style="border:0;padding-top:0;margin-top:0">How these apps are built</h2>
 <p>Prameya apps run their analysis <strong>on your device</strong>. We do not operate a server that
-receives your content, and we do not keep user profiles. Three apps — OmniLex, OmniDent, and
-OmniSalub — can download AI model weights from Hugging Face when you tap to install them in
-Settings. That request is for a model file; it does not send your content anywhere. The other
-apps on this page (including OmniAero, OmniBuild, OmniDerm, OmniRx, OmniWealth, OmniMathematics,
-OmniOps, and OmniPhysics) do not download weights in the shipping build.</p>
+receives your content, and we do not keep user profiles. Some apps can download AI model files
+from Hugging Face, and only after you choose to: OmniLex, OmniDent and OmniSalub when you tap to
+install them in Settings, and OmniMathematics when you choose to download its optional Ask model.
+That request is for a model file; it does not send your content anywhere. Read the app's own
+policy for the details.</p>
 <p>Where an app touches health information, US state law requires a separate consumer health data
 policy. Those are linked above and from each app's policy.</p>
 </div>
