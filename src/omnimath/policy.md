@@ -1,10 +1,10 @@
 # OmniMathematics Privacy Policy
 
-**Effective date:** 30 August 2026
+**Effective date:** 15 September 2026
 **Publisher:** Prameya LLC ("Prameya", "we", "us")
-**App:** OmniMathematics for iPhone — bundle ID `legal.prameya.OmniMathematics`
+**App:** OmniMathematics for iPhone and iPad, with its Apple Watch app — bundle ID `legal.prameya.OmniMathematics`
 **Contact:** admin@prameya.legal
-**Scope:** This policy covers the OmniMathematics iOS app and nothing else. Prameya's other apps have their own policies, because they work differently. Index: <https://prameyallc.github.io/privacy/>
+**Scope:** This policy covers OmniMathematics on iPhone and iPad (including the iPad app where Apple lets it run on an Apple silicon Mac or Apple Vision Pro) and the Apple Watch app that comes with it, and nothing else. Prameya's other apps have their own policies, because they work differently. Index: <https://prameyallc.github.io/privacy/>
 **Canonical public URL (slug stays `omnimath`):** <https://prameyallc.github.io/privacy/omnimath/>
 
 ---
@@ -12,13 +12,12 @@
 ## The short version
 
 - **There are no accounts.** No sign-in, no email address, no name, no profile. There is nothing to fill in.
-- **Your learning progress is yours.** Completed chapters and pack progress are written on the device and, if you are signed in to iCloud, roam through your CloudKit private database so your other Apple devices can continue. We do not run a server that receives them. We have no database of users.
-- **OmniMathematics does not talk to our servers.** Every lesson, concept and worked example ships inside the app download. Paths off the device are Apple's (StoreKit, iCloud) and, if on-device Ask fetches model weights, Hugging Face.
-- **OmniMathematics has no ads and no App Tracking Transparency prompt.** AdMob, Google's User Messaging Platform, and the advertising identifier request were removed on 12 August 2026 in commit `df7919f`. The last ad-injection code in the app's view layer was removed on 16 August 2026.
-- **There is no advertising identifier (IDFA) collection.** The app ships no advertising SDK. Recipients that are not Prameya: Apple (App Store checkout if you buy Pro; iCloud if you are signed in) and, if on-device Ask downloads weights, Hugging Face (repository id and the device IP — not your question and not your marks).
-- **The app asks for no other permissions.** No camera, photos, microphone, location, contacts, health or files.
-- **Ask is retrieval first.** Matching excerpts come from the sourced packs and Codex on the device. If an on-device model is installed it may rephrase that excerpt, labelled as generated and able to be wrong. Your question is not sent to us.
-- **Purchases go through Apple.** If you buy OmniMathematics Pro, StoreKit talks to Apple to complete the purchase and to check that it is still valid. We receive a transaction identifier and entitlement status from Apple. We do not collect payment details. Chapters, Codex and your marks stay free either way.
+- **Your marks are yours.** The chapters you mark read and the topics you mark worked are stored on your device and, if you are signed in to iCloud, in your own iCloud private database, so your other devices show the same marks. We do not run a server that receives them, and we cannot read them.
+- **OmniMathematics does not talk to a server of ours.** There is no such server. Everything you study ships inside the app. The only paths off the device are Apple's (the App Store for purchases, iCloud, Handoff, and the connection between your iPhone and your Apple Watch) and, only if you choose to download the optional Ask model, Hugging Face.
+- **No ads, no tracking, no analytics.** The app contains no advertising or analytics software, does not use the advertising identifier, and never shows the App Tracking Transparency prompt.
+- **One optional permission.** OmniMathematics asks to send notifications only if you turn on **More ▸ Settings ▸ Reminders ▸ Daily study reminder**, which is off until you turn it on. It asks for no other permission: no camera, photos, microphone, location, contacts, health or files.
+- **Ask answers from the app.** Ask shows a matching excerpt from Concepts (the app's built-in concept reference) and the topic packs on your device. On an iPhone or iPad with 8 GB of memory you can choose to download MiniCPM5 2B (about 1.4 GB); on 12 GB or more, Gemma 4 E2B (about 4.4 GB). If you do, Ask can rephrase that excerpt on the device and labels the result as generated. Devices with 6 GB or less are offered no download and always answer from Concepts and the packs. Your question is not sent to us or to any server.
+- **Purchases go through Apple.** StoreKit on your device completes and checks an OmniMathematics Pro purchase with Apple. The app sends nothing about your purchase to us, and we do not collect payment details. The topic packs, Concepts, the chapters, the interactives, Ask and your marks stay free either way.
 - **OmniMathematics is built for a general audience** — computer-science students, self-learners and adults. It is not in the App Store Kids Category.
 - **No health data of any kind** is involved. See "Health data" below.
 
@@ -26,88 +25,102 @@
 
 ## What OmniMathematics is
 
-OmniMathematics teaches discrete mathematics for computer science through written lessons, a searchable Codex of concepts, and interactive demonstrations. All of the learning content ships inside the app.
+OmniMathematics teaches discrete mathematics for computer science, and the mathematics around it, through topic packs with a cited source under each idea, a built-in reference of concepts (Concepts), interactives, and a story tour of twenty chapters in six parts. All of the learning content ships inside the app.
 
-Until 12 August 2026 advertising paid for it, and earlier versions of this policy said so. That business model was removed from the code, not merely disabled. As of 26 August 2026 the app offers OmniMathematics Pro (monthly, annual, or lifetime) through Apple's in-app purchase. Apple processes the payment. We do not collect payment card numbers or billing addresses. Knowledge — the chapters, the Codex, the sourced packs — stays free.
+OmniMathematics Pro, sold through Apple's in-app purchase as a monthly or annual subscription or a one-time lifetime purchase, adds one feature: a formatted study report of your marks. Everything else stays free.
 
 ---
 
 ## What stays on your device
 
-OmniMathematics writes the following on the device (SwiftData; older installs migrated once from Apple's `UserDefaults`):
+OmniMathematics writes the following to its own storage on the device:
 
 | What | Why |
 |---|---|
-| Which chapters you have completed | To show your Journey progress |
-| Which knowledge packs you have worked through | Same |
-| Chapter and pack progress | Same |
-| The last chapter you visited, and the realm it belongs to | To take you back where you were |
-| Which step of that lesson you had reached | Same |
-| The last knowledge pack you opened | Same |
-| Whether you have seen the intro screens | So onboarding shows once |
+| Each chapter you mark read and each topic you mark worked, with when you marked it | To show your progress |
+| Your insight stars | To show your progress |
+| Where you left off: the last chapter, its part and the step you reached, the last topic pack and the last interactive | To take you back where you were |
+| The last day you studied, and how many days in a row you have studied | To show your streak |
+| Whether you have seen the intro screens, and when the first-run Legal & Safety notice was acknowledged | So they show once |
+| Your appearance choice | To apply it |
+| Your answer to "Download the Ask model?", with the model and version it was given for, or the position of the **On-device Ask model** switch | So Ask does not ask again for the same model, and asks again if the model changes |
+| Whether the daily study reminder is on | To keep or remove the reminder |
+| On iPhone: the ids and send times of recent Apple Watch taps it has already applied, at most 64, each forgotten after an hour | So a tap on the Watch applies once |
+| The optional Ask model's files (MiniCPM5 2B, about 1.4 GB, or Gemma 4 E2B, about 4.4 GB), only if your device was offered the download and you chose it | To run the model on the device |
+| A one-time marker that the files of the model used by versions before 1.0 (24) (Qwen3 0.6B, about 350 MB) were removed on the first launch, and how much space that freed | So the removal happens once |
+| A temporary copy of a file you export, which the app clears afterwards | To hand the file to the share sheet |
+| Two internal markers: that stored marks were moved to the current storage format, and which version of the chapter list the marks belong to | So the move happens once, and a mark from an older chapter list is not counted as a newer chapter |
 
-That is the complete list of *what* is stored. We cannot see it, and we have no way to request it.
+That is the complete list of what OmniMathematics itself stores. We cannot see it, and we have no way to request it. A file you export with **Export my marks**, or a Pro study report, goes wherever you choose to save or share it. What Apple's own services keep for the app — iCloud, Handoff, the connection to Apple Watch, the Home Screen widget and a scheduled reminder — is described below.
 
-If you are signed in to iCloud, those marks roam through **your** CloudKit private database, and a tiny iCloud key-value store remembers the last lesson so Apple Watch and Apple TV can continue it. Prameya cannot open another person's private database. Removing a mark in **More → Progress** updates the iCloud copy. Deleting the app on one device does not by itself empty iCloud.
+If you use iCloud or computer backup for your device, this data is included in that backup, under Apple's terms and your control.
 
-*Correction, 16 August 2026:* earlier versions of this policy described "four things". That undercounted — the app also records the realm, the lesson step and the last knowledge pack. The list of *what* is stored was wrong and is now complete.
+---
 
-*Correction, 30 August 2026:* earlier versions said this data "never leaves your phone" and that "the app has no iCloud capability enabled at all". Both sentences stopped being true when study-mark CloudKit and Continue key-value sync shipped. The list of fields did not grow; the *place they can live* did.
+## iCloud, Handoff and your other devices
 
-Two ordinary caveats that are true of any iPhone app:
+If you are signed in to iCloud:
 
-- If you use iCloud or iTunes device backup, this data is included in your backup, under Apple's terms and your control.
-- You can clear the on-device copy any time with **More → Progress → Reset All Progress**. That also updates the iCloud copy. Deleting the app on one device is not enough on its own if iCloud still holds the record.
+- **Your marks** — every chapter and topic mark, your insight stars, your streak and where you left off — sync through your own **CloudKit private database**, so your other devices show the same marks. Prameya cannot open another person's private database. Signing out of iCloud may remove synced marks from a device until you sign in again.
+- **A small iCloud key-value store** remembers where you left off, the next suggested topic for the Home Screen widget, a topic you asked the widget or Shortcuts to open until the app opens it, and your appearance choice. That is how your other devices and Apple Watch can offer to continue, and how Apple Watch matches your appearance choice.
+
+**Handoff** also tells your nearby devices that use the same Apple Account where you left off.
+
+**Removing marks.** More ▸ Progress lists every mark you have made, and each one has its own remove control. **Remove Every Mark**, confirmed with **Remove Everything**, removes every chapter mark, every topic mark, your insight stars and where you left off — on this device and, if you use iCloud, on your other devices. Deleting the app removes only that device's copy; it does not empty iCloud.
+
+---
+
+## Apple Watch
+
+The Apple Watch app comes with the iPhone app. It lists topic packs, shows cards the iPhone sends to it, and has **Ask the phone**.
+
+- **Ask the phone** sends the question you enter to OmniMathematics on your paired iPhone, over Apple's connection between the two devices. The iPhone answers while OmniMathematics is open on it, from Concepts and the topic packs only — never with the on-device model — and sends the answer back to the Watch.
+- **Cards** on the Watch send your tap (for example "Start" or "I'm done") to the iPhone, which applies each tap once.
+- The Watch reads the iCloud key-value store described above to offer where you left off and to match your appearance choice, and opening a pack on the Watch updates where you left off.
+
+None of this reaches Prameya.
+
+---
+
+## The daily study reminder
+
+The reminder is off until you turn it on in **More ▸ Settings ▸ Reminders ▸ Daily study reminder**. Turning it on is the only thing in OmniMathematics that asks iOS for permission to send notifications, and iOS asks only if you have not answered before. If you allow it, the app schedules one local notification a day at 19:00 your local time, titled "Study reminder" and naming what you were studying. iOS delivers it from the device; nothing is sent to us or to any server. Turning the switch off removes the reminder. If notifications are turned off for OmniMathematics in iOS Settings, the Reminders section says so and offers **Open Settings**.
+
+---
+
+## Ask, and the optional on-device model
+
+Ask finds the closest passage in Concepts and the topic packs already on your device and shows it, labelled **From Concepts**.
+
+Ask can also use a language model that runs on the device to rephrase that passage. Which model, if any, depends on how much memory the device has:
+
+- **iPhone and iPad with 8 GB of memory** are offered **MiniCPM5 2B**, from the Hugging Face repository `openbmb/MiniCPM5-2B-MLX` at commit `8a9ad753`, about 1.4 GB.
+- **iPhone and iPad with 12 GB of memory or more** are offered **Gemma 4 E2B**, from the Hugging Face repository `mlx-community/gemma-4-E2B-it-qat-4bit` at commit `42f62737`, about 4.4 GB. When the memory check refuses Gemma 4 E2B, they are offered MiniCPM5 2B instead, as a separate download that you also choose; a device that accepts it keeps both downloads until you remove the downloaded model, and Settings offers the way back to Gemma 4 E2B.
+- **iPhone and iPad with 6 GB of memory or less**, and devices whose graphics hardware does not support Metal 3, are offered no model. On them Ask always answers from Concepts and the packs, and Settings shows no download switch.
+
+The model is not part of the app download. It is downloaded from Hugging Face only after you choose **Download** in Ask or turn on **On-device Ask model** in More ▸ Settings ▸ Ask model, only while OmniMathematics is open, and it may be downloaded again if the system clears storage space. The button names the model and its size (about 1.4 GB or about 4.4 GB). Before offering the download, and again each time it loads the model, the app checks that the device has enough free memory for the model; when it does not, Ask answers from Concepts and the packs and offers no download. While the download runs, the app keeps the screen on. The downloaded files are the model weights, its tokenizer and a prompt-formatting template, pinned to one version and checked by size after each download and before each load, and by checksum after each download: data the model reads, not executable code. Text the model produces is labelled **On-device model** and carries a notice that it can be wrong. Ask shows the retrieved passage instead when no model is offered, downloaded or allowed, when generation fails, is refused or does not finish a complete answer, and for every question sent from Apple Watch. If an earlier version of OmniMathematics downloaded the smaller model it used then (Qwen3 0.6B, about 350 MB), 1.0 (24) removes those files on its first launch and asks you again before it downloads anything.
+
+Like any file download, the request to Hugging Face gives Hugging Face the device's IP address and the standard request headers (which name the app and its version and the operating system version), and names the model repository and the files requested; Hugging Face handles it under its own terms. It does not include your question, your marks or anything you type. We do not receive that request. **Remove the downloaded model** in More ▸ Settings ▸ Ask model deletes the files and turns the switch off.
+
+Your question is not stored as a record of its own, and it is never sent to us or to a hosted AI service.
+
+---
+
+## Purchases
+
+OmniMathematics Pro is sold through Apple's in-app purchase as Monthly and Annual subscriptions, which renew automatically, and Lifetime, a one-time purchase. Apple processes the payment, handles refunds, and keeps its own record of the transaction under Apple's terms. StoreKit on your device checks with Apple whether you have Pro, and the answer stays on your device. The app sends nothing about a purchase to us. We do not collect payment details, and we never see them. Family Sharing is on for all three. The prices, the free trial and how to cancel are shown on the paywall in the app and in the [OmniMathematics Terms of Use](https://prameyallc.github.io/privacy/omnimath/terms/); Apple's standard EULA also applies.
 
 ---
 
 ## What OmniMathematics does not do
 
-One line each, because the honest answer is short.
-
 - No user accounts, and no way to create one.
-- No ads of any kind — no banners, no interstitials, no rewarded ads.
-- No advertising identifier (IDFA), no `AdSupport`, no SKAdNetwork entries, no App Tracking Transparency prompt.
-- No advertising SDKs. The on-device Ask runtime is mlx-swift / mlx-swift-lm; optional weight download uses Hugging Face's libraries. There is still no analytics SDK and no ad SDK.
-- No network requests to us. There is no upload path and no server of ours for the app to talk to. StoreKit may talk to Apple if you buy or restore Pro. iCloud may sync your marks when you are signed in. Ask may fetch model weights from Hugging Face.
-- Nothing you write, draw, tap, search or type in the Ask box is transmitted to us. The question stays on the device; a generated rephrase, if any, is produced on the device.
-- No camera, photo library, microphone, contacts, calendar, or file access.
+- No ads of any kind, no advertising or analytics SDK, no advertising identifier (IDFA), no SKAdNetwork entries and no App Tracking Transparency prompt.
+- No analytics or crash-reporting service — ours or anyone else's.
+- No network requests to us. There is no server of ours for the app to talk to.
+- No camera, photo library, microphone, contacts, calendar or file access.
 - No location permission is requested, and the app uses no location APIs. Nothing in the app estimates your location by any other means either.
 - No health, fitness or medical data of any kind.
-- No analytics or crash-reporting service — ours or anyone else's.
-- Purchases, if you make one, go through Apple StoreKit. We do not collect payment details.
-
----
-
-## Advertising — removed
-
-**OmniMathematics shows no ads, and no data leaves your device for advertising or for anything else.**
-
-This section used to be the longest in the policy, because it was the one place data left your device. It described banner and interstitial ads served by Google AdMob, ad loading that began the moment you opened the app, Google's consent form for the EEA and UK, the advertising identifier being used for cross-app tracking, a coarse location Google's ad software estimated from your IP address, SKAdNetwork install measurement, and an in-app control for reporting a bad ad.
-
-None of that is true of the shipping app, and every word of it is deleted here:
-
-- **12 August 2026, commit `df7919f`** — the Google Mobile Ads SDK, the User Messaging Platform (consent) SDK, the whole `App/OmniMathematics/Ads` tree, the `NSUserTrackingUsageDescription` string, the SKAdNetwork identifier list and the ATT request were removed from the app. The **Settings → Ads → Ad privacy choices** row was removed with them; there is no consent form left for it to reopen. The in-app ad report control went at the same time, with the ad container that hosted it.
-- **16 August 2026** — `MathAds.swift`, the last ad-injection seam in the view layer (banner and interstitial slots, `AdTileView`), was deleted. Nothing referenced it.
-- The build now enforces this. `ci_scripts/ci_post_clone.sh` **fails the build** if `ThirdParty/GoogleAdsSPM` or `App/OmniMathematics/Ads` is ever restored, and a test suite asserts that no ad symbols are linked.
-
-**Google receives nothing from this app.** Google is no longer a recipient of any data from OmniMathematics. The links to Google's privacy policy and ad settings that used to appear here have been removed rather than left as decoration: pointing you at a third party's controls implies that third party has something of yours, and it does not. Recipients that are not Prameya are named in the short version: Apple (StoreKit and, if you are signed in, iCloud) and Hugging Face (optional model-weight download).
-
-**This part is on us, not on the reader.** The top of this policy was corrected on 12 August 2026 to say the ads were gone, while the body below it went on describing them in the present tense for four days. A policy that contradicts itself in one file is worse than one that is merely out of date, because a reader cannot tell which half to believe. The whole document has now been read against the shipping binary.
-
----
-
-## Ask the Codex, and the optional on-device model
-
-Every sourced explanation and worked example in the app was written by a person and ships inside the download from the App Store.
-
-The Codex has an **Ask** box. The default answer is a deterministic lookup over the lessons and concept entries already on your phone: it finds the closest passage and shows you that passage, copied word for word from the shipped curriculum, labelled **From the Codex**.
-
-If on-device generation is available, Ask may then rephrase that same excerpt on the device. Generated text is labelled **On-device model** and carries a persistent notice that it can be wrong. Retrieval remains the fallback when weights are missing, when generation is refused, or on Apple Watch (which never links the model runtime).
-
-Weights, when fetched, come from Hugging Face (`mlx-community/Qwen3-0.6B-4bit`) using the mlx-swift runtime. That request carries the repository identifier and the device's IP address. It does not carry your question, your marks, or the curriculum. Nothing you type is sent to us or to a hosted model API.
-
-Your question is not stored as its own record. Chapter and pack marks are a separate store, described above.
 
 ---
 
@@ -119,15 +132,13 @@ If you write to admin@prameya.legal — a question, a bug report, a rights reque
 
 ## Children and OmniMathematics
 
-**Who OmniMathematics is for.** University and later-secondary computer-science students, self-taught programmers, and adults who want to understand discrete mathematics. It is a general-audience educational app. It is not in the App Store Kids Category, it is not designed or marketed for young children, and its content, artwork and language are aimed at older students and adults.
+**Who OmniMathematics is for.** Computer-science and engineering students, self-learners, teachers and adults who want to understand discrete mathematics. It is a general-audience educational app. It is not in the App Store Kids Category, and it is not designed or marketed for young children.
 
-**What that means in practice, stated plainly.** Nothing is collected from anyone who uses OmniMathematics, at any age, by us. There is no identifier we transmit, no advertising network, and no server of ours. If a parent buys Pro, Apple processes that purchase (Family Sharing is on). A child using this app is in the same position as an adult using it for learning data: progress is written on the device and, if that Apple ID is signed in to iCloud, roams through that account's private database.
+**What that means in practice, stated plainly.** Nothing is collected by us from anyone who uses OmniMathematics, at any age. There is no identifier we transmit, no advertising network and no server of ours. If a parent buys Pro, Apple processes that purchase, and Family Sharing is on. A child's marks are stored like an adult's: on the device and, if that Apple Account is signed in to iCloud, in that account's private database.
 
-**What we do not do.** We do not knowingly collect personal information from children — we collect nothing from anyone, because there is nothing to collect and nowhere for it to go. We do not build profiles. We do not use any school, classroom or ClassKit data; the app has no such integration.
+**What we do not do.** We do not knowingly collect personal information from children — we collect nothing from anyone, because there is nothing to collect and nowhere for it to go. We do not build profiles. The app has no school, classroom or ClassKit integration.
 
-**On the signal that used to be sent to the ad network.** Google's ad software let a publisher flag an app as directed to children, flag it as not directed to children, or send no flag at all. OmniMathematics sent no flag. That decision no longer has anything to attach to: the ad SDK is gone, so no flag of any kind is transmitted or transmittable.
-
-**What parents and guardians can do.** Use **Screen Time** to manage which apps a child can use, and write to us at admin@prameya.legal with any concern. The tracking-permission advice this section used to give is obsolete: OmniMathematics no longer appears under **iOS Settings → Privacy & Security → Tracking**, because it never asks to track.
+**What parents and guardians can do.** Use **Screen Time** to manage which apps a child can use, and write to us at admin@prameya.legal with any concern.
 
 ---
 
@@ -139,7 +150,7 @@ OmniMathematics processes **no consumer health data**. It has no health, wellnes
 
 ## HIPAA, FERPA and school privacy laws
 
-- **HIPAA does not apply to OmniMathematics.** HIPAA governs health plans, health-care clearinghouses, most health-care providers, and their business associates. OmniMathematics is a consumer education app with no health function and no relationship to any of those. We do not claim HIPAA compliance, because there is nothing here for HIPAA to reach.
+- **HIPAA does not apply to OmniMathematics.** HIPAA governs health plans, health-care clearinghouses, most health-care providers, and their business associates. OmniMathematics is a consumer education app with no health function and no relationship to any of those.
 - **FERPA does not apply.** FERPA binds schools and other educational agencies receiving federal funding, and those acting for them. OmniMathematics has no relationship with any school and holds no education records.
 - **Student-privacy statutes** such as California's SOPIPA apply to services designed and marketed for K-12 school purposes. OmniMathematics is a consumer app and is not sold to schools. If that ever changes, this policy will be rewritten before it does.
 
@@ -152,19 +163,18 @@ Because we hold nothing, most requests have a very short answer — but the rout
 ### Everyone
 
 - **See what we hold about you.** Ask us. The answer is normally "your email to us, if you sent one, and nothing else".
-- **Delete it.** Ask us to delete your correspondence. For your on-device learning data, use **More → Progress → Reset All Progress**, or delete the app — that is a genuine deletion, not a request to us.
-- **Advertising controls.** There are none to give you, and none needed: no advertising happens in this app, and no advertising identifier is requested.
+- **Delete it.** Ask us to delete your correspondence. For the learning data on your device and in your iCloud, use **More ▸ Progress**: remove any single mark, or use **Remove Every Mark**. That is a genuine deletion, not a request to us.
 - Write to **admin@prameya.legal**. We aim to respond within 30 days.
 
 ### California (CCPA / CPRA)
 
 California residents have the rights to know, delete, correct, and to opt out of the sale or sharing of personal information, and not to be discriminated against for exercising them.
 
-**Do Not Sell or Share My Personal Information.** We do not sell personal information, and we do not share it for cross-context behavioural advertising. Until 12 August 2026 this section said the opposite, and it was accurate then: advertising identifiers and ad-interaction data were disclosed to Google for personalised advertising, which California calls "sharing". That disclosure stopped when the ad SDK was removed. There is now no advertising recipient and no advertising identifier, so there is nothing to opt out of for that kind of sharing. Apple (StoreKit, iCloud) and Hugging Face (optional model weights) are not cross-context behavioural advertising. The opt-out this section used to name — denying tracking under iOS Settings → Privacy & Security → Tracking — no longer applies either, because OmniMathematics never asks to track and so does not appear in that list.
+**Do Not Sell or Share My Personal Information.** We do not sell personal information, and we do not share it for cross-context behavioural advertising. There is no advertising in OmniMathematics, so there is nothing to opt out of. Apple (StoreKit, iCloud) and Hugging Face (the optional model download) are not cross-context behavioural advertising.
 
 **Categories.** We collect none of the CCPA categories. No identifiers, no internet or network activity, no geolocation of any precision, no name, contact details, financial information, biometric, health, employment or education records. The only personal information Prameya ever holds about a user of this app is an email you choose to send us, at the address above.
 
-**Sensitive personal information.** OmniMathematics does not collect sensitive personal information as California defines it. There is nothing here for a "Limit the Use of My Sensitive Personal Information" control to limit.
+**Sensitive personal information.** OmniMathematics does not collect sensitive personal information as California defines it.
 
 **Minors.** We do not sell or share the personal information of consumers under 16 — or of anyone else, at any age.
 
@@ -178,17 +188,17 @@ Virginia, Colorado, Connecticut, Texas, Oregon, Montana and a growing number of 
 
 ### EEA and United Kingdom (GDPR / UK GDPR)
 
-OmniMathematics is available worldwide, so this section applies if you are in the EEA or the UK.
+This section applies if you are in the EEA or the UK.
 
-**Controller.** Prameya LLC, contact admin@prameya.legal, is the controller for the only processing it carries out — correspondence you send us. There is no joint controller, and no processor: nobody processes personal data on our instructions. Google was previously an independent controller for advertising data collected through its own software in the app; since 12 August 2026 it receives nothing. Since 26 August 2026 one other party is in the picture: **Apple**, which runs the App Store checkout if you buy OmniMathematics Pro. Apple decides for itself what it does with that transaction; we do not direct it, we receive no payment details from it, and we receive nothing at all from it unless you buy.
+**Controller.** Prameya LLC, contact admin@prameya.legal, is the controller for the only processing it carries out — correspondence you send us. There is no joint controller, and no processor: nobody processes personal data on our instructions. **Apple** runs the App Store checkout if you buy OmniMathematics Pro and decides for itself what it does with that transaction; we do not direct it, the app sends nothing about it to us, and we never see your payment details. If you choose to download the optional Ask model, **Hugging Face** receives that download request under its own terms; we do not direct it and do not receive it.
 
 **Legal bases.**
 
 - *Answering your email:* legitimate interests, or the steps needed to respond to you.
 
-That is the whole list. The advertising entries that used to sit above it — consent for personalised advertising, and legitimate interests in funding a free app through contextual ads — are gone because the processing they described is gone.
+That is the whole list.
 
-**Consent.** No consent form appears in OmniMathematics. Google's consent form (the User Messaging Platform) was removed on 12 August 2026 along with the advertising it gated. There is no advertising consent to give, withdraw or re-open.
+**Consent.** OmniMathematics shows no consent form. The two choices it asks you to make — whether to download the Ask model, and whether to turn on the daily reminder — stay on your device and can be changed in More ▸ Settings.
 
 **Profiling.** None. No automated decision-making of any kind takes place, and nothing in the app builds a profile of you.
 
@@ -208,8 +218,8 @@ That is the whole list. The advertising entries that used to sit above it — co
 
 There is not much to secure, and that is the design.
 
-- Your learning data stays in your app's private storage on your device, protected by iOS and your passcode, and — if you are signed in — in your iCloud private database under Apple's terms. Use a passcode and keep iOS up to date.
-- The app does not talk to our servers, so there is no traffic of yours to intercept on a path we run. StoreKit is Apple's API and may contact the App Store if you buy or restore Pro. iCloud is Apple's API for the private database and the Continue key-value store. Optional Ask weight download talks to Hugging Face. The transport-security discussion that used to sit here covered the advertising SDK's traffic; there is no such traffic now.
+- Your learning data stays in the app's private storage on your device, protected by iOS and your passcode, and — if you are signed in — in your iCloud private database under Apple's terms. Use a passcode and keep iOS up to date.
+- The app does not talk to our servers, so there is no traffic of yours to intercept on a path we run. StoreKit, iCloud, Handoff and the connection to Apple Watch are Apple's. The optional model download talks to Hugging Face.
 - We operate no server holding user data, so there is no user database of ours that could be breached.
 
 We make no claim to unbreakable security. No system is perfectly secure.
@@ -218,11 +228,11 @@ We make no claim to unbreakable security. No system is perfectly secure.
 
 ## Data retention
 
-- **On your device:** kept until you clear it (More → Progress → Reset All Progress) or delete the app.
-- **In your iCloud, if you are signed in:** the same marks, plus the last-lesson Continue payload, until you remove them in the app (which updates the iCloud copy) or you delete the iCloud data. Deleting the app on one device does not by itself empty iCloud.
+- **On your device:** kept until you remove it in More ▸ Progress or delete the app. The Ask model's files, if your device downloaded them, stay until you remove them in More ▸ Settings ▸ Ask model, delete the app, or the system clears storage space. The record of applied Apple Watch taps keeps each one for up to an hour.
+- **In your iCloud, if you are signed in:** your marks, streak and where you left off, in your private database, and the key-value store entries described above, until you remove them in the app (which updates the iCloud copy), they are replaced, or you delete that iCloud data. Deleting the app on one device does not by itself empty iCloud.
 - **With us:** only emails you send us, kept as long as needed to handle your message and to record that we handled it. Ask and we will delete yours.
-- **With Apple, if you buy Pro:** Apple keeps its own record of the transaction, under Apple's terms and Apple's retention rules rather than ours. What we hold is the entitlement state StoreKit reports, and that stays on your device with everything else.
-- **With Hugging Face, if Ask fetches weights:** the repository identifier and the device IP, under Hugging Face's terms. We do not receive that request.
+- **With Apple, if you buy Pro:** Apple keeps its own record of the transaction, under Apple's terms and Apple's retention rules rather than ours.
+- **With Hugging Face, if you download the Ask model:** whatever Hugging Face keeps about that download request, under Hugging Face's terms. We do not receive it.
 - **With anyone else:** nothing.
 
 ---
@@ -235,32 +245,29 @@ Apple's App Store privacy labels use Apple's own definition of "collect", which 
 
 ## Changes to this policy
 
-We will update this policy when the app changes — and, where we can, before the change ships. When we do, we will change the effective date at the top and describe what changed. If a change materially expands what is collected or who receives it, we will surface it in the app rather than relying on you to re-read this page.
+We will update this policy when the app changes — and, where we can, before the change ships. When we do, we will change the effective date at the top and describe what changed. If a change materially expands what is collected or who receives it, we will tell you in the app rather than relying on you to re-read this page.
 
-**1 September 2026 — what changed (bundle identifier, again).** The identifier is now
-`legal.prameya.OmniMathematics`, matching the repository, project, scheme and display name, and
-matching how every other app in the portfolio is named. The 27 August entry below recorded the
-opposite decision — keeping the shorter `legal.prameya.OmniMath` because Apple already held it —
-and that reasoning was sound at the time. The owner has since chosen portfolio-wide consistency,
-accepting that Apple ID 6789206341 cannot be renamed and a new App Store record will be created
-instead. **Nothing about what is collected, stored or transmitted changed with it.** The public
-URL slug stays `omnimath` and this page's canonical address is unchanged.
+**15 September 2026 — what changed.** The optional Ask model is now chosen by the device's memory class, and this policy says so:
 
-**30 August 2026 — what changed.** Two paths that had already shipped in the binary were named here: study marks roam through the user's CloudKit private database (and a tiny iCloud key-value store remembers the last lesson for Watch and TV), and Ask may fetch on-device model weights from Hugging Face. Earlier sentences that said the app had "no iCloud capability", "no AI model" and "no third-party SDKs" were false against that binary and are deleted from the body rather than left standing. Prameya still collects nothing and still runs no server of users. The published Pages copy is updated in the privacy repository separately.
+- It names the model an iPhone or iPad with 8 GB of memory is offered (MiniCPM5 2B, from `openbmb/MiniCPM5-2B-MLX` at commit `8a9ad753`, about 1.4 GB) and the model an iPhone or iPad with 12 GB of memory or more is offered (Gemma 4 E2B, from `mlx-community/gemma-4-E2B-it-qat-4bit` at commit `42f62737`, about 4.4 GB), and says that devices with 6 GB or less, and devices without Metal 3, are offered no model and always answer from Concepts and the packs. Earlier versions of this policy described one model for every device (Qwen3 0.6B, about 350 MB), then a 12 GB-only Gemma 4 E2B offer while MiniCPM5 2B was held out of the ladder.
+- It says that the download runs only while the app is open, that the app checks free memory before offering the download and each time it loads the model, and that the downloaded files are verified model weights, not code.
+- Later the same day: it names the smaller model a 12 GB device is offered when the memory check refuses Gemma 4 E2B, says both downloads stay until removed and that Settings offers the way back; it says the app keeps the screen on while a download runs, that the checked files include the tokenizer and the prompt-formatting template, what the download request's standard headers carry, and that the policy covers the iPad app where Apple lets it run on an Apple silicon Mac or Apple Vision Pro.
+- Its list of what the app stores now says that your download choice is kept with the model and version it was given for, and that the first launch of 1.0 (24) removes the earlier model's files once and records that it did.
 
-**27 August 2026 — what changed (bundle identifier).** The app's bundle identifier was set to `legal.prameya.OmniMath`. It had been `legal.prameya.OmniMathematics` in this policy and in the project until that day. A bundle identifier cannot be edited once Apple holds it, and the App ID Apple holds for this listing (Apple ID 6789206341) is `legal.prameya.OmniMath` — so the two sides were reconciled by moving the one that could move, which was the binary. Registering the longer identifier as a second App ID would have orphaned this listing, its reviews, its ratings and this policy's own published URL. (Superseded on 1 September 2026 — see the entry above.) **Nothing about what is collected, stored or transmitted changed with it**: the identifier names the app to the operating system and to the App Store, and it is disclosed here only so that the app you install and the app this policy describes are the same app. The app name, the public URL slug `omnimath`, and this page's canonical address are all unchanged.
+Nothing else the app collects or sends changed.
 
-**27 August 2026 — what changed.** Three sentences left over from the no-commerce era were corrected, because they contradicted the StoreKit disclosures added the day before and a policy that contradicts itself in one file is worse than one that is merely out of date. The short version said "no third party receives anything" four bullets above the bullet describing Apple taking your money; the retention section said "no third party has anything to retain" when Apple retains the transaction record; the GDPR controller paragraph said "no third party receives personal data through this app". All three now name Apple's role in an App Store purchase. Nothing about what *we* collect changed — we still collect nothing — and no new recipient was added; the recipient added on 26 August was simply not carried through the whole document.
+**14 September 2026 — what changed.** This policy was rewritten to describe only what OmniMathematics 1.0 does today:
 
-**26 August 2026 — what changed.** OmniMathematics Pro is offered through Apple StoreKit (monthly, annual, lifetime). Apple processes the purchase; we receive a transaction identifier and entitlement status; we do not collect payment details. StoreKit talking to Apple is the commerce path. Chapters stay free. The published Pages copy is updated in the privacy repository separately.
+- It covers iPhone and iPad and the Apple Watch app, and no longer mentions Apple TV.
+- It says that the app asks to send notifications only when you turn on the daily study reminder in Settings.
+- It names the controls in More ▸ Progress as the app shows them: **Remove Every Mark**, confirmed with **Remove Everything**.
+- Its list of what the app stores now includes the record of applied Apple Watch taps on iPhone, the reminder switch, your Ask model choice, the model's files and two internal markers for moving stored marks to the current format.
+- It describes **Ask the phone** on Apple Watch, which sends your question to your paired iPhone.
+- It calls the app's built-in concept reference **Concepts**, as the app does from build 24; earlier drafts called it the Codex. The label on a retrieved Ask answer is **From Concepts**.
+- It no longer says that we receive a transaction identifier or entitlement status from Apple: the app sends nothing about a purchase to us.
+- It no longer repeats the history of the app's development, including earlier corrections to this policy and the bundle-identifier changes.
 
-**23 August 2026 — what changed.** The legal name on this page is **OmniMathematics**. The public URL slug stays `omnimath`. ⚠️ This entry also quoted a bundle identifier, and that identifier changed on 27 August 2026 — see that entry. The quotation is removed rather than left standing beside a correction, because a change history that keeps asserting a retired identifier is a second place for a reader to be told the wrong one; the identifier is stated once, in the header at the top. User-facing “Insight Stars” copy is chapter and pack progress; reset is **More → Progress → Reset All Progress**.
-
-**21 August 2026 — what changed.** The unused StoreKit scaffold that this policy used to describe as a `Monetization` module with product identifiers was deleted from the app. That deletion did not last: StoreKit Pro returned on 26 August 2026 (see that entry). The live URL for this page is <https://prameyallc.github.io/privacy/omnimath/>.
-
-**16 August 2026 — what changed.** Advertising was removed from OmniMathematics in commit `df7919f` on 12 August 2026, and the last ad-injection code in the view layer was removed on 16 August 2026. On 12 August the summary at the top of this policy was corrected, but the body was not: for four days this file said "no ads" in its first section and then described banner ads, interstitials, ad load timing, Google's data-collection table, the advertising identifier, IP-derived coarse location, SKAdNetwork and an ad-reporting control in the present tense. Every one of those passages has now been deleted or rewritten, along with the advertising legal bases under GDPR, the California "sharing" disclosure and its tracking-based opt-out, the ad-related retention entry, the ad-traffic security claim, and the ad-dependent reasoning in the children's section. The on-device data table was also corrected: it had listed four stored items where the app stores eight. This update removes disclosures; it adds no collection.
-
-Older versions are kept in the public repository behind <https://prameyallc.github.io/privacy/>.
+Nothing the app collects or sends was added by this revision. Earlier versions of this policy, with their own change entries, remain in the public repository that publishes these pages: <https://github.com/prameyallc/privacy>.
 
 ---
 
