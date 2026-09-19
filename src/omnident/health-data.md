@@ -1,6 +1,6 @@
 # OmniDent Consumer Health Data Privacy Policy
 
-**Effective date:** 24 August 2026 *(supersedes the 21 August 2026 version; the access and deletion sections now match the per-record controls and the photograph-carrying export)*
+**Effective date:** 19 September 2026 *(supersedes the 24 August 2026 version; adds visit records, documents you file, visit packets, user-drawn photo marks, household names on this device, and the App Group care snapshot. Subscription language matches the one Pro gate.)*
 **Publisher:** Prameya LLC, a United States limited liability company ("Prameya", "we", "us")
 **Contact:** admin@prameya.legal
 **This policy lives at:** https://prameyallc.github.io/privacy/omnident/health-data/
@@ -36,11 +36,18 @@ RCW 19.373.020(1)(a)(i) requires us to state the categories of consumer health d
 | Category | What it is | Why it is collected and how it is used |
 |---|---|---|
 | **Photographs of your oral cavity** | Images of your teeth, gums, tongue and mouth taken with the in-app camera, or selected by you from your photo library | So you can keep a dated visual record of your own mouth over time, and so the on-device AI can produce general educational information about what you are looking at |
-| **Information derived from those photographs** | The output the on-device AI model produces about an image, and a capture-quality score | To show you educational information and to place a photo in your own timeline |
+| **Information derived from those photographs** | The output the on-device AI model produces about an image, and a capture-quality score | To show you educational information and to place a photo in your own timeline. This is not a diagnosis |
+| **Marks you draw on a photograph** | A rectangle you draw on a photo of your own mouth, kept so a later photo can show the same place | So you can compare the spot you marked. The app does not name a tooth condition from the mark |
+| **Visit records** | Date, practice name, kind of visit, what was done in your words, optional amount you typed, next due date you typed | So you can keep a log of visits you attended. The app does not book the visit or decide what was done |
+| **Documents you file** | A treatment plan, radiograph, clinic photo, receipt or explanation of benefits you drop into the app | So those files sit next to your photos on this device. They stay in the app container, out of Spotlight and out of Handoff |
+| **Visit packet** | One page of identifiers for photos, standing questions, and a visit | So you can open a one-pager at a sitting. The packet is identifiers, not a diagnosis |
+| **Notes you type about your mouth** | Free text you write, optionally attached to a mark you drew | So you can remember what you wanted to tell a dentist. The app does not classify the note |
+| **Household names on this device** | Display names, roles (owner, child, adult you care for, caregiver), and which mouth record is active | So more than one person in a household can keep a separate mouth record on this phone. Kids care sessions stay opt-in under Family & kids mode. This is not iCloud family sharing of health data |
 | **Oral-health profile** | Age, brushing frequency, sugar intake level, smoking status, whether you have diabetes, whether you have dry mouth, and the goals you choose | To tailor the general information and habit suggestions the app shows you |
 | **Home-care habit logs** | Daily records of brushing, flossing, mouthwash use and sugary drinks | To show you your own streaks, trends and progress |
 | **Programme progress** | Your progress through the in-app 30-day home-care programme | To let you resume where you left off |
 | **Illustrative cost scenarios** | "What if" projections built from figures you enter, and any narrative text generated on-device alongside them | To let you explore an illustrative cost model. These are examples, not predictions about your health |
+| **App Group care snapshot** | A short status line the app writes so the Home Screen widget can show whether today's care is logged | So the widget can show a fact the app already knows. No photograph is in that suite |
 | **Bodily-function measurements from Apple Health** *(only if you turn it on)* | Step count, sleep analysis, mindful minutes, active energy burned | To show optional context alongside the habits you log |
 | **Health data written to Apple Health** *(only if you turn it on)* | Toothbrushing events and dietary sugar entries you logged in the app | So your entries appear alongside the rest of your health data in Apple Health, under your control |
 
@@ -80,24 +87,24 @@ One honest limit on that last point: OmniDent does not mark its scan folder as e
 
 ### No new collection when you subscribe
 
-OmniDent offers paid subscription tiers (Plus and Premium) in addition to the free tier. **Upgrading does NOT trigger new consumer health data collection.**
+OmniDent offers one paid gate, OmniDent Pro (monthly, annual, or lifetime), in addition to the free tier. Household coverage is StoreKit Family Sharing of that Pro gate, not a separate Household product. **Upgrading does NOT trigger new consumer health data collection.**
 
-All three tiers:
+Free and Pro:
 - Process the same categories of consumer health data (listed above)
 - Use consumer health data for the same purpose (operating features you choose to use)
 - Store data in the same location (on your device)
 - Transmit data to the same recipients (none — no health data leaves your device)
 
-**Subscription unlocks features like longer history retention and additional export formats. It does not change what data is collected, how it is processed, or where it goes.**
+**Pro unlocks full photo history, reminder cadence, and a print-ready visit sheet. It does not change what data is collected, how it is processed, or where it goes.**
 
 ### What changes between tiers
 
 | What subscription affects | What subscription does NOT affect |
 |---------------------------|-----------------------------------|
-| How long scan history is retained (30 days vs unlimited) | Whether photos are analyzed (yes in all tiers) |
-| Which export formats are available (none, PDF/JSON, or PDF/JSON/FHIR) | Where photos are stored (on-device in all tiers) |
-| Whether CloudKit syncs preferences (off, on, or on) | Whether health data syncs to iCloud (never, in any tier) |
-| Whether trend analytics are shown | What the AI can detect or describe |
+| How much photo history is kept (three recent photos vs full history) | Whether a photograph is a diagnosis (never, in any tier) |
+| Reminder cadence and the print-ready visit sheet | Where photos are stored (on-device in all tiers) |
+| Whether CloudKit syncs preferences | Whether health data syncs to iCloud (never, in any tier) |
+| Whether longer trends are shown | What the on-device models may claim about your mouth |
 
 ### StoreKit data is not consumer health data
 
@@ -196,6 +203,8 @@ You may have your consumer health data deleted, including from backups and archi
 | To delete | Where |
 |---|---|
 | A single photograph — **any** of them, not only the most recent | Act → **All your photos** → tap the photo → **Delete this photo**. Press-and-hold a row, or swipe it, for the same control |
+| A visit you logged | Record → the visit → **Delete this visit** |
+| A document you filed | Record → the document → **Delete this file**. The file is removed from the app container |
 | A single logged care day | Do → **Your care log** → tap the day → **Delete this care day**. Press-and-hold or swipe for the same control |
 | A single saved what-if scenario | More → What-if → Saved Scenarios → tap it → **Delete this scenario** |
 | A single claimed partner promotion | Settings → Privacy & Security → **Claimed offers** → **Delete this claim**. The row appears only if you have one; the app no longer lists partner offers, so no new claim can be made |
@@ -287,7 +296,7 @@ If we change the categories of consumer health data we collect, add a source, ad
 2. **obtain your affirmative consent before collecting or processing for the new category or purpose**, as RCW 19.373.020(1)(c) and (1)(d) require — before the change takes effect, not after;
 3. show an in-app notice describing what changed.
 
-**This 24 August 2026 revision** replaces the export description and the single-photograph deletion route so they match the shipping app: the export is a `.zip` carrying every photograph at full resolution, and the deletion table names the per-record controls. **No category of data changed, no new source was added, and nothing new is collected.** **The 21 August 2026 revision** restates auto-save captures to Photos as **off** until you turn it on (the main policy is the source for that setting). **The 8 August 2026 revision was a correction pass rather than a change of practice.** We re-read the shipping source code and rewrote every statement that did not match it. The deletion section previously said that deleting your account revokes your Sign in with Apple token; it does not, because the app has no server, never exchanges the authorization code, and therefore has no token in existence to revoke. That section now states what deletion actually does. We also corrected the name of the deletion control, described the placeholder percentages in the Studio Regenerative Projection feature, noted that scan files are not excluded from your own device backup, described the export file accurately, and confirmed the statements that had been pending internal verification and are now true of the build.
+**This 19 September 2026 revision** adds categories the shipping app already stores: visit records, documents you file, visit packets, marks you draw on a photograph, notes you type about your mouth, household names on this device, and the App Group care snapshot. It also replaces leftover Plus/Premium subscription language with the one Pro gate. Those categories are collected only on your device. **The 24 August 2026 revision** replaced the export description and the single-photograph deletion route so they match the shipping app: the export is a `.zip` carrying every photograph at full resolution, and the deletion table names the per-record controls. **The 21 August 2026 revision** restates auto-save captures to Photos as **off** until you turn it on (the main policy is the source for that setting). **The 8 August 2026 revision was a correction pass rather than a change of practice.** We re-read the shipping source code and rewrote every statement that did not match it. The deletion section previously said that deleting your account revokes your Sign in with Apple token; it does not, because the app has no server, never exchanges the authorization code, and therefore has no token in existence to revoke. That section now states what deletion actually does. We also corrected the name of the deletion control, described the placeholder percentages in the Studio Regenerative Projection feature, noted that scan files are not excluded from your own device backup, described the export file accurately, and confirmed the statements that had been pending internal verification and are now true of the build.
 
 Previous versions are available on request. We do not make material changes quietly.
 
