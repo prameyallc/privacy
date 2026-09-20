@@ -1,6 +1,6 @@
 # OmniDent Privacy Policy
 
-**Effective date:** 24 August 2026 *(supersedes the 21 August 2026 version; section 9 now matches the per-record delete controls and the photograph-carrying export)*
+**Effective date:** 20 September 2026 *(supersedes the 24 August 2026 version; household on this device, child-session lock, visits and documents, StoreKit, and the Home Screen widget)*
 **Publisher:** Prameya LLC, a United States limited liability company ("Prameya", "we", "us")
 **Contact:** admin@prameya.legal
 **This policy lives at:** https://prameyallc.github.io/privacy/omnident/
@@ -15,8 +15,9 @@
 
 ## The short version
 
-- OmniDent lets you photograph your own teeth and gums, keep a dated record, log home-care habits, and get educational information.
+- OmniDent lets you photograph your own teeth and gums, keep a dated record, log home-care habits, keep visit notes and documents, and get educational information.
 - **Your photos stay on your iPhone or iPad.** They are saved inside the app's private storage. They are never sent to Prameya. Prameya operates no server that receives your photos, your analysis, or your notes.
+- **A household on this device is local.** You can add people (owner, child, adult you care for, caregiver). Each person has one mouth record. Nothing about a mouth is uploaded. Switching away from a child session asks for Face ID or the device passcode.
 - **The AI runs on your device.** Nothing you photograph or type is sent anywhere for analysis.
 - **The app does connect to the internet in three narrow ways**, and we describe each one below: downloading AI model files from Hugging Face when you ask it to, syncing a small amount of non-health data through your own iCloud account, and Apple's push service telling the app that iCloud data changed.
 - **No ads. No analytics. No trackers. No third-party SDK that phones home.** We do not sell your data. We have never sold your data.
@@ -28,13 +29,17 @@
 
 ## 1. What OmniDent does
 
-OmniDent is a direct-to-consumer app for your own oral care. It lets you:
+OmniDent is a direct-to-consumer app for your own oral care. The tabs a person reads are **You / Record / Do / Ask / More**. Capture is a full-screen cover, not a tab. It lets you:
 
 - take photographs of your mouth with the in-app camera, and keep them as a dated record;
 - run an on-device AI model over a photo to get general educational information;
 - log daily habits such as brushing, flossing, mouthwash and sugary drinks;
+- log visits you attended and drop a treatment plan, radiograph, clinic photo, receipt or EOB into Record — those files stay in the app container;
+- keep a visit packet of identifiers (photos + standing questions + a visit), not a diagnosis;
+- keep more than one mouth on this device (Household), with a shorter kids care session when the active person is a child;
 - run illustrative cost scenarios using figures you enter;
 - read general information about oral health;
+- show a short care-status line on the Home Screen widget (no photograph);
 - optionally share brushing and dietary-sugar entries with Apple Health.
 
 **OmniDent has no FDA authorization.** Analysis of dental images for clinical purposes is a regulated activity in the United States. What the photo analysis puts on your screen today is a written note about the image, with no condition name and no confidence score. We are not replacing that description with a blanket "the app does not diagnose" claim — a free-text on-device chat can still name a condition, and nothing in the app filters that output. Do not act on chat or photo-note text. Ask a dentist.
@@ -132,9 +137,19 @@ OmniDent has a setting called **auto-save captures to Photos**. When it is on, e
 
 **This setting is off by default.** You have to turn it on.
 
-If you turn it on and you use iCloud Photos, that means new mouth photos will be backed up to your personal iCloud Photo Library, under your Apple Account, subject to Apple's terms — not ours. This is still your data in your account, and Prameya still never sees it. But it does leave OmniDent's protected container, and you should know that.
+**While a child profile is active, auto-save is forced off**, even if you turned the setting on. A child's mouth photos must not silently enter iCloud Photos.
+
+If you turn it on (and you are not in a child session) and you use iCloud Photos, that means new mouth photos will be backed up to your personal iCloud Photo Library, under your Apple Account, subject to Apple's terms — not ours. This is still your data in your account, and Prameya still never sees it. But it does leave OmniDent's protected container, and you should know that.
 
 You can turn it on at **Settings → Photos** inside OmniDent. You can also revoke OmniDent's permission to add to your Photos library at any time in iOS Settings → Privacy & Security → Photos.
+
+### Household mouths stay on this device
+
+Settings → **Household** (and **Family & kids mode**) adds people on **this device**. Each person has one mouth. Photographs, visits and documents are keyed to the active mouth. A child session cannot open another person's photos, Ask, Settings, Paywall, dentist share, or the visit packet.
+
+Leaving a child session for an adult record asks for **Face ID or the device passcode**. The app does not keep a second password. If the device has no passcode, iOS cannot lock, and Household settings says so.
+
+A passphrase-sealed **transfer file** moves names and roles to another of your devices. Photos, visits and documents stay on the sending device. This is not iCloud household sync, and there is no Household subscription. StoreKit Family Sharing covers Pro on other Apple IDs; it does not share this record.
 
 ### Photos you pick from your library
 
@@ -261,6 +276,7 @@ OmniDent does not request access to Health Records (clinical records from a prov
 | Apple iCloud (CloudKit), your private database | App preferences and interface state; a request to delete the app's zone when you delete your account | While iCloud Sync is on, and at account deletion | No health data |
 | Apple push notification service | A silent signal that iCloud data changed | While iCloud Sync is on | No |
 | Apple (Sign in with Apple) | The sign-in exchange itself, handled by iOS | Only if you choose to sign in | No |
+| Apple StoreKit | A transaction id, product id, and entitlement status | When you buy or restore OmniDent Pro | No health content |
 
 There is no token-revocation request in that list, because there is no OmniDent token to revoke — see section 4.
 
@@ -312,7 +328,9 @@ The text of a note the on-device model attached to a photo is still not in the f
 
 | To delete | Where |
 |---|---|
-| One photo | Act → All your photos → tap the photo → Delete this photo (or press-and-hold the row) |
+| One photo | You → All your photos → tap the photo → Delete this photo (or press-and-hold the row). A child session cannot delete photos; the owner deletes them from an adult session. |
+| A visit you logged | Record → the visit → Delete this visit |
+| A document you filed | Record → the document → Delete this file |
 | One logged care day | Do → Your care log → tap the day → Delete this care day (or press-and-hold the row) |
 | One saved what-if scenario | More → What-if → Saved Scenarios → tap it → Delete this scenario |
 | One claimed partner promotion | Settings → Privacy & Security → Claimed offers → Delete this claim (the row is shown only if you have one) |
@@ -341,11 +359,22 @@ The strongest security property here is structural rather than technical: **ther
 
 ## 12. Children
 
-OmniDent is intended for adults. It is not directed to children, we do not knowingly collect personal information from a child under 13, and there is no sign-up flow, no advertising, no analytics and no social feature through which a child's information could be collected or shared.
+OmniDent's **account holder is an adult**. There is no child Apple ID, no child sign-up, and the App Store listing is not in the Kids category.
 
-The Children's Online Privacy Protection Act (COPPA) applies to operators of services directed to children under 13, or who have actual knowledge that they are collecting personal information from a child under 13. We believe neither applies to OmniDent. That said, oral hygiene is a subject parents share with children. If you believe a child under 13 has provided information through this app, write to admin@prameya.legal and we will help you remove it — although in almost every case the answer is that the information is on your own device and you can delete it yourself in seconds using the controls in section 10.
+**Kids mode is a parent tool on the parent's device.** Settings → **Family & kids mode** and **Household** add a person with the child role. The app does **not** create a kids profile unless you add one. A child person gets the shorter care session. Photographs, visits and documents for that person stay on this device, keyed to that mouth.
 
-A parent supervising a child's brushing should be aware that the app can photograph a child's mouth and store it on the device, and that with auto-save on, those photos also go to the device's Photos library.
+When a child profile is active:
+
+- the tabs are You / Record / Do — Ask, Settings, Paywall, dentist share, Smile Points and the visit packet stay with the grown-up;
+- auto-save to Photos is off;
+- the child cannot delete photos or the person;
+- switching to an adult record asks for Face ID or the device passcode.
+
+The Children's Online Privacy Protection Act (COPPA) applies to operators of services directed to children under 13, or who have actual knowledge that they are collecting personal information from a child under 13. OmniDent's kids mode is a tool for a parent, on the parent's own device, with no transmission to us and no child-facing sign-up; on that basis we do not treat OmniDent as directed to children. We are stating the feature rather than relying on the conclusion, so that you can judge it.
+
+If you believe a child's information has been entered into this app and you want it removed, write to admin@prameya.legal — although in almost every case the information is on your own device. **Delete All Scans & Data** also clears household names and care-day history, including a child's. Deleting the app removes the container.
+
+A parent supervising a child's brushing should know that photographing a child's mouth stores those photos on this device. Auto-save to Photos is forced **off** while that child is active. The [consumer health data policy](https://prameyallc.github.io/privacy/omnident/health-data/) lists children's health data as its own categories.
 
 ---
 
@@ -442,7 +471,7 @@ If something in your mouth hurts, bleeds, changes, or worries you, see a dentist
 We will update this policy when the app's behaviour changes — and we will update it **before** the change ships, not after.
 
 - The effective date at the top always reflects the current version.
-- **This 24 August 2026 revision** updates section 9 so the export is a `.zip` that carries the photographs themselves, and so the deletion table names the per-record controls. No category of data, source, recipient or purpose changed.
+- **This 20 September 2026 revision** matches the shipping household: people and mouths on this device, a child session that cannot see another mouth, Face ID or the device passcode to leave a child session, auto-save to Photos forced off while a child is active, visits and documents on Record, StoreKit on the network list, and the Home Screen widget's care-status line. No data is transmitted to Prameya. **This 24 August 2026 revision** updates section 9 so the export is a `.zip` that carries the photographs themselves, and so the deletion table names the per-record controls. No category of data, source, recipient or purpose changed.
 - **This 21 August 2026 revision** matches the shipping code on auto-save captures to Photos (**off** by default), withdraws the blanket "does not diagnose" wording in favour of describing the photo note and the unfiltered chat, and corrects the Studio Regenerative Projection percentages: the values are constants, but which constant you see is keyed on your own scan history.
 - **The 8 August 2026 revision was a correction pass.** We re-read the shipping source code and rewrote every statement that did not match it. In particular: the previous version said that deleting your account revokes your Sign in with Apple token through Apple's REST API. It does not, and it never did — the app has no server and mints no token, so there is nothing to revoke; section 4 now describes what deletion actually does. We also corrected the name of the deletion control, described the Studio Regenerative Projection placeholder percentages, stated that scan files are not excluded from your device backup, recorded that no pre-download disclosure sheet exists, and confirmed the items that had been marked as pending internal verification and are now in the build.
 - For any material change — a new destination the app connects to, a new category of data, a new third party, a change to what syncs, or the addition of any advertising or analytics — we will show an in-app notice and, where the law requires it, ask for your consent before the change takes effect. Under Washington's My Health My Data Act, collecting a new category of consumer health data, or using it for a new purpose, requires your affirmative consent first, and we will obtain it first.
