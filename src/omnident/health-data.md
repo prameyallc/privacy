@@ -1,6 +1,6 @@
 # OmniDent Consumer Health Data Privacy Policy
 
-**Effective date:** 19 September 2026 *(supersedes the 24 August 2026 version; adds visit records, documents you file, visit packets, user-drawn photo marks, household names on this device, and the App Group care snapshot. Subscription language matches the one Pro gate.)*
+**Effective date:** 20 September 2026 *(supersedes the 19 September 2026 version; lists children's health data separately, and names the child-session lock, mouth isolation, and auto-save-to-Photos off while a child is active.)*
 **Publisher:** Prameya LLC, a United States limited liability company ("Prameya", "we", "us")
 **Contact:** admin@prameya.legal
 **This policy lives at:** https://prameyallc.github.io/privacy/omnident/health-data/
@@ -43,6 +43,9 @@ RCW 19.373.020(1)(a)(i) requires us to state the categories of consumer health d
 | **Visit packet** | One page of identifiers for photos, standing questions, and a visit | So you can open a one-pager at a sitting. The packet is identifiers, not a diagnosis |
 | **Notes you type about your mouth** | Free text you write, optionally attached to a mark you drew | So you can remember what you wanted to tell a dentist. The app does not classify the note |
 | **Household names on this device** | Display names, roles (owner, child, adult you care for, caregiver), and which mouth record is active | So more than one person in a household can keep a separate mouth record on this phone. Kids care sessions stay opt-in under Family & kids mode. This is not iCloud family sharing of health data |
+| **Children's display names and roles** *(only if you add a child)* | A first name or nickname you type, the child role, and that this mouth is the active one | So the parent can switch to that child's record. There is no child Apple ID and no child sign-up |
+| **Photographs of a child's mouth** *(only if you photograph that child)* | Images keyed to that child's mouth on this device | So the parent can keep a dated record of that child's mouth. A child session cannot open another person's photos. Auto-save to Photos is off while that child is active |
+| **A child's care-day log** *(only if you log care for that child)* | Dates the shorter kids care session was completed for that person | So the parent can see whether today's care was logged for that child. This is not a wellness score |
 | **Oral-health profile** | Age, brushing frequency, sugar intake level, smoking status, whether you have diabetes, whether you have dry mouth, and the goals you choose | To tailor the general information and habit suggestions the app shows you |
 | **Home-care habit logs** | Daily records of brushing, flossing, mouthwash use and sugary drinks | To show you your own streaks, trends and progress |
 | **Programme progress** | Your progress through the in-app 30-day home-care programme | To let you resume where you left off |
@@ -63,8 +66,8 @@ It is **not** used for advertising, for marketing, for profiling, for research, 
 
 RCW 19.373.020(1)(a)(ii) requires the categories of sources. There are four, and all of them are you:
 
-1. **You, directly** — habit logs, profile answers, goals, notes and cost-model inputs you type in.
-2. **Your device's camera**, when you take a photo in the app.
+1. **You, directly** — habit logs, profile answers, goals, notes, cost-model inputs, household names, and a child's display name you type in.
+2. **Your device's camera**, when you take a photo in the app (including a photo of a child's mouth, if you take one).
 3. **Your device's photo library**, when you pick a specific image to attach using the system photo picker. OmniDent receives only the image you pick and has no access to the rest of your library.
 4. **Apple Health**, only if you grant permission, and only for the four read types listed above.
 
@@ -77,9 +80,29 @@ We obtain consumer health data from **no other source**. We do not buy it, rent 
 - **On your device.** Photographs are stored as files in OmniDent's private app container, encrypted at rest by iOS Data Protection at the Complete level. Everything else is in the app's local database on the same device.
 - **Not on any Prameya system.** Prameya operates no server that receives your consumer health data. We have no user database and no copy of anything described above.
 - **Not sent for AI processing.** The AI runs on your device's own chip. Photographs and text are never transmitted for analysis.
-- **Not in iCloud through OmniDent.** OmniDent's iCloud sync carries app preferences and interface state only. No health-derived field is in its sync schema, and the set of records permitted to sync is pinned by an allow-list in the app that switches sync off entirely if anything ever drifts from it.
+- **Not in iCloud through OmniDent.** OmniDent's iCloud sync carries app preferences and interface state only. No health-derived field is in its sync schema, and the set of records permitted to sync is pinned by an allow-list in the app that switches sync off entirely if anything ever drifts from it. Person and Mouth rows, photographs, visits and documents are classified so they cannot sync.
+- **A household transfer file** you make yourself is names and roles, sealed with a passphrase you type. Photographs, visits and documents stay on the sending device.
 
 One honest limit on that last point: OmniDent does not mark its scan folder as excluded from your device backup. If you back your device up to iCloud or to a computer, those files are included in **your own** backup, under your Apple Account or on your own machine, governed by Apple's terms rather than ours. That is your backup of your device, not a transfer of data to us or to anyone else by the app.
+
+---
+
+## Children's consumer health data
+
+Washington requires children's health data to be listed distinctly. **OmniDent does not collect it unless an adult on this device adds a child and uses that profile.**
+
+| What | Where it lives | Who can see it |
+|---|---|---|
+| Child's display name and child role | Local household row on this device, not iCloud | Anyone holding the unlocked phone who is in that child's session, or the owner looking at Household |
+| Photographs of that child's mouth | Local journal keyed to that mouth | A child session sees only that mouth. An adult record is behind Face ID or the device passcode |
+| Care days logged for that child | Local care-day tags for that person | Same as photographs |
+| Visits or documents the owner files for that mouth | Local visit graph keyed to that mouth | A child session cannot open the visit packet. The owner opens Record after unlocking |
+
+**COPPA posture.** The adult Apple ID on this device is the account holder. There is no child sign-up, no child Apple ID, no Kids-category listing, and nothing is sent to Prameya. Kids mode is a parent tool.
+
+**What a child session cannot do.** Ask, Settings, Paywall, dentist share, export, delete, Smile Points, auto-save to Photos.
+
+**What this is not.** It is not Apple Screen Time, not Family Controls, not a remote parent dashboard, and not a live camera of the child.
 
 ---
 
@@ -186,6 +209,7 @@ You may withdraw consent to our collection and sharing of your consumer health d
 | To withdraw consent to | Do this |
 |---|---|
 | Camera and photographs | iOS Settings → Privacy & Security → Camera → OmniDent, or simply stop taking photos |
+| A child on this device | Settings → Privacy & Security → Delete All Scans & Data (clears household names), or delete the app |
 | Photo library access | iOS Settings → Privacy & Security → Photos → OmniDent |
 | On-device AI analysis | OmniDent → Settings → AI Models → turn AI features off |
 | Apple Health, in either direction | iOS Settings → Health → Data Access & Devices → OmniDent, or OmniDent → Settings → Apple Health |
@@ -202,7 +226,7 @@ You may have your consumer health data deleted, including from backups and archi
 
 | To delete | Where |
 |---|---|
-| A single photograph — **any** of them, not only the most recent | Act → **All your photos** → tap the photo → **Delete this photo**. Press-and-hold a row, or swipe it, for the same control |
+| A single photograph — **any** of them, not only the most recent | You → **All your photos** → tap the photo → **Delete this photo**. Press-and-hold a row, or swipe it, for the same control. A **child session cannot delete**; the owner deletes from an adult session |
 | A visit you logged | Record → the visit → **Delete this visit** |
 | A document you filed | Record → the document → **Delete this file**. The file is removed from the app container |
 | A single logged care day | Do → **Your care log** → tap the day → **Delete this care day**. Press-and-hold or swipe for the same control |
@@ -296,7 +320,7 @@ If we change the categories of consumer health data we collect, add a source, ad
 2. **obtain your affirmative consent before collecting or processing for the new category or purpose**, as RCW 19.373.020(1)(c) and (1)(d) require — before the change takes effect, not after;
 3. show an in-app notice describing what changed.
 
-**This 19 September 2026 revision** adds categories the shipping app already stores: visit records, documents you file, visit packets, marks you draw on a photograph, notes you type about your mouth, household names on this device, and the App Group care snapshot. It also replaces leftover Plus/Premium subscription language with the one Pro gate. Those categories are collected only on your device. **The 24 August 2026 revision** replaced the export description and the single-photograph deletion route so they match the shipping app: the export is a `.zip` carrying every photograph at full resolution, and the deletion table names the per-record controls. **The 21 August 2026 revision** restates auto-save captures to Photos as **off** until you turn it on (the main policy is the source for that setting). **The 8 August 2026 revision was a correction pass rather than a change of practice.** We re-read the shipping source code and rewrote every statement that did not match it. The deletion section previously said that deleting your account revokes your Sign in with Apple token; it does not, because the app has no server, never exchanges the authorization code, and therefore has no token in existence to revoke. That section now states what deletion actually does. We also corrected the name of the deletion control, described the placeholder percentages in the Studio Regenerative Projection feature, noted that scan files are not excluded from your own device backup, described the export file accurately, and confirmed the statements that had been pending internal verification and are now true of the build.
+**This 20 September 2026 revision** lists children's health data as its own categories, and names the child-session lock (Face ID or the device passcode), mouth isolation, auto-save to Photos off while a child is active, and the names-only household transfer file. **This 19 September 2026 revision** adds categories the shipping app already stores: visit records, documents you file, visit packets, marks you draw on a photograph, notes you type about your mouth, household names on this device, and the App Group care snapshot. It also replaces leftover Plus/Premium subscription language with the one Pro gate. Those categories are collected only on your device. **The 24 August 2026 revision** replaced the export description and the single-photograph deletion route so they match the shipping app: the export is a `.zip` carrying every photograph at full resolution, and the deletion table names the per-record controls. **The 21 August 2026 revision** restates auto-save captures to Photos as **off** until you turn it on (the main policy is the source for that setting). **The 8 August 2026 revision was a correction pass rather than a change of practice.** We re-read the shipping source code and rewrote every statement that did not match it. The deletion section previously said that deleting your account revokes your Sign in with Apple token; it does not, because the app has no server, never exchanges the authorization code, and therefore has no token in existence to revoke. That section now states what deletion actually does. We also corrected the name of the deletion control, described the placeholder percentages in the Studio Regenerative Projection feature, noted that scan files are not excluded from your own device backup, described the export file accurately, and confirmed the statements that had been pending internal verification and are now true of the build.
 
 Previous versions are available on request. We do not make material changes quietly.
 
