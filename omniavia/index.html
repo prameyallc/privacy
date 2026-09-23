@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>OmniAvia Privacy Policy — Prameya LLC</title>
-<meta name="description" content="Effective date: 23 August 2026">
+<meta name="description" content="Effective date: 23 September 2026">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://prameyallc.github.io/privacy/omniavia/">
 <style>
@@ -93,36 +93,34 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 </div></header>
 <main id="main" class="wrap">
 <h1 id="omniavia-privacy-policy">OmniAvia — Privacy Policy</h1>
-<p><strong>Effective date:</strong> 23 August 2026<br />
+<p><strong>Effective date:</strong> 23 September 2026<br />
 <strong>Publisher:</strong> Prameya LLC (“Prameya”, “we”, “us”)<br />
-<strong>App:</strong> OmniAvia for iPhone, iPad, Mac and Apple Vision Pro — bundle ID <code>legal.prameya.OmniAvia</code><br />
+<strong>App:</strong> OmniAvia for iPhone, iPad, Mac, Apple Vision Pro, Apple TV and Apple Watch — bundle ID <code>legal.prameya.OmniAvia</code><br />
 <strong>Contact:</strong> admin@prameya.legal<br />
 <strong>Scope:</strong> This policy covers the OmniAvia app and nothing else. Prameya's other apps have their own policies, because they work differently. Index: <a href="https://prameyallc.github.io/privacy/">https://prameyallc.github.io/privacy/</a></p>
-<p>This policy describes <strong>the app you actually install</strong> — what the shipping build does, not what<br />
-an earlier plan for it said. It replaces a draft that described features this app does not have:<br />
-HealthKit it never requests, a Hugging Face / MLX model download it cannot perform, and a photo<br />
-picker that is not in this build. Where the two disagreed, the draft was wrong.</p>
+<p>This policy describes <strong>the app you actually install</strong>: what the shipping build does. It<br />
+replaces the 23 August 2026 page, which said the app had no iCloud sync and no model download.<br />
+Both statements were wrong for the current build, and this page corrects them.</p>
 <hr />
 <h2 id="the-short-version">The short version</h2>
-<p><strong>OmniAvia is ACS ground school on this device.</strong> There is no account, no sign-in, no analytics<br />
-SDK, no advertising SDK, no crash reporter, no telemetry, and no server of ours that receives<br />
-anything.</p>
-<p><strong>No health data. No HealthKit.</strong> The app does not request HealthKit permission, does<br />
-not declare HealthKit entitlements, and contains no HealthKit code.</p>
-<p><strong>No Hugging Face traffic in this build.</strong> There is no model download, no MLX inference<br />
-client, and no PhotosPicker. If that ever changes, this policy will be updated in the same<br />
-commit.</p>
-<p>Study, prep and session logs live in a local SwiftData store on this device. Local<br />
-notifications are opt-in from Settings. Export is something you start. Delete-all empties<br />
-the on-device store.</p>
+<p><strong>OmniAvia is ACS ground school with your own study and flight logs.</strong> There is no account,<br />
+no sign-in, no analytics SDK, no advertising SDK, no crash reporter, no telemetry, and no<br />
+server of ours that receives anything.</p>
+<p><strong>Your logs sync through your own iCloud account.</strong> Flight, study, prep and oral-drill logs<br />
+are kept in the app and mirrored to the <strong>private</strong> iCloud database of the Apple Account<br />
+you are signed in with, so they appear on your other devices. We cannot read that database.<br />
+If you are not signed in to iCloud, or iCloud is off for OmniAvia, the logs stay on this<br />
+device.</p>
+<p><strong>No health data. No HealthKit.</strong> The app does not request HealthKit permission, does not<br />
+declare HealthKit entitlements, and contains no HealthKit code.</p>
+<p><strong>Ask runs on your device.</strong> Answers come from Apple Intelligence on your device or from a<br />
+small open model you choose to download. Your questions are not sent to us or to anyone<br />
+else.</p>
 <hr />
 <h2 id="1-who-publishes-this">1. Who publishes this</h2>
 <p>Prameya LLC. Privacy contact: <strong>admin@prameya.legal</strong>.</p>
 <hr />
-<h2 id="2-what-the-app-stores-on-your-device">2. What the app stores on your device</h2>
-<p>The shipping UI writes study logs, prep / habit ticks, and session notes you enter. Those<br />
-records sit in a local SwiftData store inside the app container. The app does not sync that<br />
-store to iCloud.</p>
+<h2 id="2-what-the-app-stores-and-where">2. What the app stores, and where</h2>
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -132,24 +130,28 @@ store to iCloud.</p>
 </thead>
 <tbody>
 <tr>
-<td>Study, prep and session logs you enter</td>
-<td><strong>On this device</strong>, in the app’s SwiftData store</td>
+<td>Flight logs, study logs, prep / habit logs, oral-drill marks, progress snapshots</td>
+<td>This device, <strong>and your private iCloud database</strong> (CloudKit) when iCloud is on</td>
 </tr>
 <tr>
-<td>Appearance and reminder preference</td>
-<td><strong>On this device</strong>, in app preferences</td>
+<td>Where you left off: last open pack, lesson or record, the pack and next-drill titles, the ACS-area card on the Home Screen widget, and your appearance choice</td>
+<td>This device, <strong>and iCloud key-value storage</strong> for your Apple Account, so another device can offer “continue”</td>
 </tr>
 <tr>
-<td>A JSON export you asked for</td>
-<td><strong>On this device</strong>, temporary folder, only while you share it</td>
+<td>Reminder and goal preferences, first-run acknowledgement, Pro status</td>
+<td><strong>This device only</strong>, in app preferences</td>
 </tr>
 <tr>
-<td>Model weights / Hugging Face cache</td>
-<td><strong>Not stored as a feature.</strong> There is no download control. Delete-all may still purge leftover cache from an older install</td>
+<td>A model you downloaded for Ask</td>
+<td><strong>This device only</strong>, inside the app container</td>
+</tr>
+<tr>
+<td>An export you asked for</td>
+<td><strong>This device</strong>, a temporary file, only while you share it</td>
 </tr>
 <tr>
 <td>Photos from your library</td>
-<td><strong>Not stored.</strong> This build has no photo picker</td>
+<td><strong>Not collected.</strong> The app has no photo picker or camera</td>
 </tr>
 <tr>
 <td>Analytics identifiers</td>
@@ -157,15 +159,47 @@ store to iCloud.</p>
 </tr>
 </tbody>
 </table></div>
-<p>Export is a file you choose to share (Share sheet). It is written only when you tap<br />
-<strong>Export my data</strong>. Nothing is uploaded to us.</p>
-<p>If iCloud Backup is enabled in iOS Settings, Apple's device backup may include the app<br />
-container. That is Apple's processing, not ours. OmniAvia itself performs no cloud sync.</p>
+<p>Your iCloud data sits in your Apple Account under Apple's iCloud terms. Prameya has no access<br />
+to your private CloudKit database or your key-value storage, and we cannot read, export or<br />
+restore them for you. To stop syncing, turn off iCloud for OmniAvia in iOS Settings → your<br />
+name → iCloud.</p>
+<p>If iCloud Backup is on, Apple's device backup may also include the app container. That is<br />
+Apple's processing, not ours.</p>
+<hr />
+<h2 id="3-ask-on-device-answers">3. Ask (on-device answers)</h2>
+<p>The <strong>Ask</strong> tab appears only when on-device answers are turned on and your device can<br />
+generate them.</p>
+<ul>
+<li><strong>Apple Intelligence first.</strong> Where available, Ask uses Apple's on-device language model.<br />
+  The question and the answer stay on the device.</li>
+<li><strong>Optional downloaded model.</strong> In <strong>More</strong>, you can choose to download a small open model<br />
+  (for example Qwen3 0.6B or 1.7B, 4-bit, from the <code>mlx-community</code> collection). The download<br />
+  starts only when you tap <strong>Download</strong>. Anything over 500 MB asks for your consent first. The<br />
+  file comes from Hugging Face (<code>huggingface.co</code>), whose servers see an ordinary download<br />
+  request from your device's IP address. Nothing you have written is sent with it. The model<br />
+  then runs on your device.</li>
+<li><strong>Apple Watch.</strong> A question asked on the Watch is passed to your paired iPhone over Apple's<br />
+  Watch connection and answered there. It does not go to us.</li>
+<li><strong>No canned replies, no cloud AI.</strong> OmniAvia never sends your question to a server for an<br />
+  answer.</li>
+</ul>
+<hr />
+<h2 id="4-other-network-use">4. Other network use</h2>
+<ul>
+<li><strong>iCloud</strong> (section 2): Apple's CloudKit and key-value storage, for your own data.</li>
+<li><strong>Handoff</strong>: when you move between your own devices, the app may offer to continue where<br />
+  you left off. This uses Apple's Handoff between devices signed in to your Apple Account.</li>
+<li><strong>App Store</strong>: purchases and subscription status go through Apple's StoreKit.</li>
+<li><strong>Open the source</strong>: tapping this on a knowledge pack opens an FAA or eCFR page in your<br />
+  browser. That tap is yours, and no study data goes with it.</li>
+<li><strong>Model download</strong> (section 3): only when you tap Download.</li>
+</ul>
+<p>There is no first-party API, no analytics endpoint and no push server.</p>
 <hr />
 <h2 id="subscriptions-and-in-app-purchases">Subscriptions and In-App Purchases</h2>
 <h3 id="available-tiers">Available tiers</h3>
 <p>There is one paid upgrade, <strong>OmniAvia Pro</strong>, sold as three products. Buying any one of<br />
-them grants exactly the same Pro — there are no separate feature tiers.</p>
+them grants exactly the same Pro. There are no separate feature tiers.</p>
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -178,12 +212,12 @@ them grants exactly the same Pro — there are no separate feature tiers.</p>
 <tr>
 <td>OmniAvia Pro Monthly</td>
 <td>$5.99</td>
-<td>Auto-renews monthly. 7-day free trial.</td>
+<td>Auto-renews monthly. 7-day free trial for eligible new subscribers.</td>
 </tr>
 <tr>
 <td>OmniAvia Pro Annual</td>
 <td>$39.99</td>
-<td>Auto-renews yearly. 7-day free trial.</td>
+<td>Auto-renews yearly. 7-day free trial for eligible new subscribers.</td>
 </tr>
 <tr>
 <td>OmniAvia Pro Lifetime</td>
@@ -192,114 +226,98 @@ them grants exactly the same Pro — there are no separate feature tiers.</p>
 </tr>
 </tbody>
 </table></div>
-<p>Family Sharing is enabled on all three. Subscriptions renew until you cancel in<br />
-Settings; Lifetime is a one-time non-consumable.</p>
-<p><strong>The knowledge layer is free and stays free.</strong> Without paying anything you get<br />
-every ACS area of operation and the 14 CFR reference, with no account and no time limit. Pro adds ACS drills, missed-item review and oral-prep packs.</p>
-<p><strong>Pro does not add cloud sync, and there is no paid iCloud option.</strong> OmniAvia stores your<br />
-records on your device in every case, paid or not. If a subscription lapses you keep your<br />
-own data and can still export it in its raw form; only the Pro tools stop.</p>
+<p>Family Sharing is enabled on all three. Subscriptions renew until you cancel in Settings.<br />
+Lifetime is a one-time non-consumable.</p>
+<p><strong>The knowledge layer is free and stays free.</strong> Without paying anything you get every ACS<br />
+area of operation and the 14 CFR reference, plus your own logs and iCloud sync, with no<br />
+account and no time limit. Pro adds ACS drills, missed-item review, oral-prep sessions and a<br />
+formatted study PDF.</p>
+<p><strong>iCloud sync is not a paid feature.</strong> It works the same with or without Pro. If a<br />
+subscription lapses you keep your data and can still export it in raw form. Only the Pro<br />
+tools stop.</p>
 <h3 id="free-vs-paid-tier-data-collection">Free vs paid tier data collection</h3>
-<p><strong>Free and Pro collect the same data</strong> (progress tracking, quiz responses, lesson completion) — which is to say, none of it reaches us.</p>
-<p>The difference is:<br />
-- <strong>Which tools you get.</strong> Every ACS area of operation and the 14 CFR reference are free; Pro adds drills, missed-item review and oral-prep packs.<br />
-- <strong>Nothing else.</strong> Progress does not sync between your devices in either case — OmniAvia has no cloud sync, free or paid.</p>
-<p>In all tiers:<br />
-- Quiz answers and progress stay on your device<br />
-- No transmission of learning data to Prameya<br />
-- No analytics or tracking</p>
-<p><strong>Purchase unlocks content. It does not change what data is collected.</strong></p>
+<p><strong>Free and Pro handle data the same way.</strong> Buying Pro changes which tools you get, not what<br />
+is stored or where it goes. In every tier, no learning data is sent to Prameya and there is<br />
+no analytics or tracking.</p>
 <h3 id="cancellation-and-refunds">Cancellation and refunds</h3>
 <p>Subscriptions are managed by Apple:<br />
 - <strong>Cancel:</strong> iOS Settings → your name → Subscriptions → OmniAvia<br />
 - <strong>Refund requests:</strong> reportaproblem.apple.com<br />
-- <strong>Lifetime purchase:</strong> One-time payment, no subscription to cancel</p>
+- <strong>Lifetime purchase:</strong> one-time payment, no subscription to cancel</p>
 <p>Prameya cannot cancel your subscription or issue refunds. Apple controls all billing.</p>
 <h3 id="storekit-transaction-data">StoreKit transaction data</h3>
-<p>When you purchase, the app receives and stores locally on your device:<br />
-- Transaction ID (an opaque identifier from Apple)<br />
-- Product ID (which tier you purchased)<br />
-- Purchase and expiration dates (for subscriptions)</p>
-<p>This data:<br />
-- Is stored only on your device<br />
-- Is NOT synced to iCloud<br />
-- Is used only to unlock tier-appropriate content<br />
-- Is deleted when you use "Delete All Data"</p>
+<p>Apple tells the app which product you own and when a subscription expires. The app keeps a<br />
+Pro flag and the active product ID in its preferences <strong>on this device only</strong>. They are not<br />
+synced to iCloud and are cleared by <strong>Delete all my data</strong>. Apple re-confirms your purchase<br />
+from the App Store when needed.</p>
 <hr />
-<h2 id="3-what-the-app-does-not-do">3. What the app does not do</h2>
-<p>Checked against compiled sources (<code>OmniAviaKit/Sources</code>, <code>App/OmniAvia</code>) and the App<br />
-shell entitlements / Info.plist / PrivacyInfo:</p>
+<h2 id="5-what-the-app-does-not-do">5. What the app does not do</h2>
+<p>Checked against the compiled sources (<code>OmniAviaKit/Sources</code>, <code>App/</code>) and the app<br />
+entitlements, Info.plist and privacy manifest:</p>
 <ul>
-<li>❌ <strong>No HealthKit.</strong> No <code>import HealthKit</code>, no <code>HKHealthStore</code>, no usage description,<br />
-  no health-records entitlement.</li>
-<li>❌ <strong>No CloudKit / iCloud container for user logs.</strong> The SwiftData store is local-only.</li>
-<li>❌ <strong>No MLX / Hugging Face / on-device model download</strong> in this build.</li>
-<li>❌ <strong>No PhotosPicker, camera, or photo-library intake</strong> in this build.</li>
-<li>❌ <strong>No analytics, advertising, crash reporting, or tracking.</strong> No ATT prompt.</li>
-<li>❌ <strong>No account, Sign in with Apple, or server login.</strong></li>
-<li>❌ <strong>No location, microphone, contacts, or calendar.</strong></li>
-<li>❌ <strong>No sale or share of personal information</strong> — we hold none.</li>
+<li>❌ <strong>No HealthKit.</strong></li>
+<li>❌ <strong>No servers of ours.</strong> No first-party API, account, Sign in with Apple or login.</li>
+<li>❌ <strong>No analytics, advertising, crash reporting or tracking.</strong> No ATT prompt.</li>
+<li>❌ <strong>No photo picker, camera or photo-library access.</strong></li>
+<li>❌ <strong>No location, microphone, contacts or calendar.</strong></li>
+<li>❌ <strong>No cloud AI.</strong> Ask runs on the device (section 3).</li>
+<li>❌ <strong>No sale or sharing of personal information.</strong> We hold none.</li>
 <li>❌ <strong>HIPAA does not apply</strong> (not a covered entity, no PHI).</li>
 </ul>
-<p>Apple’s App Privacy label for this binary is <strong>Data Not Collected.</strong></p>
 <hr />
-<h2 id="4-network">4. Network</h2>
-<p><strong>This build does not download models and does not send your logs anywhere.</strong> There is no<br />
-Hugging Face client and no first-party API.</p>
-<p>You may tap <strong>Open the source</strong> on a knowledge pack. That opens a hashed FAA / public<br />
-reference URL in your browser. That tap is yours. The app does not upload study logs with<br />
-it.</p>
-<p>If on-device model weights are added later:</p>
-<ol>
-<li>the download starts only after you ask;</li>
-<li>files land <strong>inside the app container</strong>;</li>
-<li>this section is rewritten before that build ships.</li>
-</ol>
+<h2 id="6-notifications">6. Notifications</h2>
+<p><strong>Local notifications are opt-in.</strong> Permission is requested only when you switch on a<br />
+reminder in Settings, never at launch. Reminders (the daily logging reminder, the evening<br />
+log review, and a drill waiting for you) are scheduled by your own device. On Apple Watch,<br />
+a reminder can offer <strong>Confirm</strong>, <strong>Snooze</strong> or <strong>Not now</strong>. There is no push server.<br />
+Turning reminders off cancels them.</p>
 <hr />
-<h2 id="5-notifications">5. Notifications</h2>
-<p><strong>Local notifications are opt-in.</strong> Permission is requested only when you switch on<br />
-<strong>Daily logging reminder</strong> in Settings, never at launch. The notification is scheduled by<br />
-your own device. There is no push server. Turning the reminder off cancels it.</p>
-<hr />
-<h2 id="6-export-and-deletion">6. Export and deletion</h2>
+<h2 id="7-export-and-deletion">7. Export and deletion</h2>
 <ul>
-<li><strong>Export:</strong> Settings → <strong>Export my data</strong> builds a JSON file on this device and hands it<br />
-  to the system share sheet. We never receive a copy.</li>
-<li><strong>Delete all:</strong> Settings → <strong>Delete all my data</strong> permanently removes every flight, study<br />
-  and prep log from this device after you confirm. It cannot be undone. There is no copy<br />
-  anywhere else. Pending local reminders are cancelled. Leftover model-cache directories<br />
-  from older installs, if any, are purged as cleanup — not as a user-facing download<br />
-  feature.</li>
-<li><strong>Delete the app</strong> removes the container on iPhone, iPad and Apple Vision Pro.</li>
+<li><strong>Export:</strong> Settings → <strong>Export my data</strong> builds a JSON file on this device (Pro can also<br />
+  build a formatted study PDF) and hands it to the share sheet. We never receive a copy.</li>
+<li><strong>Delete all:</strong> Settings → <strong>Delete all my data</strong> permanently removes every flight, study,<br />
+  prep and oral-drill record after you confirm. When iCloud is on, the deletion also syncs<br />
+  to your private iCloud database, so the records disappear from your other devices too. It<br />
+  also clears the iCloud “continue” and widget entries, pending reminders, your reminder,<br />
+  goal and Pro-status preferences, and any downloaded model. The first-run acknowledgement is<br />
+  kept so the disclaimer screen does not return. It cannot be undone.</li>
+<li><strong>Delete the app</strong> removes this device's copy. Records already synced stay in your iCloud<br />
+  account until you delete them in the app on another device, or manage OmniAvia's data in<br />
+  iOS Settings → your name → iCloud.</li>
 </ul>
 <hr />
-<h2 id="7-knowledge-packs">7. Knowledge packs</h2>
-<p>ACS-anchored packs ship inside the app. Adding a pack does not, by itself, send data off<br />
-device. The app does not fetch packs from the network.</p>
+<h2 id="8-knowledge-packs">8. Knowledge packs</h2>
+<p>ACS-anchored packs ship inside the app. The app does not fetch packs from the network.</p>
 <hr />
-<h2 id="8-children">8. Children</h2>
+<h2 id="9-children">9. Children</h2>
 <p>OmniAvia is a general-audience adult education tool (ground school). It is not in the Kids<br />
 Category. We do not knowingly collect information from anyone, including children, because<br />
 we do not collect information.</p>
 <hr />
-<h2 id="9-your-rights">9. Your rights</h2>
-<p>There is nothing of yours on our servers to access, correct, or delete. Deleting the app<br />
-removes the on-device container. Rights under the GDPR / UK GDPR / CCPA-CPRA are exercised<br />
-on your device; if you believe we hold something, write to the contact in §1.</p>
+<h2 id="10-your-rights">10. Your rights</h2>
+<p>There is nothing of yours on our servers to access, correct or delete. Your data lives on<br />
+your devices and in your own iCloud account, where you control it. Rights under the GDPR,<br />
+UK GDPR and CCPA/CPRA are exercised there. If you believe we hold something, write to the<br />
+contact in section 1.</p>
 <p>We do not respond to “Do Not Track” signals, because we do not track.</p>
 <hr />
-<h2 id="10-what-this-app-is-not">10. What this app is not</h2>
-<p>OmniAvia is educational ground study and habit logs on this device. It is <strong>not</strong> flight<br />
-instruction, <strong>not</strong> a go/no-go determination, and <strong>not</strong> a substitute for a CFI, the<br />
-FARs, or your own decision.</p>
+<h2 id="11-what-this-app-is-not">11. What this app is not</h2>
+<p>OmniAvia is educational ground study and habit logs. It is <strong>not</strong> flight instruction,<br />
+<strong>not</strong> a go/no-go determination, and <strong>not</strong> a substitute for a CFI, the FARs, or your own<br />
+decision.</p>
 <hr />
-<h2 id="11-changes">11. Changes</h2>
+<h2 id="12-changes">12. Changes</h2>
 <p>Material changes update the effective date at the top of this file. A behaviour change that<br />
 affects what is stored or what leaves the device is described here in the <strong>same commit</strong><br />
 as the code.</p>
-<p><strong>23 August 2026 — what changed.</strong> First published page for the shipping binary: on-device<br />
-SwiftData logs, no account, no HealthKit, no MLX / Hugging Face / PhotosPicker, local<br />
-notifications opt-in, user-initiated export, delete-all, contact admin@prameya.legal.</p>
+<p><strong>23 September 2026: what changed.</strong> Corrected the description of the shipping build:<br />
+personal logs sync to your private iCloud database through CloudKit; “continue” and widget<br />
+state use iCloud key-value storage; Ask can use Apple Intelligence or an optional model you<br />
+download from Hugging Face; Handoff and the Apple Watch relay use Apple's services; the app<br />
+runs on Apple TV and Apple Watch too; Delete all also clears the iCloud entries. The earlier<br />
+page wrongly said the app had no iCloud sync and no model download.</p>
+<p><strong>23 August 2026.</strong> First published page.</p>
 <hr />
 <h2 id="contact">Contact</h2>
 <p><strong>Prameya LLC</strong> · <a href="mailto:admin@prameya.legal">admin@prameya.legal</a></p>
@@ -308,7 +326,7 @@ notifications opt-in, user-initiated export, delete-all, contact admin@prameya.l
 <footer class="site"><div class="wrap">
   <p>Prameya LLC · <a href="mailto:admin@prameya.legal">admin@prameya.legal</a>
   · <a href="https://prameyallc.github.io/privacy/support/">Support</a></p>
-  <p>Effective 23 August 2026. <a href="https://prameyallc.github.io/privacy/">All app privacy policies</a></p>
+  <p>Effective 23 September 2026. <a href="https://prameyallc.github.io/privacy/">All app privacy policies</a></p>
 </div></footer>
 </body>
 </html>
