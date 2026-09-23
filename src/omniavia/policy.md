@@ -1,10 +1,10 @@
-# OmniAero — Privacy Policy
+# OmniAvia — Privacy Policy
 
 **Effective date:** 23 August 2026
 **Publisher:** Prameya LLC (“Prameya”, “we”, “us”)
-**App:** OmniAero for iPhone, iPad, Mac and Apple Vision Pro — bundle ID `legal.prameya.OmniAero`
+**App:** OmniAvia for iPhone, iPad, Mac and Apple Vision Pro — bundle ID `legal.prameya.OmniAvia`
 **Contact:** admin@prameya.legal
-**Scope:** This policy covers the OmniAero app and nothing else. Prameya's other apps have their own policies, because they work differently. Index: <https://prameyallc.github.io/privacy/>
+**Scope:** This policy covers the OmniAvia app and nothing else. Prameya's other apps have their own policies, because they work differently. Index: <https://prameyallc.github.io/privacy/>
 
 This policy describes **the app you actually install** — what the shipping build does, not what
 an earlier plan for it said. It replaces a draft that described features this app does not have:
@@ -15,7 +15,7 @@ picker that is not in this build. Where the two disagreed, the draft was wrong.
 
 ## The short version
 
-**OmniAero is ACS ground school on this device.** There is no account, no sign-in, no analytics
+**OmniAvia is ACS ground school on this device.** There is no account, no sign-in, no analytics
 SDK, no advertising SDK, no crash reporter, no telemetry, and no server of ours that receives
 anything.
 
@@ -57,7 +57,7 @@ Export is a file you choose to share (Share sheet). It is written only when you 
 **Export my data**. Nothing is uploaded to us.
 
 If iCloud Backup is enabled in iOS Settings, Apple's device backup may include the app
-container. That is Apple's processing, not ours. OmniAero itself performs no cloud sync.
+container. That is Apple's processing, not ours. OmniAvia itself performs no cloud sync.
 
 ---
 
@@ -65,14 +65,14 @@ container. That is Apple's processing, not ours. OmniAero itself performs no clo
 
 ### Available tiers
 
-There is one paid upgrade, **OmniAero Pro**, sold as three products. Buying any one of
+There is one paid upgrade, **OmniAvia Pro**, sold as three products. Buying any one of
 them grants exactly the same Pro — there are no separate feature tiers.
 
 | Product | Price (US) | Billing |
 |---|---|---|
-| OmniAero Pro Monthly | $5.99 | Auto-renews monthly. 7-day free trial. |
-| OmniAero Pro Annual | $39.99 | Auto-renews yearly. 7-day free trial. |
-| OmniAero Pro Lifetime | $99.99 | One-time purchase. Not a subscription. |
+| OmniAvia Pro Monthly | $5.99 | Auto-renews monthly. 7-day free trial. |
+| OmniAvia Pro Annual | $39.99 | Auto-renews yearly. 7-day free trial. |
+| OmniAvia Pro Lifetime | $99.99 | One-time purchase. Not a subscription. |
 
 Family Sharing is enabled on all three. Subscriptions renew until you cancel in
 Settings; Lifetime is a one-time non-consumable.
@@ -80,7 +80,7 @@ Settings; Lifetime is a one-time non-consumable.
 **The knowledge layer is free and stays free.** Without paying anything you get
 every ACS area of operation and the 14 CFR reference, with no account and no time limit. Pro adds ACS drills, missed-item review and oral-prep packs.
 
-**Pro does not add cloud sync, and there is no paid iCloud option.** OmniAero stores your
+**Pro does not add cloud sync, and there is no paid iCloud option.** OmniAvia stores your
 records on your device in every case, paid or not. If a subscription lapses you keep your
 own data and can still export it in its raw form; only the Pro tools stop.
 
@@ -91,7 +91,7 @@ own data and can still export it in its raw form; only the Pro tools stop.
 
 The difference is:
 - **Which tools you get.** Every ACS area of operation and the 14 CFR reference are free; Pro adds drills, missed-item review and oral-prep packs.
-- **Nothing else.** Progress does not sync between your devices in either case — OmniAero has no cloud sync, free or paid.
+- **Nothing else.** Progress does not sync between your devices in either case — OmniAvia has no cloud sync, free or paid.
 
 In all tiers:
 - Quiz answers and progress stay on your device
@@ -103,7 +103,7 @@ In all tiers:
 ### Cancellation and refunds
 
 Subscriptions are managed by Apple:
-- **Cancel:** iOS Settings → your name → Subscriptions → OmniAero
+- **Cancel:** iOS Settings → your name → Subscriptions → OmniAvia
 - **Refund requests:** reportaproblem.apple.com
 - **Lifetime purchase:** One-time payment, no subscription to cancel
 
@@ -126,7 +126,7 @@ This data:
 
 ## 3. What the app does not do
 
-Checked against compiled sources (`OmniAeroKit/Sources`, `App/OmniAero`) and the App
+Checked against compiled sources (`OmniAviaKit/Sources`, `App/OmniAvia`) and the App
 shell entitlements / Info.plist / PrivacyInfo:
 
 - ❌ **No HealthKit.** No `import HealthKit`, no `HKHealthStore`, no usage description,
@@ -191,7 +191,7 @@ device. The app does not fetch packs from the network.
 
 ## 8. Children
 
-OmniAero is a general-audience adult education tool (ground school). It is not in the Kids
+OmniAvia is a general-audience adult education tool (ground school). It is not in the Kids
 Category. We do not knowingly collect information from anyone, including children, because
 we do not collect information.
 
@@ -209,7 +209,7 @@ We do not respond to “Do Not Track” signals, because we do not track.
 
 ## 10. What this app is not
 
-OmniAero is educational ground study and habit logs on this device. It is **not** flight
+OmniAvia is educational ground study and habit logs on this device. It is **not** flight
 instruction, **not** a go/no-go determination, and **not** a substitute for a CFI, the
 FARs, or your own decision.
 
@@ -231,4 +231,4 @@ notifications opt-in, user-initiated export, delete-all, contact admin@prameya.l
 
 **Prameya LLC** · [admin@prameya.legal](mailto:admin@prameya.legal)
 
-This policy: <https://prameyallc.github.io/privacy/omniaero/>
+This policy: <https://prameyallc.github.io/privacy/omniavia/>

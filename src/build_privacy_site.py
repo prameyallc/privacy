@@ -36,7 +36,7 @@ APPS = [
     ("omnimath",   "OmniMathematics", "Discrete mathematics for computer science","#6D28D9", "#A78BFA", False),
     ("omnibuild",  "OmniBuild",  "Construction and skilled-trades reference","#854200", "#F28C06", False),
     ("omniops",    "OmniOps",    "Personal operating discipline and habits", "#0B7D6E", "#159485", False),
-    ("omniaero",   "OmniAero",   "ACS ground school on this device",         "#0C7A71", "#15998D", False),
+    ("omniavia",   "OmniAvia",   "ACS ground school on this device",         "#0C7A71", "#15998D", False),
     ("omniphysics","OmniPhysics","Interactive physics lessons on this device","#0E7490", "#22D3EE", False),
 ]
 
