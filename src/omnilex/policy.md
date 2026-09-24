@@ -18,7 +18,7 @@ OmniLex is a legal AI tool for legal professionals. It reads contracts and other
 - **There are no accounts, no sign-in, no ads, no analytics and no tracking.**
 - **A few things do leave the device, and none of them is your documents:**
     - **The AI model download.** OmniLex downloads the model it runs (about 420 MB, 1.1 GB or 2.5 GB, depending on the size you pick) from Hugging Face. That request asks for model files. It carries none of your documents or text.
-    - **Small iCloud entries.** If you are signed in to iCloud on iPhone, iPad or Apple Vision Pro, OmniLex keeps four small entries in your iCloud key-value storage so your other devices, the widget and Apple TV can offer to continue: which part of the app you were in, the identifier of the reference topic you last opened, a random identifier of the last document you opened, and your appearance choice. They never hold a document's title, file name or text. See [Your other devices](#your-other-devices-icloud-handoff-apple-watch-and-apple-tv), including one way these entries can outlast a deletion.
+    - **Small iCloud entries.** If you are signed in to iCloud on iPhone, iPad or Apple Vision Pro, OmniLex keeps four small entries in your iCloud key-value storage so your other devices, the widget and Apple TV can offer to continue: which part of the app you were in, the identifier of the reference topic you last opened, a random identifier of the last document you opened, and your appearance choice. They never hold a document's title, file name or text. See [Your other devices](#your-other-devices-icloud-handoff-apple-watch-and-apple-tv), including how deleting your documents removes them.
     - **Handoff and Apple Watch.** Apple's Handoff and the connection between your iPhone and Apple Watch carry the same kind of "where you left off" information, and a question you send from the Watch to the iPhone.
     - **Purchases.** StoreKit on your device talks to Apple if you buy or restore OmniLex Pro.
 - **Ask answers on your device.** Where Apple Intelligence is turned on and ready, Apple's on-device model answers; otherwise a model you have already downloaded answers. Your question is not sent to us.
@@ -61,7 +61,7 @@ All of this runs locally on your hardware. No page image and no extracted text i
 
 ### Analysis, drafting and search
 
-- **Reading-priority review, summaries, questions about a document, Document Background and Research explanations** run through the AI model you downloaded, which executes on your device using Apple silicon. Your document text is fed to that local model. It does not go over the network.
+- **Reading-priority review, summaries, questions about a document, Document Background and Research explanations** run through the AI model you downloaded, which executes on your device using Apple silicon. Your document text is fed to that local model. It does not go over the network. If no model is on the device yet, these features say so and start no download; a document you import is stored and waits for its review until you download a model in Settings.
 - **Semantic search** across your documents uses Apple's on-device language embeddings. Your search queries stay local.
 - **The reference library, clause library, templates, glossary and legal skill pack** ship inside the app. They are read from the app bundle. Nothing is fetched at runtime.
 
@@ -136,7 +136,7 @@ The identifiers are random codes the app gave your document or the names of topi
 
 The Home Screen widget (iPhone and iPad) and OmniLex for Apple TV read these entries. The Mac app is not signed for iCloud key-value storage, so on a Mac these entries stay on the Mac. The Apple Watch app is not signed for it either; it gets the same information from your iPhone instead (see below).
 
-**Removing them.** **Delete All Documents & Analyses** removes all four entries from iCloud, and deleting the document the Home Screen glance points to removes them too. Deleting the app does not remove them. One limit, stated plainly: until you quit OmniLex, the app remembers in memory the last document and topic you opened, and the next time you switch tabs, open a reference topic, change the appearance or the app refreshes its Handoff information, it writes the "where you left off" entry again — so after a deletion that entry can keep, or get back, the random identifier of the document you deleted, and the identifier of the last topic you opened. The same information goes out over Handoff and to your Apple Watch. It holds no title or text, and a device that reads it cannot open that document, because it is gone; the document identifier in it is replaced the next time you open a document. When OmniLex next opens, it starts with no remembered document or topic, so the entry it writes then holds only the part of the app you are in and when, until you open a topic or a document.
+**Removing them.** **Delete All Documents & Analyses** removes all four entries from iCloud and makes the app forget the last document and reference topic you opened, so nothing it writes afterwards names them; it also sends your Apple Watch the updated "where you left off" information. As you go on using the app, OmniLex writes the "where you left off" and appearance entries again, holding only the part of the app you are in, your appearance choice and when, until you open a topic or a document. Deleting a single document removes all four entries if the Home Screen glance points to that document; otherwise it removes that document's random identifier from the "where you left off" entry, the app forgets it, and Handoff and your Apple Watch get the updated information. Deleting the app does not remove the entries.
 
 ### Handoff
 
@@ -151,7 +151,7 @@ On iPhone and iPad, the Home Screen widget shows "Last matter / Open in OmniLex"
 The Apple Watch app comes with the iPhone app. It has **Learn** (the reference library, which ships on the Watch), **Now** (prompts to continue or pin a topic, or to answer a re-check reminder, and **Ask iPhone**) and **More** (the legal notice). It runs no AI model and holds none of your documents.
 
 - Over Apple's connection between the two devices, your iPhone sends the Watch where you left off (the part of the app, the reference topic and the random document identifier) and any re-check prompts, which name reference topics. The Watch sends the iPhone your taps (Confirm, Snooze, Not now). Confirming **Pin this topic** has the iPhone save that topic in the "where you left off" iCloud entry described above.
-- **Ask iPhone** sends the question you enter to OmniLex on your paired iPhone. The iPhone answers it with the downloaded model only — not Apple Intelligence — while OmniLex is running on the iPhone, and sends the answer back. If the iPhone is not reachable, the question waits until it is. **If no model is downloaded on the iPhone yet, a question from the Watch can start the download of the model selected in Settings on the iPhone**, from Hugging Face, as described below.
+- **Ask iPhone** sends the question you enter to OmniLex on your paired iPhone. While OmniLex is running on the iPhone, the iPhone answers it the way Ask does — Apple's on-device model where Apple Intelligence is turned on and ready, otherwise a model already downloaded on the iPhone — and sends the answer back; if neither can answer, or the **On-device answers** switch is off on the iPhone, it sends back a short message saying so. A question from the Watch never starts a model download. If the iPhone is not reachable, the question waits until it is.
 
 ### Apple TV
 
@@ -232,7 +232,7 @@ The AI model OmniLex runs itself is not part of the app download. On iPhone, iPa
 | Standard (recommended, the default) | `mlx-community/Qwen3-1.7B-4bit` | `3b1b1768` | about 1.1 GB |
 | Large | `mlx-community/Qwen3-4B-4bit` | `4dcb3d10` | about 2.5 GB |
 
-**When a download starts.** A download of the model selected in Settings starts when you choose **Download** there, or the first time you use a feature that needs it while no model is on the device: a reading-priority review of a document you import or re-review, a question about a document, a Research explanation, or a question sent from Apple Watch (see above). Ask and Document Background never start one. Downloads wait for Wi-Fi unless you turn on **Download over cellular** in the same section. On iPhone and iPad a download may continue for a short time after you leave the app.
+**When a download starts.** A download of the model selected in Settings starts only when you choose **Download** there (or **Resume** a download you started). Features that need a model — a reading-priority review of a document you import or re-review, a question about a document, a Research explanation, Document Background, Ask, or a question sent from Apple Watch — use a model that is already on the device; if none is, they say so and start nothing. Downloads wait for Wi-Fi unless you turn on **Download over cellular** in the same section. On iPhone and iPad a download may continue for a short time after you leave the app.
 
 The request starts at `huggingface.co`, which redirects the actual file transfer to Hugging Face's own content delivery hosts (for example `*.cdn.hf.co`; the precise host varies by region, and the download links are signed and short-lived).
 
@@ -253,7 +253,7 @@ The downloaded files are the model weights, its tokenizer and its configuration:
 
 All network connections the app makes are HTTPS. Plain HTTP is blocked at the app level: the app's transport security settings disable arbitrary loads, in web content as well as elsewhere.
 
-**Practical note for confidential matters:** if you are working under a protective order or on a matter where even the fact of a network connection matters, download your model first, on a network you are comfortable with — importing a document for review with no model on the device would otherwise start the download. After that, OmniLex does not need the internet.
+**Practical note for confidential matters:** if you are working under a protective order or on a matter where even the fact of a network connection matters, download your model first, on a network you are comfortable with. Nothing else in OmniLex starts that download. After that, OmniLex does not need the internet.
 
 ### What we removed
 
@@ -396,11 +396,11 @@ We keep nothing, so there is nothing for us to retain or delete.
 
 On your devices:
 
-- **Delete a document** in the app and its extracted text, summary, reading-priority flags and search index go with it.
-- **Delete everything at once** from **Settings ▸ Data Management**. **Delete All Documents & Analyses** deletes every document, flag, analysis, chat message, note and template you created, the downloaded model files, the lists of recently opened documents and topics, your preferences and pending reminders, and the four iCloud entries. It keeps the marker that the free first review was used, the identifier the app gave the sample NDA, your first-run acknowledgement and the **Download over cellular** setting. **Clear All Assistant History** deletes the chat history only.
+- **Delete a document** in the app and its extracted text, summary, reading-priority flags and search index go with it, and its random identifier is removed from the iCloud entries, Handoff and your Apple Watch (see [Your other devices](#your-other-devices-icloud-handoff-apple-watch-and-apple-tv)).
+- **Delete everything at once** from **Settings ▸ Data Management**. **Delete All Documents & Analyses** deletes every document, flag, analysis, chat message, note and template you created, the downloaded model files, the lists of recently opened documents and topics, your preferences and pending reminders, and the four iCloud entries, and the app forgets the last document and topic you opened. It keeps the marker that the free first review was used, the identifier the app gave the sample NDA, your first-run acknowledgement and the **Download over cellular** setting. **Clear All Assistant History** deletes the chat history only.
 - **Delete the app** and the entire local database, including downloaded model files, is removed by the operating system. The iCloud entries are not; **Delete All Documents & Analyses** removes them.
 - **Downloaded models** persist until you use **Delete All Documents & Analyses** or delete the app.
-- **The iCloud entries** stay in your iCloud account until OmniLex replaces or removes them (see [Your other devices](#your-other-devices-icloud-handoff-apple-watch-and-apple-tv), including when the "where you left off" entry can come back after a deletion).
+- **The iCloud entries** stay in your iCloud account until OmniLex replaces or removes them (see [Your other devices](#your-other-devices-icloud-handoff-apple-watch-and-apple-tv), including what the "where you left off" entry holds after a deletion).
 - **Support email** is kept only as long as needed to handle your question, and we will delete it on request.
 
 You do not have to ask us to delete anything, and there is no deletion request that would accomplish more than deleting it yourself.
@@ -437,16 +437,23 @@ If we change how OmniLex handles data, we will update this policy and change the
 
 **23 September 2026 — what changed.** This policy was rewritten to match what the current app does. Earlier versions said nothing syncs and that the model download was the only thing that ever left the device; that is not true of this app, and this version says what does:
 
-- It describes the four small entries OmniLex keeps in your iCloud key-value storage on iPhone, iPad and Apple Vision Pro, what they hold (never a document's title, file name or text), and that a deleted document's random identifier can reappear in one of them after a deletion, until you quit OmniLex or open another document.
-- It describes Handoff, the Home Screen widget and the **Open last matter** shortcut, the Apple Watch app (including **Ask iPhone**, and that a question from the Watch can start the model download on the iPhone), and OmniLex for Apple TV. Earlier versions covered iPhone, iPad and Mac only.
+- It describes the four small entries OmniLex keeps in your iCloud key-value storage on iPhone, iPad and Apple Vision Pro, and what they hold (never a document's title, file name or text).
+- It describes Handoff, the Home Screen widget and the **Open last matter** shortcut, the Apple Watch app (including **Ask iPhone**), and OmniLex for Apple TV. Earlier versions covered iPhone, iPad and Mac only.
 - It describes Ask: Apple Intelligence on the device where it is ready, otherwise a model already downloaded.
 - It describes the optional re-check reminder, the only thing that asks for notification permission, and the list of opened reference topics it keeps on iPhone and iPad.
-- It names the three model sizes, their Hugging Face repositories and pinned versions, and says that a download can also start the first time you use a feature that needs the model, not only from Settings. Earlier versions did not name the models.
+- It names the three model sizes, their Hugging Face repositories and pinned versions. Earlier versions did not name the models.
 - It adds Word (.docx) import, and the ZIPFoundation library that reads it on iPhone, iPad and Apple Vision Pro.
 - It corrects what Pro includes (there is no longer a three-document limit; the first reading-priority review is free), and no longer says the app stores transaction identifiers from Apple: it stores none.
 - It corrects what **Delete All Documents & Analyses** removes and keeps, and no longer says the app keeps sensitive values in the Keychain: OmniLex's own code keeps nothing there. It also no longer states an App Store age rating.
 
-Nothing new is sent to Prameya. The in-app privacy text (Settings ▸ Legal ▸ Privacy Policy) is out of date: it does not describe the iCloud entries, Handoff, Apple Watch, Apple Intelligence or reminders, and it still says that a model is downloaded only when you tap to download one in Settings and that OmniLex otherwise never uses the network. Neither statement is true of the current app. A download can also start from the features listed under [Downloading the AI model](#downloading-the-ai-model), not only from Settings. Where the app's text and this page differ, this page is the correct and complete description.
+A second revision the same day describes the app update that fixes the problems the first revision had to disclose:
+
+- **Downloads start only from Settings.** An earlier version of this page said a model download could also start the first time you used a feature that needs the model — a review of an imported document, a question about a document, a Research explanation, or a question from Apple Watch. The app no longer does that: only **Download** in **Settings ▸ On-Device AI** downloads a model, and those features say when no model is on the device.
+- **Ask iPhone.** A question from Apple Watch now follows the **On-device answers** switch on the iPhone and is answered the way Ask answers — Apple Intelligence first, then a model already downloaded — and never starts a download.
+- **Deleting really forgets.** An earlier version said that after a deletion, the "where you left off" entry, Handoff and your Apple Watch could keep or get back the deleted document's random identifier until you quit OmniLex. The app no longer does that: **Delete All Documents & Analyses** and deleting a document now also make the app forget it, and remove its identifier from those places.
+- **The in-app privacy text** (Settings ▸ Legal ▸ Privacy Policy) has been brought up to date: it now describes the iCloud entries, Handoff, Apple Watch, Apple Intelligence and reminders, and no longer says that OmniLex otherwise never uses the network.
+
+Nothing new is sent to Prameya. The in-app privacy text is a shorter summary of this page. Where the app's text and this page differ, this page is the correct and complete description.
 
 **8 August 2026 — what changed.** That revision corrected statements in the previous version so that they matched the code that shipped then. In particular: the third-party web-search path was confirmed deleted rather than pending removal; the camera, photo-library and local-network permission strings were gone from the build; the local database carried an explicit data-protection class on iPhone and iPad, and the policy said exactly what that class does and does not cover; and, where we had not verified something — the privacy manifests of the app's third-party Swift packages, and the contents of Apple's developer-facing App Store reporting — the policy said so plainly instead of implying more than we knew.
 
