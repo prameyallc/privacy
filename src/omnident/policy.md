@@ -142,7 +142,7 @@ Settings → **Household** (and **Family & kids mode**) adds people on **this de
 
 Leaving a child session for an adult record asks for **Face ID or the device passcode**. The app does not keep a second password. If the device has no passcode, iOS cannot lock, and Household settings says so.
 
-The household itself — names, roles and photos — does not sync. **The name of the person whose record is active does leave this device** in three ways: in the iCloud "continue" note while iCloud Sync is on, in Handoff to your nearby devices, and to your paired Apple Watch. Section 6 explains each.
+The household itself — names, roles and photos — does not sync. **While iCloud Sync is on, the name of the person whose record is active does leave this device** in three ways: in the iCloud "continue" note, in Handoff to your nearby devices, and to your paired Apple Watch. With iCloud Sync off, none of the three carries it. Section 6 explains each.
 
 A passphrase-sealed **transfer file** moves names and roles to another of your devices. Photos, visits and documents stay on the sending device. This is not iCloud household sync, and there is no Household subscription. StoreKit Family Sharing covers Pro on other Apple IDs; it does not share this record.
 
@@ -156,7 +156,7 @@ Record lets you add a document you pick with the system file picker (or drop ont
 
 ### Visit dates in Spotlight
 
-When you log a visit, OmniDent adds an entry to your device's Spotlight search index so you can find it from system search. The entry's title is the date alone — for example "Visit on 2026-09-01" — with no practice name, no notes, no document and no person's name. Deleting that visit removes its entry. **Delete All Scans & Data does not remove these entries**; they stay in Spotlight on that device until you delete the app. Photos, documents, marks you draw and Handoff activities are not added to Spotlight.
+When you log a visit, OmniDent adds an entry to your device's Spotlight search index so you can find it from system search. The entry's title is the date alone — for example "Visit on 2026-09-01" — with no practice name, no notes, no document and no person's name. Deleting that visit removes its entry, and **Delete All Scans & Data** removes all of them. Photos, documents, marks you draw and Handoff activities are not added to Spotlight.
 
 ### Deleting photos
 
@@ -175,7 +175,7 @@ OmniDent uses two kinds of on-device model:
 - **Apple Intelligence** — Apple's on-device language model, built into iOS, iPadOS, macOS and visionOS where you have turned Apple Intelligence on. OmniDent downloads nothing for it.
 - **Open models you download**, run with Apple's MLX framework on your device's own chip (section "Model files come from Hugging Face" below).
 
-When you ask a question or ask the app to read a photo, the image and the text are processed in memory on your device. **They are not transmitted to Prameya, to a cloud AI provider, or to anyone else.** There is no remote inference path in the app, and no remote fallback. **Settings → General → Enable on-device answers** switches off Ask and the photo reading. It does not switch off the note made at capture, or Ask iPhone on Apple Watch (section 6).
+When you ask a question or ask the app to read a photo, the image and the text are processed in memory on your device. **They are not transmitted to Prameya, to a cloud AI provider, or to anyone else.** There is no remote inference path in the app, and no remote fallback. **Settings → General → Enable on-device answers** switches off Ask, the photo reading, and Ask iPhone on Apple Watch (section 6). It does not switch off the note made at capture.
 
 ### Ask
 
@@ -206,7 +206,7 @@ The downloadable models are not shipped inside the app. **Downloads come from Hu
 | Which models? | Three, each pinned to one published version: **Qwen2.5 0.5B** (`mlx-community/Qwen2.5-0.5B-Instruct-4bit`, about 280 MB, text), **Gemma 4 E2B** (`mlx-community/gemma-4-e2b-it-4bit`, about 850 MB, text) and **SmolVLM Instruct** (`mlx-community/SmolVLM-Instruct-4bit`, about 1 GB, reads photos). The same list is offered on iPhone, iPad, Mac and Apple Vision Pro. |
 | What is sent to Hugging Face? | Requests for the model's files — the repository name and the files being fetched. Like any web request, it shows Hugging Face your IP address and a user-agent that names OmniDent. |
 | Is any of your content sent? | **No.** No photograph, no analysis result, no habit log, no question you typed, no identifier of you. |
-| When does it happen? | When you tap Download in **Settings → AI Models → Manage Models**. Taking a photo, reading a photo or asking in Ask never starts a download — if the model is not already on disk, the feature says so instead. **One exception, which is a defect:** a question sent from Apple Watch is answered on your iPhone by the text model selected there, and if that model has not been downloaded, the iPhone starts downloading it (see "Apple Watch" in section 6). |
+| When does it happen? | Only when you tap Download in **Settings → AI Models → Manage Models**. Taking a photo, reading a photo, asking in Ask or asking from Apple Watch never starts a download — if the model is not already on disk, the feature says so instead. |
 | Over what connection? | Wi-Fi only, unless you turn on **Download over cellular** in Manage Models. It is off by default; with it off, a download waits for Wi-Fi. |
 | Where do they go? | Onto your device, inside the app's storage. You can delete any downloaded model from the same screen. **Delete All Scans & Data** also deletes them. |
 
@@ -238,10 +238,11 @@ Apple requires that an app offering Sign in with Apple also lets you start accou
 In OmniDent, **Settings → (your account, at the top) → Delete Account & All Data** does all of the following:
 
 1. clears the Apple user identifier, name and email from this device's Keychain, ending the association;
-2. removes the records this app placed in your private iCloud database, by deleting the app's CloudKit zone — if you are not signed into iCloud, are offline, or the zone was never created, there is nothing there to remove and the step simply completes;
-3. runs **Delete All Scans & Data** (section 10), which also removes the iCloud "continue" note.
+2. turns **iCloud Sync** off on this device, as signing out does, and removes the iCloud "continue" note;
+3. removes the records this app placed in your private iCloud database, by deleting the app's CloudKit zone — if you are not signed into iCloud, are offline, or the zone was never created, there is nothing there to remove and the step simply completes;
+4. runs **Delete All Scans & Data** (section 10).
 
-It does **not** change your iCloud Sync switch. If the switch is on, OmniDent keeps syncing afterwards: the reset, first-launch preferences are written back to your private iCloud database, and the continue note starts again from what you do next. Turn **iCloud Sync** off first if you want nothing written to iCloud after the deletion.
+Because OmniDent sets up its iCloud connection when it starts, preference syncing stops completely the next time you open the app, as it does when you turn the switch off yourself. Until then, the reset, first-launch preferences can still be written back to your private iCloud database. Nothing is written to the continue note while the switch is off. You can turn **iCloud Sync** back on in Settings whenever you want it.
 
 If you also want OmniDent removed from the list of apps you have used Sign in with Apple with, that control belongs to Apple, not to us: **iOS Settings → your name → Sign in with Apple → OmniDent**. You can use it at any time, before or after deleting in the app.
 
@@ -290,16 +291,16 @@ Deleting the app from one device does not by itself remove these entries, or you
 
 ### Handoff
 
-While you use OmniDent on iPhone, iPad, Mac or Apple Vision Pro, it tells Apple's **Handoff** where you are, so a nearby device signed in to the same Apple Account can offer to open the same place. The Handoff message carries the same continue note described above — tab, topic identifier, photo-record identifier and the active person's name — and its title shows the topic identifier. While you are taking a set of photos, or have a visit packet open, it can instead carry random identifiers of that capture session or packet, of the mouth record and of a visit, and which photo views of an unfinished set are done (for example the upper or lower arch). **Handoff works whether or not iCloud Sync is on.** It never carries a photo or a file path, and OmniDent does not add it to Spotlight. You can turn Handoff off for all apps in your device's settings (on iPhone: Settings → General → AirPlay & Continuity).
+While you use OmniDent on iPhone, iPad, Mac or Apple Vision Pro, it tells Apple's **Handoff** where you are, so a nearby device signed in to the same Apple Account can offer to open the same place. While iCloud Sync is on, the Handoff message carries the same continue note described above — tab, topic identifier, photo-record identifier and the active person's name. **With iCloud Sync off it carries only the tab.** Its title names the tab, never the topic. While you are taking a set of photos, or have a visit packet open, it can instead carry random identifiers of that capture session or packet, of the mouth record and of a visit, and which photo views of an unfinished set are done (for example the upper or lower arch); these travel whether or not iCloud Sync is on. It never carries a photo or a file path, and OmniDent does not add it to Spotlight. You can turn Handoff off for all apps in your device's settings (on iPhone: Settings → General → AirPlay & Continuity).
 
 ### Apple Watch
 
 The Apple Watch app works with the iPhone app over Apple's paired-device connection (WatchConnectivity). Nothing it does reaches Prameya.
 
 - **Learn** shows the reference library, which is inside the Watch app.
-- **Now** shows the built-in care prompts (morning brush, evening brush, start a care session, log sugar). Tapping **Confirm** on a brush prompt records a brushing in the habit log on your iPhone. It also writes a toothbrushing entry to Apple Health — see section 7, because that write happens even when OmniDent's Apple Health switch is off. **Snooze** schedules a reminder on the iPhone only if you have turned care reminders on.
-- The iPhone sends the Watch the current continue note, so the Watch can show **the active person's name** and offer the last topic. This happens whether or not iCloud Sync is on.
-- **Ask iPhone** (under More) sends the question you type to OmniDent on your paired iPhone. The iPhone answers with the downloaded text model selected in Manage Models, using passages from the built-in library, and sends the answer back. It does not use Apple Intelligence, it does not apply the word-list check described in section 4 (a short list of question words, such as "diagnose", gets a fixed reply instead), it does not look at OmniDent's **Enable on-device answers** switch, and it works even while a child session is active on the iPhone. **If that model is not yet on your iPhone, the iPhone starts downloading it from Hugging Face** (over Wi-Fi unless you allowed cellular). The question and answer are not saved.
+- **Now** shows the built-in care prompts (morning brush, evening brush, start a care session, log sugar). Tapping **Confirm** on a brush prompt records a brushing in the habit log on your iPhone and, if OmniDent's Apple Health switch is on, writes a toothbrushing entry to Apple Health (section 7). **Snooze** schedules a reminder on the iPhone only if you have turned care reminders on.
+- While iCloud Sync is on, the iPhone sends the Watch the current continue note, so the Watch can show **the active person's name** and offer the last topic. With iCloud Sync off it sends only the tab, and after **Delete All Scans & Data** it tells the Watch to clear the name.
+- **Ask iPhone** (under More) sends the question you type to OmniDent on your paired iPhone. The iPhone answers with a text model already downloaded there (Qwen2.5 0.5B), using passages from the built-in library, and sends the answer back. It does not use Apple Intelligence, and it does not apply the word-list check described in section 4 (a short list of question words, such as "diagnose", gets a fixed reply instead). It does not answer while OmniDent's **Enable on-device answers** switch is off or while a child session is active on the iPhone; the Watch shows a line saying why. **It never starts a download:** if the model is not on your iPhone, the Watch is told to download it in Manage Models. The question and answer are not saved.
 
 ### Apple TV
 
@@ -323,20 +324,18 @@ OmniDent's Apple Health switch is **off until you turn it on** at **Settings →
 
 If you enable it:
 
-- **OmniDent writes** into Apple Health a toothbrushing entry when you finish a care session in which you brushed, and a dietary-sugar entry when you log sugary drinks in a care session; and a toothbrushing entry each time you tick — or untick — a brushing or flossing habit in the 30-day programme (a flossing habit is also recorded as toothbrushing). Care days you add or edit in your care log are not written.
-- The permission request also asks to **read** four things — step count, sleep analysis, mindful minutes and active energy burned — for an activity card. **The current app has no screen that reads them**, so nothing is read today. You can decline the read permissions and keep the writes.
+- **OmniDent writes** into Apple Health a toothbrushing entry when you finish a care session in which you brushed, and a dietary-sugar entry when you log sugary drinks in a care session; a toothbrushing entry when you confirm a morning or evening brush from the Apple Watch **Now** tab, from the **Confirm** button on a care-reminder notification, or through OmniDent's **Log care** action (for example, run from the Shortcuts app); and a toothbrushing entry when you tick the brushing habit in the 30-day programme done. Unticking it, and ticking the flossing or other habits, writes nothing. Care days you add or edit in your care log are not written.
+- **OmniDent reads nothing from Apple Health.** The permission request asks only to write those two kinds of entry.
 
-**iOS's Apple Health permission request can appear while the switch is off.** Ticking or unticking a brushing or flossing habit in the 30-day programme asks iOS for Apple Health permission (writes and the four reads) if you have not answered before; with the switch off, nothing is written from that tick. Confirming a brush from Apple Watch or a reminder can also raise the request — and does write, as the next paragraph explains.
+**With the switch off, nothing OmniDent does writes to Apple Health or asks iOS for Apple Health permission** — not a care session, not the 30-day programme, not Apple Watch, a reminder or the Log care action.
 
-**One path ignores the switch, and we are telling you so rather than hiding it.** Confirming a brush from the Apple Watch **Now** tab, or from the **Confirm** button on a care-reminder notification, writes a toothbrushing entry to Apple Health **whether or not OmniDent's Apple Health switch is on**, as long as you have ever granted OmniDent permission to write toothbrushing in iOS. If you have never answered the Apple Health request, iOS may show it at that moment. The same write happens if a morning or evening brush is logged through OmniDent's **Log care** action with a brush chosen (for example, if that action is run from the Shortcuts app); tapping the Home Screen widget itself opens a care session instead. To stop these writes, turn off OmniDent's toothbrushing permission in iOS Settings → Health → Data Access & Devices → OmniDent.
-
-Apple Health data lives in Apple's Health store on your device, under your control. **Prameya never receives it.** You can revoke either direction at any time in iOS Settings → Health → Data Access & Devices.
+Apple Health data lives in Apple's Health store on your device, under your control. **Prameya never receives it.** You can revoke that permission at any time in iOS Settings → Health → Data Access & Devices.
 
 OmniDent does not request access to Health Records (clinical records from a provider) and cannot read them. There is no Apple Health on the Mac app.
 
 ### Care reminders
 
-Care reminders are **off until you turn them on** at **Settings → Care reminders**. Switching on a morning or evening reminder is the only thing in OmniDent that asks iOS for permission to send notifications. OmniDent then schedules local notifications on your device for about the next week — generic brushing nudges that name no person and no condition. Each has **Confirm**, **Snooze** and **Not now** buttons: Confirm records a brush (and writes to Apple Health, as described above), Snooze schedules one more reminder, and Not now does nothing. Nothing about a reminder is sent to Prameya or to any server. Turn them off on the same screen, or in iOS Settings → Notifications → OmniDent.
+Care reminders are **off until you turn them on** at **Settings → Care reminders**. Switching on a morning or evening reminder is the only thing in OmniDent that asks iOS for permission to send notifications. OmniDent then schedules local notifications on your device for about the next week — generic brushing nudges that name no person and no condition. Each has **Confirm**, **Snooze** and **Not now** buttons: Confirm records a brush (and, if the Apple Health switch is on, writes a toothbrushing entry), Snooze schedules one more reminder, and Not now does nothing. Nothing about a reminder is sent to Prameya or to any server. Turn them off on the same screen, or in iOS Settings → Notifications → OmniDent.
 
 ### Widget and Lock Screen
 
@@ -348,11 +347,11 @@ The Home Screen widget shows one care-status line (no photograph) that the app w
 
 | Destination | What goes there | When | Contains your content? |
 |---|---|---|---|
-| `huggingface.co` | Requests for AI model files | When you tap Download in Manage Models, or when a question from Apple Watch needs a text model the iPhone does not have yet (section 6) | No |
+| `huggingface.co` | Requests for AI model files | Only when you tap Download in Manage Models | No |
 | Apple iCloud (CloudKit), your private database | App preferences and interface state; a request to delete the app's zone when you delete your account | While iCloud Sync is on, and at account deletion | No health data |
 | Apple iCloud key-value store, your account | The continue note: tab, last topic identifier, last photo-record identifier, **active person's name**; and your appearance choice | While iCloud Sync is on | The topic identifier can reveal what you read about; see section 6 |
-| Apple Handoff, to your nearby devices | The same continue note; or, during a capture or with a visit packet open, random identifiers of it, the mouth record and a visit, and which photo views are done | While you use the app, whether or not iCloud Sync is on | As above |
-| Your paired Apple Watch (WatchConnectivity) | The continue note and care prompts to the Watch; your taps and Ask questions to the iPhone, and the answers back | When the iPhone app connects to the Watch, and when you use the Watch app | Your Ask question, and the active person's name |
+| Apple Handoff, to your nearby devices | The same continue note while iCloud Sync is on, and only the tab while it is off; or, during a capture or with a visit packet open, random identifiers of it, the mouth record and a visit, and which photo views are done | While you use the app | As above, while iCloud Sync is on |
+| Your paired Apple Watch (WatchConnectivity) | The continue note (only the tab while iCloud Sync is off) and care prompts to the Watch; your taps and Ask questions to the iPhone, and the answers back | When the iPhone app connects to the Watch, and when you use the Watch app | Your Ask question, and the active person's name while iCloud Sync is on |
 | Apple (Sign in with Apple) | The sign-in exchange, and iOS's check of whether it is still valid | Only if you choose to sign in | No |
 | Apple StoreKit / App Store | Purchase, restore and entitlement checks; the review prompt if you tap Rate OmniDent | When you buy or restore, and when the app checks whether you have Pro | No health content |
 
@@ -394,7 +393,7 @@ One line each, because the honest answer is short.
 
 ## 10. Retention, export and deletion
 
-**Retention.** Because your content lives on your device, you decide how long it is kept. We impose no retention period because we hold nothing to retain. If you delete the app, iOS deletes its container and everything in it. What is in your iCloud (section 6) is not removed by deleting the app. Delete Account & All Data deletes the app's records from your private iCloud database, and Delete All Scans & Data resets your preferences to first-launch values; in both cases, if iCloud Sync is still on, the reset preferences are written back to iCloud (section 5). The continue note is removed when you turn iCloud Sync off or use Delete All Scans & Data, and starts again if iCloud Sync is on on any of your devices.
+**Retention.** Because your content lives on your device, you decide how long it is kept. We impose no retention period because we hold nothing to retain. If you delete the app, iOS deletes its container and everything in it. What is in your iCloud (section 6) is not removed by deleting the app. Delete All Scans & Data resets your preferences to first-launch values; if iCloud Sync is on, the reset preferences are written back to iCloud. Delete Account & All Data deletes the app's records from your private iCloud database and turns iCloud Sync off on that device; preference syncing then stops completely the next time you open the app (section 5). The continue note is removed when you turn iCloud Sync off or use Delete All Scans & Data, and starts again if iCloud Sync is on on any of your devices.
 
 **Export.** **Settings → Privacy & Security → Export My Data** produces a **`.zip` file**, generated entirely on your device, and hands it to the standard iOS share sheet so you can put it wherever you want. Inside it:
 
@@ -420,19 +419,16 @@ The file does **not** contain: the text of the note made at capture, the photo r
 | Your oral-health profile | Settings → Edit My Health Profile → Delete my health profile |
 | The iCloud continue note (topic, active person's name) | Settings → iCloud Sync → turn it off (removes it at once), or Delete All Scans & Data |
 | Everything in the next paragraph | Settings → Privacy & Security → Delete All Scans & Data |
-| Your Sign in with Apple association, your iCloud preference records for this app, and everything Delete All removes | Settings → (your account, at the top) → Delete Account & All Data |
+| Your Sign in with Apple association, your iCloud preference records for this app, and everything Delete All removes (it also turns iCloud Sync off on that device) | Settings → (your account, at the top) → Delete Account & All Data |
 | OmniDent from your Apple Account's Sign in with Apple list | iOS Settings → your name → Sign in with Apple → OmniDent |
 | Data written to Apple Health | The Apple Health app |
 | Photos copied to your Photos library | The Photos app |
 
-**Delete All Scans & Data** removes: your photos and their files, thumbnails and analyses; habit logs; what-if scenarios; claimed promotions; 30-day programme progress; your oral-health profile; household people and mouths; visits, plan lines, documents and their files, visit packets, and marks you drew; the settings store behind them (care-day history, profile names, Smile Points, widget snapshot, reminder schedule, cost-model sliders, the Apple Health switch); the widget's shared storage; every downloaded model and its bookkeeping; the iCloud continue note; and it resets your synced preferences to their first-launch values.
+**Delete All Scans & Data** removes: your photos and their files, thumbnails and analyses; habit logs; what-if scenarios; claimed promotions; 30-day programme progress; your oral-health profile; household people and mouths; visits, plan lines, documents and their files, visit packets, and marks you drew; the settings store behind them (care-day history, profile names, Smile Points, widget snapshot, reminder schedule, cost-model sliders, the Apple Health switch); the widget's shared storage; every downloaded model and its bookkeeping; the record of brushes confirmed from Apple Watch, a reminder or the Log care action; the visit entries in Spotlight; care reminders already scheduled; the iCloud continue note, and the name your paired Apple Watch was showing; and it resets your synced preferences to their first-launch values.
 
 It leaves, and we list them so you are not surprised:
 
 - **your iCloud Sync switch**, deliberately — deleting data does not change your sync choice;
-- **a small list of the days on which you confirmed a morning or evening brush from Apple Watch or a reminder notification.** It is stored on your iPhone, is not synced, and is removed only when you delete the app;
-- **the Spotlight entries for visits you logged** ("Visit on" and a date; section 3), which stay until you delete the app;
-- care reminders already scheduled for the coming week, until the next time you open the app, which clears them because the reminder switches are back off;
 - two device settings that are not about you: whether downloads may use cellular, and the camera framing choice;
 - your Sign in with Apple entries in the Keychain (Delete Account removes them);
 - anything already written to Apple Health or copied to your Photos library, and Apple's own purchase records.
@@ -461,12 +457,12 @@ OmniDent's **account holder is an adult**. There is no child Apple ID, no child 
 
 When a child profile is active:
 
-- the tabs are You / Record / Do — Ask, Settings, Paywall, dentist share, the photo reading, Smile Points and the visit packet stay with the grown-up (Ask iPhone on a paired Apple Watch is not blocked by a child session; section 6);
+- the tabs are You / Record / Do — Ask (including Ask iPhone on a paired Apple Watch), Settings, Paywall, dentist share, the photo reading, Smile Points and the visit packet stay with the grown-up;
 - auto-save to Photos is off;
 - the child cannot delete photos or the person;
 - switching to an adult record asks for Face ID or the device passcode.
 
-**A child's name can leave the device.** When the child's record is active, the child's display name is part of the continue note: it goes to your iCloud key-value store while iCloud Sync is on, to your nearby devices through Handoff, and to your paired Apple Watch, and it shows on Apple TV and Apple Watch and on the Lock Screen during that child's care session (section 6 and section 7). Use a nickname, or turn iCloud Sync off, if you would rather it did not.
+**A child's name can leave the device.** While iCloud Sync is on and the child's record is active, the child's display name is part of the continue note: it goes to your iCloud key-value store, to your nearby devices through Handoff, and to your paired Apple Watch, and it shows on Apple TV and Apple Watch. Whatever the switch, it shows on the Lock Screen during that child's care session (section 6 and section 7). Use a nickname, or turn iCloud Sync off, if you would rather it did not.
 
 The Children's Online Privacy Protection Act (COPPA) applies to operators of services directed to children under 13, or who have actual knowledge that they are collecting personal information from a child under 13. OmniDent's kids mode is a tool for a parent, on the parent's own device, with no transmission to us and no child-facing sign-up; on that basis we do not treat OmniDent as directed to children. We are stating the feature rather than relying on the conclusion, so that you can judge it.
 
@@ -484,11 +480,11 @@ If you live in California, the California Consumer Privacy Act as amended by the
 
 | Category | What it is here | Do we receive it? |
 |---|---|---|
-| Identifiers | Apple sign-in identifier, name, email — Keychain only; the active household person's display name — in your iCloud key-value store, in Handoff and on your Apple Watch (section 6) | No |
+| Identifiers | Apple sign-in identifier, name, email — Keychain only; the active household person's display name — in your iCloud key-value store, in Handoff and on your Apple Watch, while iCloud Sync is on (section 6) | No |
 | Sensitive personal information — health data | Mouth photographs, oral-health profile, habit logs, analysis output, questions you ask; the last education topic you opened, in your iCloud key-value store | No |
 | Internet or network activity | The connection to Hugging Face when a model downloads | No |
 
-**We do not sell personal information, and we do not share it for cross-context behavioural advertising.** We have not done either in the preceding 12 months. We do not use or disclose sensitive personal information for any purpose other than the purposes permitted under the CCPA regulations without your direction — in practice, we do not receive it at all, so the "limit the use of my sensitive personal information" right has nothing to operate on. We provide the control anyway: turning off on-device answers, iCloud Sync and Apple Health stops most of that processing — sections 4, 6 and 7 list what those switches do not stop (the note made at capture, Ask iPhone on Apple Watch, Handoff, and the toothbrushing write from Apple Watch or a reminder).
+**We do not sell personal information, and we do not share it for cross-context behavioural advertising.** We have not done either in the preceding 12 months. We do not use or disclose sensitive personal information for any purpose other than the purposes permitted under the CCPA regulations without your direction — in practice, we do not receive it at all, so the "limit the use of my sensitive personal information" right has nothing to operate on. We provide the control anyway: turning off on-device answers, iCloud Sync and Apple Health stops most of that processing — sections 4 and 6 list what those switches do not stop (the note made at capture, and Handoff, which still carries the tab and, during a capture or with a visit packet open, random identifiers).
 
 **Your rights** are to know, to access, to correct, to delete, to opt out of sale or sharing, to limit the use of sensitive personal information, and not to be discriminated against for exercising any of them.
 
@@ -579,6 +575,14 @@ We will update this policy when the app's behaviour changes — and we will upda
 - It says the iCloud Sync switch is set on each device separately, and describes the care summary you can share yourself.
 - It corrects purchases: the app keeps no transaction record of its own. It removes the Apple push signal, which the app does not receive, and the Studio projection and "collective priors" toggle, which are no longer in the app.
 - It corrects deletion: Delete All now also removes household people, visits, documents and the iCloud continue note, and keeps your iCloud Sync switch; it leaves a list of Watch and notification brush days on your iPhone; and Delete Account does not turn iCloud Sync off.
+
+Also on 23 September 2026, OmniDent was changed to fix defects that the version above disclosed, and this policy now describes the app with those fixes:
+
+- Apple Health follows OmniDent's switch everywhere. A brush confirmed from Apple Watch, a reminder or the Log care action no longer writes with the switch off, and nothing raises iOS's Apple Health request while it is off. The 30-day programme writes only when you tick the brushing habit done, not for flossing or unticking. OmniDent no longer asks to read steps, sleep, mindful minutes or active energy.
+- Ask iPhone on Apple Watch now respects **Enable on-device answers** and a child session, and never starts a model download.
+- With iCloud Sync off, Handoff and your Apple Watch get only the tab — no name, topic or record identifier — and the Handoff title no longer shows the topic.
+- Delete All Scans & Data now also removes the Watch and reminder brush record, the visit dates in Spotlight and the reminders already scheduled, clears the name on your Apple Watch, and no longer re-sends the last topic you opened to iCloud or Handoff at your next tab change.
+- Delete Account & All Data now turns iCloud Sync off on that device.
 
 No Prameya server was added, and nothing is sent to Prameya.
 
