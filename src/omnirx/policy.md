@@ -221,8 +221,9 @@ either of them.
     you open that link, the page's ID — which names a medicine you take — is stored here. Apple Watch
     and Apple TV also write the ID of a page you open on them.
 
-"Delete all my data" removes every one of the key-value values above from iCloud. It does not remove
-the CloudKit preferences record. See [Keeping and deleting data](#keeping-and-deleting-data).
+"Delete all my data" removes every one of the key-value values above from iCloud, and deletes the
+CloudKit preferences record, which iCloud then removes from your account the next time the device
+syncs. See [Keeping and deleting data](#keeping-and-deleting-data).
 
 ### Handoff
 
@@ -230,7 +231,8 @@ On iPhone, iPad, Mac and Apple Vision Pro, OmniRx offers Handoff to your nearby 
 the same Apple Account. The Handoff message names the tab you are on and the ID of the last topic or
 label page you opened — which, for a label page, includes the medicine's name — and, once you have
 opened a medication record, an internal reference to the last one you opened. It does not contain the
-record itself; another device cannot open a record it does not already hold.
+record itself; another device cannot open a record it does not already hold. "Delete all my data"
+resets it to the You tab, so it no longer names a page or a record.
 
 ### Apple Watch
 
@@ -327,8 +329,7 @@ device — not a critical alert, and not a push from our servers. It is titled �
   are used up, a notification titled “Not saved” says so while the daily reminder is on, with no
   medicine name; after a Watch tap, the Watch also shows its own “Not saved” line.
 
-Turning the reminder off cancels it. "Delete all my data" does not — see
-[Keeping and deleting data](#keeping-and-deleting-data).
+Turning the reminder off cancels it, and so does "Delete all my data".
 
 ### Exporting your logs
 
@@ -340,11 +341,10 @@ Two exports, both produced on your device and displayed to you as text you can s
 - More → **"Export every record as text"** produces every medication record, journal entry and habit
   record in the database, field by field — each medication record with its date, its medicine name,
   whether you recorded it as taken or skipped, the reasons and the note on it; each journal entry
-  with its scores, anything reported with it and its note; each habit record; and the profile row the
-  app created for itself. Nothing is summarised, sampled or truncated. It does not list the medicines
-  you follow, which are shown on the You tab instead, or the names of medicines you have stopped
-  following, which the app keeps on the device only so it can leave them off the You tab and does
-  not show.
+  with its scores, anything reported with it and its note; each habit record; the medicines you
+  follow and the names of medicines you have stopped following; and the profile row the app created
+  for itself. Nothing is summarised, sampled or truncated. It does not include your settings or the
+  iCloud values described above, and it says so.
 
 There are no attachments to return, and the complete export says so: OmniRx cannot take or store
 a photograph, a scan, a recording or a file of any kind.
@@ -372,7 +372,7 @@ app you paste it into.
   edit it, and it can be wrong.
 - **Nothing is kept.** OmniRx does not save your questions or its answers. A conversation lives only
   on the screen and is gone when you start a new chat or OmniRx is closed. On Apple Watch, the last
-  answer stays on the Watch screen until a new one replaces it.
+  answer stays on the Watch screen until a new one replaces it or "Delete all my data" clears it.
 - **No model download in this version.** The Ask screen also shows a switch labelled "Allow one model
   download (about 420 MB)". In this version turning it on only records your choice and its date on
   the device: no screen starts a download, so OmniRx downloads no model and makes no request to Hugging
@@ -510,20 +510,21 @@ consent.
   from the device and resets the figures the app calculated from them. It also removes the medicines
   you follow and have stopped following, your reminder settings, both Ask switches (so Ask is off
   again afterwards), any copy of the database that the app set aside after it could not open it, and
-  any model files left by an earlier build, and it removes every iCloud key-value value OmniRx writes. It cannot be undone. If a
-  file cannot be removed, the app tells you rather than claiming a complete delete.
+  any model files left by an earlier build. It removes every iCloud key-value value OmniRx writes and
+  deletes the CloudKit preferences record, which iCloud removes from your account the next time the
+  device syncs. It cancels the daily reminder (and a snoozed one), resets the Handoff message, clears
+  the last Ask answer on your Apple Watch and sends the Watch a new reminder card, which names no
+  medicine because none is followed any more. It cannot be undone. If a file or the preferences record
+  cannot be removed from the device, the app tells you rather than claiming a complete delete.
 - **What "Delete all my data" does not reach, stated plainly:**
-    - **An already scheduled daily reminder keeps firing.** Delete all clears the reminder setting but
-      does not cancel the scheduled notification. To stop it, turn **Daily reminder** off before you
-      delete, or turn off notifications for OmniRx in your device's Settings. The reminder carries no
-      medicine name, and after a delete its Taken and Skipped buttons have no medicine to log.
-    - **The CloudKit preferences record stays in your iCloud account** — your appearance choice and the
-      notice version you accepted. It holds no health information. You can remove it with Apple's own
-      controls for an app's iCloud data (in iOS Settings → your name → iCloud → Manage Account Storage).
     - **Your appearance choice, the Watch medicine-name switch and your first-run notice acceptance**
       stay on the device.
-    - **Your Apple Watch** may go on showing the last reminder card the iPhone sent it — including
-      medicine names, if you had turned that on — until the iPhone next sends it a new one.
+    - **The CloudKit preferences record, if the device is not signed in to iCloud** when you delete:
+      the app cannot reach it then. Sign in and delete again, or remove it with Apple's own controls
+      (iOS Settings → your name → iCloud → Manage Account Storage).
+    - **Your Apple Watch** gets the new reminder card, and loses its last Ask answer, straight away if
+      it is connected to your iPhone, or the next time it connects. Until then it shows the last card
+      and the last Ask answer it received.
     - **Your purchase** stays with your Apple Account.
 - **You can also delete or correct one record at a time.** More → "Open, correct or delete
   one record" lists every medication record, journal entry and habit record on the device. Each
@@ -581,8 +582,19 @@ announced in the app's release notes.
   no refill field.
 - It no longer says the app stores your purchase details and deletes them with your data: the app
   keeps no copy, and your purchase stays with Apple. It no longer says the app uses the Keychain.
-- It says what "Delete all my data" does not reach: an already scheduled reminder, the iCloud
-  preferences record, a few settings, and the last reminder card on Apple Watch.
+- It says what "Delete all my data" does not reach: a few settings on the device, what Apple Watch
+  shows until it next connects to your iPhone, and your purchase.
+- Later on 23 September, with an app update, "Delete all my data" does more: it also cancels the daily
+  reminder, deletes the preferences record from your iCloud account, resets the Handoff message, clears
+  the last Ask answer on Apple Watch, and sends the Watch a new reminder card with no medicine names.
+  Before that update, an already scheduled reminder kept firing and the preferences record stayed in
+  iCloud after a delete.
+- With the same update, "Export every record as text" also lists the medicines you follow and the
+  names of medicines you have stopped following. Before, it left them out while saying it was
+  everything the app held.
+- With the same update, the app's first-run notice and More no longer say we receive a transaction
+  identifier when you buy Pro. As this policy says, nothing about a purchase is sent to us. Because
+  the notice changed, the app shows it again.
 
 **What changed on 27 August 2026 (corrects the entry below):** the Plus and Premium tiers described
 in the 26 August entry were never offered for sale. OmniRx has one paid upgrade, OmniRx Pro, sold as
