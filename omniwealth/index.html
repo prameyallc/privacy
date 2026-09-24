@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>OmniWealth Privacy Policy — Prameya LLC</title>
-<meta name="description" content="Effective date: 23 September 2026">
+<meta name="description" content="Effective date: 24 September 2026">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://prameyallc.github.io/privacy/omniwealth/">
 <style>
@@ -93,7 +93,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 </div></header>
 <main id="main" class="wrap">
 <h1 id="omniwealth-privacy-policy">OmniWealth Privacy Policy</h1>
-<p><strong>Effective date:</strong> 23 September 2026<br />
+<p><strong>Effective date:</strong> 24 September 2026<br />
 <strong>Publisher:</strong> Prameya LLC ("Prameya", "we", "us"), a United States limited liability company<br />
 <strong>Contact:</strong> admin@prameya.legal<br />
 <strong>Applies to:</strong> the OmniWealth app for iPhone, iPad, Mac and Apple Vision Pro, its Apple Watch app, its Apple TV app, and its Home Screen widget</p>
@@ -249,7 +249,7 @@ own data and can still export all of it with <strong>Export everything in this a
 </tr>
 <tr>
 <td>Statement records</td>
-<td>A photo of a statement that you choose from your photo library (see <a href="#statement-photos">Statement photos</a>), the text read from it on your device, and a short glossary of terms found in that text</td>
+<td>A reduced copy of a statement photo that you choose from your photo library, the photo's original file type (see <a href="#statement-photos">Statement photos</a>), the text read from it on your device, and a short glossary of terms found in that text</td>
 <td>Local app database</td>
 </tr>
 <tr>
@@ -276,11 +276,17 @@ own data and can still export all of it with <strong>Export everything in this a
 </table></div>
 <p>The app also has a second local database set aside for a small set of preferences. It is created with cloud syncing turned off, and nothing in this version writes to it.</p>
 <p>This data is written to the app's private storage area, which the operating system protects from other apps. It is never uploaded to Prameya. We could not read it if we wanted to.</p>
-<p><strong>Backups.</strong> The app's database is not excluded from device backups. If you use iCloud Backup or back up your device to a computer, your OmniWealth records — including statement photos — are included in that backup, under Apple's terms and your control. They are not readable by Prameya.</p>
+<p><strong>Backups.</strong> The app's database is not excluded from device backups. If you use iCloud Backup or back up your device to a computer, your OmniWealth records — including the stored statement page images — are included in that backup, under Apple's terms and your control. They are not readable by Prameya.</p>
 <p><strong>Financial information is sensitive.</strong> We treat it that way. The design principle for OmniWealth is that the safest place for your money data is the device in your hand, and the safest amount for us to hold is none.</p>
 <h3 id="statement-photos">Statement photos</h3>
 <p>More ▸ Tools ▸ Statement Glossary ▸ <strong>Scan Statement</strong> ▸ <strong>Choose from Photos</strong> opens Apple's photo picker. OmniWealth receives only the one photo you pick; it does not get access to the rest of your library, and it does not ask for Photos permission. There is no live camera capture and no file or PDF import.</p>
-<p>The app reads the text on the photo with Apple's on-device text recognition, then shows a short glossary of common terms it finds (for example "expense ratio" or "cost basis"). It stores the photo itself (re-saved as an image file), the recognized text, and that glossary on your device. Nothing from the photo is sent to us, to Apple, or to any AI service, and the statement text is never given to Ask. The glossary is general; it is not commentary on your holdings.</p>
+<p>The app reads the text on the photo you picked with Apple's on-device text recognition, then shows a short glossary of common terms it finds (for example "expense ratio" or "cost basis"). What the app then keeps on your device is:</p>
+<ul>
+<li>a reduced copy of the page: one JPEG image at most 1,600 pixels on its longest side (a smaller photo is not enlarged), on every device, including Mac. The copy is redrawn from the photo's pixels, so the photo's location, camera and capture-time details are not kept with it;</li>
+<li>the photo's original file type, for example HEIC or PNG, read from the photo itself;</li>
+<li>the recognized text and that glossary.</li>
+</ul>
+<p>The photo you picked stays in your photo library; the app keeps no other copy of it. Nothing from the photo is sent to us, to Apple, or to any AI service, and the statement text is never given to Ask. The glossary is general; it is not commentary on your holdings.</p>
 <p>Each statement record can be deleted on its own from the Statements list.</p>
 <hr />
 <h2 id="what-leaves-your-device">What leaves your device</h2>
@@ -381,9 +387,9 @@ own data and can still export all of it with <strong>Export everything in this a
 <p>Because your data stays on your device, you control it directly.</p>
 <ul>
 <li><strong>See it:</strong> your check-ins, envelope lines, goals, statements and saved scenarios are shown in the app.</li>
-<li><strong>Correct or delete one entry:</strong> open a check-in from <strong>Do</strong>, or an envelope line from the Envelopes screen, to change it or delete it on its own. Each goal and each statement record also has its own delete control. Saved scenarios can be removed only with <strong>Delete all data</strong> in this version.</li>
-<li><strong>Get your data out:</strong> <strong>More ▸ Data ▸ Export everything in this app</strong> writes one JSON file with every check-in, envelope line, statement record and its photo, saved scenario and your profile. <strong>Export consistency summary</strong> writes a smaller file of just the consistency measurement, and <strong>Export formatted worksheet (CSV)</strong> is a Pro export. Each file is written to this device and goes only where you send it.</li>
-<li><strong>Delete everything you have entered:</strong> <strong>More ▸ Data ▸ "Delete all data in this app"</strong>. After a confirmation prompt, this permanently deletes, on this device, every habit log, envelope / budget line, statement record and its photo, saved scenario, and your profile (goals and income figure), plus your age-range result, and leftover model files and settings from older installs if any remain. It also clears the four iCloud key-value values described under <a href="#icloud-and-syncing">iCloud and syncing</a>, turns off the weekly check-in reminder (its switch, weekday and the time you last marked it seen from Apple Watch) and removes any check-in or draft notice still waiting, and sends your Apple Watch a fresh list with no draft or topic prompts, so its complication goes back to "Learn.". If a later file removal fails after the database is emptied, the app says so rather than claiming a complete delete. It cannot be undone. It does <strong>not</strong> reset your appearance or Ask settings, and it cannot reach copies already in your device backups or in files you exported.</li>
+<li><strong>Correct or delete one entry:</strong> open a check-in from <strong>Do</strong>, or an envelope line from the Envelopes screen, to change it or delete it on its own. Each goal, each statement record and each saved scenario also has its own delete control: for a saved scenario, swipe it or open its menu under More ▸ Tools ▸ Your numbers, then confirm. Deleting a saved scenario does not need Pro.</li>
+<li><strong>Get your data out:</strong> <strong>More ▸ Data ▸ Export everything in this app</strong> writes one JSON file with every check-in, envelope line, statement record with its page image and that image's file type, saved scenario and your profile. <strong>Export consistency summary</strong> writes a smaller file of just the consistency measurement, and <strong>Export formatted worksheet (CSV)</strong> is a Pro export. Each file is written to this device and goes only where you send it.</li>
+<li><strong>Delete everything you have entered:</strong> <strong>More ▸ Data ▸ "Delete all data in this app"</strong>. After a confirmation prompt, this permanently deletes, on this device, every habit log, envelope / budget line, statement record and its page image, saved scenario, and your profile (goals and income figure), plus your age-range result, and leftover model files and settings from older installs if any remain. It also clears the four iCloud key-value values described under <a href="#icloud-and-syncing">iCloud and syncing</a>, turns off the weekly check-in reminder (its switch, weekday and the time you last marked it seen from Apple Watch) and removes any check-in or draft notice still waiting, and sends your Apple Watch a fresh list with no draft or topic prompts, so its complication goes back to "Learn.". If a later file removal fails after the database is emptied, the app says so rather than claiming a complete delete. It cannot be undone. It does <strong>not</strong> reset your appearance or Ask settings, and it cannot reach copies already in your device backups or in files you exported.</li>
 <li><strong>Delete everything on a device, including preferences:</strong> delete the app. That removes the app's local database and its preferences from that device. It does not remove the iCloud key-value values described under <a href="#icloud-and-syncing">iCloud and syncing</a>; use <strong>Delete all data</strong> before deleting the app if you want those gone too.</li>
 <li><strong>Ask us to delete your data:</strong> there is nothing for us to delete. We have never received it. If you write to us asking for deletion, that will be our honest answer.</li>
 </ul>
@@ -444,6 +450,13 @@ own data and can still export all of it with <strong>Export everything in this a
 <li>We will describe what changed in plain language.</li>
 <li>The previous version will remain available at this address's history.</li>
 </ul>
+<p><strong>24 September 2026 — what changed.</strong> With the app update released alongside this revision:</p>
+<ul>
+<li><strong>Statement photos.</strong> A statement record now keeps a reduced copy of the page, one JPEG at most 1,600 pixels on its longest side on every device, without the photo's location, camera or capture-time details, and records the photo's original file type. Earlier builds kept the whole photo (on Mac as an uncompressed image file) and named every record "Photo Library.jpg". The text is still read on your device from the photo you pick. A statement saved by a pre-release test build before this date keeps the image as that build saved it; delete it and add it again to keep only the reduced copy.</li>
+<li><strong>Saved scenarios.</strong> Each saved scenario can now be deleted on its own under More ▸ Tools ▸ Your numbers. Earlier this policy said saved scenarios could be removed only with <strong>Delete all data</strong>.</li>
+<li><strong>Export.</strong> The export file now names the file type of each statement page image.</li>
+</ul>
+<p>Nothing new leaves your device, and nothing is sent to Prameya.</p>
 <p><strong>23 September 2026 — what changed.</strong> This policy was corrected to match what the current app does. Earlier versions said things that were no longer true:</p>
 <ul>
 <li><strong>iCloud.</strong> Earlier versions said the app held no iCloud entitlement and synced nothing. On iPhone and iPad it keeps four small values in its iCloud key-value store — the tab and library topic you were on, the widget's suggested topic, a topic queued to open, and your appearance choice — so your other devices, Apple TV and the widget can continue where you left off. It now also says how they change and how they are removed. Your records still never sync.</li>
@@ -467,7 +480,7 @@ own data and can still export all of it with <strong>Export everything in this a
 <footer class="site"><div class="wrap">
   <p>Prameya LLC · <a href="mailto:admin@prameya.legal">admin@prameya.legal</a>
   · <a href="https://prameyallc.github.io/privacy/support/">Support</a></p>
-  <p>Effective 23 September 2026. <a href="https://prameyallc.github.io/privacy/">All app privacy policies</a></p>
+  <p>Effective 24 September 2026. <a href="https://prameyallc.github.io/privacy/">All app privacy policies</a></p>
 </div></footer>
 </body>
 </html>
