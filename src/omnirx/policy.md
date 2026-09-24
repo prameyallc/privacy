@@ -1,6 +1,6 @@
 # OmniRx Privacy Policy
 
-**Effective date:** 23 September 2026
+**Effective date:** 24 September 2026
 **App:** OmniRx for iPhone and iPad, with its Apple Watch app, its Apple TV app, and its Mac and Apple Vision Pro versions — bundle ID `legal.prameya.OmniRx`
 **Publisher:** Prameya LLC ("Prameya", "we", "us"), a US limited liability company
 **Contact:** admin@prameya.legal
@@ -18,12 +18,12 @@ and wellness information you enter into this app.
 - **We run no server.** Prameya has no database of users, no profile store, and nowhere for your data to go.
 - **What you log stays on your device.** The medicines you follow, your Taken and Skipped records, the reasons you record, your notes, and your mood and energy entries are stored on the device you entered them on. The app does not upload them and does not put them in iCloud.
 - **Some things do go to your own iCloud account.** So your other devices, your Apple Watch and Apple TV can pick up where you left off, and the Home Screen widget can suggest a next topic, OmniRx keeps a few small values in your iCloud account: the tab you last used, and the IDs of the topic and medicine-label pages you opened. **A label page's ID includes the medicine's name** (for example `metformin_what_its_label_says`), so these values can show which medicines' labels you read — including a medicine you follow, if you open its label page from the You tab. Your appearance choice and the version of the first-run notice you accepted also sync. Prameya cannot read any of it. See [iCloud: preferences and Continue](#icloud-preferences-and-continue).
-- **Ask runs on your device.** If you turn on **Enable on-device Ask** in More, and Apple Intelligence is turned on and ready, Ask sends your question to Apple's on-device model and shows what it writes. Your question is not sent to us, to Apple or to any other AI provider, and it is not saved. There is no model download in this version and no Hugging Face request.
-- **Other paths off the device are Apple's:** the App Store for purchases, iCloud, Handoff to your nearby devices, and the connection between your iPhone and your Apple Watch.
+- **Ask runs on your device.** If you turn on **Enable on-device Ask** in More, Ask answers with Apple's on-device model where Apple Intelligence is turned on and ready. Where it is not, on an iPhone, iPad, Mac or Apple Vision Pro with enough memory, the Ask screen offers an optional model that runs on the device; it downloads from **Hugging Face** only if you agree in a dialog that names the model and its size. Either way your question is not sent to us, to Apple, to Hugging Face or to any other AI provider, and it is not saved. See [Hugging Face: the optional Ask model](#hugging-face-the-optional-ask-model).
+- **Other paths off the device are Apple's** — the App Store for purchases, iCloud, Handoff to your nearby devices, and the connection between your iPhone and your Apple Watch — plus, only if you choose the optional Ask model, its download from Hugging Face.
 - **No ads. No analytics. No trackers.** OmniRx contains no advertising SDK, no analytics SDK, and no crash-reporting SDK.
 - **No camera, no photos, no microphone, no location, no contacts, no Apple Health.** The app does not ask for these and cannot use them.
 - **One optional permission.** You can turn on one daily reminder in More. It is off until you turn it on, and only then does the app ask to send notifications. The lock screen says “Reminder”, not a medicine name.
-- **You can delete your records from inside the app.** More → "Delete all my data". Read [Keeping and deleting data](#keeping-and-deleting-data) for the few things it does not reach.
+- **You can delete your records from inside the app.** More → "Delete all my data". It also deletes a downloaded Ask model and resets your settings, so the first-run notice shows again. Read [Keeping and deleting data](#keeping-and-deleting-data) for the few things it does not reach.
 - **We do not sell your data.** We could not — we do not have it.
 - **This is an education and habit-tracking app, not medical advice.** It does not diagnose, does not calculate doses, does not check interactions, and does not identify medicines from photographs.
 
@@ -140,7 +140,8 @@ This table describes what the shipping app actually records:
 | Habit record | whether the dose was taken — the app writes this from your Taken or Skipped choice rather than asking you separately |
 | Profile | the app creates one profile record on first launch containing two default goals. **There is no screen for entering your age, your health conditions, or a list of current medicines.** |
 | Reminder settings | whether the daily reminder is on and its time, whether Apple Watch may show medicine names, and short-lived markers: a lock-screen or Watch action the app has not yet applied, a log the free tier declined, and a link to offer after you tap Skipped |
-| Ask switches | whether **Enable on-device Ask** is on, and whether you turned on "Allow one model download" and on what date |
+| Ask settings | whether **Enable on-device Ask** is on; your answer to the optional Ask model download and the model and version it named; a different model you chose on the Ask screen instead of the one offered first; and a marker that the app removed the switch earlier versions showed |
+| The optional Ask model | if you choose to download it: the model's files (weights, tokenizer, configuration and a prompt-formatting template) and a marker that their checksums were verified. They are not your data and hold nothing you typed |
 | Other settings | your appearance choice, and whether and when you accepted the first-run notice, and which version of it |
 | Values the app works out from the above | a percentage of logged days with a dose recorded as taken, a current streak, the number of days logged, a mood and energy average over the last 30 days, and one sentence describing what was logged. They are calculated when shown, not stored. |
 
@@ -161,7 +162,8 @@ sync switched off. On iPhone, iPad and Apple Vision Pro that database file is gi
 protection class "complete unless open", so it is encrypted when closed and cannot be reopened until
 the device is unlocked. On a Mac it is protected by the Mac's own disk encryption (FileVault) if you
 have it on. The medicines you follow, the reminder settings and the other settings above are kept in
-the app's own settings storage on the device. Other apps cannot read any of it. We cannot read it.
+the app's own settings storage on the device. A downloaded Ask model is kept in the app's private
+storage too, in a folder excluded from device backup. Other apps cannot read any of it. We cannot read it.
 
 OmniRx does not store anything in the Keychain.
 
@@ -169,7 +171,8 @@ OmniRx does not store anything in the Keychain.
 
 **OmniRx does not exclude its data from device backup.** So if you have **iCloud Backup** turned on,
 or back up your device to a computer, that backup may include the app's medication and journal data
-along with everything else on your device. That is a setting you control on your device, between you
+along with everything else on your device. The one exception is a downloaded Ask model, whose folder is
+excluded from backup, so it is not restored onto a new device; download it again there if you want it. That is a setting you control on your device, between you
 and Apple. We do not receive it and cannot access it. If you would rather it not be backed up, you can
 turn off iCloud Backup for OmniRx in iOS Settings, or turn off iCloud Backup entirely.
 
@@ -246,9 +249,56 @@ The iPhone app and the Apple Watch app talk over Apple's connection between pair
   iPhone logs it; with more than one, the Watch tells you to mark each one on the iPhone.
 - **Ask iPhone** on the Watch sends the question you type to OmniRx on your iPhone, which answers it
   the way Ask on the iPhone does and sends the answer back. If Ask is off on the iPhone, the answer
-  says so.
+  says so. A question from the Watch never starts a model download; a downloaded Ask model answers it
+  only while OmniRx is open on the iPhone, and otherwise the answer says to open it.
 - The Watch keeps the reminder time for its complication, and reads the iCloud key-value values above
   to offer "Continue".
+
+### Hugging Face: the optional Ask model
+
+**Only if you choose it.** Where Apple Intelligence is not turned on and ready, and **Enable on-device
+Ask** is on, the Ask screen can offer a language model that runs on the device. It is not part of the
+app download. Tapping the offer opens a dialog that names the model, its size and Hugging Face as the
+source; **nothing downloads unless you tap Download (with the size) in that dialog.** A different model
+downloads only when you tap a button on the Ask screen that names it and its size.
+
+Which model a device is offered depends on its memory; devices without Metal 3 graphics are offered none:
+
+| Device | Model offered first | Smaller model offered if memory is short | Optional larger model |
+|---|---|---|---|
+| iPhone or iPad with 6 GB of memory or less, Apple TV, Apple Watch | None | — | — |
+| iPhone or iPad with 8 GB; Mac with 8 GB | MiniCPM5 2B | — | — |
+| iPhone or iPad with 12 GB or more; Apple Vision Pro | Gemma 4 E2B | MiniCPM5 2B | — |
+| Mac with 16–18 GB | Gemma 4 E2B | MiniCPM5 2B | Gemma 4 E4B, if you choose it |
+| Mac with 24 GB or more | Gemma 4 E4B | Gemma 4 E2B | — |
+
+| Model | From Hugging Face repository (pinned commit) | Download |
+|---|---|---|
+| MiniCPM5 2B | `openbmb/MiniCPM5-2B-MLX` (`8a9ad753`) | about 1.4 GB |
+| Gemma 4 E2B | `mlx-community/gemma-4-E2B-it-qat-4bit` (`42f62737`) | about 4.4 GB |
+| Gemma 4 E4B | `mlx-community/gemma-4-E4B-it-qat-4bit` (`0f35c6f6`) | about 6.8 GB |
+
+Before offering a download, the app checks that the device has enough free memory for the model, and
+offers none when it does not. It checks again right before each load: if the model does not fit then,
+it is not loaded, and where the device's row lists a smaller model, the Ask screen offers that one as a
+separate download that you also choose. It checks free storage before a download. The download runs only while OmniRx is open (on iPhone, iPad and Apple Vision Pro
+the screen stays on while it runs). Wi-Fi is recommended; it can use cellular data, but not while Low
+Data Mode is on. A weights file that is cut off part-way starts again from its beginning.
+
+The downloaded files are the model's weights, its tokenizer and configuration files and a
+prompt-formatting template, pinned to one commit and checked against values built into the app —
+every file's size before each load, and its checksum the first time the files are seen — so files that
+do not match are not loaded: data the model reads, not executable code. Like any file download, the
+request gives Hugging Face your device's IP address and standard request headers (including a user
+agent naming OmniRx), and names the model repository, commit and files; Hugging Face handles it under its
+own terms. It carries no token or account, and nothing you typed or logged. We do not receive that
+request. The models' publishers, licences and pinned versions are listed in More → Legal →
+Acknowledgements & Sources.
+
+**To stop or remove it:** **Stop using the downloaded model** on the Ask screen withdraws your agreement,
+stops a download in progress and unloads the model; turning **Enable on-device Ask** off does the same.
+**Remove the downloaded model**, on the Ask screen or in More → Ask, deletes the files. "Delete all my
+data" and deleting the app delete them too.
 
 ### StoreKit
 
@@ -263,8 +313,9 @@ browser, and that website then handles your visit under its own terms. OmniRx se
 
 ### On-device processing
 
-Text you give the app is processed on your device. It is not transmitted to Prameya or to any AI
-provider. There is no cloud AI and no remote retrieval endpoint.
+Text you give the app is processed on your device, by Apple Intelligence or by the optional Ask model
+you downloaded. It is not transmitted to Prameya, to Hugging Face or to any AI provider. There is no
+cloud AI and no remote retrieval endpoint.
 
 This is a real privacy benefit and we state it precisely: **your content is processed locally and is
 not transmitted to us.** We do not say "nothing ever leaves the device", because the iCloud values,
@@ -273,7 +324,7 @@ Handoff and the Watch connection described above do.
 ### Nothing else
 
 There is no other outbound connection in the app. No telemetry endpoint, no ad request, no attribution
-call, no license check, and no model download.
+call, no license check, and no download other than the optional Ask model you choose.
 
 ---
 
@@ -357,28 +408,35 @@ app you paste it into.
 ## On-device AI: what it is and what it is not
 
 - **Ask is off until you turn it on.** The Ask tab appears only while **Enable on-device Ask** is on
-  in More and Apple Intelligence is turned on and ready on that iPhone, iPad, Mac or Apple Vision Pro.
-  Apple TV has no Ask, because Apple Intelligence does not run there.
-- **Apple Intelligence answers, on the device.** Ask sends your question, together with up to three
-  short passages from the app's built-in label library, to Apple's on-device language model, and
+  in More and either Apple Intelligence is turned on and ready on that iPhone, iPad, Mac or Apple
+  Vision Pro, or that device has the memory for the optional Ask model. Apple TV has no Ask, because
+  Apple Intelligence does not run there.
+- **Apple Intelligence answers first, on the device.** Ask sends your question, together with up to
+  three short passages from the app's built-in label library, to Apple's on-device language model, and
   shows what it writes, labelled "Apple Intelligence". Your question is not sent to us, to Apple or to
   any other AI provider. Ask does not see your medication records, your journal or the medicines you
   follow.
-- **Before a question reaches the model, the app checks it.** A question asking for a dose, an
+- **Where Apple Intelligence cannot answer, the model you chose answers, also on the device.** If you
+  downloaded the optional Ask model (see [Hugging Face: the optional Ask model](#hugging-face-the-optional-ask-model)),
+  Ask gives it the same question and passages and shows what it writes, labelled with the model's name.
+  Answering never downloads anything: the model answers only once its files are fully on the device.
+  If neither can answer, Ask says so.
+- **Before a question reaches a model, the app checks it.** A question asking for a dose, an
   interaction decision, a tapering plan, a pill identification, a diagnosis, a risk score or advice
   about your own medicines gets a fixed refusal instead. A question that suggests someone may be in
   danger or has taken too much of a medicine gets a card with 988, Poison Help and 911, and is never
-  sent to the model. The model's answer itself is shown as it writes it; the app does not check or
-  edit it, and it can be wrong.
+  sent to a model. The model's answer itself is shown as it writes it; the app does not check or
+  edit it (it only leaves out the downloaded model's hidden reasoning, if the model writes any), and it
+  can be wrong.
 - **Nothing is kept.** OmniRx does not save your questions or its answers. A conversation lives only
   on the screen and is gone when you start a new chat or OmniRx is closed. On Apple Watch, the last
   answer stays on the Watch screen until a new one replaces it or "Delete all my data" clears it.
-- **No model download in this version.** The Ask screen also shows a switch labelled "Allow one model
-  download (about 420 MB)". In this version turning it on only records your choice and its date on
-  the device: no screen starts a download, so OmniRx downloads no model and makes no request to Hugging
-  Face.
-- Because nothing is sent to a third-party AI provider, Apple's requirement to name one and obtain
-  your permission before sharing personal data with one does not arise.
+- **The switch "Allow one model download (about 420 MB)" is gone.** Earlier versions showed it and it
+  only recorded your choice; nothing downloaded. This version removes that recorded choice the first
+  time it opens, and asks you again, by model name and size, before anything downloads.
+- Because nothing you type or log is sent to a third-party AI provider — Hugging Face receives only the
+  download request described above — Apple's requirement to name one and obtain your permission before
+  sharing personal data with one does not arise.
 
 ---
 
@@ -427,7 +485,8 @@ Here is our honest position:
   us, the only personal information we hold is your email and your message.
 - **We do not sell or share personal information**, including for cross-context behavioral advertising.
   There is nothing to opt out of, and no "Do Not Sell or Share My Personal Information" mechanism is
-  needed, because no such activity exists.
+  needed, because no such activity exists. Apple (StoreKit, iCloud, Handoff) and Hugging Face (the
+  optional model download) are not cross-context behavioral advertising.
 - **Sensitive personal information:** health information is sensitive personal information under CPRA.
   We do not receive yours. We do not use it to infer characteristics about you.
 - Prameya is a small publisher and likely falls below every CCPA applicability threshold. We describe
@@ -461,6 +520,9 @@ OmniRx is available where you live:
   held in your own iCloud account, which we cannot open.
 - For the one thing we do receive — support email — our lawful basis is our legitimate interest in
   answering you, or performance of a contract if your question concerns the app you installed.
+- If you choose to download the optional Ask model, that download is a connection from your device to
+  Hugging Face, which may be outside your country. It carries your IP address, standard request headers
+  and the names of the files requested, and nothing you typed or logged. We do not receive it.
 - You have rights of access, rectification, erasure, restriction, objection and portability against us
   for anything we hold. Because that is limited to support email, those requests are quick to answer.
   You may also complain to your national data protection authority.
@@ -490,7 +552,9 @@ consent.
   database file is encrypted when closed and cannot be reopened until the device is unlocked; on a
   Mac it relies on the Mac's disk encryption. Use a passcode and keep your software up to date.
 - iCloud sync, Handoff, the Watch connection and StoreKit are Apple's services and run over Apple's
-  encrypted connections, through your own Apple Account.
+  encrypted connections, through your own Apple Account. The optional Ask model downloads over an
+  encrypted (HTTPS) connection, and its files are checked against values built into the app before
+  they load.
 - **The strongest security property of this app is architectural:** there is no server holding your
   medication history, so there is no server to breach. We make no claims about "military-grade" or
   "unbreakable" security, and we hold no certifications we have not earned.
@@ -508,17 +572,17 @@ consent.
 - **You can delete your records inside the app.** More → **"Delete all my data"** asks you to confirm,
   then permanently removes every medication record, journal entry, habit record and profile record
   from the device and resets the figures the app calculated from them. It also removes the medicines
-  you follow and have stopped following, your reminder settings, both Ask switches (so Ask is off
-  again afterwards), any copy of the database that the app set aside after it could not open it, and
-  any model files left by an earlier build. It removes every iCloud key-value value OmniRx writes and
+  you follow and have stopped following, your reminder settings, the Ask switch and your answer to
+  the Ask model download (so Ask is off again afterwards), any Ask model you downloaded, and any copy
+  of the database that the app set aside after it could not open it. It resets your appearance choice
+  to follow the system, turns "Show medicine names on Apple Watch" off, and clears your acceptance of
+  the first-run notice, so the notice shows again. It removes every iCloud key-value value OmniRx writes and
   deletes the CloudKit preferences record, which iCloud removes from your account the next time the
   device syncs. It cancels the daily reminder (and a snoozed one), resets the Handoff message, clears
   the last Ask answer on your Apple Watch and sends the Watch a new reminder card, which names no
   medicine because none is followed any more. It cannot be undone. If a file or the preferences record
   cannot be removed from the device, the app tells you rather than claiming a complete delete.
 - **What "Delete all my data" does not reach, stated plainly:**
-    - **Your appearance choice, the Watch medicine-name switch and your first-run notice acceptance**
-      stay on the device.
     - **The CloudKit preferences record, if the device is not signed in to iCloud** when you delete:
       the app cannot reach it then. Sign in and delete again, or remove it with Apple's own controls
       (iOS Settings → your name → iCloud → Manage Account Storage).
@@ -563,6 +627,24 @@ If we change how OmniRx handles data, we will update this policy and change the 
 top. Meaningful changes — a new network connection, a new permission, anything involving your health
 data — will be described in a short summary of what changed, at the top of this page, and will be
 announced in the app's release notes.
+
+**24 September 2026 — what changed.** With an app update:
+
+- **Ask can use an optional on-device model.** Where Apple Intelligence is not turned on and ready, the
+  Ask screen can offer a model that runs on the device, chosen by the device's memory (MiniCPM5 2B,
+  Gemma 4 E2B or Gemma 4 E4B), which downloads from Hugging Face only after you agree in a dialog that
+  names the model and its size. This page now names Hugging Face, the repositories, the pinned commits,
+  the sizes, what the download request carries, the checks the app makes, and how to stop or remove the
+  model. Earlier versions said there was no model download and no Hugging Face request, which was true
+  of those versions.
+- **The switch "Allow one model download (about 420 MB)" is gone.** It recorded a choice and downloaded
+  nothing; the app removes that recorded choice and asks again before any download.
+- **"Delete all my data" does more.** It now also resets your appearance choice, turns "Show medicine
+  names on Apple Watch" off and clears your acceptance of the first-run notice, so the notice shows
+  again. Earlier, those three settings stayed on the device. It deletes a downloaded Ask model too, as
+  it already deleted model files before.
+- Because the first-run notice now mentions the model download and what Delete all resets, the app
+  shows it again.
 
 **23 September 2026 — what changed.** This policy was rewritten to describe what OmniRx does today:
 
