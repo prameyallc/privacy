@@ -1,6 +1,6 @@
 # OmniDent Consumer Health Data Privacy Policy
 
-**Effective date:** 20 September 2026 *(supersedes the 19 September 2026 version; lists children's health data separately, and names the child-session lock, mouth isolation, and auto-save-to-Photos off while a child is active.)*
+**Effective date:** 23 September 2026 *(supersedes the 20 September 2026 version; adds the iCloud continue note, Handoff and Apple Watch, questions you ask, the photo reading, and care reminders; corrects deletion, Apple Health and purchases.)*
 **Publisher:** Prameya LLC, a United States limited liability company ("Prameya", "we", "us")
 **Contact:** admin@prameya.legal
 **This policy lives at:** https://prameyallc.github.io/privacy/omnident/health-data/
@@ -35,26 +35,30 @@ RCW 19.373.020(1)(a)(i) requires us to state the categories of consumer health d
 
 | Category | What it is | Why it is collected and how it is used |
 |---|---|---|
-| **Photographs of your oral cavity** | Images of your teeth, gums, tongue and mouth taken with the in-app camera, or selected by you from your photo library | So you can keep a dated visual record of your own mouth over time, and so the on-device AI can produce general educational information about what you are looking at |
-| **Information derived from those photographs** | The output the on-device AI model produces about an image, and a capture-quality score | To show you educational information and to place a photo in your own timeline. This is not a diagnosis |
+| **Photographs of your oral cavity** | Images of your teeth, gums, tongue and mouth taken with the in-app camera on iPhone or iPad | So you can keep a dated visual record of your own mouth over time, and so the on-device AI can produce general educational information about what you are looking at |
+| **Information derived from those photographs** | The short note an on-device vision model writes when you capture a photo (kept with the photo), the coded vocabulary terms and a capture-quality score | To show you educational information and to place a photo in your own timeline. This is not a diagnosis |
+| **The "What this photo looks like" reading** *(only if you tap Read this photo on-device)* | Text an on-device vision model writes about a saved photo, and a reading written from that text by Apple Intelligence or a model you downloaded, headed "This looks like", with one care job and questions for a dentist. It can name a dental condition | To show you what the models wrote. It is not a diagnosis. It is shown on screen and not saved |
+| **Questions you ask, and the answers** | What you type into Ask on the phone, tablet, Mac, Vision Pro or Apple TV, or into Ask iPhone on Apple Watch, and the answer the on-device model writes | To answer you on your device. The conversation is held in memory and not saved |
 | **Marks you draw on a photograph** | A rectangle you draw on a photo of your own mouth, kept so a later photo can show the same place | So you can compare the spot you marked. The app does not name a tooth condition from the mark |
-| **Visit records** | Date, practice name, kind of visit, what was done in your words, optional amount you typed, next due date you typed | So you can keep a log of visits you attended. The app does not book the visit or decide what was done |
+| **Visit records** | Date, practice name, kind of visit, what was done in your words, optional amount you typed, next due date you typed | So you can keep a log of visits you attended. The app does not book the visit or decide what was done. The date of each visit (only the date, as "Visit on" and the date) is added to your device's Spotlight search index so you can find it from system search |
 | **Documents you file** | A treatment plan, radiograph, clinic photo, receipt or explanation of benefits you drop into the app | So those files sit next to your photos on this device. They stay in the app container, out of Spotlight and out of Handoff |
 | **Visit packet** | One page of identifiers for photos, standing questions, and a visit | So you can open a one-pager at a sitting. The packet is identifiers, not a diagnosis |
 | **Notes you type about your mouth** | Free text you write, optionally attached to a mark you drew | So you can remember what you wanted to tell a dentist. The app does not classify the note |
-| **Household names on this device** | Display names, roles (owner, child, adult you care for, caregiver), and which mouth record is active | So more than one person in a household can keep a separate mouth record on this phone. Kids care sessions stay opt-in under Family & kids mode. This is not iCloud family sharing of health data |
+| **Household names on this device** | Display names, roles (owner, child, adult you care for, caregiver), and which mouth record is active | So more than one person in a household can keep a separate mouth record on this phone. Kids care sessions stay opt-in under Family & kids mode. The household does not sync, but the active person's name travels in the continue note (next row) |
+| **The continue note** | The tab you were on, the identifier of the education topic you last opened (for example `diabetes_and_oral_health`), the identifier of the last photo record you opened, the display name of the active household person, and when it was written | So your other devices — including Apple TV and Apple Watch — can offer to continue where you left off. The topic identifier can reveal the subject you were reading about. Where it goes is set out under "Where this data lives" |
 | **Children's display names and roles** *(only if you add a child)* | A first name or nickname you type, the child role, and that this mouth is the active one | So the parent can switch to that child's record. There is no child Apple ID and no child sign-up |
 | **Photographs of a child's mouth** *(only if you photograph that child)* | Images keyed to that child's mouth on this device | So the parent can keep a dated record of that child's mouth. A child session cannot open another person's photos. Auto-save to Photos is off while that child is active |
 | **A child's care-day log** *(only if you log care for that child)* | Dates the shorter kids care session was completed for that person | So the parent can see whether today's care was logged for that child. This is not a wellness score |
 | **Oral-health profile** | Age, brushing frequency, sugar intake level, smoking status, whether you have diabetes, whether you have dry mouth, and the goals you choose | To tailor the general information and habit suggestions the app shows you |
-| **Home-care habit logs** | Daily records of brushing, flossing, mouthwash use and sugary drinks | To show you your own streaks, trends and progress |
+| **Home-care habit logs** | Daily records of brushing, flossing, mouthwash use and sugary drinks, including a brush you confirm from Apple Watch or a reminder notification | To show you your own streaks, trends and progress |
+| **Watch and reminder brush days** | A list, kept on the iPhone, of the days on which you confirmed a morning or evening brush from Apple Watch or a reminder notification | To tell whether both brushes of the day are done |
 | **Programme progress** | Your progress through the in-app 30-day home-care programme | To let you resume where you left off |
 | **Illustrative cost scenarios** | "What if" projections built from figures you enter, and any narrative text generated on-device alongside them | To let you explore an illustrative cost model. These are examples, not predictions about your health |
-| **App Group care snapshot** | A short status line the app writes so the Home Screen widget can show whether today's care is logged | So the widget can show a fact the app already knows. No photograph is in that suite |
-| **Bodily-function measurements from Apple Health** *(only if you turn it on)* | Step count, sleep analysis, mindful minutes, active energy burned | To show optional context alongside the habits you log |
-| **Health data written to Apple Health** *(only if you turn it on)* | Toothbrushing events and dietary sugar entries you logged in the app | So your entries appear alongside the rest of your health data in Apple Health, under your control |
-
-One clarification about the Studio screen's unfinished **Regenerative Projection** feature, because it shows percentages next to terms taken from your own scans: those percentages ("X–Y% chance of meaningful recovery in ~N months") are **fixed placeholder values written into the app**. They are not derived from your photographs, your profile or your habits, and they are not a prediction about your health. The terms listed come from your own on-device records; the numbers come from the app's source code.
+| **Care reminder schedule** *(only if you turn reminders on)* | Whether morning and evening reminders are on, and their times | To schedule local notifications on your device. The notifications name no person and no condition |
+| **App Group care snapshot** | Whether today's care is logged, the streak, a short status line, the active person's display name and the Smile Points balance, written to storage shared only with the app's own widget | So the widget can show a status line. The widget shows only that line. No photograph is in that suite |
+| **Care-session Live Activity** *(during a care session)* | The timer, the step, and the name of the person whose session it is, on the iPhone Lock Screen and Dynamic Island | So you can follow the session without unlocking. Anyone who can see the Lock Screen can see it |
+| **Bodily-function measurements from Apple Health** *(read permission is part of iOS's Apple Health request, which appears when you turn OmniDent's Apple Health switch on, and can also appear when you tick a brushing or flossing habit in the 30-day programme or confirm a brush from Apple Watch or a reminder)* | Step count, sleep analysis, mindful minutes, active energy burned | The permission request asks to read these for an activity card. **The current app has no screen that reads them, so none is read today.** We list the category because the app asks for it |
+| **Health data written to Apple Health** | With OmniDent's Apple Health switch on: a toothbrushing event when you finish a care session in which you brushed, a dietary sugar entry for sugary drinks logged in a care session, and a toothbrushing event each time you tick or untick a brushing or flossing habit in the 30-day programme. **With the switch on or off: a toothbrushing event whenever you confirm a brush from Apple Watch or a reminder notification** (or log a morning or evening brush through OmniDent's Log care action), if you have ever granted the permission in iOS | So your entries appear alongside the rest of your health data in Apple Health, under your control. The write that ignores the switch is a defect; it is described here because it is what the app does |
 
 **Purposes, stated completely.** All of the above is collected for one purpose: to operate the features of OmniDent that you choose to use, on your device, for you.
 
@@ -64,12 +68,12 @@ It is **not** used for advertising, for marketing, for profiling, for research, 
 
 ## Sources of consumer health data
 
-RCW 19.373.020(1)(a)(ii) requires the categories of sources. There are four, and all of them are you:
+RCW 19.373.020(1)(a)(ii) requires the categories of sources. There are four, and all of them are you or your own devices:
 
-1. **You, directly** — habit logs, profile answers, goals, notes, cost-model inputs, household names, and a child's display name you type in.
-2. **Your device's camera**, when you take a photo in the app (including a photo of a child's mouth, if you take one).
-3. **Your device's photo library**, when you pick a specific image to attach using the system photo picker. OmniDent receives only the image you pick and has no access to the rest of your library.
-4. **Apple Health**, only if you grant permission, and only for the four read types listed above.
+1. **You, directly** — habit logs, profile answers, goals, notes, questions you ask, cost-model inputs, household names, and a child's display name you type in; and taps you make on your Apple Watch.
+2. **Your device's camera**, when you take a photo in the app on iPhone or iPad (including a photo of a child's mouth, if you take one).
+3. **Files you pick**, when you add a document to Record or open a household transfer file with the system file picker. OmniDent receives only the file you pick. It has no permission to read your photo library.
+4. **The on-device models**, which derive the capture note and the photo reading from your photos, and answers from your questions. (Apple Health read permission is requested, but no screen reads it today.)
 
 We obtain consumer health data from **no other source**. We do not buy it, rent it, receive it from data brokers, receive it from health care providers, infer it from third-party sources, or derive it from advertising identifiers.
 
@@ -77,13 +81,17 @@ We obtain consumer health data from **no other source**. We do not buy it, rent 
 
 ## Where this data lives
 
-- **On your device.** Photographs are stored as files in OmniDent's private app container, encrypted at rest by iOS Data Protection at the Complete level. Everything else is in the app's local database on the same device.
+- **On your device.** Photographs are stored as files in OmniDent's private app container, encrypted at rest by iOS Data Protection at the Complete level. Everything else is in the app's local database, its settings store, or the storage it shares only with its own widget, on the same device. The date of each visit you log is also in your device's Spotlight search index (date only).
 - **Not on any Prameya system.** Prameya operates no server that receives your consumer health data. We have no user database and no copy of anything described above.
-- **Not sent for AI processing.** The AI runs on your device's own chip. Photographs and text are never transmitted for analysis.
-- **Not in iCloud through OmniDent.** OmniDent's iCloud sync carries app preferences and interface state only. No health-derived field is in its sync schema, and the set of records permitted to sync is pinned by an allow-list in the app that switches sync off entirely if anything ever drifts from it. Person and Mouth rows, photographs, visits and documents are classified so they cannot sync.
+- **Not sent for AI processing.** The AI runs on your device's own chip — Apple Intelligence on the device, or a model you downloaded. Photographs and text are never transmitted for analysis. A question you type on Apple Watch goes to your paired iPhone to be answered there, and the answer comes back to the Watch.
+- **Your own iCloud, for two things, while iCloud Sync is on** (it is on unless you turn it off, at Settings → iCloud Sync):
+    - **App preferences** (which models you prefer, whether on-device answers are on, the auto-save setting, whether and when you acknowledged the wellness disclaimer, which models are downloaded), in your private CloudKit database. The set of records permitted there is pinned by an allow-list in the app to that one preferences record; photographs, analyses, the profile, habit logs, household people, visits and documents are classified so they cannot sync.
+    - **The continue note** (tab, last topic identifier, last photo-record identifier, active person's display name), and your appearance choice, in iCloud's key-value store for this app. Apple TV reads it from there and shows the name. Turning iCloud Sync off removes it from iCloud straight away; so does Delete All Scans & Data.
+- **Handoff**, to your nearby devices signed in to the same Apple Account, carries the same continue note **whether or not iCloud Sync is on**; while you are taking a set of photos or have a visit packet open, it instead carries random identifiers of that capture session or packet, of the mouth record and of a visit, and which photo views of an unfinished set are done.
+- **Your paired Apple Watch** receives the continue note from the iPhone, and shows the active person's name, whether or not iCloud Sync is on.
 - **A household transfer file** you make yourself is names and roles, sealed with a passphrase you type. Photographs, visits and documents stay on the sending device.
 
-One honest limit on that last point: OmniDent does not mark its scan folder as excluded from your device backup. If you back your device up to iCloud or to a computer, those files are included in **your own** backup, under your Apple Account or on your own machine, governed by Apple's terms rather than ours. That is your backup of your device, not a transfer of data to us or to anyone else by the app.
+One honest limit on the first point: OmniDent does not mark its scan folder as excluded from your device backup. If you back your device up to iCloud or to a computer, those files are included in **your own** backup, under your Apple Account or on your own machine, governed by Apple's terms rather than ours. That is your backup of your device, not a transfer of data to us or to anyone else by the app.
 
 ---
 
@@ -93,14 +101,14 @@ Washington requires children's health data to be listed distinctly. **OmniDent d
 
 | What | Where it lives | Who can see it |
 |---|---|---|
-| Child's display name and child role | Local household row on this device, not iCloud | Anyone holding the unlocked phone who is in that child's session, or the owner looking at Household |
+| Child's display name and child role | Local household row on this device. **While that child's record is active, the name is also in the continue note** — in your iCloud key-value store while iCloud Sync is on, in Handoff, and on your paired Apple Watch — and on the Lock Screen during that child's care session | Anyone holding the unlocked phone who is in that child's session, or the owner looking at Household; anyone who can see your Apple TV, Apple Watch or Lock Screen while it is shown |
 | Photographs of that child's mouth | Local journal keyed to that mouth | A child session sees only that mouth. An adult record is behind Face ID or the device passcode |
 | Care days logged for that child | Local care-day tags for that person | Same as photographs |
 | Visits or documents the owner files for that mouth | Local visit graph keyed to that mouth | A child session cannot open the visit packet. The owner opens Record after unlocking |
 
 **COPPA posture.** The adult Apple ID on this device is the account holder. There is no child sign-up, no child Apple ID, no Kids-category listing, and nothing is sent to Prameya. Kids mode is a parent tool.
 
-**What a child session cannot do.** Ask, Settings, Paywall, dentist share, export, delete, Smile Points, auto-save to Photos.
+**What a child session cannot do.** Ask, the photo reading, Settings, Paywall, dentist share, export, delete, Smile Points, auto-save to Photos. A question sent from a paired Apple Watch with Ask iPhone is still answered on the iPhone during a child session.
 
 **What this is not.** It is not Apple Screen Time, not Family Controls, not a remote parent dashboard, and not a live camera of the child.
 
@@ -116,7 +124,7 @@ Free and Pro:
 - Process the same categories of consumer health data (listed above)
 - Use consumer health data for the same purpose (operating features you choose to use)
 - Store data in the same location (on your device)
-- Transmit data to the same recipients (none — no health data leaves your device)
+- Send data to the same places (the continue note described above, in both tiers; nothing to Prameya)
 
 **Pro unlocks full photo history, reminder cadence, and a print-ready visit sheet. It does not change what data is collected, how it is processed, or where it goes.**
 
@@ -124,22 +132,14 @@ Free and Pro:
 
 | What subscription affects | What subscription does NOT affect |
 |---------------------------|-----------------------------------|
-| How much photo history is kept (three recent photos vs full history) | Whether a photograph is a diagnosis (never, in any tier) |
+| How much photo history is shown (three recent photos vs full history) | Whether anything the app shows is a diagnosis (never, in any tier) |
 | Reminder cadence and the print-ready visit sheet | Where photos are stored (on-device in all tiers) |
-| Whether CloudKit syncs preferences | Whether health data syncs to iCloud (never, in any tier) |
-| Whether longer trends are shown | What the on-device models may claim about your mouth |
+| | What goes to your iCloud (the same in every tier) |
+| | What the on-device models may say about your mouth |
 
-### StoreKit data is not consumer health data
+### Purchase records
 
-When you purchase a subscription, the app receives a transaction ID, product ID, and purchase/expiration dates from Apple's StoreKit. **These are payment records, not consumer health data** under RCW 19.373.010.
-
-StoreKit transaction data:
-- Does not identify your health status, condition, disease, or treatment
-- Is used only to unlock tier-appropriate features
-- Is stored locally on your device (not synced to iCloud)
-- Is deleted when you use "Delete All Data"
-
-Apple separately processes your Apple Account ID and payment method when you subscribe. That processing is governed by Apple's terms, not ours.
+OmniDent keeps no purchase record of its own. When it needs to know whether you have Pro, it asks Apple's StoreKit on your device for your current entitlements and keeps the answer in memory. Apple keeps the transaction records — on your device and in your Apple Account — under Apple's terms, and processes your Apple Account and payment method when you subscribe. The app sends nothing about a purchase to Prameya. Those records say which product you bought and when; they say nothing about your mouth.
 
 ---
 
@@ -147,26 +147,29 @@ Apple separately processes your Apple Account ID and payment method when you sub
 
 RCW 19.373.020(1)(a)(iii) requires the categories of consumer health data shared, and (1)(a)(iv) requires a list of the categories of third parties and the specific affiliates we share it with.
 
-**Categories of consumer health data shared: none.**
+**Categories of consumer health data we share with a third party for its own use: none.**
 
 **Categories of third parties we share consumer health data with: none.**
 
 **Specific affiliates we share consumer health data with: none.** Prameya LLC has no affiliates that receive it.
 
-For completeness, here is every third party the app touches at all, and what each one gets:
+Some of your data does leave the device and go to Apple — into your own iCloud account, through Handoff, and into your own Health store — as set out below. We list it all, so you can judge it. Here is every third party the app touches at all, and what each one gets:
 
 | Third party | What they receive | Is it consumer health data? |
 |---|---|---|
-| **Apple** — iCloud / CloudKit | App preferences and interface state, held in **your** private iCloud database under **your** Apple Account | No |
+| **Apple** — iCloud / CloudKit | App preferences and interface state, held in **your** private iCloud database under **your** Apple Account, while iCloud Sync is on | No |
+| **Apple** — iCloud key-value store | The continue note — tab, the identifier of the last education topic you opened, a photo-record identifier, the active household person's display name — and your appearance choice, held in **your** iCloud account while iCloud Sync is on | The topic identifier can reveal what you were reading about, and the name identifies a person in your household. We list it here for that reason. Apple holds it as your iCloud provider; Prameya cannot read it |
+| **Apple** — Handoff | The same continue note, passed to your own nearby devices on the same Apple Account, whether or not iCloud Sync is on | As above |
+| **Apple** — StoreKit / App Store | Purchase and entitlement checks | No |
 | **Apple** — Sign in with Apple | The sign-in exchange, if you choose to sign in | No |
-| **Apple** — Apple Health | Toothbrushing and dietary sugar entries you logged, written into **your** Health store on **your** device, if you turn it on | Yes, but this is a transfer into your own device's Health store at your instruction, not a disclosure to a third party for their use. Apple does not receive it from us for any purpose of theirs |
-| **Hugging Face** | A request for an AI model file, when you tap Download | **No.** No photograph, no analysis, no habit data, no identifier of you |
+| **Apple** — Apple Health | Toothbrushing and dietary sugar entries you logged, written into **your** Health store on **your** device if you turn it on — and a toothbrushing entry whenever you confirm a brush from Apple Watch or a reminder, even with the switch off, if iOS permission was ever granted | Yes. It is written into your own device's Health store; Apple does not receive it from us for any purpose of theirs |
+| **Hugging Face** | Requests for AI model files, when you tap Download — or when a question from Apple Watch needs a text model the iPhone does not have yet | **No.** No photograph, no analysis, no habit data, no question, no identifier of you |
 
 There is no advertising network, no analytics vendor, no crash-reporting vendor, no data broker, no dental practice, no insurer, and no research partner in that list, because there is none in the app.
 
-The Studio screen shows a toggle offering "private collective priors" with an optional anonymised contribution. **That feature is not built.** Turning it on only substitutes different fixed numbers already inside the app; nothing about you is transmitted to us or to anyone else, and no shared dataset exists.
+You can also share data yourself through the iOS share sheet: **Export My Data**, the household transfer file, and **Share care summary** (the active person's display name, care streak and recent care-day count, the dates and small previews of the photos you select, and, with Pro, a one-page PDF). OmniDent sends none of these itself; each goes only to the recipient you choose, and is not a disclosure by us.
 
-**We have never shared consumer health data with anyone.**
+**Prameya has never received or shared your consumer health data.**
 
 ---
 
@@ -191,16 +194,14 @@ You may ask whether we are collecting, sharing or selling your consumer health d
 **Fastest route (immediate, no waiting):** **Settings → Privacy & Security → Export My Data** in the app produces a **`.zip` file** of your on-device records, generated on your device and handed to the standard iOS share sheet. Inside it:
 
 - `export.json` — your photo records, the caption and view tag you wrote on each one, your logged care days, your saved what-if scenarios, your claimed partner promotions, your 30-day programme progress, and your oral-health profile. Each scan entry also carries the coded dental vocabulary terms derived from that photo's analysis, the capability labels, and the number of findings.
-- `Photos/` — **every photograph you took in OmniDent, at full resolution.**
+- `Photos/` — **every photograph you took in OmniDent, at full resolution**, with location and camera details removed.
 - `Thumbnails/` — the small preview of each one.
 
 Where a photograph's file is no longer on your device, the record is still exported and marked `photoFileMissingOnDisk`, with the thumbnail, rather than dropped. Where a photograph is on your device and cannot be read, no file is produced at all and the app names the file: an export that looks complete and is short one picture is the failure this rule exists to prevent.
 
-The text of a note the on-device model attached to a photo is still not in the file.
+One limit worth knowing when you use it as an access request: the export covers the records listed above and **not** everything the app holds. Not in the file: the note made at capture, the photo reading (which is never saved), household people and names, visits, plan lines, documents, visit packets, marks and notes on a photo, the Watch and reminder brush days, and the settings-store items — care-day history, profile names, Smile Points, widget snapshot, reminder schedule and the cost-model sliders. They are on your device and visible in the app. Email **admin@prameya.legal** if you want help getting at them.
 
-One limit worth knowing when you use it as an access request: the export reads the app's database, so the categories that live in the settings store — care-day history, profile names, Smile Points, widget snapshot, reminder schedule and the cost-model sliders — are **not** in the file. Email **admin@prameya.legal** if you want those too.
-
-**Formal route:** email **admin@prameya.legal**. We will confirm in writing that we hold no consumer health data about you on any Prameya system, that we have shared none, and that we have sold none.
+**Formal route:** email **admin@prameya.legal**. We will confirm in writing that we hold no consumer health data about you on any Prameya system, that we have shared none, and that we have sold none. What is in your own iCloud (the preferences and the continue note) is in your Apple Account, and the in-app controls below remove it.
 
 ### 2. The right to withdraw consent
 
@@ -209,12 +210,14 @@ You may withdraw consent to our collection and sharing of your consumer health d
 | To withdraw consent to | Do this |
 |---|---|
 | Camera and photographs | iOS Settings → Privacy & Security → Camera → OmniDent, or simply stop taking photos |
-| A child on this device | Settings → Privacy & Security → Delete All Scans & Data (clears household names), or delete the app |
-| Photo library access | iOS Settings → Privacy & Security → Photos → OmniDent |
-| On-device AI analysis | OmniDent → Settings → AI Models → turn AI features off |
-| Apple Health, in either direction | iOS Settings → Health → Data Access & Devices → OmniDent, or OmniDent → Settings → Apple Health |
-| iCloud sync | OmniDent → Settings → iCloud Sync → off |
-| Everything at once | Delete the app. iOS removes its container and everything in it |
+| A child on this device | Settings → Privacy & Security → Delete All Scans & Data (clears household people and names, and the continue note in iCloud) |
+| Adding photos to your library | iOS Settings → Privacy & Security → Photos → OmniDent |
+| On-device AI (Ask and the photo reading) | OmniDent → Settings → General → Enable on-device answers → off. Ask iPhone on Apple Watch does not check this switch; there is no setting that turns it off, so do not send questions from the Watch if you do not want them answered |
+| Apple Health, in either direction | iOS Settings → Health → Data Access & Devices → OmniDent. OmniDent → Settings → Apple Health stops writes from care sessions and the 30-day programme, but not the toothbrushing write from Apple Watch or a reminder, and does not stop the 30-day programme from showing iOS's permission request; the iOS setting stops the writes |
+| Care reminders | OmniDent → Settings → Care reminders, or iOS Settings → Notifications → OmniDent |
+| iCloud sync, and the continue note in iCloud | OmniDent → Settings → iCloud Sync → off, on each of your devices (the switch is per device, and a device where it is still on keeps writing its own continue note). The continue note is removed from iCloud at once; preference syncing stops the next time you open the app |
+| Handoff | Turn Handoff off in your device's settings (on iPhone: Settings → General → AirPlay & Continuity) |
+| Everything at once | Delete All Scans & Data, turn iCloud Sync off, then delete the app. Deleting the app alone removes its container but not what is in your iCloud |
 
 Withdrawing consent does not undo processing that already happened, and it does not by itself delete data. Use the deletion right for that.
 
@@ -234,21 +237,28 @@ You may have your consumer health data deleted, including from backups and archi
 | A single claimed partner promotion | Settings → Privacy & Security → **Claimed offers** → **Delete this claim**. The row appears only if you have one; the app no longer lists partner offers, so no new claim can be made |
 | Your 30-day programme progress — the start date and every ticked habit | 30-Day Reset → **Delete my 30-day progress** |
 | Your oral-health profile — age, brushing frequency, sugar and acid intake, smoking, diabetes, dry mouth, goals | Settings → Edit My Health Profile → **Delete my health profile** |
-| Your photographs and their analysis, scan history, trajectory snapshots, habit logs, claimed partner promotions, 30-day programme progress and oral-health profile — **but not everything; see the correction below** | Settings → Privacy & Security → Delete All Scans & Data |
-| Your Sign in with Apple association, the app's records in your private iCloud database, and the same set of local data as the row above | Settings → iCloud Sync → Delete Account & All Data |
-| **Everything without exception**, including the items the two controls above leave behind | Delete the app from your device — iOS removes the whole container |
+| Your photographs and their analysis, habit logs, household people, visits, documents and everything else listed below the table — **but not quite everything; see the list of what it leaves** | Settings → Privacy & Security → Delete All Scans & Data |
+| The continue note in iCloud (topic identifier, active person's name) | Settings → iCloud Sync → off (removes it at once), or Delete All Scans & Data |
+| Your Sign in with Apple association, the app's records in your private iCloud database, and everything Delete All removes | Settings → (your account, at the top) → Delete Account & All Data |
+| Everything left on the device, including the items the controls above leave behind | Delete the app from your device — iOS removes the whole container. It does not remove what is in your iCloud; use the rows above first |
 | Data written into Apple Health | The Apple Health app |
 | Photographs copied into your Photos library | The Photos app |
 
-The first six rows are per-record controls. Every record type you can create now opens as its own screen and deletes on its own, behind a confirmation that names exactly what goes and says what the deletion cannot reach — an Apple Health sample OmniDent wrote, or a copy of a photograph in your own Photos library.
+The first eight rows are per-record controls. Every record type you can create now opens as its own screen and deletes on its own, behind a confirmation that names exactly what goes and says what the deletion cannot reach — an Apple Health sample OmniDent wrote, or a copy of a photograph in your own Photos library.
 
 **Correcting rather than deleting.** Two of these records can be corrected in place instead: a logged care day, because it is your own account of a day and you are the only source it ever had, and the caption and view tag on a photograph, because you typed them. The rest are records of something that happened — a projection that was run from particular inputs on a particular day, a promotion you claimed — and editing one would leave it claiming a result that did not come from the inputs shown. Those say so on screen and offer deletion instead. Whichever it is, the screen tells you which.
 
-"Delete All Scans & Data" removes the scan records **and the JPEG files on disk**, the analysis attached to each scan, trajectory snapshots, habit logs, claimed partner promotions, 30-day programme progress, the oral-health profile itself, App Group leftovers, and the on-device Hugging Face / MLX model cache under Application Support. A save or file failure is shown in Settings rather than reported as success. It also clears the app's settings store: care-day history, profile names, Smile Points, widget snapshot, reminder schedule, and the self-reported care and risk inputs for the cost model. The one thing the control deliberately leaves is the bookkeeping recording which AI model files are already downloaded to this device — it contains none of your data. Deleting the app removes them along with everything else.
+"Delete All Scans & Data" removes the scan records **and the JPEG files on disk**, the analysis attached to each scan, trajectory snapshots, habit logs, claimed partner promotions, 30-day programme progress, the oral-health profile itself, household people and mouths, visits, plan lines, documents and their files, visit packets, marks drawn on photos, App Group leftovers, every downloaded model and its bookkeeping, and the continue note in iCloud; and it resets the synced preferences to their first-launch values. It also clears the app's settings store: care-day history, profile names, Smile Points, widget snapshot, reminder schedule, the Apple Health switch, and the self-reported care and risk inputs for the cost model. A save or file failure is shown in Settings rather than reported as success.
+
+What it leaves: **your iCloud Sync switch**, on purpose, so deleting data does not change your sync choice; **the list of days on which you confirmed a brush from Apple Watch or a reminder**, which stays on the iPhone until you delete the app; **the Spotlight entries holding the dates of visits you logged**, which stay until you delete the app (deleting a single visit removes its entry); care reminders already scheduled, until you next open the app; your Sign in with Apple entries (Delete Account removes those); and anything already in Apple Health or your Photos library. If iCloud Sync is still on, the reset preferences are written back to your iCloud, and the continue note starts again from what you do next.
+
+**Delete Account & All Data** does not turn iCloud Sync off. Turn it off first if you want nothing written to your iCloud afterwards.
 
 On the Sign in with Apple row, one thing should be stated precisely rather than implied. Apple's deletion rule for apps offering Sign in with Apple also requires token revocation **where the app exchanges Apple's authorization code for tokens on its own server**. OmniDent has no server and never performs that exchange, so no Apple token for OmniDent exists and the app makes no revocation call — the app-scoped identifier in your device's Keychain is the entire association, and deleting it is the entire deletion. If you also want OmniDent removed from your Apple Account's Sign in with Apple list, that is Apple's own control, at **iOS Settings → your name → Sign in with Apple → OmniDent**.
 
-**Formal route:** email **admin@prameya.legal**. Because we hold no consumer health data on any Prameya system, there is nothing on our side to delete and no backup or archived copy of it anywhere in our network. We will confirm that in writing. Washington permits up to six months for deletion from archived or backup systems solely to allow restoration; **we have no such systems containing your consumer health data**, so that extension never applies to us. Backups you make of your own device are yours, held under your Apple Account or on your own computer, and we cannot reach into them.
+What Apple holds for you as your iCloud provider — the preferences and the continue note — is removed by the controls above, not by a request to us, because it is in your Apple Account and we cannot reach it.
+
+**Formal route:** email **admin@prameya.legal**. Because we hold no consumer health data on any Prameya system, there is nothing on our side to delete and no backup or archived copy of it anywhere in our network. We will confirm that in writing. What is in your own iCloud is deleted with the in-app controls above. Washington permits up to six months for deletion from archived or backup systems solely to allow restoration; **we have no such systems containing your consumer health data**, so that extension never applies to us. Backups you make of your own device are yours, held under your Apple Account or on your own computer, and we cannot reach into them.
 
 ### 4. Timing, and how to appeal
 
@@ -272,7 +282,7 @@ We will not ask you for identity documents. We cannot match them against anythin
 
 Washington makes it unlawful to implement a geofence around any entity providing in-person health care services in order to identify or track consumers, collect consumer health data, or send them health-related advertisements or notifications (RCW 19.373.080).
 
-OmniDent does not request location permission, does not have a location entitlement, contains no geofencing code, sends no marketing notifications, and shows no advertisements of any kind. There is no geofence around a dental office, a hospital, a pharmacy, or anywhere else.
+OmniDent does not request location permission, does not have a location entitlement, contains no geofencing code, sends no marketing notifications (its only notifications are the care reminders you turn on, scheduled on your device), and shows no advertisements of any kind. There is no geofence around a dental office, a hospital, a pharmacy, or anywhere else.
 
 ---
 
@@ -283,7 +293,7 @@ Nevada's consumer health data law, enacted as SB 370 and codified in NRS ch. 603
 Everything in this policy applies to you:
 
 - The categories of consumer health data, sources, purposes and uses set out above are the same.
-- We do not share your consumer health data with any third party.
+- We do not share your consumer health data with any third party for its own use. What the app puts in your own iCloud, sends to your own devices through Handoff, or writes to your own Apple Health is listed above.
 - **We do not sell your consumer health data**, and we have never sought the separate written authorization Nevada requires for a sale.
 - You have the right to confirm whether we collect, share or sell your consumer health data, the right to access it, the right to have it deleted, and the right to withdraw consent to its collection and sharing. Use the same routes described above.
 - You may complain to the Nevada Attorney General at **ag.nv.gov**.
@@ -294,13 +304,13 @@ Everything in this policy applies to you:
 
 RCW 19.373.020(1)(e) requires that any contract with a processor be consistent with this policy.
 
-**We use no processor for consumer health data.** There is no vendor, no contractor, no cloud provider and no analytics service that processes your consumer health data on our behalf, because your consumer health data never reaches us to hand on. If that ever changes, we will name the processor in this policy, bind it by contract to these terms, and — where the law requires it — obtain your consent first.
+**We use no processor for consumer health data.** There is no vendor, no contractor, no cloud provider and no analytics service that processes your consumer health data on our behalf, because your consumer health data never reaches us to hand on. Apple provides iCloud, Handoff and Apple Health to you under your own agreement with Apple; OmniDent writes the items described above into them, and Prameya has no contract with Apple for them and no access to them. If that ever changes, we will name the processor in this policy, bind it by contract to these terms, and — where the law requires it — obtain your consent first.
 
 ---
 
 ## Employees and contractors
 
-Access to consumer health data is restricted to those who need it to provide the service. In practice that number is **zero**: no Prameya employee or contractor can access your consumer health data, because it exists only on your device and we have no channel to it.
+Access to consumer health data is restricted to those who need it to provide the service. In practice that number is **zero**: no Prameya employee or contractor can access your consumer health data, because it exists only on your devices and in your own Apple Account, and we have no channel to it.
 
 ---
 
@@ -320,7 +330,18 @@ If we change the categories of consumer health data we collect, add a source, ad
 2. **obtain your affirmative consent before collecting or processing for the new category or purpose**, as RCW 19.373.020(1)(c) and (1)(d) require — before the change takes effect, not after;
 3. show an in-app notice describing what changed.
 
-**This 20 September 2026 revision** lists children's health data as its own categories, and names the child-session lock (Face ID or the device passcode), mouth isolation, auto-save to Photos off while a child is active, and the names-only household transfer file. **This 19 September 2026 revision** adds categories the shipping app already stores: visit records, documents you file, visit packets, marks you draw on a photograph, notes you type about your mouth, household names on this device, and the App Group care snapshot. It also replaces leftover Plus/Premium subscription language with the one Pro gate. Those categories are collected only on your device. **The 24 August 2026 revision** replaced the export description and the single-photograph deletion route so they match the shipping app: the export is a `.zip` carrying every photograph at full resolution, and the deletion table names the per-record controls. **The 21 August 2026 revision** restates auto-save captures to Photos as **off** until you turn it on (the main policy is the source for that setting). **The 8 August 2026 revision was a correction pass rather than a change of practice.** We re-read the shipping source code and rewrote every statement that did not match it. The deletion section previously said that deleting your account revokes your Sign in with Apple token; it does not, because the app has no server, never exchanges the authorization code, and therefore has no token in existence to revoke. That section now states what deletion actually does. We also corrected the name of the deletion control, described the placeholder percentages in the Studio Regenerative Projection feature, noted that scan files are not excluded from your own device backup, described the export file accurately, and confirmed the statements that had been pending internal verification and are now true of the build.
+**23 September 2026 — what changed.** We re-read the app as it is built today and corrected this policy:
+
+- It adds the continue note — the last education topic you opened and the active household person's name — which goes to your own iCloud key-value store while iCloud Sync is on (the default), to your nearby devices through Handoff, and to your Apple Watch; and it says Apple TV and Apple Watch show that name. The previous version said nothing health-related went to iCloud.
+- It adds questions you ask in Ask (answered on your device), the "What this photo looks like" reading (which can name a condition and is not saved), care reminders, the Lock Screen care timer, the Watch and reminder brush days, and the visit dates added to your device's Spotlight search.
+- It says a brush confirmed from Apple Watch or a reminder writes to Apple Health even with OmniDent's Apple Health switch off; that the 30-day programme and the Watch can raise iOS's Apple Health permission request while the switch is off; exactly which entries are written; and that no Apple Health data is read today.
+- It says the iCloud Sync switch is set on each device separately, and describes the care summary you can share yourself.
+- It corrects deletion: Delete All now also removes household people, visits, documents and the continue note in iCloud, keeps your iCloud Sync switch, and leaves the brush-day list and the Spotlight visit dates; Delete Account does not turn iCloud Sync off; deleting the app does not empty iCloud.
+- It corrects purchases (the app keeps no transaction record of its own), the export description, and the withdraw-consent routes, and removes the Studio projection and "collective priors" toggle, which are no longer in the app.
+
+Nothing is sent to Prameya, and no new third party receives your data.
+
+**The 20 September 2026 revision** lists children's health data as its own categories, and names the child-session lock (Face ID or the device passcode), mouth isolation, auto-save to Photos off while a child is active, and the names-only household transfer file. **The 19 September 2026 revision** added categories the shipping app already stores: visit records, documents you file, visit packets, marks you draw on a photograph, notes you type about your mouth, household names on this device, and the App Group care snapshot. It also replaces leftover Plus/Premium subscription language with the one Pro gate. Those categories are collected only on your device. **The 24 August 2026 revision** replaced the export description and the single-photograph deletion route so they match the shipping app: the export is a `.zip` carrying every photograph at full resolution, and the deletion table names the per-record controls. **The 21 August 2026 revision** restates auto-save captures to Photos as **off** until you turn it on (the main policy is the source for that setting). **The 8 August 2026 revision was a correction pass rather than a change of practice.** We re-read the shipping source code and rewrote every statement that did not match it. The deletion section previously said that deleting your account revokes your Sign in with Apple token; it does not, because the app has no server, never exchanges the authorization code, and therefore has no token in existence to revoke. That section now states what deletion actually does. We also corrected the name of the deletion control, described the placeholder percentages in the Studio Regenerative Projection feature, noted that scan files are not excluded from your own device backup, described the export file accurately, and confirmed the statements that had been pending internal verification and are now true of the build.
 
 Previous versions are available on request. We do not make material changes quietly.
 
