@@ -1,6 +1,6 @@
 # OmniLex Privacy Policy
 
-**Effective date:** 23 September 2026
+**Effective date:** 24 September 2026
 **Publisher:** Prameya LLC ("Prameya", "we", "us"), a United States limited liability company
 **Contact:** admin@prameya.legal
 **Applies to:** the OmniLex app for iPhone, iPad, Mac and Apple Vision Pro, the Apple Watch app that comes with it, its Home Screen widget, and OmniLex for Apple TV — bundle ID `legal.prameya.OmniLex` (the Apple Watch app is `legal.prameya.OmniLex.watch`)
@@ -18,7 +18,7 @@ OmniLex is a legal AI tool for legal professionals. It reads contracts and other
 - **There are no accounts, no sign-in, no ads, no analytics and no tracking.**
 - **A few things do leave the device, and none of them is your documents:**
     - **The AI model download.** OmniLex downloads the model it runs (about 420 MB, 1.1 GB or 2.5 GB, depending on the size you pick) from Hugging Face. That request asks for model files. It carries none of your documents or text.
-    - **Small iCloud entries.** If you are signed in to iCloud on iPhone, iPad or Apple Vision Pro, OmniLex keeps four small entries in your iCloud key-value storage so your other devices, the widget and Apple TV can offer to continue: which part of the app you were in, the identifier of the reference topic you last opened, a random identifier of the last document you opened, and your appearance choice. They never hold a document's title, file name or text. See [Your other devices](#your-other-devices-icloud-handoff-apple-watch-and-apple-tv), including how deleting your documents removes them.
+    - **Small iCloud entries.** If you are signed in to iCloud on iPhone, iPad, Mac or Apple Vision Pro, OmniLex keeps four small entries in your iCloud key-value storage so your other devices, the widget, Apple Watch and Apple TV can offer to continue: which part of the app you were in, the identifier of the reference topic you last opened, a random identifier of the last document you opened, and your appearance choice. They never hold a document's title, file name or text. See [Your other devices](#your-other-devices-icloud-handoff-apple-watch-and-apple-tv), including how deleting your documents removes them.
     - **Handoff and Apple Watch.** Apple's Handoff and the connection between your iPhone and Apple Watch carry the same kind of "where you left off" information, and a question you send from the Watch to the iPhone.
     - **Purchases.** StoreKit on your device talks to Apple if you buy or restore OmniLex Pro.
 - **Ask answers on your device.** Where Apple Intelligence is turned on and ready, Apple's on-device model answers; otherwise a model you have already downloaded answers. Your question is not sent to us.
@@ -123,20 +123,20 @@ The reference library cites public sources. When you tap **Open the source** or 
 
 ### The iCloud key-value store
 
-On iPhone, iPad and Apple Vision Pro, if you are signed in to iCloud, OmniLex keeps four small entries in its iCloud key-value storage in your own iCloud account. They are:
+On iPhone, iPad, Mac and Apple Vision Pro, if you are signed in to iCloud, OmniLex keeps four small entries in its iCloud key-value storage in your own iCloud account. They are:
 
 | Entry | What it holds |
 |---|---|
 | Where you left off | Which part of the app you were in, the identifier of the reference topic you last opened (for example, the topic on trade secrets), the random identifier of the last document you opened on that device, and when |
 | Appearance | System, Light or Dark |
 | Home Screen glance | The random identifier of the last document you opened or imported, the fixed words "Last matter" and "Open in OmniLex", and when |
-| Pending open | Set for a moment when you tap the widget or run the **Open last matter** shortcut, and removed when the app opens: the random document identifier, or the word "continue" |
+| Pending open | Set when you tap the widget or run the **Open last matter** shortcut on iPhone or iPad, and removed the next time OmniLex starts on an iPhone or iPad: the random document identifier, or the word "continue". The Mac and Apple Vision Pro apps ignore it |
 
 The identifiers are random codes the app gave your document or the names of topics in the app's own reference library. **These entries never hold a document's title, file name or text.** If an earlier build put a document's file name in the Home Screen glance, OmniLex replaces it with the neutral words above the next time it opens. Apple stores and syncs these entries under Apple's terms; Prameya cannot read them.
 
-The Home Screen widget (iPhone and iPad) and OmniLex for Apple TV read these entries. The Mac app is not signed for iCloud key-value storage, so on a Mac these entries stay on the Mac. The Apple Watch app is not signed for it either; it gets the same information from your iPhone instead (see below).
+The Home Screen widget (iPhone and iPad), the Apple Watch app and its complication, and OmniLex for Apple TV read these entries. Because they live in your iCloud account, what one of your devices writes reaches the others signed in to the same account: a reference topic you were reading on your Mac can be continued on Apple TV or Apple Watch, and after you open a document on your Mac the widget on your iPhone shows "Last matter / Open in OmniLex" (tapping it opens the last document you reviewed on that iPhone, because documents do not sync).
 
-**Removing them.** **Delete All Documents & Analyses** removes all four entries from iCloud and makes the app forget the last document and reference topic you opened, so nothing it writes afterwards names them; it also sends your Apple Watch the updated "where you left off" information. As you go on using the app, OmniLex writes the "where you left off" and appearance entries again, holding only the part of the app you are in, your appearance choice and when, until you open a topic or a document. Deleting a single document removes all four entries if the Home Screen glance points to that document; otherwise it removes that document's random identifier from the "where you left off" entry, the app forgets it, and Handoff and your Apple Watch get the updated information. Deleting the app does not remove the entries.
+**Removing them.** **Delete All Documents & Analyses**, on iPhone, iPad, Mac or Apple Vision Pro, removes all four entries from iCloud — and because the entries are shared, from every device signed in to the same iCloud account — and makes the app on that device forget the last document and reference topic you opened, so nothing it writes afterwards names them. Your Apple Watch then stops offering that topic, whether it learns of the change from iCloud or from your iPhone, and Apple TV shows nothing to continue. As you go on using the app, OmniLex writes the "where you left off" and appearance entries again, holding only the part of the app you are in, your appearance choice and when, until you open a topic or a document. Deleting a single document removes all four entries if the Home Screen glance points to that document; otherwise it removes that document's random identifier from the "where you left off" entry, the app forgets it, and Handoff and your Apple Watch get the updated information. Deleting the app does not remove the entries.
 
 ### Handoff
 
@@ -150,7 +150,9 @@ On iPhone and iPad, the Home Screen widget shows "Last matter / Open in OmniLex"
 
 The Apple Watch app comes with the iPhone app. It has **Learn** (the reference library, which ships on the Watch), **Now** (prompts to continue or pin a topic, or to answer a re-check reminder, and **Ask iPhone**) and **More** (the legal notice). It runs no AI model and holds none of your documents.
 
-- Over Apple's connection between the two devices, your iPhone sends the Watch where you left off (the part of the app, the reference topic and the random document identifier) and any re-check prompts, which name reference topics. The Watch sends the iPhone your taps (Confirm, Snooze, Not now). Confirming **Pin this topic** has the iPhone save that topic in the "where you left off" iCloud entry described above.
+- Over Apple's connection between the two devices, your iPhone sends the Watch where you left off (the part of the app, the reference topic and the random document identifier) and any re-check prompts, which name reference topics. The Watch sends the iPhone your taps (Confirm, Snooze, Not now).
+- **iCloud.** The Watch app also reads the "where you left off" and appearance entries described above from your iCloud key-value storage, so it can offer a reference topic you were reading on any of your devices, including your Mac, and match your appearance choice. When both routes carry "where you left off", the Watch keeps the more recent one. Confirming **Pin this topic** saves that topic in the "where you left off" entry, from the Watch itself and again from the iPhone when your tap reaches it. When the entries are removed, the Watch stops offering the topic.
+- **The complication** on your watch face reads the same entry and shows only "Continue" or "Learn". It never shows the topic's name or anything about your documents.
 - **Ask iPhone** sends the question you enter to OmniLex on your paired iPhone. While OmniLex is running on the iPhone, the iPhone answers it the way Ask does — Apple's on-device model where Apple Intelligence is turned on and ready, otherwise a model already downloaded on the iPhone — and sends the answer back; if neither can answer, or the **On-device answers** switch is off on the iPhone, it sends back a short message saying so. A question from the Watch never starts a model download. If the iPhone is not reachable, the question waits until it is.
 
 ### Apple TV
@@ -294,7 +296,7 @@ OmniLex is built for legal professionals, and this section is written for you ra
 
 **What stays on your device:** the documents you import, the text extracted from them, every prompt you type, every model output, your reading-priority flags, your drafts and your chat history. All of it.
 
-**What the app transmits:** model file downloads from Hugging Face; the four small iCloud entries described above (the part of the app you were in, a reference-topic identifier, a random document identifier and your appearance choice), if you use iCloud on iPhone, iPad or Apple Vision Pro; the same kind of "where you left off" information over Handoff and to your Apple Watch; a question you choose to send from Apple Watch to your own iPhone, and its answer; and purchase checks with Apple. No document, no excerpt, no summary, no title, no file name.
+**What the app transmits:** model file downloads from Hugging Face; the four small iCloud entries described above (the part of the app you were in, a reference-topic identifier, a random document identifier and your appearance choice), if you use iCloud on iPhone, iPad, Mac or Apple Vision Pro — your Apple Watch reads them and saves a topic you pin there; the same kind of "where you left off" information over Handoff and to your Apple Watch; a question you choose to send from Apple Watch to your own iPhone, and its answer; and purchase checks with Apple. No document, no excerpt, no summary, no title, no file name.
 
 **What this does and does not do for your obligations.** ABA Model Rule 1.6 requires you to make reasonable efforts to prevent unauthorized disclosure of information relating to the representation. Software that keeps client material on hardware you control is a materially better posture than software that ships it to a vendor's servers. It is not, by itself, compliance. You remain responsible for:
 
@@ -434,6 +436,13 @@ We want to flag two things about that:
 ## Changes to this policy
 
 If we change how OmniLex handles data, we will update this policy and change the effective date at the top.
+
+**24 September 2026 — what changed.** The Mac app and the Apple Watch app now use your iCloud key-value storage too:
+
+- **Mac.** The Mac app keeps the same four small entries as iPhone, iPad and Apple Vision Pro, so where you left off, your appearance choice and the "Last matter" glance reach your other devices, and **Delete All Documents & Analyses** on the Mac removes the entries from all of them. The previous version said that on a Mac these entries stay on the Mac; that is no longer so. The pending-open entry, which only the iPhone and iPad widget and shortcut set, is now used only on iPhone and iPad; the Mac and Apple Vision Pro apps ignore it. The previous version said that entry is set "for a moment"; it stays until OmniLex next starts on an iPhone or iPad, which can be later if the app was already open when you tapped the widget.
+- **Apple Watch.** The Apple Watch app and its complication read the "where you left off" and appearance entries, and the Watch saves a topic you pin there. Previously the Watch got this information only from your iPhone. When both routes carry it, the Watch keeps the more recent one, and after the entries are removed it stops offering the topic. The complication shows only "Continue" or "Learn", never a topic's name.
+
+What the entries hold is unchanged: never a document's title, file name or text. Nothing new is sent to Prameya.
 
 **23 September 2026 — what changed.** This policy was rewritten to match what the current app does. Earlier versions said nothing syncs and that the model download was the only thing that ever left the device; that is not true of this app, and this version says what does:
 
