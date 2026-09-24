@@ -63,7 +63,7 @@ Family Sharing is enabled on all three. Subscriptions renew until you cancel in
 Settings; Lifetime is a one-time non-consumable. The prices, the trial and how to cancel are also shown on the paywall in the app and in the [OmniBuild Terms of Use](https://prameyallc.github.io/privacy/omnibuild/terms/).
 
 **The knowledge layer is free and stays free.** Without paying anything you get
-the full standards library, including every state pack, Ask, up to two projects with their notes, and an export of your projects, notes and decision entries, with no account and no time limit. Pro adds two things: keeping more than two projects, and a print-ready PDF of a project for the permit counter.
+the full standards library, including every state pack, Ask, up to two projects with their notes, and an export of all your records, with no account and no time limit. Pro adds two things: keeping more than two projects, and a print-ready PDF of a project for the permit counter.
 
 **Pro does not change where your records go.** iCloud sync works the same, paid or not, and there is no paid iCloud option. If a subscription lapses you keep every project and note and can still export them in their raw form; only the Pro tools stop.
 
@@ -115,7 +115,7 @@ Everything in this table is stored by OmniBuild itself. None of it is sent to Pr
 
 The cost figures in older project and decision records are numbers **you** typed. They are your own estimates. The app does no lookup, no comparison against any pricing database, and never adds them up.
 
-What you type into Ask is kept only in memory while the Ask screen is open; it is never saved. The state you pick in **More ▸ Your Location** is not saved and is not sent anywhere. A file you export — the copy of your projects, notes, decision entries and profile, or a Pro permit-counter PDF — goes wherever you choose to save or send it.
+What you type into Ask is kept only in memory while the Ask screen is open; it is never saved. The state you pick in **More ▸ Your Location** is not saved and is not sent anywhere. A file you export — the copy of your projects, notes, decision entries, punch items, safety-reminder acknowledgements and profile, or a Pro permit-counter PDF — goes wherever you choose to save or send it.
 
 The app database is included in Apple's normal device backup (iCloud Backup or a computer backup) if you use one, under Apple's terms and your control. The downloaded Ask model is excluded from backups. Prameya has no access to your backups.
 
@@ -139,7 +139,7 @@ All of this travels through Apple's services under Apple's terms. None of it rea
 
 The Apple Watch app lists the guides, shows a "Continue" link to the guide you last opened (read from the iCloud key-value store), and shows three prompts: **On site**, **Punch item done** (which your iPhone withdraws when no punch item is open), and **Safety reminder**.
 
-- Your iPhone sends the Watch the list of prompts and the name of the project you last opened, over Apple's connection between the two devices. The Watch keeps that name in its own storage to show it.
+- Your iPhone sends the Watch the list of prompts and the name of the project you last opened, over Apple's connection between the two devices. The Watch keeps that name in its own storage to show it. When no project is open on your iPhone — for example after **Clear All My Logs & Decisions** — your iPhone sends no name and the Watch clears the one it had.
 - Tapping **Confirm** on the Watch sends the tap to OmniBuild on your iPhone, which records it: an "On site" note on the project you last opened (or under "today's work" if you have not opened one), marking the open punch item done, or a safety-reminder acknowledgement. **Snooze** and **Not now** record nothing. None of these is a sign-off or an inspection result.
 - The Watch app has no Ask and downloads nothing.
 
@@ -189,7 +189,7 @@ The model is not part of the app download. It is downloaded only after you choos
 
 Like any file download, the request to Hugging Face gives Hugging Face your Mac's IP address and standard request headers (including a user-agent naming OmniBuild), and names the model repository, the commit and the files requested; Hugging Face handles it under its own terms. It carries no account token, and it does not include your question, your records or anything you type. We do not receive that request. **Remove the downloaded model**, in the same sheet, deletes the files and withdraws your choice.
 
-Files of a smaller model that pre-release builds of OmniBuild could download (Qwen3 0.6B) are deleted the first time you open Ask or the On-device model sheet in this version, and by **Clear All My Logs & Decisions**. Until then they stay in the app's storage on that device; nothing is sent anywhere.
+Files of a smaller model that pre-release builds of OmniBuild could download (Qwen3 0.6B) are deleted the next time OmniBuild opens past the first-run screen in this version, and by **Clear All My Logs & Decisions**. Nothing is sent anywhere.
 
 ---
 
@@ -299,12 +299,11 @@ Because OmniBuild is distributed through the App Store, Apple may provide us wit
 
 Your records are on your device and in your own iCloud, so deletion is under your control. It takes effect on the device at once, and on your other devices when they next sync with iCloud.
 
-1. **Remove one record:** open **More ▸ Your Data ▸ Open your projects, notes and decision entries**. There you can open each project and note, correct a project's name or a note's text, and delete it; decision entries can be opened and deleted. The same screen prepares the export copy of your projects, notes, decision entries and profile. A deleted project or note is also removed from your other devices when they next sync with iCloud. Safety-reminder acknowledgements and punch items are not listed on that screen and are not in the export; **Clear All My Logs & Decisions** deletes them.
-2. **Erase your records:** in **More ▸ Your Data**, tap **Clear All My Logs & Decisions**, then **Clear Everything**. This cannot be undone. It deletes every project, note, decision entry, safety-reminder acknowledgement and punch item, and the profile, on this device — and, through iCloud, the synced ones on your other devices when they next sync. It also removes the "where you left off" bookmarks on this device, your stored age range, your answer about the Ask model, and any downloaded Ask model files.
+1. **Remove one record:** open **More ▸ Your Data ▸ Open your projects, notes and decision entries**. There you can open each project and note, correct a project's name or a note's text, and delete it; decision entries can be opened and deleted. The same screen prepares the export copy of your projects, notes, decision entries, punch items, safety-reminder acknowledgements and profile. A deleted project or note is also removed from your other devices when they next sync with iCloud. Safety-reminder acknowledgements and punch items are not listed on that screen; they are in the export, and **Clear All My Logs & Decisions** deletes them.
+2. **Erase your records:** in **More ▸ Your Data**, tap **Clear All My Logs & Decisions**, then **Clear Everything**. This cannot be undone. It deletes every project, note, decision entry, safety-reminder acknowledgement and punch item, and the profile, on this device — and, through iCloud, the synced ones on your other devices when they next sync; each of those devices then drops its own bookmark of the deleted project. It also removes the "where you left off" bookmarks on this device; the "where you left off" entries in the iCloud key-value store (the screen, the guide, the identifier of the last project you opened, the widget's guide and a guide the widget asked the app to open); the details in the current Handoff activity, which then names only the screen you are on; the project name on Apple Watch, which clears it when it next receives your iPhone's update; a pending "Punch item still open" reminder; your stored age range; your answer about the Ask model; and any downloaded Ask model files.
 3. **What Clear All does not remove:**
-   - The iCloud key-value store entries (the screen, the guide, the identifier of the last project you opened, the widget's guide, a guide the widget asked the app to open, and your appearance choice). The app overwrites the screen, guide and project entry the next time you return to the app, switch tabs or open a guide; they hold no project names or notes.
-   - The name of the last project you opened, if your iPhone sent it to Apple Watch. The Watch can keep showing it, and keep it in its own storage, until your iPhone sends a different project name or the Watch app restarts; deleting the Watch app removes it.
-   - Your appearance choice, the In-app answers and Job-log reminders switches, the date you accepted the first-run notice, and which update notice this install has been through.
+    - Your appearance choice (on the device and in the iCloud key-value store), the In-app answers and Job-log reminders switches, the date you accepted the first-run notice, and which update notice this install has been through.
+    - As you keep using OmniBuild, it records where you left off again: the screen you are on and the guide you open, and a project's identifier only once you open a project.
 4. **Erase everything on one device:** delete OmniBuild from that device. That removes that device's copy only. It does not empty your iCloud private database, which keeps the synced records until you use **Clear All My Logs & Decisions** on a device that still has OmniBuild, or delete OmniBuild's data from your iCloud storage in your device settings. It does not remove the iCloud key-value store entries either.
 
 Nothing survives on our side, because nothing was ever on our side. There is no request to file and no waiting period, because there is no account for us to look up, and no server-side copy for us to delete. If you want written confirmation of any of this, email admin@prameya.legal and we will send it.
@@ -418,6 +417,10 @@ If we change how OmniBuild handles data, we will update this policy and change t
 - **Apple's age range.** On iPhone and iPad the app asks Apple for your age range where Apple says the rules apply, and keeps only "under 18", "18 or older" or "not shared" on the device.
 - **Pro.** Pro adds more than two projects and a permit-counter PDF. The earlier version said Pro added inspection packs and that canceling removed paid building codes; neither was true. It also said the app kept a StoreKit record in its database; it does not.
 - **Deleting.** The deletion section now lists what **Clear All My Logs & Decisions** removes, including from your other devices through iCloud, and the small items it does not remove.
+- **Clear All now reaches further.** It also removes the "where you left off" entries from the iCloud key-value store and from Handoff, clears the project name on Apple Watch, and withdraws a pending punch-item reminder. Your other devices drop their bookmark of a deleted project when the deletion reaches them. Earlier today this page listed those entries and the Watch name as things Clear All left behind.
+- **A complete export.** The export copy now includes punch items and safety-reminder acknowledgements, which it used to leave out.
+- **Old model files.** Files of the retired pre-release model are deleted when the app opens, not only when you open Ask.
+- **In-app wording.** The privacy text inside the app no longer says we receive a transaction identifier when you buy Pro (we do not), and it now says that Clear All reaches your other devices through iCloud and that deleting the app leaves your iCloud copy.
 
 Nothing is sent to Prameya, and that did not change.
 
