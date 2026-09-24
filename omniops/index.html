@@ -286,7 +286,11 @@ key-value items described in §4; and, if iCloud sync was ever turned on on this
 the synced headlines from your iCloud and turns sync off here. Another device that still syncs<br />
 keeps its own entries and can upload them again. Erase does not delete the downloaded Ask model<br />
 (More ▸ Ask model ▸ <strong>Remove the downloaded model</strong> does), your settings or your Pro status.<br />
-Using the app after Erase writes the key-value items again.</p>
+Erase also makes the app forget the reading you last opened and the entry you were editing, so<br />
+their IDs are not saved to iCloud again or put into later Handoff offers, and on iPhone it<br />
+refreshes the Apple Watch's prompts from the now-empty journal. Using the app after Erase saves<br />
+the tab you are on and your appearance choice again, and any reading you open, entry you edit or<br />
+entry you pin from then on.</p>
 <p><strong>Deleting the app</strong> removes the container on iPhone, iPad and Apple Vision Pro, including<br />
 the journal and any downloaded model. On Mac the sandbox container under<br />
 <code>~/Library/Containers/legal.prameya.OmniOps</code> outlives the app and has to be removed<br />
@@ -407,7 +411,7 @@ Apple TV and the widget can pick up where you left off:</p>
   the widget or the shortcut asked to open the decision form.</li>
 </ul>
 <p>These items contain no titles, notes or other journal text. <strong>Turn Off and Remove from iCloud</strong><br />
-does not remove them; Erase does (§2).</p>
+does not remove them, and the turn-off dialog says so; Erase does (§2).</p>
 <h3 id="handoff">Handoff</h3>
 <p>On iPhone, iPad, Mac and Apple Vision Pro the app tells your nearby devices signed in to the<br />
 same Apple Account where you left off — the same tab, pack ID and entry ID as above — so they<br />
@@ -532,6 +536,14 @@ here.</p>
   share them with developers).</li>
 <li>It removes the fixed count of knowledge packs, the statement of the App Store privacy label's<br />
   answer, and the promise that this page changes in the same commit as the code.</li>
+<li>Later the same day, with an app update: Erase used to leave the ID of the reading you last<br />
+  opened, and of the entry you were editing, in the app's memory, and the app saved them to the<br />
+  iCloud key-value items again at your next tab change. Erase now makes the app forget them, and<br />
+  on iPhone it refreshes the Apple Watch's prompts. The Erase paragraph in §2 says so.</li>
+<li>The app's own descriptions now match this policy: More ▸ iCloud lists every field that sync<br />
+  carries and the deletion markers; More ▸ Privacy lists every iCloud key-value item and<br />
+  Handoff; the "Turn off iCloud sync?" dialog says the key-value items stay; and the first-run<br />
+  screen mentions iCloud sync next to export.</li>
 </ul>
 <p>The app still sends nothing to Prameya: no analytics, no account, and no server of ours. Earlier<br />
 versions of this policy remain in the public repository that publishes these pages:<br />
