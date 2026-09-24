@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>OmniWealth Privacy Policy — Prameya LLC</title>
-<meta name="description" content="Effective date: 23 August 2026">
+<meta name="description" content="Effective date: 23 September 2026">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://prameyallc.github.io/privacy/omniwealth/">
 <style>
@@ -93,10 +93,10 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 </div></header>
 <main id="main" class="wrap">
 <h1 id="omniwealth-privacy-policy">OmniWealth Privacy Policy</h1>
-<p><strong>Effective date:</strong> 23 August 2026<br />
+<p><strong>Effective date:</strong> 23 September 2026<br />
 <strong>Publisher:</strong> Prameya LLC ("Prameya", "we", "us"), a United States limited liability company<br />
 <strong>Contact:</strong> admin@prameya.legal<br />
-<strong>Applies to:</strong> the OmniWealth iOS and macOS app</p>
+<strong>Applies to:</strong> the OmniWealth app for iPhone, iPad, Mac and Apple Vision Pro, its Apple Watch app, its Apple TV app, and its Home Screen widget</p>
 <p>This policy covers OmniWealth only. Other Prameya apps have their own policies, listed at <a href="https://prameyallc.github.io/privacy/">prameyallc.github.io/privacy</a>. Do not assume a statement here is true of any other app.</p>
 <hr />
 <h2 id="the-short-version">The short version</h2>
@@ -114,19 +114,23 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 </tr>
 <tr>
 <td>Where does what I log live?</td>
-<td>On your device, in the app's own storage.</td>
+<td>On the device where you entered it, in the app's own storage. Your budget lines, habit check-ins, goals, statement photos and saved scenarios are never synced to iCloud by the app.</td>
 </tr>
 <tr>
-<td>Does Prameya receive it?</td>
+<td>Does anything sync through iCloud?</td>
+<td>Yes, a little, on iPhone and iPad only: a small iCloud key-value store holds which tab and which library topic you were on, the topic the Home Screen widget suggests, and your appearance choice. None of it is an amount or anything you typed. See <a href="#icloud-and-syncing">iCloud and syncing</a>.</td>
+</tr>
+<tr>
+<td>Does Prameya receive anything?</td>
 <td>No. We run no server that could receive it. We have no database of users.</td>
 </tr>
 <tr>
 <td>Does the app connect to the internet?</td>
-<td>Not for your data. There is no model download and no Hugging Face traffic in this build. Opening the privacy-policy link uses your browser.</td>
+<td>Not for your data. iCloud (above), Handoff, App Store purchases and links you open in your browser are handled by Apple or your browser. In this version the app downloads no AI model and makes no request to Hugging Face.</td>
 </tr>
 <tr>
 <td>Is my financial information sent to an AI service?</td>
-<td>No. There is no AI advisor, no on-device model, and no cloud AI provider.</td>
+<td>No. <strong>Ask</strong> answers library questions with <strong>Apple Intelligence on your device</strong>, where it is turned on and ready. Your question is not sent to us or to any hosted AI provider, and the app never adds your own records to it.</td>
 </tr>
 <tr>
 <td>Do you use ads, analytics, or trackers?</td>
@@ -152,9 +156,9 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 </table></div>
 <hr />
 <h2 id="what-omniwealth-is-and-what-it-is-not">What OmniWealth is, and what it is not</h2>
-<p>OmniWealth is a personal-finance <strong>education and habit-tracking</strong> app. It explains general concepts — how fees work, what diversification means, how compounding arithmetic works — and it lets you log your own habits and a simple envelope / budget log you type yourself.</p>
+<p>OmniWealth is a personal-finance <strong>education and habit-tracking</strong> app. It explains general concepts — how fees work, what diversification means, how compounding arithmetic works — from a library of cited topic packs, and it lets you keep your own records: habit check-ins, an envelope / budget log, a list of goals, saved compounding scenarios, and photos of statements you already have, with a plain-language glossary of the terms found on them.</p>
 <p>OmniWealth is <strong>not</strong> an investment adviser, a broker, a financial planner, a robo-adviser, or an AI advisor. It does not recommend, rate, or rank any stock, fund, ETF, or ticker. It does not build you a portfolio, tell you to buy, sell, hold, or rebalance anything, or produce advice tailored to your circumstances. Nothing in the app is investment, tax, or legal advice. For decisions about your money, talk to a qualified professional.</p>
-<p>We mention this in a privacy policy for a reason: because the app gives no personalised advice, it never needs to build a profile of you, and it never does. <strong>There is no Goals surface</strong> in this build.</p>
+<p>We mention this in a privacy policy for a reason: because the app gives no personalised advice, it never needs to build a profile of you, and it never does. The goals, income figure and statement text you may enter are kept for you to read back; the app does not score them, send them anywhere, or use them to recommend anything.</p>
 <hr />
 <h2 id="available-tiers">Available tiers</h2>
 <p>There is one paid upgrade, <strong>OmniWealth Pro</strong>, sold as three products. Buying any one of<br />
@@ -188,120 +192,199 @@ them grants exactly the same Pro — there are no separate feature tiers.</p>
 <p>Family Sharing is enabled on all three. Subscriptions renew until you cancel in<br />
 Settings; Lifetime is a one-time non-consumable.</p>
 <p><strong>The knowledge layer is free and stays free.</strong> Without paying anything you get<br />
-the full concept library and the basic calculators, with no account and no time limit. Pro adds saved scenarios, envelopes and worksheet export.</p>
+the full topic library and the basic calculators, with no account and no time limit. Pro adds saved scenarios, envelopes, the weekly check-in reminder and the formatted worksheet (CSV) export.</p>
 <p><strong>Pro does not add cloud sync, and there is no paid iCloud option.</strong> OmniWealth stores your<br />
 records on your device in every case, paid or not. If a subscription lapses you keep your<br />
-own data and can still export it in its raw form; only the Pro tools stop.</p>
+own data and can still export all of it with <strong>Export everything in this app</strong>, which is free; only the Pro tools stop.</p>
 <h2 id="free-vs-paid-tier-data-collection">Free vs paid tier data collection</h2>
-<p><strong>The tier you choose does not change what data Prameya collects from OmniWealth.</strong> In both the free tier and Premium:</p>
+<p><strong>The tier you choose does not change what data Prameya collects from OmniWealth, which is none.</strong> In both the free tier and Pro:</p>
 <ul>
-<li>Your habit logs, envelope entries, and compounding calculations stay on your device</li>
-<li>No analytics, tracking, or telemetry</li>
+<li>Your habit logs, envelope entries, goals, statement records and saved scenarios stay on your device</li>
+<li>No analytics, tracking, or telemetry sent to us</li>
 <li>No server that receives your content</li>
 <li>No account or login</li>
 </ul>
-<p>The difference between tiers is <strong>feature access</strong>, not data handling. Premium unlocks additional tools; it does not unlock data transmission.</p>
+<p>The difference between tiers is <strong>feature access</strong>, not data handling. Pro unlocks additional tools; it does not unlock data transmission.</p>
 <h2 id="cancellation-and-refunds">Cancellation and refunds</h2>
 <p>Subscriptions are managed entirely through your Apple ID:</p>
 <ul>
-<li><strong>To cancel:</strong> Open Settings on your iPhone or iPad → tap your name → Subscriptions → OmniWealth → Cancel Subscription. On Mac, open the App Store app → Account (sign-in name) → View Information → Subscriptions → Manage.</li>
+<li><strong>To cancel:</strong> Open Settings on your iPhone or iPad → tap your name → Subscriptions → OmniWealth → Cancel Subscription. On Mac, open the App Store app → Account (sign-in name) → View Information → Subscriptions → Manage. Inside OmniWealth, a subscriber sees <strong>Manage Subscription</strong> under More ▸ Subscription, which opens Apple's own subscription controls.</li>
 <li><strong>Refund requests:</strong> Handled by Apple, not Prameya. See <a href="https://reportaproblem.apple.com/">reportaproblem.apple.com</a> or contact Apple Support. We have no access to your payment information and cannot issue refunds ourselves.</li>
-<li><strong>What happens to your data when you cancel:</strong> Nothing. Your on-device data stays on your device. Canceling a subscription removes access to Premium features; it does not delete your habit logs or budget entries.</li>
+<li><strong>What happens to your data when you cancel:</strong> Nothing. Your on-device data stays on your device. Canceling a subscription removes access to Pro features; it does not delete your habit logs, budget entries or saved scenarios.</li>
 </ul>
 <h2 id="storekit-transaction-data">StoreKit transaction data</h2>
-<p>The anonymized StoreKit transaction record described above is stored in the app's local database on your device. It is used to determine which features to unlock. It is never uploaded to Prameya, and it is deleted when you delete the app or use the "Delete all data in this app" control in Settings.</p>
-<p>If you restore purchases on a new device (by tapping "Restore Purchases" in the app), StoreKit queries Apple's servers to retrieve your active subscriptions. That communication is between your device and Apple; Prameya is not involved and sees nothing from it.</p>
+<p>OmniWealth does not keep its own record of your purchases. Each time it needs to know whether Pro is unlocked, it asks Apple's StoreKit on your device which OmniWealth products your Apple Account currently owns, and it listens for purchase updates from StoreKit while it runs. Payment is handled entirely by Apple.</p>
+<p>If you tap <strong>Restore Purchases</strong>, StoreKit contacts Apple's servers to refresh your purchases. That communication is between your device and Apple; Prameya is not involved and sees nothing from it.</p>
 <hr />
 <h2 id="what-stays-on-your-device">What stays on your device</h2>
-<p>Everything you enter into OmniWealth is stored locally on your device and stays there.</p>
+<p>Everything you enter into OmniWealth is stored locally, in the app's own storage on the device where you entered it.</p>
 <div class="tablewrap"><table>
 <thead>
 <tr>
-<th>What you can enter today</th>
+<th>What you can enter</th>
 <th>Examples</th>
 <th>Where it goes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Daily habit checklist</td>
-<td>Four yes/no toggles — whether you reviewed your budget, made a planned contribution, reviewed your allocation, avoided an impulse purchase — recorded with the date</td>
+<td>Daily habit check-in</td>
+<td>Four yes/no ticks — whether you reviewed your budget, made a planned contribution, reviewed your allocation, avoided an impulse purchase — recorded with the date, and an optional note you type</td>
 <td>Local app database</td>
 </tr>
 <tr>
-<td>Envelope / budget log</td>
-<td>A name you type and amounts you log (assigned vs spent). Arithmetic on that envelope, not a recommendation</td>
+<td>Envelope / budget log (Pro)</td>
+<td>An envelope name, an optional payee, an amount (assigned or spent), an optional note, the date, and on iPhone and iPad whether you saved the line as a Watch draft. Arithmetic on that envelope, not a recommendation</td>
+<td>Local app database</td>
+</tr>
+<tr>
+<td>Goals</td>
+<td>Short goal lines you type under More ▸ Tools ▸ Goals</td>
+<td>Local app database, in one profile record</td>
+</tr>
+<tr>
+<td>Income &amp; Contribution</td>
+<td>More ▸ Tools ▸ Income &amp; Contribution saves a monthly-income figure to the same profile record when you tap <strong>Save</strong>. (In this version the screen has no field for typing the figure, and the target percentage on its slider is not saved.)</td>
+<td>Local app database, in the profile record</td>
+</tr>
+<tr>
+<td>Statement records</td>
+<td>A photo of a statement that you choose from your photo library (see <a href="#statement-photos">Statement photos</a>), the text read from it on your device, and a short glossary of terms found in that text</td>
+<td>Local app database</td>
+</tr>
+<tr>
+<td>Saved scenarios (Pro)</td>
+<td>Under More ▸ Tools ▸ Your numbers: the years, monthly amount, annual rate and result of a compounding worksheet you choose to save</td>
 <td>Local app database</td>
 </tr>
 <tr>
 <td>Compounding arithmetic inputs</td>
-<td>The monthly amount, number of years, and the annual rate you choose to test</td>
-<td>Held in memory while that screen is open; not saved to the database</td>
+<td>The monthly amount, number of years, and the annual rate you choose to test on the Compounding screen</td>
+<td>Held in memory while that screen is open; not saved</td>
+</tr>
+<tr>
+<td>Ask questions</td>
+<td>A question you type in Ask (see <a href="#ask">Ask</a>)</td>
+<td>Held in memory only, until you tap <strong>New chat</strong> or the app closes; not saved</td>
 </tr>
 <tr>
 <td>App preferences</td>
-<td>Appearance setting, whether you have acknowledged the disclosure, and whether the weekly check-in reminder is on</td>
+<td>Appearance, whether you have acknowledged the first-run disclosure, whether Ask is on, the weekly check-in reminder switch and its weekday, when you last marked the check-in reminder seen from Apple Watch, the age-range result described under <a href="#children">Children</a>, which version of the significant-change notice this device has been through, and a marker that the one-time cleanup of old model files has run</td>
 <td>Device settings storage</td>
 </tr>
 </tbody>
 </table></div>
-<p>There is no Goals form, no income form, and no place to type a question for an advisor. The app's local database additionally defines leftover record types (statement scans, trajectory snapshots, a goal-profile row) from features that are <strong>not</strong> in the shipping UI. No screen creates a Goals surface. They are named here only because the delete control described below clears them too.</p>
-<p>This data is written to the app's private storage area, which iOS and macOS protect from other apps. It is never uploaded to Prameya. We could not read it if we wanted to.</p>
+<p>The app also has a second local database set aside for a small set of preferences. It is created with cloud syncing turned off, and nothing in this version writes to it.</p>
+<p>This data is written to the app's private storage area, which the operating system protects from other apps. It is never uploaded to Prameya. We could not read it if we wanted to.</p>
+<p><strong>Backups.</strong> The app's database is not excluded from device backups. If you use iCloud Backup or back up your device to a computer, your OmniWealth records — including statement photos — are included in that backup, under Apple's terms and your control. They are not readable by Prameya.</p>
 <p><strong>Financial information is sensitive.</strong> We treat it that way. The design principle for OmniWealth is that the safest place for your money data is the device in your hand, and the safest amount for us to hold is none.</p>
+<h3 id="statement-photos">Statement photos</h3>
+<p>More ▸ Tools ▸ Statement Glossary ▸ <strong>Scan Statement</strong> ▸ <strong>Choose from Photos</strong> opens Apple's photo picker. OmniWealth receives only the one photo you pick; it does not get access to the rest of your library, and it does not ask for Photos permission. There is no live camera capture and no file or PDF import.</p>
+<p>The app reads the text on the photo with Apple's on-device text recognition, then shows a short glossary of common terms it finds (for example "expense ratio" or "cost basis"). It stores the photo itself (re-saved as an image file), the recognized text, and that glossary on your device. Nothing from the photo is sent to us, to Apple, or to any AI service, and the statement text is never given to Ask. The glossary is general; it is not commentary on your holdings.</p>
+<p>Each statement record can be deleted on its own from the Statements list.</p>
 <hr />
 <h2 id="what-leaves-your-device">What leaves your device</h2>
-<p><strong>No Hugging Face or model-download traffic.</strong> Earlier versions of this page described an on-device AI model you could download from <code>huggingface.co</code>. That offer is not in the app, and the unused download / inference code was deleted. There is no control that starts a download, and no screen that sends a question to a model. If on-device generation is ever added, this policy is rewritten first.</p>
-<p><strong>Local notifications.</strong> Notification permission is requested only from <strong>Settings → Reminders</strong>, never at launch. If you continue and grant it, the app schedules one weekly local check-in that says “Time for this week's check-in.” It is not a performance claim. Turning the reminder off cancels it.</p>
-<p><strong>There is no iCloud sync.</strong> Both of the app's data stores are created with cloud syncing disabled, and the app holds no iCloud entitlement. If you use OmniWealth on two devices, the two copies are separate.</p>
-<p>The summaries the app shows you — how many days you logged, how many boxes you ticked, remaining cents on an envelope — are counts of your own records, produced by ordinary arithmetic on your device. There is no chat feature, no question box, and no AI advisor.</p>
+<p><strong>Nothing you enter is sent to Prameya.</strong> The paths below are the only ones by which anything leaves the device, and none of them reaches us.</p>
+<ul>
+<li><strong>iCloud key-value store (iPhone and iPad).</strong> Described under <a href="#icloud-and-syncing">iCloud and syncing</a>: the tab and library topic you were on, the widget's suggested topic, a topic queued to open, and your appearance choice. No amounts, no records, nothing you type.</li>
+<li><strong>Handoff.</strong> On iPhone, iPad, Mac and Apple Vision Pro, the app tells your nearby devices that use the same Apple Account which tab you are on and which library topic you last opened, so another device can offer to continue. Apple handles this.</li>
+<li><strong>Apple Watch.</strong> Described under <a href="#apple-watch-apple-tv-and-the-widget">Apple Watch, Apple TV and the widget</a>: the iPhone sends the Watch short prompts (never an amount), the Watch sends back your confirm or decline taps, and a question you type on the Watch travels to your paired iPhone and the answer comes back, all over Apple's connection between the two devices.</li>
+<li><strong>App Store.</strong> Purchases and <strong>Restore Purchases</strong> go to Apple through StoreKit.</li>
+<li><strong>Declared Age Range (iPhone and iPad).</strong> Where Apple says it applies to your account, the app asks Apple's own age-range service, as described under <a href="#children">Children</a>. If a parent or guardian must approve an update, Apple sends that request.</li>
+<li><strong>Links.</strong> Opening the privacy policy, support page, or a source link from a topic pack opens it in your browser.</li>
+<li><strong>Your backups and exports</strong>, only where you put them.</li>
+</ul>
+<p><strong>No model download and no Hugging Face traffic in this version.</strong> The app contains code for an optional on-device Ask model downloaded from Hugging Face, and a catalog naming three models for it (MiniCPM5 2B from <code>openbmb/MiniCPM5-2B-MLX</code>, about 1.4 GB; Gemma 4 E2B from <code>mlx-community/gemma-4-E2B-it-qat-4bit</code>, about 4.4 GB; Gemma 4 E4B from <code>mlx-community/gemma-4-E4B-it-qat-4bit</code>, about 6.8 GB). <strong>No device is offered any of them in this version</strong>: the download is held until the models pass an independent review of their answers, so there is no download control anywhere in the app and the app makes no request to Hugging Face. Apple TV and Apple Watch cannot download a model at all. If an earlier test build of OmniWealth downloaded the model it used then (Qwen3 0.6B), the first launch of this version deletes those files. Before any download is offered, this policy will be updated to say which model, from where, and what the request carries.</p>
+<p><strong>Local notifications</strong> are scheduled by the app on your device and delivered by the operating system. They are described under <a href="#reminders-and-notifications">Reminders and notifications</a>. Nothing is sent to us.</p>
+<p><strong>Performance diagnostics.</strong> On iPhone, iPad, Mac and Apple Vision Pro, the app receives Apple's MetricKit summaries (average launch and hang times, disk writes, and counts of crashes and hangs) and writes those figures to the device's own system log. It sends them nowhere. Whether Apple shares diagnostics with developers through its own channels is controlled by your device's Analytics settings, under Apple's policy.</p>
+<hr />
+<h2 id="ask">Ask</h2>
+<p><strong>Ask</strong> is a tab for questions about the library. It appears only when the <strong>In-app answers</strong> switch in More is on (it is on by default) and Apple Intelligence is turned on and ready on the device — so it can appear on iPhone, iPad, Mac and Apple Vision Pro, and never on Apple TV or Apple Watch.</p>
+<p>When you ask, the app sends your question as you typed it, together with passages from the library's topic packs, to <strong>Apple's on-device model</strong> (Apple Intelligence). The model may also look up a library topic. The answer is labelled <strong>Apple Intelligence</strong>. Your question stays on the device; it is not sent to us or to any hosted AI provider.</p>
+<ul>
+<li>The app never adds your check-ins, envelope lines, goals, income figure or statement text to a question. If you type amounts yourself, they are part of your question and stay on the device with it.</li>
+<li>Some questions are refused before the model sees them — for example, a request to calculate your net worth.</li>
+<li>If the answer uses wording that the library's topic packs bar (such as language a pack marks as off-limits for education), Ask shows a notice instead of the answer.</li>
+<li>If Apple Intelligence cannot answer, Ask says so. It does not fall back to any other service.</li>
+</ul>
+<p>Questions and answers are held in memory only. They are not saved as records; <strong>New chat</strong> clears them, and they are gone when the app closes.</p>
+<hr />
+<h2 id="reminders-and-notifications">Reminders and notifications</h2>
+<p><strong>Weekly check-in (Pro).</strong> The reminder is off until you turn it on in <strong>More ▸ Reminders</strong>. Turning it on is the only thing in OmniWealth that asks for permission to send notifications, and it never asks at launch. If you allow it, the app schedules one repeating local notification, titled "Check-in" and saying "Time for this week's check-in.", at 19:00 on the weekday you turned it on. It is not a performance claim. Turning the switch off cancels it.</p>
+<p><strong>Watch draft notice (iPhone and iPad).</strong> While the weekly check-in switch is on, saving an envelope line with <strong>Save as Watch draft</strong> also posts one notice, "Review today's drafts", saying "Open OmniWealth on your wrist to confirm." It never includes an amount. Its <strong>Confirm</strong> button confirms your most recent draft on the iPhone; <strong>Snooze</strong> and <strong>Not now</strong> leave it a draft; simply tapping or dismissing the notice changes nothing.</p>
+<p>Neither notification is sent through a server. <strong>Delete all data</strong> does not turn the reminder off; use the switch.</p>
+<hr />
+<h2 id="apple-watch-apple-tv-and-the-widget">Apple Watch, Apple TV and the widget</h2>
+<p><strong>Apple Watch.</strong> The Watch app comes with the iPhone app. It lists the library's topic packs, shows short prompts the iPhone sends it, and has <strong>Ask iPhone</strong>.</p>
+<ul>
+<li><strong>Drafts.</strong> If you saved an envelope line as a Watch draft on your iPhone, the Watch can confirm or decline it. The Watch never shows or enters an amount; the confirm is applied on the iPhone.</li>
+<li><strong>Check-in prompt.</strong> While the weekly check-in is on, the Watch also shows a prompt to mark it seen; confirming it records the time on the iPhone.</li>
+<li><strong>Ask iPhone</strong> sends the question you type on the Watch to OmniWealth on your paired iPhone, over Apple's connection between the two devices. The iPhone answers it the way Ask does on the iPhone and sends the answer back to the Watch. The Watch runs no model and never starts a download.</li>
+<li><strong>Complication.</strong> The Watch app passes its complication a short label — "Learn." or "Drafts" with a count — through a storage area on the watch that only the Watch app and its complication share. It is never an amount.</li>
+<li>The Watch app does not use iCloud.</li>
+</ul>
+<p><strong>Apple TV.</strong> The Apple TV app is a read-only topic library. Its <strong>Continue</strong> tab reads the iCloud key-value store described below to show the library topic you last opened on your iPhone or iPad, and it follows the appearance choice kept there. There is no data entry, no Ask, and no model download on Apple TV.</p>
+<p><strong>Home Screen widget (iPhone and iPad).</strong> The widget shows the library's next suggested topic, read from the iCloud key-value store. Tapping it (or the matching Siri / Shortcuts phrase) records that topic in the same store so the app opens it next time. The widget reads no records.</p>
+<p>None of this reaches Prameya.</p>
 <hr />
 <h2 id="what-we-do-not-do">What we do not do</h2>
 <p>Each of these is a flat "no", not a "we limit this":</p>
 <ul>
 <li><strong>No accounts.</strong> No sign-up, no email, no password, no Sign in with Apple.</li>
 <li><strong>No Prameya server.</strong> We operate no backend that receives app data. There is no user database to breach, subpoena, or sell.</li>
-<li><strong>No analytics or telemetry.</strong> No usage tracking, no session recording, no crash-reporting service.</li>
+<li><strong>No analytics or telemetry sent to us.</strong> No usage tracking, no session recording, no third-party crash-reporting service. (The MetricKit figures described above stay in the device's log.)</li>
 <li><strong>No advertising.</strong> No ad networks, no ad identifier (IDFA), no App Tracking Transparency prompt, because there is nothing to track.</li>
 <li><strong>No selling or sharing of personal information</strong>, in the ordinary meaning or in the specific meanings those terms carry under California law.</li>
-<li><strong>No bank, brokerage, or credit connections.</strong> The app cannot link to a financial institution, and there is no data aggregator (such as Plaid) in it. It never sees an account number, a balance feed, or a transaction feed. Anything about your money is there because you typed it.</li>
+<li><strong>No bank, brokerage, or credit connections.</strong> The app cannot link to a financial institution, and there is no data aggregator (such as Plaid) in it. It never sees an account number, a balance feed, or a transaction feed. Anything about your money is there because you typed it or chose a photo of it.</li>
 <li><strong>No credit checks, credit scores, or credit reports.</strong></li>
 <li><strong>No purchases or transfers.</strong> The app cannot move money.</li>
 <li><strong>No location tracking.</strong></li>
 <li><strong>No contacts, calendar, or microphone access.</strong></li>
 <li><strong>No Keychain storage.</strong> The app puts nothing in the device Keychain.</li>
-<li><strong>No camera or photo library access, and no document import.</strong> The app cannot ingest a photo or PDF of a statement. There is no capture or import path in it, and it does not hold the file-access entitlement that would allow one.</li>
-<li><strong>No AI advisor and no model download.</strong></li>
+<li><strong>No camera.</strong> The app has no camera capture. Statement photos come only from Apple's photo picker, one photo you choose at a time, and there is no file or PDF import.</li>
+<li><strong>No hosted AI and no model download in this version.</strong></li>
 </ul>
-<p>On the document-import point, plainly: an earlier build shipped copy that referred to "uploaded statements," and the app's database still defines an unused record type for statement scans. That copy has been corrected, and no screen in the shipping app can capture or import a document. If a statement-import feature ships later, this policy will be updated to describe photo or file access before it is used, and the App Store privacy label updated with it.</p>
 <hr />
 <h2 id="icloud-and-syncing">iCloud and syncing</h2>
-<p><strong>OmniWealth does not sync your financial or habit data to iCloud.</strong> Your data is stored in a local, non-syncing database on the device where you entered it. If you use OmniWealth on two devices, the two copies are separate and do not share data.</p>
-<p>This is enforced in two places, not just described: the app's local databases are created with cloud syncing explicitly disabled, and the signed app no longer carries any iCloud or CloudKit entitlement or container, so it could not write a record to iCloud even if code tried to.</p>
-<p>If we ever add sync, it will be <strong>off by default</strong>, will require you to switch it on, and this policy will say exactly which fields sync before it ships.</p>
+<p><strong>OmniWealth does not sync your financial or habit data to iCloud.</strong> Your check-ins, envelope lines, goals, income figure, statement records and saved scenarios are stored in a local database on the device where you entered them. Both of the app's databases are created with cloud syncing turned off, and the app has no iCloud (CloudKit) container. If you use OmniWealth on two devices, those records on the two devices are separate and do not share data.</p>
+<p><strong>The iCloud key-value store.</strong> On iPhone and iPad, if you are signed in to iCloud, the app keeps four small values in its iCloud key-value store, which Apple syncs to your other devices that use the same Apple Account:</p>
+<ul>
+<li>which tab you were on and the ID of the library topic you last opened, if any, with the time it was written;</li>
+<li>your appearance choice (system, light or dark);</li>
+<li>the library topic the Home Screen widget suggests next (its ID, title and a short line), with the time it changed;</li>
+<li>a topic you asked the widget or Siri / Shortcuts to open, until the app opens it.</li>
+</ul>
+<p>These are the app's own library topics and settings — never an amount, a record, or anything you typed. They are how your iPad, your Apple TV and the widget can offer to continue where you left off. On Mac and Apple Vision Pro the app does not use iCloud, and the Apple Watch app does not use it either.</p>
+<p><strong>What Delete all data does not remove.</strong> <strong>Delete all data in this app</strong> does not clear these four iCloud values, and deleting the app does not remove them from iCloud either. They stay in your iCloud key-value store, and on your other devices that use the same Apple Account, until the app overwrites them: the tab and topic when you move to another tab or topic, the widget's topic when its suggestion changes, and your appearance when you change it. A queued topic is cleared as soon as the app opens it. Apple stores these values under your Apple Account; Prameya cannot see or delete them.</p>
 <hr />
 <h2 id="health-data-we-do-not-process-it">Health data: we do not process it</h2>
 <p>OmniWealth does not collect, receive, access, derive, or infer any health data. It does not read Apple Health, it has no Health integration, it asks you nothing about your health, and it makes no inference about your physical or mental condition from your spending.</p>
 <p>The shipping app carries no HealthKit entitlement, no Health usage description, no HealthKit framework, and no Health code of any kind.</p>
 <p>This matters legally, not just descriptively. Washington's My Health My Data Act (RCW ch. 19.373) and Nevada's consumer health data law (SB 370, 2023) define "consumer health data" and "collect" very broadly — broadly enough to reach data that is merely accessed, processed, or derived, not only data that is transmitted to a company. Because OmniWealth does none of those things with health data, those statutes do not apply to it, and no separate consumer health data privacy policy is required for this app.</p>
-<p>We say this plainly because earlier internal versions of this app's technical configuration wrongly labelled budget and habit logs as "health" data, and an earlier build displayed placeholder step and sleep numbers that were hardcoded rather than read from Health. That label was a mistake and the placeholder feature is gone. <strong>Budgeting information is financial information, not health information.</strong> The app's privacy manifest now declares no collected data types at all.</p>
+<p>We say this plainly because earlier internal versions of this app's technical configuration wrongly labelled budget and habit logs as "health" data, and an earlier build displayed placeholder step and sleep numbers that were hardcoded rather than read from Health. That label was a mistake and the placeholder feature is gone. <strong>Budgeting information is financial information, not health information.</strong> The app's privacy manifest declares no collected data types at all.</p>
 <h2 id="hipaa-does-not-apply">HIPAA does not apply</h2>
 <p>HIPAA (45 CFR Parts 160 and 164) governs health plans, health care clearinghouses, most health care providers, and their business associates. Prameya is none of those, OmniWealth handles no health information, and you have no patient relationship with us. <strong>HIPAA does not apply to this app, and we do not claim HIPAA compliance.</strong></p>
 <hr />
 <h2 id="permissions-the-app-asks-for">Permissions the app asks for</h2>
-<p>OmniWealth asks for no runtime permissions for location, camera, photos, contacts, Health, or tracking, because the app uses none of those.</p>
-<p>Notification permission is requested only from <strong>Settings → Reminders</strong>, never at launch. If you grant it, the app schedules one weekly local check-in. Turning the reminder off cancels it.</p>
+<p>OmniWealth asks for no runtime permissions for location, camera, photo library access, contacts, Health, or tracking. The statement photo picker is Apple's own and needs no permission; the app receives only the photo you pick.</p>
+<ul>
+<li><strong>Notifications:</strong> asked only when you turn on the weekly check-in in <strong>More ▸ Reminders</strong>, never at launch.</li>
+<li><strong>Age range (iPhone and iPad):</strong> where Apple says it applies to your account, Apple shows its own sheet asking whether to share your age range with the app. You decide.</li>
+</ul>
 <hr />
 <h2 id="children">Children</h2>
-<p>OmniWealth is a general-audience product for adults managing their own money. It is not directed to children, it is not designed to appeal to children, it contains no advertising, and it collects no personal information from anyone — including anyone under 13. Because the app transmits no personal information to us at all, there is nothing that COPPA (15 U.S.C. §§6501–6506; 16 CFR Part 312) would require us to obtain parental consent for.</p>
+<p>OmniWealth is a general-audience product for adults managing their own money. It is not directed to children, it is not designed to appeal to children, it contains no advertising, and it sends no personal information to us from anyone — including anyone under 13. Because the app transmits no personal information to us at all, there is nothing that COPPA (15 U.S.C. §§6501–6506; 16 CFR Part 312) would require us to obtain parental consent for.</p>
+<p><strong>Age range (iPhone and iPad).</strong> Some state laws require apps to use the age range an Apple Account shares. After the first-run screen — never before it — the app asks Apple whether these rules apply to your account. If Apple says they do, the app asks Apple for your age range with a single age (18); Apple shows the choice and you decide whether to share. Once a result is stored the app does not ask again, unless <strong>Delete all data</strong> has cleared it. The app keeps only the result — under 18, 18 or older, or that you chose not to share — never a birth date or the range Apple returns. It stays on this device, it is shown in More ▸ Legal ▸ Legal &amp; Safety, and <strong>Delete all data</strong> clears it. When an update makes a significant change (for example, to this policy), Apple may show you a notice about it, or, for an account where the law requires it, the app asks a parent or guardian to approve the update through Apple's Ask to Approve or in person on the device, and waits for that approval before it opens. Apple handles these requests; Prameya receives nothing from them.</p>
 <p>If you are a parent or guardian and have a question about this app, write to admin@prameya.legal.</p>
 <hr />
 <h2 id="your-choices-and-controls">Your choices and controls</h2>
-<p>Because your data never leaves your device, you control it directly.</p>
+<p>Because your data stays on your device, you control it directly.</p>
 <ul>
-<li><strong>See it:</strong> your logged days and envelope arithmetic are shown in the app.</li>
-<li><strong>Delete everything you have entered:</strong> Settings → Data → <strong>"Delete all data in this app"</strong>. After a confirmation prompt, this permanently deletes every habit log, envelope / budget entry, leftover statement record and profile stored on this device, plus leftover on-device model cache from older installs (and the App Group container if one is ever entitled). If a later file removal fails after the store is emptied, the app says so rather than claiming a complete delete. It cannot be undone.</li>
-<li><strong>Deleting one entry at a time is not possible.</strong> The app does not currently offer per-entry deletion — there is no swipe-to-delete and no delete control on an individual row. Deletion is all-or-nothing: the control above, or deleting the app.</li>
-<li><strong>Delete everything, including preferences:</strong> delete the app. That removes the app's local database and its preferences from your device.</li>
+<li><strong>See it:</strong> your check-ins, envelope lines, goals, statements and saved scenarios are shown in the app.</li>
+<li><strong>Correct or delete one entry:</strong> open a check-in from <strong>Do</strong>, or an envelope line from the Envelopes screen, to change it or delete it on its own. Each goal and each statement record also has its own delete control. Saved scenarios can be removed only with <strong>Delete all data</strong> in this version.</li>
+<li><strong>Get your data out:</strong> <strong>More ▸ Data ▸ Export everything in this app</strong> writes one JSON file with every check-in, envelope line, statement record and its photo, saved scenario and your profile. <strong>Export consistency summary</strong> writes a smaller file of just the consistency measurement, and <strong>Export formatted worksheet (CSV)</strong> is a Pro export. Each file is written to this device and goes only where you send it.</li>
+<li><strong>Delete everything you have entered:</strong> <strong>More ▸ Data ▸ "Delete all data in this app"</strong>. After a confirmation prompt, this permanently deletes, on this device, every habit log, envelope / budget line, statement record and its photo, saved scenario, and your profile (goals and income figure), plus your age-range result, and leftover model files and settings from older installs if any remain. If a later file removal fails after the database is emptied, the app says so rather than claiming a complete delete. It cannot be undone. It does <strong>not</strong> clear the four iCloud key-value values described under <a href="#icloud-and-syncing">iCloud and syncing</a>, turn off the weekly reminder, reset your appearance or Ask settings, or touch the Watch complication label; and it cannot reach copies already in your device backups or in files you exported.</li>
+<li><strong>Delete everything on a device, including preferences:</strong> delete the app. That removes the app's local database and its preferences from that device. It does not remove the iCloud key-value values described under <a href="#icloud-and-syncing">iCloud and syncing</a>.</li>
 <li><strong>Ask us to delete your data:</strong> there is nothing for us to delete. We have never received it. If you write to us asking for deletion, that will be our honest answer.</li>
 </ul>
 <hr />
@@ -312,7 +395,7 @@ own data and can still export it in its raw form; only the Pro tools stop.</p>
 <p>Our position for OmniWealth:</p>
 <ul>
 <li><strong>Personal information we collect:</strong> none. The app transmits nothing about you to us.</li>
-<li><strong>Sensitive personal information we collect:</strong> none. California's definition of sensitive personal information (Cal. Civ. Code §1798.140(ae)) includes certain financial data, such as an account number together with an access code. OmniWealth never receives any of it — it has no account linking, and we receive nothing you enter.</li>
+<li><strong>Sensitive personal information we collect:</strong> none. California's definition of sensitive personal information (Cal. Civ. Code §1798.140(ae)) includes certain financial data, such as an account number together with an access code. OmniWealth never sends us any of it — it has no account linking, and we receive nothing you enter, including statement photos.</li>
 <li><strong>Sale or sharing of personal information:</strong> we do not sell or share personal information, and we never have. We do not use or disclose sensitive personal information for any purpose that would trigger the right to limit.</li>
 <li><strong>Retention:</strong> we retain nothing, because we receive nothing. Your own data stays on your device until you delete it.</li>
 <li><strong>Non-discrimination:</strong> we do not treat anyone differently for exercising a privacy right.</li>
@@ -324,12 +407,12 @@ own data and can still export it in its raw form; only the Pro tools stop.</p>
 <p>Several other states have comprehensive privacy laws granting access, correction, deletion, portability, and opt-out rights, and treating precise financial account data as sensitive. Our answer under all of them is the same: we do not collect, sell, share, or process your personal information, and we do no profiling or targeted advertising. Write to admin@prameya.legal with any request.</p>
 <h3 id="if-you-are-in-the-uk-eu-or-eea">If you are in the UK, EU, or EEA</h3>
 <p>This policy does not state which App Store territories OmniWealth is released in; check the App Store listing for the countries where it is available.</p>
-<p>Where the UK GDPR or EU GDPR applies, note that Prameya does not act as a controller of any personal data from your use of OmniWealth, because we receive none. Your entries are processed only by software running on your own device, under your control. We do not process special category data (GDPR Article 9); financial information is not a special category, and we hold no health data in any event. If you believe we hold personal data about you, contact admin@prameya.legal, and you may complain to your national data protection authority.</p>
+<p>Where the UK GDPR or EU GDPR applies, note that Prameya does not act as a controller of any personal data from your use of OmniWealth, because we receive none. Your entries are processed only by software running on your own devices, under your control, and the small iCloud values and Handoff described above are carried by Apple under your Apple Account. We do not process special category data (GDPR Article 9); financial information is not a special category, and we hold no health data in any event. If you believe we hold personal data about you, contact admin@prameya.legal, and you may complain to your national data protection authority.</p>
 <hr />
 <h2 id="security">Security</h2>
 <ul>
-<li>Your data is stored in the app's private storage, which the operating system isolates from other apps, and is protected by your device passcode and disk encryption. That is the operating system's default protection; the app does not add a stronger file-protection class on top of it, and we will not describe it as more than it is.</li>
-<li>There is no model download in this build, so there is no Hugging Face request to encrypt.</li>
+<li>Your data is stored in the app's private storage, which the operating system isolates from other apps. On iPhone, iPad and Apple Vision Pro, the app's databases are set to Apple's "complete unless open" file protection: they are stored encrypted with a key tied to your device passcode, and once your device is locked they cannot be opened again until you unlock it (a database the app already has open stays readable). On Mac, the app runs in Apple's app sandbox and relies on your Mac's own disk encryption (FileVault, if you have turned it on).</li>
+<li>The app downloads no model in this version, so there is no download request to protect.</li>
 <li>The strongest control is architectural: there is no server holding your financial information, so there is no server to be breached.</li>
 </ul>
 <p>We do not claim any security certification, audit, or standard we do not hold.</p>
@@ -346,13 +429,13 @@ own data and can still export it in its raw form; only the Pro tools stop.</p>
 <tbody>
 <tr>
 <td>Apple</td>
-<td>Distributes the app</td>
-<td>Whatever Apple collects for App Store distribution, under Apple's own privacy policy. We receive no personal information from Apple.</td>
+<td>Distributes the app; processes purchases; provides iCloud, Handoff, Apple Intelligence, the photo picker, the Watch connection and the Declared Age Range service</td>
+<td>Whatever Apple collects for these services, under Apple's own privacy policy — including, if you use iCloud, the four small key-value values described above. Apple Intelligence and text recognition in OmniWealth run on your device. We receive no personal information from Apple.</td>
 </tr>
 </tbody>
 </table></div>
-<p>There are no others. No analytics vendor, no ad network, no cloud AI provider, no data broker, no payment processor.</p>
-<p>The app ships Apple platform frameworks and in-repo Swift packages only. MLX and Hugging Face libraries were removed; they are not linked.</p>
+<p>There are no others. No analytics vendor, no ad network, no hosted AI provider, no data broker, no payment processor. Hugging Face receives nothing, because no download is offered in this version.</p>
+<p>The app ships Apple platform frameworks and in-repo Swift packages, plus the open-source MLX and Hugging Face libraries that would run and download the optional on-device model. The Hugging Face download libraries are linked only on iPhone, iPad, Mac and Apple Vision Pro (MLX is also in the Apple TV app), and in this version nothing calls their download code. None of them is an analytics, advertising or crash-reporting library.</p>
 <hr />
 <h2 id="changes-to-this-policy">Changes to this policy</h2>
 <p>If we change how OmniWealth handles data, we will update this policy before the change ships, not after. When we do:</p>
@@ -361,8 +444,20 @@ own data and can still export it in its raw form; only the Pro tools stop.</p>
 <li>We will describe what changed in plain language.</li>
 <li>The previous version will remain available at this address's history.</li>
 </ul>
-<p><strong>This revision (23 August 2026)</strong> records the shipping envelope / budget log (a name and amounts you type; arithmetic only) and states that there is no Goals surface and no AI advisor. Hugging Face / on-device model download claims stay removed: the unused Intelligence / MLX stack is deleted. Notification permission is requested from Settings → Reminders only.</p>
-<p>Material changes — for example, adding statement import, adding sync, or adding any feature that sends your content off the device — will also be disclosed inside the app before that feature is used.</p>
+<p><strong>23 September 2026 — what changed.</strong> This policy was corrected to match what the current app does. Earlier versions said things that were no longer true:</p>
+<ul>
+<li><strong>iCloud.</strong> Earlier versions said the app held no iCloud entitlement and synced nothing. On iPhone and iPad it keeps four small values in its iCloud key-value store — the tab and library topic you were on, the widget's suggested topic, a topic queued to open, and your appearance choice — so your other devices, Apple TV and the widget can continue where you left off. It now also says that neither <strong>Delete all data</strong> nor deleting the app clears those values, and how they change. Your records still never sync.</li>
+<li><strong>Handoff, Apple Watch, Apple TV and the widget</strong> are now described: what the Watch sends to the iPhone (confirm or decline a draft, and questions for Ask iPhone), the Watch complication label, the read-only Apple TV library, and the Home Screen widget.</li>
+<li><strong>Ask.</strong> Earlier versions said there was no AI in the app. Ask answers library questions with Apple Intelligence on your device, where it is ready; your question is not saved and not sent to us or any hosted AI provider. The app contains, but does not offer, an optional downloadable model; this policy names the three models and says no download or Hugging Face request happens in this version.</li>
+<li><strong>What you can enter.</strong> Earlier versions said there was no Goals surface and no document import. The app has Goals, an Income &amp; Contribution screen, saved scenarios (Pro), notes on check-ins and envelope lines, and statement photos you pick from your photo library, read on your device.</li>
+<li><strong>Notifications.</strong> The weekly check-in is a Pro tool, fires at 19:00 on the weekday you turned it on, and, on iPhone and iPad, a Watch draft also posts one notice while it is on.</li>
+<li><strong>Age range.</strong> On iPhone and iPad, where Apple says the rules apply, the app asks Apple for your age range once and keeps only the result, and a parent or guardian may be asked to approve a significant update.</li>
+<li><strong>Your controls.</strong> Single check-ins and envelope lines can now be corrected or deleted on their own, goals and statement records can be deleted one at a time, and three exports are available. Earlier versions said deletion was all-or-nothing.</li>
+<li><strong>Other corrections.</strong> The app does not store its own copy of your purchases (earlier versions said it kept a transaction record); the app's databases now use stronger file protection on iPhone, iPad and Apple Vision Pro; your records are included in device backups; the app logs Apple's MetricKit performance figures to the device only; and the policy now covers Mac, Apple Vision Pro, Apple Watch and Apple TV.</li>
+</ul>
+<p>Nothing is sent to Prameya, now or before.</p>
+<p><strong>23 August 2026 (previous revision)</strong> recorded the envelope / budget log and removed Hugging Face / on-device model download claims.</p>
+<p>Material changes — for example, offering the on-device model download, adding sync of your records, or adding any feature that sends your content off the device — will also be disclosed inside the app before that feature is used.</p>
 <h2 id="contact">Contact</h2>
 <p>Questions, requests, or corrections: <strong>admin@prameya.legal</strong></p>
 <p>Prameya LLC, United States. Other app policies: <a href="https://prameyallc.github.io/privacy/">prameyallc.github.io/privacy</a>.</p><div class="callout"><h3>Terms of Use</h3><p>The terms governing OmniWealth, including subscription auto-renewal and cancellation, and dispute resolution:</p><p><strong><a href="https://prameyallc.github.io/privacy/omniwealth/terms/">OmniWealth Terms of Use</a></strong></p></div>
@@ -370,7 +465,7 @@ own data and can still export it in its raw form; only the Pro tools stop.</p>
 <footer class="site"><div class="wrap">
   <p>Prameya LLC · <a href="mailto:admin@prameya.legal">admin@prameya.legal</a>
   · <a href="https://prameyallc.github.io/privacy/support/">Support</a></p>
-  <p>Effective 23 August 2026. <a href="https://prameyallc.github.io/privacy/">All app privacy policies</a></p>
+  <p>Effective 23 September 2026. <a href="https://prameyallc.github.io/privacy/">All app privacy policies</a></p>
 </div></footer>
 </body>
 </html>
