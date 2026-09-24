@@ -235,7 +235,7 @@ The Apple Watch app shows the built-in topics, and cards the iPhone sends it ove
 ### Apple TV, Mac, Apple Vision Pro and the widget
 
 - **Apple TV** shows the built-in topic library, and a Continue tab that reads iCloud key-value storage (so it has something to continue only when iCloud Sync is on in OmniDerm on another of your devices). It keeps no journal and offers no Ask and no model download.
-- **Mac and Apple Vision Pro** run the same app as iPhone and iPad, with the same journal, the same iCloud Sync switch and the same Ask; on those devices everything in this policy about "this device" applies to them.
+- **Mac and Apple Vision Pro** run the same app as iPhone and iPad, with the same journal, the same iCloud Sync and Handoff switch and the same Ask; on those devices everything in this policy about "this device" applies to them.
 - **The Home Screen widget** reads the next suggested topic from iCloud key-value storage; with sync off it shows the first topic.
 
 ## Notifications
