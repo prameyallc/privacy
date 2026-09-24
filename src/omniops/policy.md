@@ -123,11 +123,13 @@ Prameya LLC. Privacy contact: **admin@prameya.legal**.
 ## 2. What the app stores on your device
 
 The app writes a journal when you log work, a decision, a reflection or a habit, or set up
-and complete a review cadence. That journal is one JSON file in the app's Application Support
-folder. On iPhone, iPad and Apple Vision Pro that folder is protected so its files cannot be
-read while the device is locked (except a file the app already had open when it locked). On
-Mac the files sit inside the sandboxed app container and are covered by FileVault if it is
-on. There is no Keychain write.
+and complete a review cadence. That journal is one JSON file in a folder of its own inside the
+app's Application Support folder. On iPhone, iPad and Apple Vision Pro that journal folder is
+protected so its files cannot be read while the device is locked (except a file the app already
+had open when it locked). The copy that iCloud sync keeps on iPhone and iPad (in the table
+below) is not in that folder and has the system's standard protection, under which it can be
+read once the device has been unlocked after starting up. On Mac the files sit inside the
+sandboxed app container and are covered by FileVault if it is on. There is no Keychain write.
 
 | What | Where |
 |---|---|
@@ -135,7 +137,7 @@ on. There is no Keychain write.
 | Sync bookkeeping inside the journal file: when each entry last changed, and which entries were deleted and when | **On this device**, in the journal file (kept whether or not sync is on) |
 | Which readings you have opened | **On this device**, next to the journal |
 | The journal as it was just before your last import | **On this device**, next to the journal |
-| With iCloud sync on: a copy of the synced headlines, kept by Apple's iCloud sync | **On this device**, in the app's storage, and in your iCloud (see §4) |
+| Once iCloud sync has been turned on: a copy of the synced headlines, kept by Apple's iCloud sync. **Turn Off** leaves it; **Turn Off and Remove from iCloud** or Erase deletes the headlines | **On this device**, in the app's storage, and in your iCloud (see §4) |
 | Settings: first-run acknowledgement and the date you gave it, appearance, whether Ask answers are on, your Ask-model choice with the model and version it was given for, which model was selected, whether reminders are on, whether iCloud sync is on (and whether it was ever on, and any removal still waiting to reach iCloud), your Pro status | **On this device**, the app's settings |
 | A one-time marker that model files left by earlier versions were removed, and how much space that freed | **On this device**, the app's settings |
 | The optional Ask model's files, only if you chose to download them (see §4) | **On this device**, the app's Caches folder, excluded from backups |
@@ -173,9 +175,12 @@ keeps its own entries and can upload them again. Erase does not delete the downl
 (More ▸ Ask model ▸ **Remove the downloaded model** does), your settings or your Pro status.
 Erase also makes the app forget the reading you last opened and the entry you were editing, so
 their IDs are not saved to iCloud again or put into later Handoff offers, and on iPhone it
-refreshes the Apple Watch's prompts from the now-empty journal. Using the app after Erase saves
-the tab you are on and your appearance choice again, and any reading you open, entry you edit or
-entry you pin from then on.
+refreshes the Apple Watch's prompts from the now-empty journal; an Apple Watch app that is open
+drops its Continue row. Using the app after Erase saves the tab you are on and your appearance
+choice again, and any reading you open, entry you edit or entry you pin from then on. Erase
+does not reach the app's memory on your other devices: another device where OmniCadence is open
+still remembers the reading it last opened, and can save that reading's ID to the key-value items
+again at its next tab change.
 
 **Deleting the app** removes the container on iPhone, iPad and Apple Vision Pro, including
 the journal and any downloaded model. On Mac the sandbox container under
@@ -476,11 +481,17 @@ here.
 - Later the same day, with an app update: Erase used to leave the ID of the reading you last
   opened, and of the entry you were editing, in the app's memory, and the app saved them to the
   iCloud key-value items again at your next tab change. Erase now makes the app forget them, and
-  on iPhone it refreshes the Apple Watch's prompts. The Erase paragraph in §2 says so.
+  on iPhone it refreshes the Apple Watch's prompts; an open Apple Watch app also drops its
+  Continue row. The Erase paragraph in §2 says so, and says that another device where the app is
+  open can save the ID of the reading it last opened again.
+- §2 now says that the copy of the synced headlines kept on the device stays after **Turn Off**
+  (only **Turn Off and Remove from iCloud** or Erase deletes it), and that it does not get the
+  extra locked-device protection of the journal's folder.
 - The app's own descriptions now match this policy: More ▸ iCloud lists every field that sync
   carries and the deletion markers; More ▸ Privacy lists every iCloud key-value item and
-  Handoff; the "Turn off iCloud sync?" dialog says the key-value items stay; and the first-run
-  screen mentions iCloud sync next to export.
+  Handoff; the "Turn off iCloud sync?" dialog says the key-value items stay; the Erase dialog
+  lists every key-value item it removes; and the first-run screen mentions iCloud sync next to
+  export.
 
 The app still sends nothing to Prameya: no analytics, no account, and no server of ours. Earlier
 versions of this policy remain in the public repository that publishes these pages:
