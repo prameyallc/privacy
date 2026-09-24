@@ -45,7 +45,7 @@ OmniDent is a direct-to-consumer app for your own oral care. The tabs a person r
 - show a short care-status line on the Home Screen widget (no photograph), and a care-session timer on the Lock Screen;
 - optionally share brushing and dietary-sugar entries with Apple Health.
 
-**OmniDent has no FDA authorization.** Analysis of dental images for clinical purposes is a regulated activity in the United States. We do not make a blanket "the app does not diagnose" claim, because it would not be true of everything on screen. What each AI feature does with its output is set out in section 4 and section 18. The short form: taking a photo runs no AI model and writes nothing about it; the photo reading shows what the models wrote, headed "This looks like", and can name a condition; Ask checks its answers against a fixed list of condition names. Do not act on any of it. Ask a dentist.
+**OmniDent has no FDA authorization.** Analysis of dental images for clinical purposes is a regulated activity in the United States. We do not make a blanket "the app does not diagnose" claim, because it would not be true of everything on screen. What each AI feature does with its output is set out in section 4 and section 18. The short form: taking a photo runs no AI model, and no model writes anything about it; the photo reading shows what the models wrote, headed "This looks like", and can name a condition; Ask checks its answers against a fixed list of condition names. Do not act on any of it. Ask a dentist.
 
 Some feature descriptions in the app still use dental-condition wording — "caries, erosion, stain & gum risks", "gingival inflammation" — to describe what a feature is about. That is subject-matter wording, not a finding the app has made about your mouth.
 
@@ -110,7 +110,7 @@ Photographs of a person's mouth are sensitive. Here is exactly what happens to t
 
 ### Where they are stored
 
-When you take a photo in OmniDent on iPhone or iPad, the image is written as a JPEG file into the app's own private storage on your device — the `Documents/Scans` folder inside the OmniDent sandbox. A small thumbnail and the date are stored in the app's local database, also on your device, with the caption and view tag if you add them. Taking a photo runs no AI model, so nothing a model wrote is stored with it.
+When you take a photo in OmniDent on iPhone or iPad, the image is written as a JPEG file into the app's own private storage on your device — the `Documents/Scans` folder inside the OmniDent sandbox. A small thumbnail, the date and the view of your mouth it is filed under are stored in the app's local database, also on your device, with the caption and view tag if you add them. Taking a photo runs no AI model, so nothing a model wrote is stored with it.
 
 On iPhone and iPad that storage is protected by iOS Data Protection at the **Complete** level. In practical terms, the files are encrypted with a key tied to your device passcode and are unreadable while the device is locked. This is why OmniDent requires a passcode-protected device to be meaningful — if you have no passcode, iOS has nothing to protect the files with.
 
@@ -186,7 +186,7 @@ When you ask a question or ask the app to read a photo, the image and the text a
 
 ### Taking a photo
 
-Taking a photo runs no AI model. The photo is saved as you took it and nothing is written about it. The only feature that runs a model over a photo is the reading below, and only when you tap its button.
+Taking a photo runs no AI model. The photo is saved as you took it, and no model writes anything about it. The only feature that runs a model over a photo is the reading below, and only when you tap its button.
 
 ### "What this photo looks like"
 
@@ -397,7 +397,7 @@ One line each, because the honest answer is short.
 
 **Export.** **Settings → Privacy & Security → Export My Data** produces a **`.zip` file**, generated entirely on your device, and hands it to the standard iOS share sheet so you can put it wherever you want. Inside it:
 
-- `export.json` — your photo records, the caption and view tag you wrote on each one, your logged care days, your saved what-if scenarios, your claimed partner promotions, your 30-day programme progress and your oral-health profile. The per-scan entries have fields for the coded dental vocabulary terms, capability labels and number of findings of a photo analysis; the app does not analyse a photo when you take it, so they are empty.
+- `export.json` — your photo records, the caption and view tag you wrote on each one, your logged care days, your saved what-if scenarios, your claimed partner promotions, your 30-day programme progress and your oral-health profile. A per-scan entry carries coded dental vocabulary terms, capability labels and a number of findings only where an analysis is saved with that photo. Taking a photo runs no AI model and saves no analysis, so the entry for a photo you take leaves those fields out.
 - `Photos/` — **every photograph you took in OmniDent, at full resolution**, under the file name the matching scan entry gives as `photoFileInExport`. Location and camera details are removed from each copy; if they cannot be removed from a photo, no file is produced and the app tells you which one.
 - `Thumbnails/` — the small preview of each one.
 
@@ -550,7 +550,7 @@ If OmniDent is ever offered through a dental practice or a dental service organi
 We are not replacing that with a blanket "the app does not diagnose" claim. What can be checked:
 
 - **Nothing the app shows you has been reviewed or authorized by any regulator.**
-- **Taking a photo runs no AI model** and writes nothing about the photo.
+- **Taking a photo runs no AI model**, and no model writes anything about the photo.
 - **The "What this photo looks like" reading is not filtered.** It is headed "This looks like", can name a dental condition, and suggests a care step and questions for a dentist.
 - **Ask** checks its answers against a fixed list of dental-condition names and stops when one appears. A word list cannot catch every way of describing a condition, so an answer can still describe one in other words. **Ask iPhone on Apple Watch** does not apply that check.
 - **Do not use anything on those screens to decide whether to seek or delay dental care.**

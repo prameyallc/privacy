@@ -135,7 +135,7 @@ If you live in Washington or Nevada, please read it. It applies to you in additi
 <li>show a short care-status line on the Home Screen widget (no photograph), and a care-session timer on the Lock Screen;</li>
 <li>optionally share brushing and dietary-sugar entries with Apple Health.</li>
 </ul>
-<p><strong>OmniDent has no FDA authorization.</strong> Analysis of dental images for clinical purposes is a regulated activity in the United States. We do not make a blanket "the app does not diagnose" claim, because it would not be true of everything on screen. What each AI feature does with its output is set out in section 4 and section 18. The short form: taking a photo runs no AI model and writes nothing about it; the photo reading shows what the models wrote, headed "This looks like", and can name a condition; Ask checks its answers against a fixed list of condition names. Do not act on any of it. Ask a dentist.</p>
+<p><strong>OmniDent has no FDA authorization.</strong> Analysis of dental images for clinical purposes is a regulated activity in the United States. We do not make a blanket "the app does not diagnose" claim, because it would not be true of everything on screen. What each AI feature does with its output is set out in section 4 and section 18. The short form: taking a photo runs no AI model, and no model writes anything about it; the photo reading shows what the models wrote, headed "This looks like", and can name a condition; Ask checks its answers against a fixed list of condition names. Do not act on any of it. Ask a dentist.</p>
 <p>Some feature descriptions in the app still use dental-condition wording — "caries, erosion, stain &amp; gum risks", "gingival inflammation" — to describe what a feature is about. That is subject-matter wording, not a finding the app has made about your mouth.</p>
 <hr />
 <h2 id="2-subscriptions-and-in-app-purchases">2. Subscriptions and In-App Purchases</h2>
@@ -198,7 +198,7 @@ own data and can still export it in its raw form; only the Pro tools stop.</p>
 <h2 id="3-photographs-of-your-mouth">3. Photographs of your mouth</h2>
 <p>Photographs of a person's mouth are sensitive. Here is exactly what happens to them.</p>
 <h3 id="where-they-are-stored">Where they are stored</h3>
-<p>When you take a photo in OmniDent on iPhone or iPad, the image is written as a JPEG file into the app's own private storage on your device — the <code>Documents/Scans</code> folder inside the OmniDent sandbox. A small thumbnail and the date are stored in the app's local database, also on your device, with the caption and view tag if you add them. Taking a photo runs no AI model, so nothing a model wrote is stored with it.</p>
+<p>When you take a photo in OmniDent on iPhone or iPad, the image is written as a JPEG file into the app's own private storage on your device — the <code>Documents/Scans</code> folder inside the OmniDent sandbox. A small thumbnail, the date and the view of your mouth it is filed under are stored in the app's local database, also on your device, with the caption and view tag if you add them. Taking a photo runs no AI model, so nothing a model wrote is stored with it.</p>
 <p>On iPhone and iPad that storage is protected by iOS Data Protection at the <strong>Complete</strong> level. In practical terms, the files are encrypted with a key tied to your device passcode and are unreadable while the device is locked. This is why OmniDent requires a passcode-protected device to be meaningful — if you have no passcode, iOS has nothing to protect the files with.</p>
 <p>The Mac and Apple Vision Pro apps have no camera capture. Photos taken on your iPhone or iPad are not copied to them.</p>
 <h3 id="where-they-are-not-stored">Where they are not stored</h3>
@@ -248,7 +248,7 @@ own data and can still export it in its raw form; only the Pro tools stop.</p>
 <li>Ask does not read photos. The conversation is kept in memory only while you are on the Ask tab; it is not saved.</li>
 </ul>
 <h3 id="taking-a-photo">Taking a photo</h3>
-<p>Taking a photo runs no AI model. The photo is saved as you took it and nothing is written about it. The only feature that runs a model over a photo is the reading below, and only when you tap its button.</p>
+<p>Taking a photo runs no AI model. The photo is saved as you took it, and no model writes anything about it. The only feature that runs a model over a photo is the reading below, and only when you tap its button.</p>
 <h3 id="what-this-photo-looks-like">"What this photo looks like"</h3>
 <p>On a saved photo, an adult session shows a <strong>Read this photo on-device</strong> button. Tapping it:</p>
 <ol>
@@ -483,7 +483,7 @@ own data and can still export it in its raw form; only the Pro tools stop.</p>
 <p><strong>Retention.</strong> Because your content lives on your device, you decide how long it is kept. We impose no retention period because we hold nothing to retain. If you delete the app, iOS deletes its container and everything in it. What is in your iCloud (section 6) is not removed by deleting the app. Delete All Scans &amp; Data resets your preferences to first-launch values; if iCloud Sync is on, the reset preferences are written back to iCloud. Delete Account &amp; All Data deletes the app's records from your private iCloud database and turns iCloud Sync off on that device; preference syncing then stops completely the next time you open the app (section 5). The continue note is removed when you turn iCloud Sync off or use Delete All Scans &amp; Data, and starts again if iCloud Sync is on on any of your devices.</p>
 <p><strong>Export.</strong> <strong>Settings → Privacy &amp; Security → Export My Data</strong> produces a <strong><code>.zip</code> file</strong>, generated entirely on your device, and hands it to the standard iOS share sheet so you can put it wherever you want. Inside it:</p>
 <ul>
-<li><code>export.json</code> — your photo records, the caption and view tag you wrote on each one, your logged care days, your saved what-if scenarios, your claimed partner promotions, your 30-day programme progress and your oral-health profile. The per-scan entries have fields for the coded dental vocabulary terms, capability labels and number of findings of a photo analysis; the app does not analyse a photo when you take it, so they are empty.</li>
+<li><code>export.json</code> — your photo records, the caption and view tag you wrote on each one, your logged care days, your saved what-if scenarios, your claimed partner promotions, your 30-day programme progress and your oral-health profile. A per-scan entry carries coded dental vocabulary terms, capability labels and a number of findings only where an analysis is saved with that photo. Taking a photo runs no AI model and saves no analysis, so the entry for a photo you take leaves those fields out.</li>
 <li><code>Photos/</code> — <strong>every photograph you took in OmniDent, at full resolution</strong>, under the file name the matching scan entry gives as <code>photoFileInExport</code>. Location and camera details are removed from each copy; if they cannot be removed from a photo, no file is produced and the app tells you which one.</li>
 <li><code>Thumbnails/</code> — the small preview of each one.</li>
 </ul>
@@ -664,7 +664,7 @@ own data and can still export it in its raw form; only the Pro tools stop.</p>
 <p>We are not replacing that with a blanket "the app does not diagnose" claim. What can be checked:</p>
 <ul>
 <li><strong>Nothing the app shows you has been reviewed or authorized by any regulator.</strong></li>
-<li><strong>Taking a photo runs no AI model</strong> and writes nothing about the photo.</li>
+<li><strong>Taking a photo runs no AI model</strong>, and no model writes anything about the photo.</li>
 <li><strong>The "What this photo looks like" reading is not filtered.</strong> It is headed "This looks like", can name a dental condition, and suggests a care step and questions for a dentist.</li>
 <li><strong>Ask</strong> checks its answers against a fixed list of dental-condition names and stops when one appears. A word list cannot catch every way of describing a condition, so an answer can still describe one in other words. <strong>Ask iPhone on Apple Watch</strong> does not apply that check.</li>
 <li><strong>Do not use anything on those screens to decide whether to seek or delay dental care.</strong></li>

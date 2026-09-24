@@ -405,7 +405,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <p>You may ask whether we are collecting, sharing or selling your consumer health data, and to access it — including a list of all third parties and affiliates with whom we have shared it, and contact information for each.</p>
 <p><strong>Fastest route (immediate, no waiting):</strong> <strong>Settings → Privacy &amp; Security → Export My Data</strong> in the app produces a <strong><code>.zip</code> file</strong> of your on-device records, generated on your device and handed to the standard iOS share sheet. Inside it:</p>
 <ul>
-<li><code>export.json</code> — your photo records, the caption and view tag you wrote on each one, your logged care days, your saved what-if scenarios, your claimed partner promotions, your 30-day programme progress, and your oral-health profile. Each scan entry also has fields for the coded dental vocabulary terms, capability labels and number of findings of a photo analysis; the app does not analyse a photo when you take it, so they are empty.</li>
+<li><code>export.json</code> — your photo records, the caption and view tag you wrote on each one, your logged care days, your saved what-if scenarios, your claimed partner promotions, your 30-day programme progress, and your oral-health profile. A scan entry carries coded dental vocabulary terms, capability labels and a number of findings only where an analysis is saved with that photo. Taking a photo runs no AI model and saves no analysis, so the entry for a photo you take leaves those fields out.</li>
 <li><code>Photos/</code> — <strong>every photograph you took in OmniDent, at full resolution</strong>, with location and camera details removed.</li>
 <li><code>Thumbnails/</code> — the small preview of each one.</li>
 </ul>
@@ -586,7 +586,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 </ol>
 <p><strong>24 September 2026 — what changed.</strong></p>
 <ul>
-<li>It removes the category "information derived from those photographs", and the capture note from the sources and the export limits. The previous version said an on-device vision model writes a short note when you capture a photo, kept with the photo, along with coded vocabulary terms and a capture-quality score. OmniDent does none of that: taking a photo saves it and runs no AI model. The one thing an on-device model derives from a photo is the "What this photo looks like" reading, which you start and which is not saved; it keeps its own row. The export description now says its analysis fields are empty.</li>
+<li>It removes the category "information derived from those photographs", and the capture note from the sources and the export limits. The previous version said an on-device vision model writes a short note when you capture a photo, kept with the photo, along with coded vocabulary terms and a capture-quality score. OmniDent does none of that: taking a photo saves it and runs no AI model. The one thing an on-device model derives from a photo is the "What this photo looks like" reading, which you start and which is not saved; it keeps its own row. The export description now says the entry for a photo you take carries no analysis fields.</li>
 </ul>
 <p>Also on 24 September 2026, OmniDent was changed, and this policy describes the app with the change:</p>
 <ul>
