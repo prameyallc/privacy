@@ -268,8 +268,10 @@ below.
 - Delete all now also removes the pack of a drill you started from an Apple Watch prompt.
   Before, it was kept, and turning reminders back on scheduled the 18:00 “drill is waiting”
   reminder for a drill from before the deletion.
-- After Delete all, your iPhone no longer sends the old next-drill title to your Apple Watch.
-  Before, it could, and the Watch then saved that title to iCloud key-value storage again.
+- Delete all now also clears the next-drill title your iPhone keeps in memory for your Apple
+  Watch. Before, the iPhone could send that title to the Watch after the deletion, and the
+  Watch then saved it to iCloud key-value storage again. If a pack is still open, its title is
+  still written again right after the deletion, as section 7 says.
 - Settings in the app are under **More**.
 
 A first version of this page, published earlier on 23 September 2026, said you could download
