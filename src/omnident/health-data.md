@@ -51,7 +51,7 @@ RCW 19.373.020(1)(a)(i) requires us to state the categories of consumer health d
 | **A child's care-day log** *(only if you log care for that child)* | Dates the shorter kids care session was completed for that person | So the parent can see whether today's care was logged for that child. This is not a wellness score |
 | **Oral-health profile** | Age, brushing frequency, sugar intake level, smoking status, whether you have diabetes, whether you have dry mouth, and the goals you choose | To tailor the general information and habit suggestions the app shows you |
 | **Home-care habit logs** | Daily records of brushing, flossing, mouthwash use and sugary drinks, including a brush you confirm from Apple Watch or a reminder notification | To show you your own streaks, trends and progress |
-| **Watch and reminder brush record** | A record, kept on the iPhone for the current day only, of whether you confirmed the morning and the evening brush from Apple Watch, a reminder notification or the Log care action | To tell whether both brushes of the day are done |
+| **Watch and reminder brush record** | A record, kept on the iPhone, of whether you confirmed the morning and the evening brush from Apple Watch, a reminder notification or the Log care action, for the last day on which you confirmed one; each new confirm drops any earlier day | To tell whether both brushes of the day are done |
 | **Programme progress** | Your progress through the in-app 30-day home-care programme | To let you resume where you left off |
 | **Illustrative cost scenarios** | "What if" projections built from figures you enter, and any narrative text generated on-device alongside them | To let you explore an illustrative cost model. These are examples, not predictions about your health |
 | **Care reminder schedule** *(only if you turn reminders on)* | Whether morning and evening reminders are on, and their times | To schedule local notifications on your device. The notifications name no person and no condition |
@@ -343,7 +343,7 @@ Also on 23 September 2026, OmniDent was changed to fix defects that the version 
 - Apple Health writes only while OmniDent's Apple Health switch is on, from every path, and nothing asks iOS for Apple Health permission while it is off. The 30-day programme writes only when you tick the brushing habit done. OmniDent no longer asks to read step count, sleep, mindful minutes or active energy, so that category is removed.
 - Ask iPhone on Apple Watch now respects Enable on-device answers and a child session, and never starts a model download.
 - With iCloud Sync off, Handoff and your Apple Watch get only the tab — not the topic, the record identifier or the active person's name.
-- Delete All Scans & Data now also removes the Watch and reminder brush record (which now keeps the current day only), the visit dates in Spotlight and the reminders already scheduled, and clears the name on your Apple Watch.
+- Delete All Scans & Data now also removes the Watch and reminder brush record (which now keeps only the last day on which you confirmed a brush), the visit dates in Spotlight and the reminders already scheduled, and clears the name on your Apple Watch.
 - Delete Account & All Data now turns iCloud Sync off on that device.
 
 Nothing is sent to Prameya, and no new third party receives your data.
