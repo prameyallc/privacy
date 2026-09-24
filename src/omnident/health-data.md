@@ -1,6 +1,6 @@
 # OmniDent Consumer Health Data Privacy Policy
 
-**Effective date:** 24 September 2026 *(supersedes the 23 September 2026 version; removes the note made at capture, which the app does not make, and the category it sat in; with iCloud Sync off, Handoff no longer carries capture or visit-packet identifiers.)*
+**Effective date:** 24 September 2026 *(supersedes the 23 September 2026 version; removes the note made at capture, which the app does not make, and the category it sat in; with iCloud Sync off, Handoff no longer carries capture or visit-packet identifiers; the free tier shows the three most recent photos and keeps every photo.)*
 **Publisher:** Prameya LLC, a United States limited liability company ("Prameya", "we", "us")
 **Contact:** admin@prameya.legal
 **This policy lives at:** https://prameyallc.github.io/privacy/omnident/health-data/
@@ -130,7 +130,7 @@ Free and Pro:
 
 | What subscription affects | What subscription does NOT affect |
 |---------------------------|-----------------------------------|
-| How much photo history is shown (three recent photos vs full history) | Whether anything the app shows is a diagnosis (never, in any tier) |
+| How much photo history the timeline, compare and visit sheet show (the three most recent photos vs full history; every photo is kept and exported in both tiers) | Whether anything the app shows is a diagnosis (never, in any tier) |
 | Reminder cadence and the print-ready visit sheet | Where photos are stored (on-device in all tiers) |
 | | What goes to your iCloud (the same in every tier) |
 | | What the on-device models may say about your mouth |
