@@ -1,6 +1,6 @@
 # OmniDent Consumer Health Data Privacy Policy
 
-**Effective date:** 23 September 2026 *(supersedes the 20 September 2026 version; adds the iCloud continue note, Handoff and Apple Watch, questions you ask, the photo reading, and care reminders; corrects deletion, Apple Health and purchases.)*
+**Effective date:** 24 September 2026 *(supersedes the 23 September 2026 version; removes the note made at capture, which the app does not make, and the category it sat in; with iCloud Sync off, Handoff no longer carries capture or visit-packet identifiers.)*
 **Publisher:** Prameya LLC, a United States limited liability company ("Prameya", "we", "us")
 **Contact:** admin@prameya.legal
 **This policy lives at:** https://prameyallc.github.io/privacy/omnident/health-data/
@@ -36,7 +36,6 @@ RCW 19.373.020(1)(a)(i) requires us to state the categories of consumer health d
 | Category | What it is | Why it is collected and how it is used |
 |---|---|---|
 | **Photographs of your oral cavity** | Images of your teeth, gums, tongue and mouth taken with the in-app camera on iPhone or iPad | So you can keep a dated visual record of your own mouth over time, and so the on-device AI can produce general educational information about what you are looking at |
-| **Information derived from those photographs** | The short note an on-device vision model writes when you capture a photo (kept with the photo), the coded vocabulary terms and a capture-quality score | To show you educational information and to place a photo in your own timeline. This is not a diagnosis |
 | **The "What this photo looks like" reading** *(only if you tap Read this photo on-device)* | Text an on-device vision model writes about a saved photo, and a reading written from that text by Apple Intelligence or a model you downloaded, headed "This looks like", with one care job and questions for a dentist. It can name a dental condition | To show you what the models wrote. It is not a diagnosis. It is shown on screen and not saved |
 | **Questions you ask, and the answers** | What you type into Ask on the phone, tablet, Mac, Vision Pro or Apple TV, or into Ask iPhone on Apple Watch, and the answer the on-device model writes | To answer you on your device. The conversation is held in memory and not saved. Ask iPhone on Apple Watch is not answered while on-device answers are off or a child session is active |
 | **Marks you draw on a photograph** | A rectangle you draw on a photo of your own mouth, kept so a later photo can show the same place | So you can compare the spot you marked. The app does not name a tooth condition from the mark |
@@ -72,7 +71,7 @@ RCW 19.373.020(1)(a)(ii) requires the categories of sources. There are four, and
 1. **You, directly** — habit logs, profile answers, goals, notes, questions you ask, cost-model inputs, household names, and a child's display name you type in; and taps you make on your Apple Watch.
 2. **Your device's camera**, when you take a photo in the app on iPhone or iPad (including a photo of a child's mouth, if you take one).
 3. **Files you pick**, when you add a document to Record or open a household transfer file with the system file picker. OmniDent receives only the file you pick. It has no permission to read your photo library.
-4. **The on-device models**, which derive the capture note and the photo reading from your photos, and answers from your questions.
+4. **The on-device models**, which derive the photo reading from a photo when you ask for one, and answers from your questions. Taking a photo runs no model.
 
 We obtain consumer health data from **no other source**. We do not buy it, rent it, receive it from data brokers, receive it from health care providers, infer it from third-party sources, or derive it from advertising identifiers.
 
@@ -86,7 +85,7 @@ We obtain consumer health data from **no other source**. We do not buy it, rent 
 - **Your own iCloud, for two things, while iCloud Sync is on** (it is on unless you turn it off, at Settings → iCloud Sync):
     - **App preferences** (which models you prefer, whether on-device answers are on, the auto-save setting, whether and when you acknowledged the wellness disclaimer, which models are downloaded), in your private CloudKit database. The set of records permitted there is pinned by an allow-list in the app to that one preferences record; photographs, analyses, the profile, habit logs, household people, visits and documents are classified so they cannot sync.
     - **The continue note** (tab, last topic identifier, last photo-record identifier, active person's display name), and your appearance choice, in iCloud's key-value store for this app. Apple TV reads it from there and shows the name. Turning iCloud Sync off removes it from iCloud straight away; so does Delete All Scans & Data.
-- **Handoff**, to your nearby devices signed in to the same Apple Account, carries the same continue note while iCloud Sync is on, and **only the tab while it is off**; while you are taking a set of photos or have a visit packet open, it instead carries random identifiers of that capture session or packet, of the mouth record and of a visit, and which photo views of an unfinished set are done, whether or not iCloud Sync is on.
+- **Handoff**, to your nearby devices signed in to the same Apple Account, carries the same continue note while iCloud Sync is on — or, while you are taking a set of photos or have a visit packet open, random identifiers of that capture session or packet, of the mouth record and of a visit, and which photo views of an unfinished set are done — and **only the tab while it is off**, during a set of photos or with a packet open as well.
 - **Your paired Apple Watch** receives the continue note from the iPhone, and shows the active person's name, while iCloud Sync is on; with it off, the Watch gets only the tab.
 - **A household transfer file** you make yourself is names and roles, sealed with a passphrase you type. Photographs, visits and documents stay on the sending device.
 
@@ -158,7 +157,7 @@ Some of your data does leave the device and go to Apple — into your own iCloud
 |---|---|---|
 | **Apple** — iCloud / CloudKit | App preferences and interface state, held in **your** private iCloud database under **your** Apple Account, while iCloud Sync is on | No |
 | **Apple** — iCloud key-value store | The continue note — tab, the identifier of the last education topic you opened, a photo-record identifier, the active household person's display name — and your appearance choice, held in **your** iCloud account while iCloud Sync is on | The topic identifier can reveal what you were reading about, and the name identifies a person in your household. We list it here for that reason. Apple holds it as your iCloud provider; Prameya cannot read it |
-| **Apple** — Handoff | The same continue note, passed to your own nearby devices on the same Apple Account, while iCloud Sync is on; only the tab while it is off | As above |
+| **Apple** — Handoff | The same continue note — or, during a set of photos or with a visit packet open, random identifiers of it, the mouth record and a visit, and which photo views are done — passed to your own nearby devices on the same Apple Account, while iCloud Sync is on; only the tab while it is off | As above |
 | **Apple** — StoreKit / App Store | Purchase and entitlement checks | No |
 | **Apple** — Sign in with Apple | The sign-in exchange, if you choose to sign in | No |
 | **Apple** — Apple Health | Toothbrushing and dietary sugar entries you logged, written into **your** Health store on **your** device, only while OmniDent's Apple Health switch is on | Yes. It is written into your own device's Health store; Apple does not receive it from us for any purpose of theirs |
@@ -192,13 +191,13 @@ You may ask whether we are collecting, sharing or selling your consumer health d
 
 **Fastest route (immediate, no waiting):** **Settings → Privacy & Security → Export My Data** in the app produces a **`.zip` file** of your on-device records, generated on your device and handed to the standard iOS share sheet. Inside it:
 
-- `export.json` — your photo records, the caption and view tag you wrote on each one, your logged care days, your saved what-if scenarios, your claimed partner promotions, your 30-day programme progress, and your oral-health profile. Each scan entry also carries the coded dental vocabulary terms derived from that photo's analysis, the capability labels, and the number of findings.
+- `export.json` — your photo records, the caption and view tag you wrote on each one, your logged care days, your saved what-if scenarios, your claimed partner promotions, your 30-day programme progress, and your oral-health profile. Each scan entry also has fields for the coded dental vocabulary terms, capability labels and number of findings of a photo analysis; the app does not analyse a photo when you take it, so they are empty.
 - `Photos/` — **every photograph you took in OmniDent, at full resolution**, with location and camera details removed.
 - `Thumbnails/` — the small preview of each one.
 
 Where a photograph's file is no longer on your device, the record is still exported and marked `photoFileMissingOnDisk`, with the thumbnail, rather than dropped. Where a photograph is on your device and cannot be read, no file is produced at all and the app names the file: an export that looks complete and is short one picture is the failure this rule exists to prevent.
 
-One limit worth knowing when you use it as an access request: the export covers the records listed above and **not** everything the app holds. Not in the file: the note made at capture, the photo reading (which is never saved), household people and names, visits, plan lines, documents, visit packets, marks and notes on a photo, the Watch and reminder brush record, and the settings-store items — care-day history, profile names, Smile Points, widget snapshot, reminder schedule and the cost-model sliders. They are on your device and visible in the app. Email **admin@prameya.legal** if you want help getting at them.
+One limit worth knowing when you use it as an access request: the export covers the records listed above and **not** everything the app holds. Not in the file: the photo reading (which is never saved), household people and names, visits, plan lines, documents, visit packets, marks and notes on a photo, the Watch and reminder brush record, and the settings-store items — care-day history, profile names, Smile Points, widget snapshot, reminder schedule and the cost-model sliders. They are on your device and visible in the app. Email **admin@prameya.legal** if you want help getting at them.
 
 **Formal route:** email **admin@prameya.legal**. We will confirm in writing that we hold no consumer health data about you on any Prameya system, that we have shared none, and that we have sold none. What is in your own iCloud (the preferences and the continue note) is in your Apple Account, and the in-app controls below remove it.
 
@@ -215,7 +214,7 @@ You may withdraw consent to our collection and sharing of your consumer health d
 | Apple Health | OmniDent → Settings → Apple Health → off stops every write and every Apple Health permission request from OmniDent. iOS Settings → Health → Data Access & Devices → OmniDent revokes the permission itself |
 | Care reminders | OmniDent → Settings → Care reminders, or iOS Settings → Notifications → OmniDent |
 | iCloud sync, and the continue note in iCloud | OmniDent → Settings → iCloud Sync → off, on each of your devices (the switch is per device, and a device where it is still on keeps writing its own continue note). The continue note is removed from iCloud at once; preference syncing stops the next time you open the app |
-| Handoff | Turn Handoff off in your device's settings (on iPhone: Settings → General → AirPlay & Continuity) |
+| Handoff | Turn Handoff off in your device's settings (on iPhone: Settings → General → AirPlay & Continuity). With OmniDent's iCloud Sync off, Handoff carries the tab alone |
 | Everything at once | Delete All Scans & Data, turn iCloud Sync off, then delete the app. Deleting the app alone removes its container but not what is in your iCloud |
 
 Withdrawing consent does not undo processing that already happened, and it does not by itself delete data. Use the deletion right for that.
@@ -328,6 +327,16 @@ If we change the categories of consumer health data we collect, add a source, ad
 1. update this policy and change the effective date;
 2. **obtain your affirmative consent before collecting or processing for the new category or purpose**, as RCW 19.373.020(1)(c) and (1)(d) require — before the change takes effect, not after;
 3. show an in-app notice describing what changed.
+
+**24 September 2026 — what changed.**
+
+- It removes the category "information derived from those photographs", and the capture note from the sources and the export limits. The previous version said an on-device vision model writes a short note when you capture a photo, kept with the photo, along with coded vocabulary terms and a capture-quality score. OmniDent does none of that: taking a photo saves it and runs no AI model. The one thing an on-device model derives from a photo is the "What this photo looks like" reading, which you start and which is not saved; it keeps its own row. The export description now says its analysis fields are empty.
+
+Also on 24 September 2026, OmniDent was changed, and this policy describes the app with the change:
+
+- With iCloud Sync off, Handoff no longer carries the random identifiers of a set of photos you are taking or of a visit packet you have open, of the mouth record or of a visit, or which photo views are done. It carries the tab alone, as the continue note already did. With iCloud Sync on it carries them as before, and the list of what Apple receives now names them.
+
+No category, source, purpose or recipient is added, and nothing is sent to Prameya.
 
 **23 September 2026 — what changed.** We re-read the app as it is built today and corrected this policy:
 

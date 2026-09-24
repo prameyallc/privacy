@@ -1,6 +1,6 @@
 # OmniDent Privacy Policy
 
-**Effective date:** 23 September 2026 *(supersedes the 20 September 2026 version; iCloud key-value store and Handoff, Ask and the photo reading, Apple Watch and Apple TV, care reminders, and corrections to what deletion and purchases do)*
+**Effective date:** 24 September 2026 *(supersedes the 23 September 2026 version; removes the note made at capture, which the app does not make; with iCloud Sync off, Handoff no longer carries capture or visit-packet identifiers; Ask iPhone on Apple Watch answers with any text model you downloaded)*
 **Publisher:** Prameya LLC, a United States limited liability company ("Prameya", "we", "us")
 **Contact:** admin@prameya.legal
 **This policy lives at:** https://prameyallc.github.io/privacy/omnident/
@@ -33,7 +33,7 @@
 OmniDent is a direct-to-consumer app for your own oral care. The tabs a person reads are **You / Record / Do / Ask / More**. Capture is a full-screen cover, not a tab. It lets you:
 
 - take photographs of your mouth with the in-app camera (iPhone and iPad only), and keep them as a dated record;
-- run an on-device AI model over a photo — a short note when you capture it, and a longer "What this photo looks like" reading when you ask for one on a saved photo;
+- run an on-device AI model over a saved photo when you ask for a "What this photo looks like" reading (taking a photo runs no AI model);
 - ask questions in **Ask**, answered by Apple Intelligence on your device or by a model you downloaded;
 - log daily habits such as brushing, flossing, mouthwash and sugary drinks;
 - log visits you attended and drop a treatment plan, radiograph, clinic photo, receipt or EOB into Record — those files stay in the app container;
@@ -45,7 +45,7 @@ OmniDent is a direct-to-consumer app for your own oral care. The tabs a person r
 - show a short care-status line on the Home Screen widget (no photograph), and a care-session timer on the Lock Screen;
 - optionally share brushing and dietary-sugar entries with Apple Health.
 
-**OmniDent has no FDA authorization.** Analysis of dental images for clinical purposes is a regulated activity in the United States. We do not make a blanket "the app does not diagnose" claim, because it would not be true of everything on screen. What each AI feature does with its output is set out in section 4 and section 18. The short form: the note made at capture is dropped if it uses a word from a fixed list of condition names; the photo reading shows what the models wrote, headed "This looks like", and can name a condition; Ask checks its answers against the same word list. Do not act on any of it. Ask a dentist.
+**OmniDent has no FDA authorization.** Analysis of dental images for clinical purposes is a regulated activity in the United States. We do not make a blanket "the app does not diagnose" claim, because it would not be true of everything on screen. What each AI feature does with its output is set out in section 4 and section 18. The short form: taking a photo runs no AI model and writes nothing about it; the photo reading shows what the models wrote, headed "This looks like", and can name a condition; Ask checks its answers against a fixed list of condition names. Do not act on any of it. Ask a dentist.
 
 Some feature descriptions in the app still use dental-condition wording — "caries, erosion, stain & gum risks", "gingival inflammation" — to describe what a feature is about. That is subject-matter wording, not a finding the app has made about your mouth.
 
@@ -110,7 +110,7 @@ Photographs of a person's mouth are sensitive. Here is exactly what happens to t
 
 ### Where they are stored
 
-When you take a photo in OmniDent on iPhone or iPad, the image is written as a JPEG file into the app's own private storage on your device — the `Documents/Scans` folder inside the OmniDent sandbox. A small thumbnail and some metadata (the date, a capture-quality number, the analysis output) are stored in the app's local database, also on your device.
+When you take a photo in OmniDent on iPhone or iPad, the image is written as a JPEG file into the app's own private storage on your device — the `Documents/Scans` folder inside the OmniDent sandbox. A small thumbnail and the date are stored in the app's local database, also on your device, with the caption and view tag if you add them. Taking a photo runs no AI model, so nothing a model wrote is stored with it.
 
 On iPhone and iPad that storage is protected by iOS Data Protection at the **Complete** level. In practical terms, the files are encrypted with a key tied to your device passcode and are unreadable while the device is locked. This is why OmniDent requires a passcode-protected device to be meaningful — if you have no passcode, iOS has nothing to protect the files with.
 
@@ -175,7 +175,7 @@ OmniDent uses two kinds of on-device model:
 - **Apple Intelligence** — Apple's on-device language model, built into iOS, iPadOS, macOS and visionOS where you have turned Apple Intelligence on. OmniDent downloads nothing for it.
 - **Open models you download**, run with Apple's MLX framework on your device's own chip (section "Model files come from Hugging Face" below).
 
-When you ask a question or ask the app to read a photo, the image and the text are processed in memory on your device. **They are not transmitted to Prameya, to a cloud AI provider, or to anyone else.** There is no remote inference path in the app, and no remote fallback. **Settings → General → Enable on-device answers** switches off Ask, the photo reading, and Ask iPhone on Apple Watch (section 6). It does not switch off the note made at capture.
+When you ask a question or ask the app to read a photo, the image and the text are processed in memory on your device. **They are not transmitted to Prameya, to a cloud AI provider, or to anyone else.** There is no remote inference path in the app, and no remote fallback. **Settings → General → Enable on-device answers** switches off Ask, the photo reading, and Ask iPhone on Apple Watch (section 6). Taking a photo runs no model, with the switch on or off.
 
 ### Ask
 
@@ -184,9 +184,9 @@ When you ask a question or ask the app to read a photo, the image and the text a
 - Each answer is checked, a sentence at a time, against a fixed list of dental-condition words. If a sentence uses one, the answer stops there, or is replaced by a line saying the app will not name a condition. **This is a word list, not a safety review:** an answer can still describe a condition in other words.
 - Ask does not read photos. The conversation is kept in memory only while you are on the Ask tab; it is not saved.
 
-### The note made at capture
+### Taking a photo
 
-If you have downloaded a vision model, OmniDent loads it when the app starts, and each photo you capture gets a short note from that model, stored with the photo on your device. If the note uses a word from the list above, the note is dropped and the photo is kept without it. The note has no confidence score.
+Taking a photo runs no AI model. The photo is saved as you took it and nothing is written about it. The only feature that runs a model over a photo is the reading below, and only when you tap its button.
 
 ### "What this photo looks like"
 
@@ -260,7 +260,7 @@ Your app preferences sync between your devices through **CloudKit**, into **your
 
 | Syncs | Does not sync |
 |---|---|
-| App preferences (which AI models you prefer, whether on-device answers are on, the auto-save-to-Photos setting, the iCloud Sync setting) | Photographs, thumbnails and the note made at capture |
+| App preferences (which AI models you prefer, whether on-device answers are on, the auto-save-to-Photos setting, the iCloud Sync setting) | Photographs and thumbnails |
 | Interface state (whether you have seen the welcome screen; whether, and when, you acknowledged the wellness disclaimer) | Your health profile (age, brushing frequency, sugar intake, smoking, diabetes, dry mouth) |
 | The list of models you have downloaded | Habit logs, cost scenarios and 30-day programme progress |
 | | Household people and mouths, visits, plan lines, documents, visit packets, and marks you draw on a photo |
@@ -291,7 +291,7 @@ Deleting the app from one device does not by itself remove these entries, or you
 
 ### Handoff
 
-While you use OmniDent on iPhone, iPad, Mac or Apple Vision Pro, it tells Apple's **Handoff** where you are, so a nearby device signed in to the same Apple Account can offer to open the same place. While iCloud Sync is on, the Handoff message carries the same continue note described above — tab, topic identifier, photo-record identifier and the active person's name. **With iCloud Sync off it carries only the tab.** Its title names the tab, never the topic. While you are taking a set of photos, or have a visit packet open, it can instead carry random identifiers of that capture session or packet, of the mouth record and of a visit, and which photo views of an unfinished set are done (for example the upper or lower arch); these travel whether or not iCloud Sync is on. It never carries a photo or a file path, and OmniDent does not add it to Spotlight. You can turn Handoff off for all apps in your device's settings (on iPhone: Settings → General → AirPlay & Continuity).
+While you use OmniDent on iPhone, iPad, Mac or Apple Vision Pro, it tells Apple's **Handoff** where you are, so a nearby device signed in to the same Apple Account can offer to open the same place. While iCloud Sync is on, the Handoff message carries the same continue note described above — tab, topic identifier, photo-record identifier and the active person's name. **With iCloud Sync off it carries only the tab.** Its title names the tab, never the topic. While you are taking a set of photos, or have a visit packet open, and iCloud Sync is on, it can instead carry random identifiers of that capture session or packet, of the mouth record and of a visit, and which photo views of an unfinished set are done (for example the upper or lower arch). **With iCloud Sync off, those identifiers do not travel either:** a set of photos or an open packet hands off the tab alone. It never carries a photo or a file path, and OmniDent does not add it to Spotlight. You can turn Handoff off for all apps in your device's settings (on iPhone: Settings → General → AirPlay & Continuity).
 
 ### Apple Watch
 
@@ -300,7 +300,7 @@ The Apple Watch app works with the iPhone app over Apple's paired-device connect
 - **Learn** shows the reference library, which is inside the Watch app.
 - **Now** shows the built-in care prompts (morning brush, evening brush, start a care session, log sugar). Tapping **Confirm** on a brush prompt records a brushing in the habit log on your iPhone and, if OmniDent's Apple Health switch is on, writes a toothbrushing entry to Apple Health (section 7). **Snooze** schedules a reminder on the iPhone only if you have turned care reminders on.
 - While iCloud Sync is on, the iPhone sends the Watch the current continue note, so the Watch can show **the active person's name** and offer the last topic. With iCloud Sync off it sends only the tab, and after **Delete All Scans & Data** it tells the Watch to clear the name.
-- **Ask iPhone** (under More) sends the question you type to OmniDent on your paired iPhone. The iPhone answers with a text model already downloaded there (Qwen2.5 0.5B), using passages from the built-in library, and sends the answer back. It does not use Apple Intelligence, and it does not apply the word-list check described in section 4 (a short list of question words, such as "diagnose", gets a fixed reply instead). It does not answer while OmniDent's **Enable on-device answers** switch is off or while a child session is active on the iPhone; the Watch shows a line saying why. **It never starts a download:** if the model is not on your iPhone, the Watch is told to download it in Manage Models. The question and answer are not saved.
+- **Ask iPhone** (under More) sends the question you type to OmniDent on your paired iPhone. The iPhone answers with a text model already downloaded there — the one Ask iPhone last used (Qwen2.5 0.5B at first) if it is still on the iPhone, otherwise any other text model you downloaded (Qwen2.5 0.5B or Gemma 4 E2B) — using passages from the built-in library, and sends the answer back. It does not use Apple Intelligence, and it does not apply the word-list check described in section 4 (a short list of question words, such as "diagnose", gets a fixed reply instead). It does not answer while OmniDent's **Enable on-device answers** switch is off or while a child session is active on the iPhone; the Watch shows a line saying why. **It never starts a download:** if no text model is on your iPhone, the Watch is told to download one in Manage Models. The question and answer are not saved.
 
 ### Apple TV
 
@@ -350,7 +350,7 @@ The Home Screen widget shows one care-status line (no photograph) that the app w
 | `huggingface.co` | Requests for AI model files | Only when you tap Download in Manage Models | No |
 | Apple iCloud (CloudKit), your private database | App preferences and interface state; a request to delete the app's zone when you delete your account | While iCloud Sync is on, and at account deletion | No health data |
 | Apple iCloud key-value store, your account | The continue note: tab, last topic identifier, last photo-record identifier, **active person's name**; and your appearance choice | While iCloud Sync is on | The topic identifier can reveal what you read about; see section 6 |
-| Apple Handoff, to your nearby devices | The same continue note while iCloud Sync is on, and only the tab while it is off; or, during a capture or with a visit packet open, random identifiers of it, the mouth record and a visit, and which photo views are done | While you use the app | As above, while iCloud Sync is on |
+| Apple Handoff, to your nearby devices | While iCloud Sync is on: the same continue note, or, during a capture or with a visit packet open, random identifiers of it, the mouth record and a visit, and which photo views are done. While it is off: only the tab | While you use the app | As above, while iCloud Sync is on |
 | Your paired Apple Watch (WatchConnectivity) | The continue note (only the tab while iCloud Sync is off) and care prompts to the Watch; your taps and Ask questions to the iPhone, and the answers back | When the iPhone app connects to the Watch, and when you use the Watch app | Your Ask question, and the active person's name while iCloud Sync is on |
 | Apple (Sign in with Apple) | The sign-in exchange, and iOS's check of whether it is still valid | Only if you choose to sign in | No |
 | Apple StoreKit / App Store | Purchase, restore and entitlement checks; the review prompt if you tap Rate OmniDent | When you buy or restore, and when the app checks whether you have Pro | No health content |
@@ -397,13 +397,13 @@ One line each, because the honest answer is short.
 
 **Export.** **Settings → Privacy & Security → Export My Data** produces a **`.zip` file**, generated entirely on your device, and hands it to the standard iOS share sheet so you can put it wherever you want. Inside it:
 
-- `export.json` — your photo records, the caption and view tag you wrote on each one, your logged care days, your saved what-if scenarios, your claimed partner promotions, your 30-day programme progress and your oral-health profile. The per-scan entries include the coded dental vocabulary terms derived from each photo's analysis, alongside the capability labels and the number of findings.
+- `export.json` — your photo records, the caption and view tag you wrote on each one, your logged care days, your saved what-if scenarios, your claimed partner promotions, your 30-day programme progress and your oral-health profile. The per-scan entries have fields for the coded dental vocabulary terms, capability labels and number of findings of a photo analysis; the app does not analyse a photo when you take it, so they are empty.
 - `Photos/` — **every photograph you took in OmniDent, at full resolution**, under the file name the matching scan entry gives as `photoFileInExport`. Location and camera details are removed from each copy; if they cannot be removed from a photo, no file is produced and the app tells you which one.
 - `Thumbnails/` — the small preview of each one.
 
 If a photograph's file is missing from your device — it was removed outside the app, for example — the scan entry is still exported, marked `photoFileMissingOnDisk`, with the thumbnail. It is not quietly dropped, and the file does not claim a picture it does not carry. If a photograph is on your device and cannot be read, no file is produced at all and the app tells you which one: a short export that looks complete is worse than no export.
 
-The file does **not** contain: the text of the note made at capture, the photo reading, household names, visits, plan lines, documents, visit packets, marks you drew, or the settings-store items (care-day history, Smile Points, widget snapshot, reminder schedule, cost-model sliders). Email admin@prameya.legal if you need help getting at any of those; they are on your device, not with us.
+The file does **not** contain: the photo reading, household names, visits, plan lines, documents, visit packets, marks you drew, or the settings-store items (care-day history, Smile Points, widget snapshot, reminder schedule, cost-model sliders). Email admin@prameya.legal if you need help getting at any of those; they are on your device, not with us.
 
 **Deletion.**
 
@@ -484,7 +484,7 @@ If you live in California, the California Consumer Privacy Act as amended by the
 | Sensitive personal information — health data | Mouth photographs, oral-health profile, habit logs, analysis output, questions you ask; the last education topic you opened, in your iCloud key-value store | No |
 | Internet or network activity | The connection to Hugging Face when a model downloads | No |
 
-**We do not sell personal information, and we do not share it for cross-context behavioural advertising.** We have not done either in the preceding 12 months. We do not use or disclose sensitive personal information for any purpose other than the purposes permitted under the CCPA regulations without your direction — in practice, we do not receive it at all, so the "limit the use of my sensitive personal information" right has nothing to operate on. We provide the control anyway: turning off on-device answers, iCloud Sync and Apple Health stops most of that processing — sections 4 and 6 list what those switches do not stop (the note made at capture, and Handoff, which still carries the tab and, during a capture or with a visit packet open, random identifiers).
+**We do not sell personal information, and we do not share it for cross-context behavioural advertising.** We have not done either in the preceding 12 months. We do not use or disclose sensitive personal information for any purpose other than the purposes permitted under the CCPA regulations without your direction — in practice, we do not receive it at all, so the "limit the use of my sensitive personal information" right has nothing to operate on. We provide the control anyway: turning off on-device answers, iCloud Sync and Apple Health stops most of that processing — section 6 lists what those switches do not stop (Handoff, which still carries the tab).
 
 **Your rights** are to know, to access, to correct, to delete, to opt out of sale or sharing, to limit the use of sensitive personal information, and not to be discriminated against for exercising any of them.
 
@@ -550,9 +550,9 @@ If OmniDent is ever offered through a dental practice or a dental service organi
 We are not replacing that with a blanket "the app does not diagnose" claim. What can be checked:
 
 - **Nothing the app shows you has been reviewed or authorized by any regulator.**
-- **The note made at capture** is dropped if it uses a word from a fixed list of dental-condition names, and carries no confidence score. A word list cannot catch every way of describing a condition.
+- **Taking a photo runs no AI model** and writes nothing about the photo.
 - **The "What this photo looks like" reading is not filtered.** It is headed "This looks like", can name a dental condition, and suggests a care step and questions for a dentist.
-- **Ask** checks its answers against the same word list and stops when one appears; it can still describe a condition in other words. **Ask iPhone on Apple Watch** does not apply that check.
+- **Ask** checks its answers against a fixed list of dental-condition names and stops when one appears. A word list cannot catch every way of describing a condition, so an answer can still describe one in other words. **Ask iPhone on Apple Watch** does not apply that check.
 - **Do not use anything on those screens to decide whether to seek or delay dental care.**
 
 If something in your mouth hurts, bleeds, changes, or worries you, see a dentist. Do not wait for an app.
@@ -562,6 +562,17 @@ If something in your mouth hurts, bleeds, changes, or worries you, see a dentist
 ## 19. Changes to this policy
 
 We will update this policy when the app's behaviour changes — and we will update it **before** the change ships, not after.
+
+**24 September 2026 — what changed.**
+
+- It no longer describes a note made at capture. The previous version said that, once you had downloaded a vision model, each photo you take gets a short note from that model, stored with the photo, and that switching off on-device answers did not stop it. OmniDent does not do that: taking a photo saves it and runs no AI model, and nothing a model wrote is stored with a photo. The one feature that runs a model over a photo is the "What this photo looks like" reading, which you start and which is not saved. Sections 1, 3, 4, 6, 10, 13 and 18 are corrected.
+
+Also on 24 September 2026, OmniDent was changed, and this policy describes the app with those changes:
+
+- With iCloud Sync off, Handoff no longer carries the random identifiers of a set of photos you are taking or of a visit packet you have open, of the mouth record or of a visit, or which photo views are done. It carries the tab alone, as the continue note already did.
+- Ask iPhone on Apple Watch answers with any text model you downloaded. It used to answer only with Qwen2.5 0.5B, so if you had downloaded only Gemma 4 E2B the Watch was told to download Qwen2.5 0.5B. It still never starts a download.
+
+No Prameya server was added, and nothing is sent to Prameya.
 
 **23 September 2026 — what changed.** We re-read the app as it is built today and corrected this policy where it was wrong or silent:
 
