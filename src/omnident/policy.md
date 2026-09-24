@@ -1,6 +1,6 @@
 # OmniDent Privacy Policy
 
-**Effective date:** 24 September 2026 *(supersedes the 23 September 2026 version; removes the note made at capture, which the app does not make; with iCloud Sync off, Handoff no longer carries capture or visit-packet identifiers; Ask iPhone on Apple Watch answers with any text model you downloaded)*
+**Effective date:** 24 September 2026 *(supersedes the 23 September 2026 version; removes the note made at capture, which the app does not make; with iCloud Sync off, Handoff no longer carries capture or visit-packet identifiers; Ask iPhone on Apple Watch answers with any text model you downloaded; the free tier takes as many photos as you like and shows the three most recent)*
 **Publisher:** Prameya LLC, a United States limited liability company ("Prameya", "we", "us")
 **Contact:** admin@prameya.legal
 **This policy lives at:** https://prameyallc.github.io/privacy/omnident/
@@ -68,7 +68,7 @@ Family Sharing is enabled on all three. Subscriptions renew until you cancel in
 Settings; Lifetime is a one-time non-consumable.
 
 **The knowledge layer is free and stays free.** Without paying anything you get
-your routine, the reference library and a visit-prep outline, with no account and no time limit. Pro adds full photo history, cadence reminders and the visit sheet.
+your routine, the reference library, a visit-prep outline and the visit sheet, with no account and no time limit. You can take as many photos as you like; the free timeline, compare and visit sheet show your three most recent, and every photo stays on your device and in your export. Pro adds full photo history, cadence reminders and the print-ready visit sheet.
 
 **Pro does not add cloud sync, and there is no paid iCloud option.** OmniDent stores your
 records on your device in every case, paid or not. If a subscription lapses you keep your
@@ -79,8 +79,8 @@ own data and can still export it in its raw form; only the Pro tools stop.
 
 **Both tiers process the same consumer health data** (listed in the [Consumer Health Data Privacy Policy](https://prameyallc.github.io/privacy/omnident/health-data/)).
 
-- **Free:** Photos analysed on-device, habits logged locally, your routine, the reference library and a visit-prep outline
-- **With Pro:** Photos analysed on-device (same models), full photo history, habits logged locally, cadence reminders and the visit sheet
+- **Free:** Photos analysed on-device, as many photos as you like with the three most recent shown, habits logged locally, your routine, the reference library, a visit-prep outline and the visit sheet
+- **With Pro:** Photos analysed on-device (same models), full photo history, habits logged locally, cadence reminders and the print-ready visit sheet
 
 In both tiers:
 - Photos stay on your device
