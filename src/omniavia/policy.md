@@ -198,14 +198,15 @@ reminder.
   study, prep and oral-drill record and progress snapshot after you confirm. When iCloud is
   on, the deletion also syncs to your private iCloud database, so the records disappear from
   your other devices too. It also removes the iCloud “continue”, pack-title, next-drill and
-  widget entries, pending reminders, your reminder switch and goals, and any model files left
-  in the app's model cache. It cannot be undone.
+  widget entries, pending reminders, your reminder switch and goals, the pack of a drill you
+  started from an Apple Watch prompt, and any model files left in the app's model cache. It
+  cannot be undone.
 - **Kept after Delete all:** your appearance choice (on this device and in iCloud key-value
   storage), the Ask on/off switch, the first-run acknowledgement (so the disclaimer screen
-  does not return), the pack of a drill you started from an Apple Watch prompt, and the Pro flag and
-  product ID described above. Right after the deletion the app returns to Home and writes new
-  “continue” and widget entries (and, if a pack is still open, its title as the pack-title and
-  next-drill entries) for where you are then, and it keeps them current as you go on using the app.
+  does not return), and the Pro flag and product ID described above. Right after the
+  deletion the app returns to Home and writes new “continue” and widget entries (and, if a
+  pack is still open, its title as the pack-title and next-drill entries) for where you are
+  then, and it keeps them current as you go on using the app.
 - **Delete the app** removes this device's copy. Records already synced stay in your iCloud
   account until you delete them in the app on another device, or manage OmniAvia's data in
   iOS Settings → your name → iCloud.
@@ -264,6 +265,13 @@ below.
 - Reminders are off until you switch them on, and a tap on a reminder never writes a record.
 - Delete all clears the iCloud “continue” entries but keeps your Pro status, appearance
   choice and a few settings, which are now listed.
+- Delete all now also removes the pack of a drill you started from an Apple Watch prompt.
+  Before, it was kept, and turning reminders back on scheduled the 18:00 “drill is waiting”
+  reminder for a drill from before the deletion.
+- Delete all now also clears the next-drill title your iPhone keeps in memory for your Apple
+  Watch. Before, the iPhone could send that title to the Watch after the deletion, and the
+  Watch then saved it to iCloud key-value storage again. If a pack is still open, its title is
+  still written again right after the deletion, as section 7 says.
 - Settings in the app are under **More**.
 
 A first version of this page, published earlier on 23 September 2026, said you could download
