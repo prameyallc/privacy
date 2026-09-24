@@ -123,7 +123,7 @@ The app database is included in Apple's normal device backup (iCloud Backup or a
 
 ## iCloud, Handoff and your other devices
 
-**Sync with iCloud is off until you turn it on**, in **More ▸ iCloud ▸ Sync with iCloud** on your iPhone, iPad, Mac or Apple Vision Pro. It is off on a new install. It is also off after this update on a device that ran an earlier pre-release build, where sync ran whenever the device was signed in to iCloud: there was no switch then, so there is no earlier choice to carry over, and being signed in to iCloud is not a choice to sync. The switch is set on each device separately.
+**Sync with iCloud is off until you turn it on**, in **More ▸ iCloud ▸ Sync with iCloud** on your iPhone, iPad, Mac or Apple Vision Pro. It is off on a new install. It is also off after this update on a device that ran an earlier pre-release build, where sync ran whenever the device was signed in to iCloud: there was no switch then, so there is no earlier choice to carry over, and being signed in to iCloud is not a choice to sync. On such a device, the first time the updated app opens it also removes the key-value items the earlier build put in iCloud (the "where you left off" row of the table above), as turning the switch off does; the copy of your records in your iCloud private database stays, as described below. The switch is set on each device separately.
 
 While Sync with iCloud is **on** (and the device is signed in to iCloud):
 
@@ -133,8 +133,8 @@ While Sync with iCloud is **on** (and the device is signed in to iCloud):
 
 While Sync with iCloud is **off**:
 
-- OmniBuild puts nothing in iCloud: the app database has no iCloud connection, and the app writes nothing to the key-value store and does not read it. Your records, and anything you delete, stay on this device.
-- Apple Watch, Apple TV and the Home Screen widget cannot pick up where you left off from this device. The widget shows "Open OmniBuild". Your appearance choice is not shared.
+- OmniBuild puts nothing in iCloud: the app database has no iCloud connection, and the app writes nothing to the key-value store and does not read it (it still removes the "where you left off" items there when you use **Clear All My Logs & Decisions**). Your records stay on this device, and anything you delete is deleted on this device only.
+- Apple Watch, Apple TV and the Home Screen widget get no key-value items from this device, so they cannot pick up where you left off here, and your appearance choice is not shared. (Your iPhone still sends its Apple Watch the prompts and the last project's name directly, as described under "Apple Watch".) They cannot see this device's switch: if another of your devices has sync on, they can still show what that device puts in the key-value store. Otherwise the widget shows "Open OmniBuild".
 
 **Turning Sync with iCloud off** stops sync at once: OmniBuild reopens its database without the iCloud connection. It also removes the "where you left off" items, the widget's guide and the appearance choice from the key-value store. Your records stay on the device. The copy of your projects, notes, safety-reminder acknowledgements and punch items already in your iCloud private database stays there for your other devices; to remove it, use **Clear All My Logs & Decisions** while sync is on, or delete OmniBuild's data in your device's iCloud storage settings. OmniBuild asks before turning sync off and says this.
 
@@ -419,7 +419,7 @@ If we change how OmniBuild handles data, we will update this policy and change t
 
 **24 September 2026 — what changed.**
 
-- **Sync with iCloud is now a switch, off until you turn it on.** The 23 September version of this page said sync ran whenever you were signed in to iCloud and that OmniBuild had no switch of its own. OmniBuild now has **More ▸ iCloud ▸ Sync with iCloud**. It is off on new installs, and off after this update on devices that ran an earlier pre-release build (there was no earlier choice to carry over). While it is off, OmniBuild puts nothing in iCloud: no synced records and no key-value items. Turning it off stops sync at once and removes the key-value items; the copy of your records already in iCloud stays until you delete it. This keeps the promise an earlier version of this page made, that any sync would be off by default.
+- **Sync with iCloud is now a switch, off until you turn it on.** The 23 September version of this page said sync ran whenever you were signed in to iCloud and that OmniBuild had no switch of its own. OmniBuild now has **More ▸ iCloud ▸ Sync with iCloud**. It is off on new installs, and off after this update on devices that ran an earlier pre-release build (there was no earlier choice to carry over); on those devices the first launch after this update also removes the key-value items the earlier build put in iCloud. While it is off, OmniBuild puts nothing in iCloud: no synced records and no key-value items. Turning it off stops sync at once and removes the key-value items; the copy of your records already in iCloud stays until you delete it. This keeps the promise an earlier version of this page made, that any sync would be off by default.
 - **Punch items and safety-reminder acknowledgements in Your Data.** Each one can now be opened and deleted on its own in **More ▸ Your Data**. Before, they were only in the export and in **Clear All My Logs & Decisions**.
 - **Clear All says whether it reaches iCloud.** With Sync with iCloud off it deletes on this device only, and its confirmation says so.
 
