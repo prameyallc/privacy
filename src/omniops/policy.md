@@ -129,8 +129,9 @@ protected so its files cannot be read while the device is locked (except a file 
 had open when it locked). The copy that iCloud sync keeps on the device (in the table below)
 is kept in the same folder with the same protection. Earlier versions kept it directly in the
 Application Support folder with the system's standard protection, under which it can be read
-once the device has been unlocked after starting up; the first time this version opens it, it
-moves it into the protected folder and deletes the old copy. On Mac the files sit inside the
+once the device has been unlocked after starting up; when this version starts, with sync on or
+off, it moves that copy into the protected folder and deletes the old one (if the move cannot
+finish, it tries again at the next start). On Mac the files sit inside the
 sandboxed app container and are covered by FileVault if it is on. There is no Keychain write.
 
 | What | Where |
@@ -492,8 +493,9 @@ here.
   decision is shown at the top of Do and on the Watch, with Unpin; its ID is kept in the app's
   settings, and in iCloud only while sync is on.
 - The copy of the synced headlines kept on the device moved into the journal's protected
-  folder, so on iPhone, iPad and Apple Vision Pro it gets the same locked-device protection as
-  the journal. §2 no longer says it has only the system's standard protection.
+  folder, so on iPhone and iPad it gets the same locked-device protection as the journal. The
+  updated app moves an existing copy when it starts, whether or not sync is on. §2 no longer
+  says it has only the system's standard protection.
 - **Deletion markers** are removed from iCloud and from the journal after 90 days, and §4 says
   what that means for a device that has not synced for longer than that.
 
