@@ -1,7 +1,7 @@
 # OmniCadence — Privacy Policy
 
-**Effective date:** 23 September 2026
-**Last updated:** 23 September 2026  
+**Effective date:** 24 September 2026
+**Last updated:** 24 September 2026  
 **Publisher:** Prameya LLC (“Prameya”, “we”, “us”)  
 **App:** OmniCadence (called OmniOps in earlier versions of the app and of this policy) for iPhone, iPad, Mac and Apple Vision Pro, with an Apple Watch app and an Apple TV app — bundle ID `legal.prameya.OmniOps` (the Apple TV app uses the same ID; the Apple Watch app is `legal.prameya.OmniOps.watch`)  
 **Contact:** admin@prameya.legal  
@@ -31,10 +31,10 @@ your notes and your review cadences are stored in the app's own storage.
 and ratings — never its notes) in your own iCloud private database, so your devices show the
 same journal. See §4.
 
-**A few small iCloud items are kept whenever you are signed in to iCloud,** even with sync
-off: which tab and which reading you last opened, the ID number of an entry you were
-editing or pinned, your appearance choice and the Home Screen widget's state. They contain
-no journal text. See §4.
+**A few small iCloud items are kept only while sync is on:** which tab and which reading you
+last opened, the ID number of an entry you were editing and of the decision you pinned, your
+appearance choice and the Home Screen widget's state. They contain no journal text. With sync
+off none of them is saved to iCloud, and turning sync off removes them. See §4.
 
 **Ask answers on your device.** The Ask tab appears only where Apple Intelligence is turned
 on and ready, and Apple's on-device model answers first. If it cannot, Ask can use an optional
@@ -126,19 +126,23 @@ The app writes a journal when you log work, a decision, a reflection or a habit,
 and complete a review cadence. That journal is one JSON file in a folder of its own inside the
 app's Application Support folder. On iPhone, iPad and Apple Vision Pro that journal folder is
 protected so its files cannot be read while the device is locked (except a file the app already
-had open when it locked). The copy that iCloud sync keeps on iPhone and iPad (in the table
-below) is not in that folder and has the system's standard protection, under which it can be
-read once the device has been unlocked after starting up. On Mac the files sit inside the
+had open when it locked). The copy that iCloud sync keeps on the device (in the table below)
+is kept in the same folder with the same protection. Earlier versions kept it directly in the
+Application Support folder with the system's standard protection, under which it can be read
+once the device has been unlocked after starting up; the first time this version opens it, it
+moves it into the protected folder and deletes the old copy. On Mac the files sit inside the
 sandboxed app container and are covered by FileVault if it is on. There is no Keychain write.
 
 | What | Where |
 |---|---|
 | Your journal: each entry's date and notes; for work, the title, category, minutes spent and impact; for decisions, the title, framework, revisit note and optional dollar note; for reflections, the area and two 1–5 ratings; for habits, the habit type, completion and minutes; plus your review cadences (name, interval, due date, reminder switch) and completed reviews with what you wrote in them | **On this device**, Application Support folder |
-| Sync bookkeeping inside the journal file: when each entry last changed, and which entries were deleted and when | **On this device**, in the journal file (kept whether or not sync is on) |
+| Sync bookkeeping inside the journal file: when each entry last changed, and which entries were deleted and when | **On this device**, in the journal file (kept whether or not sync is on); a deleted entry's marker is removed after 90 days |
 | Which readings you have opened | **On this device**, next to the journal |
 | The journal as it was just before your last import | **On this device**, next to the journal |
-| Once iCloud sync has been turned on: a copy of the synced headlines, kept by Apple's iCloud sync. **Turn Off** leaves it; **Turn Off and Remove from iCloud** or Erase deletes the headlines | **On this device**, in the app's storage, and in your iCloud (see §4) |
-| Settings: first-run acknowledgement and the date you gave it, appearance, whether Ask answers are on, your Ask-model choice with the model and version it was given for, which model was selected, whether reminders are on, whether iCloud sync is on (and whether it was ever on, and any removal still waiting to reach iCloud), your Pro status | **On this device**, the app's settings |
+| Once iCloud sync has been turned on: a copy of the synced headlines, kept by Apple's iCloud sync. **Turn Off** leaves it; **Turn Off and Remove from iCloud** or Erase deletes the headlines | **On this device**, in the journal's protected folder, and in your iCloud (see §4) |
+| The decision you pinned from Apple Watch (its ID number) | **On this device**, the app's settings; while iCloud sync is on, also in the iCloud key-value items (§4) |
+| A request from the widget or the "Log a decision" shortcut to open the decision form, until the app opens it | **On this device**, the app's settings |
+| Settings: first-run acknowledgement and the date you gave it, appearance, whether Ask answers are on, your Ask-model choice with the model and version it was given for, which model was selected, whether reminders are on, whether iCloud sync is on (and whether it was ever on, any removal still waiting to reach iCloud, and that the one-time clean-up described in §4 has run), your Pro status | **On this device**, the app's settings |
 | A one-time marker that model files left by earlier versions were removed, and how much space that freed | **On this device**, the app's settings |
 | The optional Ask model's files, only if you chose to download them (see §4) | **On this device**, the app's Caches folder, excluded from backups |
 | An export you asked for | **On this device**, a temporary folder excluded from backups, only while More is on screen |
@@ -168,19 +172,19 @@ the journal and settings. That is Apple's processing, not ours. The downloaded A
 export files are excluded from backups.
 
 **Erase.** More ▸ Journal ▸ **Erase journal and iCloud data**, after you confirm, deletes the
-journal, the pre-import copy and the list of readings opened on this device; removes the iCloud
-key-value items described in §4; and, if iCloud sync was ever turned on on this device, deletes
-the synced headlines from your iCloud and turns sync off here. Another device that still syncs
-keeps its own entries and can upload them again. Erase does not delete the downloaded Ask model
-(More ▸ Ask model ▸ **Remove the downloaded model** does), your settings or your Pro status.
-Erase also makes the app forget the reading you last opened and the entry you were editing, so
-their IDs are not saved to iCloud again or put into later Handoff offers, and on iPhone it
-refreshes the Apple Watch's prompts from the now-empty journal; an Apple Watch app that is open
-drops its Continue row. Using the app after Erase saves the tab you are on and your appearance
-choice again, and any reading you open, entry you edit or entry you pin from then on. Erase
-does not reach the app's memory on your other devices: another device where OmniCadence is open
-still remembers the reading it last opened, and can save that reading's ID to the key-value items
-again at its next tab change.
+journal, the pre-import copy and the list of readings opened on this device; forgets the pinned
+decision; removes the iCloud key-value items described in §4; and, if iCloud sync was ever turned
+on on this device, deletes the synced headlines from your iCloud and turns sync off here. Another
+device that still syncs keeps its own entries and can upload them again. Erase does not delete
+the downloaded Ask model (More ▸ Ask model ▸ **Remove the downloaded model** does), your settings
+or your Pro status. Erase also makes the app forget the reading you last opened and the entry you
+were editing, so their IDs are not put into later Handoff offers, and on iPhone it refreshes the
+Apple Watch's prompts from the now-empty journal and tells the Watch there is no reading to
+continue and no pinned decision; an Apple Watch app that is open drops its Continue row. Because
+Erase turns sync off on this device, nothing is saved to the key-value items after it until you
+turn sync on again. Erase does not reach the app's memory on your other devices: another device
+where sync is still on remembers the reading it last opened, and can save that reading's ID to
+the key-value items again at its next tab change.
 
 **Deleting the app** removes the container on iPhone, iPad and Apple Vision Pro, including
 the journal and any downloaded model. On Mac the sandbox container under
@@ -195,24 +199,36 @@ The Apple Watch app has three tabs. **Now** shows three prompts ("Review today's
 connection between the two devices, and the habit prompt can name today's open habit type.
 Tapping **Confirm** sends the choice to the iPhone, which marks today's habit done (adding a
 completed habit entry if there is none for today), adds a work entry titled "Logged block", or
-pins your newest entry (its ID is kept in the iCloud key-value items). **Snooze** and
-**Decline** are sent too and change nothing. **Learn** shows the knowledge packs that ship
-with the Watch app and offers to continue the reading you last opened, read from the iCloud
-key-value items; the complications show that reading's ID or a fixed prompt. **More** shows the
-disclaimer. The Watch keeps no journal, has no Ask and sells nothing.
+pins your newest decision. **Snooze** and **Decline** are sent too and change nothing.
+
+The pinned decision is shown at the top of **Do** on the iPhone (and, while iCloud sync is on,
+on your iPad and Mac) and at the top of the Watch's **Now** tab, with its title and date.
+**Unpin** on either removes it; deleting the decision or Erase also removes it. The iPhone
+keeps the pin (the decision's ID number) in its own settings, and in the iCloud key-value items
+only while sync is on. To show it, the iPhone sends the pinned decision's title and date to your
+paired Watch over the same connection; the Watch keeps the latest copy it was sent.
+
+**Learn** shows the knowledge packs that ship with the Watch app and offers to continue the
+reading you last opened: the iPhone tells the Watch which one over that connection, whether or
+not sync is on, and while a device of yours has sync on the iCloud key-value items can tell it
+too (the newer of the two is used). The complications show that reading's ID, read from the
+iCloud key-value items, or a fixed prompt. **More** shows the disclaimer. The Watch keeps no
+journal, has no Ask and sells nothing.
 
 ### Apple TV
 
 The Apple TV app shows the knowledge packs that ship with it (Library) and offers to continue
-the reading you last opened on another device (Continue), read from the iCloud key-value items.
-It keeps no journal, has no Ask, sends no notifications and sells nothing.
+the reading you last opened on another device (Continue), read from the iCloud key-value items,
+which exist only while a device of yours has iCloud sync on; otherwise there is nothing to
+continue. It keeps no journal, has no Ask, sends no notifications and sells nothing.
 
 ### Home Screen widget and Shortcuts
 
 On iPhone and iPad the Home Screen widget shows a fixed "Log a decision" prompt. The widget and
-the "Log a decision" shortcut (Siri and Shortcuts) open the decision form; to do that they
-leave a one-word "open the decision form" note in the iCloud key-value items, which the app
-clears when it opens. Neither shows journal content.
+the "Log a decision" shortcut (Siri and Shortcuts) open the app on the decision form. If the app
+is not ready yet, a one-word "open the decision form" note waits in the app's settings on the
+device and is cleared when the app opens the form; it is no longer put in iCloud. Neither shows
+journal content.
 
 ### Reminders
 
@@ -267,11 +283,11 @@ definition does not narrow anything in this policy.
 your device goes to Apple, or — only if you choose the optional model download — to Hugging
 Face:
 
-1. **Apple iCloud** — the journal headlines if you turn on sync (iPhone, iPad, Mac), and the
-   small key-value items whenever you are signed in to iCloud (iPhone, iPad, Mac, Apple Watch,
-   Apple TV, and the widgets).
+1. **Apple iCloud** — only if you turn on sync (iPhone, iPad, Mac): the journal headlines and
+   the small key-value items, which the Apple Watch, Apple TV and widget apps can read.
 2. **Handoff** — where you left off, to your nearby devices signed in to the same Apple Account.
-3. **Apple Watch** — the connection between your iPhone and your paired Watch.
+3. **Apple Watch** — the connection between your iPhone and your paired Watch: the prompts,
+   your choices, the reading you last opened and the pinned decision's title and date.
 4. **The App Store** — StoreKit purchases, restores, offer codes and subscription checks.
 5. **Hugging Face** — the optional Ask model download, only after you choose it.
 6. **Links you tap** — for example "Open the source" under a reading or in Acknowledgements &
@@ -281,7 +297,7 @@ Face:
 Apple Intelligence runs on your device; Ask sends nothing to Apple.
 
 The Apple Vision Pro build carries no iCloud entitlement: it does not sync journal headlines
-and does not exchange the key-value items through iCloud.
+and does not save the key-value items to iCloud.
 
 ### iCloud sync of journal headlines (optional)
 
@@ -300,30 +316,37 @@ Notes, the decision's revisit note and dollar note, work impact, habit minutes, 
 and completed reviews are never synced; they stay on the device where you wrote them. A second
 device that syncs adds the headlines to its own journal. When an entry changes on two devices,
 the newest change wins; deleting an entry leaves a deletion marker in iCloud (the entry's ID,
-which log, and when — no content) so the deletion reaches your other devices. Changes from
+which log, and when — no content) so the deletion reaches your other devices. A marker is
+removed from iCloud, and from the journal on each device, after 90 days; every device then
+ignores it. A device that has not synced for longer than that can bring back an entry deleted
+elsewhere more than 90 days earlier, and your devices then all show it again. Changes from
 another device arrive when you open the app or bring it to the front.
 
 Turning sync off asks whether to keep the synced copy in iCloud for your other devices
 (**Turn Off**) or delete it (**Turn Off and Remove from iCloud**). Either way the journal on
-the device stays, and another device that still syncs can upload its own entries again. Erase (§2) also deletes the synced copy if this device ever turned sync on.
+the device stays, the key-value items below are removed, and another device that still syncs
+can upload its own entries again. Erase (§2) also deletes the synced copy if this device ever turned sync on.
 If a removal cannot reach iCloud at once, the app tries again the next time it opens.
 Prameya cannot open your private database.
 
 ### iCloud key-value items
 
-Whenever you are signed in to iCloud — whether or not sync is on — the app keeps a few small
-items in Apple's iCloud key-value store for this app, so your devices, your Apple Watch, your
-Apple TV and the widget can pick up where you left off:
+Only while **Sync with iCloud** is on (iPhone, iPad and Mac), the app keeps a few small items in
+Apple's iCloud key-value store for this app, so your devices, your Apple Watch, your Apple TV
+and the widget can pick up where you left off:
 
 - which tab you last opened, the ID of the knowledge pack you last opened, and — when you were
   editing an entry — that entry's ID number, with the time these were saved;
-- the ID number of the entry you pinned from Apple Watch;
+- the ID number of the decision you pinned from Apple Watch;
 - your appearance choice (light, dark or system);
-- the Home Screen widget's state (the fixed "Log a decision" prompt) and a one-word note that
-  the widget or the shortcut asked to open the decision form.
+- the Home Screen widget's state (the fixed "Log a decision" prompt).
 
-These items contain no titles, notes or other journal text. **Turn Off and Remove from iCloud**
-does not remove them, and the turn-off dialog says so; Erase does (§2).
+These items contain no titles, notes or other journal text. Turning sync on saves them at once.
+While sync is off none of them is saved, and the app on that device does not read them either.
+Turning sync off — **Turn Off** and **Turn Off and Remove from iCloud** alike — removes them, and
+so does Erase (§2). Earlier versions saved them whether or not sync was on, and also saved the
+widget's "open the decision form" note there; the first time this version opens with sync off,
+it removes those items once. The Apple Watch, Apple TV and widget apps only read these items.
 
 ### Handoff
 
@@ -389,8 +412,9 @@ request.
 
 The knowledge packs on Understand ship inside the app (and inside the Apple Watch and Apple TV
 apps). The app does not fetch packs from the network. Opening a pack is recorded only on your
-device (§2) and, as the last pack opened, in the iCloud key-value items (§4). Tapping **Open the
-source** under a reading opens the cited public page in your browser.
+device (§2), as the last pack opened in the iCloud key-value items while sync is on (§4), and on
+your paired Apple Watch (§2). Tapping **Open the source** under a reading opens the cited public
+page in your browser.
 
 ---
 
@@ -450,6 +474,28 @@ ROI figures.
 We update this policy when the app changes what it stores or what leaves the device — where
 we can, before the change ships — and change the dates at the top. Each revision is described
 here.
+
+**24 September 2026 — what changed.** With an app update:
+
+- The **iCloud key-value items** (last tab and reading, entry IDs, appearance, widget state) are
+  now saved only while **Sync with iCloud** is on. Before, they were saved whenever you were
+  signed in to iCloud, and only Erase removed them. Now both ways of turning sync off remove
+  them, turning it on saves them at once, and the first launch of the updated app with sync off
+  removes, once, what earlier versions saved. The widget's and the shortcut's "open the decision
+  form" note stays on the device instead of going to iCloud.
+- Your iPhone now tells your paired **Apple Watch** the reading you last opened and the pinned
+  decision's title and date directly, so the Watch's Continue row works with sync off. The
+  **Apple TV** app's Continue tab still reads the key-value items, so with sync off it has
+  nothing to continue.
+- The Watch's **Pin last decision** now pins your newest decision (it used to pin your newest
+  entry of any kind, and only saved its ID in iCloud, where nothing showed it). The pinned
+  decision is shown at the top of Do and on the Watch, with Unpin; its ID is kept in the app's
+  settings, and in iCloud only while sync is on.
+- The copy of the synced headlines kept on the device moved into the journal's protected
+  folder, so on iPhone, iPad and Apple Vision Pro it gets the same locked-device protection as
+  the journal. §2 no longer says it has only the system's standard protection.
+- **Deletion markers** are removed from iCloud and from the journal after 90 days, and §4 says
+  what that means for a device that has not synced for longer than that.
 
 **23 September 2026 — what changed.** This policy was rewritten to match the app as it is now:
 
