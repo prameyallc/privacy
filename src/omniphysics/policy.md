@@ -43,7 +43,7 @@ On iPhone, iPad, Mac and Apple Vision Pro it has lessons, interactive labs, the 
 | Appearance (system, light or dark) | Device, and your iCloud key-value store if you are signed in to iCloud | Apply it, and let Apple TV match it |
 | The **On-device answers** switch and the **Remind me to continue** switch | Device only | Remember your choice |
 | A one-time marker that files of an older Ask model were removed, and how much space that freed | Device only | So the removal happens once (see "Ask" below) |
-| A temporary copy of a file you export | The app's temporary folder on the device, until the system clears it | Hand the file to the share sheet |
+| A temporary copy of a file you export | The app's temporary folder on the device, until the app deletes it (see "Data retention") | Hand the file to the share sheet |
 
 That is the complete list of what OmniPhysics itself stores. We cannot see any of it.
 
@@ -129,7 +129,7 @@ If you are signed in to iCloud and iCloud is on for OmniPhysics, on iPhone, iPad
 
 If you are not signed in to iCloud, iCloud is off for OmniPhysics, or CloudKit cannot be set up on the device, the app runs in **local-only** mode on the same data, and **More** says "Saved on this device". The Apple Watch and Apple TV apps never use CloudKit.
 
-**The iCloud key-value store.** Separately from CloudKit, whenever you are signed in to iCloud the app keeps four small entries in its iCloud key-value store: where you left off, your appearance choice, the Home Screen widget's next topic, and a topic you asked the widget to open. That is how your other devices, Apple Watch and Apple TV offer to continue, and how Apple TV matches your appearance.
+**The iCloud key-value store.** Separately from CloudKit, whenever you are signed in to iCloud the app keeps four small entries in its iCloud key-value store: where you left off, your appearance choice, the Home Screen widget's next topic, and a topic you asked the widget to open. That is how your other devices, Apple Watch and Apple TV offer to continue, and how Apple TV matches your appearance. When where you left off is cleared (see "Your choices"), its entry is left empty rather than removed, so that your other devices, Apple Watch and Apple TV forget their own copies too; the empty entry holds nothing about you.
 
 ---
 
@@ -192,17 +192,17 @@ Not Kids Category. Not directed at children under 13. We do not use progress dat
 - Change your display name, and toggle sound and haptics, in **More**. (Haptics appears only on devices that have them.)
 - Turn **On-device answers** on or off in **More**. Off hides Ask.
 - On iPhone and iPad, turn **Remind me to continue** on or off in **More**. You can also turn off notifications for OmniPhysics in iOS **Settings**.
-- See every record the app keeps in **More ▸ Your records**, and delete any single lesson record or achievement there. Deleting a record also deletes it from your other devices if sync is on. It does not change where you left off.
+- See every record the app keeps in **More ▸ Your records**, and delete any single lesson record or achievement there. Deleting a record also deletes it from your other devices if sync is on. If where you left off points at the lesson whose record you delete, that is cleared too — on the device, in the iCloud key-value store, on your Apple Watch and in Handoff — along with any queued reminder; if it points at another lesson, it stays as it is.
 - **Export my records** in **More** gives you a JSON file of your profile, every lesson record and every achievement, to save or share wherever you choose. With Pro you can also export formatted lab notes.
-- **Reset progress** in **More**, confirmed with **Delete all my progress**, deletes every lesson record and achievement, sets XP, streaks, hearts and the daily mission back to the start — on this device and, if sync is on, on your other devices — and clears where you left off and the widget's topic from the device and the iCloud key-value store, and any queued reminder. Your display name, sound, haptics and appearance are settings and stay as they are.
+- **Reset progress** in **More**, confirmed with **Delete all my progress**, deletes every lesson record and achievement, sets XP, streaks, hearts and the daily mission back to the start — on this device and, if sync is on, on your other devices — and clears where you left off and the widget's topic from the device and the iCloud key-value store, any queued reminder, and the app's temporary copy of any file you exported. Your Apple Watch, Apple TV and other devices then forget where you left off too, as soon as the change reaches them through iCloud or your iPhone, and Handoff stops offering it. A reminder already queued on another iPhone or iPad is removed the next time OmniPhysics runs there. Your display name, sound, haptics and appearance are settings and stay as they are.
 - Turn iCloud on or off for OmniPhysics, or remove its iCloud data, in **Settings → [Your Name] → iCloud**. Deleting the app does not remove the copy in iCloud.
 
 ---
 
 ## Data retention
 
-- **On your device:** kept until you delete it in the app (a single record, or Reset progress) or delete the app. Reset progress keeps your display name and settings; to remove them from the device, delete the app. An exported file stays in the app's temporary folder until the system clears it.
-- **In your iCloud, if you use it:** your profile, lesson records and achievements in your private database, and the four key-value entries, until you delete them in the app (which updates the iCloud copy), they are replaced, or you remove the app's iCloud data in Settings. Reset progress keeps the profile record with your display name and settings, and your appearance entry. Deleting the app on one device does not empty iCloud.
+- **On your device:** kept until you delete it in the app (a single record, or Reset progress) or delete the app. Reset progress keeps your display name and settings; to remove them from the device, delete the app. The app deletes its temporary copy of a file you exported the next time it starts, when you reset progress, and when you come back to **More** after your records changed; a copy you saved or shared elsewhere is yours and is not touched.
+- **In your iCloud, if you use it:** your profile, lesson records and achievements in your private database, and the four key-value entries, until you delete them in the app (which updates the iCloud copy), they are replaced, or you remove the app's iCloud data in Settings. Reset progress keeps the profile record with your display name and settings, and your appearance entry, and leaves the where-you-left-off entry empty until you next use the app. Deleting the app on one device does not empty iCloud.
 - **With us:** only emails you send us, kept as long as needed to handle your message and to record that we handled it. Ask and we will delete yours.
 - **With Apple, if you buy Pro:** Apple keeps its own record of the transaction, under Apple's terms and retention rules.
 - **With anyone else:** nothing.
@@ -223,6 +223,9 @@ We will update this policy when the app changes. When we do, we will change the 
 - It no longer says the app stores your transaction ID, product ID and purchase dates, or that we receive a transaction identifier or entitlement status: the app keeps StoreKit's answer in memory only and sends nothing about a purchase to us.
 - It no longer mentions a "Delete All Data" control, which OmniPhysics does not have; it names the controls the app has — deleting a single record, **Export my records** and **Reset progress** — and says what each one reaches.
 - It says the app writes Apple's MetricKit performance summaries to the device's own log and sends them nowhere.
+- It says deleting a lesson record also clears where you left off when it pointed at that lesson. OmniPhysics was changed to do this the same day; before, Continue on your Apple Watch and Apple TV, Handoff and the reminder could still name the lesson.
+- It says Reset progress also makes your Apple Watch, Apple TV and other devices forget where you left off, and stops Handoff offering it. OmniPhysics was changed to do this the same day; before, they could keep offering the old lesson from their own copy and write it back to iCloud.
+- It says the app deletes its temporary copy of an exported file the next time it starts, when you reset progress, and when you come back to **More** after your records changed. OmniPhysics was changed to do this the same day; before, the copy stayed until the system cleared the temporary folder.
 
 Nothing the app sends to Prameya changed: it sends nothing. Earlier versions of this policy remain in the public repository that publishes these pages: <https://github.com/prameyallc/privacy>.
 
