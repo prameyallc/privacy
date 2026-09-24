@@ -560,7 +560,10 @@ app you paste it into.</p>
   interaction decision, a tapering plan, a pill identification, a diagnosis, a risk score or advice<br />
   about your own medicines gets a fixed refusal instead. A question that suggests someone may be in<br />
   danger or has taken too much of a medicine gets a card with 988, Poison Help and 911, and is never<br />
-  sent to a model. The model's answer itself is shown as it writes it; the app does not check or<br />
+  sent to a model. Before the downloaded model sees your question together with the library passages,<br />
+  the app runs the same check on that whole text; if a passage matches (a label passage can mention an<br />
+  overdose, or stopping a medicine), Ask shows the check's fixed reply instead of an answer. The<br />
+  model's answer itself is shown as it writes it; the app does not check or<br />
   edit it (it only leaves out the downloaded model's hidden reasoning, if the model writes any), and it<br />
   can be wrong.</li>
 <li><strong>Nothing is kept.</strong> OmniRx does not save your questions or its answers. A conversation lives only<br />
@@ -687,7 +690,9 @@ consent.</p>
   the Ask model download (so Ask is off again afterwards), any Ask model you downloaded, and any copy<br />
   of the database that the app set aside after it could not open it. It resets your appearance choice<br />
   to follow the system, turns "Show medicine names on Apple Watch" off, and clears your acceptance of<br />
-  the first-run notice, so the notice shows again. It removes every iCloud key-value value OmniRx writes and<br />
+  the first-run notice, so the notice shows again; when you accept it again, a device signed in to<br />
+  iCloud writes a new preferences record holding the notice version (and the appearance, now following<br />
+  the system), as a first launch does. It removes every iCloud key-value value OmniRx writes and<br />
   deletes the CloudKit preferences record, which iCloud removes from your account the next time the<br />
   device syncs. It cancels the daily reminder (and a snoozed one), resets the Handoff message, clears<br />
   the last Ask answer on your Apple Watch and sends the Watch a new reminder card, which names no<br />
@@ -747,8 +752,9 @@ announced in the app's release notes.</p>
   nothing; the app removes that recorded choice and asks again before any download.</li>
 <li><strong>"Delete all my data" does more.</strong> It now also resets your appearance choice, turns "Show medicine<br />
   names on Apple Watch" off and clears your acceptance of the first-run notice, so the notice shows<br />
-  again. Earlier, those three settings stayed on the device. It deletes a downloaded Ask model too, as<br />
-  it already deleted model files before.</li>
+  again; accepting it again writes a new iCloud preferences record, as a first launch does. Earlier,<br />
+  those three settings stayed on the device. It deletes a downloaded Ask model too, as it already<br />
+  deleted model files before.</li>
 <li>Because the first-run notice now mentions the model download and what Delete all resets, the app<br />
   shows it again.</li>
 </ul>

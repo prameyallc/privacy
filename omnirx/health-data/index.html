@@ -228,7 +228,9 @@ with enough memory, the Ask screen offers an optional model that also runs on th
 from Hugging Face only if you agree in a dialog that names the model and its size, and answering never<br />
 starts a download. Before a question reaches either model, the app refuses questions about doses,<br />
 interactions, tapering, pill identification, diagnosis, risk scores or your own medicines, and answers<br />
-a question that suggests someone may be in danger with 988, Poison Help and 911 instead of a model. Ask<br />
+a question that suggests someone may be in danger with 988, Poison Help and 911 instead of a model.<br />
+Before the downloaded model sees your question together with the library passages, the app runs the<br />
+same check on that whole text and, if a passage matches, shows the check's fixed reply instead. Ask<br />
 does not see your medication records, your journal or the medicines you follow. The switch earlier<br />
 versions showed, "Allow one model download", is gone; it downloaded nothing, and the app removes the<br />
 choice it recorded.</p>
@@ -454,8 +456,10 @@ it. Withdrawing consent does not undo processing that already happened on your o
   removes from your account the next time the device syncs. It cancels the daily reminder (and a<br />
   snoozed one), resets the Handoff message to your nearby devices, clears the last Ask answer on your<br />
   Apple Watch and sends the Watch a new reminder card, which names no medicine because none is<br />
-  followed any more. It cannot be undone. If a file or the preferences record cannot be removed from<br />
-  the device, the app tells you.</li>
+  followed any more. When you accept the first-run notice again, a device signed in to iCloud writes a<br />
+  new preferences record holding the notice version (and the appearance, now following the system), as<br />
+  a first launch does; it holds no health information. It cannot be undone. If a file or the<br />
+  preferences record cannot be removed from the device, the app tells you.</li>
 <li><strong>What it does not reach:</strong><ul>
 <li><strong>The CloudKit preferences record, if the device is not signed in to iCloud</strong> when you delete:<br />
   the app cannot reach it then. It holds no health information. Sign in and delete again, or<br />
@@ -561,7 +565,8 @@ affirmative consent.</p>
   nothing, is gone.</li>
 <li><strong>"Delete all my data" now also resets your settings:</strong> it turns "Show medicine names on Apple Watch"<br />
   off, resets your appearance choice and clears your acceptance of the first-run notice, so the notice<br />
-  shows again. Earlier, those settings stayed on the device. It also deletes a downloaded Ask model.</li>
+  shows again; accepting it again writes a new iCloud preferences record, as a first launch does.<br />
+  Earlier, those settings stayed on the device. It also deletes a downloaded Ask model.</li>
 <li>The first-run notice changed to mention both, so the app shows it again.</li>
 </ul>
 <p><strong>23 September 2026 — what changed.</strong> This policy was rewritten to describe what OmniRx does today:</p>
