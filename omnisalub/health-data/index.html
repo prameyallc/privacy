@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>OmniSalub Consumer Health Data Privacy Policy — Prameya LLC</title>
-<meta name="description" content="Effective date: 8 August 2026">
+<meta name="description" content="Effective date: 23 September 2026">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://prameyallc.github.io/privacy/omnisalub/health-data/">
 <style>
@@ -93,23 +93,23 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 </div></header>
 <main id="main" class="wrap">
 <h1 id="omnisalub-consumer-health-data-privacy-policy">OmniSalub Consumer Health Data Privacy Policy</h1>
-<p><strong>Effective date:</strong> 8 August 2026<br />
-<strong>Last updated:</strong> 21 August 2026<br />
+<p><strong>Effective date:</strong> 23 September 2026<br />
+<strong>Last updated:</strong> 23 September 2026<br />
 <strong>Publisher:</strong> Prameya LLC ("Prameya", "we", "us")<br />
-<strong>Applies to:</strong> OmniSalub for iPhone, iPad and Mac (bundle identifier <code>legal.prameya.omnisalub</code>)<br />
+<strong>Applies to:</strong> OmniSalub for iPhone, iPad, Mac, Apple Vision Pro and Apple TV (bundle identifier <code>legal.prameya.omnisalub</code>), and the OmniSalub Apple Watch app (<code>legal.prameya.omnisalub.watchkit</code>)<br />
 <strong>Contact:</strong> admin@prameya.legal</p>
 <p>This is a <strong>separate, distinctly-labelled consumer health data privacy policy</strong>, published as required by Washington's My Health My Data Act (RCW ch. 19.373) and drafted to satisfy Nevada's consumer health data law (SB 370, NRS ch. 603A) at the same time. It sits alongside — and does not replace — the <a href="https://prameyallc.github.io/privacy/omnisalub/">OmniSalub Privacy Policy</a>.</p>
 <p>If you are a Washington or Nevada resident, this is the document written for you. Everyone else is welcome to read it; it describes what actually happens either way.</p>
 <hr />
 <h2 id="the-short-version">The short version</h2>
-<p><strong>We do not collect, receive, store, share, sell or process any consumer health data.</strong> OmniSalub has no servers. What you record stays in the app's private storage on your own device, and — only if you allow it — in your own Apple Health account, which Apple operates and we cannot read.</p>
+<p><strong>We do not collect, receive, store, share, sell or process any consumer health data.</strong> OmniSalub has no servers. What you record, and what the app imports from Apple Health with your permission, stays in the app's private storage on your own device, and — only if you allow it — in your own Apple Health account, which Apple operates and we cannot read. Ask, the app's assistant, runs on your device and sends nothing to us.</p>
 <p>Apple's App Privacy nutrition label for this app is <strong>Data Not Collected</strong>. That matches this policy: Prameya LLC is not a recipient of your health data.</p>
 <p>The sections below answer each disclosure the statute asks for, including the ones where the honest answer is "none". We have written those out rather than omitting them, because a missing element and a "none" element look identical to a reader and are not the same thing.</p>
-<p>This revision (21 August 2026) retracts an earlier published table that listed thirteen categories under "consumer health data we collect". That table described what the <strong>app stores on your device</strong>, not what Prameya collects. Publishing both framings under the same statutory heading was SALUB-072. The governing answer is <strong>None</strong>.</p>
+<p>The 21 August 2026 revision retracted an earlier published table that listed thirteen categories under "consumer health data we collect". That table described what the <strong>app stores on your device</strong>, not what Prameya collects. Publishing both framings under the same statutory heading was SALUB-072. The governing answer is <strong>None</strong>.</p>
 <hr />
 <h2 id="1-categories-of-consumer-health-data-we-collect-and-the-purpose-of-collection">1. Categories of consumer health data we collect, and the purpose of collection</h2>
 <p><strong>None.</strong></p>
-<p>The app records measurements, symptoms and settings that <em>would</em> be consumer health data if we received them. We do not receive them. There is no account, no server of ours, no analytics endpoint, no advertising SDK, and no code path that transmits what you record to us or to anyone else. Data written to Apple Health is written into <em>your</em> Apple account under Apple's terms, not ours.</p>
+<p>The app records and imports measurements, symptoms and settings that <em>would</em> be consumer health data if we received them. We do not receive them. There is no account, no server of ours, no analytics endpoint, no advertising SDK, and no code path that transmits what you record to us. The few paths that do move data off the app's own storage are described in section 8: they go to Apple Health, between your own devices through Apple's services, or wherever you choose to send an export — never to Prameya. Data written to Apple Health is written into <em>your</em> Apple account under Apple's terms, not ours.</p>
 <p>Because we collect nothing, there is no collection purpose to state.</p>
 <hr />
 <h2 id="2-categories-of-sources-from-which-consumer-health-data-is-collected">2. Categories of sources from which consumer health data is collected</h2>
@@ -122,8 +122,15 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <p><strong>None — the list is empty.</strong></p>
 <p>For completeness, and because we would rather over-disclose than have you discover it elsewhere, these are the only third parties involved in the app at all, none of whom receives consumer health data from us:</p>
 <ul>
-<li><strong>Apple Inc.</strong> — operates the App Store, Apple Health and iCloud. If you turn on settings sync, non-health preferences (theme, guideline set, app-lock state) are stored in <em>your</em> iCloud account. Health data is never placed in iCloud; that is a fixed architectural boundary and an automated test enforces it.</li>
-<li><strong>Hugging Face, Inc.</strong> — hosts the optional on-device language model's weight files. If, and only if, you choose to install the model, your device downloads those files. That request carries the model's repository identifier and your IP address. It carries no health data of any kind, and we are not a party to it.</li>
+<li><strong>Apple Inc.</strong> — operates the App Store, Apple Health, iCloud, Handoff, the connection between iPhone and Apple Watch, and Apple Intelligence. In detail:<ul>
+<li>If you turn on settings sync, six non-health preferences (theme, guideline set, onboarding state, app lock, the tab you last had open, and a timestamp) are stored in <em>your</em> iCloud account. Health data is never placed in iCloud; that is a fixed architectural boundary and an automated test enforces it.</li>
+<li><strong>Handoff</strong> passes the tab you are on and, if you are reading a Learn topic, that topic's identifier (for example a topic about PSA test numbers) to your own nearby devices signed in to the same Apple Account. It never carries a reading.</li>
+<li>The <strong>Apple Watch</strong> app's <strong>Ask iPhone</strong> sends the question you type to OmniSalub on your paired iPhone, and the answer — which can draw on what you have logged — comes back to the Watch, over Apple's connection between your two devices.</li>
+<li>Where <strong>Apple Intelligence</strong> answers Ask, it uses Apple's on-device model. The app does not send your question or your logged data to Apple's servers or to Private Cloud Compute.</li>
+<li>If you buy OmniSalub Pro, the App Store processes the purchase. That is not consumer health data (section 9).</li>
+</ul>
+</li>
+<li><strong>Hugging Face, Inc.</strong> — hosts the optional on-device language model's files. If, and only if, you choose to download the model, your device downloads those files. That request carries the model's repository identifier, the names of the files requested, standard request headers that name the app, and your IP address. It carries no health data of any kind, and we are not a party to it.</li>
 </ul>
 <p>We have no affiliates.</p>
 <hr />
@@ -138,60 +145,64 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <hr />
 <h2 id="8-how-the-data-is-processed-stored-and-protected-on-your-device-not-by-us">8. How the data is processed, stored and protected — on your device, not by us</h2>
 <ul>
-<li><strong>Where.</strong> In an encrypted database in the app's private storage on your device. On iPhone and iPad it is set to iOS Data Protection "complete", so it is encrypted with a key derived from your device passcode and is unreadable while the device is locked. On a Mac it is protected by the app sandbox and by FileVault if you have FileVault on.</li>
-<li><strong>Not in iCloud.</strong> Health data is never stored in iCloud by this app. The health database is created with iCloud syncing explicitly disabled, and an automated test blocks any health record from reaching the part of the app that does sync. Only five non-health preferences (theme, guideline set, onboarding state, app lock, timestamp) can sync, and only if you turn that on — it is off by default.</li>
-<li><strong>Backups.</strong> The health database is excluded from device backup. So is the widget's display snapshot. On iPhone and iPad the snapshot is encrypted at rest until the first time you unlock the device after a restart, rather than being re-locked whenever the screen locks; the Home Screen widget could not redraw your latest reading otherwise.</li>
-<li><strong>The assistant.</strong> If you install it, the model runs on your device. Context assembled for it never leaves your device and is not sent to us, to Apple or to any AI provider. Cloud and third-party inference modes are hard-wired off in this version.</li>
+<li><strong>What the app handles on your device.</strong> The readings and symptoms you enter; the Apple Health data types you allow when you tap <strong>Connect Apple Health</strong> — the sheet lists every type any of the app's condition programmes can use, and the app imports the last 400 days of each type you allow (symptom records in full), together with what Apple Health says about the app and device that recorded each reading (the full list is in section 3.1 of the <a href="https://prameyallc.github.io/privacy/omnisalub/">OmniSalub Privacy Policy</a>); the alerts the app raises; the conditions you choose; your visit date and visit questions; and your answer to the food-and-weight screening question. None of it reaches us.</li>
+<li><strong>Where.</strong> In a database in the app's private storage on your device. On iPhone, iPad and Apple Vision Pro it is set to Data Protection "complete", so it is encrypted with a key derived from your device passcode and is unreadable while the device is locked. On a Mac it is protected by the app sandbox and by FileVault if you have FileVault on. Apple Health exists only on iPhone and iPad; the Apple Watch and Apple TV apps keep no readings.</li>
+<li><strong>Not in iCloud.</strong> Health data is never stored in iCloud by this app. The health database is created with iCloud syncing explicitly disabled, and an automated test blocks any health record, or any health-revealing field, from reaching the part of the app that does sync. Only six non-health preferences (theme, guideline set, onboarding state, app lock, the tab you last had open, timestamp) can sync, and only if you turn that on — it is off by default. The app also writes a small "where you left off" note (the tab you were on, the identifier of the Learn topic you last opened, your appearance choice) through Apple's iCloud key-value storage whether or not sync is on; this version of the app is not signed with Apple's iCloud key-value storage capability, so the note does not leave the device.</li>
+<li><strong>Handoff and Apple Watch.</strong> Handoff passes the tab and Learn topic identifier described in section 4 between your own devices; the Watch app's Ask iPhone passes your question and the answer between your Watch and your iPhone. Both use Apple's services between your own devices and reach no one else.</li>
+<li><strong>Backups.</strong> The health database is excluded from device backup. So is the widget's display file. That file names what to log next and, only if you turn on <strong>Show today's reading on the Home Screen</strong> (off by default), holds today's latest reading. On iPhone and iPad it is encrypted at rest until the first time you unlock the device after a restart, rather than being re-locked whenever the screen locks, so the widget can redraw; the widget hides the number while the device is locked.</li>
+<li><strong>Ask.</strong> Ask is on by default. It gives your question and a summary of what you have logged — the names of the conditions you track, reading summaries and up to 36 readings from the last 30 days, up to 12 symptoms, and any open alert below the urgent level — to a model running on your device: Apple Intelligence's on-device model where it is ready, or the optional model you download. That context never leaves your device and is not sent to us, to Apple or to any AI provider. Crisis language never reaches a model, and while an urgent or emergency alert is open Ask shows that alert's fixed text instead of asking one. The conversation is not saved. You can turn Ask off in Settings → Assistant. Cloud and third-party inference modes are hard-wired off in this version.</li>
+<li><strong>Notifications.</strong> Visit reminders are off until you turn them on. They are local notifications scheduled on your device, do not name a condition, and no notification content is transmitted anywhere.</li>
 <li><strong>Retention.</strong> Your data stays until you delete it. We retain nothing, so there is no retention schedule on our side to describe.</li>
 </ul>
 <hr />
 <h2 id="9-subscription-tiers-and-consumer-health-data">9. Subscription tiers and consumer health data</h2>
 <h3 id="no-new-collection-when-you-subscribe">No new collection when you subscribe</h3>
-<p>OmniSalub offers paid subscription tiers (Plus and Premium) in addition to the free tier. <strong>Upgrading does NOT trigger new consumer health data collection.</strong></p>
-<p>All three tiers:<br />
-- Process the same categories of consumer health data (listed above)<br />
+<p>OmniSalub has a free tier and one paid upgrade, <strong>OmniSalub Pro</strong>, sold as Monthly, Annual or Lifetime; all three unlock the same Pro. <strong>Upgrading does NOT trigger new consumer health data collection.</strong></p>
+<p>Free and Pro:<br />
+- Process the same categories of consumer health data (section 8)<br />
 - Use consumer health data for the same purpose (operating features you choose to use)<br />
 - Store data in the same location (on your device)<br />
-- Transmit data to the same recipients (none — no health data leaves your device)</p>
-<p><strong>Subscription unlocks features like longer history retention, auto HealthKit sync, and additional export formats. It does not change what data is collected, how it is processed, or where it goes.</strong></p>
+- Transmit data to the same recipients (none — no health data leaves your device to us or to anyone we choose)</p>
+<p><strong>Pro unlocks features. It does not change what data is collected, how it is processed, or where it goes.</strong></p>
 <h3 id="what-changes-between-tiers">What changes between tiers</h3>
 <div class="tablewrap"><table>
 <thead>
 <tr>
-<th>What subscription affects</th>
-<th>What subscription does NOT affect</th>
+<th>What Pro affects</th>
+<th>What Pro does NOT affect</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>How long history is retained (30 days vs unlimited)</td>
-<td>What health data types are read from HealthKit</td>
+<td>How much history the app shows (90 days free, up to 400 days with Pro); older readings stay on your device either way</td>
+<td>What health data types are read from Apple Health</td>
 </tr>
 <tr>
-<td>Whether HealthKit syncs automatically or manually</td>
-<td>Where health data is stored (on-device in all tiers)</td>
+<td>Which export formats are available (free: a raw CSV of readings and a CSV of symptoms; Pro adds a PDF visit summary, a formatted CSV and a FHIR bundle)</td>
+<td>Where health data is stored (on-device in both tiers)</td>
 </tr>
 <tr>
-<td>Which export formats are available (none, PDF/JSON, or PDF/JSON/FHIR)</td>
-<td>Whether health data syncs to iCloud (never, in any tier)</td>
+<td></td>
+<td>Whether health data syncs to iCloud (never, in either tier)</td>
 </tr>
 <tr>
-<td>Whether CloudKit syncs preferences (off, on, or on)</td>
-<td>What the app processes or derives from your data</td>
+<td></td>
+<td>Whether settings sync is available (the same opt-in in both tiers)</td>
 </tr>
 <tr>
-<td>What analytics are shown (current values, 30-day trends, or advanced correlations)</td>
-<td>Whether device integrations (Omron, Withings) collect health data from you</td>
+<td></td>
+<td>Ask, which works the same in both tiers</td>
 </tr>
 </tbody>
 </table></div>
 <h3 id="storekit-data-is-not-consumer-health-data">StoreKit data is not consumer health data</h3>
-<p>When you purchase a subscription, the app receives a transaction ID, product ID, and purchase/expiration dates from Apple's StoreKit. <strong>These are payment records, not consumer health data</strong> under RCW 19.373.010.</p>
-<p>StoreKit transaction data:<br />
-- Does not identify your health status, condition, disease, or treatment<br />
-- Is used only to unlock tier-appropriate features<br />
-- Is stored locally on your device (not synced to iCloud)<br />
-- Is deleted when you use "Delete All Data"</p>
+<p>When you buy or restore Pro, Apple's StoreKit on your device completes the purchase with the App Store and, each time the app starts, tells the app which Pro products your Apple Account is entitled to. <strong>That is a payment record, not consumer health data</strong> under RCW 19.373.010.</p>
+<ul>
+<li>It does not identify your health status, condition, disease, or treatment.</li>
+<li>It is used only to turn the Pro features on or off.</li>
+<li>The app keeps no purchase record of its own and sends nothing about a purchase to us. Apple keeps the record, so "Delete everything this app stored" does not remove it.</li>
+</ul>
+<p>An earlier version of this section described Plus and Premium tiers, automatic Apple Health sync, device integrations and a locally stored transaction record. None of those describes the app.</p>
 <p>Apple separately processes your Apple Account ID and payment method when you subscribe. That processing is governed by Apple's terms, not ours.</p>
 <hr />
 <h2 id="10-how-to-exercise-your-rights">10. How to exercise your rights</h2>
@@ -208,7 +219,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <tr>
 <td><strong>Confirm and access</strong></td>
 <td>Confirm whether we are collecting, sharing or selling your consumer health data, and get access to it</td>
-<td>Email <strong>admin@prameya.legal</strong>. The answer will be that we hold none. Your actual data is visible in the app at any time, and exportable as PDF, CSV or FHIR</td>
+<td>Email <strong>admin@prameya.legal</strong>. The answer will be that we hold none. Your actual data is visible in the app at any time, and exportable as a raw CSV of readings and a CSV of symptoms, or with Pro as a PDF, formatted CSV or FHIR bundle</td>
 </tr>
 <tr>
 <td><strong>List of recipients</strong></td>
@@ -218,12 +229,12 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <tr>
 <td><strong>Withdraw consent</strong></td>
 <td>Withdraw consent to collection and to sharing</td>
-<td>There is no consent to withdraw from us. Permissions the app itself uses are yours to revoke in <strong>Settings → Privacy &amp; Security → Health → OmniSalub</strong>; settings sync can be turned off in the app's own Settings</td>
+<td>There is no consent to withdraw from us. Permissions the app itself uses are yours to revoke in <strong>Settings → Privacy &amp; Security → Health → OmniSalub</strong>; settings sync, visit reminders and Ask (<strong>On-device assistant</strong>) can be turned off in the app's own Settings</td>
 </tr>
 <tr>
 <td><strong>Delete</strong></td>
 <td>Have your consumer health data deleted</td>
-<td>Because we hold nothing, there is nothing for us to delete. On your device: <strong>Settings → Delete all data on this device</strong>, or delete the app. Data already in Apple Health is managed by you in the Health app</td>
+<td>Because we hold nothing, there is nothing for us to delete. On your device: <strong>Settings → Your data → Delete everything this app stored</strong> erases your readings, symptoms and alerts and resets your conditions, visit date and preferences; among other things it keeps the activity log (which holds event types, never values), the downloaded Ask model and anything in Apple Health (the full list is in section 14 of the OmniSalub Privacy Policy). Deleting the app removes everything the app stored on that device. Data already in Apple Health is managed by you in the Health app</td>
 </tr>
 <tr>
 <td><strong>Appeal</strong></td>
@@ -248,6 +259,15 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <h2 id="12-changes-to-this-policy">12. Changes to this policy</h2>
 <p>If we change this policy, we will update the "Last updated" date above and publish the new version at <a href="https://prameyallc.github.io/privacy/omnisalub/health-data/">prameyallc.github.io/privacy/omnisalub/health-data</a>.</p>
 <p>If a change ever means we begin to collect consumer health data, we will say so in plain terms, obtain consent where the law requires it, and publish it before the version that does so is released — not after.</p>
+<p><strong>23 September 2026 — what changed.</strong> Our answer is unchanged: Prameya collects, shares and sells no consumer health data. This revision updates the facts behind it:</p>
+<ul>
+<li>Section 8 now lists what the app handles on your device, and says that <strong>Connect Apple Health</strong> asks for every type any of the app's condition programmes can use and imports the last 400 days of each type you allow (symptom records in full).</li>
+<li>Section 8 describes Ask, which is on by default and uses Apple Intelligence's on-device model or the optional downloaded model, and what it is given; the "where you left off" note; Handoff; the Apple Watch app's Ask iPhone; visit reminders; and the widget's reading, now off by default.</li>
+<li>Section 4 lists Apple's services in more detail and what the Hugging Face request carries.</li>
+<li>Section 9 replaces a description of Plus and Premium tiers, automatic Apple Health sync, device integrations and a locally stored purchase record — none of which describes the app — with the free tier and Pro as they are.</li>
+<li>Section 10 describes <strong>Delete everything this app stored</strong> and what it keeps.</li>
+<li>The policy now covers Apple Vision Pro, Apple Watch and Apple TV.</li>
+</ul>
 <hr />
 <h2 id="13-contact">13. Contact</h2>
 <p><strong>admin@prameya.legal</strong><br />
@@ -258,7 +278,7 @@ Postal address available on request by email.</p>
 <footer class="site"><div class="wrap">
   <p>Prameya LLC · <a href="mailto:admin@prameya.legal">admin@prameya.legal</a>
   · <a href="https://prameyallc.github.io/privacy/support/">Support</a></p>
-  <p>Effective 8 August 2026. <a href="https://prameyallc.github.io/privacy/">All app privacy policies</a></p>
+  <p>Effective 23 September 2026. <a href="https://prameyallc.github.io/privacy/">All app privacy policies</a></p>
 </div></footer>
 </body>
 </html>

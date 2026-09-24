@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>OmniLex Privacy Policy — Prameya LLC</title>
-<meta name="description" content="Effective date: 8 August 2026">
+<meta name="description" content="Effective date: 23 September 2026">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://prameyallc.github.io/privacy/omnilex/">
 <style>
@@ -93,46 +93,63 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 </div></header>
 <main id="main" class="wrap">
 <h1 id="omnilex-privacy-policy">OmniLex Privacy Policy</h1>
-<p><strong>Effective date:</strong> 8 August 2026<br />
+<p><strong>Effective date:</strong> 23 September 2026<br />
 <strong>Publisher:</strong> Prameya LLC ("Prameya", "we", "us"), a United States limited liability company<br />
 <strong>Contact:</strong> admin@prameya.legal<br />
-<strong>Applies to:</strong> the OmniLex app for iPhone, iPad and Mac</p>
+<strong>Applies to:</strong> the OmniLex app for iPhone, iPad, Mac and Apple Vision Pro, the Apple Watch app that comes with it, its Home Screen widget, and OmniLex for Apple TV — bundle ID <code>legal.prameya.OmniLex</code> (the Apple Watch app is <code>legal.prameya.OmniLex.watch</code>)</p>
 <p>Other Prameya app policies: <a href="https://prameyallc.github.io/privacy/">prameyallc.github.io/privacy</a></p>
 <hr />
 <h2 id="the-short-version">The short version</h2>
-<p>OmniLex is a legal AI tool for legal professionals. It reads contracts and other documents you import, flags risks, drafts from templates, and searches your own documents.</p>
+<p>OmniLex is a legal AI tool for legal professionals. It reads contracts and other documents you import, flags clauses for your review, drafts from templates, answers questions, and searches your own documents.</p>
 <ul>
-<li><strong>Your documents stay on your device.</strong> Reading, OCR, analysis, drafting and search all run locally on your Mac, iPhone or iPad.</li>
+<li><strong>Your documents stay on your device.</strong> Reading, OCR, analysis, drafting, Ask and search all run locally on your Mac, iPhone, iPad or Apple Vision Pro. OmniLex never uploads your documents or anything derived from them. They stay on the device and in your own device backups.</li>
 <li><strong>We never receive your documents or anything derived from them.</strong> Prameya runs no server that takes in your content. We have no account system and no database of users.</li>
 <li><strong>There are no accounts, no sign-in, no ads, no analytics and no tracking.</strong></li>
-<li><strong>The app does connect to the internet for one thing: downloading the AI model.</strong> The first time you use the AI features, OmniLex downloads model weights (roughly 420 MB to 2.5 GB, depending on the model you pick) from Hugging Face. That request asks for a model file. It does not contain your documents, your text, or anything about you beyond the ordinary connection details any download involves.</li>
+<li><strong>A few things do leave the device, and none of them is your documents:</strong><ul>
+<li><strong>The AI model download.</strong> OmniLex downloads the model it runs (about 420 MB, 1.1 GB or 2.5 GB, depending on the size you pick) from Hugging Face. That request asks for model files. It carries none of your documents or text.</li>
+<li><strong>Small iCloud entries.</strong> If you are signed in to iCloud on iPhone, iPad or Apple Vision Pro, OmniLex keeps four small entries in your iCloud key-value storage so your other devices, the widget and Apple TV can offer to continue: which part of the app you were in, the identifier of the reference topic you last opened, a random identifier of the last document you opened, and your appearance choice. They never hold a document's title, file name or text. See <a href="#your-other-devices-icloud-handoff-apple-watch-and-apple-tv">Your other devices</a>, including one way these entries can outlast a deletion.</li>
+<li><strong>Handoff and Apple Watch.</strong> Apple's Handoff and the connection between your iPhone and Apple Watch carry the same kind of "where you left off" information, and a question you send from the Watch to the iPhone.</li>
+<li><strong>Purchases.</strong> StoreKit on your device talks to Apple if you buy or restore OmniLex Pro.</li>
+</ul>
+</li>
+<li><strong>Ask answers on your device.</strong> Where Apple Intelligence is turned on and ready, Apple's on-device model answers; otherwise a model you have already downloaded answers. Your question is not sent to us.</li>
+<li><strong>One optional permission.</strong> OmniLex asks to send notifications only if you turn on the re-check reminder in Settings on iPhone or iPad. It is off until you do.</li>
 <li><strong>If you are a lawyer:</strong> your client material is not transmitted to us or to any third party by this app. See <a href="#if-you-are-a-lawyer-confidentiality-and-your-own-duties">If you are a lawyer</a> for what you should know before putting privileged material into any software, including this one.</li>
 </ul>
 <p>This policy explains the details, including the things we do not do.</p>
 <hr />
 <h2 id="who-we-are-and-what-this-policy-covers">Who we are and what this policy covers</h2>
-<p>Prameya LLC publishes OmniLex. This policy covers the OmniLex app only.</p>
-<p>Because we operate no back-end service for OmniLex, most of this policy describes what happens <strong>on your own device</strong>, not what we do with your data. We do not have your data.</p>
+<p>Prameya LLC publishes OmniLex. This policy covers the OmniLex app on iPhone, iPad, Mac and Apple Vision Pro, the Apple Watch app, the Home Screen widget and OmniLex for Apple TV, and nothing else.</p>
+<p>Because we operate no back-end service for OmniLex, most of this policy describes what happens <strong>on your own devices</strong>, and on the Apple services your devices already use, not what we do with your data. We do not have your data.</p>
 <hr />
 <h2 id="what-omnilex-does-with-your-documents">What OmniLex does with your documents</h2>
 <h3 id="importing-documents">Importing documents</h3>
-<p>You add documents through the system file picker. OmniLex can open PDFs, plain text files, RTF files and images.</p>
+<p>You add documents through the system file picker (on Mac, the open panel), or by dragging files onto the document list. OmniLex can open PDFs, Word documents (.docx), plain text files, RTF files and images. OmniLex also includes a sample NDA, built from a public-domain template that ships inside the app; it is not a file of yours.</p>
 <p>The app only ever sees the files you explicitly choose. It does not scan your disk, your Documents folder, or any other location on its own.</p>
-<p>OmniLex does <strong>not</strong> use the camera and does <strong>not</strong> read your photo library. Images are brought in through the same file picker as everything else.</p>
+<p>OmniLex does <strong>not</strong> use the camera and does <strong>not</strong> read your photo library. Images are brought in the same way as everything else: through the file picker or by dragging them in.</p>
 <p>The app's build settings declare no camera permission, no photo-library permission and no local-network permission, because the app has no use for any of them. A test in the build fails if one of those permission strings reappears, so the permissions the app declares and this policy stay in agreement.</p>
 <h3 id="reading-and-ocr">Reading and OCR</h3>
 <p>Text is pulled out of your files on your device:</p>
 <ul>
 <li>Text-based PDFs are read with Apple's PDFKit.</li>
 <li>Scanned PDFs and images go through Apple's Vision framework for optical character recognition.</li>
+<li>Word documents are read on the device: on Mac with Apple's own text system, and on iPhone, iPad and Apple Vision Pro with a reader built into the app (it uses ZIPFoundation, an open-source library that ships inside the app, to open the file).</li>
 </ul>
-<p>Both are Apple frameworks running locally on your hardware. No page image and no extracted text is uploaded anywhere for processing.</p>
+<p>All of this runs locally on your hardware. No page image and no extracted text is uploaded anywhere for processing.</p>
 <h3 id="analysis-drafting-and-search">Analysis, drafting and search</h3>
 <ul>
-<li><strong>Risk analysis and drafting</strong> run through an AI model that executes on your device using Apple silicon. Your document text is fed to that local model. It does not go over the network.</li>
+<li><strong>Reading-priority review, summaries, questions about a document, Document Background and Research explanations</strong> run through the AI model you downloaded, which executes on your device using Apple silicon. Your document text is fed to that local model. It does not go over the network.</li>
 <li><strong>Semantic search</strong> across your documents uses Apple's on-device language embeddings. Your search queries stay local.</li>
-<li><strong>The clause library, templates, glossary and legal skill pack</strong> ship inside the app. They are read from the app bundle. Nothing is fetched at runtime.</li>
+<li><strong>The reference library, clause library, templates, glossary and legal skill pack</strong> ship inside the app. They are read from the app bundle. Nothing is fetched at runtime.</li>
 </ul>
+<h3 id="ask-and-apple-intelligence">Ask and Apple Intelligence</h3>
+<p>Ask sends your question, up to eight earlier turns of the same conversation, and matching passages from the reference library that ships inside the app, to a language model running on your device:</p>
+<ul>
+<li><strong>Where Apple Intelligence is turned on and ready</strong> (iPhone, iPad, Mac and Apple Vision Pro), Apple's on-device model answers first. While it answers it can look up further passages in the app's own reference library. OmniLex does not send your question to Apple or to us.</li>
+<li><strong>Otherwise, a model you have already downloaded</strong> answers. Ask never starts a download.</li>
+<li><strong>Otherwise,</strong> Ask says it cannot answer on this device.</li>
+</ul>
+<p>Ask does not read your imported documents; questions about a particular document are asked from that document's page and answered by the downloaded model. Your Ask questions and the answers are saved in the chat history on the device (see the table below). The <strong>On-device answers</strong> switch in Settings turns Ask off. On Apple TV, Ask only quotes passages from the reference library; it runs no model.</p>
 <h3 id="where-your-documents-live">Where your documents live</h3>
 <p>OmniLex stores the following in a private database inside the app's own storage on your device:</p>
 <div class="tablewrap"><table>
@@ -152,33 +169,125 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <td>A bookmark so the app can reopen the file you chose. The original file stays where you put it; OmniLex does not move or copy it into the cloud</td>
 </tr>
 <tr>
-<td>Risk findings</td>
-<td>The issues the model flagged, their severity, and suggested fixes</td>
+<td>Reading-priority flags</td>
+<td>The clauses the model flagged, their reading priority, and suggested alternative wording</td>
+</tr>
+<tr>
+<td>Search index</td>
+<td>A copy of the first part of each document's text and a numeric representation (embedding) of it, used for on-device search</td>
 </tr>
 <tr>
 <td>Chat history</td>
-<td>Your conversations with the in-app assistant</td>
+<td>Your Ask questions and the answers</td>
 </tr>
 <tr>
 <td>Templates and saved notes</td>
 <td>Anything you create in the app</td>
 </tr>
+</tbody>
+</table></div>
+<p>Alongside that database, the app keeps these small settings on the device:</p>
+<div class="tablewrap"><table>
+<thead>
 <tr>
-<td>Preferences</td>
-<td>Your risk threshold and disclaimer setting</td>
+<th>What</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Your appearance choice, the lowest reading priority to show, the <strong>On-device answers</strong> switch and the <strong>Download over cellular</strong> switch</td>
+<td>To apply them</td>
 </tr>
 <tr>
-<td>Model files</td>
-<td>The downloaded AI model weights</td>
+<td>When you acknowledged the first-run Legal &amp; Safety notice, and whether you have seen the introduction</td>
+<td>So they show once</td>
+</tr>
+<tr>
+<td>Random identifiers of the documents you opened most recently</td>
+<td>To reopen where you left off</td>
+</tr>
+<tr>
+<td>The re-check reminder switch, the identifiers of up to 200 reference topics you have opened on iPhone or iPad, and the reminders you have answered</td>
+<td>For the re-check reminder (see below)</td>
+</tr>
+<tr>
+<td>The model you selected, and which models are already downloaded</td>
+<td>To load the right one</td>
+</tr>
+<tr>
+<td>A random identifier of the document your free first review was spent on</td>
+<td>So the free review is given once (see Subscriptions)</td>
+</tr>
+<tr>
+<td>The random identifier the app gave the sample NDA, if you opened it</td>
+<td>So opening it again shows the same sample</td>
+</tr>
+<tr>
+<td>The downloaded AI model files, and the part of an unfinished download</td>
+<td>To run the model on the device, and to resume a download</td>
 </tr>
 </tbody>
 </table></div>
-<p><strong>None of this syncs.</strong> OmniLex does not use iCloud, CloudKit, or any other sync service — the app carries no iCloud or CloudKit entitlement at all. If you install OmniLex on two devices, they share nothing. There is no copy of your data on any Prameya system to lose, subpoena, or breach.</p>
-<p>Note that if you have enabled Apple's device backup (iCloud Backup or an encrypted local backup), your operating system may include OmniLex's local database in that backup. That is a function of your device settings and Apple's services, not of anything OmniLex sends.</p>
+<p><strong>Your documents do not sync.</strong> The document database uses no iCloud or CloudKit sync — the app has no iCloud container at all. If you install OmniLex on two devices, they share none of your documents. The only things OmniLex puts in iCloud are the small entries described under <a href="#your-other-devices-icloud-handoff-apple-watch-and-apple-tv">Your other devices</a>. There is no copy of your documents on any Prameya system to lose, subpoena, or breach.</p>
+<p><strong>Device backups.</strong> The document database is not excluded from backups, so if you have enabled Apple's device backup (iCloud Backup, or a backup to a computer), your operating system includes OmniLex's local database in that backup. That is a function of your device settings and Apple's services, not of anything OmniLex sends. The downloaded model files are excluded from device backups.</p>
 <h3 id="read-aloud">Read Aloud</h3>
 <p>The Read Aloud feature passes the text you are listening to into your operating system's built-in speech synthesizer. That happens on your device. OmniLex makes no network request to produce speech.</p>
 <h3 id="pdf-reports">PDF reports</h3>
-<p>When you export a risk report, you choose where the PDF is saved. OmniLex writes the file to that location. It does not upload it. What you do with the file afterwards — email it, put it in a document management system — is outside this app and outside this policy.</p>
+<p>When you export a PDF report, you choose where it is saved (on Mac, <strong>Export All Completed Reports</strong> writes every completed report into a folder you pick). OmniLex writes the file to that location. It does not upload it. While it prepares the file it keeps a temporary copy in its own storage, excluded from device backups. <strong>Export extracted text</strong> hands a document's extracted text to the system share sheet, and you choose where it goes. <strong>Copy</strong> on a Document Background note puts the text on this device's clipboard only: on iPhone, iPad and Apple Vision Pro it is kept off Universal Clipboard and expires after two minutes, and on Mac it is kept to that Mac. What you do with an exported file afterwards — email it, put it in a document management system — is outside this app and outside this policy.</p>
+<h3 id="links-to-sources-and-other-pages">Links to sources and other pages</h3>
+<p>The reference library cites public sources. When you tap <strong>Open the source</strong> or another source link, it opens in your web browser, which contacts that website under the website's own terms. OmniLex adds nothing of yours to the link. The same is true of the other links in the app — this policy, Support, Apple's standard licence agreement, the open-source project pages listed under Acknowledgements and, on Mac, <strong>Manage Subscription</strong> — and <strong>Email support</strong> opens your mail app with our address filled in; nothing is sent unless you send it.</p>
+<hr />
+<h2 id="your-other-devices-icloud-handoff-apple-watch-and-apple-tv">Your other devices: iCloud, Handoff, Apple Watch and Apple TV</h2>
+<h3 id="the-icloud-key-value-store">The iCloud key-value store</h3>
+<p>On iPhone, iPad and Apple Vision Pro, if you are signed in to iCloud, OmniLex keeps four small entries in its iCloud key-value storage in your own iCloud account. They are:</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Entry</th>
+<th>What it holds</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Where you left off</td>
+<td>Which part of the app you were in, the identifier of the reference topic you last opened (for example, the topic on trade secrets), the random identifier of the last document you opened on that device, and when</td>
+</tr>
+<tr>
+<td>Appearance</td>
+<td>System, Light or Dark</td>
+</tr>
+<tr>
+<td>Home Screen glance</td>
+<td>The random identifier of the last document you opened or imported, the fixed words "Last matter" and "Open in OmniLex", and when</td>
+</tr>
+<tr>
+<td>Pending open</td>
+<td>Set for a moment when you tap the widget or run the <strong>Open last matter</strong> shortcut, and removed when the app opens: the random document identifier, or the word "continue"</td>
+</tr>
+</tbody>
+</table></div>
+<p>The identifiers are random codes the app gave your document or the names of topics in the app's own reference library. <strong>These entries never hold a document's title, file name or text.</strong> If an earlier build put a document's file name in the Home Screen glance, OmniLex replaces it with the neutral words above the next time it opens. Apple stores and syncs these entries under Apple's terms; Prameya cannot read them.</p>
+<p>The Home Screen widget (iPhone and iPad) and OmniLex for Apple TV read these entries. The Mac app is not signed for iCloud key-value storage, so on a Mac these entries stay on the Mac. The Apple Watch app is not signed for it either; it gets the same information from your iPhone instead (see below).</p>
+<p><strong>Removing them.</strong> <strong>Delete All Documents &amp; Analyses</strong> removes all four entries from iCloud, and deleting the document the Home Screen glance points to removes them too. Deleting the app does not remove them. One limit, stated plainly: until you quit OmniLex, the app remembers in memory the last document and topic you opened, and the next time you switch tabs, open a reference topic, change the appearance or the app refreshes its Handoff information, it writes the "where you left off" entry again — so after a deletion that entry can keep, or get back, the random identifier of the document you deleted, and the identifier of the last topic you opened. The same information goes out over Handoff and to your Apple Watch. It holds no title or text, and a device that reads it cannot open that document, because it is gone; the document identifier in it is replaced the next time you open a document. When OmniLex next opens, it starts with no remembered document or topic, so the entry it writes then holds only the part of the app you are in and when, until you open a topic or a document.</p>
+<h3 id="handoff">Handoff</h3>
+<p>On iPhone, iPad, Mac and Apple Vision Pro, OmniLex uses Apple's Handoff to tell your nearby devices signed in to the same Apple Account where you left off: the same part-of-the-app, reference topic and random document identifier as above. A device that receives it opens that document only if the document is already on that device (documents do not sync); otherwise it opens the reference topic. It is not added to Spotlight search.</p>
+<h3 id="the-home-screen-widget-and-shortcuts">The Home Screen widget and Shortcuts</h3>
+<p>On iPhone and iPad, the Home Screen widget shows "Last matter / Open in OmniLex" and opens the last document you reviewed on that device. Its text is marked privacy-sensitive, so the system can hide it when the device is locked. The <strong>Open last matter</strong> shortcut does the same thing.</p>
+<h3 id="apple-watch">Apple Watch</h3>
+<p>The Apple Watch app comes with the iPhone app. It has <strong>Learn</strong> (the reference library, which ships on the Watch), <strong>Now</strong> (prompts to continue or pin a topic, or to answer a re-check reminder, and <strong>Ask iPhone</strong>) and <strong>More</strong> (the legal notice). It runs no AI model and holds none of your documents.</p>
+<ul>
+<li>Over Apple's connection between the two devices, your iPhone sends the Watch where you left off (the part of the app, the reference topic and the random document identifier) and any re-check prompts, which name reference topics. The Watch sends the iPhone your taps (Confirm, Snooze, Not now). Confirming <strong>Pin this topic</strong> has the iPhone save that topic in the "where you left off" iCloud entry described above.</li>
+<li><strong>Ask iPhone</strong> sends the question you enter to OmniLex on your paired iPhone. The iPhone answers it with the downloaded model only — not Apple Intelligence — while OmniLex is running on the iPhone, and sends the answer back. If the iPhone is not reachable, the question waits until it is. <strong>If no model is downloaded on the iPhone yet, a question from the Watch can start the download of the model selected in Settings on the iPhone</strong>, from Hugging Face, as described below.</li>
+</ul>
+<h3 id="apple-tv">Apple TV</h3>
+<p>OmniLex for Apple TV reads the iCloud entries above to offer the reference topic you were reading and to match your appearance choice. It shows reference topics only — never your documents, which are not on the TV — writes nothing to iCloud, downloads no model and runs none: its Ask quotes passages from the reference library that ships with it.</p>
+<p>None of this reaches Prameya.</p>
+<hr />
+<h2 id="re-check-reminders">Re-check reminders</h2>
+<p>Each topic in the reference library records when its source is due to be re-checked. On iPhone and iPad, <strong>Settings ▸ Preferences ▸ Remind me when a saved topic's source is due for re-checking</strong> is off until you turn it on. Turning it on is the only thing in OmniLex that asks iOS for permission to send notifications, and iOS asks only if you have not answered before.</p>
+<p>If you allow it, OmniLex schedules local notifications on the device, titled "Source due for re-check" and naming the topic, for reference topics you have opened whose re-check date has passed or comes up: a topic already past its date is announced within minutes of turning the switch on, and others at 9:00 your local time the day after their re-check date. Up to 20 are scheduled when you turn the switch on; each topic you open afterwards can add its own. iOS delivers them from the device; nothing is sent to us or to any server. Tapping a notification only opens its topic. <strong>Confirm</strong> or <strong>Not now</strong> records on the device that you have answered that topic's reminder; <strong>Snooze</strong> records nothing. Turning the switch off removes the pending reminders.</p>
+<p>So that the reminder can cover topics you opened before turning it on, OmniLex keeps a list of up to 200 reference topics you have opened on that iPhone or iPad, even while the switch is off. It holds topic identifiers from the app's own library, never your documents. <strong>Delete All Documents &amp; Analyses</strong> clears it, turns the switch off and removes pending reminders.</p>
 <hr />
 <h2 id="subscriptions-and-in-app-purchases">Subscriptions and In-App Purchases</h2>
 <h3 id="available-tiers">Available tiers</h3>
@@ -210,63 +319,85 @@ them grants exactly the same Pro — there are no separate feature tiers.</p>
 </tr>
 </tbody>
 </table></div>
-<p>Family Sharing is enabled on all three. Subscriptions renew until you cancel in<br />
-Settings; Lifetime is a one-time non-consumable.</p>
-<p><strong>The knowledge layer is free and stays free.</strong> Without paying anything you get<br />
-the corpus, its citations and a three-document vault, with no account and no time limit. Pro adds an unlimited vault, on-device search and formatted PDF export.</p>
+<p>Family Sharing is enabled on all three. Subscriptions renew until you cancel;<br />
+Lifetime is a one-time non-consumable.</p>
+<p><strong>What is free and stays free.</strong> Without paying anything you get the reference library and its citations, document import and reading, as many documents as you like, export of a document's extracted text, Ask, and a reading-priority review of the first document you have analysed (reviewing the sample NDA does not use it), with no account and no time limit. Pro adds on-device search across your imported documents, reading-priority review of further documents, and formatted PDF reports.</p>
 <p><strong>Pro does not add cloud sync, and there is no paid iCloud option.</strong> OmniLex stores your<br />
-records on your device in every case, paid or not. If a subscription lapses you keep your<br />
-own data and can still export it in its raw form; only the Pro tools stop.</p>
+documents on your device in every case, paid or not. If a subscription lapses you keep your<br />
+own data and can still export its extracted text; only the Pro tools stop.</p>
 <h3 id="subscription-tier-data-collection">Subscription tier data collection</h3>
-<p><strong>Free and Pro collect the same types of data</strong> (documents you create, research queries, usage history) — all of it on your device.</p>
-<p>The difference is:<br />
-- <strong>What features are available</strong> (template library size, research depth, export formats)<br />
-- <strong>Nothing syncs between devices, in either case.</strong> OmniLex has no cloud sync, free or paid.</p>
-<p>In all tiers:<br />
-- Documents stay on your device (or in your iCloud if enabled)<br />
-- No transmission of documents or notes to Prameya<br />
-- No analytics or tracking</p>
+<p><strong>Free and Pro handle your data the same way.</strong> Everything described in this policy applies in both.</p>
+<p>The difference is only which features are available. In every case:<br />
+- Documents stay on your device.<br />
+- Nothing about your documents or notes is transmitted to Prameya.<br />
+- There is no analytics or tracking.</p>
 <p><strong>Subscription unlocks professional features. It does not change what data is collected.</strong></p>
+<p>To give the free first review once, OmniLex keeps on the device the random identifier of the document that review was spent on. <strong>Delete All Documents &amp; Analyses</strong> does not remove that marker, by design, so deleting your documents does not give a second free review. It never leaves the device.</p>
 <h3 id="cancellation-and-refunds">Cancellation and refunds</h3>
 <p>Subscriptions are managed by Apple:<br />
-- <strong>Cancel:</strong> iOS Settings → your name → Subscriptions → OmniLex<br />
+- <strong>Cancel:</strong> in OmniLex, <strong>Settings ▸ Pro ▸ Manage Subscription</strong> (on iPhone, iPad and Apple Vision Pro this opens Apple's own subscription sheet; on Mac it opens your App Store account page), or in the Settings app → your name → Subscriptions → OmniLex<br />
 - <strong>Refund requests:</strong> reportaproblem.apple.com</p>
 <p>Prameya cannot cancel your subscription or issue refunds. Apple controls all billing.</p>
 <h3 id="storekit-transaction-data">StoreKit transaction data</h3>
-<p>When you purchase a subscription, the app receives and stores locally on your device:<br />
-- Transaction ID (an opaque identifier from Apple)<br />
-- Product ID (which tier you purchased)<br />
-- Purchase and expiration dates</p>
-<p>This data:<br />
-- Is stored only on your device<br />
-- Is NOT synced to iCloud<br />
-- Is used only to unlock tier-appropriate features<br />
-- Is deleted when you use "Delete All Data"</p>
+<p>When you buy or restore Pro, StoreKit on your device completes and checks the purchase with Apple. Apple processes the payment and keeps its own record of the transaction under Apple's terms. OmniLex asks StoreKit which Pro product, if any, you currently have, and keeps the answer in memory while the app runs. It does not store transaction identifiers or purchase dates, and it sends nothing about a purchase to us. We do not collect payment details and never see them. Purchases are available on iPhone, iPad, Mac and Apple Vision Pro; the Apple Watch and Apple TV apps have no purchases.</p>
 <hr />
 <h2 id="when-omnilex-uses-the-network">When OmniLex uses the network</h2>
 <h3 id="downloading-the-ai-model">Downloading the AI model</h3>
-<p>OmniLex ships without an AI model. The first time you use an AI feature, you choose a model and the app downloads its weights from <strong>Hugging Face</strong>. The request starts at <code>huggingface.co</code>, which redirects the actual file transfer to Hugging Face's content delivery hosts (currently <code>*.cdn.hf.co</code>; the precise host varies by region, and the download links are signed and short-lived).</p>
+<p>The AI model OmniLex runs itself is not part of the app download. On iPhone, iPad, Mac and Apple Vision Pro, you choose one of three sizes in <strong>Settings ▸ On-Device AI</strong>, and the app downloads its files from <strong>Hugging Face</strong>. All three are unmodified, openly licensed (Apache-2.0) 4-bit conversions of Qwen3 models, each pinned to one version:</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Size in Settings</th>
+<th>Hugging Face repository</th>
+<th>Pinned commit</th>
+<th>Download</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Compact</td>
+<td><code>mlx-community/Qwen3-0.6B-4bit</code></td>
+<td><code>73e3e38d</code></td>
+<td>about 420 MB</td>
+</tr>
+<tr>
+<td>Standard (recommended, the default)</td>
+<td><code>mlx-community/Qwen3-1.7B-4bit</code></td>
+<td><code>3b1b1768</code></td>
+<td>about 1.1 GB</td>
+</tr>
+<tr>
+<td>Large</td>
+<td><code>mlx-community/Qwen3-4B-4bit</code></td>
+<td><code>4dcb3d10</code></td>
+<td>about 2.5 GB</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>When a download starts.</strong> A download of the model selected in Settings starts when you choose <strong>Download</strong> there, or the first time you use a feature that needs it while no model is on the device: a reading-priority review of a document you import or re-review, a question about a document, a Research explanation, or a question sent from Apple Watch (see above). Ask and Document Background never start one. Downloads wait for Wi-Fi unless you turn on <strong>Download over cellular</strong> in the same section. On iPhone and iPad a download may continue for a short time after you leave the app.</p>
+<p>The request starts at <code>huggingface.co</code>, which redirects the actual file transfer to Hugging Face's own content delivery hosts (for example <code>*.cdn.hf.co</code>; the precise host varies by region, and the download links are signed and short-lived).</p>
 <p>What that request contains:</p>
 <ul>
-<li>The identifier of the model you selected and the files being fetched.</li>
-<li>The ordinary technical information any internet request carries — your IP address, and standard connection headers.</li>
+<li>The repository and version of the model you selected, and the names of the files being fetched.</li>
+<li>The ordinary technical information any internet request carries — your IP address, and standard connection headers, including a user-agent header that names the app.</li>
 </ul>
 <p>What it does <strong>not</strong> contain:</p>
 <ul>
 <li>Any part of your documents.</li>
 <li>Any text you typed.</li>
-<li>Any identifier we created for you, because we do not create one.</li>
+<li>Any identifier we created for you, because we do not create one. OmniLex uses no Hugging Face account or token.</li>
 </ul>
 <p>Hugging Face is an independent third party and its handling of that request is governed by its own privacy policy at <a href="https://huggingface.co/privacy">huggingface.co/privacy</a>. We have no relationship with Hugging Face on your behalf and receive nothing back from them about you.</p>
-<p>The download is a one-time event per model. Once the weights are on your device, the AI runs entirely locally, including offline. You can switch airplane mode on after the download and every AI feature still works.</p>
+<p>The downloaded files are the model weights, its tokenizer and its configuration: data the model reads, not executable code. They are stored in the app's own storage, excluded from device backups, and stay until you use <strong>Delete All Documents &amp; Analyses</strong> or delete the app. <strong>Unload</strong> in Settings frees memory; it does not delete the files. Once the files are on your device, the AI runs entirely locally, including offline. You can switch airplane mode on after the download and every AI feature still works. OmniLex for Apple TV and the Apple Watch app never download a model.</p>
 <p>All network connections the app makes are HTTPS. Plain HTTP is blocked at the app level: the app's transport security settings disable arbitrary loads, in web content as well as elsewhere.</p>
-<p><strong>Practical note for confidential matters:</strong> if you are working under a protective order or on a matter where even the fact of a network connection matters, download your model first, on a network you are comfortable with. After that, OmniLex does not need the internet.</p>
+<p><strong>Practical note for confidential matters:</strong> if you are working under a protective order or on a matter where even the fact of a network connection matters, download your model first, on a network you are comfortable with — importing a document for review with no model on the device would otherwise start the download. After that, OmniLex does not need the internet.</p>
 <h3 id="what-we-removed">What we removed</h3>
 <p>An earlier build of OmniLex included a "Case Story" feature that sent search queries — derived from your document's contents and title — to a third-party search API at <code>api.duckduckgo.com</code>. That was inconsistent with how this app was described, and for an app holding privileged client material it was the wrong design. <strong>That network path has been removed.</strong></p>
-<p>It was deleted rather than switched off: the web-search service file no longer exists in the source, no call to that API remains anywhere in the app, and the Case Story screen has no network path of its own. The app's onboarding text, its copyright string and its privacy manifest have all been corrected to match. A test that reads the app's own source tree fails the build if outbound-network code appears anywhere outside the model downloader.</p>
+<p>It was deleted rather than switched off: the web-search service file no longer exists in the source, no call to that API remains anywhere in the app, and the feature (now called Document Background) has no network path of its own. The app's onboarding text, its copyright string and its privacy manifest have all been corrected to match. A test that reads the app's own source tree fails the build if outbound-network code appears anywhere outside the model downloader.</p>
 <h3 id="nothing-else-connects-out">Nothing else connects out</h3>
-<p>Apart from the model download, OmniLex's own code makes no network requests. There is no telemetry, no crash reporting service, no advertising SDK, no attribution SDK, no remote configuration, and no "phone home" check. That is what the source-tree test described above enforces.</p>
-<p>The app is built on third-party Swift packages — the on-device AI runtime, the Hugging Face model-downloading libraries, and the general-purpose packages those depend on. We have not yet completed a package-by-package review of those dependencies' own privacy manifests. So the statement we make here is the one we have actually verified: the only outbound connection in OmniLex's own code is the model download. We are not, in this policy, certifying each upstream package on top of that.</p>
+<p>Apart from the model download, OmniLex's own code opens no network connection. That is what the source-tree test described above enforces. The other ways information leaves your device are Apple's services, reached through Apple's own frameworks and described above: the iCloud key-value entries, Handoff, the connection to Apple Watch, and StoreKit for purchases. A link you tap opens in your browser or mail app (see <a href="#links-to-sources-and-other-pages">Links to sources and other pages</a>).</p>
+<p>There is no telemetry, no crash reporting service, no advertising SDK, no attribution SDK, no remote configuration, and no "phone home" check. OmniLex does read the performance summaries Apple's MetricKit hands to apps on the device (launch time, hangs, disk writes, abnormal exits) and writes those numbers to the device's own log; it does not send them anywhere.</p>
+<p>The app is built on third-party Swift packages — the on-device AI runtime, the Hugging Face model-downloading libraries, the ZIPFoundation library used to read Word documents, and the general-purpose packages those depend on. We have not yet completed a package-by-package review of those dependencies' own privacy manifests. So the statement we make here is the one we have actually verified: the only outbound connection in OmniLex's own code is the model download. We are not, in this policy, certifying each upstream package on top of that.</p>
 <hr />
 <h2 id="things-we-do-not-do">Things we do not do</h2>
 <p>One line each, because these deserve a straight answer.</p>
@@ -274,40 +405,41 @@ own data and can still export it in its raw form; only the Pro tools stop.</p>
 <li><strong>We do not have accounts.</strong> There is nothing to sign up for and no password to lose. The app contains no sign-in of any kind.</li>
 <li><strong>We do not collect personal information.</strong> We operate no server that receives it.</li>
 <li><strong>We do not sell or share your personal information.</strong> We have none to sell.</li>
+<li><strong>We do not sync your documents.</strong> OmniLex never sends them to iCloud or anywhere else; only the small entries described above go to iCloud. (A device backup you have turned on is Apple's, and includes them.)</li>
 <li><strong>We do not show ads.</strong> There is no ad SDK in the app.</li>
 <li><strong>We do not track you</strong> across apps or websites, and the app declares no tracking domains.</li>
 <li><strong>We do not use analytics.</strong> There is no analytics SDK in the app. We do not know how many documents you have, what they say, or whether you opened the app today. Apple's own developer-facing App Store reporting is a separate thing that Apple runs, and it is described under <a href="#third-parties">Third parties</a> below.</li>
-<li><strong>We do not train AI models on your data.</strong> Your documents never reach us, so they cannot be training data. The models are unmodified third-party open-weight models downloaded to your device.</li>
+<li><strong>We do not train AI models on your data.</strong> Your documents never reach us, so they cannot be training data. The models are unmodified third-party open-weight models downloaded to your device, or Apple's own on-device model.</li>
 <li><strong>We do not use cookies</strong>, because there is no web service.</li>
 <li><strong>We do not share your data with law enforcement</strong>, because we hold nothing to share. A request to us would return nothing about you.</li>
 </ul>
 <hr />
 <h2 id="if-you-are-a-lawyer-confidentiality-and-your-own-duties">If you are a lawyer: confidentiality and your own duties</h2>
 <p>OmniLex is built for legal professionals, and this section is written for you rather than for a general audience.</p>
-<p><strong>What stays on your device:</strong> the documents you import, the text extracted from them, every prompt you type, every model output, your risk findings, your drafts and your chat history. All of it.</p>
-<p><strong>What the app transmits:</strong> model weight downloads from Hugging Face, and nothing else. No document, no excerpt, no summary, no title, no metadata about your matters.</p>
+<p><strong>What stays on your device:</strong> the documents you import, the text extracted from them, every prompt you type, every model output, your reading-priority flags, your drafts and your chat history. All of it.</p>
+<p><strong>What the app transmits:</strong> model file downloads from Hugging Face; the four small iCloud entries described above (the part of the app you were in, a reference-topic identifier, a random document identifier and your appearance choice), if you use iCloud on iPhone, iPad or Apple Vision Pro; the same kind of "where you left off" information over Handoff and to your Apple Watch; a question you choose to send from Apple Watch to your own iPhone, and its answer; and purchase checks with Apple. No document, no excerpt, no summary, no title, no file name.</p>
 <p><strong>What this does and does not do for your obligations.</strong> ABA Model Rule 1.6 requires you to make reasonable efforts to prevent unauthorized disclosure of information relating to the representation. Software that keeps client material on hardware you control is a materially better posture than software that ships it to a vendor's servers. It is not, by itself, compliance. You remain responsible for:</p>
 <ul>
 <li><strong>Device security.</strong> The strongest property of this design — everything is on your device — is also its main dependency. Use a passcode or password, enable full-disk encryption (FileVault on Mac), and do not leave the device unlocked and unattended. If someone gets into your unlocked device, they get into your documents.</li>
 <li><strong>Backups.</strong> If your device backs up to iCloud or to another machine, your OmniLex database goes with it. Decide whether that is acceptable for the material you are putting in.</li>
 <li><strong>Shared and managed devices.</strong> OmniLex has no per-user separation inside the app. Anyone who can unlock the device account can open the app.</li>
-<li><strong>Exported files.</strong> A PDF risk report you export is an ordinary file. Once it leaves the app, this policy no longer describes what happens to it.</li>
+<li><strong>Exported files.</strong> A PDF report or exported text is an ordinary file. Once it leaves the app, this policy no longer describes what happens to it.</li>
 <li><strong>Your own client obligations.</strong> Some engagement letters, protective orders and outside counsel guidelines restrict which tools may touch client material at all, regardless of where processing happens. Read them before importing.</li>
 </ul>
 <blockquote>
-<p><strong>On encryption at rest:</strong> on iPhone and iPad, OmniLex sets an explicit data-protection class — <code>completeUnlessOpen</code> — on its document database and on the SQLite journal files that sit beside it, so the store is encrypted once closed and cannot be reopened until the device is unlocked. Two limits are worth stating rather than glossing: a file that is already open when the device locks stays readable until it is closed, and applying the class is best-effort — if the operating system refuses, the app still launches and the store falls back to the system's default protection. On Mac there is no equivalent per-file class, so the database is covered by FileVault, which is a device-level control you enable, not one the app can set. Beyond that, the app adds no encryption layer of its own. On a device with a passcode and disk encryption enabled, this is meaningful protection. On a device without one, it is not.</p>
+<p><strong>On encryption at rest:</strong> on iPhone, iPad and Apple Vision Pro, OmniLex sets an explicit data-protection class — <code>completeUnlessOpen</code> — on its document database and on the SQLite journal files that sit beside it, so the store is encrypted once closed and cannot be reopened until the device is unlocked. Two limits are worth stating rather than glossing: a file that is already open when the device locks stays readable until it is closed, and applying the class is best-effort — if the operating system refuses, the app still launches and the store falls back to the system's default protection. On Mac there is no equivalent per-file class, so the database is covered by FileVault, which is a device-level control you enable, not one the app can set. Beyond that, the app adds no encryption layer of its own. On a device with a passcode and disk encryption enabled, this is meaningful protection. On a device without one, it is not.</p>
 </blockquote>
-<p><strong>On ethics guidance.</strong> Florida Bar Ethics Opinion 24-1 addresses a lawyer's confidentiality duty when using generative AI, and discusses obtaining a client's informed consent before using a third-party generative AI service in a way that would disclose confidential information. The factual position for OmniLex is this: your material is processed by a model running on your own device, and the app discloses none of it to us or to any third party. What that factual position means for the informed-consent discussion in that opinion — and for the equivalent rules in your own jurisdiction — is a legal judgment for you and your own ethics counsel. We describe what the software does; we do not draw the conclusion for you.</p>
+<p><strong>On ethics guidance.</strong> Florida Bar Ethics Opinion 24-1 addresses a lawyer's confidentiality duty when using generative AI, and discusses obtaining a client's informed consent before using a third-party generative AI service in a way that would disclose confidential information. The factual position for OmniLex is this: your material is processed by a model running on your own device, and the app sends none of your document content to us or to any third party; what does leave the device is listed above. What that factual position means for the informed-consent discussion in that opinion — and for the equivalent rules in your own jurisdiction — is a legal judgment for you and your own ethics counsel. We describe what the software does; we do not draw the conclusion for you.</p>
 <p><strong>OmniLex is not legal advice and is not a lawyer.</strong> Its output is a starting point for your own professional judgment. It can be wrong, and a general-purpose language model can state things about the law that are simply not so. Verify everything, particularly anything that looks like a citation. That is a competence point rather than a privacy point, but it is the most important sentence in this document for a professional user.</p>
 <hr />
 <h2 id="children">Children</h2>
-<p>OmniLex is a professional tool for adults working in law. It is not directed to children, is not designed to appeal to children, and is rated for a mature audience in the App Store.</p>
+<p>OmniLex is a professional tool for adults working in law. It is not directed to children and is not designed to appeal to children.</p>
 <p>The app collects no personal information from anyone, including children, and contains no advertising. We therefore do not knowingly collect personal information from children under 13, and the Children's Online Privacy Protection Act (COPPA) notice-and-consent machinery has nothing to attach to here — there is no collection to consent to.</p>
 <p>If you believe a child has somehow provided personal information to us, contact admin@prameya.legal and we will look into it. In practice, the only way to send us anything is to email us.</p>
 <hr />
 <h2 id="your-privacy-rights">Your privacy rights</h2>
-<p>Most privacy laws grant rights against a company that holds your data. <strong>We do not hold your data.</strong> Your OmniLex information is on your device, under your control.</p>
-<p>You can act on it directly in the app: delete an individual document, use <strong>Delete All Documents &amp; Risks</strong> or <strong>Clear All Assistant History</strong> in Settings, export a risk report as a PDF to a location you choose, or delete the app — which removes the local database, including downloaded model files.</p>
+<p>Most privacy laws grant rights against a company that holds your data. <strong>We do not hold your data.</strong> Your OmniLex information is on your devices and in your own iCloud account, under your control.</p>
+<p>You can act on it directly in the app: delete an individual document, use <strong>Delete All Documents &amp; Analyses</strong> or <strong>Clear All Assistant History</strong> in <strong>Settings ▸ Data Management</strong>, export a PDF report or a document's extracted text to a location you choose, or delete the app — which removes the local database, including downloaded model files, but not the small iCloud entries described above.</p>
 <p>Even so, here is exactly where you stand under the laws people ask about.</p>
 <h3 id="california-ccpacpra">California (CCPA/CPRA)</h3>
 <p>If you are a California resident:</p>
@@ -331,7 +463,7 @@ own data and can still export it in its raw form; only the Pro tools stop.</p>
 <li><strong>For the documents you put into OmniLex, you are the controller, not us.</strong> The app is software running on your equipment. We receive no personal data from it and act as no one's processor for it.</li>
 <li><strong>For support email</strong>, Prameya is the controller. The legal basis is our legitimate interest in answering your question (Article 6(1)(f)), or performance of a contract where your message concerns the app you have installed.</li>
 <li><strong>Special category data (Article 9)</strong> — including health data, and data revealing legal matters that could touch on protected categories — may appear inside the documents you analyse. Because that processing happens entirely on your own device and we never receive the data, we are not the ones processing it. Your own lawful basis for holding client material is a matter between you and your clients.</li>
-<li><strong>International transfers:</strong> we transfer nothing, because we receive nothing. Model downloads are a request from your device to Hugging Face; that transfer is between you and them.</li>
+<li><strong>International transfers:</strong> we transfer nothing, because we receive nothing. Model downloads are a request from your device to Hugging Face; that transfer is between you and them. The small iCloud entries, Handoff and purchases are handled by Apple under your agreement with Apple.</li>
 <li><strong>Your rights</strong> of access, rectification, erasure, restriction, portability and objection apply to the support correspondence we hold. Email admin@prameya.legal. You may also complain to your national supervisory authority, or the ICO in the UK.</li>
 </ul>
 <hr />
@@ -343,29 +475,29 @@ own data and can still export it in its raw form; only the Pro tools stop.</p>
 <h2 id="security">Security</h2>
 <p>Honest specifics rather than adjectives:</p>
 <ul>
-<li><strong>On-device only.</strong> The most effective security control here is architectural: there is no server holding your documents, so there is no server to breach.</li>
-<li><strong>Device encryption.</strong> Your local database sits inside the app's private container. On iPhone and iPad the app sets the <code>completeUnlessOpen</code> data-protection class on the store and its journal files; on Mac there is no equivalent per-file class and the store is covered by FileVault if you have FileVault turned on. Enable a passcode and, on Mac, FileVault. Without those, the protection is much weaker.</li>
-<li><strong>Sandboxing.</strong> On Mac, OmniLex runs in Apple's App Sandbox with access only to the files you pick.</li>
-<li><strong>HTTPS enforced.</strong> The app is configured to refuse insecure connections. The only outbound connection is the model download.</li>
-<li><strong>Keychain.</strong> Sensitive flags and keys the app needs are held in the system Keychain rather than in ordinary storage.</li>
-<li><strong>Third-party code.</strong> There is no advertising, analytics, attribution or crash-reporting SDK in the app. The third-party code the app does include is the on-device AI runtime and the Hugging Face model-download libraries, plus the general-purpose Swift packages those rely on. Our own code has exactly one outbound connection — the model download — and a test enforces that. A package-by-package review of those dependencies' own privacy manifests is still outstanding on our side, and until it is done we are not making a claim about each of them here.</li>
+<li><strong>Documents on-device only.</strong> The most effective security control here is architectural: there is no server holding your documents, so there is no server to breach.</li>
+<li><strong>Device encryption.</strong> Your local database sits inside the app's private container. On iPhone, iPad and Apple Vision Pro the app sets the <code>completeUnlessOpen</code> data-protection class on the store and its journal files; on Mac there is no equivalent per-file class and the store is covered by FileVault if you have FileVault turned on. Enable a passcode and, on Mac, FileVault. Without those, the protection is much weaker.</li>
+<li><strong>Sandboxing.</strong> On Mac, OmniLex runs in Apple's App Sandbox with access only to the files and folders you pick.</li>
+<li><strong>HTTPS enforced.</strong> The app is configured to refuse insecure connections. The only outbound connection its own code makes is the model download.</li>
+<li><strong>Third-party code.</strong> There is no advertising, analytics, attribution or crash-reporting SDK in the app. The third-party code the app does include is the on-device AI runtime, the Hugging Face model-download libraries and the ZIPFoundation library, plus the general-purpose Swift packages those rely on. Our own code has exactly one outbound connection — the model download — and a test enforces that. A package-by-package review of those dependencies' own privacy manifests is still outstanding on our side, and until it is done we are not making a claim about each of them here.</li>
 </ul>
 <p>No system is perfectly secure, and we are not going to pretend otherwise. What we can say precisely is that the failure modes here are device-level, not vendor-level.</p>
 <hr />
 <h2 id="keeping-and-deleting-data">Keeping and deleting data</h2>
 <p>We keep nothing, so there is nothing for us to retain or delete.</p>
-<p>On your device:</p>
+<p>On your devices:</p>
 <ul>
-<li><strong>Delete a document</strong> in the app and its extracted text, summary and risk findings go with it.</li>
-<li><strong>Delete everything at once</strong> from Settings, using <strong>Delete All Documents &amp; Risks</strong> and <strong>Clear All Assistant History</strong>.</li>
-<li><strong>Delete the app</strong> and the entire local database, including downloaded model files, is removed by the operating system.</li>
-<li><strong>Downloaded models</strong> persist until you remove them from the app's model settings or delete the app.</li>
+<li><strong>Delete a document</strong> in the app and its extracted text, summary, reading-priority flags and search index go with it.</li>
+<li><strong>Delete everything at once</strong> from <strong>Settings ▸ Data Management</strong>. <strong>Delete All Documents &amp; Analyses</strong> deletes every document, flag, analysis, chat message, note and template you created, the downloaded model files, the lists of recently opened documents and topics, your preferences and pending reminders, and the four iCloud entries. It keeps the marker that the free first review was used, the identifier the app gave the sample NDA, your first-run acknowledgement and the <strong>Download over cellular</strong> setting. <strong>Clear All Assistant History</strong> deletes the chat history only.</li>
+<li><strong>Delete the app</strong> and the entire local database, including downloaded model files, is removed by the operating system. The iCloud entries are not; <strong>Delete All Documents &amp; Analyses</strong> removes them.</li>
+<li><strong>Downloaded models</strong> persist until you use <strong>Delete All Documents &amp; Analyses</strong> or delete the app.</li>
+<li><strong>The iCloud entries</strong> stay in your iCloud account until OmniLex replaces or removes them (see <a href="#your-other-devices-icloud-handoff-apple-watch-and-apple-tv">Your other devices</a>, including when the "where you left off" entry can come back after a deletion).</li>
 <li><strong>Support email</strong> is kept only as long as needed to handle your question, and we will delete it on request.</li>
 </ul>
 <p>You do not have to ask us to delete anything, and there is no deletion request that would accomplish more than deleting it yourself.</p>
 <hr />
 <h2 id="third-parties">Third parties</h2>
-<p>Two, and only two, and neither receives your content:</p>
+<p>Two, and only two, and neither receives your documents:</p>
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -377,44 +509,57 @@ own data and can still export it in its raw form; only the Pro tools stop.</p>
 <tbody>
 <tr>
 <td><strong>Hugging Face</strong></td>
-<td>Hosts the AI model weights the app downloads</td>
-<td>A request for a model file, and the ordinary technical details of that connection (including your IP address)</td>
+<td>Hosts the AI model files the app downloads</td>
+<td>A request for model files, and the ordinary technical details of that connection (including your IP address)</td>
 </tr>
 <tr>
 <td><strong>Apple</strong></td>
-<td>App Store distribution, and the operating system frameworks the app runs on</td>
-<td>Whatever Apple collects as your platform and store provider, under Apple's own privacy policy. Apple also makes developer-facing App Store reporting available to Prameya as the publisher; we have not audited what that reporting contains, so we make no claim here about it. What we can say is that it does not come from this app sending anything — OmniLex's only outbound connection is the model download, and it transmits nothing to Apple</td>
+<td>App Store distribution and purchases, iCloud, Handoff, the connection to Apple Watch, notifications, Apple Intelligence, and the operating system frameworks the app runs on</td>
+<td>If you use iCloud, the four small entries described above, stored in your own iCloud account; the "where you left off" information carried by Handoff and to your Apple Watch; purchase checks through StoreKit; and whatever Apple collects as your platform and store provider, under Apple's own privacy policy. Apple Intelligence runs Apple's model on your device, and OmniLex does not send your questions to Apple. Apple also makes developer-facing App Store reporting available to Prameya as the publisher; we have not audited what that reporting contains, so we make no claim here about it. What we can say is that it does not come from this app sending anything to us</td>
 </tr>
 </tbody>
 </table></div>
-<p>There are no other processors, no data brokers, no advertising partners and no analytics vendors.</p>
+<p>There are no other processors, no data brokers, no advertising partners and no analytics vendors. A website you open from a source link is visited by your browser, not by OmniLex.</p>
 <hr />
 <h2 id="app-store-privacy-labels">App Store privacy labels</h2>
-<p>Apple's App Store shows a privacy label built on Apple's definition of "collect," which means transmitting data off the device. Under that definition, OmniLex collects no data, and the app's privacy manifest declares no collected data types and no tracking.</p>
+<p>Apple's App Store shows a privacy label built on Apple's definition of "collect," which means transmitting data off the device in a way that lets the developer or its partners access it for longer than it takes to service the request. Under that definition, OmniLex collects no data, and the app's privacy manifest declares no collected data types and no tracking.</p>
 <p>We want to flag two things about that:</p>
 <ol>
 <li>That definition governs the App Store label only. It does not narrow what state or national privacy laws require of us, and we have not used it that way anywhere in this policy.</li>
-<li>The label is not the whole story about the network. The "no data collected" answer rests on the fact that no user content is transmitted — not on a claim that the app never opens a connection. OmniLex does make one outbound connection, the model download, even though no user data goes with it. This policy tells you about it; the label format does not have a place for it.</li>
+<li>The label is not the whole story about the network. The "no data collected" answer rests on the fact that nothing reaches Prameya or any partner of ours — the iCloud entries sit in your own iCloud account, which we cannot access — not on a claim that the app never opens a connection. OmniLex does make one outbound connection of its own, the model download, and uses Apple's iCloud, Handoff and Watch connection as described above. This policy tells you about them; the label format does not have a place for them.</li>
 </ol>
 <hr />
 <h2 id="changes-to-this-policy">Changes to this policy</h2>
 <p>If we change how OmniLex handles data, we will update this policy and change the effective date at the top.</p>
-<p>This revision, effective 8 August 2026, corrected statements in the previous version so that they match the code that actually ships. In particular: the third-party web-search path is now confirmed deleted rather than pending removal; the camera, photo-library and local-network permission strings are gone from the build; the local database now carries an explicit data-protection class on iPhone and iPad, and this policy says exactly what that class does and does not cover; and, where we had not verified something — the privacy manifests of the app's third-party Swift packages, and the contents of Apple's developer-facing App Store reporting — this policy now says so plainly instead of implying more than we know.</p>
+<p><strong>23 September 2026 — what changed.</strong> This policy was rewritten to match what the current app does. Earlier versions said nothing syncs and that the model download was the only thing that ever left the device; that is not true of this app, and this version says what does:</p>
+<ul>
+<li>It describes the four small entries OmniLex keeps in your iCloud key-value storage on iPhone, iPad and Apple Vision Pro, what they hold (never a document's title, file name or text), and that a deleted document's random identifier can reappear in one of them after a deletion, until you quit OmniLex or open another document.</li>
+<li>It describes Handoff, the Home Screen widget and the <strong>Open last matter</strong> shortcut, the Apple Watch app (including <strong>Ask iPhone</strong>, and that a question from the Watch can start the model download on the iPhone), and OmniLex for Apple TV. Earlier versions covered iPhone, iPad and Mac only.</li>
+<li>It describes Ask: Apple Intelligence on the device where it is ready, otherwise a model already downloaded.</li>
+<li>It describes the optional re-check reminder, the only thing that asks for notification permission, and the list of opened reference topics it keeps on iPhone and iPad.</li>
+<li>It names the three model sizes, their Hugging Face repositories and pinned versions, and says that a download can also start the first time you use a feature that needs the model, not only from Settings. Earlier versions did not name the models.</li>
+<li>It adds Word (.docx) import, and the ZIPFoundation library that reads it on iPhone, iPad and Apple Vision Pro.</li>
+<li>It corrects what Pro includes (there is no longer a three-document limit; the first reading-priority review is free), and no longer says the app stores transaction identifiers from Apple: it stores none.</li>
+<li>It corrects what <strong>Delete All Documents &amp; Analyses</strong> removes and keeps, and no longer says the app keeps sensitive values in the Keychain: OmniLex's own code keeps nothing there. It also no longer states an App Store age rating.</li>
+</ul>
+<p>Nothing new is sent to Prameya. The in-app privacy text (Settings ▸ Legal ▸ Privacy Policy) is out of date: it does not describe the iCloud entries, Handoff, Apple Watch, Apple Intelligence or reminders, and it still says that a model is downloaded only when you tap to download one in Settings and that OmniLex otherwise never uses the network. Neither statement is true of the current app. A download can also start from the features listed under <a href="#downloading-the-ai-model">Downloading the AI model</a>, not only from Settings. Where the app's text and this page differ, this page is the correct and complete description.</p>
+<p><strong>8 August 2026 — what changed.</strong> That revision corrected statements in the previous version so that they matched the code that shipped then. In particular: the third-party web-search path was confirmed deleted rather than pending removal; the camera, photo-library and local-network permission strings were gone from the build; the local database carried an explicit data-protection class on iPhone and iPad, and the policy said exactly what that class does and does not cover; and, where we had not verified something — the privacy manifests of the app's third-party Swift packages, and the contents of Apple's developer-facing App Store reporting — the policy said so plainly instead of implying more than we knew.</p>
 <p>For any change that materially affects your privacy — in particular, <strong>adding any new network destination the app connects to</strong> — we will describe the change in the policy rather than quietly revising it, and we will surface it in the app so you see it before it takes effect. Adding a network connection is the kind of change this app should never make silently, and we are committing to that in writing.</p>
-<p>Older versions of this policy are available on request.</p>
+<p>Older versions of this policy are available on request, and in the public repository that publishes these pages: <a href="https://github.com/prameyallc/privacy">https://github.com/prameyallc/privacy</a>.</p>
 <hr />
 <h2 id="contact">Contact</h2>
 <p>Questions, privacy requests, or a correction to something in this policy:</p>
 <p><strong>admin@prameya.legal</strong><br />
 Prameya LLC, United States</p>
-<p>Other Prameya app privacy policies: <a href="https://prameyallc.github.io/privacy/">prameyallc.github.io/privacy</a></p>
+<p>This policy: <a href="https://prameyallc.github.io/privacy/omnilex/">https://prameyallc.github.io/privacy/omnilex/</a><br />
+Other Prameya app privacy policies: <a href="https://prameyallc.github.io/privacy/">prameyallc.github.io/privacy</a></p>
 <hr />
 <p><em>OmniLex is a tool for legal professionals. It does not provide legal advice, does not create a lawyer-client relationship, and its output must be reviewed by a qualified lawyer before it is relied on.</em></p><div class="callout"><h3>Terms of Use</h3><p>The terms governing OmniLex, including subscription auto-renewal and cancellation, and dispute resolution:</p><p><strong><a href="https://prameyallc.github.io/privacy/omnilex/terms/">OmniLex Terms of Use</a></strong></p></div>
 </main>
 <footer class="site"><div class="wrap">
   <p>Prameya LLC · <a href="mailto:admin@prameya.legal">admin@prameya.legal</a>
   · <a href="https://prameyallc.github.io/privacy/support/">Support</a></p>
-  <p>Effective 8 August 2026. <a href="https://prameyallc.github.io/privacy/">All app privacy policies</a></p>
+  <p>Effective 23 September 2026. <a href="https://prameyallc.github.io/privacy/">All app privacy policies</a></p>
 </div></footer>
 </body>
 </html>
