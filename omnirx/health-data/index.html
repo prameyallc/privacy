@@ -402,15 +402,19 @@ it. Withdrawing consent does not undo processing that already happened on your o
   and have stopped following, your reminder settings, your Ask switches (so Ask is off again), any<br />
   copy of the database the app set aside after<br />
   it could not open it, every iCloud key-value value OmniRx writes — including the IDs of the label<br />
-  pages you opened — and the CloudKit preferences record (appearance and notice version) in your iCloud<br />
-  account. It cancels the daily reminder (and a snoozed one), resets the Handoff message to your nearby<br />
-  devices, and sends your Apple Watch a new reminder card, which names no medicine because none is<br />
-  followed any more. It cannot be undone. If a file cannot be removed, or the preferences record<br />
-  cannot be deleted from iCloud, the app tells you.</li>
+  pages you opened — and the CloudKit preferences record (appearance and notice version), which iCloud<br />
+  removes from your account the next time the device syncs. It cancels the daily reminder (and a<br />
+  snoozed one), resets the Handoff message to your nearby devices, clears the last Ask answer on your<br />
+  Apple Watch and sends the Watch a new reminder card, which names no medicine because none is<br />
+  followed any more. It cannot be undone. If a file or the preferences record cannot be removed from<br />
+  the device, the app tells you.</li>
 <li><strong>What it does not reach:</strong><ul>
-<li><strong>Your Apple Watch</strong> gets the new reminder card straight away if it is connected to your iPhone,<br />
-  or the next time it connects. Until then it shows the last card it received — with medicine<br />
-  names, if you had turned that on.</li>
+<li><strong>The CloudKit preferences record, if the device is not signed in to iCloud</strong> when you delete:<br />
+  the app cannot reach it then. It holds no health information. Sign in and delete again, or<br />
+  remove it in iOS Settings → your name → iCloud → Manage Account Storage.</li>
+<li><strong>Your Apple Watch</strong> gets the new reminder card, and loses its last Ask answer, straight away if<br />
+  it is connected to your iPhone, or the next time it connects. Until then it shows the last card<br />
+  it received — with medicine names, if you had turned that on — and its last Ask answer.</li>
 <li><strong>A few settings stay on the device:</strong> your appearance choice, "Show medicine names on Apple<br />
   Watch" and your acceptance of the first-run notice. None of them is health information.</li>
 </ul>
@@ -516,9 +520,10 @@ affirmative consent.</p>
 <li>It says what "Delete all my data" does not reach: what Apple Watch shows until it next connects to<br />
   your iPhone, and a few settings on the device.</li>
 <li>Later on 23 September, with an app update, "Delete all my data" does more: it also cancels the daily<br />
-  reminder, deletes the preferences record from your iCloud account, resets the Handoff message, and<br />
-  sends your Apple Watch a new reminder card with no medicine names. Before that update, an already<br />
-  scheduled reminder kept firing and the preferences record stayed in iCloud after a delete.</li>
+  reminder, deletes the preferences record from your iCloud account, resets the Handoff message, clears<br />
+  the last Ask answer on Apple Watch, and sends the Watch a new reminder card with no medicine names.<br />
+  Before that update, an already scheduled reminder kept firing and the preferences record stayed in<br />
+  iCloud after a delete.</li>
 <li>With the same update, "Export every record as text" also lists the medicines you follow and the<br />
   names of medicines you have stopped following, which it used to leave out.</li>
 <li>With the same update, the first-run notice no longer says we receive a transaction identifier when<br />
