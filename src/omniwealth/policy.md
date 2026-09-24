@@ -1,6 +1,6 @@
 # OmniWealth Privacy Policy
 
-**Effective date:** 23 September 2026
+**Effective date:** 24 September 2026
 **Publisher:** Prameya LLC ("Prameya", "we", "us"), a United States limited liability company
 **Contact:** admin@prameya.legal
 **Applies to:** the OmniWealth app for iPhone, iPad, Mac and Apple Vision Pro, its Apple Watch app, its Apple TV app, and its Home Screen widget
@@ -96,7 +96,7 @@ Everything you enter into OmniWealth is stored locally, in the app's own storage
 | Envelope / budget log (Pro) | An envelope name, an optional payee, an amount (assigned or spent), an optional note, the date, and on iPhone and iPad whether you saved the line as a Watch draft. Arithmetic on that envelope, not a recommendation | Local app database |
 | Goals | Short goal lines you type under More ▸ Tools ▸ Goals | Local app database, in one profile record |
 | Income & Contribution | More ▸ Tools ▸ Income & Contribution saves a monthly-income figure to the same profile record when you tap **Save**. (In this version the screen has no field for typing the figure, and the target percentage on its slider is not saved.) | Local app database, in the profile record |
-| Statement records | A photo of a statement that you choose from your photo library (see [Statement photos](#statement-photos)), the text read from it on your device, and a short glossary of terms found in that text | Local app database |
+| Statement records | A reduced copy of a statement photo that you choose from your photo library, the photo's original file type (see [Statement photos](#statement-photos)), the text read from it on your device, and a short glossary of terms found in that text | Local app database |
 | Saved scenarios (Pro) | Under More ▸ Tools ▸ Your numbers: the years, monthly amount, annual rate and result of a compounding worksheet you choose to save | Local app database |
 | Compounding arithmetic inputs | The monthly amount, number of years, and the annual rate you choose to test on the Compounding screen | Held in memory while that screen is open; not saved |
 | Ask questions | A question you type in Ask (see [Ask](#ask)) | Held in memory only, until you tap **New chat** or the app closes; not saved |
@@ -106,7 +106,7 @@ The app also has a second local database set aside for a small set of preference
 
 This data is written to the app's private storage area, which the operating system protects from other apps. It is never uploaded to Prameya. We could not read it if we wanted to.
 
-**Backups.** The app's database is not excluded from device backups. If you use iCloud Backup or back up your device to a computer, your OmniWealth records — including statement photos — are included in that backup, under Apple's terms and your control. They are not readable by Prameya.
+**Backups.** The app's database is not excluded from device backups. If you use iCloud Backup or back up your device to a computer, your OmniWealth records — including the stored statement page images — are included in that backup, under Apple's terms and your control. They are not readable by Prameya.
 
 **Financial information is sensitive.** We treat it that way. The design principle for OmniWealth is that the safest place for your money data is the device in your hand, and the safest amount for us to hold is none.
 
@@ -114,7 +114,13 @@ This data is written to the app's private storage area, which the operating syst
 
 More ▸ Tools ▸ Statement Glossary ▸ **Scan Statement** ▸ **Choose from Photos** opens Apple's photo picker. OmniWealth receives only the one photo you pick; it does not get access to the rest of your library, and it does not ask for Photos permission. There is no live camera capture and no file or PDF import.
 
-The app reads the text on the photo with Apple's on-device text recognition, then shows a short glossary of common terms it finds (for example "expense ratio" or "cost basis"). It stores the photo itself (re-saved as an image file), the recognized text, and that glossary on your device. Nothing from the photo is sent to us, to Apple, or to any AI service, and the statement text is never given to Ask. The glossary is general; it is not commentary on your holdings.
+The app reads the text on the photo you picked with Apple's on-device text recognition, then shows a short glossary of common terms it finds (for example "expense ratio" or "cost basis"). What the app then keeps on your device is:
+
+- a reduced copy of the page: one JPEG image at most 1,600 pixels on its longest side (a smaller photo is not enlarged), on every device, including Mac. The copy is redrawn from the photo's pixels, so the photo's location, camera and capture-time details are not kept with it;
+- the photo's original file type, for example HEIC or PNG, read from the photo itself;
+- the recognized text and that glossary.
+
+The photo you picked stays in your photo library; the app keeps no other copy of it. Nothing from the photo is sent to us, to Apple, or to any AI service, and the statement text is never given to Ask. The glossary is general; it is not commentary on your holdings.
 
 Each statement record can be deleted on its own from the Statements list.
 
@@ -260,9 +266,9 @@ If you are a parent or guardian and have a question about this app, write to adm
 Because your data stays on your device, you control it directly.
 
 - **See it:** your check-ins, envelope lines, goals, statements and saved scenarios are shown in the app.
-- **Correct or delete one entry:** open a check-in from **Do**, or an envelope line from the Envelopes screen, to change it or delete it on its own. Each goal and each statement record also has its own delete control. Saved scenarios can be removed only with **Delete all data** in this version.
-- **Get your data out:** **More ▸ Data ▸ Export everything in this app** writes one JSON file with every check-in, envelope line, statement record and its photo, saved scenario and your profile. **Export consistency summary** writes a smaller file of just the consistency measurement, and **Export formatted worksheet (CSV)** is a Pro export. Each file is written to this device and goes only where you send it.
-- **Delete everything you have entered:** **More ▸ Data ▸ "Delete all data in this app"**. After a confirmation prompt, this permanently deletes, on this device, every habit log, envelope / budget line, statement record and its photo, saved scenario, and your profile (goals and income figure), plus your age-range result, and leftover model files and settings from older installs if any remain. It also clears the four iCloud key-value values described under [iCloud and syncing](#icloud-and-syncing), turns off the weekly check-in reminder (its switch, weekday and the time you last marked it seen from Apple Watch) and removes any check-in or draft notice still waiting, and sends your Apple Watch a fresh list with no draft or topic prompts, so its complication goes back to "Learn.". If a later file removal fails after the database is emptied, the app says so rather than claiming a complete delete. It cannot be undone. It does **not** reset your appearance or Ask settings, and it cannot reach copies already in your device backups or in files you exported.
+- **Correct or delete one entry:** open a check-in from **Do**, or an envelope line from the Envelopes screen, to change it or delete it on its own. Each goal, each statement record and each saved scenario also has its own delete control: for a saved scenario, swipe it or open its menu under More ▸ Tools ▸ Your numbers, then confirm. Deleting a saved scenario does not need Pro.
+- **Get your data out:** **More ▸ Data ▸ Export everything in this app** writes one JSON file with every check-in, envelope line, statement record with its page image and that image's file type, saved scenario and your profile. **Export consistency summary** writes a smaller file of just the consistency measurement, and **Export formatted worksheet (CSV)** is a Pro export. Each file is written to this device and goes only where you send it.
+- **Delete everything you have entered:** **More ▸ Data ▸ "Delete all data in this app"**. After a confirmation prompt, this permanently deletes, on this device, every habit log, envelope / budget line, statement record and its page image, saved scenario, and your profile (goals and income figure), plus your age-range result, and leftover model files and settings from older installs if any remain. It also clears the four iCloud key-value values described under [iCloud and syncing](#icloud-and-syncing), turns off the weekly check-in reminder (its switch, weekday and the time you last marked it seen from Apple Watch) and removes any check-in or draft notice still waiting, and sends your Apple Watch a fresh list with no draft or topic prompts, so its complication goes back to "Learn.". If a later file removal fails after the database is emptied, the app says so rather than claiming a complete delete. It cannot be undone. It does **not** reset your appearance or Ask settings, and it cannot reach copies already in your device backups or in files you exported.
 - **Delete everything on a device, including preferences:** delete the app. That removes the app's local database and its preferences from that device. It does not remove the iCloud key-value values described under [iCloud and syncing](#icloud-and-syncing); use **Delete all data** before deleting the app if you want those gone too.
 - **Ask us to delete your data:** there is nothing for us to delete. We have never received it. If you write to us asking for deletion, that will be our honest answer.
 
@@ -331,6 +337,14 @@ If we change how OmniWealth handles data, we will update this policy before the 
 - We will change the effective date at the top.
 - We will describe what changed in plain language.
 - The previous version will remain available at this address's history.
+
+**24 September 2026 — what changed.** With the app update released alongside this revision:
+
+- **Statement photos.** A statement record now keeps a reduced copy of the page, one JPEG at most 1,600 pixels on its longest side on every device, without the photo's location, camera or capture-time details, and records the photo's original file type. Earlier builds kept the whole photo (on Mac as an uncompressed image file) and named every record "Photo Library.jpg". The text is still read on your device from the photo you pick. A statement saved by a pre-release test build before this date keeps the image as that build saved it; delete it and add it again to keep only the reduced copy.
+- **Saved scenarios.** Each saved scenario can now be deleted on its own under More ▸ Tools ▸ Your numbers. Earlier this policy said saved scenarios could be removed only with **Delete all data**.
+- **Export.** The export file now names the file type of each statement page image.
+
+Nothing new leaves your device, and nothing is sent to Prameya.
 
 **23 September 2026 — what changed.** This policy was corrected to match what the current app does. Earlier versions said things that were no longer true:
 
