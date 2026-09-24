@@ -1,7 +1,7 @@
 # OmniBuild Privacy Policy
 
-**Effective date:** 23 September 2026
-**Last updated:** 23 September 2026
+**Effective date:** 24 September 2026
+**Last updated:** 24 September 2026
 **Publisher:** Prameya LLC ("Prameya", "we", "us"), a United States limited liability company
 **App:** OmniBuild for iPhone, iPad, Mac and Apple Vision Pro, with its Apple Watch app and its Apple TV app — bundle ID `legal.prameya.OmniBuild` (Apple Watch: `legal.prameya.OmniBuild.watch`)
 **Contact:** admin@prameya.legal
@@ -14,13 +14,13 @@ This policy covers the OmniBuild app on every device it runs on, and nothing els
 
 - **We never receive your data.** Prameya runs no server that receives anything from OmniBuild. We have no user database and no user accounts.
 - **There is no account and no login.** Every feature works the moment you open the app.
-- **Your projects and notes are stored on your device and, if you are signed in to iCloud, in your own iCloud private database**, so your iPhone, iPad, Mac and Apple Vision Pro show the same records. Apple holds that database for you; we cannot open it. Decision entries from earlier versions and the app's small profile record stay on the device only.
-- **A small iCloud key-value store and Handoff carry where you left off** — which screen, which guide, and the random identifier of the last project you opened — so your other devices, Apple Watch and Apple TV can offer to continue. They do not carry project names or notes.
-- **The only network traffic is Apple's and, on some Macs, one optional download.** Apple's services (iCloud, Handoff, the App Store for purchases, Apple's age-range check on iPhone and iPad, and the connection between iPhone and Apple Watch) are the only paths off the device, except that a Mac with 16 GB of memory or more can choose to download an on-device Ask model (about 6.8 GB) from Hugging Face. Everything else the app shows you ships inside the app.
+- **Your projects and notes are stored on your device. iCloud sync is off until you turn it on.** Only if you turn on **More ▸ iCloud ▸ Sync with iCloud** do your projects, notes, punch items and safety-reminder acknowledgements also go to your own iCloud private database, so your iPhone, iPad, Mac and Apple Vision Pro show the same records. Apple holds that database for you; we cannot open it. Decision entries from earlier versions and the app's small profile record stay on the device only, either way.
+- **Where you left off** — which screen, which guide, and the random identifier of the last project you opened — goes to a small iCloud key-value store only while Sync with iCloud is on, so your other devices, Apple Watch and Apple TV can offer to continue. Handoff carries the same details to your nearby devices whether or not sync is on. None of it carries project names or notes.
+- **The only network traffic is Apple's and, on some Macs, one optional download.** Apple's services (iCloud, only while Sync with iCloud is on; Handoff; the App Store for purchases; Apple's age-range check on iPhone and iPad; and the connection between iPhone and Apple Watch) are the only paths off the device, except that a Mac with 16 GB of memory or more can choose to download an on-device Ask model (about 6.8 GB) from Hugging Face. Everything else the app shows you ships inside the app.
 - **Ask answers on your device.** Where Apple Intelligence is turned on and ready, Apple's on-device model answers your question. On a Mac that has downloaded the optional model, that model answers when Apple Intelligence cannot. Your question is not sent to us or to any server. iPhone, iPad and Apple Vision Pro are offered no download.
 - **No ads, no analytics, no tracking, no crash reporting service.** There is no advertising SDK, no analytics SDK, and no third-party tracking code in the app.
 - **One optional permission.** On iPhone and iPad, OmniBuild asks to send notifications only if you turn on **More ▸ Notifications ▸ Job-log reminders**, which is off until you turn it on. It uses no camera, photos, location, microphone, contacts or health data.
-- **Deleting is in your hands.** More ▸ Your Data lets you open, correct, export or remove each project and note, and **Clear All My Logs & Decisions** erases them all. A few small items survive that button; they are listed under "Deleting your data".
+- **Deleting is in your hands.** More ▸ Your Data lets you open, export or remove each project, note, decision entry, punch item and safety-reminder acknowledgement (and correct a project's name or a note's text), and **Clear All My Logs & Decisions** erases them all. A few small items survive that button; they are listed under "Deleting your data".
 
 ---
 
@@ -40,7 +40,7 @@ OmniBuild is educational software. It is not contracting, engineering, architect
 
 | Device | What OmniBuild does there |
 |---|---|
-| iPhone and iPad | The full app: the guides, your projects and notes, Ask, iCloud sync, Handoff, the optional job-log reminders, the Home Screen widget, the Apple Watch connection, and Apple's age-range check |
+| iPhone and iPad | The full app: the guides, your projects and notes, Ask, iCloud sync (if you turn it on), Handoff, the optional job-log reminders, the Home Screen widget, the Apple Watch connection, and Apple's age-range check |
 | Mac | The same app without the reminders, the widget, the Watch connection or the age-range check. Ask can use a downloaded on-device model on Macs with 16 GB of memory or more |
 | Apple Vision Pro | The same app without the reminders, the widget, the Watch connection, the age-range check or any model download |
 | Apple Watch | A companion: the guides, a "Continue" link to the guide you last opened, and three prompts you can confirm, which your iPhone records |
@@ -65,14 +65,14 @@ Settings; Lifetime is a one-time non-consumable. The prices, the trial and how t
 **The knowledge layer is free and stays free.** Without paying anything you get
 the full standards library, including every state pack, Ask, up to two projects with their notes, and an export of all your records, with no account and no time limit. Pro adds two things: keeping more than two projects, and a print-ready PDF of a project for the permit counter.
 
-**Pro does not change where your records go.** iCloud sync works the same, paid or not, and there is no paid iCloud option. If a subscription lapses you keep every project and note and can still export them in their raw form; only the Pro tools stop.
+**Pro does not change where your records go.** Sync with iCloud works the same, paid or not, and there is no paid iCloud option. If a subscription lapses you keep every project and note and can still export them in their raw form; only the Pro tools stop.
 
 
 ## Free vs paid tier data collection
 
 **Whether you buy Pro does not change what data Prameya collects from OmniBuild.** Free and Pro alike:
 
-- Your projects and notes stay on your device and, if you use iCloud, in your own iCloud private database
+- Your projects and notes stay on your device and, if you turn on Sync with iCloud, in your own iCloud private database
 - No analytics, tracking, or telemetry
 - No server of ours that receives your content
 - No account or login
@@ -101,15 +101,15 @@ Everything in this table is stored by OmniBuild itself. None of it is sent to Pr
 
 | What | Examples | Where it lives |
 |---|---|---|
-| Projects | The name you give a project and when you named it. Projects made in earlier versions may also hold a stage, a method, notes and a cost estimate you typed yourself | App database on the device, and your iCloud private database if you are signed in to iCloud |
-| Notes | What you looked up, the date, and the project it is filed under — including the "On site" check-in note the app adds when you choose **Confirm** on the job-log reminder or on Apple Watch | App database, and your iCloud private database |
-| Safety-reminder acknowledgements | When you chose **Confirm** on the Apple Watch "Safety reminder" prompt, and the identifier of the project you had open | App database, and your iCloud private database |
-| Punch items | A title, whether it is done, and the project it belongs to. The current version has no screen that adds one | App database, and your iCloud private database |
+| Projects | The name you give a project and when you named it. Projects made in earlier versions may also hold a stage, a method, notes and a cost estimate you typed yourself | App database on the device, and your iCloud private database while Sync with iCloud is on |
+| Notes | What you looked up, the date, and the project it is filed under — including the "On site" check-in note the app adds when you choose **Confirm** on the job-log reminder or on Apple Watch | App database, and your iCloud private database while Sync with iCloud is on |
+| Safety-reminder acknowledgements | When you chose **Confirm** on the Apple Watch "Safety reminder" prompt, and the identifier of the project you had open | App database, and your iCloud private database while Sync with iCloud is on |
+| Punch items | A title, whether it is done, and the project it belongs to. The current version has no screen that adds one; **More ▸ Your Data** lists any you have | App database, and your iCloud private database while Sync with iCloud is on |
 | Decision entries | Made in earlier versions only: a title, the framework you used, the options, what you chose, your later reflection and your own estimate | App database on the device only |
 | A small profile | Created automatically with default values (two projects a quarter, two default focus areas). Nothing you type in this version goes into it | App database on the device only |
 | Where you left off, on this device | The identifier and name of the project you last opened, and the last guide and guided route you opened | Device settings storage |
-| Where you left off, for your other devices | The screen you were on, the identifier of the guide you had open, the random identifier of the last project you opened, and the time; the guide the Home Screen widget suggests, with its title; a guide the widget asked the app to open, until the app opens it; your appearance choice | iCloud key-value store (see below) |
-| App preferences | Light/dark appearance, the **In-app answers** switch, the **Job-log reminders** switch, when you accepted the first-run notice, and which update notice this install has been through | Device settings storage |
+| Where you left off, for your other devices | The screen you were on, the identifier of the guide you had open, the random identifier of the last project you opened, and the time; the guide the Home Screen widget suggests, with its title; a guide the widget asked the app to open, until the app opens it; your appearance choice | iCloud key-value store, only while Sync with iCloud is on (see below) |
+| App preferences | Light/dark appearance, the **Sync with iCloud** switch, the **In-app answers** switch, the **Job-log reminders** switch, when you accepted the first-run notice, and which update notice this install has been through | Device settings storage |
 | Your age range, iPhone and iPad only | "Under 18", "18 or older" or "not shared" — never a birth date | Device settings storage |
 | The optional Ask model, Mac only | Your answer to "Download the on-device model?" with the model and commit it was given for, the model's files (about 6.8 GB), and the data needed to resume an interrupted download | App storage on the Mac, excluded from device backups |
 
@@ -123,13 +123,22 @@ The app database is included in Apple's normal device backup (iCloud Backup or a
 
 ## iCloud, Handoff and your other devices
 
-If you are signed in to iCloud:
+**Sync with iCloud is off until you turn it on**, in **More ▸ iCloud ▸ Sync with iCloud** on your iPhone, iPad, Mac or Apple Vision Pro. It is off on a new install. It is also off after this update on a device that ran an earlier pre-release build, where sync ran whenever the device was signed in to iCloud: there was no switch then, so there is no earlier choice to carry over, and being signed in to iCloud is not a choice to sync. The switch is set on each device separately.
 
-- **Your projects, notes, safety-reminder acknowledgements and punch items sync through your own CloudKit private database** (container `iCloud.legal.prameya.OmniBuild`) to OmniBuild on your iPhone, iPad, Mac and Apple Vision Pro. Prameya cannot open another person's private database. Decision entries and the profile do not sync.
-- Sync is on whenever you are signed in to iCloud; OmniBuild has no switch of its own for it. You can turn iCloud off for OmniBuild in your device's iCloud settings, or sign out of iCloud, and your records then stay on the device.
+While Sync with iCloud is **on** (and the device is signed in to iCloud):
+
+- **Your projects, notes, safety-reminder acknowledgements and punch items sync through your own CloudKit private database** (container `iCloud.legal.prameya.OmniBuild`) to OmniBuild on your other devices that have sync on. Prameya cannot open another person's private database. Decision entries and the profile do not sync. Turning sync on sends the records on this device to your iCloud private database and brings in the ones your other devices put there.
 - **A small iCloud key-value store** holds the "where you left off" items and the appearance choice listed in the table above. OmniBuild on your other devices, Apple Watch, Apple TV and the Home Screen widget read it to offer to continue and to match your appearance choice. It does not hold project names, notes or anything you typed.
+- A record you delete, one at a time or with **Clear All My Logs & Decisions**, is also deleted from your other devices that sync, when they next sync.
 
-**Handoff** also tells your nearby devices that use the same Apple Account the same "where you left off" details — the screen, the guide, and the identifier of the last project you opened.
+While Sync with iCloud is **off**:
+
+- OmniBuild puts nothing in iCloud: the app database has no iCloud connection, and the app writes nothing to the key-value store and does not read it. Your records, and anything you delete, stay on this device.
+- Apple Watch, Apple TV and the Home Screen widget cannot pick up where you left off from this device. The widget shows "Open OmniBuild". Your appearance choice is not shared.
+
+**Turning Sync with iCloud off** stops sync at once: OmniBuild reopens its database without the iCloud connection. It also removes the "where you left off" items, the widget's guide and the appearance choice from the key-value store. Your records stay on the device. The copy of your projects, notes, safety-reminder acknowledgements and punch items already in your iCloud private database stays there for your other devices; to remove it, use **Clear All My Logs & Decisions** while sync is on, or delete OmniBuild's data in your device's iCloud storage settings. OmniBuild asks before turning sync off and says this.
+
+**Handoff** tells your nearby devices that use the same Apple Account the same "where you left off" details — the screen, the guide, and the identifier of the last project you opened — whether or not Sync with iCloud is on. You can turn Handoff off in your device's settings (on iPhone and iPad, General ▸ AirPlay & Continuity).
 
 All of this travels through Apple's services under Apple's terms. None of it reaches Prameya.
 
@@ -137,7 +146,7 @@ All of this travels through Apple's services under Apple's terms. None of it rea
 
 ## Apple Watch
 
-The Apple Watch app lists the guides, shows a "Continue" link to the guide you last opened (read from the iCloud key-value store), and shows three prompts: **On site**, **Punch item done** (which your iPhone withdraws when no punch item is open), and **Safety reminder**.
+The Apple Watch app lists the guides, shows a "Continue" link to the guide you last opened (read from the iCloud key-value store, which your devices write only while Sync with iCloud is on there), and shows three prompts: **On site**, **Punch item done** (which your iPhone withdraws when no punch item is open), and **Safety reminder**.
 
 - Your iPhone sends the Watch the list of prompts and the name of the project you last opened, over Apple's connection between the two devices. The Watch keeps that name in its own storage to show it. When no project is open on your iPhone — for example after **Clear All My Logs & Decisions** — your iPhone sends no name and the Watch clears the one it had.
 - Tapping **Confirm** on the Watch sends the tap to OmniBuild on your iPhone, which records it: an "On site" note on the project you last opened (or under "today's work" if you have not opened one), marking the open punch item done, or a safety-reminder acknowledgement. **Snooze** and **Not now** record nothing. None of these is a sign-off or an inspection result.
@@ -149,7 +158,7 @@ None of this reaches Prameya.
 
 ## Apple TV
 
-The Apple TV app shows the guides and a "Continue" link to the guide you last opened, and matches your appearance choice, both read from the iCloud key-value store. Its Ask screen answers by quoting the guide you pick; it runs no language model, downloads nothing, and does not save your question. The Apple TV app keeps no projects or notes.
+The Apple TV app shows the guides and a "Continue" link to the guide you last opened, and matches your appearance choice, both read from the iCloud key-value store, which your other devices write only while Sync with iCloud is on there. Its Ask screen answers by quoting the guide you pick; it runs no language model, downloads nothing, and does not save your question. The Apple TV app keeps no projects or notes.
 
 ---
 
@@ -167,7 +176,7 @@ A plain tap on a reminder only opens the app. Only the **Confirm** action record
 
 What does use the network:
 
-- **Apple's services:** iCloud (the private database and the key-value store), Handoff, the connection between iPhone and Apple Watch, the App Store through StoreKit when you open the Pro screen, buy Pro or restore a purchase, and Apple's Declared Age Range service on iPhone and iPad (see "Children").
+- **Apple's services:** iCloud (the private database and the key-value store, only while Sync with iCloud is on), Handoff, the connection between iPhone and Apple Watch, the App Store through StoreKit when you open the Pro screen, buy Pro or restore a purchase, and Apple's Declared Age Range service on iPhone and iPad (see "Children").
 - **Hugging Face, on a Mac only, only if you choose to download the Ask model** (see the next section).
 - **Your browser or mail app,** when *you* tap a link — for example "Read the full policy online", "Support", "Email support", or "Open the source" on a guide. That is an ordinary link; your browser or mail app handles it, and nothing about you is attached to it by us.
 
@@ -234,13 +243,13 @@ Because OmniBuild processes no health data:
 
 ---
 
-## Accounts and sign-in — none; iCloud sync — yes
+## Accounts and sign-in — none; iCloud sync — if you turn it on
 
 OmniBuild has **no account system**. There is nothing to register, no password, no email address to hand over, no Sign in with Apple, and no profile held by us. OmniBuild has no sign-in feature of any kind, and nothing is stored in the device Keychain.
 
-OmniBuild **does sync through iCloud**, as described above: projects, notes, safety-reminder acknowledgements and punch items go to your own iCloud private database when you are signed in to iCloud, and a small key-value store carries where you left off. That sync is Apple's, under your Apple Account; it is not an account with us, and we cannot read what it holds.
+OmniBuild **can sync through iCloud**, as described above, **if you turn it on**: with **More ▸ iCloud ▸ Sync with iCloud** on, projects, notes, safety-reminder acknowledgements and punch items go to your own iCloud private database, and a small key-value store carries where you left off. That sync is Apple's, under your Apple Account; it is not an account with us, and we cannot read what it holds.
 
-An earlier build shipped a dormant sync component that transmitted nothing, and an earlier version of this policy said that if real sync were ever built it would be off by default. The sync in the current app is real and is **not** off by default: it runs whenever you are signed in to iCloud, and the way to stop it is to turn iCloud off for OmniBuild in your device's settings.
+An earlier build shipped a dormant sync component that transmitted nothing, and an earlier version of this policy said that if real sync were ever built it would be off by default. The version of this page dated 23 September 2026 said the real sync was **not** off by default, because it ran whenever you were signed in to iCloud. Since 24 September 2026 it is off by default, as first promised: it runs only after you turn on Sync with iCloud, and turning the switch off stops it.
 
 ---
 
@@ -257,7 +266,7 @@ One line each, because each one deserves a plain answer.
 - **We do not build a profile of you.** We have no user-profile database because we have no server.
 - **We do not use your content to train AI models.** We never receive it.
 - **We do not knowingly collect anything from children.** See below.
-- **We do not use dark patterns to obtain consent.** The permission and consent choices in the app — turning on reminders, downloading the Ask model on a Mac, and Apple's own age-range sheet — are off or unanswered until you act.
+- **We do not use dark patterns to obtain consent.** The permission and consent choices in the app — turning on Sync with iCloud, turning on reminders, downloading the Ask model on a Mac, and Apple's own age-range sheet — are off or unanswered until you act.
 
 ---
 
@@ -297,14 +306,15 @@ Because OmniBuild is distributed through the App Store, Apple may provide us wit
 
 ## Deleting your data
 
-Your records are on your device and in your own iCloud, so deletion is under your control. It takes effect on the device at once, and on your other devices when they next sync with iCloud.
+Your records are on your device and, if you turn on Sync with iCloud, in your own iCloud, so deletion is under your control. It takes effect on the device at once, and, while Sync with iCloud is on, on your other devices when they next sync with iCloud. While sync is off, a deletion stays on this device.
 
-1. **Remove one record:** open **More ▸ Your Data ▸ Open your projects, notes and decision entries**. There you can open each project and note, correct a project's name or a note's text, and delete it; decision entries can be opened and deleted. The same screen prepares the export copy of your projects, notes, decision entries, punch items, safety-reminder acknowledgements and profile. A deleted project or note is also removed from your other devices when they next sync with iCloud. Safety-reminder acknowledgements and punch items are not listed on that screen; they are in the export, and **Clear All My Logs & Decisions** deletes them.
-2. **Erase your records:** in **More ▸ Your Data**, tap **Clear All My Logs & Decisions**, then **Clear Everything**. This cannot be undone. It deletes every project, note, decision entry, safety-reminder acknowledgement and punch item, and the profile, on this device — and, through iCloud, the synced ones on your other devices when they next sync; each of those devices then drops its own bookmark of the deleted project (and, on an iPhone, tells its Apple Watch) the next time OmniBuild opens or comes back to the foreground there. It also removes the "where you left off" bookmarks on this device; the "where you left off" entries in the iCloud key-value store (the screen, the guide, the identifier of the last project you opened, the widget's guide and a guide the widget asked the app to open); the details in the current Handoff activity, which then names only the screen you are on; the project name on Apple Watch, which clears it when it next receives your iPhone's update; a pending "Punch item still open" reminder; your stored age range; your answer about the Ask model; and any downloaded Ask model files.
+1. **Remove one record:** open **More ▸ Your Data ▸ Open your projects, notes and other records**. There you can open each project, note, decision entry, punch item and safety-reminder acknowledgement and delete it (you are asked first); a project's name and a note's text can also be corrected. Punch items are listed only when you have one. The same screen prepares the export copy of your projects, notes, decision entries, punch items, safety-reminder acknowledgements and profile. While Sync with iCloud is on, a deleted record is also removed from your other devices when they next sync with iCloud.
+2. **Erase your records:** in **More ▸ Your Data**, tap **Clear All My Logs & Decisions**, then **Clear Everything**. This cannot be undone. It deletes every project, note, decision entry, safety-reminder acknowledgement and punch item, and the profile, on this device — and, while Sync with iCloud is on, through iCloud, the synced ones on your other devices when they next sync; each of those devices then drops its own bookmark of the deleted project (and, on an iPhone, tells its Apple Watch) the next time OmniBuild opens or comes back to the foreground there. It also removes the "where you left off" bookmarks on this device; the "where you left off" entries in the iCloud key-value store (the screen, the guide, the identifier of the last project you opened, the widget's guide and a guide the widget asked the app to open); the details in the current Handoff activity, which then names only the screen you are on; the project name on Apple Watch, which clears it when it next receives your iPhone's update; a pending "Punch item still open" reminder; your stored age range; your answer about the Ask model; and any downloaded Ask model files.
 3. **What Clear All does not remove:**
-    - Your appearance choice (on the device and in the iCloud key-value store), the In-app answers and Job-log reminders switches, the date you accepted the first-run notice, and which update notice this install has been through.
+    - Your appearance choice (on the device and, while Sync with iCloud is on, in the iCloud key-value store), the Sync with iCloud, In-app answers and Job-log reminders switches, the date you accepted the first-run notice, and which update notice this install has been through.
     - As you keep using OmniBuild, it records where you left off again: the screen you are on and the guide you open, and a project's identifier only once you open a project.
-4. **Erase everything on one device:** delete OmniBuild from that device. That removes that device's copy only. It does not empty your iCloud private database, which keeps the synced records until you use **Clear All My Logs & Decisions** on a device that still has OmniBuild, or delete OmniBuild's data from your iCloud storage in your device settings. It does not remove the iCloud key-value store entries either.
+    - With Sync with iCloud off, the copy of your records already in your iCloud private database from when sync was on. The confirmation says so; to remove that copy too, turn sync on and clear again.
+4. **Erase everything on one device:** delete OmniBuild from that device. That removes that device's copy only. It does not empty your iCloud private database, which keeps any synced records until you use **Clear All My Logs & Decisions** on a device that still has OmniBuild with Sync with iCloud on, or delete OmniBuild's data from your iCloud storage in your device settings. It does not remove the iCloud key-value store entries either; turning Sync with iCloud off before you delete the app does.
 
 Nothing survives on our side, because nothing was ever on our side. There is no request to file and no waiting period, because there is no account for us to look up, and no server-side copy for us to delete. If you want written confirmation of any of this, email admin@prameya.legal and we will send it.
 
@@ -312,7 +322,7 @@ Nothing survives on our side, because nothing was ever on our side. There is no 
 
 ## Data retention
 
-We retain nothing from your use of the app, because we receive nothing. Your records are kept on your device and in your iCloud for exactly as long as you keep them, as described above. The Ask model files on a Mac stay until you remove them, use Clear All, or delete the app. Apple keeps its own record of any purchase, and Hugging Face keeps whatever it keeps about a model download request, under their own terms. Support correspondence is retained as described above.
+We retain nothing from your use of the app, because we receive nothing. Your records are kept on your device, and in your iCloud if you turn on sync, for exactly as long as you keep them, as described above. The Ask model files on a Mac stay until you remove them, use Clear All, or delete the app. Apple keeps its own record of any purchase, and Hugging Face keeps whatever it keeps about a model download request, under their own terms. Support correspondence is retained as described above.
 
 ---
 
@@ -321,7 +331,7 @@ We retain nothing from your use of the app, because we receive nothing. Your rec
 Honest, specific statements only:
 
 - The app runs inside the operating system's application sandbox, so its data is isolated from other apps. On iPhone, iPad and Apple Vision Pro it is also protected by the device's file-level encryption and your passcode; on a Mac, by FileVault if you have turned it on.
-- Synced records are held in your iCloud private database under Apple's terms and security. Use a strong Apple Account password and two-factor authentication.
+- If you turn on Sync with iCloud, synced records are held in your iCloud private database under Apple's terms and security. Use a strong Apple Account password and two-factor authentication.
 - OmniBuild has no server of ours to connect to. Its only network connections are Apple's services and, on a Mac, the optional model download from Hugging Face; the app's transport settings refuse unencrypted connections.
 - The app does not store anything in the device Keychain. It has no passwords, tokens, or credentials to store, because it has no account system.
 - Because we hold no copy of your data, there is no Prameya server that could be breached and expose it. That is the single largest security property of this design, and it comes from the architecture rather than from any product we bought.
@@ -382,7 +392,7 @@ The app contains no third-party service that sends your data to us or to anyone 
 
 | Who | What they get | Why |
 |---|---|---|
-| **Apple** | Your App Store activity and any purchase; your synced records in your iCloud private database and the key-value store; Handoff details; the iPhone–Apple Watch connection; your age-range answer, which Apple asks you for; your device backups if you enable them. Apple Intelligence answers on your device | It operates the App Store, iCloud and the operating systems |
+| **Apple** | Your App Store activity and any purchase; while Sync with iCloud is on, your synced records in your iCloud private database and the key-value store; Handoff details; the iPhone–Apple Watch connection; your age-range answer, which Apple asks you for; your device backups if you enable them. Apple Intelligence answers on your device | It operates the App Store, iCloud and the operating systems |
 | **Hugging Face** | Only if you download the Ask model on a Mac: your IP address, standard request headers, and the model repository, commit and files requested | It hosts the model files |
 | **Our email provider** | Only what you send to our support address | It carries our email |
 
@@ -394,7 +404,7 @@ The app links these open-source packages for Ask's optional on-device model: App
 
 ## App Store privacy labels — a note on wording
 
-The App Store privacy label answer we give Apple for OmniBuild is "Data Not Collected". It is accurate under Apple's definition, which treats "collect" as transmitting data off the device in a way that lets the developer or its partners access it beyond servicing the request in real time. Your synced records go to your own iCloud private database, which Apple holds for you and we cannot read; the optional model download carries none of your content; purchases are Apple's. It also matches the privacy manifests shipped inside the app, its widget, its Apple Watch app and its Apple TV app, which declare no tracking, no tracking domains, and no collected data types.
+The App Store privacy label answer we give Apple for OmniBuild is "Data Not Collected". It is accurate under Apple's definition, which treats "collect" as transmitting data off the device in a way that lets the developer or its partners access it beyond servicing the request in real time. If you turn on Sync with iCloud, your synced records go to your own iCloud private database, which Apple holds for you and we cannot read; the optional model download carries none of your content; purchases are Apple's. It also matches the privacy manifests shipped inside the app, its widget, its Apple Watch app and its Apple TV app, which declare no tracking, no tracking domains, and no collected data types.
 
 We want to flag one thing about that phrase, because it is easy to over-read. Apple's definition governs the **App Store label** and nothing else. It does not narrow what any state or national privacy law requires of us, and several laws — Washington's My Health My Data Act most obviously — define "collect" far more broadly, reaching data that is merely accessed, processed, or derived. We are not using Apple's definition to dodge anything. In OmniBuild's case the answer is the same under either definition, because the app genuinely does not handle the categories those laws are aimed at.
 
@@ -406,6 +416,14 @@ If we change how OmniBuild handles data, we will update this policy and change t
 
 - For **material** changes — for example, adding an account system, adding any feature that sends your content to us or to a new party, adding advertising or analytics, or using a permission the app does not use today — we will not do it quietly. We will update this policy **before** the change ships where we can, describe plainly what changed, keep the previous version available, and where the change requires your consent, ask for it inside the app rather than assuming it.
 - For minor changes such as clarified wording or a corrected contact detail, we will update the effective date.
+
+**24 September 2026 — what changed.**
+
+- **Sync with iCloud is now a switch, off until you turn it on.** The 23 September version of this page said sync ran whenever you were signed in to iCloud and that OmniBuild had no switch of its own. OmniBuild now has **More ▸ iCloud ▸ Sync with iCloud**. It is off on new installs, and off after this update on devices that ran an earlier pre-release build (there was no earlier choice to carry over). While it is off, OmniBuild puts nothing in iCloud: no synced records and no key-value items. Turning it off stops sync at once and removes the key-value items; the copy of your records already in iCloud stays until you delete it. This keeps the promise an earlier version of this page made, that any sync would be off by default.
+- **Punch items and safety-reminder acknowledgements in Your Data.** Each one can now be opened and deleted on its own in **More ▸ Your Data**. Before, they were only in the export and in **Clear All My Logs & Decisions**.
+- **Clear All says whether it reaches iCloud.** With Sync with iCloud off it deletes on this device only, and its confirmation says so.
+
+Nothing is sent to Prameya, and that did not change.
 
 **23 September 2026 — what changed.** The previous version of this page described an app that no longer exists. It said OmniBuild made no network requests, had no AI, no cloud sync and no notifications, and ran only on iPhone and iPad. None of that is true of the current app. This version says what the app does today:
 
@@ -434,4 +452,4 @@ The current version always lives at [https://prameyallc.github.io/privacy/omnibu
 
 Email **admin@prameya.legal**. If something in this policy does not match what the app actually does, tell us — we would consider that a defect and we would fix it.
 
-*Prameya LLC · Effective 23 September 2026*
+*Prameya LLC · Effective 24 September 2026*
