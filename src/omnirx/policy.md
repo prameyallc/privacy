@@ -1,7 +1,7 @@
 # OmniRx Privacy Policy
 
-**Effective date:** 26 August 2026
-**App:** OmniRx (iOS)
+**Effective date:** 23 September 2026
+**App:** OmniRx for iPhone and iPad, with its Apple Watch app, its Apple TV app, and its Mac and Apple Vision Pro versions — bundle ID `legal.prameya.OmniRx`
 **Publisher:** Prameya LLC ("Prameya", "we", "us"), a US limited liability company
 **Contact:** admin@prameya.legal
 
@@ -16,14 +16,14 @@ and wellness information you enter into this app.
 
 - **No account.** There is no sign-up, no login, no email required to use OmniRx.
 - **We run no server.** Prameya has no database of users, no profile store, and nowhere for your data to go.
-- **Everything you type stays on your iPhone or iPad.** Your medication logs, barriers, notes, mood and energy entries are written to a private database inside the app on your device, created with iCloud sync switched off for that database.
-- **Nothing you type goes to iCloud.** No medication log, no journal entry, no profile field syncs to iCloud.
-- **The app does make one kind of network connection:** preference sync through **your** iCloud account (appearance, disclosure acknowledgement). There is no model download and no Hugging Face request.
-- **Your questions and logs stay on your device.** They are not sent to us or to any AI provider.
+- **What you log stays on your device.** The medicines you follow, your Taken and Skipped records, the reasons you record, your notes, and your mood and energy entries are stored on the device you entered them on. The app does not upload them and does not put them in iCloud.
+- **Some things do go to your own iCloud account.** So your other devices, your Apple Watch and Apple TV can pick up where you left off, and the Home Screen widget can suggest a next topic, OmniRx keeps a few small values in your iCloud account: the tab you last used, and the IDs of the topic and medicine-label pages you opened. **A label page's ID includes the medicine's name** (for example `metformin_what_its_label_says`), so these values can show which medicines' labels you read — including a medicine you follow, if you open its label page from the You tab. Your appearance choice and the version of the first-run notice you accepted also sync. Prameya cannot read any of it. See [iCloud: preferences and Continue](#icloud-preferences-and-continue).
+- **Ask runs on your device.** If you turn on **Enable on-device Ask** in More, and Apple Intelligence is turned on and ready, Ask sends your question to Apple's on-device model and shows what it writes. Your question is not sent to us, to Apple or to any other AI provider, and it is not saved. There is no model download in this version and no Hugging Face request.
+- **Other paths off the device are Apple's:** the App Store for purchases, iCloud, Handoff to your nearby devices, and the connection between your iPhone and your Apple Watch.
 - **No ads. No analytics. No trackers.** OmniRx contains no advertising SDK, no analytics SDK, and no crash-reporting SDK.
-- **No camera, no photos, no microphone, no location, no contacts.** The app does not ask for these and cannot use them.
-- **You can set one daily reminder** in Settings to log Taken or Skipped. The lock screen says “Reminder”, not a medicine name.
-- **You can delete everything from inside the app.** Settings → "Delete all my data".
+- **No camera, no photos, no microphone, no location, no contacts, no Apple Health.** The app does not ask for these and cannot use them.
+- **One optional permission.** You can turn on one daily reminder in More. It is off until you turn it on, and only then does the app ask to send notifications. The lock screen says “Reminder”, not a medicine name.
+- **You can delete your records from inside the app.** More → "Delete all my data". Read [Keeping and deleting data](#keeping-and-deleting-data) for the few things it does not reach.
 - **We do not sell your data.** We could not — we do not have it.
 - **This is an education and habit-tracking app, not medical advice.** It does not diagnose, does not calculate doses, does not check interactions, and does not identify medicines from photographs.
 
@@ -41,9 +41,9 @@ not a business associate of any of those. See [HIPAA](#hipaa-does-not-apply-to-o
 
 ## What OmniRx is, and what it is not
 
-OmniRx is a **medication and pharmacology education app with habit support**. It explains classes of
-medicines in general terms, helps you write down questions for your pharmacist, and lets you log
-whether you took your doses and what got in the way.
+OmniRx is a **medication and pharmacology education app with habit support**. It explains what FDA
+labelling says about medicines in general terms, lets you follow the medicines you take by the name on
+the bottle, and lets you log whether you took your doses and what got in the way.
 
 OmniRx does **not**:
 
@@ -52,7 +52,7 @@ OmniRx does **not**:
 - check for drug interactions;
 - produce tapering or stopping plans;
 - identify a pill or a label from a photograph;
-- send a critical alert, or put a medicine name on the lock screen — the optional daily reminder is Settings-only and the lock screen says “Reminder”;
+- send a critical alert, or put a medicine name on the lock screen — the optional daily reminder says “Reminder”;
 - give you advice about your own specific medicines.
 
 It is not a substitute for a licensed pharmacist or physician.
@@ -75,49 +75,53 @@ them grants exactly the same Pro — there are no separate feature tiers.
 Family Sharing is enabled on all three. Subscriptions renew until you cancel in
 Settings; Lifetime is a one-time non-consumable.
 
-**The knowledge layer is free and stays free.** Without paying anything you get
-the full label library, the daily check and the refill field, with no account and no time limit. Pro adds a multi-medicine schedule.
+**The label library is free and stays free.** Without paying anything you get the full label
+library, the daily check for one medicine, up to 30 dose logs, the journal, and both exports, with
+no account and no time limit. Pro lets you follow every medicine you take instead of one, and keeps
+logging with no cap.
 
-**Pro does not add cloud sync, and there is no paid iCloud option.** OmniRx stores your
-records on your device in every case, paid or not. If a subscription lapses you keep your
-own data and can still export it in its raw form; only the Pro tools stop.
-
+**Pro does not add cloud sync, and there is no paid iCloud option.** What syncs through iCloud is the
+same on both tiers (see below), and it never includes your logs. If a subscription lapses you keep
+every record you already have, and you can still read, correct, delete and export them; you cannot
+add a second medicine or a 31st log until Pro is active again.
 
 ### Free vs paid tier data collection
 
 **Both tiers process the same consumer health data** (listed in the [Consumer Health Data Privacy Policy](https://prameyallc.github.io/privacy/omnirx/health-data/)).
 
-- **Free tier:** Medication logs stored on-device, 30-day history limit
-- **With Pro:** Medication logs stored on-device (same location), and a multi-medicine schedule
+- **Free:** one medicine followed at a time; at most 30 dose logs in total. When you reach 30, the
+  next new log is refused and the app says so. Nothing already logged is deleted or hidden.
+- **With Pro:** any number of medicines, and dose logs with no cap.
 
 In both tiers:
-- Medication logs stay on your device
-- No health data syncs to iCloud
-- No transmission of logs or adherence data to Prameya
-- Same on-device processing
+- Your logs and journal stay on your device
+- No log or journal entry syncs to iCloud
+- Nothing about your logs or your adherence is sent to Prameya
+- The same iCloud Continue values and preferences sync, as described below
 
 **Subscription unlocks features. It does not change what data is collected or where it goes.**
 
 ### Cancellation and refunds
 
 Subscriptions are managed by Apple:
-- **Cancel:** iOS Settings → your name → Subscriptions → OmniRx
+- **Cancel:** iOS Settings → your name → Subscriptions → OmniRx, or More → the subscription row in the app
 - **Refund requests:** reportaproblem.apple.com
 
 Prameya cannot cancel your subscription or issue refunds. Apple controls all billing.
 
 ### StoreKit transaction data
 
-When you purchase a subscription, the app receives and stores locally on your device:
-- Transaction ID (an opaque identifier from Apple)
-- Product ID (which tier you purchased)
-- Purchase and expiration dates
+When you buy Pro, Apple processes the payment and keeps its own record of the transaction under
+Apple's terms. StoreKit, Apple's purchase system on your device, contacts the App Store to show the
+prices, to complete a purchase, and to check whether you have Pro. OmniRx asks StoreKit that question
+each time it needs the answer and keeps the answer only while it is running; it does not write its own
+copy of your transaction to its storage.
 
 This data:
-- Is stored only on your device
-- Is NOT synced to iCloud
-- Is used only to unlock tier-appropriate features
-- Is deleted when you use "Delete All Data"
+- Is never sent to Prameya — the app sends nothing about a purchase to us, and we never see your payment details
+- Is not placed in iCloud by OmniRx
+- Is used only to decide whether Pro features are on
+- Is not affected by "Delete all my data", because OmniRx does not hold it; your purchase stays with your Apple Account
 
 ---
 
@@ -129,18 +133,21 @@ This table describes what the shipping app actually records:
 
 | What | What the app records today |
 |---|---|
-| Adherence log | whether you marked today's dose as taken, which barriers you selected, and a free-text note if you type one |
-| Barriers | "Forgot", "Cost", "Side effect concern", "Regimen complexity", "Ran out", "Other" |
-| Wellness journal | mood (1–5) and energy (1–5), set with steppers, saved alongside the same note |
-| Habit log | whether the dose was taken on time — the app writes this from your adherence entry rather than asking you separately |
-| Profile | the app creates one profile record on first launch containing two default goals. **There is no screen for entering your age, your health conditions, or your current medicines.** |
-| Values the app calculates from the above | adherence percentage, current streak, number of days logged, a mood/energy average over the last 14 days, and a short "trends to discuss" text |
+| Medicines you follow | the names you type in "as on the bottle" (one on the free tier, any number with Pro), and the names of medicines you have stopped following |
+| Medication record | the date, the medicine name, whether you marked it Taken or Skipped (or neither, if you only wrote a note), the reasons you selected, and a free-text note if you type one |
+| Reasons (barriers) | "Forgot", "Cost", "Side effect concern", "Regimen complexity", "Ran out", "Other" |
+| Journal entry | mood (1–5) and energy (1–5), saved only when you set both, with the same note; if you also chose "Side effect concern", it is saved on that journal entry as a reported side effect |
+| Habit record | whether the dose was taken — the app writes this from your Taken or Skipped choice rather than asking you separately |
+| Profile | the app creates one profile record on first launch containing two default goals. **There is no screen for entering your age, your health conditions, or a list of current medicines.** |
+| Reminder settings | whether the daily reminder is on and its time, whether Apple Watch may show medicine names, and short-lived markers: a lock-screen or Watch action the app has not yet applied, a log the free tier declined, and a link to offer after you tap Skipped |
+| Ask switches | whether **Enable on-device Ask** is on, and whether you turned on "Allow one model download" and on what date |
+| Other settings | your appearance choice, and whether and when you accepted the first-run notice, and which version of it |
+| Values the app works out from the above | a percentage of logged days with a dose recorded as taken, a current streak, the number of days logged, a mood and energy average over the last 30 days, and one sentence describing what was logged. They are calculated when shown, not stored. |
 
-The app's data model also contains fields for hours of sleep, symptoms, health conditions and current
-medications. **No screen fills those in today.** Sleep is stored at a fixed default value you cannot
-set, symptoms are stored empty, a side-effect entry is recorded only when you select the "Side effect
-concern" barrier, and the conditions and current-medicines fields are never written at all. If we ever
-add screens for those fields, they are consumer health data, and this policy and the Consumer Health
+The app's data model also contains fields for hours of sleep, symptoms, age, health conditions and
+current medications. **No screen fills those in today.** Sleep is left empty, symptoms are stored
+empty, and the age, conditions and current-medications fields are never written. If we ever add
+screens for those fields, they are consumer health data, and this policy and the Consumer Health
 Data Privacy Policy will be updated before those screens ship.
 
 Most of what you log is **consumer health data**. It is covered in detail by the separate
@@ -148,19 +155,23 @@ Most of what you log is **consumer health data**. It is covered in detail by the
 
 ### Where it is stored
 
-On your device, inside the app's private storage area, using Apple's SwiftData. The store is created
-local-only, with iCloud sync explicitly disabled for it. Other apps cannot read it. We cannot read it.
+Medication records, journal entries, habit records and the profile record are kept on your device,
+inside the app's private storage area, in a database (Apple's SwiftData) that is created with iCloud
+sync switched off. On iPhone, iPad and Apple Vision Pro that database file is given the iOS file
+protection class "complete unless open", so it is encrypted when closed and cannot be reopened until
+the device is unlocked. On a Mac it is protected by the Mac's own disk encryption (FileVault) if you
+have it on. The medicines you follow, the reminder settings and the other settings above are kept in
+the app's own settings storage on the device. Other apps cannot read any of it. We cannot read it.
 
-A small amount of technical information (feature flags and encryption keys used by the app itself) is
-stored in the iOS Keychain, marked as device-only so it does not travel to other devices.
+OmniRx does not store anything in the Keychain.
 
 ### iCloud device backup
 
-**OmniRx does not exclude its data store from iOS device backup.** So if you have **iCloud Backup**
-turned on in iOS Settings, Apple's normal whole-device backup may include the app's medication and
-journal data along with everything else on your device. That is a setting you control on your device,
-between you and Apple. We do not receive it and cannot access it. If you would rather it not be backed
-up, you can turn off iCloud Backup for OmniRx in iOS Settings, or turn off iCloud Backup entirely.
+**OmniRx does not exclude its data from device backup.** So if you have **iCloud Backup** turned on,
+or back up your device to a computer, that backup may include the app's medication and journal data
+along with everything else on your device. That is a setting you control on your device, between you
+and Apple. We do not receive it and cannot access it. If you would rather it not be backed up, you can
+turn off iCloud Backup for OmniRx in iOS Settings, or turn off iCloud Backup entirely.
 
 ### Data we receive
 
@@ -179,31 +190,88 @@ That is the complete list. There is no other path by which anything reaches us.
 
 ## Network connections OmniRx makes
 
-**We do not claim that OmniRx never uses the internet. It does, for one purpose.**
+**We do not claim that OmniRx never uses the internet. It does, through Apple's services.** None of
+these connections goes to a server of ours, and none of them carries your medication records, your
+journal or your notes.
 
-### Preference sync through your iCloud account
+### iCloud: preferences and Continue
 
-The only outbound connection in the shipping app is CloudKit sync of **non-health preferences**
-through **your** private iCloud database: appearance mode, a leftover on-device-AI flag with no
-Settings control (default off), a text-size preference, and the version of the first-run notice you
-acknowledged. Medication logs, journal entries, and profile records are excluded by an allow-list
-enforced by tests.
+If you are signed in to iCloud, OmniRx uses two parts of **your** iCloud account. Prameya cannot open
+either of them.
 
-There is no model download, no Hugging Face client, and no reachable path to `huggingface.co`.
+- **Your private CloudKit database** holds one preferences record: your appearance choice, the version
+  of the first-run notice you accepted, the time it last changed, and two more settings that no screen
+  in this version changes (an on-device AI flag and a text-size preference, both left off). That is
+  the only kind of record OmniRx puts in CloudKit. Your medication records, journal entries, habit
+  records and profile record are excluded by an allow-list in the code, a test in the codebase asserts
+  they are absent, and the app refuses to set up CloudKit at all if that ever stops being true. If you
+  are not signed in to iCloud, this part does not run.
+- **iCloud key-value storage** holds a few small values so that your other devices, Apple Watch, Apple
+  TV and the Home Screen widget can continue where you left off:
+    - the tab you last used, and the ID of the last topic or label page you had open;
+    - the IDs of the topic and medicine-label pages you have opened from the You tab, from search
+      results in the Understand tab, from Continue, from Apple Watch or from the widget;
+    - the next topic the Home Screen widget suggests from the built-in label-literacy path, and a
+      topic you asked the widget to open until the app opens it;
+    - your appearance choice.
+
+    **A medicine-label page's ID includes the medicine's name**, so this storage can show which medicines'
+    labels you read. It never holds the list of medicines you follow, your logs or your notes. But the
+    You tab links to the label page for the first medicine you follow, when the library has one; if
+    you open that link, the page's ID — which names a medicine you take — is stored here. Apple Watch
+    and Apple TV also write the ID of a page you open on them.
+
+"Delete all my data" removes every one of the key-value values above from iCloud. It does not remove
+the CloudKit preferences record. See [Keeping and deleting data](#keeping-and-deleting-data).
+
+### Handoff
+
+On iPhone, iPad, Mac and Apple Vision Pro, OmniRx offers Handoff to your nearby devices signed in to
+the same Apple Account. The Handoff message names the tab you are on and the ID of the last topic or
+label page you opened — which, for a label page, includes the medicine's name — and, once you have
+opened a medication record, an internal reference to the last one you opened. It does not contain the
+record itself; another device cannot open a record it does not already hold.
+
+### Apple Watch
+
+The iPhone app and the Apple Watch app talk over Apple's connection between paired devices:
+
+- The iPhone sends the Watch the reminder card: "Medication reminder", the reminder time, and Taken,
+  Skipped and Snooze, plus a card that opens a general label-reading topic on the iPhone. **Medicine
+  names are sent to the Watch only if you turn on More → "Show medicine names on Apple Watch"**,
+  which is off until you turn it on.
+- Taken, Skipped or Snooze on the Watch is sent to the iPhone. With exactly one medicine followed, the
+  iPhone logs it; with more than one, the Watch tells you to mark each one on the iPhone.
+- **Ask iPhone** on the Watch sends the question you type to OmniRx on your iPhone, which answers it
+  the way Ask on the iPhone does and sends the answer back. If Ask is off on the iPhone, the answer
+  says so.
+- The Watch keeps the reminder time for its complication, and reads the iCloud key-value values above
+  to offer "Continue".
+
+### StoreKit
+
+StoreKit contacts Apple's App Store to show Pro prices, complete a purchase, restore purchases, and
+check whether you have Pro. See [StoreKit transaction data](#storekit-transaction-data).
+
+### Links you tap
+
+A few pages link to outside websites — for example the 988 Lifeline site, PubMed, the World Health
+Organization, the FDA, and Apple's subscription page. They open only when you tap them, in your
+browser, and that website then handles your visit under its own terms. OmniRx sends it nothing else.
 
 ### On-device processing
 
 Text you give the app is processed on your device. It is not transmitted to Prameya or to any AI
-provider. There is no cloud fallback and no remote retrieval endpoint.
+provider. There is no cloud AI and no remote retrieval endpoint.
 
 This is a real privacy benefit and we state it precisely: **your content is processed locally and is
-not transmitted to us.** We do not say "nothing ever leaves the device", because preference sync
-uses your iCloud account.
+not transmitted to us.** We do not say "nothing ever leaves the device", because the iCloud values,
+Handoff and the Watch connection described above do.
 
 ### Nothing else
 
 There is no other outbound connection in the app. No telemetry endpoint, no ad request, no attribution
-call, no license check.
+call, no license check, and no model download.
 
 ---
 
@@ -211,10 +279,12 @@ call, no license check.
 
 One line each, because the honest answer is short.
 
-- **Accounts:** none. There is nothing to sign up for.
+- **Accounts:** none. There is nothing to sign up for, and no Sign in with Apple.
 - **Advertising:** none. No ad SDK is present, so no ad network receives anything about you.
 - **Analytics:** none. No Firebase, no Amplitude, no Mixpanel, no custom event pipeline.
-- **Crash-reporting SDK:** none. No Sentry, no Crashlytics.
+- **Crash-reporting SDK:** none. No Sentry, no Crashlytics. The app receives Apple's MetricKit
+  performance and crash summaries on the device and writes them to the device's own log; it does not
+  send them anywhere.
 - **Tracking across apps or websites:** none. We do not use the advertising identifier and do not ask
   for App Tracking Transparency permission.
 - **Selling or sharing data:** never.
@@ -223,70 +293,92 @@ One line each, because the honest answer is short.
 - **Microphone:** not used, and no permission is requested.
 - **Location:** not used. No geofencing of any kind, anywhere.
 - **Contacts, calendars, messages:** not used.
-- **In-app purchases or payments:** Optional subscriptions (Plus, Premium) processed by Apple. See [Subscriptions and In-App Purchases](#subscriptions-and-in-app-purchases) above.
+- **Push notifications from a server:** none. The only notifications are the local reminder described below.
+- **In-app purchases or payments:** OmniRx Pro, sold through Apple. See [Subscriptions and In-App Purchases](#subscriptions-and-in-app-purchases) above.
 - **Data brokers:** we buy nothing and sell nothing.
 
 ### Apple Health (HealthKit)
 
 **OmniRx does not read from or write to Apple Health.** It contains no HealthKit code, holds no
-HealthKit entitlement, and declares no HealthKit usage description. An earlier build of the project
-requested HealthKit entitlements that no code used; those have been removed. If HealthKit is ever
-genuinely added, this policy will be rewritten first.
+HealthKit entitlement, and declares no HealthKit usage description. If HealthKit is ever genuinely
+added, this policy will be rewritten first.
 
 ### iCloud sync
 
-**No medication log, journal entry, habit record or profile field syncs to iCloud.** The database
-holding everything you type is created local-only, with iCloud sync switched off for it. Your logs and
-journal stay on the device where you wrote them.
-
-To be precise about what the app does keep: OmniRx retains an iCloud/CloudKit container reserved for
-ordinary app preferences. That container's schema is an allow-list that contains exactly one non-health
-record type; your profile, medication logs, journal entries and habit records are excluded from it, a
-test in the codebase asserts they are absent, and the app refuses to build the sync container at all if
-that ever stops being true.
-
-**As the app ships today, nothing is written to that container** — no preference actually syncs between
-your devices, and your settings live in local storage on each device. We are telling you the container
-exists rather than claiming a blanket "no iCloud". If preference syncing is ever switched on, it will
-carry preferences and interface state only. **No health-derived field — no medication log, no journal
-entry, no condition, no medication name — may ever sync.**
+**No medication record, journal entry, habit record or profile field syncs to iCloud.** The database
+holding them is created with iCloud sync switched off, and the list of medicines you follow is kept in
+the app's settings storage on the device. What does go to your iCloud account is described under
+[iCloud: preferences and Continue](#icloud-preferences-and-continue): your appearance choice, the
+notice version you accepted, and the Continue values — including the IDs of the medicine-label pages
+you opened, which name the medicine.
 
 ### Reminders and notifications
 
-**You can set one optional daily reminder in Settings.** Permission is requested only from that
-Settings control, never at launch. The lock screen says “Reminder”, not a medicine name. Actions are
-Taken, Skipped, and Snooze. It is a local notification scheduled by your device — not a critical
-alert, and not a push from our servers. Turning the reminder off cancels it.
+**You can set one optional daily reminder in More.** It is off until you turn it on, and notification
+permission is requested only then, never at launch. It is a local notification scheduled by your
+device — not a critical alert, and not a push from our servers. It is titled “Reminder” and says
+“Mark Taken or Skipped for today.” — no medicine name. Actions are Taken, Skipped and Snooze:
+
+- Tapping the reminder itself only opens the app.
+- With one medicine followed, Taken or Skipped logs today for it without opening the app.
+- With more than one, Taken or Skipped opens OmniRx so you can mark each medicine.
+- Snooze asks again in 10 minutes.
+- If Taken or Skipped from the reminder or the Watch cannot be saved because the free tier's 30 logs
+  are used up, a notification titled “Not saved” says so while the daily reminder is on, with no
+  medicine name; after a Watch tap, the Watch also shows its own “Not saved” line.
+
+Turning the reminder off cancels it. "Delete all my data" does not — see
+[Keeping and deleting data](#keeping-and-deleting-data).
 
 ### Exporting your logs
 
-Two exports, both produced on your device and displayed to you:
+Two exports, both produced on your device and displayed to you as text you can select and copy:
 
-- Settings → **"Export my logs as text"** produces a plain-text **summary** — a percentage over the
-  days you logged, a streak, a day count, and the reasons you recorded for missed doses. It is
+- More → **"Export my logs as text"** produces a plain-text **summary** of the last 30 days — a
+  percentage over the days you logged, a streak, a day count, and the reasons you recorded. It is
   written to be handed to a pharmacist.
-- Settings → **"Export every record as text"** produces **every record this app holds**, field by
-  field: each medication record with its date, its medicine name, whether you recorded it as
-  taken or skipped, the reasons and the note on it; each journal entry with its scores, anything
-  reported with it and its note; each habit record; and the profile row the app created for
-  itself. Nothing is summarised, sampled or truncated.
+- More → **"Export every record as text"** produces every medication record, journal entry and habit
+  record in the database, field by field — each medication record with its date, its medicine name,
+  whether you recorded it as taken or skipped, the reasons and the note on it; each journal entry
+  with its scores, anything reported with it and its note; each habit record; and the profile row the
+  app created for itself. Nothing is summarised, sampled or truncated. It does not list the medicines
+  you follow, which are shown on the You tab instead, or the names of medicines you have stopped
+  following, which the app keeps on the device only so it can leave them off the You tab and does
+  not show.
 
 There are no attachments to return, and the complete export says so: OmniRx cannot take or store
 a photograph, a scan, a recording or a file of any kind.
 
-Either export goes nowhere unless you choose to send it somewhere — at which point it is governed
-by whatever app you send it with.
+Either export goes nowhere unless you copy it somewhere — at which point it is governed by whatever
+app you paste it into.
 
 ---
 
 ## On-device AI: what it is and what it is not
 
-- **The shipping app has no on-device model.** Unused Intelligence (MLX / Hugging Face) was
-  deleted. Settings does not offer a download.
+- **Ask is off until you turn it on.** The Ask tab appears only while **Enable on-device Ask** is on
+  in More and Apple Intelligence is turned on and ready on that iPhone, iPad, Mac or Apple Vision Pro.
+  Apple TV has no Ask, because Apple Intelligence does not run there.
+- **Apple Intelligence answers, on the device.** Ask sends your question, together with up to three
+  short passages from the app's built-in label library, to Apple's on-device language model, and
+  shows what it writes, labelled "Apple Intelligence". Your question is not sent to us, to Apple or to
+  any other AI provider. Ask does not see your medication records, your journal or the medicines you
+  follow.
+- **Before a question reaches the model, the app checks it.** A question asking for a dose, an
+  interaction decision, a tapering plan, a pill identification, a diagnosis, a risk score or advice
+  about your own medicines gets a fixed refusal instead. A question that suggests someone may be in
+  danger or has taken too much of a medicine gets a card with 988, Poison Help and 911, and is never
+  sent to the model. The model's answer itself is shown as it writes it; the app does not check or
+  edit it, and it can be wrong.
+- **Nothing is kept.** OmniRx does not save your questions or its answers. A conversation lives only
+  on the screen and is gone when you start a new chat or OmniRx is closed. On Apple Watch, the last
+  answer stays on the Watch screen until a new one replaces it.
+- **No model download in this version.** The Ask screen also shows a switch labelled "Allow one model
+  download (about 420 MB)". In this version turning it on only records your choice and its date on
+  the device: no screen starts a download, so OmniRx downloads no model and makes no request to Hugging
+  Face.
 - Because nothing is sent to a third-party AI provider, Apple's requirement to name one and obtain
   your permission before sharing personal data with one does not arise.
-- The app still refuses dosing, interaction checking, tapering, pill identification, diagnosis, and
-  any answer tailored to your specific medication list — those are not things OmniRx does.
 
 ---
 
@@ -294,7 +386,7 @@ by whatever app you send it with.
 
 The medication information, side effects, mood and energy entries you put into OmniRx are **consumer
 health data** under Washington's My Health My Data Act and Nevada's SB 370 — **even though that data
-never leaves your device.** Those laws define "collect" broadly enough to reach data that is accessed,
+never reaches us.** Those laws define "collect" broadly enough to reach data that is accessed,
 processed, or derived, not just data that is transmitted somewhere.
 
 We do not use the fact that OmniRx works on-device to argue those laws do not apply. We treat this data
@@ -302,8 +394,10 @@ as consumer health data.
 
 **The required separate policy is here:
 [OmniRx Consumer Health Data Privacy Policy](https://prameyallc.github.io/privacy/omnirx/health-data/).**
-It lists the categories collected, the sources, the purposes, the categories shared (none), and how to
-exercise your rights, including withdrawing consent and deleting data.
+It lists the categories collected, the sources, the purposes, where the data goes (your device, and
+the limited items that reach your own iCloud account and paired Apple Watch), the categories shared
+with third parties (none), and how to exercise your rights, including withdrawing consent and deleting
+data.
 
 ---
 
@@ -329,8 +423,8 @@ information, and the right not to be discriminated against for exercising them.
 Here is our honest position:
 
 - **We do not collect personal information from you through the app.** There is no server, no account,
-  and no user database. If you email us, the only personal information we hold is your email and your
-  message.
+  and no user database. What syncs goes to your own iCloud account, which we cannot open. If you email
+  us, the only personal information we hold is your email and your message.
 - **We do not sell or share personal information**, including for cross-context behavioral advertising.
   There is nothing to opt out of, and no "Do Not Sell or Share My Personal Information" mechanism is
   needed, because no such activity exists.
@@ -363,7 +457,8 @@ OmniRx is available where you live:
 - Health data is a special category of personal data under Article 9 of the GDPR and UK GDPR. The
   medication and wellness entries you make in OmniRx are that kind of data.
 - **We are not a controller of that data in any practical sense**, because it never reaches us. It is
-  created and held on your own device, under your control.
+  created and held on your own device, under your control, and the limited items described above are
+  held in your own iCloud account, which we cannot open.
 - For the one thing we do receive — support email — our lawful basis is our legitimate interest in
   answering you, or performance of a contract if your question concerns the app you installed.
 - You have rights of access, rectification, erasure, restriction, objection and portability against us
@@ -391,16 +486,16 @@ consent.
 
 ## Security
 
-- Your data sits in the app's private, sandboxed storage, protected by iOS file protection and your
-  device passcode or biometric lock.
-- Sensitive internal values are held in the iOS Keychain and marked device-only, so they do not
-  transfer to other devices.
-- Preference sync uses Apple's CloudKit over HTTPS, through your own iCloud account.
+- Your records sit in the app's private, sandboxed storage. On iPhone, iPad and Apple Vision Pro the
+  database file is encrypted when closed and cannot be reopened until the device is unlocked; on a
+  Mac it relies on the Mac's disk encryption. Use a passcode and keep your software up to date.
+- iCloud sync, Handoff, the Watch connection and StoreKit are Apple's services and run over Apple's
+  encrypted connections, through your own Apple Account.
 - **The strongest security property of this app is architectural:** there is no server holding your
   medication history, so there is no server to breach. We make no claims about "military-grade" or
   "unbreakable" security, and we hold no certifications we have not earned.
-- As noted above, the app's data store is **not** excluded from iCloud device backup, so a
-  whole-device backup can include it.
+- As noted above, the app's data is **not** excluded from device backup, so a whole-device backup can
+  include it.
 - If we ever learn of a security problem that affects users, we will post a notice at
   [prameyallc.github.io/privacy](https://prameyallc.github.io/privacy/) and, where the law requires it,
   notify affected people directly.
@@ -410,16 +505,37 @@ consent.
 ## Keeping and deleting data
 
 - Your OmniRx data stays on your device until you delete it.
-- **You can delete all of it inside the app.** Settings → **"Delete all my data"** asks you to confirm,
-  then permanently removes every medication log, journal entry, habit record and profile record from
-  the device and resets the figures the app calculated from them back to empty. It cannot be undone.
-- **You can also delete or correct one record at a time.** Settings → "Open, correct or delete
+- **You can delete your records inside the app.** More → **"Delete all my data"** asks you to confirm,
+  then permanently removes every medication record, journal entry, habit record and profile record
+  from the device and resets the figures the app calculated from them. It also removes the medicines
+  you follow and have stopped following, your reminder settings, both Ask switches (so Ask is off
+  again afterwards), any copy of the database that the app set aside after it could not open it, and
+  any model files left by an earlier build, and it removes every iCloud key-value value OmniRx writes. It cannot be undone. If a
+  file cannot be removed, the app tells you rather than claiming a complete delete.
+- **What "Delete all my data" does not reach, stated plainly:**
+    - **An already scheduled daily reminder keeps firing.** Delete all clears the reminder setting but
+      does not cancel the scheduled notification. To stop it, turn **Daily reminder** off before you
+      delete, or turn off notifications for OmniRx in your device's Settings. The reminder carries no
+      medicine name, and after a delete its Taken and Skipped buttons have no medicine to log.
+    - **The CloudKit preferences record stays in your iCloud account** — your appearance choice and the
+      notice version you accepted. It holds no health information. You can remove it with Apple's own
+      controls for an app's iCloud data (in iOS Settings → your name → iCloud → Manage Account Storage).
+    - **Your appearance choice, the Watch medicine-name switch and your first-run notice acceptance**
+      stay on the device.
+    - **Your Apple Watch** may go on showing the last reminder card the iPhone sent it — including
+      medicine names, if you had turned that on — until the iPhone next sends it a new one.
+    - **Your purchase** stays with your Apple Account.
+- **You can also delete or correct one record at a time.** More → "Open, correct or delete
   one record" lists every medication record, journal entry and habit record on the device. Each
   opens; each can be deleted on its own behind a confirmation that names it. Medication records
   and journal entries can be corrected in place — the date cannot, because the app can only
   write a record for today. Habit records are written by the app from the medication record
-  beside them, so they are read-only and the screen says why; they can still be deleted.
-- **Deleting the app deletes the data with it.** iOS removes the app's storage container.
+  beside them, so they are read-only and the screen says why; they can still be deleted. A medicine
+  you follow can be removed from the You tab.
+- **Deleting the app** from an iPhone, iPad, Apple Watch, Apple TV or Apple Vision Pro removes its data
+  from that device. On a Mac, moving the app to the Trash does not by itself remove its data, so use
+  "Delete all my data" first. Deleting the app does not empty your iCloud account: the key-value values
+  and the preferences record stay until you delete them as described above.
 - Because we never receive your medication or wellness data, we cannot delete it for you — and we have
   no copy to delete.
 - Support emails are kept only as long as needed to resolve your question, and you can ask us to delete
@@ -431,7 +547,7 @@ consent.
 
 Apple's App Store privacy labels use a specific definition of "collect": transmitting data off the
 device so a developer or its partners can access it. Under that definition there is very little for
-OmniRx's App Store label to show, because nothing you type is transmitted anywhere.
+OmniRx's App Store label to show, because nothing you type is transmitted to us or to a partner of ours.
 
 **That definition governs App Store labels only.** It does not narrow our duties under state health
 privacy laws. Washington's My Health My Data Act uses a much broader definition that reaches data that
@@ -446,6 +562,27 @@ If we change how OmniRx handles data, we will update this policy and change the 
 top. Meaningful changes — a new network connection, a new permission, anything involving your health
 data — will be described in a short summary of what changed, at the top of this page, and will be
 announced in the app's release notes.
+
+**23 September 2026 — what changed.** This policy was rewritten to describe what OmniRx does today:
+
+- It now says that OmniRx keeps Continue values in your own iCloud key-value storage — the tab you last
+  used and the IDs of the topic and medicine-label pages you opened, which name the medicine — and that
+  "Delete all my data" removes them. Earlier versions said nothing you type goes to iCloud and did not
+  mention these values.
+- It now says your appearance choice and the notice version you accepted sync through your private
+  CloudKit database. Earlier versions said nothing was written there.
+- It describes Ask, which uses Apple Intelligence on your device when you turn it on, and says there
+  is still no model download. Earlier versions said the app had no on-device AI.
+- It covers the Apple Watch, Apple TV, Mac and Apple Vision Pro versions, Handoff, and the optional
+  medicine names on Apple Watch.
+- It describes the reminder as it works now: off until you turn it on, and with several medicines its
+  Taken and Skipped open the app instead of logging.
+- It corrects the free tier: one medicine and 30 dose logs in total, not a 30-day history, and there is
+  no refill field.
+- It no longer says the app stores your purchase details and deletes them with your data: the app
+  keeps no copy, and your purchase stays with Apple. It no longer says the app uses the Keychain.
+- It says what "Delete all my data" does not reach: an already scheduled reminder, the iCloud
+  preferences record, a few settings, and the last reminder card on Apple Watch.
 
 **What changed on 27 August 2026 (corrects the entry below):** the Plus and Premium tiers described
 in the 26 August entry were never offered for sale. OmniRx has one paid upgrade, OmniRx Pro, sold as
