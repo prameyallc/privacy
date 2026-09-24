@@ -130,7 +130,7 @@ On iPhone, iPad, Mac and Apple Vision Pro, if you are signed in to iCloud, OmniL
 | Where you left off | Which part of the app you were in, the identifier of the reference topic you last opened (for example, the topic on trade secrets), the random identifier of the last document you opened on that device, and when |
 | Appearance | System, Light or Dark |
 | Home Screen glance | The random identifier of the last document you opened or imported, the fixed words "Last matter" and "Open in OmniLex", and when |
-| Pending open | Set for a moment when you tap the widget or run the **Open last matter** shortcut on iPhone or iPad, and removed when the app opens there: the random document identifier, or the word "continue". The Mac and Apple Vision Pro apps ignore it |
+| Pending open | Set when you tap the widget or run the **Open last matter** shortcut on iPhone or iPad, and removed the next time OmniLex starts on an iPhone or iPad: the random document identifier, or the word "continue". The Mac and Apple Vision Pro apps ignore it |
 
 The identifiers are random codes the app gave your document or the names of topics in the app's own reference library. **These entries never hold a document's title, file name or text.** If an earlier build put a document's file name in the Home Screen glance, OmniLex replaces it with the neutral words above the next time it opens. Apple stores and syncs these entries under Apple's terms; Prameya cannot read them.
 
@@ -439,7 +439,7 @@ If we change how OmniLex handles data, we will update this policy and change the
 
 **24 September 2026 — what changed.** The Mac app and the Apple Watch app now use your iCloud key-value storage too:
 
-- **Mac.** The Mac app keeps the same four small entries as iPhone, iPad and Apple Vision Pro, so where you left off, your appearance choice and the "Last matter" glance reach your other devices, and **Delete All Documents & Analyses** on the Mac removes the entries from all of them. The previous version said that on a Mac these entries stay on the Mac; that is no longer so. The pending-open entry, which only the iPhone and iPad widget and shortcut set, is now used only on iPhone and iPad; the Mac and Apple Vision Pro apps ignore it.
+- **Mac.** The Mac app keeps the same four small entries as iPhone, iPad and Apple Vision Pro, so where you left off, your appearance choice and the "Last matter" glance reach your other devices, and **Delete All Documents & Analyses** on the Mac removes the entries from all of them. The previous version said that on a Mac these entries stay on the Mac; that is no longer so. The pending-open entry, which only the iPhone and iPad widget and shortcut set, is now used only on iPhone and iPad; the Mac and Apple Vision Pro apps ignore it. The previous version said that entry is set "for a moment"; it stays until OmniLex next starts on an iPhone or iPad, which can be later if the app was already open when you tapped the widget.
 - **Apple Watch.** The Apple Watch app and its complication read the "where you left off" and appearance entries, and the Watch saves a topic you pin there. Previously the Watch got this information only from your iPhone. When both routes carry it, the Watch keeps the more recent one, and after the entries are removed it stops offering the topic. The complication shows only "Continue" or "Learn", never a topic's name.
 
 What the entries hold is unchanged: never a document's title, file name or text. Nothing new is sent to Prameya.
