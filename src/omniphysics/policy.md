@@ -42,7 +42,7 @@ On iPhone, iPad, Mac and Apple Vision Pro it has lessons, interactive labs, the 
 | The next topic suggested on the Home Screen widget (its pack, title and one line about it), and a topic you asked the widget to open until the app opens it | Your iCloud key-value store | Show and open the widget's topic |
 | Appearance (System, Light or Dark) | Device; and, while you choose Light or Dark, your iCloud key-value store if you are signed in to iCloud (System is the default and is stored there as no entry) | Apply it, and let Apple TV match it |
 | The **On-device answers** switch and the **Remind me to continue** switch | Device only | Remember your choice |
-| When you last used **Delete everything**, and the random keys (identifiers that hold nothing about you) of the lesson records it deleted | Device only | So that a deleted record another of your devices sends back through iCloud is deleted again instead of merged into your new profile (see "iCloud sync") |
+| When you last used **Delete everything**, and the random keys (identifiers that hold nothing about you) of the lesson records it has deleted | Device only | So that a deleted record another of your devices sends back through iCloud is deleted again instead of merged into your new profile (see "iCloud sync") |
 | A one-time marker that files of an older Ask model were removed, and how much space that freed | Device only | So the removal happens once (see "Ask" below) |
 | A temporary copy of a file you export | The app's temporary folder on the device, until the app deletes it (see "Data retention") | Hand the file to the share sheet |
 
@@ -153,7 +153,7 @@ On **Apple TV** there is no model and no download, and the Ask tab does not appe
 
 ## Notifications
 
-On iPhone and iPad, OmniPhysics can post a local reminder to continue where you left off, four hours after you leave the app. It names the lesson or pack (for example "Continue Path — Continue F = ma"). The **Remind me to continue** switch in More is **off** until you turn it on. Turning it on is the only thing in OmniPhysics that asks iOS for permission to send notifications.
+On iPhone and iPad, OmniPhysics can post a local reminder to continue where you left off, four hours after you leave the app. It names the lesson or pack (for example "Continue Path — Continue F = ma"). The **Remind me to continue** switch in More is **off** until you turn it on, including for anyone who had it on in an earlier version. Turning it on is the only thing in OmniPhysics that asks iOS for permission to send notifications.
 
 The reminder is scheduled on your device. There is no push server, and nothing about it leaves your device. A plain tap on the reminder only opens the app where it points; its **Snooze** button posts it again later, and **Not now** closes it. On Apple Watch, **Snooze** asks your iPhone to post the reminder again later, and only while the switch is on. Turning the switch off cancels any queued reminder. Mac, Apple Vision Pro, Apple Watch and Apple TV never ask for notification permission.
 
@@ -204,7 +204,7 @@ Not Kids Category. Not directed at children under 13. We do not use progress dat
 
 ## Data retention
 
-- **On your device:** kept until you delete it in the app (a single record, Reset progress or Delete everything) or delete the app. Reset progress keeps your display name and settings; Delete everything removes them. The app deletes its temporary copy of a file you exported the next time it starts, when you reset progress or delete everything, and when you come back to **More** after your records changed; a copy you saved or shared elsewhere is yours and is not touched. The note of when you last used Delete everything, with the random keys of the lesson records it deleted, stays on the device until you use Delete everything again or delete the app.
+- **On your device:** kept until you delete it in the app (a single record, Reset progress or Delete everything) or delete the app. Reset progress keeps your display name and settings; Delete everything removes them. The app deletes its temporary copy of a file you exported the next time it starts, when you reset progress or delete everything, and when you come back to **More** after your records changed; a copy you saved or shared elsewhere is yours and is not touched. The note of when you last used Delete everything, with the random keys of the lesson records it has deleted, stays on the device until you delete the app; using Delete everything again updates it.
 - **In your iCloud, if you use it:** your profile, lesson records and achievements in your private database, and the key-value entries, until you delete them in the app (which updates the iCloud copy), they are replaced, or you remove the app's iCloud data in Settings. Reset progress keeps the profile record with your display name and settings, and your appearance entry, and leaves the where-you-left-off entry empty until you next use the app. Delete everything deletes the profile record, every lesson record and achievement, and every key-value entry except the empty where-you-left-off entry. Deleting the app on one device does not empty iCloud.
 - **With us:** only emails you send us, kept as long as needed to handle your message and to record that we handled it. Ask and we will delete yours.
 - **With Apple, if you buy Pro:** Apple keeps its own record of the transaction, under Apple's terms and retention rules.
@@ -220,8 +220,8 @@ We will update this policy when the app changes. When we do, we will change the 
 
 - It describes **Delete everything**, new in **More** under Reset progress and at the foot of **More ▸ Your records**. It deletes your profile with your display name, sound and haptics, every lesson record and every achievement, on the device and, if sync is on, in iCloud, and clears every entry the app keeps in the iCloud key-value store (where you left off is left as an empty entry). Before, Reset progress kept the profile and its settings, and the only ways to remove them were deleting the app (for the copy on the device) or removing the app's iCloud data in Settings.
 - It says OmniPhysics keeps on the device when you last used Delete everything and the random keys of the lesson records it deleted, so that a copy another device sends back is deleted again, and says which records it cannot recognise.
-- It says your appearance is kept in the iCloud key-value store only while you choose Light or Dark. Choosing System now removes the entry instead of storing "system", and Apple TV reads a missing entry as System.
-- The **Remind me to continue** switch now starts off for everyone. Before, it started on for someone who had allowed notifications for an earlier version of OmniPhysics.
+- It says your appearance is kept in the iCloud key-value store only while you choose Light or Dark. Choosing System now removes the entry instead of storing "system", an entry an earlier version stored as "system" is removed when the app next opens, and Apple TV reads a missing entry as System.
+- The **Remind me to continue** switch now starts off for everyone, including anyone who had it on before this update; turn it on again in **More** if you want the reminder. Before, it started on for someone who had allowed notifications for an earlier version of OmniPhysics.
 
 **23 September 2026 — what changed.** This policy was rewritten to describe what OmniPhysics does today:
 
