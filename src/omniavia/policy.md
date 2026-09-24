@@ -1,6 +1,6 @@
 # OmniAvia — Privacy Policy
 
-**Effective date:** 23 September 2026
+**Effective date:** 24 September 2026
 **Publisher:** Prameya LLC (“Prameya”, “we”, “us”)
 **App:** OmniAvia for iPhone, iPad, Mac, Apple Vision Pro, Apple TV and Apple Watch — bundle ID `legal.prameya.OmniAvia` (the Apple Watch app is `legal.prameya.OmniAvia.watch`)
 **Contact:** admin@prameya.legal
@@ -49,7 +49,7 @@ Prameya LLC. Privacy contact: **admin@prameya.legal**.
 | Reminder switch and goals, the Ask on/off switch, first-run acknowledgement, the pack of a drill you started from an Apple Watch prompt, Pro status | **This device only**, in app preferences |
 | An Ask conversation | **Not saved.** It is held in memory while the app is running and is never written to storage |
 | An export you asked for | **This device**, a temporary file, only while you share it |
-| Photos from your library | **Not collected.** The app has no photo picker or camera, and no screen in this build can attach an image to a log |
+| Photos from your library | **Not collected.** The app has no photo picker or camera, and a log has no place to hold an image: an unused image field, which no screen ever wrote, was removed from the flight log before release |
 | Analytics identifiers | **None** |
 
 Your iCloud data sits in your Apple Account under Apple's iCloud terms. Prameya has no access
@@ -149,10 +149,11 @@ Prameya cannot cancel your subscription or issue refunds. Apple controls all bil
 ### StoreKit transaction data
 
 Apple tells the app which product you own and when a subscription expires. The app keeps a
-Pro flag and the active product ID in its preferences **on this device only**. They are not
-synced to iCloud. **Delete all my data** does not remove them, because they record your
-purchase rather than your study data; the app re-checks them with the App Store at every
-launch.
+Pro flag and the active product ID in its preferences **on this device only**, and only while
+Pro is on. They are not synced to iCloud. **Delete all my data** removes them too. The app then
+asks the App Store again, straight away and at every launch, without asking you to sign in, so
+a purchase your Apple Account still owns comes back by itself and one that has lapsed does
+not. Deleting your data does not cancel a subscription.
 
 ---
 
@@ -199,14 +200,17 @@ reminder.
   on, the deletion also syncs to your private iCloud database, so the records disappear from
   your other devices too. It also removes the iCloud “continue”, pack-title, next-drill and
   widget entries, pending reminders, your reminder switch and goals, the pack of a drill you
-  started from an Apple Watch prompt, and any model files left in the app's model cache. It
-  cannot be undone.
+  started from an Apple Watch prompt, the Pro flag and product ID described above, and any
+  model files left in the app's model cache, and it forgets where you were in the app, in
+  every open window (the open pack and oral-drill question, the next pack Do suggests, the open
+  ACS area, and the pack Ask is working from). It cannot be undone.
 - **Kept after Delete all:** your appearance choice (on this device and in iCloud key-value
-  storage), the Ask on/off switch, the first-run acknowledgement (so the disclaimer screen
-  does not return), and the Pro flag and product ID described above. Right after the
-  deletion the app returns to Home and writes new “continue” and widget entries (and, if a
-  pack is still open, its title as the pack-title and next-drill entries) for where you are
-  then, and it keeps them current as you go on using the app.
+  storage), the Ask on/off switch, and the first-run acknowledgement (so the disclaimer screen
+  does not return). Right after the deletion the app returns to Home and writes a new
+  “continue” entry that names only a screen (Home, or the screen another open OmniAvia window
+  shows), with no pack, question or pack title, and a widget entry that suggests the first ACS
+  area, as on a new install. It sends your Apple Watch no next-drill title. As you go on using
+  the app, it keeps these entries current.
 - **Delete the app** removes this device's copy. Records already synced stay in your iCloud
   account until you delete them in the app on another device, or manage OmniAvia's data in
   iOS Settings → your name → iCloud.
@@ -252,6 +256,20 @@ Material changes update the effective date at the top of this page. When a chang
 affects what is stored or what leaves the device, we update this page and list the change
 below.
 
+**24 September 2026 — what changed.**
+
+- Delete all now also removes your Pro status: the Pro flag and product ID the app keeps on
+  this device. The app then asks the App Store again, straight away and at every launch, so a
+  purchase your Apple Account still owns comes back by itself. Before, Delete all kept them.
+- Delete all now also forgets where you were in the app, in every open window. Before, if a
+  pack was open, the app wrote that pack's title back to iCloud key-value storage and sent it
+  to your Apple Watch right after the deletion. It no longer does: the new “continue” entry
+  names only a screen, not a pack.
+- The flight log no longer has an image field. It was never used: no screen could attach an
+  image, so nothing was ever stored in it. When this version first opens a logbook written by
+  an earlier test build, it removes the empty field and keeps every entry. The export no longer
+  has a place for an image.
+
 **23 September 2026 — what changed.** This page now describes the current build:
 
 - Personal logs sync to your private iCloud database through CloudKit, on iPhone, iPad, Mac
@@ -264,19 +282,21 @@ below.
   downloaded.
 - Reminders are off until you switch them on, and a tap on a reminder never writes a record.
 - Delete all clears the iCloud “continue” entries but keeps your Pro status, appearance
-  choice and a few settings, which are now listed.
+  choice and a few settings, which are now listed. (Pro status: changed on 24 September,
+  above.)
 - Delete all now also removes the pack of a drill you started from an Apple Watch prompt.
   Before, it was kept, and turning reminders back on scheduled the 18:00 “drill is waiting”
   reminder for a drill from before the deletion.
 - Delete all now also clears the next-drill title your iPhone keeps in memory for your Apple
   Watch. Before, the iPhone could send that title to the Watch after the deletion, and the
-  Watch then saved it to iCloud key-value storage again. If a pack is still open, its title is
-  still written again right after the deletion, as section 7 says.
+  Watch then saved it to iCloud key-value storage again. If a pack was still open, its title
+  was still written again right after the deletion (changed on 24 September, above).
 - Settings in the app are under **More**.
 
 A first version of this page, published earlier on 23 September 2026, said you could download
 a Qwen3 model in More with a consent prompt over 500 MB, and that Delete all cleared your Pro
-status. Neither is true of the current build. The 23 August 2026 page said the app had no
+status. Neither was true of the build then current. (Delete all clears your Pro status from
+24 September, above.) The 23 August 2026 page said the app had no
 iCloud sync and no model download, which was wrong for the builds that followed it.
 
 **23 August 2026.** First published page.
