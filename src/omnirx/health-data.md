@@ -35,7 +35,8 @@ to us:**
   iPhone.
 
 You can delete what you have logged yourself, from inside the app: More → "Delete all my data". It also
-removes those iCloud values. Read [the right to delete](#3-the-right-to-delete) for what it does not reach.
+removes those iCloud values and cancels the daily reminder. Read [the right to delete](#3-the-right-to-delete)
+for what it does not reach.
 
 We still treat all of this as consumer health data and still give you the rights below, because
 Washington and Nevada define "collect" broadly enough to reach data that is processed on your device —
@@ -265,11 +266,11 @@ record"** lists every medication record, journal entry and habit record the app 
 them. More → **"Export every record as text"** prints all of them, field by field — each medication
 record with its date, medicine name, whether you recorded it as taken or skipped, the reasons and the
 note on it; each journal entry with its scores, anything reported with it and its note; each habit
-record; and the profile row the app created for itself. Nothing is summarised, sampled or truncated.
-There are no attachments to return, and that export says so: OmniRx cannot take or store a photograph,
-a scan, a recording or a file of any kind. The medicines you follow are listed on the You tab rather
-than in that export. The names of medicines you have stopped following are in neither: the app keeps
-them on the device only so it can leave them off the You tab, and does not show them; "Delete all my
+record; the medicines you follow and the names of medicines you have stopped following; and the
+profile row the app created for itself. Nothing is summarised, sampled or truncated. There are no
+attachments to return, and that export says so: OmniRx cannot take or store a photograph, a scan, a
+recording or a file of any kind. The app keeps the names of medicines you have stopped following only
+so it can leave them off the You tab; this export is the one place they are shown, and "Delete all my
 data" removes them. More → **"Export my logs as text"** remains available
 and is a shorter summary written to be handed to a pharmacist. Both exports are shown on screen for you
 to copy; nothing is uploaded and we never receive a copy.
@@ -283,8 +284,8 @@ In practice, you can do all of this yourself, immediately:
 - **Stop logging** — the app never records anything you do not enter.
 - **Turn off Ask**, and **turn off "Show medicine names on Apple Watch"**, in More.
 - **Delete everything you have logged** — More → **"Delete all my data"**. This also removes the iCloud
-  key-value values described above (not the CloudKit preferences record, which holds no health
-  information), turns Ask off, and clears any leftover on-device model files from older builds.
+  key-value values and the CloudKit preferences record described above, cancels the daily reminder,
+  turns Ask off, and clears any leftover on-device model files from older builds.
 - **Delete the app** — this removes its data from that device (see below for Mac and iCloud).
 
 You may also email **admin@prameya.legal** to withdraw consent in writing. We will confirm and record
@@ -299,16 +300,18 @@ You can ask us to delete your consumer health data.
   device and resets the figures the app calculated from them. It also removes the medicines you follow
   and have stopped following, your reminder settings, your Ask switches (so Ask is off again), any
   copy of the database the app set aside after
-  it could not open it, and every iCloud key-value value OmniRx writes — including the IDs of the label
-  pages you opened. It cannot be undone. If a file cannot be removed, the app tells you.
+  it could not open it, every iCloud key-value value OmniRx writes — including the IDs of the label
+  pages you opened — and the CloudKit preferences record (appearance and notice version) in your iCloud
+  account. It cancels the daily reminder (and a snoozed one), resets the Handoff message to your nearby
+  devices, and sends your Apple Watch a new reminder card, which names no medicine because none is
+  followed any more. It cannot be undone. If a file cannot be removed, or the preferences record
+  cannot be deleted from iCloud, the app tells you.
 - **What it does not reach:**
-    - **A daily reminder that is already scheduled keeps firing.** Turn **Daily reminder** off before you
-      delete, or turn off notifications for OmniRx in your device's Settings. The reminder carries no
-      medicine name.
-    - **Your Apple Watch** may keep showing the last reminder card the iPhone sent — with medicine names,
-      if you had turned that on — until the iPhone sends a new one.
-    - **The CloudKit preferences record** (appearance and notice version) stays in your iCloud account.
-      It holds no health information.
+    - **Your Apple Watch** gets the new reminder card straight away if it is connected to your iPhone,
+      or the next time it connects. Until then it shows the last card it received — with medicine
+      names, if you had turned that on.
+    - **A few settings stay on the device:** your appearance choice, "Show medicine names on Apple
+      Watch" and your acceptance of the first-run notice. None of them is health information.
 - **Or one record at a time.** More → "Open, correct or delete one record" lists every
   medication record, journal entry and habit record on the device. Each one opens, and each one
   can be deleted on its own behind a confirmation that names it — which medicine, which day,
@@ -317,8 +320,8 @@ You can ask us to delete your consumer health data.
   read-only and the screen says why. A medicine you follow can be removed from the You tab.
 - **Deleting the app** removes its data store from an iPhone, iPad, Apple Watch, Apple TV or Apple
   Vision Pro. On a Mac, moving the app to the Trash does not by itself remove its data, so use "Delete
-  all my data" first. Deleting the app does not remove the iCloud key-value values; "Delete all my
-  data" does.
+  all my data" first. Deleting the app does not remove the iCloud key-value values or the preferences
+  record; "Delete all my data" does.
 - **We hold no copy to delete.** There is no server database, no backup, no archive, and no analytics
   store containing your health data. When you ask, we will tell you exactly that, in writing.
 - **We have not shared it with anyone**, so there is no third party for us to instruct to delete it.
@@ -430,8 +433,17 @@ affirmative consent.
 - It replaces the Plus and Premium tiers, which never existed, with OmniRx Pro, and removes a
   30-day history limit, export formats and preference sync by tier that the app never had.
 - It no longer says the app stores your purchase details and deletes them with your data.
-- It says what "Delete all my data" does not reach: an already scheduled reminder, the last reminder
-  card on Apple Watch, and the iCloud preferences record.
+- It says what "Delete all my data" does not reach: what Apple Watch shows until it next connects to
+  your iPhone, and a few settings on the device.
+- Later on 23 September, with an app update, "Delete all my data" does more: it also cancels the daily
+  reminder, deletes the preferences record from your iCloud account, resets the Handoff message, and
+  sends your Apple Watch a new reminder card with no medicine names. Before that update, an already
+  scheduled reminder kept firing and the preferences record stayed in iCloud after a delete.
+- With the same update, "Export every record as text" also lists the medicines you follow and the
+  names of medicines you have stopped following, which it used to leave out.
+- With the same update, the first-run notice no longer says we receive a transaction identifier when
+  you buy Pro; nothing about a purchase is sent to us. Because the notice changed, the app shows it
+  again.
 
 The first-run notice, which you acknowledge before using the app, now describes the label-page IDs
 in iCloud too.
