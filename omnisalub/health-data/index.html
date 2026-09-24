@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>OmniSalub Consumer Health Data Privacy Policy — Prameya LLC</title>
-<meta name="description" content="Effective date: 23 September 2026">
+<meta name="description" content="Effective date: 24 September 2026">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://prameyallc.github.io/privacy/omnisalub/health-data/">
 <style>
@@ -93,8 +93,8 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 </div></header>
 <main id="main" class="wrap">
 <h1 id="omnisalub-consumer-health-data-privacy-policy">OmniSalub Consumer Health Data Privacy Policy</h1>
-<p><strong>Effective date:</strong> 23 September 2026<br />
-<strong>Last updated:</strong> 23 September 2026<br />
+<p><strong>Effective date:</strong> 24 September 2026<br />
+<strong>Last updated:</strong> 24 September 2026<br />
 <strong>Publisher:</strong> Prameya LLC ("Prameya", "we", "us")<br />
 <strong>Applies to:</strong> OmniSalub for iPhone, iPad, Mac, Apple Vision Pro and Apple TV (bundle identifier <code>legal.prameya.omnisalub</code>), and the OmniSalub Apple Watch app (<code>legal.prameya.omnisalub.watchkit</code>)<br />
 <strong>Contact:</strong> admin@prameya.legal</p>
@@ -124,7 +124,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <ul>
 <li><strong>Apple Inc.</strong> — operates the App Store, Apple Health, iCloud, Handoff, the connection between iPhone and Apple Watch, and Apple Intelligence. In detail:<ul>
 <li>If you turn on settings sync, six non-health preferences (theme, guideline set, onboarding state, app lock, the tab you last had open, and a timestamp) are stored in <em>your</em> iCloud account. Health data is never placed in iCloud; that is a fixed architectural boundary and an automated test enforces it.</li>
-<li><strong>Handoff</strong> passes the tab you are on and, if you are reading a Learn topic, that topic's identifier (for example a topic about PSA test numbers) to your own nearby devices signed in to the same Apple Account. It never carries a reading.</li>
+<li><strong>Handoff</strong> passes the tab you are on to your own nearby devices signed in to the same Apple Account. It never carries the Learn topic you are reading, and never a reading.</li>
 <li>The <strong>Apple Watch</strong> app's <strong>Ask iPhone</strong> sends the question you type to OmniSalub on your paired iPhone, and the answer — which can draw on what you have logged — comes back to the Watch, over Apple's connection between your two devices.</li>
 <li>Where <strong>Apple Intelligence</strong> answers Ask, it uses Apple's on-device model. The app does not send your question or your logged data to Apple's servers or to Private Cloud Compute.</li>
 <li>If you buy OmniSalub Pro, the App Store processes the purchase. That is not consumer health data (section 9).</li>
@@ -145,10 +145,10 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <hr />
 <h2 id="8-how-the-data-is-processed-stored-and-protected-on-your-device-not-by-us">8. How the data is processed, stored and protected — on your device, not by us</h2>
 <ul>
-<li><strong>What the app handles on your device.</strong> The readings and symptoms you enter; the Apple Health data types you allow when you tap <strong>Connect Apple Health</strong> — the sheet lists only the types the conditions you track use, and the app imports the last 400 days of each of those types you allow (records of the symptom types it asks for in full), together with what Apple Health says about the app and device that recorded each reading (the full list is in section 3.1 of the <a href="https://prameyallc.github.io/privacy/omnisalub/">OmniSalub Privacy Policy</a>); the alerts the app raises; the conditions you choose; your visit date and visit questions; and your answer to the food-and-weight screening question. The app reads no other Apple Health type, even one you allowed on an earlier sheet. None of it reaches us.</li>
+<li><strong>What the app handles on your device.</strong> The readings and symptoms you enter; the Apple Health data types you allow when you tap <strong>Connect Apple Health</strong> — the sheet lists every type the app can use, whichever conditions you track, unless you turn off <strong>Import everything from Health</strong> in Settings, which limits it to the types the conditions you track use — and the app imports the last 400 days of each of those types you allow (records of the symptom types it asks for in full), together with what Apple Health says about the app and device that recorded each reading (the full list is in section 3.1 of the <a href="https://prameyallc.github.io/privacy/omnisalub/">OmniSalub Privacy Policy</a>); the alerts the app raises; the conditions you choose; your visit date and visit questions; and your answer to the food-and-weight screening question. The app reads no other Apple Health type; with <strong>Import everything from Health</strong> off it reads only your conditions' types, even where you allowed more on an earlier sheet. None of it reaches us.</li>
 <li><strong>Where.</strong> In a database in the app's private storage on your device. On iPhone, iPad and Apple Vision Pro it is set to Data Protection "complete", so it is encrypted with a key derived from your device passcode and is unreadable while the device is locked. On a Mac it is protected by the app sandbox and by FileVault if you have FileVault on. Apple Health exists only on iPhone and iPad; the Apple Watch and Apple TV apps keep no readings.</li>
 <li><strong>Not in iCloud.</strong> Health data is never stored in iCloud by this app. The health database is created with iCloud syncing explicitly disabled, and an automated test blocks any health record, or any health-revealing field, from reaching the part of the app that does sync. Only six non-health preferences (theme, guideline set, onboarding state, app lock, the tab you last had open, timestamp) can sync, and only if you turn that on — it is off by default. Only while settings sync is on, the app also writes a small "where you left off" note (the tab you were on, the identifier of the Learn topic you last opened, your appearance choice) through Apple's iCloud key-value storage, and turning sync off removes it; this version of the app is not signed with Apple's iCloud key-value storage capability, so the note does not leave the device.</li>
-<li><strong>Handoff and Apple Watch.</strong> Handoff passes the tab and Learn topic identifier described in section 4 between your own devices; the Watch app's Ask iPhone passes your question and the answer between your Watch and your iPhone. Both use Apple's services between your own devices and reach no one else.</li>
+<li><strong>Handoff and Apple Watch.</strong> Handoff passes the tab you are on, described in section 4, between your own devices; the Watch app's Ask iPhone passes your question and the answer between your Watch and your iPhone. Both use Apple's services between your own devices and reach no one else.</li>
 <li><strong>Backups.</strong> The health database is excluded from device backup. So is the widget's display file. That file names what to log next and, only if you turn on <strong>Show today's reading on the Home Screen</strong> (off by default), holds today's latest reading. On iPhone and iPad it is encrypted at rest until the first time you unlock the device after a restart, rather than being re-locked whenever the screen locks, so the widget can redraw; the widget hides the number while the device is locked.</li>
 <li><strong>Ask.</strong> Ask is on by default. It gives your question and a summary of what you have logged — the names of the conditions you track, reading summaries and up to 36 readings from the last 30 days, up to 12 symptoms, and any open alert below the urgent level — to a model running on your device: Apple Intelligence's on-device model where it is ready, or the optional model you download. That context never leaves your device and is not sent to us, to Apple or to any AI provider. Crisis language never reaches a model, and while an urgent or emergency alert is open Ask shows that alert's fixed text instead of asking one. The conversation is not saved. You can turn Ask off in Settings → Assistant. Cloud and third-party inference modes are hard-wired off in this version.</li>
 <li><strong>Notifications.</strong> Visit reminders are off until you turn them on. They are local notifications scheduled on your device, do not name a condition, and no notification content is transmitted anywhere.</li>
@@ -234,7 +234,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <tr>
 <td><strong>Delete</strong></td>
 <td>Have your consumer health data deleted</td>
-<td>Because we hold nothing, there is nothing for us to delete. On your device: <strong>Settings → Your data → Delete everything this app stored</strong> erases your readings, symptoms and alerts, resets your conditions, visit date and preferences, deletes your iCloud copy of your settings if sync is on, and clears the activity log down to one entry recording the erase; it keeps the downloaded Ask model and its settings, your iCloud sync choice and anything in Apple Health (the full list is in section 14 of the OmniSalub Privacy Policy). Deleting the app removes everything the app stored on that device. Data already in Apple Health is managed by you in the Health app</td>
+<td>Because we hold nothing, there is nothing for us to delete. On your device: <strong>Settings → Your data → Delete everything this app stored</strong> erases your readings, symptoms and alerts, resets your conditions, visit date and preferences, deletes your iCloud copy of your settings if sync is on, and clears the activity log down to one entry recording the erase; it keeps the downloaded Ask model and the Assistant settings, your iCloud sync choice and anything in Apple Health (the full list is in section 14 of the OmniSalub Privacy Policy). Deleting the app removes everything the app stored on that device. Data already in Apple Health is managed by you in the Health app</td>
 </tr>
 <tr>
 <td><strong>Appeal</strong></td>
@@ -259,6 +259,11 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <h2 id="12-changes-to-this-policy">12. Changes to this policy</h2>
 <p>If we change this policy, we will update the "Last updated" date above and publish the new version at <a href="https://prameyallc.github.io/privacy/omnisalub/health-data/">prameyallc.github.io/privacy/omnisalub/health-data</a>.</p>
 <p>If a change ever means we begin to collect consumer health data, we will say so in plain terms, obtain consent where the law requires it, and publish it before the version that does so is released — not after.</p>
+<p><strong>24 September 2026 — what changed.</strong> Our answer is unchanged: Prameya collects, shares and sells no consumer health data. This revision describes an app update:</p>
+<ul>
+<li>Section 8 says that <strong>Connect Apple Health</strong> now asks for every Apple Health type the app can use, whichever conditions you track, unless you turn off <strong>Import everything from Health</strong> in Settings, which limits the request, and what the app reads, to the types your conditions use. What the app imports still stays on your device.</li>
+<li>Section 4 says that Handoff now passes only the tab you are on, not the Learn topic you are reading.</li>
+</ul>
 <p><strong>23 September 2026 — what changed.</strong> Our answer is unchanged: Prameya collects, shares and sells no consumer health data. This revision updates the facts behind it:</p>
 <ul>
 <li>Section 8 now lists what the app handles on your device, and says that <strong>Connect Apple Health</strong> asks only for the types the conditions you track use and imports the last 400 days of each of those types you allow (records of the symptom types it asks for in full).</li>
@@ -279,7 +284,7 @@ Postal address available on request by email.</p>
 <footer class="site"><div class="wrap">
   <p>Prameya LLC · <a href="mailto:admin@prameya.legal">admin@prameya.legal</a>
   · <a href="https://prameyallc.github.io/privacy/support/">Support</a></p>
-  <p>Effective 23 September 2026. <a href="https://prameyallc.github.io/privacy/">All app privacy policies</a></p>
+  <p>Effective 24 September 2026. <a href="https://prameyallc.github.io/privacy/">All app privacy policies</a></p>
 </div></footer>
 </body>
 </html>
