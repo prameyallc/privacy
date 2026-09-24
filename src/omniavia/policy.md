@@ -201,15 +201,16 @@ reminder.
   your other devices too. It also removes the iCloud “continue”, pack-title, next-drill and
   widget entries, pending reminders, your reminder switch and goals, the pack of a drill you
   started from an Apple Watch prompt, the Pro flag and product ID described above, and any
-  model files left in the app's model cache, and it forgets where you were in the app (the
-  open pack and oral-drill question, the next pack Do suggests, the open ACS area, and the pack
-  Ask is working from). It cannot be undone.
+  model files left in the app's model cache, and it forgets where you were in the app, in
+  every open window (the open pack and oral-drill question, the next pack Do suggests, the open
+  ACS area, and the pack Ask is working from). It cannot be undone.
 - **Kept after Delete all:** your appearance choice (on this device and in iCloud key-value
   storage), the Ask on/off switch, and the first-run acknowledgement (so the disclaimer screen
   does not return). Right after the deletion the app returns to Home and writes a new
-  “continue” entry that names only the Home screen, with no pack, question or pack title, and
-  a widget entry that suggests the first ACS area, as on a new install. It sends your Apple
-  Watch no next-drill title. As you go on using the app, it keeps these entries current.
+  “continue” entry that names only a screen (Home, or the screen another open OmniAvia window
+  shows), with no pack, question or pack title, and a widget entry that suggests the first ACS
+  area, as on a new install. It sends your Apple Watch no next-drill title. As you go on using
+  the app, it keeps these entries current.
 - **Delete the app** removes this device's copy. Records already synced stay in your iCloud
   account until you delete them in the app on another device, or manage OmniAvia's data in
   iOS Settings → your name → iCloud.
@@ -260,10 +261,10 @@ below.
 - Delete all now also removes your Pro status: the Pro flag and product ID the app keeps on
   this device. The app then asks the App Store again, straight away and at every launch, so a
   purchase your Apple Account still owns comes back by itself. Before, Delete all kept them.
-- Delete all now also forgets where you were in the app. Before, if a pack was open, the app
-  wrote that pack's title back to iCloud key-value storage and sent it to your Apple Watch
-  right after the deletion. It no longer does: the new “continue” entry names only the Home
-  screen.
+- Delete all now also forgets where you were in the app, in every open window. Before, if a
+  pack was open, the app wrote that pack's title back to iCloud key-value storage and sent it
+  to your Apple Watch right after the deletion. It no longer does: the new “continue” entry
+  names only a screen, not a pack.
 - The flight log no longer has an image field. It was never used: no screen could attach an
   image, so nothing was ever stored in it. When this version first opens a logbook written by
   an earlier test build, it removes the empty field and keeps every entry. The export no longer
