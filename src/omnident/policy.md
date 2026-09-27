@@ -282,7 +282,7 @@ Only part of it goes to iCloud. OmniDent writes one small entry to **iCloud's ke
 
 and, as a second entry, your appearance choice (light, dark or system).
 
-**It never contains a person's name or the education topic**, and never a photo, a thumbnail, a file path, an analysis, or anything from your health profile, habit log, visits or documents. Each new entry replaces the last one; it is not a history. Earlier versions of OmniDent also put the topic identifier and the active person's name there. OmniDent replaces an entry like that with the tab and the record identifier when it starts, or removes it if iCloud Sync is off.
+**It never contains a person's name or the education topic**, and never a photo, a thumbnail, a file path, an analysis, or anything from your health profile, habit log, visits or documents. Each new entry replaces the last one; it is not a history. Earlier versions of OmniDent also put the topic identifier and the active person's name there, and a device still running one can write such an entry again until it is updated. OmniDent replaces an entry like that with the tab and the record identifier when it starts and each time it saves the note, or removes it if iCloud Sync is off.
 
 This entry is written only while iCloud Sync is on. **Turning iCloud Sync off removes both entries from iCloud straight away**, and that device writes nothing more there while it is off. **Delete All Scans & Data** also removes them. Continue then starts again from what you do next, if iCloud Sync is still on.
 
