@@ -1,6 +1,6 @@
 # OmniDerm Privacy Policy
 
-**Effective date:** 24 September 2026 *(supersedes the 23 September 2026 version; what changed is listed under "Changes to this policy" at the end)*
+**Effective date:** 27 September 2026 *(supersedes the 24 September 2026 version; what changed is listed under "Changes to this policy" at the end)*
 **Publisher:** Prameya LLC ("Prameya", "we", "us"), a United States limited liability company
 **Contact:** admin@prameya.legal
 **This policy covers:** the OmniDerm app — bundle ID `legal.prameya.OmniDerm` — on iPhone, iPad, Mac and Apple Vision Pro, its Apple Watch app, its Apple TV app, and its Home Screen and Apple Watch widgets. Prameya's other apps have their own policies.
@@ -139,6 +139,7 @@ Two different things used to be described as if they were one. They are not.
 | Journal photographs you save | On your device, as JPEG files under Application Support (`OmniDerm/JournalPhotos`), metadata removed. Excluded from device backup. Deleted with Clear All Local Data. Never assessed. | No |
 | Habit logs (date; whether you did morning SPF, reapplied, barrier care, a self-check; and where the log was made, for example Do or your Apple Watch) | On your device, in the app's local database | Only inside your device backup |
 | Your goals list, reminder on/off and hour, appearance, landing tab, first-run acknowledgement, the iCloud Sync and Handoff switch, and an internal reference to the journal entry you saved last | On your device, in app preferences | Only inside your device backup — and, **if** you turn on iCloud Sync and Handoff, the settings listed under "iCloud, Handoff and your other devices" |
+| Your reminder hour, only while reminders are on | On your Apple Watch, in storage that only the OmniDerm Watch app and its watch-face complication share | It comes from your iPhone over the connection between the two devices (see "Apple Watch"), and goes nowhere else |
 | Your answer to the Ask model download, with the model and version it was given for, and which of the offered models you chose | On your device, in app preferences | Only inside your device backup |
 | The downloaded Ask model's files, only if you chose to download one | On your device, under Application Support (`OmniDerm/HubCache`). Excluded from device backup. | No |
 | Questions you type in Ask, and the answers | In memory, for the conversation on screen. Not written to storage. | No |
@@ -229,7 +230,7 @@ With sync off, the widget shows the first suggested topic, Apple TV has nothing 
 The Apple Watch app shows the built-in topics, and cards the iPhone sends it over Apple's connection between the two devices. It stores none of your journal, photographs or habit logs.
 
 - **Applied today's care** — tapping **Confirm** logs today's morning sunscreen and barrier care on your iPhone (added to anything already logged today, marked as logged from the Watch). **Photo reminder** opens journal capture on the iPhone; **Read this topic** makes the iPhone send the Watch the identifier of the topic held for continuing, and the Watch opens it. Snooze and Not now record nothing.
-- The iPhone also sends the Watch your reminder hour, for its complication.
+- **While reminders are on**, the iPhone also sends the Watch your reminder hour, and the OmniDerm complication shows it on your watch face (for example "8:00"). The Watch keeps the hour in storage that only the OmniDerm Watch app and its complication share. While reminders are off, which is how they start, the iPhone sends no hour and tells the Watch to remove the one it kept, and the complication shows "Learn"; switching reminders off and Clear All Local Data do this too. watchOS hands each change to the Watch when it arrives, waking the OmniDerm Watch app briefly in the background if it is closed, so the watch face follows without you opening the app.
 - The Watch reads the iCloud key-value storage described above, when sync is on, to offer the topic held for continuing and match your appearance.
 
 ### Apple TV, Mac, Apple Vision Pro and the widget
@@ -255,7 +256,7 @@ One line each, because that is all they need.
 - **No selling or sharing your data.** Not to advertisers, not to data brokers, not to anyone, for money or for anything else.
 - **No location.** OmniDerm does not request or use your location, precise or approximate, and removes location metadata from journal photographs. It uses no geofences.
 - **No camera, contacts, microphone, or health records.**
-- **No background activity of its own.** The app declares no background modes and schedules no background tasks. Apart from delivering local reminders you switched on, the widgets showing a suggested topic, and your iPhone briefly handling a card you tap in the Apple Watch app, it does nothing when you are not using it. A model download runs only while the app is open.
+- **No background activity of its own.** The app declares no background modes and schedules no background tasks. Apart from delivering local reminders you switched on, the widgets showing a suggested topic or, on your watch face, your reminder hour, your Apple Watch briefly taking in a reminder change your iPhone sent, and your iPhone briefly handling a card you tap in the Apple Watch app, it does nothing when you are not using it. A model download runs only while the app is open.
 - **No profiling and no automated decisions about you** in the legal sense — the app makes no decision that produces legal or similarly significant effects.
 
 ## What Apple may see
@@ -290,7 +291,7 @@ We do not retain your data, because we never receive it. On your device:
 
 - **Delete individual entries:** open a journal entry from the timeline (or hold the row) to delete it or just its photograph, and open a logged day under **Do → Today's log → Days you have logged** to delete that day with **Delete this logged day**. Each list draws your 365 most recent records at a time and offers **Show older entries** / **Show older days** at its foot, so an older record is a page away rather than out of reach. On the free plan, journal entries older than 30 days are listed under **Older entries** below the timeline, where each one opens to be corrected or deleted, and logged days older than 90 days are listed by date under **Older days** below the list of logged days, where each one opens to **Delete this logged day**.
 - **Delete a single journal photograph:** open that journal entry and use **Delete the photograph** — the date, body area and note are kept. Deleting the entry deletes its photograph too, and Clear All Local Data deletes them all. Journal photographs are excluded from device backup and are never uploaded, so each of those deletes removes the only copy that exists. Originals in Apple Photos are yours — delete them there if you want them gone.
-- **Delete your habit logs, journal entries, photographs, goals, and reminder and appearance settings:** open **Settings → Export & Data Management → Clear All Local Data**. It deletes your journal entries and photographs, habit logs, goals, reminder and appearance settings and pending reminders, the downloaded Ask model and your answer to its download, switches iCloud Sync and Handoff off, removes OmniDerm's iCloud key-value entries and deletes the CloudKit preference record. It does not remove your purchases or the record that you acknowledged the app's first-run notice. If a later file removal fails after the store is emptied, or the preference record could not be removed from iCloud, the app says so rather than claiming a complete delete.
+- **Delete your habit logs, journal entries, photographs, goals, and reminder and appearance settings:** open **Settings → Export & Data Management → Clear All Local Data**. It deletes your journal entries and photographs, habit logs, goals, reminder and appearance settings and pending reminders, the downloaded Ask model and your answer to its download, tells your Apple Watch to remove the reminder hour it kept, switches iCloud Sync and Handoff off, removes OmniDerm's iCloud key-value entries and deletes the CloudKit preference record. It does not remove your purchases or the record that you acknowledged the app's first-run notice. If a later file removal fails after the store is emptied, or the preference record could not be removed from iCloud, the app says so rather than claiming a complete delete.
 - **Delete the Ask model only:** **Settings → On-device Ask model → Remove the downloaded model**.
 - **Delete everything on the device:** delete the app. That removes the app's database, preferences, journal JPEGs and downloaded model files. It does not remove what is in iCloud or in a device backup you already made.
 - **Delete synced data:** switch iCloud Sync and Handoff off. That removes the key-value entries and the preference record; if the app could not reach iCloud, remove the app's iCloud data in iOS Settings as described above.
@@ -376,6 +377,12 @@ If we change how OmniDerm handles your data, we will update this policy and chan
 - post the updated policy here before the change ships, and
 - tell you inside the app, and
 - ask for your consent again where the law requires it, including a fresh consent for any new collection or sharing of consumer health data under Washington's My Health My Data Act.
+
+**27 September 2026 — what changed.** One change in the app, and this page follows it:
+
+- **The reminder hour on your Apple Watch.** The Watch complication was meant to show your reminder hour, but it never could: the Watch app and the complication kept separate storage, so the watch face always read "Learn". They now share storage that only the two of them can read, so the complication shows the hour. The iPhone now sends the hour only while reminders are on; before, it sent the hour even with reminders off, which is how they start. With reminders off, and after Clear All Local Data, the iPhone tells the Watch to remove the hour it kept. watchOS hands the Watch each change even when the OmniDerm Watch app is closed, waking it briefly in the background. The "Apple Watch" section, the storage table and "No background activity of its own" say this.
+
+Nothing else changed: the same data stays on your device, the hour reaches your Watch only over the connection between your iPhone and Watch and never reaches us, and iCloud Sync and Handoff carries the same things, only while you have it on.
 
 **24 September 2026 — what changed.** One change in the app, and this page follows it:
 
