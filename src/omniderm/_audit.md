@@ -57,3 +57,30 @@ NET POST-WAVE-2 PICTURE THE POLICY DESCRIBES: skin photos are chosen from the ph
 - SUPPORT EMAIL RETENTION. The policy says support threads are deleted once resolved. Confirm that is actually the practice at admin@prameya.legal, or I should soften it to a stated retention period.
 - MHMDA SCOPE QUESTION FOR COUNSEL (REGULATORY.md OQ-D10): does 'collect' under RCW 19.373 reach purely on-device inference over a photograph of the user's own body? No WA AG guidance or case law was located. The policies deliberately assume YES and are written to comply either way, which is the safe posture — but counsel should confirm rather than rely on my assumption.
 - NEVADA SECTION NUMBERS. SB 370 (2023) added new sections to NRS ch. 603A effective 2024-03-31. I cited the bill rather than pinning specific NRS section numbers I could not verify in this session. If you want section-level citations, have counsel supply them rather than letting me guess.
+
+## 2026-09-27 — the reminder hour on the Apple Watch (Watch App Group)
+
+Pairs with the OmniDerm app PR on branch `fix/watch-complication-2026-09-27` (owner, 2026-09-27: "do everything.. go ahead"; the D-09 fix OmniWealth shipped on 2026-09-23). Read against OmniDerm origin/main `c68dc29` and that branch. Survey: `docs/watch-complication-data-survey-2026-09-27.md` (Omni workspace), Derm row.
+
+BEFORE (origin/main `c68dc29`)
+- The Watch app wrote the hour to its own `UserDefaults.standard` (`OmniDermKit/Sources/Continuity/WristInbox.swift:18-21`, via `WristTransport.swift:244-248`); the complication extension read its own `UserDefaults.standard` (`App/OmniDermWatch/WatchComplications.swift:33`). Separate containers, so the watch face always read "Learn". The Watch widget extension was signed with no entitlements.
+- The iPhone sent the hour even with reminders off, the default (`WristCommandApplier.swift:46-49, 70-73`; `SkinDataService.swift:1106-1127`: the hour defaults to 8). The sentence at policy.md:232 was true of what was sent, never of what the complication showed.
+
+AFTER (the branch)
+- App Group `group.legal.prameya.OmniDerm.watch` on the Watch app (`App/OmniDermWatch/OmniDermWatch.entitlements`, which keeps its iCloud key-value entitlement) and the Watch widget extension (`App/OmniDermWatch/OmniDermWatchWidgets.entitlements`, new) only. The host, the Home Screen widget and Apple TV join no group (`WatchAppGroupContractTests`).
+- `WatchComplicationStore` (`OmniDermKit/Sources/Continuity/WatchComplicationStore.swift:42, 56, 78-89`): opens the suite only on watchOS, stores a whole hour 0-23 and nothing else, removes it on nil or any other value, reloads the complications after each write. The complication reads only this (`WatchComplications.swift:39`).
+- The iPhone sends the hour only while reminders are on (`SkinDataService.swift:1121-1122`, `watchReminder`), and an explicit "off" otherwise, which makes the Watch remove the hour (`WristTransport.swift:172-174, 361-365`). Settings' Reminders switch and hour, and Clear All Local Data, re-send (`SkinDataService.swift:1151, 1162, 1438`; `WristCommandApplier.swift:44`). The Watch app deletes its old own-defaults copy at launch (`OmniDermWatchApp.swift:44`).
+- Delivery: WatchConnectivity application context. The launch context used to be dropped (sent before `WCSession` activated); it is now sent on activation (`WristTransport.swift:246`). The Watch app declares no WatchConnectivity background task, so the Watch applies a change when it next runs and hears from the iPhone; hence "when it next hears from your iPhone".
+- Privacy manifests: both Watch manifests give UserDefaults reasons CA92.1 and 1C8F.1; host, TV and Home Screen widget give CA92.1 only. Nothing collected, nothing tracked; App Store privacy label unaffected ("Data Not Collected").
+
+POLICY CHANGES (policy.md)
+- Apple Watch bullet: "The iPhone also sends the Watch your reminder hour, for its complication." -> sent only while reminders are on, shown on the watch face, kept in storage only the Watch app and complication share, removed when reminders are off or after Clear All.
+- Storage table: a row for the hour on the Watch.
+- Deletion bullet: Clear All tells the Watch to remove the hour.
+- "No background activity": the watch-face reminder hour is named beside the widgets' suggested topic.
+- Dated 27 September entry; effective date.
+
+VERIFIED, NO CHANGE
+- health-data.md: the reminder hour is a non-health setting there (CloudKit preference list) and the Watch section names only the habit-log confirm; no sentence becomes false. Not edited.
+- The hour is not sent to Prameya, iCloud or anyone else; it travels only over WatchConnectivity between the user's own paired devices.
+
