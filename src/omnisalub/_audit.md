@@ -153,3 +153,16 @@ this repo's earlier text, decided each claim.
 - Manifests (PR #172, `nm -u` on Release builds and the iOS 93 archive): widget UserDefaults CA92.1 + 1C8F.1 and
   DiskSpace E174.1; TV UserDefaults CA92.1 and DiskSpace E174.1; Watch DiskSpace E174.1 only; Watch widget none.
   Pinned by `TargetPrivacyManifestContractTests`.
+
+## 2026-09-27 (later) — Mac and Apple Vision Pro: Apple Health wording, download switch, cancel paths
+
+Owner approved this wave 2026-09-27 ("finish all pending work"). Code read from OmniSalub `main` at 87278e7 (merge of PR #176 `fix/platform-release-2026-09-27`), which contains PR #172 (platform wave). Both policies keep the dates 27 September 2026 (the TV About's pinned "effective 27 September 2026", `CompanionKit/Sources/Continuity/LivingRoomLegalCopy.swift:55`, stays true). The short version is unchanged; none of the edited sentences is in it.
+
+CORRECTED — "Apple Health exists only on iPhone and iPad" (policy section 1; health policy section 8) and "Apple Health is available on iPhone and iPad only" (policy section 3)
+- Apple Vision Pro has HealthKit (visionOS 2+); OmniSalub compiles it out there: `CompanionKit/Sources/HealthCore/HealthKitAvailability.swift:30-32` (`#if canImport(HealthKit) && !os(visionOS)`). PR #176 (50c2839) changed the visionOS copy to "OmniSalub doesn't connect to Apple Health on this device" (`AppSurfaces/SalubAccessibility.swift:204`, `AppSurfaces/SettingsView.swift:1046`, `:1059`). The Mac has no HealthKit at runtime. Now: "The app connects to Apple Health only on iPhone and iPad." The following sentence ("On a Mac or Apple Vision Pro the app does not connect to Apple Health at all") was already true and is kept.
+
+CORRECTED — "The download uses Wi-Fi unless you turn on Download over cellular" (section 6.1; also section 4 table and section 14 "keeps")
+- `MeteredNetworkWording` (`CompanionKit/Sources/Intelligence/InferencePreferences.swift:67-111`): `#if os(macOS) || os(visionOS)` → `.personalHotspot`, "Download over Personal Hotspot"; held line "Waiting for a network that is not a Personal Hotspot". Settings switch `AppSurfaces/SettingsView.swift:745-747`. Same `allowsCellularDownload` flag.
+
+CORRECTED — cancel path gave iOS only (section 2)
+- `PaywallCopy.cancelPath(for:)` (`CompanionKit/Sources/Monetization/ProCatalog.swift:321-330`): iPhone/iPad "Settings app → your name → Subscriptions → OmniSalub"; Mac "App Store app → your name → Account Settings → Subscriptions → Manage" (Apple support 118428); Vision Pro "Settings → your name → Subscriptions". Device switch `PaywallDevice.current` (`:176-197`).

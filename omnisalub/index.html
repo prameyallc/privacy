@@ -117,7 +117,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <hr />
 <h2 id="1-who-we-are-and-what-this-covers">1. Who we are and what this covers</h2>
 <p>Prameya LLC is a US limited liability company. OmniSalub is a direct-to-consumer app. You buy or download it from Apple; you do not create an account with us, and we do not know who you are.</p>
-<p>This policy covers the OmniSalub app on iPhone, iPad, Mac, Apple Vision Pro and Apple TV, its Home Screen widget, and the OmniSalub Apple Watch app. What each device can do differs, and the differences are stated where they matter: Apple Health exists only on iPhone and iPad, so the Mac and Vision Pro show only what was entered on that device; the Apple Watch app and the Apple TV app keep no readings at all (section 8).</p>
+<p>This policy covers the OmniSalub app on iPhone, iPad, Mac, Apple Vision Pro and Apple TV, its Home Screen widget, and the OmniSalub Apple Watch app. What each device can do differs, and the differences are stated where they matter: the app connects to Apple Health only on iPhone and iPad, so on a Mac or Vision Pro it shows only what was entered on that device; the Apple Watch app and the Apple TV app keep no readings at all (section 8).</p>
 <p>This policy does not cover Apple's services (the App Store, Apple Health, iCloud, Handoff, Siri, Apple Intelligence), which are governed by Apple's privacy policy, or any app or service you choose to send an export to.</p>
 <hr />
 <h2 id="2-subscriptions-and-in-app-purchases">2. Subscriptions and In-App Purchases</h2>
@@ -150,8 +150,8 @@ them grants exactly the same Pro — there are no separate feature tiers.</p>
 </tr>
 </tbody>
 </table></div>
-<p>Family Sharing is enabled on all three. Subscriptions renew until you cancel in<br />
-Settings; Lifetime is a one-time non-consumable. Apple decides whether your Apple Account is eligible for the free trial, and the app offers it only when Apple says it is.</p>
+<p>Family Sharing is enabled on all three. Subscriptions renew until you cancel (how, on each<br />
+device, is under Cancellation and refunds below); Lifetime is a one-time non-consumable. Apple decides whether your Apple Account is eligible for the free trial, and the app offers it only when Apple says it is.</p>
 <p><strong>The knowledge layer is free and stays free.</strong> Without paying anything you get<br />
 90 days of history in the app, the full reference and your own readings, with no account and no time limit. Pro adds the visit pack (a PDF summary for a clinician), lifts the 90-day limit on history in the app (it then shows up to the last 400 days), and formatted export (a formatted CSV and a FHIR bundle). Older readings are never deleted because you are on the free tier: they stay on your device and are included in the free raw export.</p>
 <p><strong>Pro does not add cloud sync, and there is no paid iCloud option.</strong> OmniSalub stores your<br />
@@ -171,7 +171,9 @@ own data and can still export it in its raw form; only the Pro tools stop.</p>
 <p><strong>Subscription unlocks features. It does not change what data is collected or where it goes.</strong></p>
 <h3 id="cancellation-and-refunds">Cancellation and refunds</h3>
 <p>Subscriptions are managed by Apple:<br />
-- <strong>Cancel:</strong> iOS Settings → your name → Subscriptions → OmniSalub<br />
+- <strong>Cancel on iPhone or iPad:</strong> Settings → your name → Subscriptions → OmniSalub<br />
+- <strong>Cancel on a Mac:</strong> the App Store app → your name → Account Settings → Subscriptions → Manage<br />
+- <strong>Cancel on Apple Vision Pro:</strong> Settings → your name → Subscriptions → OmniSalub<br />
 - <strong>Refund requests:</strong> reportaproblem.apple.com</p>
 <p>Prameya cannot cancel your subscription or issue refunds. Apple controls all billing.</p>
 <h3 id="storekit-and-your-purchase-record">StoreKit and your purchase record</h3>
@@ -184,7 +186,7 @@ own data and can still export it in its raw form; only the Pro tools stop.</p>
 <p>An earlier version of this policy said the app stores the transaction ID, product ID and dates itself and deletes them with "Delete All Data". That did not describe the app: the app stores none of them.</p>
 <hr />
 <h2 id="3-apple-health-healthkit">3. Apple Health (HealthKit)</h2>
-<p>This is the most important section, so it is the longest. Apple Health is available on iPhone and iPad only. On a Mac or Apple Vision Pro the app does not connect to Apple Health at all, and the Apple Watch and Apple TV apps do not use it.</p>
+<p>This is the most important section, so it is the longest. The app connects to Apple Health only on iPhone and iPad. On a Mac or Apple Vision Pro the app does not connect to Apple Health at all, and the Apple Watch and Apple TV apps do not use it.</p>
 <h3 id="31-what-the-app-asks-to-read">3.1 What the app asks to read</h3>
 <p>Nothing is read from Apple Health until you tap <strong>Connect Apple Health</strong> (on Today, on Record or in Settings; once you have readings the button is called <strong>Refresh from Apple Health</strong>). Finishing setup does not open Apple's permission sheet, and the app does not read Apple Health in the background.</p>
 <p><strong>What the permission sheet asks for.</strong> When you tap Connect Apple Health, Apple's sheet lists every type in the table below — every type the app can use — whichever conditions you have switched on. That is the default: the switch <strong>Import everything from Health</strong> in Settings is on unless you turn it off. If you chose <strong>Hide food and calorie prompts</strong> during setup, the default leaves out the nutrition types and energy burned, and the app does not import them. With it off, the sheet lists only the types the conditions you have switched on use (for General health, its small core set) — the blood pressure programme, for example, asks for blood pressure, weight, exercise minutes and any symptom records its alert rules check — and if you add a condition, the next tap asks for the new types. For each type on the sheet that you allow, the app then <strong>imports your history</strong> from Apple Health into its database on your device — the last 400 days of readings, sleep, workouts and Watch notifications, and all of your records of the symptom types it asked for — and afterwards refreshes those types. If you turn <strong>Import everything from Health</strong> off after allowing more types, Apple Health remembers your earlier answers, but the app then reads only the types your conditions use; what it already imported stays on your device until you delete it (section 14). Apple's sheet appears only for types you have not already answered.</p>
@@ -341,7 +343,7 @@ own data and can still export it in its raw form; only the Pro tools stop.</p>
 <td>No</td>
 </tr>
 <tr>
-<td>Assistant settings — whether Ask is on, whether the model may download over cellular, which model is installed</td>
+<td>Assistant settings — whether Ask is on, whether the model may download over cellular (on a Mac or Apple Vision Pro, over a Personal Hotspot), which model is installed</td>
 <td>On-device preferences</td>
 <td>No</td>
 </tr>
@@ -397,7 +399,7 @@ own data and can still export it in its raw form; only the Pro tools stop.</p>
 <li><strong>It never happens automatically.</strong> Nothing downloads unless you tap the button, and only while <strong>On-device assistant</strong> is on.</li>
 <li><strong>What is sent:</strong> requests for the files of one named public model repository (<code>mlx-community/Qwen3-0.6B-4bit</code>, pinned to commit <code>73e3e38d</code>), standard request headers that name the app, and, unavoidably, your device's IP address, as with any web request. The app sends no Hugging Face account or token. Hugging Face's own privacy policy governs what they do with that request.</li>
 <li><strong>What is not sent:</strong> your health data, your readings, your symptoms, your questions to Ask, any account identifier, or any identifier of you. None of that is in the request, because the request is for model files.</li>
-<li><strong>Size:</strong> about 400 MB. Before starting, the app checks that there is enough free storage; that figure never leaves the device. The download uses Wi-Fi unless you turn on <strong>Download over cellular</strong>. After download the app checks the model's main files against fixed checksums. You can delete the files in Settings → Assistant (the button is available while <strong>On-device assistant</strong> is on), or by deleting the app.</li>
+<li><strong>Size:</strong> about 400 MB. Before starting, the app checks that there is enough free storage; that figure never leaves the device. On iPhone and iPad the download uses Wi-Fi unless you turn on <strong>Download over cellular</strong>. A Mac or Apple Vision Pro has no cellular connection, so there the same switch is <strong>Download over Personal Hotspot</strong>: with it off, a download waits for a network that is not a Personal Hotspot. After download the app checks the model's main files against fixed checksums. You can delete the files in Settings → Assistant (the button is available while <strong>On-device assistant</strong> is on), or by deleting the app.</li>
 <li>If you never download the model, the app never contacts Hugging Face. On Apple Watch and Apple TV there is no download at all.</li>
 </ul>
 <p>For completeness: the app is built on the MLX machine-learning packages <code>mlx-swift-lm</code>, <code>swift-huggingface</code> and <code>swift-transformers</code>. These are how the model is downloaded and run. They are not analytics, advertising or tracking libraries, and none of them transmits your content.</p>
@@ -498,7 +500,7 @@ own data and can still export it in its raw form; only the Pro tools stop.</p>
 <ul>
 <li>Readings, symptoms and alerts are kept until you delete them. <strong>Settings → Your data → Your records</strong> lets you open, correct or delete individual records from the period the app shows (90 days, or up to 400 with Pro); older records stay on your device and in the raw export until you use Delete everything or delete the app.</li>
 <li><strong>Settings → Your data → Delete everything this app stored</strong> erases your readings, symptoms and alerts immediately, and resets the conditions you chose, your visit date, visit questions and reminder switch, your food-and-weight answer, <strong>Import everything from Health</strong> (back to on, its default), and your theme, guideline set, app lock and last tab on this device; if sync is on, it deletes your iCloud copy of those settings. It also cancels pending visit reminders, clears the "where you left off" note, the widget's file, the <strong>Show today's reading on the Home Screen</strong> switch and the bookmarks of how far the Apple Health import got, clears the activity log down to one entry recording the erase (section 12), and returns you to the first-run screens.</li>
-<li><strong>What Delete everything keeps:</strong> anything in Apple Health, and the Apple Health permissions you granted (change those in your device's Settings); the downloaded Ask model and your Assistant settings (whether <strong>On-device assistant</strong> is on, whether the model may download over cellular, and which model is installed); your choice about iCloud settings sync; and your Pro purchase, which is Apple's record.</li>
+<li><strong>What Delete everything keeps:</strong> anything in Apple Health, and the Apple Health permissions you granted (change those in your device's Settings); the downloaded Ask model and your Assistant settings (whether <strong>On-device assistant</strong> is on, whether the model may download over cellular or, on a Mac or Apple Vision Pro, over a Personal Hotspot, and which model is installed); your choice about iCloud settings sync; and your Pro purchase, which is Apple's record.</li>
 <li><strong>Deleting the app</strong> removes all of its local data on that device, including the health database, the activity log, the widget's file and any downloaded model files.</li>
 <li>You can remove the Ask model files on their own in <strong>Settings → Assistant → Remove local model</strong> (available while <strong>On-device assistant</strong> is on).</li>
 <li>If you turned on settings sync, turning it off stops future syncing. You can remove what is already stored through <strong>Settings → [your name] → iCloud → Manage Account Storage</strong> on your device.</li>
@@ -572,6 +574,13 @@ own data and can still export it in its raw form; only the Pro tools stop.</p>
 <h2 id="18-changes-to-this-policy">18. Changes to this policy</h2>
 <p>If this policy changes, we will change the effective date at the top and publish the new version at <a href="https://prameyallc.github.io/privacy/omnisalub/">prameyallc.github.io/privacy/omnisalub</a>.</p>
 <p>Where a change materially affects how your data is handled — in particular if any future version were to transmit health data off your device, add an account, add a server, or enable cloud or third-party AI processing — we will show you the change in the app and ask for your consent <strong>before</strong> it takes effect. We will not quietly widen what we do and rely on you re-reading this page.</p>
+<p><strong>Later on 27 September 2026 — what changed.</strong> This revision makes three statements true for the Mac and Apple Vision Pro. Nothing the app does with your data changed:</p>
+<ul>
+<li><strong>Apple Health.</strong> Sections 1 and 3 said Apple Health exists, or is available, only on iPhone and iPad. Apple Vision Pro has Apple Health too; it is OmniSalub that connects to Apple Health only on iPhone and iPad. On a Mac or Apple Vision Pro it does not connect to Apple Health at all, as before, and the app now says so in those words.</li>
+<li><strong>The model download switch.</strong> On a Mac or Apple Vision Pro, which have no cellular connection, the switch is <strong>Download over Personal Hotspot</strong>, and with it off a download waits for a network that is not a Personal Hotspot (sections 4, 6.1 and 14). The previous revision named only <strong>Download over cellular</strong>, the iPhone and iPad switch.</li>
+<li><strong>Cancelling.</strong> Section 2 now gives the Mac path (the App Store app → your name → Account Settings → Subscriptions → Manage) and the Apple Vision Pro path, as well as iPhone and iPad.</li>
+</ul>
+<p>The short version is unchanged. Nothing the app sends to Prameya changed: it still sends us nothing.</p>
 <p><strong>27 September 2026 — what changed.</strong> This revision corrects one statement and describes an update to the Apple TV app:</p>
 <ul>
 <li><strong>The "where you left off" note reaches your own iCloud.</strong> The previous revision said this version of the app was not signed with Apple's iCloud key-value storage capability, so even with sync on the note stayed on the device. Since 26 September 2026, OmniSalub for iPhone, iPad, Mac and Apple Vision Pro is signed with that capability, so while <strong>Sync settings with iCloud</strong> is on, Apple stores the note in your own iCloud account and your other devices can read it. What the note contains, that the app writes it only while sync is on, and that turning sync off (or opening the app with sync off) removes it did not change. Sections 4 and 5, and the short version, now say so.</li>
