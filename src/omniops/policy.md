@@ -65,8 +65,8 @@ them grants exactly the same Pro — there are no separate feature tiers.
 | OmniCadence Pro Annual | $39.99 | Auto-renews yearly. 7-day free trial for accounts Apple offers it to. |
 | OmniCadence Pro Lifetime | $99.99 | One-time purchase. Not a subscription. |
 
-Family Sharing is enabled on all three. Subscriptions renew until you cancel in
-Settings; Lifetime is a one-time non-consumable.
+Family Sharing is enabled on all three. Subscriptions renew until you cancel (how, on each
+device, is under Cancellation and refunds below); Lifetime is a one-time non-consumable.
 
 **The journal is free and stays free.** Without paying anything you get the knowledge
 packs, all four logs unlimited, the streak and consistency score, Ask, iCloud sync and raw
@@ -94,7 +94,7 @@ The difference is **which tools you get**, not data handling. All four logs, the
 
 Subscriptions are managed entirely through your Apple ID:
 
-- **To cancel:** Open Settings on your iPhone or iPad → tap your name → Subscriptions → OmniCadence → Cancel Subscription. On Mac, open the App Store app → Account (sign-in name) → View Information → Subscriptions → Manage. On Apple Vision Pro, open Settings → your name → Subscriptions → OmniCadence → Cancel Subscription. A subscriber can also open these from More ▸ OmniCadence Pro ▸ **Manage subscription**.
+- **To cancel:** Open Settings on your iPhone or iPad → tap your name → Subscriptions → OmniCadence → Cancel Subscription. On Mac, open the App Store app → your name → Account Settings → Subscriptions → Manage → OmniCadence → Cancel Subscription. On Apple Vision Pro, open Settings → your name → Subscriptions → OmniCadence → Cancel Subscription. A subscriber can also open these from More ▸ OmniCadence Pro ▸ **Manage subscription**.
 - **Refund requests:** Handled by Apple, not Prameya. See [reportaproblem.apple.com](https://reportaproblem.apple.com/) or contact Apple Support. We have no access to your payment information and cannot issue refunds ourselves.
 - **What happens to your data when you cancel:** Nothing. Your journal stays on your device (and its headlines stay in your iCloud, if you turned sync on). Cancelling removes the Pro tools; it does not delete your journal entries, decisions or reflections, and it does not lock you out of your own records. Every log stays readable and raw JSON export stays available, because those are free.
 
@@ -226,7 +226,9 @@ shows the disclaimer. The Watch keeps no journal, has no Ask and sells nothing.
 The Apple TV app shows the knowledge packs that ship with it (Library) and offers to continue
 the reading you last opened on another device (Continue), read from the iCloud key-value items,
 which exist only while a device of yours has iCloud sync on; otherwise there is nothing to
-continue. It keeps no journal, has no Ask, sends no notifications and sells nothing.
+continue. Its About tab shows the disclaimer (§9), the short version of this policy and the terms
+line, as text built into the app; it fetches nothing. It keeps no journal, has no Ask, sends no
+notifications and sells nothing.
 
 ### Home Screen widget and Shortcuts
 
@@ -389,7 +391,8 @@ goes to a language model **running on your device**:
 Nothing is downloaded until you choose **Download** in Ask or turn on More ▸ Ask model ▸
 **On-device Ask model**. Before offering the download, and again before loading the model, the
 app checks that the device has enough free memory; before downloading it checks free disk
-space. The download runs only while the app is open and in front, and while it runs the app
+space. The download runs only while the app is open (on iPhone, iPad and Apple Vision Pro, only
+while it is in front; on a Mac it also continues behind other windows), and while it runs the app
 keeps the screen from locking on iPhone, iPad and Apple Vision Pro. It may be downloaded again
 if the system clears storage space. The files are the model weights, their index, the tokenizer,
 configuration files and a prompt-formatting template, pinned to one version, checked by size and
@@ -481,6 +484,17 @@ ROI figures.
 We update this policy when the app changes what it stores or what leaves the device — where
 we can, before the change ships — and change the dates at the top. Each revision is described
 here.
+
+**Later on 27 September 2026 — what changed.** Corrections for the Mac and Apple TV; nothing the
+app does with your data changed:
+
+- The Mac cancel route is the App Store app → your name → Account Settings → Subscriptions →
+  Manage, as Apple gives it and as the Mac app says; this page named an older route through View
+  Information.
+- A model download on a Mac continues while the app is open behind other windows; this page said
+  it runs only while the app is in front, which is true on iPhone, iPad and Apple Vision Pro.
+- The Apple TV app's About tab is described: the disclaimer, the short version of this policy and
+  the terms line, as text.
 
 **27 September 2026 — what changed.** With an app update:
 
