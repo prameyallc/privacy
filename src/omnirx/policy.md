@@ -72,8 +72,8 @@ them grants exactly the same Pro — there are no separate feature tiers.
 | OmniRx Pro Annual | $29.99 | Auto-renews yearly. 7-day free trial. |
 | OmniRx Pro Lifetime | $79.99 | One-time purchase. Not a subscription. |
 
-Family Sharing is enabled on all three. Subscriptions renew until you cancel in
-Settings; Lifetime is a one-time non-consumable.
+Family Sharing is enabled on all three. Subscriptions renew until you cancel (how, on each
+device, is under Cancellation and refunds below); Lifetime is a one-time non-consumable.
 
 **The label library is free and stays free.** Without paying anything you get the full label
 library, the daily check for one medicine, up to 30 dose logs, the journal, and both exports, with
@@ -104,7 +104,10 @@ In both tiers:
 ### Cancellation and refunds
 
 Subscriptions are managed by Apple:
-- **Cancel:** iOS Settings → your name → Subscriptions → OmniRx, or More → the subscription row in the app
+- **Cancel on iPhone or iPad:** the Settings app → your name → Subscriptions → OmniRx
+- **Cancel on a Mac:** the App Store app → your name → Account Settings → Subscriptions → Manage
+- **Cancel on Apple Vision Pro:** Settings → your name → Subscriptions → OmniRx
+- **In the app:** a monthly or annual subscriber can use More → **Manage subscription**, which opens Apple's subscription controls (on a Mac, Apple's subscriptions page)
 - **Refund requests:** reportaproblem.apple.com
 
 Prameya cannot cancel your subscription or issue refunds. Apple controls all billing.
@@ -288,8 +291,8 @@ Before offering a download, the app checks that the device has enough free memor
 offers none when it does not. It checks again right before each load: if the model does not fit then,
 it is not loaded, and where the device's row lists a smaller model, the Ask screen offers that one as a
 separate download that you also choose. It checks free storage before a download. The download runs only while OmniRx is open (on iPhone, iPad and Apple Vision Pro
-the screen stays on while it runs). Wi-Fi is recommended; it can use cellular data, but not while Low
-Data Mode is on. A weights file that is cut off part-way starts again from its beginning.
+the screen stays on while it runs). Wi-Fi is recommended; it can use cellular data (on a Mac or Apple Vision Pro, a Personal Hotspot),
+but not while Low Data Mode is on. A weights file that is cut off part-way starts again from its beginning.
 
 The downloaded files are the model's weights, its tokenizer and configuration files and a
 prompt-formatting template, pinned to one commit and checked against values built into the app —
@@ -641,6 +644,12 @@ data — will be described in a short summary of what changed, at the top of thi
 announced in the app's release notes.
 
 **27 September 2026 — what changed.** With an app update:
+
+- **How to cancel, on each device.** This page gave only the iPhone and iPad route. It now also gives
+  the Mac route (the App Store app → your name → Account Settings → Subscriptions → Manage) and the
+  Apple Vision Pro route, which the app's own purchase screen now names on those devices, and says that
+  More → **Manage subscription** is shown to a monthly or annual subscriber. Nothing about your data
+  changed.
 
 - **The Apple Watch complication shows the reminder time, and only while the daily reminder is on.**
   Earlier versions sent the Watch the reminder time even while the daily reminder was off (08:00 unless
