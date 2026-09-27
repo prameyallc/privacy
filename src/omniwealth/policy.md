@@ -1,6 +1,6 @@
 # OmniWealth Privacy Policy
 
-**Effective date:** 24 September 2026
+**Effective date:** 27 September 2026
 **Publisher:** Prameya LLC ("Prameya", "we", "us"), a United States limited liability company
 **Contact:** admin@prameya.legal
 **Applies to:** the OmniWealth app for iPhone, iPad, Mac and Apple Vision Pro, its Apple Watch app, its Apple TV app, and its Home Screen widget
@@ -48,8 +48,8 @@ them grants exactly the same Pro — there are no separate feature tiers.
 | OmniWealth Pro Annual | $29.99 | Auto-renews yearly. 7-day free trial. |
 | OmniWealth Pro Lifetime | $79.99 | One-time purchase. Not a subscription. |
 
-Family Sharing is enabled on all three. Subscriptions renew until you cancel in
-Settings; Lifetime is a one-time non-consumable.
+Family Sharing is enabled on all three. Subscriptions renew until you cancel (how, on each
+device, is under Cancellation and refunds below); Lifetime is a one-time non-consumable.
 
 **The knowledge layer is free and stays free.** Without paying anything you get
 the full topic library and the basic calculators, with no account and no time limit. Pro adds saved scenarios, envelopes, the weekly check-in reminder and the formatted worksheet (CSV) export.
@@ -74,7 +74,7 @@ The difference between tiers is **feature access**, not data handling. Pro unloc
 
 Subscriptions are managed entirely through your Apple ID:
 
-- **To cancel:** Open Settings on your iPhone or iPad → tap your name → Subscriptions → OmniWealth → Cancel Subscription. On Mac, open the App Store app → Account (sign-in name) → View Information → Subscriptions → Manage. Inside OmniWealth, a subscriber sees **Manage Subscription** under More ▸ Subscription, which opens Apple's own subscription controls.
+- **To cancel:** Open Settings on your iPhone or iPad → tap your name → Subscriptions → OmniWealth → Cancel Subscription. On Mac, open the App Store app → your name → Account Settings → Subscriptions → Manage. On Apple Vision Pro, open Settings → your name → Subscriptions → OmniWealth → Cancel Subscription. Inside OmniWealth on iPhone, iPad, Mac and Apple Vision Pro, a Monthly or Annual subscriber sees **Manage Subscription** under More ▸ Subscription: on iPhone, iPad and Apple Vision Pro it opens Apple's own subscription controls, and on Mac it opens Apple's subscriptions page (apps.apple.com/account/subscriptions).
 - **Refund requests:** Handled by Apple, not Prameya. See [reportaproblem.apple.com](https://reportaproblem.apple.com/) or contact Apple Support. We have no access to your payment information and cannot issue refunds ourselves.
 - **What happens to your data when you cancel:** Nothing. Your on-device data stays on your device. Canceling a subscription removes access to Pro features; it does not delete your habit logs, budget entries or saved scenarios.
 
@@ -181,7 +181,7 @@ Neither notification is sent through a server. **Delete all data** turns the wee
 - **Complication.** The Watch app passes its complication a short label — "Learn." or "Drafts" with a count — through a storage area on the watch that only the Watch app and its complication share. It is never an amount.
 - The Watch app does not use iCloud.
 
-**Apple TV.** The Apple TV app is a read-only topic library. Its **Continue** tab reads the iCloud key-value store described below to show the library topic you last opened on your iPhone or iPad, and it follows the appearance choice kept there. There is no data entry, no Ask, and no model download on Apple TV.
+**Apple TV.** The Apple TV app is a read-only topic library. Its **Continue** tab reads the iCloud key-value store described below to show the library topic you last opened on your iPhone or iPad, and it follows the appearance choice kept there. There is no data entry, no Ask, and no model download on Apple TV. Its **About** tab shows the app's educational line, the short version of this policy, the full-policy address, our contact address and the terms line, as text built into the app; it fetches nothing.
 
 **Home Screen widget (iPhone and iPad).** The widget shows the library's next suggested topic, read from the iCloud key-value store. Tapping it (or the matching Siri / Shortcuts phrase) records that topic in the same store so the app opens it next time. The widget reads no records.
 
@@ -326,7 +326,7 @@ We do not claim any security certification, audit, or standard we do not hold.
 
 There are no others. No analytics vendor, no ad network, no hosted AI provider, no data broker, no payment processor. Hugging Face receives nothing, because no download is offered in this version.
 
-The app ships Apple platform frameworks and in-repo Swift packages, plus the open-source MLX and Hugging Face libraries that would run and download the optional on-device model. The Hugging Face download libraries are linked only on iPhone, iPad, Mac and Apple Vision Pro (MLX is also in the Apple TV app), and in this version nothing calls their download code. None of them is an analytics, advertising or crash-reporting library.
+The app ships Apple platform frameworks and in-repo Swift packages, plus the open-source MLX and Hugging Face libraries that would run and download the optional on-device model. The MLX and Hugging Face libraries are linked only on iPhone, iPad, Mac and Apple Vision Pro; the Apple TV and Apple Watch apps contain neither. In this version nothing calls their download code. None of them is an analytics, advertising or crash-reporting library.
 
 ---
 
@@ -337,6 +337,15 @@ If we change how OmniWealth handles data, we will update this policy before the 
 - We will change the effective date at the top.
 - We will describe what changed in plain language.
 - The previous version will remain available at this address's history.
+
+**27 September 2026 — what changed.** This revision corrects statements about the Mac, Apple Vision Pro and Apple TV apps. Nothing the app does with your data changed, and nothing is sent to Prameya:
+
+- **Cancelling on a Mac.** The Mac steps are the App Store app → your name → Account Settings → Subscriptions → Manage, as Apple gives them; the previous version named an older route through View Information. The Apple Vision Pro steps (Settings → your name → Subscriptions) are added.
+- **Manage Subscription in the app.** It is shown to a Monthly or Annual subscriber (a Lifetime purchase has nothing to renew), and on Mac it opens Apple's subscriptions page rather than Apple's in-app controls.
+- **The Apple TV app does not contain MLX.** The previous version said the MLX library was also in the Apple TV app. It is not: the Apple TV and Apple Watch apps contain neither MLX nor the Hugging Face libraries, and run no model.
+- **The Apple TV About tab** is described: the app's educational line, the short version of this policy and the terms line, as text.
+
+The short version is unchanged.
 
 **24 September 2026 — what changed.** With the app update released alongside this revision:
 
