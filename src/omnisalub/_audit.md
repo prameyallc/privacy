@@ -130,3 +130,26 @@ that includes the most sensitive category in consumer health data.**
 4. The existing comment defending the full-set request describes a real bug (sheet showed less than
    the map claimed). Narrowing the map fixes that bug in the correct direction — record that in the
    comment so the next person does not re-widen it.
+
+## 2026-09-27 — the "where you left off" note reaches iCloud; Apple TV reads it
+
+Basis: OmniSalub `origin/main` (cabdb9b) plus PR #172 (`fix/platform-wave-2026-09-27`, 92538b3). Code, not
+this repo's earlier text, decided each claim.
+
+- KVS capability on the host since 2026-09-26 (5c3a4ca, merged in #168): `App/OmniSalub/OmniSalub.entitlements:45`,
+  `OmniSalub-macOS.entitlements:51`, `OmniSalub-visionOS.entitlements:41` carry
+  `com.apple.developer.ubiquity-kvstore-identifier = $(TeamIdentifierPrefix)legal.prameya.omnisalub`. The
+  policy's "not signed with … key-value storage" (policy §5, health-data §8) became false with those builds.
+- Written only with the opt-in: `ContinueSession.swift:116,138` (`mayWriteToICloud()` =
+  `CloudSyncConsent().hasConsented`); launch with sync off clears whatever note is there (`:62-65`), whoever wrote it;
+  turning sync off clears it (`CompanionModel.swift:645`); Delete everything clears it (`:716` → `forget()`).
+- Contents: `ContinuePayload` (surface, optional packID, updatedAt) plus the appearance key. A tab change or opening
+  the Learn tab publishes without a pack (`KnowledgeLibraryView.swift:456`), so the note names a topic only while the
+  last thing opened was one (`:645`).
+- Readers: another host device with sync on takes the appearance (`roamingAppearance`, `:126-127`); the Apple TV app
+  (PR #172) reads the payload only, `OmniSalubTVApp.swift:54` `ContinueStore.load()`, with its own entitlement
+  `App/OmniSalubTV/OmniSalubTV.entitlements:19`; `ContinueICloudConsentTests.tvOnlyReadsTheContinueNote` forbids any
+  TV write. Handoff still carries the tab only.
+- Manifests (PR #172, `nm -u` on Release builds and the iOS 93 archive): widget UserDefaults CA92.1 + 1C8F.1 and
+  DiskSpace E174.1; TV UserDefaults CA92.1 and DiskSpace E174.1; Watch DiskSpace E174.1 only; Watch widget none.
+  Pinned by `TargetPrivacyManifestContractTests`.

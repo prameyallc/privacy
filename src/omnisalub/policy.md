@@ -1,7 +1,7 @@
 # OmniSalub Privacy Policy
 
-**Effective date:** 24 September 2026
-**Last updated:** 24 September 2026
+**Effective date:** 27 September 2026
+**Last updated:** 27 September 2026
 **Publisher:** Prameya LLC ("Prameya", "we", "us")
 **Applies to:** OmniSalub for iPhone, iPad, Mac, Apple Vision Pro and Apple TV (bundle identifier `legal.prameya.omnisalub`), and the OmniSalub Apple Watch app that comes with the iPhone app (`legal.prameya.omnisalub.watchkit`)
 **Contact:** admin@prameya.legal
@@ -21,7 +21,7 @@ OmniSalub helps you keep track of a chronic condition — blood pressure, heart 
 - **Apple Health: you choose what to allow.** When you tap **Connect Apple Health**, Apple's permission sheet lists every health data type the app can use — the table in section 3.1, less nutrition and energy burned if you chose to hide food and calorie prompts — whichever conditions you track, and for each type you allow, the app imports the last 400 days of it (records of the symptom types it asks for in full). If you turn off **Import everything from Health** in Settings, the sheet lists only the types the conditions you track use, and the app then reads no other type, even one you allowed on an earlier sheet. It never asks for reproductive or sexual health records (menstrual cycles, ovulation, pregnancy, sexual activity and the others section 3.1 lists), your date of birth, biological sex or blood type. The table does include basal body temperature, which some people use to track their cycles, because the endometriosis programme uses it; with **Import everything from Health** on, the sheet lists it whichever conditions you track. Section 3.1 lists everything it can ask for and what it never asks for.
 - **We do not sell, rent, share or trade your information.** We do not run ads and there is no advertising, analytics or crash-reporting SDK in the app.
 - **Ask answers on your device.** Ask gives the question you type, together with a summary of what you have logged (recent readings, symptoms and the conditions you track), to a language model that runs on your device: Apple Intelligence where it is turned on and ready, or an optional model you download. Your question and your readings are not sent to us, to Apple, to Hugging Face, or to any AI company. Section 7.
-- **The app's own connections off the device are few, and none carries health data:** downloading the optional Ask model from Hugging Face, if you choose to; syncing a few *preferences* (not health data) to your own iCloud account, if you turn that on; and the App Store, if you buy or restore OmniSalub Pro. Apple's own services — Apple Health, Handoff, the connection to your Apple Watch — also move some data between your own devices. Details in section 6.
+- **The app's own connections off the device are few, and none carries health data:** downloading the optional Ask model from Hugging Face, if you choose to; syncing a few *preferences* (not health data), and a note of where you left off, to your own iCloud account, if you turn that on; and the App Store, if you buy or restore OmniSalub Pro. Apple's own services — Apple Health, Handoff, the connection to your Apple Watch — also move some data between your own devices. Details in section 6.
 - **Notifications only if you ask.** Visit reminders are off until you turn them on. Section 10.
 - **HIPAA does not apply to this app.** We are not a doctor, hospital, insurer or their contractor. See section 15.
 
@@ -188,7 +188,7 @@ Apple's App Store Review Guideline 5.1.3 imposes obligations beyond ordinary pri
 | Activity log (section 12) | Same database | No |
 | Which conditions you track, whether you asked to hide food and weight scoring, whether **Import everything from Health** is on, your visit date, whether visit reminders are on, your visit questions, and when you accepted the first-run acknowledgements | On-device preferences only | **Never** — treated as health information |
 | Your settings — theme, guideline set, app lock, whether onboarding is done, which tab you last had open | On-device preferences, and a separate preferences database | Only to your own iCloud, and only if you turn sync on (section 5) |
-| A "where you left off" note — which tab you were on, the identifier of the Learn topic you last opened, when, and your appearance choice | Apple's iCloud key-value storage, written only while settings sync is on | Not in this version (section 5) |
+| A "where you left off" note — which tab you were on, the identifier of the Learn topic you were reading if that was the last thing you opened, when, and your appearance choice | Apple's iCloud key-value storage, written only while settings sync is on | Only to your own iCloud, and only while settings sync is on; your other devices, including Apple TV, can read it (section 5) |
 | What the Home Screen widget shows — what to log next, and today's latest reading only if you turn that on | A small file in the app's shared container, so the widget can read it | No |
 | Assistant settings — whether Ask is on, whether the model may download over cellular, which model is installed | On-device preferences | No |
 | Optional Ask model files | Application Support folder, about 400 MB, excluded from device backup | No |
@@ -223,7 +223,7 @@ Deliberately never synced: readings, symptoms, alerts, the activity log, which c
 
 ### The "where you left off" note
 
-Only while **Sync settings with iCloud** is on, the app also writes a small note through Apple's iCloud key-value storage: which tab you were on, the identifier of the Learn topic you last opened (for example a topic about PSA test numbers), the time, and your appearance choice. It never contains a reading. It exists so that another device could offer to continue where you left off. With sync off the app does not write it, and turning sync off removes it. **This version of the app is not signed with Apple's iCloud key-value storage capability, so even with sync on the note is not uploaded to iCloud and does not leave the device.** One consequence is that the Continue row on Apple TV has nothing to show in this version. **Delete everything this app stored** clears the note.
+Only while **Sync settings with iCloud** is on, the app also writes a small note through Apple's iCloud key-value storage: which tab you were on, the identifier of the Learn topic you were reading if that was the last thing you opened (for example a topic about PSA test numbers), the time, and your appearance choice. It never contains a reading. **Apple stores the note in your own iCloud account**, not with us — we cannot read it — so that your other devices signed in to the same Apple Account can use it: the Continue row on Apple TV shows that Learn topic (section 8.2), and another of your devices with sync on takes your appearance choice from it. With sync off the app neither writes the note nor reads one: turning sync off removes it from your iCloud, and whenever the app opens with sync off it removes any note it finds there, including one another of your devices or an older version of the app left. **Delete everything this app stored** clears the note.
 
 ### Handoff
 
@@ -249,7 +249,7 @@ For completeness: the app is built on the MLX machine-learning packages `mlx-swi
 
 ### 6.2 iCloud settings sync
 
-Off by default. Described in section 5. This goes to Apple, into your own account — not to us.
+Off by default. Described in section 5, together with the "where you left off" note that the same switch controls. This goes to Apple, into your own account — not to us.
 
 ### 6.3 The App Store
 
@@ -309,7 +309,7 @@ None of this reaches Prameya.
 
 ### 8.2 Apple TV
 
-The Apple TV app shows the built-in Learn library, a Continue row, and an Ask tab. It stores no readings, does not use Apple Health, does not download a model and makes no network connection of its own. Ask on Apple TV refuses questions about your own readings and answers others by quoting the built-in library. The Continue row reads the "where you left off" note (section 5), which in this version is never shared with the TV, so it shows nothing to continue.
+The Apple TV app shows the built-in Learn library, a Continue row, an Ask tab, and an About tab with the app's wellness notice, the short version of this policy and the terms of use. It stores no readings, does not use Apple Health, does not download a model and makes no network connection of its own. Ask on Apple TV refuses questions about your own readings and answers others by quoting the built-in library. The Continue row shows the Learn topic named in the "where you left off" note (section 5), which your iPhone, iPad, Mac or Apple Vision Pro leaves in your own iCloud only while its **Sync settings with iCloud** is on; when there is no such note, it shows nothing to continue. The Apple TV app only reads that note, through Apple's iCloud key-value storage: it never writes, changes or removes it, has no sync switch of its own, and reads nothing else from your iCloud.
 
 ---
 
@@ -344,7 +344,7 @@ The app also writes short operational messages to the device's system log — fo
 
 The app does contain the scaffolding for future on-device usage counting, built so that any event name must come from a fixed, closed list — a reading could not end up in one even by mistake — kept only on your device and deleted after 180 days. **Nothing switches it on today.** If a future version does, this section will be updated before that version ships.
 
-The app's privacy manifest, which Apple ships inside the app and which anyone can inspect, declares that the app does **no tracking** and collects **no data types**. It declares these "required reason" API uses: storing settings in UserDefaults (the app's own, and the container it shares with its widget), checking available disk space before the model download, and reading the timestamps and sizes of files inside the app's own container, which the model download uses to manage its files. The Watch, TV and widget manifests declare UserDefaults only.
+The app's privacy manifest, which Apple ships inside the app and which anyone can inspect, declares that the app does **no tracking** and collects **no data types**. It declares these "required reason" API uses: storing settings in UserDefaults (the app's own, and the container it shares with its widget), checking available disk space before the model download, and reading the timestamps and sizes of files inside the app's own container, which the model download uses to manage its files. The Home Screen widget, the Apple TV app and the Apple Watch app each carry their own manifest. The widget's declares UserDefaults (its own, and the container it shares with the app) and the disk-space check; the Apple TV app's declares UserDefaults and the disk-space check; the Apple Watch app's declares the disk-space check only. None of those three ever runs that check — none of them downloads the model — but its code is part of each of them, so it is declared. The Watch's watch-face extension uses none of these APIs and carries no manifest.
 
 ---
 
@@ -461,6 +461,14 @@ Stated here because it affects how you should treat what the app shows you.
 If this policy changes, we will change the effective date at the top and publish the new version at [prameyallc.github.io/privacy/omnisalub](https://prameyallc.github.io/privacy/omnisalub/).
 
 Where a change materially affects how your data is handled — in particular if any future version were to transmit health data off your device, add an account, add a server, or enable cloud or third-party AI processing — we will show you the change in the app and ask for your consent **before** it takes effect. We will not quietly widen what we do and rely on you re-reading this page.
+
+**27 September 2026 — what changed.** This revision corrects one statement and describes an update to the Apple TV app:
+
+- **The "where you left off" note reaches your own iCloud.** The previous revision said this version of the app was not signed with Apple's iCloud key-value storage capability, so even with sync on the note stayed on the device. Since 26 September 2026, OmniSalub for iPhone, iPad, Mac and Apple Vision Pro is signed with that capability, so while **Sync settings with iCloud** is on, Apple stores the note in your own iCloud account and your other devices can read it. What the note contains, that the app writes it only while sync is on, and that turning sync off (or opening the app with sync off) removes it did not change. Sections 4 and 5, and the short version, now say so.
+- **Apple TV.** The Continue row now shows the Learn topic named in that note, and the Apple TV app only reads the note (section 8.2). The Apple TV app also has an About tab with the app's wellness notice, the short version of this policy and the terms of use.
+- **Privacy manifests.** Section 11 lists what the widget's, the Apple TV app's and the Apple Watch app's own manifests declare: each now also declares the disk-space check, whose code each contains but never runs, and the Apple Watch app's no longer declares UserDefaults, which it does not use.
+
+Nothing the app sends to Prameya changed: it still sends us nothing.
 
 **24 September 2026 — what changed.** This revision describes an app update:
 
