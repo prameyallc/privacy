@@ -19,7 +19,7 @@ with a professional who knows your situation.
 
 ## 3. Your content stays yours
 
-Anything you record, photograph, write or import remains yours. Prameya claims no licence over it.
+Anything you record, write or import remains yours. Prameya claims no licence over it.
 OmniAvia stores it on your device and, when iCloud is on, in your own private iCloud account. We do
 not run a server that receives it, we cannot read it, and we cannot recover it for you if you delete it.
 
