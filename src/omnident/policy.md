@@ -1,6 +1,6 @@
 # OmniDent Privacy Policy
 
-**Effective date:** 24 September 2026 *(supersedes the 23 September 2026 version; removes the note made at capture, which the app does not make; with iCloud Sync off, Handoff no longer carries capture or visit-packet identifiers; Ask iPhone on Apple Watch answers with any text model you downloaded; the free tier takes as many photos as you like and shows the three most recent)*
+**Effective date:** 26 September 2026 *(supersedes the 24 September 2026 version; no person's name and no education topic go to iCloud, no name goes through Handoff, and Apple TV shows neither; whether you have seen the welcome screen and acknowledged the wellness disclaimer stays on each device and no longer syncs)*
 **Publisher:** Prameya LLC, a United States limited liability company ("Prameya", "we", "us")
 **Contact:** admin@prameya.legal
 **This policy lives at:** https://prameyallc.github.io/privacy/omnident/
@@ -18,7 +18,7 @@
 - OmniDent lets you photograph your own teeth and gums, keep a dated record, log home-care habits, keep visit notes and documents, and read educational information. It runs on iPhone and iPad, on Mac and Apple Vision Pro (without the camera), and has an Apple Watch app and an Apple TV app.
 - **Your photos stay on your device.** They are saved inside the app's private storage. They are never sent to Prameya, and OmniDent never puts them in iCloud. Prameya operates no server that receives your photos, your analysis, or your notes.
 - **A household on this device is local.** You can add people (owner, child, adult you care for, caregiver). Each person has one mouth record. Photos, visits and documents are never uploaded. Switching away from a child session asks for Face ID or the device passcode.
-- **Two small things do go to your own iCloud while iCloud Sync is on** (it is on unless you turn it off): your app preferences, and a short "continue" note — the tab you were on, the education topic you last opened, the last photo record you opened (as a random identifier), and **the name of the person whose record is active**. Your other devices, including Apple TV, use it to offer to continue where you left off. Details are in section 6.
+- **Two small things do go to your own iCloud while iCloud Sync is on** (it is on unless you turn it off): your app preferences, and a short "continue" note — the tab you were on and the last photo record you opened (as a random identifier). **No person's name and no education topic go to iCloud.** Your other devices, including Apple TV, use it to offer to continue where you left off. While iCloud Sync is on, Handoff also carries the education topic you last opened to your own nearby devices (never a name), and your paired Apple Watch gets **the name of the person whose record is active**. Details are in section 6.
 - **The AI runs on your device.** Ask uses Apple Intelligence on your device, or a model you downloaded. Nothing you photograph or type is sent to Prameya or to any online AI service.
 - **The app connects to the internet in a few narrow ways**, all listed in section 8: downloading AI model files from Hugging Face, your own iCloud account, and Apple's own services (Sign in with Apple, purchases, Handoff).
 - **No ads. No analytics. No trackers. No third-party SDK that phones home.** We do not sell your data. We have never sold your data.
@@ -142,7 +142,7 @@ Settings → **Household** (and **Family & kids mode**) adds people on **this de
 
 Leaving a child session for an adult record asks for **Face ID or the device passcode**. The app does not keep a second password. If the device has no passcode, iOS cannot lock, and Household settings says so.
 
-The household itself — names, roles and photos — does not sync. **While iCloud Sync is on, the name of the person whose record is active does leave this device** in three ways: in the iCloud "continue" note, in Handoff to your nearby devices, and to your paired Apple Watch. With iCloud Sync off, none of the three carries it. Section 6 explains each.
+The household itself — names, roles and photos — does not sync, and **no person's name goes to iCloud or through Handoff**. **While iCloud Sync is on, the name of the person whose record is active does go to one other device:** your paired Apple Watch, which shows it. With iCloud Sync off, the Watch does not get it. Section 6 explains.
 
 A passphrase-sealed **transfer file** moves names and roles to another of your devices. Photos, visits and documents stay on the sending device. This is not iCloud household sync, and there is no Household subscription. StoreKit Family Sharing covers Pro on other Apple IDs; it does not share this record.
 
@@ -261,9 +261,10 @@ Your app preferences sync between your devices through **CloudKit**, into **your
 | Syncs | Does not sync |
 |---|---|
 | App preferences (which AI models you prefer, whether on-device answers are on, the auto-save-to-Photos setting, the iCloud Sync setting) | Photographs and thumbnails |
-| Interface state (whether you have seen the welcome screen; whether, and when, you acknowledged the wellness disclaimer) | Your health profile (age, brushing frequency, sugar intake, smoking, diabetes, dry mouth) |
-| The list of models you have downloaded | Habit logs, cost scenarios and 30-day programme progress |
+| The list of models you have downloaded | Your health profile (age, brushing frequency, sugar intake, smoking, diabetes, dry mouth) |
+| | Habit logs, cost scenarios and 30-day programme progress |
 | | Household people and mouths, visits, plan lines, documents, visit packets, and marks you draw on a photo |
+| | Whether you have seen the welcome screen, and whether and when you acknowledged the wellness disclaimer — kept on each device |
 
 The set of records permitted to sync is pinned in the app by an allow-list: exactly one record type, the preferences record. If anything ever drifts from it, CloudKit mirroring switches itself off rather than send something it should not.
 
@@ -271,27 +272,27 @@ Turning **iCloud Sync** off stops preference syncing the next time you open the 
 
 ### The "continue" note (iCloud key-value store)
 
-So that your other devices can offer to pick up where you left off, OmniDent also writes one small entry to **iCloud's key-value store** for this app, in your iCloud account. It contains:
+So that your other devices can offer to pick up where you left off, OmniDent keeps a short "continue" note on your device: the tab you were on; the **identifier of the education topic you last opened** — for example `diabetes_and_oral_health` or `gum_health_and_periodontal_disease`, which can reveal what you were reading about; the identifier of the last photo record you opened — a random string, not the photo; **the display name of the person whose record is active** — for example, a child's first name or nickname — if there is one; and when it was written. Handoff and your paired Apple Watch get parts of it, as set out below.
+
+Only part of it goes to iCloud. OmniDent writes one small entry to **iCloud's key-value store** for this app, in your iCloud account. It contains:
 
 - the tab you were on;
-- the **identifier of the education topic you last opened** — for example `diabetes_and_oral_health` or `gum_health_and_periodontal_disease`. The topic name can reveal what you were reading about;
-- the identifier of the last photo record you opened — a random string, not the photo;
-- **the display name of the person whose record is active** — for example, a child's first name or nickname — if there is one;
+- the identifier of the last photo record you opened;
 - when it was written;
 
 and, as a second entry, your appearance choice (light, dark or system).
 
-It never contains a photo, a thumbnail, a file path, an analysis, or anything from your health profile, habit log, visits or documents. Each new entry replaces the last one; it is not a history.
+**It never contains a person's name or the education topic**, and never a photo, a thumbnail, a file path, an analysis, or anything from your health profile, habit log, visits or documents. Each new entry replaces the last one; it is not a history. Earlier versions of OmniDent also put the topic identifier and the active person's name there. OmniDent replaces an entry like that with the tab and the record identifier when it starts, or removes it if iCloud Sync is off.
 
 This entry is written only while iCloud Sync is on. **Turning iCloud Sync off removes both entries from iCloud straight away**, and that device writes nothing more there while it is off. **Delete All Scans & Data** also removes them. Continue then starts again from what you do next, if iCloud Sync is still on.
 
-**The iCloud Sync switch is set on each device separately.** Turning it off on your iPhone does not turn it off on your iPad or Mac: a device where it is still on keeps writing its own continue note, with the name of the person active on that device, to the same iCloud entry. Turn it off on every device if you want none written.
+**The iCloud Sync switch is set on each device separately.** Turning it off on your iPhone does not turn it off on your iPad or Mac: a device where it is still on keeps writing its own entry — the tab and a record identifier — to the same place. Turn it off on every device if you want none written.
 
 Deleting the app from one device does not by itself remove these entries, or your preferences, from iCloud. Use Delete All Scans & Data, or turn iCloud Sync off, before you delete the app.
 
 ### Handoff
 
-While you use OmniDent on iPhone, iPad, Mac or Apple Vision Pro, it tells Apple's **Handoff** where you are, so a nearby device signed in to the same Apple Account can offer to open the same place. While iCloud Sync is on, the Handoff message carries the same continue note described above — tab, topic identifier, photo-record identifier and the active person's name. **With iCloud Sync off it carries only the tab.** Its title names the tab, never the topic. While you are taking a set of photos, or have a visit packet open, and iCloud Sync is on, it can instead carry random identifiers of that capture session or packet, of the mouth record and of a visit, and which photo views of an unfinished set are done (for example the upper or lower arch). **With iCloud Sync off, those identifiers do not travel either:** a set of photos or an open packet hands off the tab alone. It never carries a photo or a file path, and OmniDent does not add it to Spotlight. You can turn Handoff off for all apps in your device's settings (on iPhone: Settings → General → AirPlay & Continuity).
+While you use OmniDent on iPhone, iPad, Mac or Apple Vision Pro, it tells Apple's **Handoff** where you are, so a nearby device signed in to the same Apple Account can offer to open the same place. While iCloud Sync is on, the Handoff message carries the tab, the topic identifier and the photo-record identifier from the continue note described above — **never a person's name**. **With iCloud Sync off it carries only the tab.** Its title names the tab, never the topic. While you are taking a set of photos, or have a visit packet open, and iCloud Sync is on, it can instead carry random identifiers of that capture session or packet, of the mouth record and of a visit, and which photo views of an unfinished set are done (for example the upper or lower arch). **With iCloud Sync off, those identifiers do not travel either:** a set of photos or an open packet hands off the tab alone. It never carries a photo or a file path, and OmniDent does not add it to Spotlight. You can turn Handoff off for all apps in your device's settings (on iPhone: Settings → General → AirPlay & Continuity).
 
 ### Apple Watch
 
@@ -304,7 +305,7 @@ The Apple Watch app works with the iPhone app over Apple's paired-device connect
 
 ### Apple TV
 
-The Apple TV app has three tabs: **Continue**, **Library** and **Ask**. It uses the same bundle identifier as the iPhone app. It reads the continue note from your iCloud key-value store — so, while iCloud Sync is on, **the TV shows the active person's name** and opens the topic you last read. Ask on Apple TV answers only with a matching passage from the built-in library (a short list of question words gets a fixed reply instead); it runs no language model and downloads nothing. The TV app has no camera, photos, household records, Apple Health or purchases.
+The Apple TV app has three tabs: **Continue**, **Library** and **Ask**. It uses the same bundle identifier as the iPhone app. It reads the continue entry from your iCloud key-value store, which holds no name and no topic: while iCloud Sync is on, its Continue tab says which tab you were last in on another device and offers the Library. **The TV shows no person's name** and does not open the topic you last read. Ask on Apple TV answers only with a matching passage from the built-in library (a short list of question words gets a fixed reply instead); it runs no language model and downloads nothing. The TV app has no camera, photos, household records, Apple Health or purchases.
 
 ### Mac and Apple Vision Pro
 
@@ -348,9 +349,9 @@ The Home Screen widget shows one care-status line (no photograph) that the app w
 | Destination | What goes there | When | Contains your content? |
 |---|---|---|---|
 | `huggingface.co` | Requests for AI model files | Only when you tap Download in Manage Models | No |
-| Apple iCloud (CloudKit), your private database | App preferences and interface state; a request to delete the app's zone when you delete your account | While iCloud Sync is on, and at account deletion | No health data |
-| Apple iCloud key-value store, your account | The continue note: tab, last topic identifier, last photo-record identifier, **active person's name**; and your appearance choice | While iCloud Sync is on | The topic identifier can reveal what you read about; see section 6 |
-| Apple Handoff, to your nearby devices | While iCloud Sync is on: the same continue note, or, during a capture or with a visit packet open, random identifiers of it, the mouth record and a visit, and which photo views are done. While it is off: only the tab | While you use the app | As above, while iCloud Sync is on |
+| Apple iCloud (CloudKit), your private database | App preferences; a request to delete the app's zone when you delete your account | While iCloud Sync is on, and at account deletion | No health data |
+| Apple iCloud key-value store, your account | Part of the continue note: the tab and the last photo-record identifier, **never a name or a topic**; and your appearance choice | While iCloud Sync is on | No: no name, no topic, and a random identifier rather than the photo; see section 6 |
+| Apple Handoff, to your nearby devices | While iCloud Sync is on: the tab, the last topic identifier and the last photo-record identifier, **never a name**, or, during a capture or with a visit packet open, random identifiers of it, the mouth record and a visit, and which photo views are done. While it is off: only the tab | While you use the app | The topic identifier can reveal what you read about, while iCloud Sync is on; see section 6 |
 | Your paired Apple Watch (WatchConnectivity) | The continue note (only the tab while iCloud Sync is off) and care prompts to the Watch; your taps and Ask questions to the iPhone, and the answers back | When the iPhone app connects to the Watch, and when you use the Watch app | Your Ask question, and the active person's name while iCloud Sync is on |
 | Apple (Sign in with Apple) | The sign-in exchange, and iOS's check of whether it is still valid | Only if you choose to sign in | No |
 | Apple StoreKit / App Store | Purchase, restore and entitlement checks; the review prompt if you tap Rate OmniDent | When you buy or restore, and when the app checks whether you have Pro | No health content |
@@ -417,14 +418,14 @@ The file does **not** contain: the photo reading, household names, visits, plan 
 | One claimed partner promotion | Settings → Privacy & Security → Claimed offers → Delete this claim (the row is shown only if you have one) |
 | Your 30-day programme progress | 30-Day Reset → Delete my 30-day progress |
 | Your oral-health profile | Settings → Edit My Health Profile → Delete my health profile |
-| The iCloud continue note (topic, active person's name) | Settings → iCloud Sync → turn it off (removes it at once), or Delete All Scans & Data |
+| The iCloud continue note (tab, photo-record identifier) | Settings → iCloud Sync → turn it off (removes it at once), or Delete All Scans & Data |
 | Everything in the next paragraph | Settings → Privacy & Security → Delete All Scans & Data |
 | Your Sign in with Apple association, your iCloud preference records for this app, and everything Delete All removes (it also turns iCloud Sync off on that device) | Settings → (your account, at the top) → Delete Account & All Data |
 | OmniDent from your Apple Account's Sign in with Apple list | iOS Settings → your name → Sign in with Apple → OmniDent |
 | Data written to Apple Health | The Apple Health app |
 | Photos copied to your Photos library | The Photos app |
 
-**Delete All Scans & Data** removes: your photos and their files, thumbnails and analyses; habit logs; what-if scenarios; claimed promotions; 30-day programme progress; your oral-health profile; household people and mouths; visits, plan lines, documents and their files, visit packets, and marks you drew; the settings store behind them (care-day history, profile names, Smile Points, widget snapshot, reminder schedule, cost-model sliders, the Apple Health switch); the widget's shared storage; every downloaded model and its bookkeeping; the record of brushes confirmed from Apple Watch, a reminder or the Log care action; the visit entries in Spotlight; care reminders already scheduled; the iCloud continue note, and the name your paired Apple Watch was showing; and it resets your synced preferences to their first-launch values.
+**Delete All Scans & Data** removes: your photos and their files, thumbnails and analyses; habit logs; what-if scenarios; claimed promotions; 30-day programme progress; your oral-health profile; household people and mouths; visits, plan lines, documents and their files, visit packets, and marks you drew; the settings store behind them (care-day history, profile names, Smile Points, widget snapshot, reminder schedule, cost-model sliders, the Apple Health switch); whether you have seen the welcome screen and acknowledged the wellness disclaimer on this device; the widget's shared storage; every downloaded model and its bookkeeping; the record of brushes confirmed from Apple Watch, a reminder or the Log care action; the visit entries in Spotlight; care reminders already scheduled; the iCloud continue note, and the name your paired Apple Watch was showing; and it resets your synced preferences to their first-launch values.
 
 It leaves, and we list them so you are not surprised:
 
@@ -462,11 +463,11 @@ When a child profile is active:
 - the child cannot delete photos or the person;
 - switching to an adult record asks for Face ID or the device passcode.
 
-**A child's name can leave the device.** While iCloud Sync is on and the child's record is active, the child's display name is part of the continue note: it goes to your iCloud key-value store, to your nearby devices through Handoff, and to your paired Apple Watch, and it shows on Apple TV and Apple Watch. Whatever the switch, it shows on the Lock Screen during that child's care session (section 6 and section 7). Use a nickname, or turn iCloud Sync off, if you would rather it did not.
+**A child's name can leave the device, in one way.** While iCloud Sync is on and the child's record is active, the child's display name goes to your paired Apple Watch, which shows it. It does not go to iCloud or through Handoff, and Apple TV does not show it. Whatever the switch, it shows on the Lock Screen during that child's care session (section 6 and section 7). Use a nickname, or turn iCloud Sync off, if you would rather it did not.
 
 The Children's Online Privacy Protection Act (COPPA) applies to operators of services directed to children under 13, or who have actual knowledge that they are collecting personal information from a child under 13. OmniDent's kids mode is a tool for a parent, on the parent's own device, with no transmission to us and no child-facing sign-up; on that basis we do not treat OmniDent as directed to children. We are stating the feature rather than relying on the conclusion, so that you can judge it.
 
-If you believe a child's information has been entered into this app and you want it removed, write to admin@prameya.legal — although in almost every case the information is on your own device. **Delete All Scans & Data** also clears household people, their names and care-day history, and the continue note in iCloud, including a child's. Deleting the app removes the container.
+If you believe a child's information has been entered into this app and you want it removed, write to admin@prameya.legal — although in almost every case the information is on your own device. **Delete All Scans & Data** also clears household people, their names and care-day history, including a child's; the continue note in iCloud; and the name your paired Apple Watch was showing. Deleting the app removes the container.
 
 A parent supervising a child's brushing should know that photographing a child's mouth stores those photos on this device. Auto-save to Photos is forced **off** while that child is active. The [consumer health data policy](https://prameyallc.github.io/privacy/omnident/health-data/) lists children's health data as its own categories.
 
@@ -480,8 +481,8 @@ If you live in California, the California Consumer Privacy Act as amended by the
 
 | Category | What it is here | Do we receive it? |
 |---|---|---|
-| Identifiers | Apple sign-in identifier, name, email — Keychain only; the active household person's display name — in your iCloud key-value store, in Handoff and on your Apple Watch, while iCloud Sync is on (section 6) | No |
-| Sensitive personal information — health data | Mouth photographs, oral-health profile, habit logs, analysis output, questions you ask; the last education topic you opened, in your iCloud key-value store | No |
+| Identifiers | Apple sign-in identifier, name, email — Keychain only; the active household person's display name — on your paired Apple Watch while iCloud Sync is on, never in iCloud or Handoff (section 6) | No |
+| Sensitive personal information — health data | Mouth photographs, oral-health profile, habit logs, analysis output, questions you ask; the last education topic you opened, carried by Handoff to your own nearby devices and sent to your paired Apple Watch while iCloud Sync is on, never to iCloud | No |
 | Internet or network activity | The connection to Hugging Face when a model downloads | No |
 
 **We do not sell personal information, and we do not share it for cross-context behavioural advertising.** We have not done either in the preceding 12 months. We do not use or disclose sensitive personal information for any purpose other than the purposes permitted under the CCPA regulations without your direction — in practice, we do not receive it at all, so the "limit the use of my sensitive personal information" right has nothing to operate on. We provide the control anyway: turning off on-device answers, iCloud Sync and Apple Health stops most of that processing — section 6 lists what those switches do not stop (Handoff, which still carries the tab).
@@ -562,6 +563,16 @@ If something in your mouth hurts, bleeds, changes, or worries you, see a dentist
 ## 19. Changes to this policy
 
 We will update this policy when the app's behaviour changes — and we will update it **before** the change ships, not after.
+
+**26 September 2026 — what changed.** OmniDent was changed, and this policy describes the app with those changes:
+
+- No person's name and no education topic go to iCloud. With iCloud Sync on, the continue note in your iCloud key-value store now holds only the tab and the last photo-record identifier; it used to carry the education topic you last opened and the name of the active household person as well. An entry an earlier version left there with a name or a topic is replaced when the app starts, or removed if iCloud Sync is off.
+- Handoff never carries a person's name. With iCloud Sync on it still carries the tab, the topic identifier and the photo-record identifier to your own nearby devices; with it off, the tab alone, as before.
+- Apple TV shows no name and does not open the topic you last read: its Continue tab says which tab you were last in on another device and offers the Library.
+- Your paired Apple Watch still receives the active person's name while iCloud Sync is on, and only the tab while it is off.
+- Whether you have seen the welcome screen, and whether and when you acknowledged the wellness disclaimer, are now kept on each device and no longer sync to your private iCloud database. Delete All Scans & Data clears them.
+
+The short version and sections 3, 6, 8, 10, 12 and 13 are updated. No Prameya server was added, and nothing is sent to Prameya.
 
 **24 September 2026 — what changed.**
 
