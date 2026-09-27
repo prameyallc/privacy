@@ -1,7 +1,7 @@
 # OmniCadence — Privacy Policy
 
-**Effective date:** 24 September 2026
-**Last updated:** 24 September 2026  
+**Effective date:** 27 September 2026
+**Last updated:** 27 September 2026  
 **Publisher:** Prameya LLC (“Prameya”, “we”, “us”)  
 **App:** OmniCadence (called OmniOps in earlier versions of the app and of this policy) for iPhone, iPad, Mac and Apple Vision Pro, with an Apple Watch app and an Apple TV app — bundle ID `legal.prameya.OmniOps` (the Apple TV app uses the same ID; the Apple Watch app is `legal.prameya.OmniOps.watch`)  
 **Contact:** admin@prameya.legal  
@@ -175,17 +175,19 @@ export files are excluded from backups.
 **Erase.** More ▸ Journal ▸ **Erase journal and iCloud data**, after you confirm, deletes the
 journal, the pre-import copy and the list of readings opened on this device; forgets the pinned
 decision; removes the iCloud key-value items described in §4; and, if iCloud sync was ever turned
-on on this device, deletes the synced headlines from your iCloud and turns sync off here. Another
-device that still syncs keeps its own entries and can upload them again. Erase does not delete
-the downloaded Ask model (More ▸ Ask model ▸ **Remove the downloaded model** does), your settings
-or your Pro status. Erase also makes the app forget the reading you last opened and the entry you
-were editing, so their IDs are not put into later Handoff offers, and on iPhone it refreshes the
-Apple Watch's prompts from the now-empty journal and tells the Watch there is no reading to
-continue and no pinned decision; an Apple Watch app that is open drops its Continue row. Because
-Erase turns sync off on this device, nothing is saved to the key-value items after it until you
-turn sync on again. Erase does not reach the app's memory on your other devices: another device
-where sync is still on remembers the reading it last opened, and can save that reading's ID to
-the key-value items again at its next tab change.
+on on this device, deletes the synced headlines from your iCloud and turns sync off here. On Apple
+Vision Pro, which does not sync (§4), the same row is titled **Erase journal**; it deletes what is
+on that device and has nothing in iCloud to remove. Another device that still syncs keeps its own
+entries and can upload them again. Erase does not delete the downloaded Ask model (More ▸ Ask
+model ▸ **Remove the downloaded model** does), your settings or your Pro status. Erase also makes
+the app forget the reading you last opened and the entry you were editing, so their IDs are not
+put into later Handoff offers, and on iPhone it refreshes the Apple Watch's prompts from the
+now-empty journal and tells the Watch there is no reading to continue and no pinned decision; an
+Apple Watch app that is open drops its Continue row. Because Erase turns sync off on this device,
+nothing is saved to the key-value items after it until you turn sync on again. Erase does not
+reach the app's memory on your other devices: another device where sync is still on remembers the
+reading it last opened, and can save that reading's ID to the key-value items again at its next
+tab change.
 
 **Deleting the app** removes the container on iPhone, iPad and Apple Vision Pro, including
 the journal and any downloaded model. On Mac the sandbox container under
@@ -442,10 +444,11 @@ knowingly collect information from anyone, including children: the app sends us 
 
 There is nothing of yours on our servers to access, correct, or delete. What the app keeps is
 on your device and, if you use iCloud, in your own iCloud under your Apple Account. More ▸
-Journal ▸ **Erase journal and iCloud data** deletes both (§2); deleting the app removes the
-on-device container (on Mac, also remove the sandbox container named above) but not your
-iCloud copy. Rights under the GDPR / UK GDPR / CCPA-CPRA are exercised on your device; if
-you believe we hold something, write to the contact in §1.
+Journal ▸ **Erase journal and iCloud data** deletes both (§2; on Apple Vision Pro, which keeps
+nothing in iCloud, the row is **Erase journal**); deleting the app removes the on-device
+container (on Mac, also remove the sandbox container named above) but not your iCloud copy.
+Rights under the GDPR / UK GDPR / CCPA-CPRA are exercised on your device; if you believe we
+hold something, write to the contact in §1.
 
 Apple (StoreKit, iCloud, Handoff) and Hugging Face (the optional model download) receive what
 §4 describes under their own terms; we do not direct them and do not receive it.
@@ -475,6 +478,10 @@ ROI figures.
 We update this policy when the app changes what it stores or what leaves the device — where
 we can, before the change ships — and change the dates at the top. Each revision is described
 here.
+
+**27 September 2026 — what changed.** With an app update, the Erase row on Apple Vision Pro,
+which does not sync, is titled **Erase journal**; on iPhone, iPad and Mac it is still **Erase
+journal and iCloud data**. §2 and §8 now give both names.
 
 **24 September 2026 — what changed.** With an app update:
 
