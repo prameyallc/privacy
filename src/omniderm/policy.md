@@ -1,6 +1,6 @@
 # OmniDerm Privacy Policy
 
-**Effective date:** 27 September 2026 *(supersedes the 24 September 2026 version; what changed is listed under "Changes to this policy" at the end)*
+**Effective date:** 27 September 2026 *(supersedes the 24 September 2026 version, and an earlier revision of the same date; what changed is listed under "Changes to this policy" at the end)*
 **Publisher:** Prameya LLC ("Prameya", "we", "us"), a United States limited liability company
 **Contact:** admin@prameya.legal
 **This policy covers:** the OmniDerm app — bundle ID `legal.prameya.OmniDerm` — on iPhone, iPad, Mac and Apple Vision Pro, its Apple Watch app, its Apple TV app, and its Home Screen and Apple Watch widgets. Prameya's other apps have their own policies.
@@ -45,9 +45,9 @@ OmniDerm is a consumer app for skin-care habits and education. It helps you:
 
 OmniDerm is **not a medical device** and does **not** diagnose, screen for, or detect skin cancer or any other condition. It does not tell you whether a mole is dangerous. It does not tell you whether to see a doctor.
 
-Features that would produce an assessment of a photograph of your skin are behind a **clearance gate that is switched off**. In the version of OmniDerm on the App Store, the app does not produce observations, flags, ratings, or any other output about a photo of your skin. The gate is enforced in three places — the button that would open the feature, the screen behind it, and the type that carries the result — and while the gate is closed the app offers no vision model and never downloads one. That gate stays off unless and until the feature has the regulatory clearance it would need.
+Features that would produce an assessment of a photograph of your skin are behind a **clearance gate that is switched off**. In the version of OmniDerm on the App Store, the app does not produce observations, flags, ratings, or any other output about a photo of your skin. The photo self-check that earlier builds carried, closed behind that gate, was removed from the app on 26 September 2026: there is no button for it, no screen behind it and no vision model, and the app never downloads one. The gate itself stays in the code, closed, on the type that would carry such a result. A photo feature would come back only as a new feature, and only once it has the regulatory clearance it would need.
 
-In practice this means the **assessment** screen cannot be opened in the shipping app: Learn does not show the button that would open it. You can still save a journal photograph. **Settings → Legal & Safety** states what the app does and does not do.
+In practice there is no **assessment** screen to open: Learn has no button for one. You can still save a journal photograph. **Settings → Legal & Safety** states what the app does and does not do.
 
 **Ask never sees a photograph.** It is given only the question you type, the last few lines of the current conversation, and passages from OmniDerm's built-in topics. It is not given your journal, your photographs or your habit logs. The model is instructed not to assess anyone's skin, but OmniDerm does not check or filter what the model writes: the answer is shown as written and can be incomplete or wrong.
 
@@ -68,8 +68,8 @@ them grants exactly the same Pro — there are no separate feature tiers.
 | OmniDerm Pro Annual | $29.99 | Auto-renews yearly. 7-day free trial for eligible accounts. |
 | OmniDerm Pro Lifetime | $79.99 | One-time purchase. Not a subscription. |
 
-Family Sharing is enabled on all three. Subscriptions renew until you cancel in
-Settings; Lifetime is a one-time non-consumable. The paywall shows the free trial only when Apple reports that your account is eligible for it.
+Family Sharing is enabled on all three. Subscriptions renew until you cancel (how, on each
+device, is under Cancellation and refunds below); Lifetime is a one-time non-consumable. The paywall shows the free trial only when Apple reports that your account is eligible for it.
 
 **The knowledge layer is free and stays free.** Without paying anything you get
 your journal, your photographs, habit logging, the education library, Ask and the full export, with no account and no time limit. Pro adds the whole journal series with photographs on screen (the free plan shows the last 30 days in full), what you marked on every logged day (the free plan shows the marks for the last 90 days, and lists older days by date), same-area compare (pick an earlier and a later photograph of one body area and view them blended or side by side), and the formatted appointment pack.
@@ -97,7 +97,9 @@ In both tiers:
 ### Cancellation and refunds
 
 Subscriptions are managed by Apple:
-- **Cancel:** iOS Settings → your name → Subscriptions → OmniDerm, or **Manage Subscription** in OmniDerm's Settings
+- **Cancel on iPhone, iPad or Apple Vision Pro:** the Settings app → your name → Subscriptions → OmniDerm → Cancel Subscription
+- **Cancel on a Mac:** the App Store app → your name → Account Settings → Subscriptions → Manage
+- **In the app:** while Pro is active, **Manage Subscription** in OmniDerm's Settings opens Apple's subscription controls (on a Mac, Apple's subscriptions page)
 - **Refund requests:** reportaproblem.apple.com
 
 Prameya cannot cancel your subscription or issue refunds. Apple controls all billing.
@@ -114,9 +116,9 @@ Your purchase records are Apple's, kept by Apple under Apple's terms. **Clear Al
 
 Two different things used to be described as if they were one. They are not.
 
-**Journal photographs (shipping).** You can attach a photo to a journal entry using Apple's photo picker, which hands OmniDerm only the one image you pick; the app cannot browse your library and does not ask for camera access. OmniDerm re-encodes the picture as a JPEG no larger than 1,600 pixels on its long side, **with its location and other metadata removed**, and stores it on this device under Application Support (`OmniDerm/JournalPhotos`), with the strictest iOS file protection, excluded from device backup, never uploaded, never synced to iCloud, and never assessed. If the picture cannot be re-encoded, nothing is attached. Clear All Local Data deletes those files.
+**Journal photographs (shipping).** You can attach a photo to a journal entry using Apple's photo picker, which hands OmniDerm only the one image you pick; the app cannot browse your library and does not ask for camera access. OmniDerm re-encodes the picture as a JPEG no larger than 1,600 pixels on its long side, **with its location and other metadata removed**, and stores it on this device under Application Support (`OmniDerm/JournalPhotos`), with the strictest file protection on iPhone, iPad and Apple Vision Pro (on a Mac, macOS and FileVault protect it; see "Security"), excluded from device backup, never uploaded, never synced to iCloud, and never assessed. If the picture cannot be re-encoded, nothing is attached. Clear All Local Data deletes those files.
 
-**Photo self-check (not shipping).** Features that would produce an observation about a photograph sit behind an FDA clearance gate that is off. While it is off, the app offers no vision model and that screen is not reachable.
+**Photo self-check (removed).** The photo self-check sat behind an FDA clearance gate that was off. It was removed from the app on 26 September 2026: the app has no screen that produces an observation about a photograph, and offers no vision model.
 
 **If the gate were ever opened**, this is how the assessment path is built:
 
@@ -143,7 +145,7 @@ Two different things used to be described as if they were one. They are not.
 | Your answer to the Ask model download, with the model and version it was given for, and which of the offered models you chose | On your device, in app preferences | Only inside your device backup |
 | The downloaded Ask model's files, only if you chose to download one | On your device, under Application Support (`OmniDerm/HubCache`). Excluded from device backup. | No |
 | Questions you type in Ask, and the answers | In memory, for the conversation on screen. Not written to storage. | No |
-| The topic held for continuing, the next suggested topic, and the list of topics opened from the widget or continued from another device (see "iCloud Sync") | In **your own iCloud key-value storage**, and in the Handoff activity, only while iCloud Sync and Handoff is on | Yes — to your iCloud and your own devices, not to us |
+| The topic held for continuing, the next suggested topic, and the list of topics you opened in Learn while the switch was on (see "iCloud Sync") | In **your own iCloud key-value storage**, and in the Handoff activity, only while iCloud Sync and Handoff is on | Yes — to your iCloud and your own devices, not to us |
 | A temporary copy of an export you make | A backup-excluded scratch folder, cleared afterwards | Only where you share it |
 | Diagnostic log messages | Apple's on-device system log | No |
 
@@ -211,13 +213,13 @@ What goes to the model is your question, up to the last six lines of the convers
 
 **1. A preference record in your private CloudKit database.** When you switch sync on, and each time the app launches while it is on, OmniDerm reads this record and applies it. It writes the record only when you tap **Sync Now**. The record can hold only these five settings, each checked in code against a fixed set of values before it is written, so free text cannot ride along: appearance mode, whether reminders are on, the reminder hour, which tab the app opens on, and whether you have acknowledged the app's disclosure. Your Ask model choice is not synced.
 
-**2. iCloud key-value storage, for continuing where you left off.** So that your Apple Watch, Apple TV and the Home Screen widget can offer to continue, OmniDerm stores: the tab you were on and, when that tab is Learn, the identifier of the **topic held for continuing**; your appearance choice; the next suggested topic for the widget (its identifier, title and a one-line summary); a topic you tapped in the widget until the app opens it; and **the list of topics opened that way**. In this version the topic held for continuing, and the topics added to that list, are the ones you open from the Home Screen widget or continue from another of your devices (through Handoff or iCloud Sync); a topic you open by browsing Learn is not recorded. Topic identifiers name skin-care subjects, some of them skin conditions — so this list is, in effect, a partial reading history, stored in your iCloud account.
+**2. iCloud key-value storage, for continuing where you left off.** So that your Apple Watch, Apple TV and the Home Screen widget can offer to continue, OmniDerm stores: the tab you were on and, when that tab is Learn, the identifier of the **topic held for continuing**; your appearance choice; the next suggested topic for the widget (its identifier, title and a one-line summary); a topic you tapped in the widget until the app opens it; and **a list of the topics you have opened**. The topic held for continuing is the last topic you opened in Learn, by any route — browsing the library, Start here, a related topic, the Home Screen widget, your Apple Watch or Handoff — and each topic you open while the switch is on is added to that list. Topic identifiers name skin-care subjects, some of them skin conditions — so this list is, in effect, your reading history in Learn while the switch was on, stored in your iCloud account.
 
 **What iCloud Sync never carries:** journal entries and notes, journal photographs, habit logs, anything derived from your habit logs (streaks, consistency, trends), your goals, your Ask questions and answers, and any observation about your skin. No part of the app's local database is mirrored to iCloud. (If you use iCloud Backup, your device backup is a separate matter — see "Everything the app stores, and where".)
 
 **Who can read it:** you. Both stores are in your own Apple Account. Prameya has no ability to read, list, or recover them — that is how Apple's private iCloud storage works, not a promise we are asking you to take on faith.
 
-**To stop it:** switch **iCloud Sync and Handoff** off. That stops every write and Handoff, removes OmniDerm's key-value entries from iCloud straight away (on every device, because the store is shared) and deletes the preference record from CloudKit; Clear All Local Data does the same. If the app cannot reach iCloud at that moment (for example, with no network), the record stays: the status line under **Sync Now** says so, and Clear All Local Data says so in its result. Switching sync on and off again, or Clear All, tries again, and you can also delete OmniDerm's iCloud data in **iOS Settings → your name → iCloud → Manage Account Storage**. Deleting the app does not by itself remove anything from iCloud.
+**To stop it:** switch **iCloud Sync and Handoff** off. That stops every write and Handoff, removes OmniDerm's key-value entries from iCloud straight away (on every device, because the store is shared) and deletes the preference record from CloudKit; Clear All Local Data does the same. If the app cannot reach iCloud at that moment (for example, with no network), the record stays: the status line under **Sync Now** says so, and Clear All Local Data says so in its result. Switching sync on and off again, or Clear All, tries again, and you can also delete OmniDerm's iCloud data in **Settings → your name → iCloud → Manage Account Storage** (on a Mac, **System Settings → your name → iCloud → Manage**). Deleting the app does not by itself remove anything from iCloud.
 
 With sync off, the widget shows the first suggested topic, Apple TV has nothing to continue, and your other devices are not offered Handoff. The Apple Watch's **Read this topic** card does not depend on iCloud Sync: it goes over the connection between your iPhone and Watch.
 
@@ -235,13 +237,13 @@ The Apple Watch app shows the built-in topics, and cards the iPhone sends it ove
 
 ### Apple TV, Mac, Apple Vision Pro and the widget
 
-- **Apple TV** shows the built-in topic library, and a Continue tab that reads iCloud key-value storage (so it has something to continue only when iCloud Sync is on in OmniDerm on another of your devices). It keeps no journal and offers no Ask and no model download.
+- **Apple TV** shows the built-in topic library, a Continue tab that reads iCloud key-value storage (so it has something to continue only when iCloud Sync is on in OmniDerm on another of your devices), and an About tab with the app's notice, the short version of this policy and the addresses of the policies and terms, as text built into the app. It keeps no journal and offers no Ask and no model download.
 - **Mac and Apple Vision Pro** run the same app as iPhone and iPad, with the same journal, the same iCloud Sync and Handoff switch and the same Ask; on those devices everything in this policy about "this device" applies to them.
 - **The Home Screen widget** reads the next suggested topic from iCloud key-value storage; with sync off it shows the first topic.
 
 ## Notifications
 
-**Reminders start off.** The only thing in OmniDerm that asks iOS for notification permission is switching on **Settings → Reminders (daily SPF/habit nudges)**; opening Settings does not. When reminders are on, OmniDerm schedules **local notifications** on your own device: one daily reminder at the hour you choose (8:00 by default) to log your morning sunscreen and barrier care, and, only if you start it, a one-off two-hour sunscreen reapply timer. There is no push server, and no notification is triggered by us. The reminder's text appears wherever your notification settings show it, such as the lock screen. Tapping it opens Do; it does not log anything. Turn reminders off in the app or in iOS Settings. If notifications are off for OmniDerm in iOS Settings, the Reminders switch says so and, on iPhone, iPad and Apple Vision Pro, offers **Open Settings**.
+**Reminders start off.** The only thing in OmniDerm that asks iOS for notification permission is switching on **Settings → Reminders (daily SPF/habit nudges)**; opening Settings does not. When reminders are on, OmniDerm schedules **local notifications** on your own device: one daily reminder at the hour you choose (8:00 by default) to log your morning sunscreen and barrier care, and, only if you start it, a one-off two-hour sunscreen reapply timer. There is no push server, and no notification is triggered by us. The reminder's text appears wherever your notification settings show it, such as the lock screen. Tapping it opens Do; it does not log anything. Turn reminders off in the app, or in the Settings app (on a Mac, System Settings → Notifications). If notifications are off for OmniDerm there, the Reminders switch says so and, on iPhone, iPad and Apple Vision Pro, offers **Open Settings**.
 
 ---
 
@@ -294,7 +296,7 @@ We do not retain your data, because we never receive it. On your device:
 - **Delete your habit logs, journal entries, photographs, goals, and reminder and appearance settings:** open **Settings → Export & Data Management → Clear All Local Data**. It deletes your journal entries and photographs, habit logs, goals, reminder and appearance settings and pending reminders, the downloaded Ask model and your answer to its download, tells your Apple Watch to remove the reminder hour it kept, switches iCloud Sync and Handoff off, removes OmniDerm's iCloud key-value entries and deletes the CloudKit preference record. It does not remove your purchases or the record that you acknowledged the app's first-run notice. If a later file removal fails after the store is emptied, or the preference record could not be removed from iCloud, the app says so rather than claiming a complete delete.
 - **Delete the Ask model only:** **Settings → On-device Ask model → Remove the downloaded model**.
 - **Delete everything on the device:** delete the app. That removes the app's database, preferences, journal JPEGs and downloaded model files. It does not remove what is in iCloud or in a device backup you already made.
-- **Delete synced data:** switch iCloud Sync and Handoff off. That removes the key-value entries and the preference record; if the app could not reach iCloud, remove the app's iCloud data in iOS Settings as described above.
+- **Delete synced data:** switch iCloud Sync and Handoff off. That removes the key-value entries and the preference record; if the app could not reach iCloud, remove the app's iCloud data in Settings (on a Mac, System Settings) as described above.
 - **Take your data with you first:** **Settings → Export my record** produces your habit logs, journal entries (date, body area, note and lighting note), your consistency snapshot and your goals, and presents the share sheet. If you have saved journal photographs the export is a `.zip` holding that file **plus every photograph still on this device**, in a `Photographs` folder; with no photographs saved it is a plain JSON file. The export screen names how many photographs are included before you share. With Pro, **Export appointment pack** produces a plain-text summary of the same dates, body areas, notes, habit marks and goals, without photographs. Exporting is the only route by which a copy of a journal photograph ever leaves the device — read what the file contains before you send it anywhere.
 
 ---
@@ -377,6 +379,15 @@ If we change how OmniDerm handles your data, we will update this policy and chan
 - post the updated policy here before the change ships, and
 - tell you inside the app, and
 - ask for your consent again where the law requires it, including a fresh consent for any new collection or sharing of consumer health data under Washington's My Health My Data Act.
+
+**Later on 27 September 2026 — what changed.** The revision earlier the same day said iCloud Sync and Handoff carried the same things as before. It did not describe a change the app had made that morning, and it gave iPhone paths where a Mac has its own. This revision corrects that:
+
+- **Topics you open.** Every topic you open in Learn, by any route, now becomes the topic held for continuing, and while iCloud Sync and Handoff is on it is written to your iCloud key-value storage and added to the list of topics you have opened. Before, only a topic opened from the Home Screen widget or continued from another device was; this page said a topic opened by browsing Learn was not recorded. With the switch off, nothing is written to iCloud and nothing is offered for Handoff, as before. The Apple Watch's **Read this topic** card, which does not depend on the switch, now opens the last topic you opened in Learn.
+- **The photo self-check was removed.** On 26 September 2026 the photo self-check, which was already switched off behind the FDA clearance gate, was taken out of the app. This page said the gate was enforced at a button and a screen; there is no longer a button or a screen.
+- **Mac paths.** On a Mac you cancel in the App Store app → your name → Account Settings → Subscriptions → Manage, remove OmniDerm's iCloud data in System Settings → your name → iCloud → Manage, and turn notifications off in System Settings → Notifications. Journal photographs on a Mac are protected by macOS and FileVault, not by iOS file protection.
+- **Apple TV** has an About tab with the app's notice, the short version of this policy and the addresses of the policies and terms.
+
+The short version is unchanged. Nothing is sent to Prameya.
 
 **27 September 2026 — what changed.** One change in the app, and this page follows it:
 
