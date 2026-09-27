@@ -91,3 +91,29 @@ Evidence for the 24 September page changes, read from that branch (the app PR me
 - Delete all resets: `RxSettingsKey.resetByDeleteAll` (app.appearance, rx.watch.showMedicineNames, rx.disclosure.acknowledged/-Version/-On, rx.firstRun.hopToAddMedicine) in `RxAppDataService.purgeDefaults`; `RootView` re-presents the notice when the stored version drops; `AppContainerView` does not mirror the appearance reset to iCloud. `RxDisclosure.currentVersion` 9.
 - Retired: the "Allow one model download (about 420 MB)" switch and `OmniRxCatalog` (Qwen3 0.6B); `RxRetiredModelCleanup` removes `rx.ai.modelDownloadConsentGranted(On)` once.
 - Review fixes (same branch, commit 6657194): the downloaded model's path runs `RxBoundaryGuard` again on the grounded prompt before generating (`RxEducationAskController.downloadedModelRefusal(forGrounded:)`), as main's `MLXLLMClient.streamAssistantResponse` did; `RxMLXClient.download` re-applies `OmniRxContainerPaths.prepareOwnedDirectories()` (backup exclusion) before every transfer. Accepting the first-run notice after Delete all calls `RxPreferencesSync.writeDisclosureVersion`, which creates a new `RxUserPreferences` record (`fetchOrCreate`, appearance default "system") when the sync context exists; both pages now say so.
+
+## Addendum 2026-09-27 — the reminder time on the Apple Watch (Watch App Group)
+
+Pairs with the OmniRx app PR on branch `fix/watch-complication-2026-09-27` (owner, 2026-09-27: "do everything.. go ahead"; the D-09 fix OmniWealth shipped on 2026-09-23, with background delivery as in OmniWealth #156). Read against OmniRx origin/main `a32a9ed` and that branch. Survey: `docs/watch-complication-data-survey-2026-09-27.md` (Omni workspace), Rx row.
+
+BEFORE (origin/main `a32a9ed`)
+- The Watch app wrote the time to its own `UserDefaults.standard` (`App/OmniRxWatch/OmniRxWatchComplications.swift:20-22`), and only while `WatchNowView` was alive (`OmniRxWatchApp.swift:142-159`); the complication extension read its own `UserDefaults.standard` (`OmniRxWatchComplications.swift:13`). Separate containers, so the watch face always read "Learn". The Watch widget extension was signed with no entitlements.
+- The iPhone sent the time even with the Daily reminder off, the default (`RxDoseReminderScheduler.swift:169-183`, formatted from `DoseReminder.loadTime()`, 08:00 by default), and turning the switch off sent nothing. `WristSession.apply` ignored an empty time and kept any value without " · " as the time.
+- No WatchConnectivity background task; the Watch applied a card only while the app ran.
+
+AFTER (the branch)
+- App Group `group.legal.prameya.OmniRx.watch` on the Watch app (`App/OmniRxWatch/OmniRxWatch.entitlements`, which keeps its iCloud key-value entitlement) and the Watch widget extension (`App/OmniRxWatchWidgets/OmniRxWatchWidgets.entitlements`, new; pbxproj `CODE_SIGN_ENTITLEMENTS` Debug and Release). The host, the Home Screen widget and Apple TV join no group (`WatchAppGroupContractTests`, `HomeScreenWidgetContractTests`).
+- `WatchComplicationStore` (`OmniRxKit/Sources/Continuity/WatchComplicationStore.swift`): `UserDefaults` can open the suite only on watchOS (`:34`, `:67`); stores "HH:mm" in ASCII digits and nothing else (`isTimeLabel`, `:77`), removes the key for nil, "" or any other value, writes and reloads the complication only when the value changes (`:114-129`). A medicine name handed to it is never stored (`WatchComplicationStoreTests.aMedicineNameNeverReachesTheWatchFace`). The complication reads only this (`OmniRxWatchComplications.swift:52`).
+- The Watch writes in `WristSession.apply` (`WristSession.swift:170-172`), not in a view. The iPhone sends "" while the Daily reminder is off (`DoseReminder.wristTimeLabel`, `DoseReminder.swift:259`; `RxDoseReminderScheduler.swift:172`), and turning the switch off re-sends the card (`:216-219`). Delete all my data removes the reminder settings and re-sends the card, so the time clears.
+- Delivery: WCSession activates once in the Watch app's `init` (`OmniRxWatchApp.swift:25`, `WristSession.swift:58-59`); the scene declares `.backgroundTask(.watchConnectivity)` (`OmniRxWatchApp.swift:38-39`), whose wake waits up to five seconds for activation and `hasContentPending`, then applies the newest application context (`WristSession.swift:127-141`); activation also applies a context that arrived while the app was not running (`:211`). Hence "can take in a new card in the background".
+- The Watch app deletes its old own-defaults copy at launch (`OmniRxWatchApp.swift:24`).
+- Privacy manifests: Watch app UserDefaults CA92.1 + 1C8F.1; Watch widgets 1C8F.1 only (it no longer reads its own defaults); host, TV and Home Screen widget unchanged. Nothing collected, nothing tracked; App Store privacy label unaffected ("Data Not Collected").
+
+POLICY CHANGES (policy.md)
+- Apple Watch bullets: the card carries the time only while the daily reminder is on; the complication shows it, never a medicine name; storage only the Watch app and complication share; off → no time, the Watch removes it, "Learn"; background take-in.
+- Delete all bullet and "does not reach": the new card carries no time; until the Watch connects, the complication shows the last time.
+- Dated 27 September entry; effective date.
+
+VERIFIED, NO CHANGE
+- health-data.md: the reminder time is a reminder setting, not a listed category of consumer health data, and the Watch bullet there names only the card and the optional medicine names; no sentence becomes false. Not edited.
+- The time is not sent to Prameya, iCloud or anyone else; it travels only over WatchConnectivity between the user's own paired devices.
