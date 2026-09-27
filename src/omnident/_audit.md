@@ -81,7 +81,7 @@ MANIFEST / LABELS
 
 ## 2026-09-26 — sync scope: no names or topics in iCloud, first-run state stays on device
 
-Owner, 2026-09-26: "update the Dent privacy policy too". Both policies re-dated 26 September 2026. Code read from OmniDent `origin/main` at 947289e, which has PR #205 (merged as fef5af2), PR #206 `fix/dent-continue-no-name-2026-09-26` (merged as 2b516c9; commits 2e808af, 2637069, 9222e7d) and PR #207 (953e25b). The policy was first drafted against the unmerged #206 branch; the code at 2b516c9 is identical in every file cited below. Line numbers are on 947289e.
+Owner, 2026-09-26: "update the Dent privacy policy too". Both policies re-dated 26 September 2026. Code read from OmniDent `origin/main` at 947289e, which has PR #205 (merged as fef5af2), PR #206 `fix/dent-continue-no-name-2026-09-26` (merged as 2b516c9; commits 2e808af, 2637069, 9222e7d) and PR #207 (953e25b). The policy was first drafted against the unmerged #206 branch; every #206 file cited below is identical on main to that branch's tip 9222e7d. Line numbers are on 947289e.
 
 CHANGED — first-run state is per install (OmniDent PR #205, commits 9590b06 + e6ff838, merged as fef5af2)
 - `hasSeenWelcome`, `hasAcknowledgedHealthDisclaimer`, `healthDisclaimerAcknowledgedAt` now live in `FirstRunStore` (UserDefaults.standard, `app.firstRun.*`): `Persistence/FirstRunStore.swift:33-81`; read and written only through it by `Intelligence/AI/AISettings.swift:130-203`. The three columns stay on the CloudKit-mirrored `AIUserPreferences` row as unused legacy fields with default values (`DentalCore/Models/AIUserPreferences.swift:37-62`); `resetToDefaultsKeepingSyncChoice()` still clears what earlier TestFlight builds wrote there.
