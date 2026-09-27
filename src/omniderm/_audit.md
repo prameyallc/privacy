@@ -60,7 +60,7 @@ NET POST-WAVE-2 PICTURE THE POLICY DESCRIBES: skin photos are chosen from the ph
 
 ## 2026-09-27 — the reminder hour on the Apple Watch (Watch App Group)
 
-Pairs with the OmniDerm app PR on branch `fix/watch-complication-2026-09-27` (owner, 2026-09-27: "do everything.. go ahead"; the D-09 fix OmniWealth shipped on 2026-09-23). Read against OmniDerm origin/main `c68dc29` and that branch. Survey: `docs/watch-complication-data-survey-2026-09-27.md` (Omni workspace), Derm row.
+Pairs with the OmniDerm app PR on branch `fix/watch-complication-2026-09-27` (owner, 2026-09-27: "do everything.. go ahead"; the D-09 fix OmniWealth shipped on 2026-09-23). Read against OmniDerm origin/main `c68dc29` and that branch at `6e6deb0`. Survey: `docs/watch-complication-data-survey-2026-09-27.md` (Omni workspace), Derm row.
 
 BEFORE (origin/main `c68dc29`)
 - The Watch app wrote the hour to its own `UserDefaults.standard` (`OmniDermKit/Sources/Continuity/WristInbox.swift:18-21`, via `WristTransport.swift:244-248`); the complication extension read its own `UserDefaults.standard` (`App/OmniDermWatch/WatchComplications.swift:33`). Separate containers, so the watch face always read "Learn". The Watch widget extension was signed with no entitlements.
@@ -68,16 +68,16 @@ BEFORE (origin/main `c68dc29`)
 
 AFTER (the branch)
 - App Group `group.legal.prameya.OmniDerm.watch` on the Watch app (`App/OmniDermWatch/OmniDermWatch.entitlements`, which keeps its iCloud key-value entitlement) and the Watch widget extension (`App/OmniDermWatch/OmniDermWatchWidgets.entitlements`, new) only. The host, the Home Screen widget and Apple TV join no group (`WatchAppGroupContractTests`).
-- `WatchComplicationStore` (`OmniDermKit/Sources/Continuity/WatchComplicationStore.swift:42, 56, 78-89`): opens the suite only on watchOS, stores a whole hour 0-23 and nothing else, removes it on nil or any other value, reloads the complications after each write. The complication reads only this (`WatchComplications.swift:39`).
-- The iPhone sends the hour only while reminders are on (`SkinDataService.swift:1121-1122`, `watchReminder`), and an explicit "off" otherwise, which makes the Watch remove the hour (`WristTransport.swift:172-174, 361-365`). Settings' Reminders switch and hour, and Clear All Local Data, re-send (`SkinDataService.swift:1151, 1162, 1438`; `WristCommandApplier.swift:44`). The Watch app deletes its old own-defaults copy at launch (`OmniDermWatchApp.swift:44`).
-- Delivery: WatchConnectivity application context. The launch context used to be dropped (sent before `WCSession` activated); it is now sent on activation (`WristTransport.swift:246`). The Watch app declares no WatchConnectivity background task, so the Watch applies a change when it next runs and hears from the iPhone; hence "when it next hears from your iPhone".
+- `WatchComplicationStore` (`OmniDermKit/Sources/Continuity/WatchComplicationStore.swift:43, 57, 84-99`): opens the suite only on watchOS, stores a whole hour 0-23 and nothing else, removes it on nil or any other value, and reloads the complications only when the hour changed (:96). The complication reads only this (`WatchComplications.swift:39`).
+- The iPhone sends the hour only while reminders are on (`SkinDataService.swift:1121-1122`, `watchReminder`), and an explicit "off" otherwise, which makes the Watch remove the hour (`WristTransport.swift:218-220, 407`). Settings' Reminders switch and hour, and Clear All Local Data, re-send (`SkinDataService.swift:1151, 1162, 1438`; `WristCommandApplier.swift:44`). The Watch app deletes its old own-defaults copy at launch (`OmniDermWatchApp.swift:46`).
+- Delivery: WatchConnectivity application context. The launch context used to be dropped (sent before `WCSession` activated); it is now sent on activation (`WristTransport.swift:292`, iOS arm; staged before `start()`, `WristCommandApplier.swift:46-50`). The Watch app activates `WCSession` once per process from its `App` initialiser (`OmniDermWatchApp.swift:37`; `WristTransport.swift:55-62`) and declares `.backgroundTask(.watchConnectivity)` (`OmniDermWatchApp.swift:72-73`), so watchOS wakes it in the background to take in a change; the wake waits up to five seconds for delivery, then writes the hour through the store (`WristTransport.receiveInBackground()`, `WristTransport.swift:74-80`), which reloads the complication only when the hour changed. Same as OmniWealth #156 (23da6eb). No `UIBackgroundModes`/`WKBackgroundModes` are declared and nothing is scheduled; the "No background activity" line now names this brief wake.
 - Privacy manifests: both Watch manifests give UserDefaults reasons CA92.1 and 1C8F.1; host, TV and Home Screen widget give CA92.1 only. Nothing collected, nothing tracked; App Store privacy label unaffected ("Data Not Collected").
 
 POLICY CHANGES (policy.md)
 - Apple Watch bullet: "The iPhone also sends the Watch your reminder hour, for its complication." -> sent only while reminders are on, shown on the watch face, kept in storage only the Watch app and complication share, removed when reminders are off or after Clear All.
 - Storage table: a row for the hour on the Watch.
 - Deletion bullet: Clear All tells the Watch to remove the hour.
-- "No background activity": the watch-face reminder hour is named beside the widgets' suggested topic.
+- "No background activity": the watch-face reminder hour is named beside the widgets' suggested topic, and the Watch's brief background wake to take in a reminder change is named.
 - Dated 27 September entry; effective date.
 
 VERIFIED, NO CHANGE
