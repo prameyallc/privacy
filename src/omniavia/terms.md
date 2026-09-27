@@ -1,6 +1,6 @@
 # OmniAvia Terms of Use
 
-**Effective 27 August 2026 · Prameya LLC**
+**Effective 27 August 2026 · Sections 2 and 3 revised 27 September 2026 · Prameya LLC**
 
 ## 1. Who we are, and what this covers
 
@@ -11,7 +11,7 @@ more protective of you controls**.
 
 ## 2. What OmniAvia is, and is not
 
-OmniAvia is a ground-study and habit-logging tool for pilots and student pilots. It is not flight instruction, it is not a go/no-go authority, and it does not replace your CFI or a designated examiner.
+OmniAvia records study, rest and pre-flight preparation habits you enter yourself, and reflects them back to you. It is not flight instruction, not an aeromedical or fitness-to-fly assessment, and not a source of regulatory, airworthiness or operational determinations. It does not tell you whether a flight is legal, whether you are current or qualified, or whether you are fit to fly. Optional on-device Ask never downloads a model without asking you first; answers stay on this device and are not a certified flight instructor. Bring questions to a certified flight instructor, an examiner, an Aviation Medical Examiner, or the current official publications for your jurisdiction.
 
 OmniAvia does not replace a qualified professional. Do not delay seeking professional help because of
 something you read here, and do not treat anything in the app as a substitute for a decision made
