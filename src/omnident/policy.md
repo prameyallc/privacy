@@ -1,6 +1,6 @@
 # OmniDent Privacy Policy
 
-**Effective date:** 26 September 2026 *(supersedes the 24 September 2026 version; no person's name and no education topic go to iCloud, no name goes through Handoff, and Apple TV shows neither; whether you have seen the welcome screen and acknowledged the wellness disclaimer stays on each device and no longer syncs)*
+**Effective date:** 27 September 2026 *(supersedes the 26 September 2026 version; names the unlock each device asks for when you leave a child session, where the previous version said Face ID or the device passcode on every device)*
 **Publisher:** Prameya LLC, a United States limited liability company ("Prameya", "we", "us")
 **Contact:** admin@prameya.legal
 **This policy lives at:** https://prameyallc.github.io/privacy/omnident/
@@ -17,7 +17,7 @@
 
 - OmniDent lets you photograph your own teeth and gums, keep a dated record, log home-care habits, keep visit notes and documents, and read educational information. It runs on iPhone and iPad, on Mac and Apple Vision Pro (without the camera), and has an Apple Watch app and an Apple TV app.
 - **Your photos stay on your device.** They are saved inside the app's private storage. They are never sent to Prameya, and OmniDent never puts them in iCloud. Prameya operates no server that receives your photos, your analysis, or your notes.
-- **A household on this device is local.** You can add people (owner, child, adult you care for, caregiver). Each person has one mouth record. Photos, visits and documents are never uploaded. Switching away from a child session asks for Face ID or the device passcode.
+- **A household on this device is local.** You can add people (owner, child, adult you care for, caregiver). Each person has one mouth record. Photos, visits and documents are never uploaded. Switching away from a child session asks the device to confirm it is you, with Face ID, Touch ID or Optic ID, or the device passcode or Mac password.
 - **Two small things do go to your own iCloud while iCloud Sync is on** (it is on unless you turn it off): your app preferences, and a short "continue" note — the tab you were on and the last photo record you opened (as a random identifier). **No person's name and no education topic go to iCloud.** Your other devices, including Apple TV, use it to offer to continue where you left off. While iCloud Sync is on, Handoff also carries the education topic you last opened to your own nearby devices (never a name), and your paired Apple Watch gets **the name of the person whose record is active**. Details are in section 6.
 - **The AI runs on your device.** Ask uses Apple Intelligence on your device, or a model you downloaded. Nothing you photograph or type is sent to Prameya or to any online AI service.
 - **The app connects to the internet in a few narrow ways**, all listed in section 8: downloading AI model files from Hugging Face, your own iCloud account, and Apple's own services (Sign in with Apple, purchases, Handoff).
@@ -140,7 +140,7 @@ You can turn it on at **Settings → Photos** inside OmniDent. You can also revo
 
 Settings → **Household** (and **Family & kids mode**) adds people on **this device**. Each person has one mouth. Photographs, visits and documents are keyed to the active mouth. A child session cannot open another person's photos, Ask, Settings, Paywall, dentist share, the photo reading, or the visit packet.
 
-Leaving a child session for an adult record asks for **Face ID or the device passcode**. The app does not keep a second password. If the device has no passcode, iOS cannot lock, and Household settings says so.
+Leaving a child session for an adult record asks the device to confirm it is you: **Face ID or Touch ID, or the device passcode** on iPhone and iPad; **Touch ID or your Mac password** on a Mac (a Mac without Touch ID asks for the password); **Optic ID or the device passcode** on Apple Vision Pro. The app does not keep a second password. If the device has no passcode or password, the system cannot lock, and Household settings says so.
 
 The household itself — names, roles and photos — does not sync, and **no person's name goes to iCloud or through Handoff**. **While iCloud Sync is on, the name of the person whose record is active does go to one other device:** your paired Apple Watch, which shows it. With iCloud Sync off, the Watch does not get it. Section 6 explains.
 
@@ -461,7 +461,7 @@ When a child profile is active:
 - the tabs are You / Record / Do — Ask (including Ask iPhone on a paired Apple Watch), Settings, Paywall, dentist share, the photo reading, Smile Points and the visit packet stay with the grown-up;
 - auto-save to Photos is off;
 - the child cannot delete photos or the person;
-- switching to an adult record asks for Face ID or the device passcode.
+- switching to an adult record asks the device to confirm it is you (Face ID, Touch ID or Optic ID, or the device passcode or Mac password).
 
 **A child's name can leave the device, in one way.** While iCloud Sync is on and the child's record is active, the child's display name goes to your paired Apple Watch, which shows it. It does not go to iCloud or through Handoff, and Apple TV does not show it. Whatever the switch, it shows on the Lock Screen during that child's care session (section 6 and section 7). Use a nickname, or turn iCloud Sync off, if you would rather it did not.
 
@@ -563,6 +563,8 @@ If something in your mouth hurts, bleeds, changes, or worries you, see a dentist
 ## 19. Changes to this policy
 
 We will update this policy when the app's behaviour changes — and we will update it **before** the change ships, not after.
+
+**27 September 2026 — what changed.** The previous version said that leaving a child session asks for Face ID or the device passcode, on every device. That is what an iPhone or iPad with Face ID asks for. An iPhone or iPad with Touch ID asks for Touch ID, a Mac asks for Touch ID or your Mac password (the password alone on a Mac without Touch ID), and Apple Vision Pro asks for Optic ID; each can fall back to the device passcode or Mac password. The lock itself did not change; OmniDent's own Household screen now names the unlock for the device it runs on, and this policy names each. The short version and sections 3 and 12 are corrected. Nothing is sent to Prameya.
 
 **26 September 2026 — what changed.** OmniDent was changed, and this policy describes the app with those changes:
 

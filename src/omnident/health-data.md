@@ -1,6 +1,6 @@
 # OmniDent Consumer Health Data Privacy Policy
 
-**Effective date:** 26 September 2026 *(supersedes the 24 September 2026 version; no person's name and no education topic identifier go to iCloud, no name goes through Handoff, and Apple TV shows neither; whether and when you acknowledged the wellness disclaimer stays on each device and no longer syncs.)*
+**Effective date:** 27 September 2026 *(supersedes the 26 September 2026 version; names the unlock each device asks for before an adult record opens from a child session, where the previous version said Face ID or the device passcode on every device.)*
 **Publisher:** Prameya LLC, a United States limited liability company ("Prameya", "we", "us")
 **Contact:** admin@prameya.legal
 **This policy lives at:** https://prameyallc.github.io/privacy/omnident/health-data/
@@ -100,7 +100,7 @@ Washington requires children's health data to be listed distinctly. **OmniDent d
 | What | Where it lives | Who can see it |
 |---|---|---|
 | Child's display name and child role | Local household row on this device. **While that child's record is active and iCloud Sync is on, the name also goes to your paired Apple Watch** in the continue note — never to iCloud or through Handoff — and, whatever the switch, it is on the Lock Screen during that child's care session | Anyone holding the unlocked phone who is in that child's session, or the owner looking at Household; anyone who can see your Apple Watch or Lock Screen while it is shown |
-| Photographs of that child's mouth | Local journal keyed to that mouth | A child session sees only that mouth. An adult record is behind Face ID or the device passcode |
+| Photographs of that child's mouth | Local journal keyed to that mouth | A child session sees only that mouth. An adult record is behind the device's own unlock: Face ID, Touch ID or Optic ID, or the device passcode or Mac password |
 | Care days logged for that child | Local care-day tags for that person | Same as photographs |
 | Visits or documents the owner files for that mouth | Local visit graph keyed to that mouth | A child session cannot open the visit packet. The owner opens Record after unlocking |
 
@@ -327,6 +327,8 @@ If we change the categories of consumer health data we collect, add a source, ad
 1. update this policy and change the effective date;
 2. **obtain your affirmative consent before collecting or processing for the new category or purpose**, as RCW 19.373.020(1)(c) and (1)(d) require — before the change takes effect, not after;
 3. show an in-app notice describing what changed.
+
+**27 September 2026 — what changed.** The children's table said an adult record is behind Face ID or the device passcode. It is behind whatever unlock the device has: Face ID or Touch ID on iPhone and iPad, Touch ID or your Mac password on a Mac, Optic ID on Apple Vision Pro, or the device passcode. The lock itself did not change. No category, source, purpose or recipient is added, and nothing is sent to Prameya.
 
 **26 September 2026 — what changed.** OmniDent was changed, and this policy describes the app with those changes:
 
