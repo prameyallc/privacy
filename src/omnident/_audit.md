@@ -107,3 +107,20 @@ VERIFIED, NO CHANGE
 
 LEFT AS HISTORY
 - The 23 September 2026 entries in both "Changes" sections still describe the note as it was then (name and topic in iCloud KVS). They are dated history of that version and the 26 September entry above them supersedes them.
+
+## 2026-09-27 — the unlock for leaving a child session, per device
+
+Owner authorised publishing 2026-09-27 ("do everything.. go ahead"). Both policies re-dated 27 September 2026. Code read from OmniDent `origin/main` at 5811a89 (merge of PR #213 `fix/platform-wave-2026-09-27`).
+
+CORRECTED — "Face ID or the device passcode" was said for every device
+- The lock is `DevicePasscodeUnlock.confirmAdultAccess()` (`AppSurfaces/App/HouseholdUnlockService.swift:20-37`): `LAContext.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "Unlock adult mouth records")` on iOS, macOS and visionOS; it is called before leaving a child session (`AppSurfaces/Features/Care/HouseholdViews.swift:80`, `AppSurfaces/App/HouseholdSplitShell.swift:206`). If `canEvaluatePolicy` fails (no passcode or password set) the switch goes through (`:24-25`); a failed or cancelled prompt keeps the child session (`:31-32`). PR #213 did not change this file.
+- `.deviceOwnerAuthentication` is "biometry or user password": the SDK header (`LocalAuthentication.framework/Headers/LAContext.h`, `LAPolicyDeviceOwnerAuthentication`) says that if Touch ID is not available, not enrolled or locked out, "the user is asked for password right away". So a Mac without Touch ID asks for the Mac password; an iPhone or iPad with Touch ID (not Face ID) asks for Touch ID; Apple Vision Pro asks for Optic ID; each falls back to the passcode or password.
+- In-app words since PR #213: `PlatformCopy.deviceOwnerAuthentication` (`DentalCore/Services/PlatformCopy.swift:48-57`) — "Face ID or the device passcode" (iOS), "Touch ID or your Mac password" (macOS), "Optic ID or the device passcode" (visionOS); read by the Household footer (`HouseholdViews.swift:122-127`). Purpose strings: `INFOPLIST_KEY_NSFaceIDUsageDescription` (Face ID) and `INFOPLIST_KEY_NSFaceIDUsageDescription[sdk=xr*]` (Optic ID) in `OmniDent.xcodeproj/project.pbxproj:891-892`, `:955-956`.
+- Household settings is reachable on iPhone, iPad, Mac and Vision Pro (`AppSurfaces/Features/More/MoreHubView.swift:81`, `AppSurfaces/Features/Settings/SettingsView.swift:166`; no platform guard).
+- Policy sentences corrected: short version (household bullet), section 3 "Household mouths stay on this device" (per-device list; "iOS cannot lock" → "the system cannot lock", "no passcode" → "no passcode or password"), section 12 child-profile bullet, section 19 new entry. Health policy: children's table, photographs row; changes entry.
+
+NOTE FOR THE APP
+- `PlatformCopy.deviceOwnerAuthentication` on iOS says "Face ID or the device passcode", and the iOS purpose string names Face ID only, while an iPad or iPhone with Touch ID asks for Touch ID. The policy names both; the app's iOS string is narrower than the device's behaviour.
+
+LEFT AS HISTORY
+- The 20 September 2026 entries in both "Changes" sections still say "Face ID or the device passcode"; they are dated history, superseded by the 27 September entries.
