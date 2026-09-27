@@ -1,10 +1,10 @@
 # OmniMathematics Privacy Policy
 
-**Effective date:** 23 September 2026
+**Effective date:** 27 September 2026
 **Publisher:** Prameya LLC ("Prameya", "we", "us")
-**App:** OmniMathematics for iPhone and iPad, with its Apple Watch app — bundle ID `legal.prameya.OmniMathematics`
+**App:** OmniMathematics for iPhone, iPad, Mac and Apple Vision Pro, with its Apple Watch app and its Apple TV app — bundle ID `legal.prameya.OmniMathematics` (the Apple TV app uses the same ID)
 **Contact:** admin@prameya.legal
-**Scope:** This policy covers OmniMathematics on iPhone and iPad (including the iPad app where Apple lets it run on an Apple silicon Mac or Apple Vision Pro) and the Apple Watch app that comes with it, and nothing else. Prameya's other apps have their own policies, because they work differently. Index: <https://prameyallc.github.io/privacy/>
+**Scope:** This policy covers OmniMathematics on iPhone, iPad, Mac and Apple Vision Pro (the Mac and Apple Vision Pro run their own versions of the app, not the iPad app), the Apple Watch app that comes with the iPhone app, and the Apple TV app, and nothing else. Prameya's other apps have their own policies, because they work differently. Index: <https://prameyallc.github.io/privacy/>
 **Canonical public URL (slug stays `omnimath`):** <https://prameyallc.github.io/privacy/omnimath/>
 
 ---
@@ -44,9 +44,12 @@ OmniMathematics writes the following to its own storage on the device:
 | Whether you have seen the intro screens, and when the first-run Legal & Safety notice was acknowledged | So they show once |
 | Your appearance choice | To apply it |
 | Your answer to "Download the Ask model?", with the model and version it was given for, or the position of the **On-device Ask model** switch | So Ask does not ask again for the same model, and asks again if the model changes |
+| Which model you chose in place of the one your device is offered first — the smaller model after a memory check refused the first one, or, on a Mac with 16 to 18 GB, Gemma 4 E4B | So Ask uses the model you chose |
+| Whether **In-app answers** is on | To show or hide Ask |
+| Whether you closed the card that offers a study report | So it stays closed |
 | Whether the daily study reminder is on | To keep or remove the reminder |
 | On iPhone: the ids and send times of recent Apple Watch taps it has already applied, at most 64, each forgotten after an hour | So a tap on the Watch applies once |
-| The optional Ask model's files (MiniCPM5 2B, about 1.4 GB, or Gemma 4 E2B, about 4.4 GB), only if your device was offered the download and you chose it | To run the model on the device |
+| The optional Ask model's files (MiniCPM5 2B, about 1.4 GB; Gemma 4 E2B, about 4.4 GB; or, on a Mac with 16 GB or more, Gemma 4 E4B, about 6.8 GB — two of them if you accepted a second model after a memory check), only if your device was offered the download and you chose it | To run the model on the device |
 | A one-time marker that the files of the model used by versions before 1.0 (24) (Qwen3 0.6B, about 350 MB) were removed on the first launch, and how much space that freed | So the removal happens once |
 | A temporary copy of a file you export, which the app clears afterwards | To hand the file to the share sheet |
 | Two internal markers: that stored marks were moved to the current storage format, and which version of the chapter list the marks belong to | So the move happens once, and a mark from an older chapter list is not counted as a newer chapter |
@@ -62,7 +65,7 @@ If you use iCloud or computer backup for your device, this data is included in t
 If you are signed in to iCloud:
 
 - **Your marks** — every chapter and topic mark, your insight stars, your streak and where you left off — sync through your own **CloudKit private database**, so your other devices show the same marks. Prameya cannot open another person's private database. Signing out of iCloud may remove synced marks from a device until you sign in again.
-- **A small iCloud key-value store** remembers where you left off, the next suggested topic for the Home Screen widget, a topic you asked the widget or Shortcuts to open until the app opens it, and your appearance choice. That is how your other devices and Apple Watch can offer to continue, and how Apple Watch matches your appearance choice.
+- **A small iCloud key-value store** remembers where you left off, the next suggested topic for the Home Screen widget, a topic you asked the widget or Shortcuts to open until the app opens it, and your appearance choice. That is how your other devices, Apple Watch and Apple TV can offer to continue, and how Apple Watch and Apple TV match your appearance choice.
 
 **Handoff** also tells your nearby devices that use the same Apple Account where you left off.
 
@@ -82,9 +85,15 @@ None of this reaches Prameya.
 
 ---
 
+## Apple TV
+
+The Apple TV app has four tabs: **Continue**, **Library**, **Ask** and **Legal**. It reads where you left off and your appearance choice from the iCloud key-value store described above, and writes nothing there. Ask on Apple TV runs no model and downloads nothing: it shows the closest passage in Concepts and the topic packs, labelled **From Concepts**, and does not save your question. **Legal** shows the app's disclaimer, the short version of this policy and the terms, as text built into the app. The Apple TV app keeps no marks and has no purchases, reminder, Handoff or export. None of this reaches Prameya.
+
+---
+
 ## The daily study reminder
 
-The reminder is off until you turn it on in **More ▸ Settings ▸ Reminders ▸ Daily study reminder**. Turning it on is the only thing in OmniMathematics that asks iOS for permission to send notifications, and iOS asks only if you have not answered before. If you allow it, the app schedules one local notification a day at 19:00 your local time, titled "Study reminder" and naming what you were studying. iOS delivers it from the device; nothing is sent to us or to any server. Turning the switch off removes the reminder. If notifications are turned off for OmniMathematics in iOS Settings, the Reminders section says so and offers **Open Settings**.
+The reminder is available on iPhone, iPad, Mac and Apple Vision Pro. It is off until you turn it on in **More ▸ Settings ▸ Reminders ▸ Daily study reminder**. Turning it on is the only thing in OmniMathematics that asks the system for permission to send notifications, and the system asks only if you have not answered before. If you allow it, the app schedules one local notification a day at 19:00 your local time, titled "Study reminder" and naming what you were studying. The system delivers it from the device; nothing is sent to us or to any server. Turning the switch off removes the reminder. If notifications are turned off for OmniMathematics in Settings (on a Mac, System Settings ▸ Notifications), the Reminders section says so and offers **Open Settings**, which opens them.
 
 ---
 
@@ -95,13 +104,14 @@ Ask sends your question, as you typed it, to a language model that runs on your 
 - **Where Apple Intelligence is turned on and ready,** Apple's on-device model answers. Your question stays on the device; it is not sent to us or to Apple. No download is offered.
 - **Where no model can answer** (no model is offered, downloaded or loaded yet, and on Apple TV), Ask shows the closest passage in Concepts and the topic packs already on your device, labelled **From Concepts**.
 
-Where Apple Intelligence is not ready, Ask can use an optional model that you download. Which model, if any, depends on how much memory the device has:
+Where Apple Intelligence is not ready, Ask can use an optional model that you download. Which model, if any, depends on the device and how much memory it has:
 
-- **iPhone and iPad with 8 GB of memory** are offered **MiniCPM5 2B**, from the Hugging Face repository `openbmb/MiniCPM5-2B-MLX` at commit `8a9ad753`, about 1.4 GB.
-- **iPhone and iPad with 12 GB of memory or more** are offered **Gemma 4 E2B**, from the Hugging Face repository `mlx-community/gemma-4-E2B-it-qat-4bit` at commit `42f62737`, about 4.4 GB. When the memory check refuses Gemma 4 E2B, they are offered MiniCPM5 2B instead, as a separate download that you also choose; a device that accepts it keeps both downloads until you remove the downloaded model, and Settings offers the way back to Gemma 4 E2B.
-- **iPhone and iPad with 6 GB of memory or less**, and devices whose graphics hardware does not support Metal 3, are offered no model. On them Ask always answers from Concepts and the packs, and Settings shows no download switch.
+- **iPhone and iPad with 8 GB of memory, and Macs with 8 GB,** are offered **MiniCPM5 2B**, from the Hugging Face repository `openbmb/MiniCPM5-2B-MLX` at commit `8a9ad753`, about 1.4 GB.
+- **iPhone and iPad with 12 GB of memory or more, Apple Vision Pro, and Macs with 16 to 18 GB** are offered **Gemma 4 E2B**, from the Hugging Face repository `mlx-community/gemma-4-E2B-it-qat-4bit` at commit `42f62737`, about 4.4 GB. When the memory check refuses Gemma 4 E2B, they are offered MiniCPM5 2B instead, as a separate download that you also choose; a device that accepts it keeps both downloads until you remove the downloaded model, and Settings offers the way back to Gemma 4 E2B. A Mac with 16 to 18 GB can also choose **Gemma 4 E4B** in More ▸ Settings ▸ Ask model (**Use Gemma 4 E4B (about 6.8 GB) instead**).
+- **Macs with 24 GB of memory or more** are offered **Gemma 4 E4B**, from the Hugging Face repository `mlx-community/gemma-4-E4B-it-qat-4bit` at commit `0f35c6f6`, about 6.8 GB. When the memory check refuses Gemma 4 E4B, they are offered Gemma 4 E2B instead, in the same way.
+- **iPhone and iPad with 6 GB of memory or less**, devices whose graphics hardware does not support Metal 3, Apple TV and Apple Watch are offered no model. On them Ask always answers from Concepts and the packs, and Settings shows no download switch.
 
-The model is not part of the app download. It is offered only where Apple Intelligence is not ready, and downloaded from Hugging Face only after you choose **Download** in Ask or turn on **On-device Ask model** in More ▸ Settings ▸ Ask model, only while OmniMathematics is open, and it may be downloaded again if the system clears storage space. The button names the model and its size (about 1.4 GB or about 4.4 GB). Before offering the download, and again each time it loads the model, the app checks that the device has enough free memory for the model; when it does not, Ask answers from Concepts and the packs and offers no download. While the download runs, the app keeps the screen on. The downloaded files are the model weights, its tokenizer and a prompt-formatting template, pinned to one version and checked by size after each download and before each load, and by checksum after each download: data the model reads, not executable code. Text the model produces is shown as the model writes it, even when it reaches the length limit, labelled **On-device model** with a notice that it can be wrong. When the model cannot answer, Ask says so; it does not put a passage from Concepts in place of the model's answer. Until the model is downloaded and loaded, Ask shows the passage from Concepts, and the model answers your question once it is ready. If an earlier version of OmniMathematics downloaded the smaller model it used then (Qwen3 0.6B, about 350 MB), 1.0 (24) removes those files on its first launch and asks you again before it downloads anything.
+The model is not part of the app download. It is offered only where Apple Intelligence is not ready, and downloaded from Hugging Face only after you choose **Download** in Ask, turn on **On-device Ask model** in More ▸ Settings ▸ Ask model, or choose another model's row there, only while OmniMathematics is open, and it may be downloaded again if the system clears storage space. The button names the model and its size (about 1.4 GB, about 4.4 GB or, on a Mac, about 6.8 GB). Before offering the download, and again each time it loads the model, the app checks that the device has enough free memory for the model; when it does not, Ask answers from Concepts and the packs and offers no download. While the download runs, the app keeps the screen on (on iPhone, iPad and Apple Vision Pro; a Mac's screen follows its own settings). The downloaded files are the model weights, its tokenizer and a prompt-formatting template, pinned to one version and checked by size after each download and before each load, and by checksum after each download: data the model reads, not executable code. Text the model produces is shown as the model writes it, even when it reaches the length limit, labelled **On-device model** with a notice that it can be wrong. When the model cannot answer, Ask says so; it does not put a passage from Concepts in place of the model's answer. Until the model is downloaded and loaded, Ask shows the passage from Concepts, and the model answers your question once it is ready. If an earlier version of OmniMathematics downloaded the smaller model it used then (Qwen3 0.6B, about 350 MB), 1.0 (24) removes those files on its first launch and asks you again before it downloads anything.
 
 Like any file download, the request to Hugging Face gives Hugging Face the device's IP address and the standard request headers (which name the app and its version and the operating system version), and names the model repository and the files requested; Hugging Face handles it under its own terms. It does not include your question, your marks or anything you type. We do not receive that request. **Remove the downloaded model** in More ▸ Settings ▸ Ask model deletes the files and turns the switch off. It stays available wherever the files are on the device, including a device where Apple Intelligence has since become ready.
 
@@ -221,7 +231,7 @@ That is the whole list.
 
 There is not much to secure, and that is the design.
 
-- Your learning data stays in the app's private storage on your device, protected by iOS and your passcode, and — if you are signed in — in your iCloud private database under Apple's terms. Use a passcode and keep iOS up to date.
+- Your learning data stays in the app's private storage on your device, protected by the system and your passcode (on a Mac, by the app sandbox and by FileVault if you have turned it on), and — if you are signed in — in your iCloud private database under Apple's terms. Use a passcode and keep your device's software up to date.
 - The app does not talk to our servers, so there is no traffic of yours to intercept on a path we run. StoreKit, iCloud, Handoff and the connection to Apple Watch are Apple's. The optional model download talks to Hugging Face.
 - We operate no server holding user data, so there is no user database of ours that could be breached.
 
@@ -249,6 +259,15 @@ Apple's App Store privacy labels use Apple's own definition of "collect", which 
 ## Changes to this policy
 
 We will update this policy when the app changes — and, where we can, before the change ships. When we do, we will change the effective date at the top and describe what changed. If a change materially expands what is collected or who receives it, we will tell you in the app rather than relying on you to re-read this page.
+
+**27 September 2026 — what changed.** This policy now covers every device OmniMathematics runs on:
+
+- It covers the Mac and Apple Vision Pro versions of the app and the Apple TV app. The previous version said it covered iPhone and iPad, including the iPad app where Apple lets it run on a Mac or Apple Vision Pro, and nothing else; the Mac and Apple Vision Pro run their own versions of the app, and the Apple TV app shows this policy. A new section describes the Apple TV app.
+- It names the models a Mac and Apple Vision Pro are offered: MiniCPM5 2B on a Mac with 8 GB; Gemma 4 E2B on Apple Vision Pro and on a Mac with 16 to 18 GB, which can choose Gemma 4 E4B instead; and Gemma 4 E4B (`mlx-community/gemma-4-E4B-it-qat-4bit` at commit `0f35c6f6`, about 6.8 GB) on a Mac with 24 GB or more, with Gemma 4 E2B when the memory check refuses it.
+- It says the screen is kept on during a download on iPhone, iPad and Apple Vision Pro, not on a Mac; that the reminder is on the Mac and Apple Vision Pro too, and where a Mac's notification settings are; and how the Mac protects the app's data.
+- Its list of what the app stores adds three items it left out: the model you chose in place of the first one offered, the **In-app answers** switch, and whether you closed the study-report card.
+
+Nothing the app collects or sends changed, and nothing is sent to Prameya.
 
 **23 September 2026 — what changed.** Ask now answers with an on-device model and shows what it writes:
 

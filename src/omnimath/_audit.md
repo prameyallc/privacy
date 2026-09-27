@@ -120,3 +120,41 @@ WHAT THE CODE SHOWS (paths relative to `OmniMathematicsKit/Sources/`):
 CHANGES TO THE PUBLISHED POLICY (15 September 2026): effective date 15 September 2026; the short version and the Ask section name the model each memory class is offered, with repository and commit, and say that 6 GB and smaller devices and devices without Metal 3 are offered none; the storage table names the model files by model and size, adds the one-time removal marker for the Qwen3 0.6B files and says the download choice is kept with the model and version; the Ask section says the download runs only while the app is open, that memory is checked before the offer and before every use, that the files are verified weights and not code, and that 1.0 (24) removes the earlier model's files on first launch; a 15 September change entry lists all of that. The terms page is unchanged: `src/omnimath/terms.md` speaks of "the optional on-device Ask model" without naming one, and `AppSurfaces/Settings/TermsOfUseCopy.swift` did not change between `380f691` and `63a8a9b`.
 
 OPEN: the section 5 owner device tests (T-1 to T-9) have not run on hardware; the policy states the ladder the code applies. The App Privacy label question (owner-decisions item 29) is unchanged by this revision.
+
+## 2026-09-27 — Mac, Apple Vision Pro and Apple TV: scope, model tiers, reminder, screen, storage list
+
+Owner approved this wave 2026-09-27 ("finish all pending work"). Code read from OmniMathematics `main` at 26037a1 (merge of PR #188; contains #183 platform wave and #185 design backlog). Policy re-dated 27 September 2026 (it said 23 September). The short version is unchanged.
+
+CORRECTED — App line and Scope ("iPhone and iPad (including the iPad app where Apple lets it run on an Apple silicon Mac or Apple Vision Pro) and the Apple Watch app …, and nothing else")
+- Host target: `SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator"`, `SUPPORTS_MACCATALYST = NO`, `SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO`, `SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO` (`OmniMathematics.xcodeproj/project.pbxproj:952-957`, `:1006-1011`): native Mac and Vision Pro builds (since 3752f2a, 2026-08-21). Apple TV target: same bundle ID, `SDKROOT = appletvos` (`:1140-1143`).
+- The Apple TV app shows this policy's short version as its own (`App/OmniMathematicsTV/TVLegalView.swift:34-42`; `OmniMathematicsKit/Sources/Continuity/CompanionLegalCopy.swift:26-64`).
+
+ADDED — Apple TV section; "your other devices and Apple Watch" → adds Apple TV
+- Tabs Continue, Library, Ask, Legal (`App/OmniMathematicsTV/OmniMathematicsTVApp.swift:36-51`). Reads `ContinuityKVS.load()` and `loadAppearance()` (`:60-74`), never writes. Only entitlement: the KVS identifier (`App/OmniMathematicsTV/OmniMathematicsTV.entitlements`). No UserDefaults, StoreKit, reminder, Handoff or export in `App/OmniMathematicsTV/`. Ask: `MathAskService.answer` returns the Concepts lookup on tvOS; `generate`/`prepareModel` throw there; TV Ask passes `consent: .declined`; label "From Concepts".
+
+CORRECTED — model tiers named only iPhone and iPad; button sizes; stored model files
+- `Intelligence/MathModelTier.swift:173-186` (`decisionRung`): ios8gb and mac8gb → MiniCPM5 2B; ios12gb, ios16gb, visionos16gb → Gemma 4 E2B, fallback MiniCPM5 2B; mac16to18gb → Gemma 4 E2B, fallback MiniCPM5 2B, opt-in Gemma 4 E4B; mac24to36gb and mac48gbplus → Gemma 4 E4B, fallback Gemma 4 E2B. Mac boundaries `:217-221` (12e9, 20e9, 40e9 bytes); Vision Pro minimum 14e9 (`:224`); tvOS/watchOS none (`:241`, `:289`).
+- Gate R clears all three (`Intelligence/MathGateRTable.swift`, `clearedForBuild24`).
+- Gemma 4 E4B: `Intelligence/MathModelCatalog.swift:208-237`, `mlx-community/gemma-4-E4B-it-qat-4bit` @ `0f35c6f6d386…`, "about 6.8 GB". Opt-in row "Use Gemma 4 E4B (about 6.8 GB) instead" (`Intelligence/MathModelConsent.swift:298-302`).
+
+CORRECTED — "While the download runs, the app keeps the screen on"
+- `App/OmniMathematics/OmniMathematicsApp.swift:154-163` holds the idle timer under `#if canImport(UIKit) && !os(watchOS) && !os(tvOS)` ("the Mac has none"); `MathModelConsent.screenStaysOnSentence` is empty on the Mac (`:439-447`).
+
+CORRECTED — reminder: "asks iOS", "iOS Settings"
+- The reminder section is `#if os(iOS) || os(macOS) || os(visionOS)` (`AppSurfaces/Views/SettingsView.swift:434-440`); on a Mac Open Settings opens `x-apple.systempreferences:com.apple.Notifications-Settings.extension` (`:503-511`).
+
+CORRECTED — Security: "protected by iOS and your passcode"
+- macOS has no `FileProtectionType` (`AppSurfaces/ExportScratch.swift:41-44`); the Mac app is sandboxed.
+
+CORRECTED — "That is the complete list" (three stored items were missing)
+- `ask.onDeviceModel.selectedModel` (`Intelligence/MathModelConsent.swift:54`; written by `MathModelSelection.swift:113-115`), `ask.inAppAnswers` ("In-app answers", `Intelligence/AskAnswersPreference.swift:6`; `SettingsView.swift:233-243`), `omnimathematics.progress.studyReportCardDismissed` (`AppSurfaces/Views/StudyReportExportSection.swift:256`).
+
+LEFT
+- The short version's Ask bullet names only the iPhone and iPad tiers. It is not false, and it is copied into the Apple TV Legal tab and the Connect Apple TV field, so it was not changed.
+- The 14 and 15 September entries ("covers iPhone and iPad … no longer mentions Apple TV"; "the iPad app where Apple lets it run on … Mac or Apple Vision Pro") are dated history, superseded by the 27 September entry.
+- No download switch exists (only "On-device Ask model"; "Wi-Fi is recommended").
+
+NOTE FOR THE APP
+- `CompanionLegalCopy.privacyPolicyHeading` (`OmniMathematicsKit/Sources/Continuity/CompanionLegalCopy.swift:26-27`) reads "effective 23 September 2026"; the policy is now dated 27 September 2026 (short version unchanged). App + Connect Apple TV field need the date.
+- The Mac paywall line `PaywallCopy.macAutoRenewLine` ("… Account Settings ▸ Subscriptions") stops before "Manage" (`OmniMathematicsKit/Sources/Monetization/PaywallCopy.swift:78-80`); the policy gives no cancel path, so nothing here changed.
+- `docs/PRIVACY.md` in the app repo mirrors this policy and needs the same update.
