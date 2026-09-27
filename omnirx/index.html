@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>OmniRx Privacy Policy — Prameya LLC</title>
-<meta name="description" content="Effective date: 24 September 2026">
+<meta name="description" content="Effective date: 27 September 2026">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://prameyallc.github.io/privacy/omnirx/">
 <style>
@@ -93,7 +93,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 </div></header>
 <main id="main" class="wrap">
 <h1 id="omnirx-privacy-policy">OmniRx Privacy Policy</h1>
-<p><strong>Effective date:</strong> 24 September 2026<br />
+<p><strong>Effective date:</strong> 27 September 2026<br />
 <strong>App:</strong> OmniRx for iPhone and iPad, with its Apple Watch app, its Apple TV app, and its Mac and Apple Vision Pro versions — bundle ID <code>legal.prameya.OmniRx</code><br />
 <strong>Publisher:</strong> Prameya LLC ("Prameya", "we", "us"), a US limited liability company<br />
 <strong>Contact:</strong> admin@prameya.legal</p>
@@ -349,8 +349,9 @@ resets it to the You tab, so it no longer names a page or a record.</p>
 <h3 id="apple-watch">Apple Watch</h3>
 <p>The iPhone app and the Apple Watch app talk over Apple's connection between paired devices:</p>
 <ul>
-<li>The iPhone sends the Watch the reminder card: "Medication reminder", the reminder time, and Taken,<br />
-  Skipped and Snooze, plus a card that opens a general label-reading topic on the iPhone. <strong>Medicine<br />
+<li>The iPhone sends the Watch the reminder card: "Medication reminder", the reminder time <strong>while the<br />
+  daily reminder is on</strong>, and Taken, Skipped and Snooze, plus a card that opens a general<br />
+  label-reading topic on the iPhone. <strong>Medicine<br />
   names are sent to the Watch only if you turn on More → "Show medicine names on Apple Watch"</strong>,<br />
   which is off until you turn it on.</li>
 <li>Taken, Skipped or Snooze on the Watch is sent to the iPhone. With exactly one medicine followed, the<br />
@@ -359,8 +360,13 @@ resets it to the You tab, so it no longer names a page or a record.</p>
   the way Ask on the iPhone does and sends the answer back. If Ask is off on the iPhone, the answer<br />
   says so. A question from the Watch never starts a model download; a downloaded Ask model answers it<br />
   only while OmniRx is open on the iPhone, and otherwise the answer says to open it.</li>
-<li>The Watch keeps the reminder time for its complication, and reads the iCloud key-value values above<br />
-  to offer "Continue".</li>
+<li>The Watch keeps the reminder time for its complication, which shows it on your watch face (for<br />
+  example "08:00") and never shows a medicine name. It keeps the time in storage that only the OmniRx<br />
+  Watch app and its complication share; the iPhone app is not part of it. While the daily reminder is<br />
+  off, which is how it starts, the iPhone sends no time, the Watch removes the one it kept, and the<br />
+  complication shows "Learn". The Watch can take in a new card in the background, without the Watch<br />
+  app being opened; until it does, the complication shows the last time it received.</li>
+<li>The Watch reads the iCloud key-value values above to offer "Continue".</li>
 </ul>
 <h3 id="hugging-face-the-optional-ask-model">Hugging Face: the optional Ask model</h3>
 <p><strong>Only if you choose it.</strong> Where Apple Intelligence is not turned on and ready, and <strong>Enable on-device<br />
@@ -696,7 +702,8 @@ consent.</p>
   deletes the CloudKit preferences record, which iCloud removes from your account the next time the<br />
   device syncs. It cancels the daily reminder (and a snoozed one), resets the Handoff message, clears<br />
   the last Ask answer on your Apple Watch and sends the Watch a new reminder card, which names no<br />
-  medicine because none is followed any more. It cannot be undone. If a file or the preferences record<br />
+  medicine because none is followed any more and carries no time because the reminder is off, so the<br />
+  Watch's complication goes back to "Learn". It cannot be undone. If a file or the preferences record<br />
   cannot be removed from the device, the app tells you rather than claiming a complete delete.</li>
 <li><strong>What "Delete all my data" does not reach, stated plainly:</strong><ul>
 <li><strong>The CloudKit preferences record, if the device is not signed in to iCloud</strong> when you delete:<br />
@@ -704,7 +711,7 @@ consent.</p>
   (iOS Settings → your name → iCloud → Manage Account Storage).</li>
 <li><strong>Your Apple Watch</strong> gets the new reminder card, and loses its last Ask answer, straight away if<br />
   it is connected to your iPhone, or the next time it connects. Until then it shows the last card<br />
-  and the last Ask answer it received.</li>
+  and the last Ask answer it received, and its complication the last reminder time.</li>
 <li><strong>Your purchase</strong> stays with your Apple Account.</li>
 </ul>
 </li>
@@ -739,6 +746,17 @@ out of those laws, and you should not read our App Store label as saying we did.
 top. Meaningful changes — a new network connection, a new permission, anything involving your health<br />
 data — will be described in a short summary of what changed, at the top of this page, and will be<br />
 announced in the app's release notes.</p>
+<p><strong>27 September 2026 — what changed.</strong> With an app update:</p>
+<ul>
+<li><strong>The Apple Watch complication shows the reminder time, and only while the daily reminder is on.</strong><br />
+  Earlier versions sent the Watch the reminder time even while the daily reminder was off (08:00 unless<br />
+  you changed it), and the complication, which this page said kept the time, always showed "Learn",<br />
+  because the Watch app and the complication could not read each other's storage. Now the iPhone sends<br />
+  the time only while the reminder is on, the Watch keeps it in storage that only the Watch app and its<br />
+  complication share, the complication shows it, and turning the reminder off or "Delete all my data"<br />
+  puts the complication back to "Learn". The time never leaves your iPhone and your paired Watch, and<br />
+  the complication never shows a medicine name.</li>
+</ul>
 <p><strong>24 September 2026 — what changed.</strong> With an app update:</p>
 <ul>
 <li><strong>Ask can use an optional on-device model.</strong> Where Apple Intelligence is not turned on and ready, the<br />
@@ -824,7 +842,7 @@ Email: <strong>admin@prameya.legal</strong></p>
 <footer class="site"><div class="wrap">
   <p>Prameya LLC · <a href="mailto:admin@prameya.legal">admin@prameya.legal</a>
   · <a href="https://prameyallc.github.io/privacy/support/">Support</a></p>
-  <p>Effective 24 September 2026. <a href="https://prameyallc.github.io/privacy/">All app privacy policies</a></p>
+  <p>Effective 27 September 2026. <a href="https://prameyallc.github.io/privacy/">All app privacy policies</a></p>
 </div></footer>
 </body>
 </html>

@@ -1,6 +1,6 @@
 # OmniRx Privacy Policy
 
-**Effective date:** 24 September 2026
+**Effective date:** 27 September 2026
 **App:** OmniRx for iPhone and iPad, with its Apple Watch app, its Apple TV app, and its Mac and Apple Vision Pro versions — bundle ID `legal.prameya.OmniRx`
 **Publisher:** Prameya LLC ("Prameya", "we", "us"), a US limited liability company
 **Contact:** admin@prameya.legal
@@ -241,8 +241,9 @@ resets it to the You tab, so it no longer names a page or a record.
 
 The iPhone app and the Apple Watch app talk over Apple's connection between paired devices:
 
-- The iPhone sends the Watch the reminder card: "Medication reminder", the reminder time, and Taken,
-  Skipped and Snooze, plus a card that opens a general label-reading topic on the iPhone. **Medicine
+- The iPhone sends the Watch the reminder card: "Medication reminder", the reminder time **while the
+  daily reminder is on**, and Taken, Skipped and Snooze, plus a card that opens a general
+  label-reading topic on the iPhone. **Medicine
   names are sent to the Watch only if you turn on More → "Show medicine names on Apple Watch"**,
   which is off until you turn it on.
 - Taken, Skipped or Snooze on the Watch is sent to the iPhone. With exactly one medicine followed, the
@@ -251,8 +252,13 @@ The iPhone app and the Apple Watch app talk over Apple's connection between pair
   the way Ask on the iPhone does and sends the answer back. If Ask is off on the iPhone, the answer
   says so. A question from the Watch never starts a model download; a downloaded Ask model answers it
   only while OmniRx is open on the iPhone, and otherwise the answer says to open it.
-- The Watch keeps the reminder time for its complication, and reads the iCloud key-value values above
-  to offer "Continue".
+- The Watch keeps the reminder time for its complication, which shows it on your watch face (for
+  example "08:00") and never shows a medicine name. It keeps the time in storage that only the OmniRx
+  Watch app and its complication share; the iPhone app is not part of it. While the daily reminder is
+  off, which is how it starts, the iPhone sends no time, the Watch removes the one it kept, and the
+  complication shows "Learn". The Watch can take in a new card in the background, without the Watch
+  app being opened; until it does, the complication shows the last time it received.
+- The Watch reads the iCloud key-value values above to offer "Continue".
 
 ### Hugging Face: the optional Ask model
 
@@ -585,7 +591,8 @@ consent.
   deletes the CloudKit preferences record, which iCloud removes from your account the next time the
   device syncs. It cancels the daily reminder (and a snoozed one), resets the Handoff message, clears
   the last Ask answer on your Apple Watch and sends the Watch a new reminder card, which names no
-  medicine because none is followed any more. It cannot be undone. If a file or the preferences record
+  medicine because none is followed any more and carries no time because the reminder is off, so the
+  Watch's complication goes back to "Learn". It cannot be undone. If a file or the preferences record
   cannot be removed from the device, the app tells you rather than claiming a complete delete.
 - **What "Delete all my data" does not reach, stated plainly:**
     - **The CloudKit preferences record, if the device is not signed in to iCloud** when you delete:
@@ -593,7 +600,7 @@ consent.
       (iOS Settings → your name → iCloud → Manage Account Storage).
     - **Your Apple Watch** gets the new reminder card, and loses its last Ask answer, straight away if
       it is connected to your iPhone, or the next time it connects. Until then it shows the last card
-      and the last Ask answer it received.
+      and the last Ask answer it received, and its complication the last reminder time.
     - **Your purchase** stays with your Apple Account.
 - **You can also delete or correct one record at a time.** More → "Open, correct or delete
   one record" lists every medication record, journal entry and habit record on the device. Each
@@ -632,6 +639,17 @@ If we change how OmniRx handles data, we will update this policy and change the 
 top. Meaningful changes — a new network connection, a new permission, anything involving your health
 data — will be described in a short summary of what changed, at the top of this page, and will be
 announced in the app's release notes.
+
+**27 September 2026 — what changed.** With an app update:
+
+- **The Apple Watch complication shows the reminder time, and only while the daily reminder is on.**
+  Earlier versions sent the Watch the reminder time even while the daily reminder was off (08:00 unless
+  you changed it), and the complication, which this page said kept the time, always showed "Learn",
+  because the Watch app and the complication could not read each other's storage. Now the iPhone sends
+  the time only while the reminder is on, the Watch keeps it in storage that only the Watch app and its
+  complication share, the complication shows it, and turning the reminder off or "Delete all my data"
+  puts the complication back to "Learn". The time never leaves your iPhone and your paired Watch, and
+  the complication never shows a medicine name.
 
 **24 September 2026 — what changed.** With an app update:
 
