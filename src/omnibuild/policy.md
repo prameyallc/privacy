@@ -1,7 +1,7 @@
 # OmniBuild Privacy Policy
 
-**Effective date:** 24 September 2026
-**Last updated:** 24 September 2026
+**Effective date:** 27 September 2026
+**Last updated:** 27 September 2026
 **Publisher:** Prameya LLC ("Prameya", "we", "us"), a United States limited liability company
 **App:** OmniBuild for iPhone, iPad, Mac and Apple Vision Pro, with its Apple Watch app and its Apple TV app — bundle ID `legal.prameya.OmniBuild` (Apple Watch: `legal.prameya.OmniBuild.watch`)
 **Contact:** admin@prameya.legal
@@ -115,7 +115,7 @@ Everything in this table is stored by OmniBuild itself. None of it is sent to Pr
 
 The cost figures in older project and decision records are numbers **you** typed. They are your own estimates. The app does no lookup, no comparison against any pricing database, and never adds them up.
 
-What you type into Ask is kept only in memory while the Ask screen is open; it is never saved. The state you pick in **More ▸ Your Location** is not saved and is not sent anywhere. A file you export — the copy of your projects, notes, decision entries, punch items, safety-reminder acknowledgements and profile, or a Pro permit-counter PDF — goes wherever you choose to save or send it.
+What you type into Ask is kept only in memory while the Ask screen is open; it is never saved. A file you export — the copy of your projects, notes, decision entries, punch items, safety-reminder acknowledgements and profile, or a Pro permit-counter PDF — goes wherever you choose to save or send it.
 
 The app database is included in Apple's normal device backup (iCloud Backup or a computer backup) if you use one, under Apple's terms and your control. The downloaded Ask model is excluded from backups. Prameya has no access to your backups.
 
@@ -211,7 +211,7 @@ OmniBuild asks for one permission, and only when you turn on a feature that need
 | Notifications | iPhone and iPad only, and only if you turn on **More ▸ Notifications ▸ Job-log reminders**. See above. |
 | Camera | No. There is no camera feature. |
 | Photos | No. The app does not read or write your photo library. |
-| Location | No. The app never asks for or uses your location, precise or approximate. The state picker in More is a list you choose from, not a location check. |
+| Location | No. The app never asks for or uses your location, precise or approximate. |
 | Microphone | No. |
 | Contacts, Calendar, Reminders | No. |
 | Health / HealthKit | No. See the section below. |
@@ -416,6 +416,12 @@ If we change how OmniBuild handles data, we will update this policy and change t
 
 - For **material** changes — for example, adding an account system, adding any feature that sends your content to us or to a new party, adding advertising or analytics, or using a permission the app does not use today — we will not do it quietly. We will update this policy **before** the change ships where we can, describe plainly what changed, keep the previous version available, and where the change requires your consent, ask for it inside the app rather than assuming it.
 - For minor changes such as clarified wording or a corrected contact detail, we will update the effective date.
+
+**27 September 2026 — what changed.**
+
+- **No state picker.** Earlier versions of this page described a **More ▸ Your Location** state picker, whose choice was neither saved nor sent. The picker did nothing and has been removed from the app, so this page no longer mentions it. OmniBuild has never asked for or used your location, and still does not.
+
+Nothing is sent to Prameya, and that did not change.
 
 **24 September 2026 — what changed.**
 
