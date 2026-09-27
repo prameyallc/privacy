@@ -330,9 +330,12 @@ paired Watch over the same connection; the Watch keeps the latest copy it was se
 <p><strong>Learn</strong> shows the knowledge packs that ship with the Watch app and offers to continue the<br />
 reading you last opened: the iPhone tells the Watch which one over that connection, whether or<br />
 not sync is on, and while a device of yours has sync on the iCloud key-value items can tell it<br />
-too (the newer of the two is used). The complications show that reading's ID, read from the<br />
-iCloud key-value items, or a fixed prompt. <strong>More</strong> shows the disclaimer. The Watch keeps no<br />
-journal, has no Ask and sells nothing.</p>
+too (the newer of the two is used). The complications show the title of the reading named in<br />
+the iCloud key-value items, which the Watch looks up from that reading's ID in the knowledge<br />
+packs it ships, or a fixed prompt ("Review today's habit") when those items name no reading it<br />
+ships, as while sync is off. The app does not save the title: the Watch looks it up each time the<br />
+complication updates, and the key-value items still name the reading only by its ID. <strong>More</strong><br />
+shows the disclaimer. The Watch keeps no journal, has no Ask and sells nothing.</p>
 <h3 id="apple-tv">Apple TV</h3>
 <p>The Apple TV app shows the knowledge packs that ship with it (Library) and offers to continue<br />
 the reading you last opened on another device (Continue), read from the iCloud key-value items,<br />
@@ -546,9 +549,16 @@ ROI figures.</p>
 <p>We update this policy when the app changes what it stores or what leaves the device — where<br />
 we can, before the change ships — and change the dates at the top. Each revision is described<br />
 here.</p>
-<p><strong>27 September 2026 — what changed.</strong> With an app update, the Erase row on Apple Vision Pro,<br />
-which does not sync, is titled <strong>Erase journal</strong>; on iPhone, iPad and Mac it is still <strong>Erase<br />
-journal and iCloud data</strong>. §2 and §8 now give both names.</p>
+<p><strong>27 September 2026 — what changed.</strong> With an app update:</p>
+<ul>
+<li>The Erase row on Apple Vision Pro, which does not sync, is titled <strong>Erase journal</strong>; on iPhone,<br />
+  iPad and Mac it is still <strong>Erase journal and iCloud data</strong>. §2 and §8 now give both names.</li>
+<li>The <strong>Apple Watch complications</strong> show the title of the reading you left off at, which the Watch<br />
+  looks up from the reading's ID in the knowledge packs it ships; before, they showed the ID<br />
+  itself. When the iCloud key-value items name no reading the Watch ships (as while sync is off),<br />
+  they show the fixed prompt, as before. The app does not save the title, and the key-value items<br />
+  still contain no titles (§4).</li>
+</ul>
 <p><strong>24 September 2026 — what changed.</strong> With an app update:</p>
 <ul>
 <li>The <strong>iCloud key-value items</strong> (last tab and reading, entry IDs, appearance, widget state) are<br />

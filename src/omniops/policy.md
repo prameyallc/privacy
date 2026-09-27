@@ -214,9 +214,12 @@ paired Watch over the same connection; the Watch keeps the latest copy it was se
 **Learn** shows the knowledge packs that ship with the Watch app and offers to continue the
 reading you last opened: the iPhone tells the Watch which one over that connection, whether or
 not sync is on, and while a device of yours has sync on the iCloud key-value items can tell it
-too (the newer of the two is used). The complications show that reading's ID, read from the
-iCloud key-value items, or a fixed prompt. **More** shows the disclaimer. The Watch keeps no
-journal, has no Ask and sells nothing.
+too (the newer of the two is used). The complications show the title of the reading named in
+the iCloud key-value items, which the Watch looks up from that reading's ID in the knowledge
+packs it ships, or a fixed prompt ("Review today's habit") when those items name no reading it
+ships, as while sync is off. The app does not save the title: the Watch looks it up each time the
+complication updates, and the key-value items still name the reading only by its ID. **More**
+shows the disclaimer. The Watch keeps no journal, has no Ask and sells nothing.
 
 ### Apple TV
 
@@ -479,9 +482,15 @@ We update this policy when the app changes what it stores or what leaves the dev
 we can, before the change ships — and change the dates at the top. Each revision is described
 here.
 
-**27 September 2026 — what changed.** With an app update, the Erase row on Apple Vision Pro,
-which does not sync, is titled **Erase journal**; on iPhone, iPad and Mac it is still **Erase
-journal and iCloud data**. §2 and §8 now give both names.
+**27 September 2026 — what changed.** With an app update:
+
+- The Erase row on Apple Vision Pro, which does not sync, is titled **Erase journal**; on iPhone,
+  iPad and Mac it is still **Erase journal and iCloud data**. §2 and §8 now give both names.
+- The **Apple Watch complications** show the title of the reading you left off at, which the Watch
+  looks up from the reading's ID in the knowledge packs it ships; before, they showed the ID
+  itself. When the iCloud key-value items name no reading the Watch ships (as while sync is off),
+  they show the fixed prompt, as before. The app does not save the title, and the key-value items
+  still contain no titles (§4).
 
 **24 September 2026 — what changed.** With an app update:
 
