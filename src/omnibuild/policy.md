@@ -43,7 +43,7 @@ OmniBuild is educational software. It is not contracting, engineering, architect
 | iPhone and iPad | The full app: the guides, your projects and notes, Ask, iCloud sync (if you turn it on), Handoff, the optional job-log reminders, the Home Screen widget, the Apple Watch connection, and Apple's age-range check |
 | Mac | The same app without the reminders, the widget, the Watch connection or the age-range check. Ask can use a downloaded on-device model on Macs with 16 GB of memory or more |
 | Apple Vision Pro | The same app without the reminders, the widget, the Watch connection, the age-range check or any model download |
-| Apple Watch | A companion: the guides, a "Continue" link to the guide you last opened, and three prompts you can confirm, which your iPhone records |
+| Apple Watch | A companion: the guides, a "Continue" link to the guide you last opened, three prompts you can confirm, which your iPhone records, and a watch-face complication that can show the name of the project you last opened |
 | Apple TV | The guides, a "Continue" link to the guide you last opened, and an Ask screen that answers by quoting the guide. It keeps no projects or notes and downloads nothing |
 
 ---
@@ -148,7 +148,7 @@ All of this travels through Apple's services under Apple's terms. None of it rea
 
 The Apple Watch app lists the guides, shows a "Continue" link to the guide you last opened (read from the iCloud key-value store, which your devices write only while Sync with iCloud is on there), and shows three prompts: **On site**, **Punch item done** (which your iPhone withdraws when no punch item is open), and **Safety reminder**.
 
-- Your iPhone sends the Watch the list of prompts and the name of the project you last opened, over Apple's connection between the two devices. The Watch keeps that name in its own storage to show it. When no project is open on your iPhone — for example after **Clear All My Logs & Decisions** — your iPhone sends no name and the Watch clears the one it had.
+- Your iPhone sends the Watch the list of prompts and the name of the project you last opened, over Apple's connection between the two devices. The Watch keeps that name in its own storage to show it: in the Watch app and, if you add the OmniBuild complication to a watch face, on the watch face, where anyone who can see your watch can read it (with no name, the complication shows "Codes"). That storage is on the Watch and is shared only between the Watch app and its complication. When no project is open on your iPhone — for example after **Clear All My Logs & Decisions** — your iPhone sends no name and the Watch clears the one it had.
 - Tapping **Confirm** on the Watch sends the tap to OmniBuild on your iPhone, which records it: an "On site" note on the project you last opened (or under "today's work" if you have not opened one), marking the open punch item done, or a safety-reminder acknowledgement. **Snooze** and **Not now** record nothing. None of these is a sign-off or an inspection result.
 - The Watch app has no Ask and downloads nothing.
 
@@ -420,6 +420,7 @@ If we change how OmniBuild handles data, we will update this policy and change t
 **27 September 2026 — what changed.**
 
 - **No state picker.** Earlier versions of this page described a **More ▸ Your Location** state picker, whose choice was neither saved nor sent. The picker did nothing and has been removed from the app, so this page no longer mentions it. OmniBuild has never asked for or used your location, and still does not.
+- **The project name on the watch face.** OmniBuild's Apple Watch complication can now show the name of the project you last opened on your iPhone; until now it always showed "Codes". The Watch app keeps the name in storage on the Watch that only it and its complication share, and clears it when your iPhone sends no name, as before. Anyone who can see your watch face can read it. The "Apple Watch" section and the table of devices say so.
 
 Nothing is sent to Prameya, and that did not change.
 
