@@ -1,6 +1,6 @@
 # OmniPhysics Privacy Policy
 
-**Effective date:** 24 September 2026
+**Effective date:** 27 September 2026
 **Publisher:** Prameya LLC ("Prameya", "we", "us")
 **App:** OmniPhysics for iPhone, iPad, Mac and Apple Vision Pro, with its Apple Watch and Apple TV apps — bundle ID `legal.prameya.OmniPhysics` (iPhone, iPad, Mac, Apple Vision Pro and Apple TV) and `legal.prameya.OmniPhysics.watch` (Apple Watch)
 **Contact:** admin@prameya.legal
@@ -26,7 +26,7 @@
 
 OmniPhysics is an educational physics app (classical mechanics and waves) for learners **13 and older**. It is not in the App Store Kids Category and is not directed at children under 13.
 
-On iPhone, iPad, Mac and Apple Vision Pro it has lessons, interactive labs, the reference packs and Ask. The Apple Watch app shows reminders to continue, lets you read the packs, and can send a question to Ask on your iPhone. The Apple TV app lets you read the packs and pick up where you left off. All of the learning content ships inside the app.
+On iPhone, iPad, Mac and Apple Vision Pro it has lessons, interactive labs, the reference packs and Ask. The Apple Watch app shows reminders to continue, lets you read the packs, and can send a question to Ask on your iPhone. The Apple TV app lets you read the packs and pick up where you left off, and its About tab shows the app's disclaimer, the short version of this policy and the terms. All of the learning content ships inside the app.
 
 ---
 
@@ -69,8 +69,8 @@ them grants exactly the same Pro — there are no separate feature tiers.
 | OmniPhysics Pro Annual | $29.99 | Auto-renews yearly. 7-day free trial where the App Store offers you one. |
 | OmniPhysics Pro Lifetime | $79.99 | One-time purchase. Not a subscription. |
 
-Family Sharing is enabled on all three. Subscriptions renew until you cancel in
-Settings; Lifetime is a one-time non-consumable. The paywall mentions a free trial only when the App Store says you are eligible for it. Pro is sold on iPhone, iPad, Mac and Apple Vision Pro; the Apple Watch and Apple TV apps have no purchase screen.
+Family Sharing is enabled on all three. Subscriptions renew until you cancel (how, on each
+device, is under Cancellation and refunds below); Lifetime is a one-time non-consumable. The paywall mentions a free trial only when the App Store says you are eligible for it. Pro is sold on iPhone, iPad, Mac and Apple Vision Pro; the Apple Watch and Apple TV apps have no purchase screen.
 
 **The knowledge layer is free and stays free.** Without paying anything you get
 the reasoning material, every reference pack, Ask, iCloud sync and the F = ma lab, with no account and no time limit. Pro adds every other lab, wider force and mass ranges in the labs, and formatted lab-notes export.
@@ -97,7 +97,9 @@ In all tiers:
 ### Cancellation and refunds
 
 Subscriptions are managed by Apple:
-- **Cancel:** iOS Settings → your name → Subscriptions → OmniPhysics, or **Manage Subscription** in the app
+- **Cancel on iPhone, iPad or Apple Vision Pro:** Settings → your name → Subscriptions → OmniPhysics
+- **Cancel on a Mac:** the App Store app → your name → Account Settings → Subscriptions → Manage
+- **In the app:** while Pro is active, **Manage Subscription** opens Apple's subscription controls (on a Mac, Apple's subscriptions page)
 - **Refund requests:** reportaproblem.apple.com
 - **Lifetime purchase:** One-time payment, no subscription to cancel
 
@@ -162,7 +164,7 @@ The reminder is scheduled on your device. There is no push server, and nothing a
 ## Apple Watch, Apple TV, the widget and Handoff
 
 - **Apple Watch.** Your iPhone sends the Watch the current reminders and where you left off, over Apple's connection between the two devices. **Confirm**, **Snooze** and **Not now** on the Watch send that choice back to the iPhone, which only opens the app or reposts the reminder; they do not change your records. The Watch also reads where you left off from the iCloud key-value store, and opening a pack on the Watch updates where you left off. The complication shows the lesson or pack you left off at.
-- **Apple TV.** The TV app reads where you left off and your appearance from the iCloud key-value store, and opening a pack on the TV updates where you left off. It stores no progress of its own and has no purchase screen, no notifications and no Ask.
+- **Apple TV.** The TV app reads where you left off and your appearance from the iCloud key-value store, and opening a pack on the TV updates where you left off. It stores no progress of its own and has no purchase screen, no notifications and no Ask. Its **About** tab shows the app's disclaimer, the short version of this policy and the terms line, as text built into the app; it fetches nothing.
 - **Home Screen widget (iPhone and iPad).** The widget shows the next topic you have not worked yet, read from the iCloud key-value store. Starting it from the widget stores that topic there until the app opens it.
 - **Handoff.** On iPhone, iPad, Mac and Apple Vision Pro, the app tells your nearby devices that use the same Apple Account where you left off (the same entry described above).
 
@@ -191,14 +193,14 @@ Not Kids Category. Not directed at children under 13. We do not use progress dat
 
 ## Your choices
 
-- Change your display name, and toggle sound and haptics, in **More**. (Haptics appears only on devices that have them.)
+- Change your display name, and toggle sound and haptics, in **More**. (The Haptics switch appears on iPhone and iPad only; a Mac or Apple Vision Pro does not show it, and the value stays in your profile.)
 - Turn **On-device answers** on or off in **More**. Off hides Ask.
 - On iPhone and iPad, turn **Remind me to continue** on or off in **More**. You can also turn off notifications for OmniPhysics in iOS **Settings**.
 - See every record the app keeps in **More ▸ Your records**, and delete any single lesson record or achievement there. Deleting a record also deletes it from your other devices if sync is on. If where you left off points at the lesson whose record you delete, that is cleared too — on the device, in the iCloud key-value store, on your Apple Watch and in Handoff — along with any queued reminder; if it points at another lesson, it stays as it is.
 - **Export my records** in **More** gives you a JSON file of your profile, every lesson record and every achievement, to save or share wherever you choose. With Pro you can also export formatted lab notes.
 - **Reset progress** in **More**, confirmed with **Delete all my progress**, deletes every lesson record and achievement, sets XP, streaks, hearts and the daily mission back to the start — on this device and, if sync is on, on your other devices — and clears where you left off and the widget's topic from the device and the iCloud key-value store, any queued reminder, and the app's temporary copy of any file you exported. Your Apple Watch, Apple TV and other devices then forget where you left off too, as soon as the change reaches them through iCloud or your iPhone, and Handoff stops offering it. A reminder already queued on another iPhone or iPad is removed the next time OmniPhysics runs there. Your display name, sound, haptics and appearance are settings and stay as they are; **Delete everything** removes them.
-- **Delete everything** in **More**, directly under Reset progress and at the foot of **More ▸ Your records**, confirmed with **Delete everything**, deletes your profile (display name, sound, haptics, XP, streaks, hearts, daily mission and the rest of the profile record), every lesson record and every achievement — on this device and, if sync is on, in your iCloud private database and on your other devices. Like Reset progress, it clears where you left off and the widget's topic from the device and the iCloud key-value store (your Apple Watch, Apple TV, other devices and Handoff then forget where you left off), and removes any queued reminder and the app's temporary copy of any file you exported. It also removes your appearance entry from the iCloud key-value store and sets **Appearance** back to System on this device; Apple TV follows the next time it opens. OmniPhysics then starts again at the first lab with a new, empty profile. **On-device answers**, **Remind me to continue** and your purchases stay (the App Store restores Pro). If sync is off on this device, a copy already in your iCloud stays until you remove the app's iCloud data in Settings.
-- Turn iCloud on or off for OmniPhysics, or remove its iCloud data, in **Settings → [Your Name] → iCloud**. Deleting the app does not remove the copy in iCloud.
+- **Delete everything** in **More**, directly under Reset progress and at the foot of **More ▸ Your records**, confirmed with **Delete everything**, deletes your profile (display name, sound, haptics, XP, streaks, hearts, daily mission and the rest of the profile record), every lesson record and every achievement — on this device and, if sync is on, in your iCloud private database and on your other devices. Like Reset progress, it clears where you left off and the widget's topic from the device and the iCloud key-value store (your Apple Watch, Apple TV, other devices and Handoff then forget where you left off), and removes any queued reminder and the app's temporary copy of any file you exported. It also removes your appearance entry from the iCloud key-value store and sets **Appearance** back to System on this device; Apple TV follows the next time it opens. OmniPhysics then starts again at the first lab with a new, empty profile. **On-device answers**, **Remind me to continue** (iPhone and iPad) and your purchases stay (the App Store restores Pro). If sync is off on this device, a copy already in your iCloud stays until you remove the app's iCloud data in Settings (System Settings on a Mac).
+- Turn iCloud on or off for OmniPhysics, or remove its iCloud data, in **Settings → [Your Name] → iCloud** (on a Mac, **System Settings → [Your Name] → iCloud**). Deleting the app does not remove the copy in iCloud.
 
 ---
 
@@ -215,6 +217,14 @@ Not Kids Category. Not directed at children under 13. We do not use progress dat
 ## Changes to this policy
 
 We will update this policy when the app changes. When we do, we will change the effective date at the top and describe what changed.
+
+**27 September 2026 — what changed.**
+
+- It gives the Mac route for cancelling (the App Store app → your name → Account Settings → Subscriptions → Manage), which the Mac app now names, and the Apple Vision Pro route; it said "iOS Settings" for every device.
+- It says the Haptics switch appears on iPhone and iPad only, and that **Remind me to continue** is an iPhone and iPad switch where it lists what Delete everything leaves; a Mac's iCloud data is removed in System Settings.
+- It describes the Apple TV app's About tab (the disclaimer, the short version of this policy and the terms, as text).
+
+Nothing the app does with your data changed, and nothing is sent to Prameya.
 
 **24 September 2026 — what changed.**
 

@@ -1,6 +1,6 @@
 # Consumer Health Data Privacy Policy — OmniDerm
 
-**Effective date:** 24 September 2026 *(supersedes the 23 September 2026 version; what changed is listed in section 12)*
+**Effective date:** 27 September 2026 *(supersedes the 24 September 2026 version; what changed is listed in section 12)*
 **Publisher:** Prameya LLC ("Prameya", "we", "us"), a United States limited liability company
 **Contact:** admin@prameya.legal
 **Applies to:** the OmniDerm app (bundle ID `legal.prameya.OmniDerm`) on iPhone, iPad, Mac and Apple Vision Pro, its Apple Watch app, its Apple TV app, and its widgets
@@ -47,7 +47,7 @@ So we do not use the Apple definition to argue our way out of Washington law, an
 | **Derived habit measures** | Streak length, 30-day consistency percentage, a plain-language summary | Computed on your device from your own habit records, to show you your own patterns | Computed on this device when shown, and written into an export you make |
 | **Your stated goals** | Free text you type, such as "build daily SPF habit" | Kept so you can see and edit them in Settings, and included in your export and appointment pack. They do not change anything else the app shows or records. | This device, and your device backup |
 | **Questions you type in Ask, and the answers** | Your question, the last few lines of the conversation, and the model's answer | To answer the question, with Apple Intelligence or the model you downloaded, running on the device | In memory for the conversation on screen; not saved, not synced, not sent to us or to any AI service |
-| **Skin-care topics you open** | The identifiers (some name skin conditions) of the topic held for continuing and of the topics you opened from the Home Screen widget or continued from another of your devices, and the next suggested topic. In this version a topic you open by browsing Learn is not recorded. | To let you continue on your other devices and to suggest the next topic | Only if you turn on iCloud Sync and Handoff: your own iCloud key-value storage, and, while the app is open, Handoff to your own nearby devices. Switching it off removes them from iCloud and stops Handoff. |
+| **Skin-care topics you open** | The identifiers (some name skin conditions) of the topic held for continuing — the last topic you opened in Learn, by any route — and of the topics you opened in Learn while the switch was on, and the next suggested topic. | To let you continue on your other devices and to suggest the next topic | Only if you turn on iCloud Sync and Handoff: your own iCloud key-value storage, and, while the app is open, Handoff to your own nearby devices. Switching it off removes them from iCloud and stops Handoff. |
 
 **Not collected, in any sense:** your location (precise or approximate — location metadata is removed from journal photographs), biometric identifiers, genetic data, contacts, microphone or audio, camera input, Apple Health data, clinical health records from any provider, prescriptions, diagnoses, insurance or payment information, gender-affirming or reproductive health information, or any identifier that would let anyone link this app's data to you by name.
 
@@ -132,9 +132,9 @@ We share no consumer health data, of any category, with anyone. There is no cate
 **What iCloud Sync can carry, precisely.** Sync is off unless you switch it on (**Settings → iCloud Sync and Handoff**). When it is on, it uses two stores in your own Apple Account:
 
 - **A preference record in your private CloudKit database**, written only when you tap **Sync Now** and limited in code to five settings: appearance mode, whether reminders are on, the reminder hour, the tab the app opens on, and whether you have acknowledged the app's disclosure. Each is checked in code against a fixed set of values before it is written, so free text cannot travel with them.
-- **iCloud key-value storage**, so your Apple Watch, Apple TV and Home Screen widget can continue where you left off: the tab you were on and, when that tab is Learn, the identifier of the topic held for continuing; your appearance choice; the next suggested topic (identifier, title and a one-line summary); a topic you tapped in the widget until the app opens it; and the list of topics opened from the widget or continued from another of your devices (a topic you open by browsing Learn is not recorded in this version). Because some topics name skin conditions, we treat these identifiers as consumer health data, and they are written only while you have sync switched on.
+- **iCloud key-value storage**, so your Apple Watch, Apple TV and Home Screen widget can continue where you left off: the tab you were on and, when that tab is Learn, the identifier of the topic held for continuing; your appearance choice; the next suggested topic (identifier, title and a one-line summary); a topic you tapped in the widget until the app opens it; and the list of topics you opened in Learn while the switch was on. Because some topics name skin conditions, we treat these identifiers as consumer health data, and they are written only while you have sync switched on.
 
-iCloud Sync never writes journal entries and notes, journal photographs, habit logs, streaks, consistency scores, goals or Ask questions to iCloud, and none of the app's local database is mirrored to iCloud. (A device backup to iCloud is separate: it includes journal entries, habit logs and goals, but not journal photographs — see section 8.) Switching sync off, or Clear All Local Data, removes the key-value entries, deletes the preference record and stops Handoff. If the app cannot reach iCloud at that moment, Clear All says so, and you can delete OmniDerm's iCloud data in iOS Settings → your name → iCloud → Manage Account Storage.
+iCloud Sync never writes journal entries and notes, journal photographs, habit logs, streaks, consistency scores, goals or Ask questions to iCloud, and none of the app's local database is mirrored to iCloud. (A device backup to iCloud is separate: it includes journal entries, habit logs and goals, but not journal photographs — see section 8.) Switching sync off, or Clear All Local Data, removes the key-value entries, deletes the preference record and stops Handoff. If the app cannot reach iCloud at that moment, Clear All says so, and you can delete OmniDerm's iCloud data in Settings → your name → iCloud → Manage Account Storage (on a Mac, System Settings → your name → iCloud → Manage).
 
 We have no affiliates. We use no processors, no analytics vendor, no cloud provider of ours that touches your data, no advertising network, and no AI service provider. We do not disclose consumer health data to law enforcement or anyone else, because we do not have it — a demand made to Prameya for your health data cannot be satisfied.
 
@@ -165,7 +165,7 @@ Washington law requires a separate, signed authorization with specific contents 
 | iCloud Sync and Handoff | Switch **iCloud Sync and Handoff** off in the app's Settings. That stops every write and Handoff, removes OmniDerm's key-value entries from iCloud and deletes the preference record. |
 | Handoff, for every app | iOS Settings → General → AirPlay & Continuity → Handoff off (on a Mac, System Settings → General → AirDrop & Handoff). |
 | On-device Ask model | Switch **Use an on-device model** off in Settings → On-device Ask model (stops a download and unloads the model), and use **Remove the downloaded model** to delete its files. |
-| Reminders | Switch reminders off in the app, or in iOS Settings → Notifications. |
+| Reminders | Switch reminders off in the app, or in the Settings app → Notifications (on a Mac, System Settings → Notifications). |
 | Device backup | Exclude OmniDerm from iCloud Backup (iOS Settings → your name → iCloud → Manage Account Storage → Backups), or stop backing up the device. |
 | Everything at once | Clear All Local Data, then delete the app. |
 
@@ -230,6 +230,13 @@ OmniDerm is not directed to children and has no accounts, no ads, no social feat
 ## 12. Changes to this policy
 
 If we change how OmniDerm handles consumer health data, we will update this policy and change the effective date at the top **before** the change takes effect in the app, and we will tell you inside the app.
+
+**27 September 2026 — what changed.** One change in the app, and this policy follows it:
+
+- **Skin-care topics you open:** every topic you open in Learn, by any route, now becomes the topic held for continuing, and while iCloud Sync and Handoff is on it is written to your own iCloud key-value storage and added to the list of topics you have opened. Before, only a topic opened from the Home Screen widget or continued from another of your devices was, and this policy said a topic opened by browsing Learn was not recorded. With the switch off, nothing is written to iCloud and nothing is offered for Handoff, as before. The category, its purpose and where it goes (your own iCloud and your own nearby devices, never us) are unchanged.
+- **Mac paths:** removing OmniDerm's iCloud data and turning notifications off on a Mac are in System Settings.
+
+Nothing is sent to Prameya.
 
 **24 September 2026 — what changed.** One change in the app, and this policy follows it:
 

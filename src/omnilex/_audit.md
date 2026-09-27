@@ -53,3 +53,19 @@ HEALTH DATA: none. No HealthKit, no health fields; MHMDA / Nevada SB 370 do not 
 - Third-party packages: the package-by-package review of the dependencies' own privacy manifests (LEX-017) is still outstanding; the policy says so.
 - Apple's developer-facing App Store reporting: not audited; the policy makes no claim about its contents.
 - App Store Connect (RESOLVED 2026-09-24, read-only check by the main session, recorded in `docs/superpowers/plans/privacy-fix-owner-answers-2026-09-24.md`): no Connect write is needed. The monthly, annual and lifetime localizations read "On-device document search and clause flags.", the subscription-group localization is just "OmniLex Pro", and the iOS, Mac, TV and visionOS 1.0 listing text has no "never leave" claim. The retired phrase existed only in the repo (ProCatalog/PaywallCopy, fixed in OmniLex#187) and in docs.
+
+## 2026-09-27 (later) — Mac, Apple Vision Pro and Apple TV statements
+
+Owner approved this wave 2026-09-27 ("finish all pending work"). Code read from OmniLex `main` at e2c0284 (merge of PR #203 `fix/platform-release-2026-09-27`; contains #198 platform wave and #199 TV About). Effective date stays 27 September 2026; the short version is unchanged.
+
+CORRECTED — "Downloads wait for Wi-Fi unless you turn on Download over cellular" (model section) and the stored-settings table row
+- `MeteredDownloadCopy` (`OmniLexKit/Sources/Intelligence/MLX/Download/InferencePreferences.swift:50-86`): `#if os(iOS)` "Download over cellular" / waits for "Wi-Fi"; `#else` (Mac, Vision Pro) "Download over Personal Hotspot", hint "When off, model downloads wait for a network that is not a Personal Hotspot." The switch: `Intelligence/MLX/UI/OmniMLXSettingsView.swift:101`.
+
+CORRECTED — cancel path outside the app named only the Settings app
+- `PaywallView.cancelRoute` (`OmniLexKit/Sources/Monetization/PaywallView.swift:394-400`): macOS "Cancel any time in the App Store app → your name → Account Settings → Subscriptions → Manage."; else "Settings app → your name → Subscriptions." (iPhone, iPad, Vision Pro). In-app Manage Subscription unchanged: sheet on iOS/visionOS, `Link` to `https://apps.apple.com/account/subscriptions` on macOS (`AppSurfaces/Features/Settings/Views/SettingsView.swift:422-437`; `Monetization/ProCatalog.swift:225-229`).
+
+ADDED — Apple TV About tab
+- `App/OmniLexTV/OmniLexTVApp.swift:33-35` (tabs resume/library/ask/about), `:84-99`, `TVAboutView` `:335-367`: `LegalDisclosure.short` ("Not Legal Advice") and `domainScopeLine`, `LivingRoomAbout.privacyParagraphs`, the terms line and EULA URL as text. `LexCore/Legal/LivingRoomAbout.swift` is constants; no fetch.
+
+NOTE FOR THE APP
+- `LivingRoomAbout.privacySummary` (`OmniLexKit/Sources/LexCore/Legal/LivingRoomAbout.swift:39-40`) opens "OmniLex Privacy Policy (Prameya LLC), effective 24 September 2026." The published policy has been dated 27 September 2026 since privacy #50 (the Watch topic change), before this revision. The short version it copies is unchanged by this revision; only the date line lags. It is SHA-pinned (`LivingRoomAboutTests`) and matches the Connect "Apple TV Privacy Policy" field, so changing it is an app + Connect change.

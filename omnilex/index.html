@@ -196,7 +196,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 </thead>
 <tbody>
 <tr>
-<td>Your appearance choice, the lowest reading priority to show, the <strong>On-device answers</strong> switch and the <strong>Download over cellular</strong> switch</td>
+<td>Your appearance choice, the lowest reading priority to show, the <strong>On-device answers</strong> switch and the <strong>Download over cellular</strong> switch (called <strong>Download over Personal Hotspot</strong> on a Mac or Apple Vision Pro)</td>
 <td>To apply them</td>
 </tr>
 <tr>
@@ -283,7 +283,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <li><strong>Ask iPhone</strong> sends the question you enter to OmniLex on your paired iPhone. While OmniLex is running on the iPhone, the iPhone answers it the way Ask does — Apple's on-device model where Apple Intelligence is turned on and ready, otherwise a model already downloaded on the iPhone — and sends the answer back; if neither can answer, or the <strong>On-device answers</strong> switch is off on the iPhone, it sends back a short message saying so. A question from the Watch never starts a model download. If the iPhone is not reachable, the question waits until it is.</li>
 </ul>
 <h3 id="apple-tv">Apple TV</h3>
-<p>OmniLex for Apple TV reads the iCloud entries above to offer the reference topic you were reading and to match your appearance choice. It shows reference topics only — never your documents, which are not on the TV — writes nothing to iCloud, downloads no model and runs none: its Ask quotes passages from the reference library that ships with it.</p>
+<p>OmniLex for Apple TV reads the iCloud entries above to offer the reference topic you were reading and to match your appearance choice. It shows reference topics only — never your documents, which are not on the TV — writes nothing to iCloud, downloads no model and runs none: its Ask quotes passages from the reference library that ships with it. Its <strong>About</strong> tab shows the "Not Legal Advice" notice, the short version of this policy and the terms line, as text built into the app, with the web addresses printed for you to type elsewhere; it fetches nothing.</p>
 <p>None of this reaches Prameya.</p>
 <hr />
 <h2 id="re-check-reminders">Re-check reminders</h2>
@@ -337,7 +337,7 @@ own data and can still export its extracted text; only the Pro tools stop.</p>
 <p>To give the free first review once, OmniLex keeps on the device the random identifier of the document that review was spent on. <strong>Delete All Documents &amp; Analyses</strong> does not remove that marker, by design, so deleting your documents does not give a second free review. It never leaves the device.</p>
 <h3 id="cancellation-and-refunds">Cancellation and refunds</h3>
 <p>Subscriptions are managed by Apple:<br />
-- <strong>Cancel:</strong> in OmniLex, <strong>Settings ▸ Pro ▸ Manage Subscription</strong> (on iPhone, iPad and Apple Vision Pro this opens Apple's own subscription sheet; on Mac it opens your App Store account page), or in the Settings app → your name → Subscriptions → OmniLex<br />
+- <strong>Cancel:</strong> in OmniLex, <strong>Settings ▸ Pro ▸ Manage Subscription</strong> (on iPhone, iPad and Apple Vision Pro this opens Apple's own subscription sheet; on Mac it opens your App Store account page), or outside the app: on iPhone, iPad and Apple Vision Pro, in the Settings app → your name → Subscriptions → OmniLex; on a Mac, in the App Store app → your name → Account Settings → Subscriptions → Manage<br />
 - <strong>Refund requests:</strong> reportaproblem.apple.com</p>
 <p>Prameya cannot cancel your subscription or issue refunds. Apple controls all billing.</p>
 <h3 id="storekit-transaction-data">StoreKit transaction data</h3>
@@ -376,7 +376,7 @@ own data and can still export its extracted text; only the Pro tools stop.</p>
 </tr>
 </tbody>
 </table></div>
-<p><strong>When a download starts.</strong> A download of the model selected in Settings starts only when you choose <strong>Download</strong> there (or <strong>Resume</strong> a download you started). Features that need a model — a reading-priority review of a document you import or re-review, a question about a document, a Research explanation, Document Background, Ask, or a question sent from Apple Watch — use a model that is already on the device; if none is, they say so and start nothing. Downloads wait for Wi-Fi unless you turn on <strong>Download over cellular</strong> in the same section. On iPhone and iPad a download may continue for a short time after you leave the app.</p>
+<p><strong>When a download starts.</strong> A download of the model selected in Settings starts only when you choose <strong>Download</strong> there (or <strong>Resume</strong> a download you started). Features that need a model — a reading-priority review of a document you import or re-review, a question about a document, a Research explanation, Document Background, Ask, or a question sent from Apple Watch — use a model that is already on the device; if none is, they say so and start nothing. On iPhone and iPad, downloads wait for Wi-Fi unless you turn on <strong>Download over cellular</strong> in the same section. A Mac or Apple Vision Pro has no cellular connection, so there the switch is <strong>Download over Personal Hotspot</strong>, and with it off a download waits for a network that is not a Personal Hotspot. On iPhone and iPad a download may continue for a short time after you leave the app.</p>
 <p>The request starts at <code>huggingface.co</code>, which redirects the actual file transfer to Hugging Face's own content delivery hosts (for example <code>*.cdn.hf.co</code>; the precise host varies by region, and the download links are signed and short-lived).</p>
 <p>What that request contains:</p>
 <ul>
@@ -533,6 +533,13 @@ own data and can still export its extracted text; only the Pro tools stop.</p>
 <hr />
 <h2 id="changes-to-this-policy">Changes to this policy</h2>
 <p>If we change how OmniLex handles data, we will update this policy and change the effective date at the top.</p>
+<p><strong>Later on 27 September 2026 — what changed.</strong> This revision makes three statements true for the Mac, Apple Vision Pro and Apple TV. Nothing the app does with your data changed, and nothing is sent to Prameya:</p>
+<ul>
+<li><strong>The model download switch.</strong> On a Mac or Apple Vision Pro, which have no cellular connection, the switch is <strong>Download over Personal Hotspot</strong>, and with it off a download waits for a network that is not a Personal Hotspot. The previous version named only <strong>Download over cellular</strong>, the iPhone and iPad switch.</li>
+<li><strong>Cancelling.</strong> How to cancel now gives the Mac path outside the app (the App Store app → your name → Account Settings → Subscriptions → Manage). The previous version gave the Settings app path, which a Mac does not have.</li>
+<li><strong>Apple TV.</strong> The Apple TV app's <strong>About</strong> tab is described: the "Not Legal Advice" notice, the short version of this policy and the terms line, as text in the app.</li>
+</ul>
+<p>The short version is unchanged.</p>
 <p><strong>27 September 2026 — what changed.</strong> The Apple Watch app now also saves the reference topic your iPhone sends it in the "where you left off" entry, without the random document identifier, and removes that entry when your iPhone sends where you left off without a topic. The previous version said the Watch saves only a topic you pin there. The complication reads only that entry, so it now shows "Continue" when the Watch app offers to continue, even before iCloud has delivered the entry, and "Learn" after the topic is cleared on your iPhone. It still shows only "Continue" or "Learn", never a topic's name.</p>
 <p>What the entries hold is unchanged: never a document's title, file name or text. Nothing new is sent to Prameya.</p>
 <p><strong>24 September 2026 — what changed.</strong> The Mac app and the Apple Watch app now use your iCloud key-value storage too:</p>

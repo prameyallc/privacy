@@ -170,8 +170,8 @@ them grants exactly the same Pro — there are no separate feature tiers.</p>
 </tr>
 </tbody>
 </table></div>
-<p>Family Sharing is enabled on all three. Subscriptions renew until you cancel in<br />
-Settings; Lifetime is a one-time non-consumable.</p>
+<p>Family Sharing is enabled on all three. Subscriptions renew until you cancel (how, on each<br />
+device, is under Cancellation and refunds below); Lifetime is a one-time non-consumable.</p>
 <p><strong>The label library is free and stays free.</strong> Without paying anything you get the full label<br />
 library, the daily check for one medicine, up to 30 dose logs, the journal, and both exports, with<br />
 no account and no time limit. Pro lets you follow every medicine you take instead of one, and keeps<br />
@@ -195,7 +195,10 @@ add a second medicine or a 31st log until Pro is active again.</p>
 <p><strong>Subscription unlocks features. It does not change what data is collected or where it goes.</strong></p>
 <h3 id="cancellation-and-refunds">Cancellation and refunds</h3>
 <p>Subscriptions are managed by Apple:<br />
-- <strong>Cancel:</strong> iOS Settings → your name → Subscriptions → OmniRx, or More → the subscription row in the app<br />
+- <strong>Cancel on iPhone or iPad:</strong> the Settings app → your name → Subscriptions → OmniRx<br />
+- <strong>Cancel on a Mac:</strong> the App Store app → your name → Account Settings → Subscriptions → Manage<br />
+- <strong>Cancel on Apple Vision Pro:</strong> Settings → your name → Subscriptions → OmniRx<br />
+- <strong>In the app:</strong> a monthly or annual subscriber can use More → <strong>Manage subscription</strong>, which opens Apple's subscription controls (on a Mac, Apple's subscriptions page)<br />
 - <strong>Refund requests:</strong> reportaproblem.apple.com</p>
 <p>Prameya cannot cancel your subscription or issue refunds. Apple controls all billing.</p>
 <h3 id="storekit-transaction-data">StoreKit transaction data</h3>
@@ -447,8 +450,8 @@ downloads only when you tap a button on the Ask screen that names it and its siz
 offers none when it does not. It checks again right before each load: if the model does not fit then,<br />
 it is not loaded, and where the device's row lists a smaller model, the Ask screen offers that one as a<br />
 separate download that you also choose. It checks free storage before a download. The download runs only while OmniRx is open (on iPhone, iPad and Apple Vision Pro<br />
-the screen stays on while it runs). Wi-Fi is recommended; it can use cellular data, but not while Low<br />
-Data Mode is on. A weights file that is cut off part-way starts again from its beginning.</p>
+the screen stays on while it runs). Wi-Fi is recommended; it can use cellular data (on a Mac or Apple Vision Pro, a Personal Hotspot),<br />
+but not while Low Data Mode is on. A weights file that is cut off part-way starts again from its beginning.</p>
 <p>The downloaded files are the model's weights, its tokenizer and configuration files and a<br />
 prompt-formatting template, pinned to one commit and checked against values built into the app —<br />
 every file's size before each load, and its checksum the first time the files are seen — so files that<br />
@@ -748,14 +751,23 @@ data — will be described in a short summary of what changed, at the top of thi
 announced in the app's release notes.</p>
 <p><strong>27 September 2026 — what changed.</strong> With an app update:</p>
 <ul>
-<li><strong>The Apple Watch complication shows the reminder time, and only while the daily reminder is on.</strong><br />
+<li>
+<p><strong>How to cancel, on each device.</strong> This page gave only the iPhone and iPad route. It now also gives<br />
+  the Mac route (the App Store app → your name → Account Settings → Subscriptions → Manage) and the<br />
+  Apple Vision Pro route, which the app's own purchase screen now names on those devices, and says that<br />
+  More → <strong>Manage subscription</strong> is shown to a monthly or annual subscriber. Nothing about your data<br />
+  changed.</p>
+</li>
+<li>
+<p><strong>The Apple Watch complication shows the reminder time, and only while the daily reminder is on.</strong><br />
   Earlier versions sent the Watch the reminder time even while the daily reminder was off (08:00 unless<br />
   you changed it), and the complication, which this page said kept the time, always showed "Learn",<br />
   because the Watch app and the complication could not read each other's storage. Now the iPhone sends<br />
   the time only while the reminder is on, the Watch keeps it in storage that only the Watch app and its<br />
   complication share, the complication shows it, and turning the reminder off or "Delete all my data"<br />
   puts the complication back to "Learn". The time never leaves your iPhone and your paired Watch, and<br />
-  the complication never shows a medicine name.</li>
+  the complication never shows a medicine name.</p>
+</li>
 </ul>
 <p><strong>24 September 2026 — what changed.</strong> With an app update:</p>
 <ul>

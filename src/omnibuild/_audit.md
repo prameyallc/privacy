@@ -91,3 +91,19 @@ Owner decision of 2026-09-27 ("do everything.. go ahead"): the Apple Watch compl
 - THE WATCH APP'S OWN COPY — `OmniBuildWatchApp.swift:34` removes the name that earlier builds left, unread, in the Watch app's own defaults.
 - MANIFESTS — both Watch manifests declare UserDefaults with CA92.1 and 1C8F.1; still no tracking, no tracking domains, no collected data types, so the "App Store privacy labels" paragraph stays true.
 - NOT CHANGED — nothing new leaves the Watch or the iPhone: the name already travelled over WatchConnectivity (`AppSurfaces/WristCommandHandler.swift:65-73`). Nothing reaches Prameya.
+
+## 2026-09-27 (later) — Mac and Vision Pro cancel paths; the Apple TV About page
+
+Owner approved this wave 2026-09-27 ("finish all pending work"). Code read from OmniBuild `main` at ca87a39 (merge of PR #155 `fix/platform-release-2026-09-27`). The policy keeps 27 September 2026 and its short version: `OmniBuildKit/Sources/Knowledge/LivingRoomLegalCopy.swift:45-79` copies the date line and policy lines 15-23 verbatim, SHA-256-pinned by `OmniBuildKit/Tests/KnowledgeTests/LivingRoomLegalCopyTests.swift:21` (the rebuilt text from this revision still hashes to the pinned value; nothing inside lines 3 or 15-23 was edited).
+
+CORRECTED — "To cancel: Open Settings on your iPhone or iPad …" had no Mac or Vision Pro route; "renew until you cancel in Settings"
+- `PaywallCopy` (`OmniBuildKit/Sources/BuildCore/Subscriptions/PaywallCopy.swift:54-71`): macOS `autoRenewLine` "Cancel in the App Store app." and `cancelLine` "… in the App Store app → your name → Account Settings → Subscriptions → Manage."; otherwise (iPhone, iPad, Vision Pro) "… in Settings → your name → Subscriptions." Apple support 118428 gives the same Mac steps.
+
+ADDED — Apple TV About page (device table and "Apple TV" section)
+- `App/OmniBuildTV/OmniBuildTVApp.swift:62-87` (Continue, Library, Ask, About); `TVAboutView` `:471-507`: "OmniBuild", "Version …" (bundle `CFBundleShortVersionString`), "What OmniBuild is" (first-run disclosure), "Privacy Policy" (`LivingRoomLegalCopy`), terms line and EULA URL, all as text; nothing fetched.
+
+VERIFIED, NO CHANGE
+- The model sentence (Gemma 4 E4B default on 24 GB+ Macs, opt-in on 16-18 GB, none elsewhere): `Intelligence/ModelCatalog/BuildModelTier.swift:167-209`; PR #155 changed only the 16-18 GB caption (`BuildModelConsent.swift:162-164`). No download switch exists.
+
+NOTE FOR THE APP
+- The in-app Terms give only the Settings route on every platform (`OmniBuildKit/Sources/BuildCore/Legal/BuildTermsOfUse.swift:230-232`); Terms are a separate owner decision.

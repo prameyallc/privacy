@@ -1,6 +1,6 @@
 # OmniDent Consumer Health Data Privacy Policy
 
-**Effective date:** 27 September 2026 *(supersedes the 26 September 2026 version; names the unlock each device asks for before an adult record opens from a child session, where the previous version said Face ID or the device passcode on every device.)*
+**Effective date:** 27 September 2026 *(supersedes the 26 September 2026 version; names the unlock each device asks for before an adult record opens from a child session, where the previous version said Face ID or the device passcode on every device; later the same day, says that Pro's full photo history is on iPhone and iPad, the only devices that keep photos.)*
 **Publisher:** Prameya LLC, a United States limited liability company ("Prameya", "we", "us")
 **Contact:** admin@prameya.legal
 **This policy lives at:** https://prameyallc.github.io/privacy/omnident/health-data/
@@ -124,7 +124,7 @@ Free and Pro:
 - Store data in the same location (on your device)
 - Send data to the same places (the continue note described above, in both tiers; nothing to Prameya)
 
-**Pro unlocks full photo history, reminder cadence, and a print-ready visit sheet. It does not change what data is collected, how it is processed, or where it goes.**
+**Pro unlocks full photo history (on iPhone and iPad, the only devices that keep photos), reminder cadence, and a print-ready visit sheet. It does not change what data is collected, how it is processed, or where it goes.**
 
 ### What changes between tiers
 
@@ -327,6 +327,8 @@ If we change the categories of consumer health data we collect, add a source, ad
 1. update this policy and change the effective date;
 2. **obtain your affirmative consent before collecting or processing for the new category or purpose**, as RCW 19.373.020(1)(c) and (1)(d) require — before the change takes effect, not after;
 3. show an in-app notice describing what changed.
+
+**Later on 27 September 2026 — what changed.** This policy now says that Pro's full photo history is on iPhone and iPad. The Mac and Apple Vision Pro take no photo and receive none, so there Pro unlocks the reminder cadence and the print-ready visit sheet. No category, source, purpose or recipient is added, and nothing is sent to Prameya.
 
 **27 September 2026 — what changed.** The children's table said an adult record is behind Face ID or the device passcode. It is behind whatever unlock the device has: Face ID or Touch ID on iPhone and iPad, Touch ID or your Mac password on a Mac, Optic ID on Apple Vision Pro, or the device passcode. The lock itself did not change. No category, source, purpose or recipient is added, and nothing is sent to Prameya.
 

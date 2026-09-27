@@ -117,3 +117,18 @@ POLICY CHANGES (policy.md)
 VERIFIED, NO CHANGE
 - health-data.md: the reminder time is a reminder setting, not a listed category of consumer health data, and the Watch bullet there names only the card and the optional medicine names; no sentence becomes false. Not edited.
 - The time is not sent to Prameya, iCloud or anyone else; it travels only over WatchConnectivity between the user's own paired devices.
+
+## 2026-09-27 (later) — cancel paths on Mac and Apple Vision Pro; hotspot wording
+
+Owner approved this wave 2026-09-27 ("finish all pending work"). Code read from OmniRx `main` at 1be5679 (merge of PR #158 `fix/platform-release-2026-09-27`). The policy keeps 27 September 2026, which `OmniRxKit/Sources/RxCore/Content/RxTVAboutCopy.swift:34` pins ("effective 27 September 2026"); the short version (RxTVAboutCopy `:36-86`) is unchanged. The health policy is not changed.
+
+CORRECTED — "Cancel: iOS Settings → your name → Subscriptions → OmniRx, or More → the subscription row" and "renew until you cancel in Settings"
+- `PaywallView.cancelPath(on:)` (`OmniRxKit/Sources/AppSurfaces/Features/Settings/PaywallView.swift:405-411`): macOS "App Store app → your name → Account Settings → Subscriptions → Manage"; visionOS "Settings → your name → Subscriptions"; iOS "Settings app → your name → Subscriptions". Pinned by `PaywallTermsTests`.
+- The More row manages a subscription only as "Manage subscription" (`RxCore/Monetization/SubscriptionTier.swift:202`; lifetime reads "Pro — lifetime", free opens the paywall); `RxSettingsView.swift:448-456`: sheet on iOS/visionOS, `openURL("https://apps.apple.com/account/subscriptions")` on macOS.
+
+CORRECTED — "it can use cellular data, but not while Low Data Mode is on" named only cellular
+- `DownloadSessionFactory` (`OmniRxKit/Sources/Intelligence/MLX/Download/DownloadSessionFactory.swift:25-26`): `allowsExpensiveNetworkAccess = true`, `allowsConstrainedNetworkAccess = false`, no platform branch; on a Mac or Vision Pro the expensive path is a Personal Hotspot. There is no download switch.
+
+VERIFIED, NO CHANGE
+- Model table rows for Mac, Vision Pro, Apple TV and Watch (`Intelligence/…/RxModelTier.swift:196-297`); "Apple TV has no Ask" (`App/OmniRxTV/OmniRxTVApp.swift:7-10`, `:34-41`); TV writes the page ID (`:354-357`).
+- Not described and not contradicted: the Apple TV About tab (`OmniRxTVApp.swift:98-101`, `:436-481`) and the TV reader's safety blocks (#158).

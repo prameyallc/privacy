@@ -58,3 +58,25 @@ NET: post-wave-2, the honest description is — user-entered financial informati
 - Two parallel source trees still exist (WEALTH-010). The stripped OmniWealth/ copies of Info.plist, entitlements and PrivacyInfo.xcprivacy differ materially from the root ones the Xcode target signs with. Whoever verifies this policy must check the ROOT files, not the SPM-tree copies.
 - App Store age rating and category: confirm the app is not placed in the Kids Category and 'Medical or wellness topics' is answered No (true only once HealthKit is removed).
 - Is the effective date of 2026-08-08 correct given wave 2 is still in flight? If the app ships later, the date should match the state of the binary being described, or the TO VERIFY notes must be resolved first.
+## 2026-09-27 — Mac, Apple Vision Pro and Apple TV statements
+
+Owner approved this wave 2026-09-27 ("finish all pending work"). Code read from OmniWealth `main` at 54e08a0 (merge of PR #158 `fix/platform-release-2026-09-27`; contains #154 platform wave and #155 TV About). Policy re-dated 27 September 2026 (it said 24 September); the short version is unchanged.
+
+CORRECTED — Mac cancel path "App Store app → Account (sign-in name) → View Information → Subscriptions → Manage"; Vision Pro path missing
+- `ProCancelRoute` (`WealthKit/Sources/WealthCore/Monetization/SubscriptionTier.swift:186-211`): macOS "Cancel in the App Store app ▸ your name ▸ Account Settings ▸ Subscriptions ▸ Manage."; otherwise (iPhone, iPad, Vision Pro) "Cancel in Settings ▸ your name ▸ Subscriptions." Apple support 118428 gives the same Mac steps.
+
+CORRECTED — "a subscriber sees Manage Subscription under More ▸ Subscription, which opens Apple's own subscription controls"
+- `WealthKit/Sources/AppSurfaces/Features/Settings/SettingsView.swift:667-673`: shown for `.autoRenewing` only; Lifetime sees "Pro is yours for life. Nothing renews." `:722-736`: `manageSubscriptionsSheet` on iOS/visionOS; on macOS a `Link` to `https://apps.apple.com/account/subscriptions` (`SubscriptionTier.swift:316-318`).
+
+CORRECTED — "MLX is also in the Apple TV app" (Third parties)
+- `App/OmniWealthTV/OmniWealthTVApp.swift:9-12`: "NO ASK ON APPLE TV … so is the Intelligence link (and with it MLX) from this target"; imports Continuity, DesignSystem, Knowledge, SwiftUI, WealthCore (`:15-19`). Only the host target links `Intelligence` (`OmniWealth.xcodeproj/project.pbxproj:38`, `:193`); MLX comes only through Intelligence (`WealthKit/Package.swift`). PR #154 (8ac1107) removed it; pinned by `WealthKit/Tests/LivingRoomContractTests/TVHomeContractTests.swift`.
+
+ADDED — Apple TV About tab
+- `App/OmniWealthTV/OmniWealthTVApp.swift:52-68` (Continue, Library, About), `TVAboutView` (`:280-332`): `PackBrowser.educationFooter`, `WealthPrivacySummary.headline` and rows, full-policy and contact lines, terms line and EULA URL, all constants.
+
+NOTE FOR THE APP (date pin)
+- `WealthPrivacySummary.headline` (`WealthKit/Sources/WealthCore/Compliance/WealthPrivacySummary.swift:49`) reads "OmniWealth Privacy Policy (Prameya LLC), effective 24 September 2026." and is the first line of the App Store Connect "Apple TV Privacy Policy" field. With this revision the policy is dated 27 September 2026; the short-version rows it copies are unchanged. The headline and the Connect field need the new date (app + Connect change, as OmniRx did in #158).
+
+VERIFIED, NO CHANGE
+- Mac and Vision Pro do not use iCloud: `WealthKit/Sources/Continuity/ContinuityStore.swift:20-28` (`.default` on iOS and tvOS, `nil` otherwise); Mac entitlements have no KVS identifier; `cloudKitDatabase: .none`.
+- No download switch exists on any platform (no model is offered; Gate R pending).

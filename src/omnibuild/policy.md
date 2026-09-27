@@ -44,7 +44,7 @@ OmniBuild is educational software. It is not contracting, engineering, architect
 | Mac | The same app without the reminders, the widget, the Watch connection or the age-range check. Ask can use a downloaded on-device model on Macs with 16 GB of memory or more |
 | Apple Vision Pro | The same app without the reminders, the widget, the Watch connection, the age-range check or any model download |
 | Apple Watch | A companion: the guides, a "Continue" link to the guide you last opened, three prompts you can confirm, which your iPhone records, and a watch-face complication that can show the name of the project you last opened |
-| Apple TV | The guides, a "Continue" link to the guide you last opened, and an Ask screen that answers by quoting the guide. It keeps no projects or notes and downloads nothing |
+| Apple TV | The guides, a "Continue" link to the guide you last opened, an Ask screen that answers by quoting the guide, and an About page (what OmniBuild is, the short version of this policy and the terms, as text). It keeps no projects or notes and downloads nothing |
 
 ---
 
@@ -59,8 +59,8 @@ them grants exactly the same Pro — there are no separate feature tiers.
 | OmniBuild Pro Annual | $29.99 | Auto-renews yearly. 7-day free trial where your Apple Account is eligible. |
 | OmniBuild Pro Lifetime | $79.99 | One-time purchase. Not a subscription. |
 
-Family Sharing is enabled on all three. Subscriptions renew until you cancel in
-Settings; Lifetime is a one-time non-consumable. The prices, the trial and how to cancel are also shown on the paywall in the app and in the [OmniBuild Terms of Use](https://prameyallc.github.io/privacy/omnibuild/terms/).
+Family Sharing is enabled on all three. Subscriptions renew until you cancel (how, on each
+device, is under Cancellation and refunds below); Lifetime is a one-time non-consumable. The prices, the trial and how to cancel are also shown on the paywall in the app and in the [OmniBuild Terms of Use](https://prameyallc.github.io/privacy/omnibuild/terms/).
 
 **The knowledge layer is free and stays free.** Without paying anything you get
 the full standards library, including every state pack, Ask, up to two projects with their notes, and an export of all your records, with no account and no time limit. Pro adds two things: keeping more than two projects, and a print-ready PDF of a project for the permit counter.
@@ -83,7 +83,7 @@ The difference is **which tools you get**, not data handling. The standards libr
 
 Subscriptions are managed entirely through your Apple ID:
 
-- **To cancel:** Open Settings on your iPhone or iPad → tap your name → Subscriptions → OmniBuild → Cancel Subscription.
+- **To cancel:** Open Settings on your iPhone or iPad → tap your name → Subscriptions → OmniBuild → Cancel Subscription. On Mac, open the App Store app → your name → Account Settings → Subscriptions → Manage. On Apple Vision Pro, open Settings → your name → Subscriptions → OmniBuild → Cancel Subscription.
 - **Refund requests:** Handled by Apple, not Prameya. See [reportaproblem.apple.com](https://reportaproblem.apple.com/) or contact Apple Support. We have no access to your payment information and cannot issue refunds ourselves.
 - **What happens to your data when you cancel:** Nothing. Your projects and notes stay where they were. Canceling removes the Pro tools — adding a project beyond two, and the permit-counter PDF — but it does not delete anything, and the standards library stays fully available.
 
@@ -158,7 +158,7 @@ None of this reaches Prameya.
 
 ## Apple TV
 
-The Apple TV app shows the guides and a "Continue" link to the guide you last opened, and matches your appearance choice, both read from the iCloud key-value store, which your other devices write only while Sync with iCloud is on there. Its Ask screen answers by quoting the guide you pick; it runs no language model, downloads nothing, and does not save your question. The Apple TV app keeps no projects or notes.
+The Apple TV app shows the guides and a "Continue" link to the guide you last opened, and matches your appearance choice, both read from the iCloud key-value store, which your other devices write only while Sync with iCloud is on there. Its Ask screen answers by quoting the guide you pick; it runs no language model, downloads nothing, and does not save your question. Its About page shows the app's version, what OmniBuild is, the short version of this policy with the full-policy and contact addresses, and the terms line, all as text built into the app; it fetches nothing. The Apple TV app keeps no projects or notes.
 
 ---
 
@@ -421,6 +421,9 @@ If we change how OmniBuild handles data, we will update this policy and change t
 
 - **No state picker.** Earlier versions of this page described a **More ▸ Your Location** state picker, whose choice was neither saved nor sent. The picker did nothing and has been removed from the app, so this page no longer mentions it. OmniBuild has never asked for or used your location, and still does not.
 - **The project name on the watch face.** OmniBuild's Apple Watch complication can now show the name of the project you last opened on your iPhone; until now it always showed "Codes". The Watch app keeps the name in storage on the Watch that only it and its complication share, and clears it when your iPhone sends no name, as before. Anyone who can see your watch face can read it. The "Apple Watch" section and the table of devices say so.
+
+- **Cancelling on a Mac or Apple Vision Pro.** How to cancel now gives the Mac route (the App Store app → your name → Account Settings → Subscriptions → Manage), which a Mac uses instead of Settings, and the Apple Vision Pro route, as well as iPhone and iPad.
+- **The Apple TV About page.** The Apple TV app's About page (what OmniBuild is, the short version of this policy and the terms, as text) is now described.
 
 Nothing is sent to Prameya, and that did not change.
 

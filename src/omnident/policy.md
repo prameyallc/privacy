@@ -1,6 +1,6 @@
 # OmniDent Privacy Policy
 
-**Effective date:** 27 September 2026 *(supersedes the 26 September 2026 version; names the unlock each device asks for when you leave a child session, where the previous version said Face ID or the device passcode on every device)*
+**Effective date:** 27 September 2026 *(supersedes the 26 September 2026 version; names the unlock each device asks for when you leave a child session, where the previous version said Face ID or the device passcode on every device; later the same day, says what the Mac and Apple Vision Pro offer — the two text models, Download over Personal Hotspot, no photo history in Pro — gives the Mac and Apple Vision Pro cancellation paths, and adds the Apple TV app's About tab)*
 **Publisher:** Prameya LLC, a United States limited liability company ("Prameya", "we", "us")
 **Contact:** admin@prameya.legal
 **This policy lives at:** https://prameyallc.github.io/privacy/omnident/
@@ -64,11 +64,11 @@ them grants exactly the same Pro — there are no separate feature tiers.
 | OmniDent Pro Annual | $29.99 | Auto-renews yearly. 7-day free trial. |
 | OmniDent Pro Lifetime | $79.99 | One-time purchase. Not a subscription. |
 
-Family Sharing is enabled on all three. Subscriptions renew until you cancel in
-Settings; Lifetime is a one-time non-consumable.
+Family Sharing is enabled on all three. Subscriptions renew until you cancel (how, on each
+device, is under Cancellation and refunds below); Lifetime is a one-time non-consumable.
 
 **The knowledge layer is free and stays free.** Without paying anything you get
-your routine, the reference library, a visit-prep outline and the visit sheet, with no account and no time limit. You can take as many photos as you like; the free timeline, compare and visit sheet show your three most recent, and every photo stays on your device and in your export. Pro adds full photo history, cadence reminders and the print-ready visit sheet.
+your routine, the reference library, a visit-prep outline and the visit sheet, with no account and no time limit. You can take as many photos as you like; the free timeline, compare and visit sheet show your three most recent, and every photo stays on your device and in your export. Pro adds full photo history (on iPhone and iPad, the only devices that keep photos), cadence reminders and the print-ready visit sheet.
 
 **Pro does not add cloud sync, and there is no paid iCloud option.** OmniDent stores your
 records on your device in every case, paid or not. If a subscription lapses you keep your
@@ -80,7 +80,7 @@ own data and can still export it in its raw form; only the Pro tools stop.
 **Both tiers process the same consumer health data** (listed in the [Consumer Health Data Privacy Policy](https://prameyallc.github.io/privacy/omnident/health-data/)).
 
 - **Free:** Photos analysed on-device, as many photos as you like with the three most recent shown, habits logged locally, your routine, the reference library, a visit-prep outline and the visit sheet
-- **With Pro:** Photos analysed on-device (same models), full photo history, habits logged locally, cadence reminders and the print-ready visit sheet
+- **With Pro:** Photos analysed on-device (same models), full photo history, habits logged locally, cadence reminders and the print-ready visit sheet. The Mac and Apple Vision Pro keep no photos, so there Pro adds the cadence reminders and the print-ready visit sheet
 
 In both tiers:
 - Photos stay on your device
@@ -93,7 +93,9 @@ In both tiers:
 ### Cancellation and refunds
 
 Subscriptions are managed by Apple:
-- **Cancel:** iOS Settings → your name → Subscriptions → OmniDent
+- **Cancel on iPhone or iPad:** Settings → your name → Subscriptions → OmniDent
+- **Cancel on a Mac:** the App Store app → your name → Account Settings → Subscriptions → Manage
+- **Cancel on Apple Vision Pro:** Settings → your name → Subscriptions → OmniDent
 - **Refund requests:** reportaproblem.apple.com
 
 Prameya cannot cancel your subscription or issue refunds. Apple controls all billing.
@@ -152,7 +154,7 @@ Record lets you add a document you pick with the system file picker (or drop ont
 
 ### Files you share yourself
 
-**Share care summary** (under More, adult sessions only) builds a short summary — the active person's display name, their care streak, the number of recent care days, the dates of the photos you select — and, with Pro, a one-page PDF of it, and hands that together with small previews of the photos you selected to the iOS share sheet. **Export My Data** (section 10) and the household transfer file work the same way. OmniDent sends none of these anywhere itself: each goes only where you send it from the share sheet.
+**Share care summary** (under More, adult sessions only) builds a short summary — the active person's display name, their care streak, the number of recent care days, the dates of the photos you select — and, with Pro, a one-page PDF of it, and hands that together with small previews of the photos you selected to the iOS share sheet. On a Mac or Apple Vision Pro, which keep no photos, it shares your care days alone. **Export My Data** (section 10) and the household transfer file work the same way. OmniDent sends none of these anywhere itself: each goes only where you send it from the share sheet.
 
 ### Visit dates in Spotlight
 
@@ -203,11 +205,11 @@ The downloadable models are not shipped inside the app. **Downloads come from Hu
 
 | Question | Answer |
 |---|---|
-| Which models? | Three, each pinned to one published version: **Qwen2.5 0.5B** (`mlx-community/Qwen2.5-0.5B-Instruct-4bit`, about 280 MB, text), **Gemma 4 E2B** (`mlx-community/gemma-4-e2b-it-4bit`, about 850 MB, text) and **SmolVLM Instruct** (`mlx-community/SmolVLM-Instruct-4bit`, about 1 GB, reads photos). The same list is offered on iPhone, iPad, Mac and Apple Vision Pro. |
+| Which models? | Three, each pinned to one published version: **Qwen2.5 0.5B** (`mlx-community/Qwen2.5-0.5B-Instruct-4bit`, about 280 MB, text), **Gemma 4 E2B** (`mlx-community/gemma-4-e2b-it-4bit`, about 850 MB, text) and **SmolVLM Instruct** (`mlx-community/SmolVLM-Instruct-4bit`, about 1 GB, reads photos). iPhone and iPad offer all three. **The Mac and Apple Vision Pro offer the two text models only**: they take no photo and receive none, so SmolVLM is not offered there, not used and not loaded; a copy already downloaded there still appears under your downloaded models so you can delete it. |
 | What is sent to Hugging Face? | Requests for the model's files — the repository name and the files being fetched. Like any web request, it shows Hugging Face your IP address and a user-agent that names OmniDent. |
 | Is any of your content sent? | **No.** No photograph, no analysis result, no habit log, no question you typed, no identifier of you. |
 | When does it happen? | Only when you tap Download in **Settings → AI Models → Manage Models**. Taking a photo, reading a photo, asking in Ask or asking from Apple Watch never starts a download — if the model is not already on disk, the feature says so instead. |
-| Over what connection? | Wi-Fi only, unless you turn on **Download over cellular** in Manage Models. It is off by default; with it off, a download waits for Wi-Fi. |
+| Over what connection? | On iPhone and iPad, Wi-Fi only, unless you turn on **Download over cellular** in Manage Models; with it off, a download waits for Wi-Fi. On a Mac or Apple Vision Pro, which have no cellular connection, the same switch is **Download over Personal Hotspot**; with it off, a download waits for a network that is not a Personal Hotspot. It is off by default on every device. |
 | Where do they go? | Onto your device, inside the app's storage. You can delete any downloaded model from the same screen. **Delete All Scans & Data** also deletes them. |
 
 Each model row shows its approximate download size. Settings names `huggingface.co` under AI Models. The app does **not** show the model's licence before a download begins. This section is that disclosure.
@@ -305,11 +307,11 @@ The Apple Watch app works with the iPhone app over Apple's paired-device connect
 
 ### Apple TV
 
-The Apple TV app has three tabs: **Continue**, **Library** and **Ask**. It uses the same bundle identifier as the iPhone app. It reads the continue entry from your iCloud key-value store, which holds no name and no topic: while iCloud Sync is on, its Continue tab says which tab you were last in on another device and offers the Library. **The TV shows no person's name** and does not open the topic you last read. Ask on Apple TV answers only with a matching passage from the built-in library (a short list of question words gets a fixed reply instead); it runs no language model and downloads nothing. The TV app has no camera, photos, household records, Apple Health or purchases.
+The Apple TV app has four tabs: **Continue**, **Library**, **Ask** and **About**. It uses the same bundle identifier as the iPhone app. It reads the continue entry from your iCloud key-value store, which holds no name and no topic: while iCloud Sync is on, its Continue tab says which tab you were last in on another device and offers the Library. **The TV shows no person's name** and does not open the topic you last read. Ask on Apple TV answers only with a matching passage from the built-in library (a short list of question words gets a fixed reply instead); it runs no language model and downloads nothing. **About** shows the app's educational disclaimer, the short version of this policy, and the addresses of this policy, the Consumer Health Data Privacy Policy and the terms, as text built into the app: it fetches nothing and opens no link. The TV app has no camera, photos, household records, Apple Health or purchases.
 
 ### Mac and Apple Vision Pro
 
-The same app runs on Mac and Apple Vision Pro, with the same iCloud Sync, continue note, Handoff, Ask and model downloads as on iPhone. Neither has camera capture, and the Mac app has no Apple Health.
+The same app runs on Mac and Apple Vision Pro, with the same iCloud Sync, continue note, Handoff and Ask as on iPhone. Neither has camera capture, and the Mac app has no Apple Health. Because neither keeps a photo, neither offers the photo-reading model (SmolVLM) or the photo reading: they offer the two text models, and their download switch is **Download over Personal Hotspot** (section 4).
 
 ### No push notifications
 
@@ -430,7 +432,7 @@ The file does **not** contain: the photo reading, household names, visits, plan 
 It leaves, and we list them so you are not surprised:
 
 - **your iCloud Sync switch**, deliberately — deleting data does not change your sync choice;
-- two device settings that are not about you: whether downloads may use cellular, and the camera framing choice;
+- two device settings that are not about you: whether downloads may use cellular (on a Mac or Apple Vision Pro, a Personal Hotspot), and the camera framing choice;
 - your Sign in with Apple entries in the Keychain (Delete Account removes them);
 - anything already written to Apple Health or copied to your Photos library, and Apple's own purchase records.
 
@@ -563,6 +565,16 @@ If something in your mouth hurts, bleeds, changes, or worries you, see a dentist
 ## 19. Changes to this policy
 
 We will update this policy when the app's behaviour changes — and we will update it **before** the change ships, not after.
+
+**Later on 27 September 2026 — what changed.** OmniDent was changed for the Mac and Apple Vision Pro, and this policy describes the app with those changes. iPhone and iPad are unchanged.
+
+- The Mac and Apple Vision Pro no longer offer SmolVLM, the model that reads photos: they keep no photo for it to read. They offer the two text models. The previous version said the same three models were offered on every device.
+- On a Mac or Apple Vision Pro the download switch is **Download over Personal Hotspot**, and with it off a download waits for a network that is not a Personal Hotspot. The previous version named only the iPhone and iPad switch, **Download over cellular**.
+- Pro's full photo history is on iPhone and iPad; on a Mac or Apple Vision Pro, Pro adds the cadence reminders and the print-ready visit sheet. Share care summary there shares care days alone.
+- How to cancel now gives the Mac path (the App Store app → your name → Account Settings → Subscriptions → Manage) and the Apple Vision Pro path, as well as iPhone and iPad.
+- The Apple TV app has a fourth tab, **About**, with the app's disclaimer, the short version of this policy and the addresses of the policies and the terms, as text built into the app. The previous version listed three tabs.
+
+Sections 2, 3, 4, 6 and 10 are updated. The short version is unchanged. No category of data, source, purpose or recipient is added, and nothing is sent to Prameya.
 
 **27 September 2026 — what changed.** The previous version said that leaving a child session asks for Face ID or the device passcode, on every device. That is what an iPhone or iPad with Face ID asks for. An iPhone or iPad with Touch ID asks for Touch ID, a Mac asks for Touch ID or your Mac password (the password alone on a Mac without Touch ID), and Apple Vision Pro asks for Optic ID; each can fall back to the device passcode or Mac password. The lock itself did not change; OmniDent's own Household screen now names the unlock for the device it runs on, and this policy names each. The short version and sections 3 and 12 are corrected. Nothing is sent to Prameya.
 

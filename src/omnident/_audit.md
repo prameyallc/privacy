@@ -124,3 +124,29 @@ NOTE FOR THE APP
 
 LEFT AS HISTORY
 - The 20 September 2026 entries in both "Changes" sections still say "Face ID or the device passcode"; they are dated history, superseded by the 27 September entries.
+
+
+## 2026-09-27 (later) — Mac, Apple Vision Pro and Apple TV say what those devices do
+
+Owner approved this wave 2026-09-27 ("finish all pending work"). Code read from OmniDent `main` at 7f37598 (merge of PR #216 `fix/platform-release-2026-09-27`), which also contains PR #213 (TV About tab). Both policies keep the date 27 September 2026 (the TV About's pinned "effective 27 September 2026" line, `OmniDentKit/Sources/Knowledge/LivingRoomLegalCopy.swift`, stays true); the short version is unchanged.
+
+CORRECTED — "The same list is offered on iPhone, iPad, Mac and Apple Vision Pro" (section 4 model table)
+- `OmniDentCatalog.offersDownload(of:hasPhotoCapture:)` (`OmniDentKit/Sources/Intelligence/AI/OmniDentCatalog.swift:75-77`) returns false for a vision entry where `OmniPlatform.hasPhotoCapture` is false; `hasPhotoCapture` is `#if os(iOS)` only (`AppSurfaces/App/PlatformCapabilities.swift:31-37`; `SUPPORTS_MACCATALYST = NO`, so the Mac is native macOS). Recommended Models applies it (`AppSurfaces/Features/Settings/AIModelManagementView.swift:107-115`); "Your Downloaded Models" does not (`:121-134`), so a SmolVLM already on disk can still be deleted. "Use for analysis" (`:266-268`), the Settings "Vision (analysis)" row (`Features/Settings/SettingsView.swift:228-237`) and the launch prewarm (`AppSurfaces/App/OmniDentRoot.swift:145`) are gated the same way.
+
+CORRECTED — "Download over cellular … with it off, a download waits for Wi-Fi" (section 4 table; section 10 "whether downloads may use cellular")
+- `MeteredDownloadCopy` (`Intelligence/MLX/Download/InferencePreferences.swift:64-93`): `#if os(iOS)` "Download over cellular" / "wait for Wi-Fi"; otherwise (Mac, Vision Pro) "Download over Personal Hotspot", hint "When off, model downloads wait for a network that is not a Personal Hotspot.", held line "Waiting for a network that is not a Personal Hotspot." The Settings switch reads it (`AIModelManagementView.swift:93-97`). Same flag (`allowsCellularDownload`), off by default.
+
+CORRECTED — "Pro adds full photo history" (section 2, twice; health policy "Pro unlocks full photo history")
+- `PaywallCopy.bullets(hasPhotoCapture:)`, `checklist(hasPhotoCapture:)`, `settingsFooter(hasPhotoCapture:)` (`DentalCore/Services/ProCatalog.swift:196-248`) drop "Full photo history." and the photo rows where there is no camera; the Mac/Vision footer reads "Pro unlocks reminder cadence and a print-ready visit sheet." Read by `PaywallSheet.swift:101`, `:282` and `SettingsView.swift:148`.
+
+CORRECTED — cancel path gave iOS only (section 2)
+- `PlatformCopy.cancelSubscriptionPath` (`DentalCore/Services/PlatformCopy.swift:42-48`): macOS "the App Store app → your name → Account Settings → Subscriptions → Manage"; otherwise "Settings → your name → Subscriptions" (iPhone, iPad, Vision Pro). Paywall terms line `PaywallSheet.swift:415-421`. Apple support 118428 gives the same Mac steps.
+
+CORRECTED — "The Apple TV app has three tabs" (section 6)
+- `App/OmniDentTV/OmniDentTVApp.swift:61-85`: Continue, Library, Ask, About. `TVAboutView` (`:378-415`) shows `LivingRoomLegalCopy` constants only — disclaimer, the policy's short version, the policy/health-policy/contact lines, the terms line and EULA URL as text (tvOS opens no link); no fetch.
+
+ADDED — Share care summary on Mac and Vision Pro (section 3)
+- `DentalCore/Services/DentistShareCopy.swift` (new in #216): "Share your care days." where there is no camera; the Mac panel says "A one-page PDF of your care days" or "A text summary of your care days". Sheet: `Features/Care/DentistShareView.swift:150-181`.
+
+LEFT AS HISTORY
+- The 23 September entries in both "Changes" sections say the three models were offered and that downloads wait for Wi-Fi unless you allow cellular; they are dated history.

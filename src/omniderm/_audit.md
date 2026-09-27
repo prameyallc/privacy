@@ -84,3 +84,30 @@ VERIFIED, NO CHANGE
 - health-data.md: the reminder hour is a non-health setting there (CloudKit preference list) and the Watch section names only the habit-log confirm; no sentence becomes false. Not edited.
 - The hour is not sent to Prameya, iCloud or anyone else; it travels only over WatchConnectivity between the user's own paired devices.
 
+
+## 2026-09-27 (later) — topics opened in Learn, the removed photo self-check, Mac paths
+
+Owner approved this wave 2026-09-27 ("finish all pending work"). Code read from OmniDerm `main` at 392fb98 (contains #137 photo-analysis removal, #145 platform wave, #147 Watch complication, #148 design backlog). Policy stays dated 27 September 2026 (second revision that day); the health policy is re-dated 27 September 2026 (was 24 September). Short versions unchanged.
+
+CORRECTED — "a topic you open by browsing Learn is not recorded" (policy storage table and iCloud Sync item 2; health policy categories row and section 4 bullet)
+- PR #145 (bb2026c, CHANGELOG.md:19): `PackDetailView` `.onAppear { continueSession.openedTopic(packID) }` (`OmniDermKit/Sources/AppSurfaces/Learn/LearnView.swift:61-65`, "Every way into a topic lands here — a tap in the library, Start here, a related topic, the widget, the Watch, Handoff"). `ContinueSession.openedTopic` (`AppSurfaces/Continuity/ContinueSession.swift:89-93`) sets `currentPackID` and calls `publish`, which saves the continue payload and `HomeScreenGlanceStore.markOpened` (`:60-76`).
+- Every KVS write is gated on the switch: `Continuity/ContinueStore.swift:21`, `:51`; `Continuity/HomeScreenGlanceStore.swift:190`, `:214`, `:271` (`ContinuitySyncGate.isEnabled`).
+- Watch "Read this topic" sends `session.currentPackID` (`AppSurfaces/Continuity/WristCommandApplier.swift:113`) over WatchConnectivity, not gated by the switch (already stated).
+- The 27 September (earlier) entry's "iCloud Sync and Handoff carries the same things" was written after #145 merged; the new entry says so. Left as history.
+
+CORRECTED — "The gate is enforced in three places — the button …, the screen behind it, and the type …" and "the assessment screen cannot be opened … Learn does not show the button"; "Photo self-check (not shipping) … that screen is not reachable"
+- PR #137 (9b76362, merged 2026-09-26) removed the photo gate state, dialog, sheet, gated button and `PhotoSelfCheckEducationView` from `LearnView` (`LearnView.swift:16-19` "NO PHOTO ANALYSIS … removed from the binary on 2026-09-26"), and the VLM manager stack. Kept: `FDAClearanceStatus` (cleared false) and `GatedClinical` (`DermCore/…/FDAClearanceStatus.swift`, `gate(_:_:)`).
+- LEFT: the short version's "The photo self-check … is switched off. It sits behind a regulatory clearance gate that is closed" — its claim (no output about a photo) is true; the wording predates the removal. It is copied into the TV About (`OmniDermKit/Sources/DermCore/Legal/LivingRoomLegal.swift:28-58`) and the Connect Apple TV field, so it was not changed here.
+
+CORRECTED — Mac paths
+- Cancel: `PaywallCopy.cancelPathLine` (`OmniDermKit/Sources/Monetization/PaywallCopy.swift:135-152`): macOS "the App Store app → your name → Account Settings → Subscriptions → Manage → Edit next to OmniDerm → Cancel Subscription"; else "the Settings app → your name → Subscriptions → OmniDerm → Cancel Subscription".
+- iCloud data: `CloudSyncService.iCloudStoragePath` (`OmniDermKit/Sources/Persistence/CloudSyncService.swift:227-233`): macOS "System Settings > your name > iCloud > Manage".
+- Notifications: `SettingsCopy.remindersDeniedMessage` (`OmniDermKit/Sources/Persistence/SettingsCopy.swift:36-49`): macOS "System Settings → Notifications".
+- Journal photo file protection: `SkinJournalStore.photoWriteOptions` (`Persistence/SkinJournalStore.swift:462-468`): `[.atomic]` on macOS, `.completeFileProtection` elsewhere.
+
+ADDED — Apple TV About tab
+- `App/OmniDermTV/OmniDermTVApp.swift:1-3` (Continue + Library + About), `TVAboutView` `:257-296`: `LivingRoomLegal.notice`, `privacyParagraphs`, `addressLines` — constants.
+
+NOTE FOR THE APP
+- `LivingRoomLegal.privacyParagraphs[0]` (`LivingRoomLegal.swift:29`) reads "OmniDerm Privacy Policy (Prameya LLC), effective 24 September 2026."; the policy has been dated 27 September 2026 since privacy #53.
+- Not changed (not platform-specific): a Reminders "on" value in the synced preference record is applied on another device (`OmniDermKit/Sources/Persistence/PreferenceRoamer.swift:49-74`, `adoptRoamedReminderPreferences`), which reschedules reminders there without that device's switch being touched; the policy's CloudKit paragraph already says the record is applied on launch.
