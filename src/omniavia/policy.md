@@ -1,6 +1,6 @@
 # OmniAvia — Privacy Policy
 
-**Effective date:** 24 September 2026
+**Effective date:** 27 September 2026
 **Publisher:** Prameya LLC (“Prameya”, “we”, “us”)
 **App:** OmniAvia for iPhone, iPad, Mac, Apple Vision Pro, Apple TV and Apple Watch — bundle ID `legal.prameya.OmniAvia` (the Apple Watch app is `legal.prameya.OmniAvia.watch`)
 **Contact:** admin@prameya.legal
@@ -29,7 +29,8 @@ OmniAvia, the logs stay on this device.
 **No health data. No HealthKit.** The app does not request HealthKit permission, does not
 declare HealthKit entitlements, and contains no HealthKit code.
 
-**Ask runs on your device.** Answers come from Apple Intelligence on your device. This version
+**Ask runs on your device.** Answers come from Apple Intelligence on your device; on Apple TV,
+which has no Apple Intelligence, Ask quotes a passage from a knowledge pack instead. This version
 does not offer any model download. Your questions are not sent to us or to anyone else.
 
 ---
@@ -57,9 +58,11 @@ to your private CloudKit database or your key-value storage, and we cannot read,
 restore them for you. To stop syncing, turn off iCloud for OmniAvia in iOS Settings → your
 name → iCloud (on a Mac, System Settings → your name → iCloud).
 
-**Apple Watch and Apple TV keep no logs.** The Apple TV app is a read-only pack browser: it
-reads the “continue” entry, the last pack's title and your appearance choice from iCloud
-key-value storage and writes nothing. The Apple Watch app shows the packs, the “continue” entry
+**Apple Watch and Apple TV keep no logs.** The Apple TV app is a read-only pack browser with an
+Ask tab that quotes the packs (section 3) and an Information tab (the ground-study notice, the
+Legal pages, the short version of this policy and the terms, as text): it reads the “continue”
+entry, the last pack's title and your appearance choice from iCloud key-value storage and
+writes nothing. The Apple Watch app shows the packs, the “continue” entry
 and the next-drill title, reads your appearance choice, and can save the next-drill title to
 iCloud key-value storage. When you tap **Confirm**, **Start** or
 **Log stub** on the Watch, the Watch sends that tap to your paired iPhone over Apple's Watch
@@ -73,8 +76,9 @@ Apple's processing, not ours.
 
 ## 3. Ask (on-device answers)
 
-The **Ask** tab appears only when **On-device answers** is on in **More** (it is on until you
-turn it off) and Apple Intelligence can answer on your device.
+On iPhone, iPad, Mac and Apple Vision Pro, the **Ask** tab appears only when **On-device
+answers** is on in **More** (it is on until you turn it off) and Apple Intelligence can answer
+on your device. Apple TV is different; see the last point below.
 
 - **Apple Intelligence only.** Ask uses Apple's on-device language model. The question and the
   answer stay on the device. Where Apple Intelligence is not available, there is no Ask tab.
@@ -87,6 +91,11 @@ turn it off) and Apple Intelligence can answer on your device.
   Watch connection, answered there by Apple Intelligence when the iPhone can, and the answer
   (or a note that Ask is unavailable) is sent back to the Watch. It does not go to us.
 - **No cloud AI.** OmniAvia never sends your question to a server for an answer.
+- **Apple TV.** The Apple TV app always has an Ask tab, but Apple TV has no Apple Intelligence
+  and is offered no model, so it runs and downloads none. It answers by quoting a passage from
+  the pack you opened on the TV, or else from the pack you left off at on another device (read
+  from iCloud key-value storage), and says the text is quoted. The question and the quote stay
+  on the TV and are not saved.
 
 ---
 
@@ -119,8 +128,8 @@ them grants exactly the same Pro. There are no separate feature tiers.
 | OmniAvia Pro Annual | $39.99 | Auto-renews yearly. 7-day free trial for eligible new subscribers. |
 | OmniAvia Pro Lifetime | $99.99 | One-time purchase. Not a subscription. |
 
-Family Sharing is enabled on all three. Subscriptions renew until you cancel in Settings.
-Lifetime is a one-time non-consumable.
+Family Sharing is enabled on all three. Subscriptions renew until you cancel (how, on each
+device, is under Cancellation and refunds below). Lifetime is a one-time non-consumable.
 
 **The knowledge layer is free and stays free.** Without paying anything you get every ACS
 area of operation and the 14 CFR reference, plus your own logs and iCloud sync, with no
@@ -140,7 +149,8 @@ no analytics or tracking.
 ### Cancellation and refunds
 
 Subscriptions are managed by Apple:
-- **Cancel:** iOS Settings → your name → Subscriptions → OmniAvia
+- **Cancel on iPhone, iPad or Apple Vision Pro:** Settings → your name → Subscriptions → OmniAvia
+- **Cancel on a Mac:** the App Store app → your name → Account Settings → Subscriptions → Manage
 - **Refund requests:** reportaproblem.apple.com
 - **Lifetime purchase:** one-time payment, no subscription to cancel
 
@@ -255,6 +265,16 @@ decision.
 Material changes update the effective date at the top of this page. When a change to the app
 affects what is stored or what leaves the device, we update this page and list the change
 below.
+
+**27 September 2026 — what changed.** Corrections for Apple TV and the Mac; nothing the app does
+with your data changed, and nothing is sent to Prameya:
+
+- The Apple TV app has an Ask tab, which this page did not describe, and the short version said
+  every answer comes from Apple Intelligence. Apple TV has no Apple Intelligence: its Ask quotes
+  a passage from a knowledge pack, runs and downloads no model, and keeps nothing. The short
+  version and section 3 now say so, and section 2 names the TV's Ask and Information tabs.
+- How to cancel now gives the Mac route (the App Store app → your name → Account Settings →
+  Subscriptions → Manage), which the Mac app names, as well as iPhone, iPad and Apple Vision Pro.
 
 **24 September 2026 — what changed.**
 
