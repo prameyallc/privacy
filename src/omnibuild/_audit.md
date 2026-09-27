@@ -70,3 +70,12 @@ Owner answers of 2026-09-24 (`Omni/docs/superpowers/plans/privacy-fix-owner-answ
 - NOT REMOVED — no code deletes CloudKit records except through the mirror, so the iCloud copy stays when sync is turned off (zone purge is listed as a follow-up in the app PR). The page says so and names Clear All with sync on, or the device's iCloud storage settings.
 - YOUR DATA — `AppSurfaces/Records/BuildRecordsView.swift` lists punch items (only when one exists) and acknowledgements; `BuildSiteRecordDetailViews.swift` shows each and deletes it after a confirmation; `Persistence/AppDataService+SiteRecords.swift` deletes through the shared `deleteAndSave` (staged delete, save, rollback on failure), in the roam configuration beside notes.
 - CLEAR ALL — `ICloudSyncCopy.clearAllMessage(syncWithICloud:)` and `DeleteAllUserDataResult.userMessage(syncWithICloud:)` say "this device only" while sync is off.
+
+## Addendum, 27 September 2026 (the removed state picker)
+
+The page described **More ▸ Your Location** in two places (the paragraph after the on-device table, and the Location row of "Device permissions"). Measured against OmniBuild iOS 1.0 build 6, the build in App Review:
+
+- BUILD 6 IS `c4bb377` — archived from `_icons/OmniBuild` detached at origin/main after PR #149 ("fix(design): one canvas on every tab") merged at 2026-09-26 23:43 CDT (archive log ends 23:59; build VALID and submitted 00:35 on 27 September). PR #150 (00:34) changed only store screenshots.
+- NO STATE PICKER — PR #145 (`fb236f3`, merged `d5a9a62`, 2026-09-26 17:43) removed the Your Location section from `OmniBuildKit/Sources/AppSurfaces/Settings/BuildSettingsView.swift` (its load and save were empty stubs) and the matching filter in `Knowledge/KnowledgePack.swift`; `d5a9a62` is an ancestor of `c4bb377`. `git grep` on `c4bb377` finds no "Your Location", state picker, CoreLocation or `NSLocation*` key in `App/` or `OmniBuildKit/Sources`.
+- THE BINARY — the build-6 archive's `OmniBuild` executable contains no "Showing federal packs" (the picker's caption), and no `CLLocationManager` or `NSLocationWhenInUseUsageDescription` appears anywhere in the app bundle; its Info.plist has no location key. The in-app policy it ships says "No location, contacts or microphone." (`BuildPrivacyPolicyView.swift:129`).
+- UNCHANGED — the short version ("It uses no camera, photos, location, …"), the Location permission row's first sentence, the purpose-string paragraph and the "no precise geolocation" line stay true.
