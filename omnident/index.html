@@ -93,7 +93,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 </div></header>
 <main id="main" class="wrap">
 <h1 id="omnident-privacy-policy">OmniDent Privacy Policy</h1>
-<p><strong>Effective date:</strong> 27 September 2026 <em>(supersedes the 26 September 2026 version; names the unlock each device asks for when you leave a child session, where the previous version said Face ID or the device passcode on every device; later the same day, says what the Mac and Apple Vision Pro offer — the two text models, Download over Personal Hotspot, no photo history in Pro — gives the Mac and Apple Vision Pro cancellation paths, and adds the Apple TV app's About tab)</em><br />
+<p><strong>Effective date:</strong> 27 September 2026 <em>(supersedes the 26 September 2026 version; names the unlock each device asks for when you leave a child session, where the previous version said Face ID or the device passcode on every device; later the same day, says what the Mac and Apple Vision Pro offer — the two text models, Download over Personal Hotspot, no photo history in Pro — gives the Mac and Apple Vision Pro cancellation paths, and adds the Apple TV app's About tab; in a third revision that day, says that signing in with Apple turns iCloud Sync on and signing out turns it off)</em><br />
 <strong>Publisher:</strong> Prameya LLC, a United States limited liability company ("Prameya", "we", "us")<br />
 <strong>Contact:</strong> admin@prameya.legal<br />
 <strong>This policy lives at:</strong> https://prameyallc.github.io/privacy/omnident/<br />
@@ -115,7 +115,7 @@ If you live in Washington or Nevada, please read it. It applies to you in additi
 <li><strong>The app connects to the internet in a few narrow ways</strong>, all listed in section 8: downloading AI model files from Hugging Face, your own iCloud account, and Apple's own services (Sign in with Apple, purchases, Handoff).</li>
 <li><strong>No ads. No analytics. No trackers. No third-party SDK that phones home.</strong> We do not sell your data. We have never sold your data.</li>
 <li><strong>Prameya has no user database.</strong> We do not know who you are. There is no account on our systems to look you up in.</li>
-<li>Sign in with Apple is optional. It does not change what syncs. If you use it, you can delete your account and everything on the device from inside the app. Because OmniDent has no server and never exchanges Apple's authorization code, no Apple token for OmniDent exists, and there is no token for the app to revoke.</li>
+<li>Sign in with Apple is optional, and iCloud Sync does not need it. Signing in turns iCloud Sync on and signing out turns it off; you can also switch it yourself in Settings, and what syncs is the same either way. If you use it, you can delete your account and everything on the device from inside the app. Because OmniDent has no server and never exchanges Apple's authorization code, no Apple token for OmniDent exists, and there is no token for the app to revoke.</li>
 <li>OmniDent is an educational wellness app with <strong>no FDA authorization of any kind</strong>, and <strong>HIPAA does not apply to it</strong>. The on-device photo reading and Ask can describe what they think they see, and <strong>the photo reading can name a dental condition</strong>. Do not use anything the app shows you to decide whether to seek or delay dental care.</li>
 </ul>
 <hr />
@@ -299,7 +299,7 @@ own data and can still export it in its raw form; only the Pro tools stop.</p>
 <p>Hugging Face is not our processor and receives nothing about you from us. Your connection to them is governed by their own privacy policy.</p>
 <hr />
 <h2 id="5-sign-in-with-apple-and-how-to-delete-your-account">5. Sign in with Apple, and how to delete your account</h2>
-<p>Signing in is <strong>optional</strong>. OmniDent works fully without it, and <strong>iCloud Sync does not depend on it</strong>: sync uses the iCloud account your device is signed in to.</p>
+<p>Signing in is <strong>optional</strong>. OmniDent works fully without it, and <strong>iCloud Sync does not depend on it</strong>: sync uses the iCloud account your device is signed in to. Signing in does move one switch: it turns <strong>iCloud Sync</strong> on, the same switch as Settings → iCloud Sync, so what syncs is exactly what section 6 lists, as when you turn it on yourself. Signing out turns it off (below). You can turn it back on in Settings without signing in.</p>
 <p>If you choose <strong>Sign in with Apple</strong> (at the top of <strong>Settings</strong>), this is what we get and where it goes:</p>
 <ul>
 <li>an opaque Apple user identifier — a random-looking string that identifies you to this app only;</li>
@@ -321,7 +321,7 @@ own data and can still export it in its raw form; only the Pro tools stop.</p>
 <p>You can also sign out without deleting. That clears the Keychain entries on that device, leaves your data in place, and turns iCloud Sync off.</p>
 <hr />
 <h2 id="6-icloud-sync-continue-and-your-other-devices">6. iCloud sync, Continue and your other devices</h2>
-<p><strong>iCloud Sync is on by default</strong> when your device is signed in to iCloud. You can turn it off at <strong>Settings → iCloud Sync</strong>. While it is on, OmniDent puts two things in your own iCloud account. Neither goes to Prameya, and we cannot read either.</p>
+<p><strong>iCloud Sync is on by default</strong> when your device is signed in to iCloud. You can turn it off at <strong>Settings → iCloud Sync</strong>. Signing in with Apple turns it on, and signing out turns it off (section 5); you do not need to sign in to turn it on. While it is on, OmniDent puts two things in your own iCloud account. Neither goes to Prameya, and we cannot read either.</p>
 <h3 id="your-preferences-cloudkit">Your preferences (CloudKit)</h3>
 <p>Your app preferences sync between your devices through <strong>CloudKit</strong>, into <strong>your private iCloud database</strong>, inside your own Apple Account. We have no CloudKit administrative access to your private database.</p>
 <div class="tablewrap"><table>
@@ -678,6 +678,7 @@ own data and can still export it in its raw form; only the Pro tools stop.</p>
 <hr />
 <h2 id="19-changes-to-this-policy">19. Changes to this policy</h2>
 <p>We will update this policy when the app's behaviour changes — and we will update it <strong>before</strong> the change ships, not after.</p>
+<p><strong>27 September 2026, third revision — what changed.</strong> The short version and section 5 said Sign in with Apple "does not change what syncs". What syncs is the same whether or not you sign in, but signing in turns the iCloud Sync switch on and signing out turns it off. That was already true of the app, and this policy now says so in the short version and sections 5 and 6. iCloud Sync can still be turned on or off in Settings without signing in. No category of data, source, purpose or recipient is added, and nothing is sent to Prameya.</p>
 <p><strong>Later on 27 September 2026 — what changed.</strong> OmniDent was changed for the Mac and Apple Vision Pro, and this policy describes the app with those changes. iPhone and iPad are unchanged.</p>
 <ul>
 <li>The Mac and Apple Vision Pro no longer offer SmolVLM, the model that reads photos: they keep no photo for it to read. They offer the two text models. The previous version said the same three models were offered on every device.</li>

@@ -150,3 +150,18 @@ ADDED — Share care summary on Mac and Vision Pro (section 3)
 
 LEFT AS HISTORY
 - The 23 September entries in both "Changes" sections say the three models were offered and that downloads wait for Wi-Fi unless you allow cellular; they are dated history.
+
+
+## 2026-09-27 (third) — Sign in with Apple moves the iCloud Sync switch
+
+Owner: "fix all the next-update items now" (2026-09-27). Code read from OmniDent `main` at e3b50af (merge of PR #218 `fix/next-update-2026-09-27`).
+
+CORRECTED — "Sign in with Apple is optional. It does not change what syncs." (short version; section 5 said only that sync does not depend on it)
+- Signing in turns the switch on: `AppleAccountHeader.handleSignInWithAppleResult` calls `service.configure(enabled: true)` and `ContinuityBridge.syncSwitchChanged()` after storing the identifier (`AppSurfaces/Features/CloudSync/CloudSyncFeature.swift:353`). Signing out calls `configure(enabled: false)` (`:377`).
+- `configure(enabled:)` (`Persistence/CloudSyncService.swift:164`) is the same function the Settings toggle "Enable iCloud Sync" calls (`CloudSyncFeature.swift:94`); it sets the one `userEnabledSyncKey` default. So what syncs is the same whichever turned it on: the `CloudSyncAllowList` record and the continue note (section 6).
+- The toggle has no sign-in condition, and the switch defaults to on when the key is unset (`CloudSyncService.swift:157-160`): sync can be turned on without signing in.
+- The in-app caption now says the same (`CloudSyncService.signInCaption`, `:407`, OmniDent PR #218).
+
+CASCADE — the sentence is in "The short version"
+- OmniDent's Apple TV About tab prints the short version (`Knowledge/LivingRoomLegalCopy.swift`, `privacySummary[8]`); it is updated in the same wave (OmniDent `fix/mac-child-session-copy-2026-09-27`).
+- App Store Connect's "Apple TV Privacy Policy" field carries the same short version; the owner updates it (Connect is not written from here).
