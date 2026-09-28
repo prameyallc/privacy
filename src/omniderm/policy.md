@@ -43,7 +43,7 @@ OmniDerm is a consumer app for skin-care habits and education. It helps you:
 
 ## What OmniDerm will not do
 
-OmniDerm is **not a medical device** and does **not** diagnose, screen for, or detect skin cancer or any other condition. It does not tell you whether a mole is dangerous. It does not tell you whether to see a doctor.
+OmniDerm is **not a medical device** and does **not** diagnose, screen for, or detect skin cancer or any other condition. It does not tell you whether a mole is dangerous. Nothing it shows about your own photographs or notes tells you whether to see a doctor, though its education topics do list general warning signs that call for a dermatologist.
 
 Features that would produce an assessment of a photograph of your skin are behind a **clearance gate that is switched off**. In the version of OmniDerm on the App Store, the app does not produce observations, flags, ratings, or any other output about a photo of your skin. The photo self-check that earlier builds carried, closed behind that gate, was removed from the app on 26 September 2026: there is no button for it, no screen behind it and no vision model, and the app never downloads one. The gate itself stays in the code, closed, on the type that would carry such a result. A photo feature would come back only as a new feature, and only once it has the regulatory clearance it would need.
 
@@ -386,6 +386,7 @@ If we change how OmniDerm handles your data, we will update this policy and chan
 - **The photo self-check was removed.** On 26 September 2026 the photo self-check, which was already switched off behind the FDA clearance gate, was taken out of the app. This page said the gate was enforced at a button and a screen; there is no longer a button or a screen.
 - **Mac paths.** On a Mac you cancel in the App Store app → your name → Account Settings → Subscriptions → Manage, remove OmniDerm's iCloud data in System Settings → your name → iCloud → Manage, and turn notifications off in System Settings → Notifications. Journal photographs on a Mac are protected by macOS and FileVault, not by iOS file protection.
 - **Apple TV** has an About tab with the app's notice, the short version of this policy and the addresses of the policies and terms.
+- **When to see a doctor.** This page said the app does not tell you whether to see a doctor. Its free education topics do list general warning signs that call for a dermatologist; what stays true is that nothing about your own photographs or notes tells you that.
 
 The short version is unchanged. Nothing is sent to Prameya.
 
