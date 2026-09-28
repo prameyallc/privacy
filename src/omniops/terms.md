@@ -1,36 +1,36 @@
-# OmniOps Terms of Use
+# OmniCadence Terms of Use
 
 **Effective 27 August 2026 · Prameya LLC**
 
 ## 1. Who we are, and what this covers
 
-OmniOps is published by Prameya LLC, a Texas limited liability company. These terms govern your use
+OmniCadence is published by Prameya LLC, a Texas limited liability company. These terms govern your use
 of the app. Apple's [Licensed Application End User License Agreement](https://www.apple.com/legal/internet-services/itunes/dev/stdeula/)
 also applies to every App Store download; where these terms and Apple's EULA conflict, **the term
 more protective of you controls**.
 
-## 2. What OmniOps is, and is not
+## 2. What OmniCadence is, and is not
 
-OmniOps is an operations logging and reflection tool. It is not management consulting, it is not an audit, and it is not a certification.
+OmniCadence is an operations logging and reflection tool. It is not management consulting, it is not an audit, and it is not a certification.
 
-OmniOps does not replace a qualified professional. Do not delay seeking professional help because of
+OmniCadence does not replace a qualified professional. Do not delay seeking professional help because of
 something you read here, and do not treat anything in the app as a substitute for a decision made
 with a professional who knows your situation.
 
 ## 3. Your content stays yours
 
 Anything you record, photograph, write or import remains yours. Prameya claims no licence over it.
-OmniOps stores it on your device. We do not run a server that receives it, we cannot read it, and we
+OmniCadence stores it on your device. We do not run a server that receives it, we cannot read it, and we
 cannot recover it for you if you delete it or lose the device.
 
 ## 4. What you agree not to do
 
-Use OmniOps lawfully. Do not resell it, redistribute its content as your own, or present its output
+Use OmniCadence lawfully. Do not resell it, redistribute its content as your own, or present its output
 as professional advice to someone who is relying on you as a professional.
 
 ## 5. Purchases, auto-renewal and cancellation
 
-OmniOps is free to use. **OmniOps Pro** is one upgrade sold as three products:
+OmniCadence is free to use. **OmniCadence Pro** is one upgrade sold as three products:
 
 - **Monthly — $5.99 (US).** Auto-renews every month. 7-day free trial for new subscribers.
 - **Annual — $39.99 (US).** Auto-renews every year. 7-day free trial for new subscribers.
@@ -43,10 +43,13 @@ cancel **at least 24 hours before the current period ends**. Your Apple Account 
 renewal within 24 hours before the period ends. Cancelling after a renewal charge takes effect at
 the end of the period you already paid for.
 
-**How to cancel.** Open the **Settings** app → tap your name → **Subscriptions** → OmniOps → **Cancel
-Subscription**. You can also reach it from **App Store** → your account picture → **Subscriptions**.
-Prameya cannot cancel a subscription for you — Apple controls the billing relationship. Deleting the
-app does **not** cancel a subscription.
+**How to cancel.** On iPhone or iPad, open the **Settings** app → tap your name → **Subscriptions**
+→ OmniCadence → **Cancel Subscription**, or go to **App Store** → your account picture →
+**Subscriptions**. On a Mac, open the **App Store** app → click your name → **Account Settings** →
+**Subscriptions** → **Manage** → OmniCadence → **Cancel Subscription**. On Apple Vision Pro, open the
+**Settings** app → your name → **Subscriptions** → OmniCadence → **Cancel Subscription**. Prameya cannot
+cancel a subscription for you — Apple controls the billing relationship. Deleting the app does
+**not** cancel a subscription.
 
 **Free trial.** Any unused portion of a free trial is forfeited when you buy a subscription.
 
@@ -67,10 +70,10 @@ subscription period, tell us at admin@prameya.legal and we will help you seek a 
 
 ## 7. Disclaimers and limits
 
-**To the maximum extent Texas law allows**, OmniOps is provided "as is", without warranties of
+**To the maximum extent Texas law allows**, OmniCadence is provided "as is", without warranties of
 merchantability, fitness for a particular purpose or non-infringement. Prameya is not liable for
 indirect, incidental, special or consequential damages. **Our total liability to you is limited to
-the greater of the amount you paid Prameya for OmniOps in the twelve months before the claim, or
+the greater of the amount you paid Prameya for OmniCadence in the twelve months before the claim, or
 $100 USD.**
 
 Some jurisdictions do not allow these exclusions. Where that is so, they do not apply to you, and
@@ -87,7 +90,7 @@ description of the dispute and the relief you want. We will do the same for you.
 to resolve it informally. Most problems end here.
 
 **8.2 Binding arbitration.** If we cannot resolve it, any dispute arising out of or relating to
-these terms or OmniOps will be settled by **binding individual arbitration** administered by the
+these terms or OmniCadence will be settled by **binding individual arbitration** administered by the
 American Arbitration Association under its **Consumer Arbitration Rules**, before one arbitrator.
 The arbitration will be **seated in Collin County, Texas**, and may be conducted by telephone,
 video or written submissions if you prefer. The arbitrator's decision may be entered as a judgment
