@@ -43,8 +43,11 @@ cancel **at least 24 hours before the current period ends**. Your Apple Account 
 renewal within 24 hours before the period ends. Cancelling after a renewal charge takes effect at
 the end of the period you already paid for.
 
-**How to cancel.** Open the **Settings** app → tap your name → **Subscriptions** → OmniPhysics → **Cancel
-Subscription**. You can also reach it from **App Store** → your account picture → **Subscriptions**.
+**How to cancel.** On iPhone or iPad, open the **Settings** app → tap your name → **Subscriptions**
+→ OmniPhysics → **Cancel Subscription**, or go to **App Store** → your account picture →
+**Subscriptions**. On a Mac, open the **App Store** app → click your name → **Account Settings** →
+**Subscriptions** → **Manage** → OmniPhysics → **Cancel Subscription**. On Apple Vision Pro, open
+the **Settings** app → your name → **Subscriptions** → OmniPhysics → **Cancel Subscription**.
 Prameya cannot cancel a subscription for you — Apple controls the billing relationship. Deleting the
 app does **not** cancel a subscription.
 

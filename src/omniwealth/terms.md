@@ -43,10 +43,13 @@ cancel **at least 24 hours before the current period ends**. Your Apple Account 
 renewal within 24 hours before the period ends. Cancelling after a renewal charge takes effect at
 the end of the period you already paid for.
 
-**How to cancel.** Open the **Settings** app → tap your name → **Subscriptions** → OmniWealth → **Cancel
-Subscription**. You can also reach it from **App Store** → your account picture → **Subscriptions**.
-Prameya cannot cancel a subscription for you — Apple controls the billing relationship. Deleting the
-app does **not** cancel a subscription.
+**How to cancel.** On iPhone or iPad, open the **Settings** app → tap your name → **Subscriptions**
+→ OmniWealth → **Cancel Subscription**, or go to **App Store** → your account picture →
+**Subscriptions**. On a Mac, open the **App Store** app → click your name → **Account Settings** →
+**Subscriptions** → **Manage** → OmniWealth → **Cancel Subscription**. On Apple Vision Pro, open the
+**Settings** app → your name → **Subscriptions** → OmniWealth → **Cancel Subscription**. Prameya
+cannot cancel a subscription for you — Apple controls the billing relationship. Deleting the app
+does **not** cancel a subscription.
 
 **Free trial.** Any unused portion of a free trial is forfeited when you buy a subscription.
 
