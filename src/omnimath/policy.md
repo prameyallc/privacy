@@ -1,6 +1,6 @@
 # OmniMathematics Privacy Policy
 
-**Effective date:** 27 September 2026
+**Effective date:** 7 October 2026
 **Publisher:** Prameya LLC ("Prameya", "we", "us")
 **App:** OmniMathematics for iPhone, iPad, Mac and Apple Vision Pro, with its Apple Watch app and its Apple TV app — bundle ID `legal.prameya.OmniMathematics` (the Apple TV app uses the same ID)
 **Contact:** admin@prameya.legal
@@ -54,7 +54,7 @@ OmniMathematics writes the following to its own storage on the device:
 | A temporary copy of a file you export, which the app clears afterwards | To hand the file to the share sheet |
 | Two internal markers: that stored marks were moved to the current storage format, and which version of the chapter list the marks belong to | So the move happens once, and a mark from an older chapter list is not counted as a newer chapter |
 
-That is the complete list of what OmniMathematics itself stores. We cannot see it, and we have no way to request it. A file you export with **Export my marks**, or a Pro study report, goes wherever you choose to save or share it. What Apple's own services keep for the app — iCloud, Handoff, the connection to Apple Watch, the Home Screen widget and a scheduled reminder — is described below.
+That is the complete list of what OmniMathematics itself stores. We cannot see it, and we have no way to request it. A file you export with **Export my marks**, or a Pro study report, goes wherever you choose to save or share it. What Apple's own services keep for the app — iCloud, Handoff, the connection to Apple Watch, the Home Screen widget, the Apple Watch complications and a scheduled reminder — is described below.
 
 If you use iCloud or computer backup for your device, this data is included in that backup, under Apple's terms and your control.
 
@@ -80,6 +80,7 @@ The Apple Watch app comes with the iPhone app. It lists topic packs, shows cards
 - **Ask the phone** sends the question you enter to OmniMathematics on your paired iPhone, over Apple's connection between the two devices. The iPhone answers while OmniMathematics is open on it, the way Ask on the iPhone does — with Apple Intelligence, or with a downloaded model that is already loaded, or otherwise from Concepts and the topic packs — and sends the answer back to the Watch. A question from the Watch never starts a download.
 - **Cards** on the Watch send your tap (for example "Start" or "I'm done") to the iPhone, which applies each tap once.
 - The Watch reads the iCloud key-value store described above to offer where you left off and to match your appearance choice, and opening a pack on the Watch updates where you left off.
+- An OmniMathematics complication on a watch face or in the Smart Stack shows a short label made from the internal name of the topic pack you left open (for example "dlmf bessel"), up to 18 characters, read from the same iCloud key-value store, or **Learn** when there is none. On iPhone and iPad, the Home Screen widget shows the next suggested topic, read the same way, wherever it appears. Its medium size also says whether that topic is part of Discrete foundations or Proof craft. Anyone who can see the complication or the widget can see the topic it shows, including while the device is locked (for example in StandBy or Today View).
 
 None of this reaches Prameya.
 
@@ -87,7 +88,7 @@ None of this reaches Prameya.
 
 ## Apple TV
 
-The Apple TV app has four tabs: **Continue**, **Library**, **Ask** and **Legal**. It reads where you left off and your appearance choice from the iCloud key-value store described above, and writes nothing there. Ask on Apple TV runs no model and downloads nothing: it shows the closest passage in Concepts and the topic packs, labelled **From Concepts**, and does not save your question. **Legal** shows the app's disclaimer, the short version of this policy and the terms, as text built into the app. The Apple TV app keeps no marks and has no purchases, reminder, Handoff or export. None of this reaches Prameya.
+The Apple TV app has four tabs: **Continue**, **Library**, **Ask** and **Legal**. It reads where you left off and your appearance choice from the iCloud key-value store described above, and writes nothing there. Ask on Apple TV runs no model and downloads nothing: it shows the closest passage in Concepts and the topic packs, labelled **From Concepts**, and does not save your question. **Legal** shows, as text built into the app, the app's disclaimer and the short version of this policy, with the address of this page and our contact address. For the terms of use it names Apple's standard EULA and prints its address; it does not show the OmniMathematics Terms of Use. It also lists the works the app draws on. The Apple TV app keeps no marks and has no purchases, reminder, Handoff or export. None of this reaches Prameya.
 
 ---
 
@@ -259,6 +260,13 @@ Apple's App Store privacy labels use Apple's own definition of "collect", which 
 ## Changes to this policy
 
 We will update this policy when the app changes — and, where we can, before the change ships. When we do, we will change the effective date at the top and describe what changed. If a change materially expands what is collected or who receives it, we will tell you in the app rather than relying on you to re-read this page.
+
+**7 October 2026 — what changed.** We checked this policy against the app again, and two descriptions now say what the app shows:
+
+- The Apple TV section says what the **Legal** tab shows: the disclaimer and the short version of this policy, with the address of this page and our contact address; Apple's standard EULA, by name and address; and the works the app draws on. The previous version said the tab showed "the terms" as text. It does not show the OmniMathematics Terms of Use, and it gives Apple's EULA as an address, not as text.
+- The Apple Watch section says that an OmniMathematics complication on a watch face or in the Smart Stack shows a short label made from the internal name of the topic pack you left open, and that the Home Screen widget on iPhone and iPad shows the next suggested topic. Both read the iCloud key-value store described above, and anyone who can see the complication or the widget can see the topic it shows, even on a locked device. The previous version did not mention the complications, and named the widget only as something the key-value store feeds. The list of what Apple's services keep for the app now names the complications.
+
+Nothing the app collects or sends changed, and nothing is sent to Prameya.
 
 **27 September 2026 — what changed.** This policy now covers every device OmniMathematics runs on:
 

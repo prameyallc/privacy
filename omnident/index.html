@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>OmniDent Privacy Policy — Prameya LLC</title>
-<meta name="description" content="Effective date: 27 September 2026">
+<meta name="description" content="Effective date: 7 October 2026">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://prameyallc.github.io/privacy/omnident/">
 <style>
@@ -93,7 +93,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 </div></header>
 <main id="main" class="wrap">
 <h1 id="omnident-privacy-policy">OmniDent Privacy Policy</h1>
-<p><strong>Effective date:</strong> 27 September 2026 <em>(supersedes the 26 September 2026 version; names the unlock each device asks for when you leave a child session, where the previous version said Face ID or the device passcode on every device; later the same day, says what the Mac and Apple Vision Pro offer — the two text models, Download over Personal Hotspot, no photo history in Pro — gives the Mac and Apple Vision Pro cancellation paths, and adds the Apple TV app's About tab; in a third revision that day, says that signing in with Apple turns iCloud Sync on and signing out turns it off)</em><br />
+<p><strong>Effective date:</strong> 7 October 2026 <em>(supersedes the 27 September 2026 version; describes the Home Screen widget as the photo-journal glance it now is, where the previous version called it a care-status line; says what a Mac shows if you add your iPhone's widgets to it; says that Delete All Scans &amp; Data also removes an old copy of the database the app moved aside, and asks the system to redraw the widget, and names the one rare case it cannot reach; and says that a photo you take on its own is filed under no view)</em><br />
 <strong>Publisher:</strong> Prameya LLC, a United States limited liability company ("Prameya", "we", "us")<br />
 <strong>Contact:</strong> admin@prameya.legal<br />
 <strong>This policy lives at:</strong> https://prameyallc.github.io/privacy/omnident/<br />
@@ -132,7 +132,7 @@ If you live in Washington or Nevada, please read it. It applies to you in additi
 <li>run illustrative cost scenarios using figures you enter;</li>
 <li>read general information about oral health, on the phone, the Watch and the TV;</li>
 <li>turn on morning and evening care reminders;</li>
-<li>show a short care-status line on the Home Screen widget (no photograph), and a care-session timer on the Lock Screen;</li>
+<li>show a one-line photo-journal glance on the Home Screen widget (the date of the active person's last photo, whether two of their photos are of the same view, and whether today's care is logged; no photograph and no name), and a care-session timer on the Lock Screen;</li>
 <li>optionally share brushing and dietary-sugar entries with Apple Health.</li>
 </ul>
 <p><strong>OmniDent has no FDA authorization.</strong> Analysis of dental images for clinical purposes is a regulated activity in the United States. We do not make a blanket "the app does not diagnose" claim, because it would not be true of everything on screen. What each AI feature does with its output is set out in section 4 and section 18. The short form: taking a photo runs no AI model, and no model writes anything about it; the photo reading shows what the models wrote, headed "This looks like", and can name a condition; Ask checks its answers against a fixed list of condition names. Do not act on any of it. Ask a dentist.</p>
@@ -200,7 +200,7 @@ own data and can still export it in its raw form; only the Pro tools stop.</p>
 <h2 id="3-photographs-of-your-mouth">3. Photographs of your mouth</h2>
 <p>Photographs of a person's mouth are sensitive. Here is exactly what happens to them.</p>
 <h3 id="where-they-are-stored">Where they are stored</h3>
-<p>When you take a photo in OmniDent on iPhone or iPad, the image is written as a JPEG file into the app's own private storage on your device — the <code>Documents/Scans</code> folder inside the OmniDent sandbox. A small thumbnail, the date and the view of your mouth it is filed under are stored in the app's local database, also on your device, with the caption and view tag if you add them. Taking a photo runs no AI model, so nothing a model wrote is stored with it.</p>
+<p>When you take a photo in OmniDent on iPhone or iPad, the image is written as a JPEG file into the app's own private storage on your device — the <code>Documents/Scans</code> folder inside the OmniDent sandbox. A small thumbnail and the date are stored in the app's local database, also on your device, with the caption and view tag if you add them. A photo you take as part of a set of photos is also filed under the view of your mouth that the set asked for; one you take on its own is not (earlier versions filed it as Smile). Taking a photo runs no AI model, so nothing a model wrote is stored with it.</p>
 <p>On iPhone and iPad that storage is protected by iOS Data Protection at the <strong>Complete</strong> level. In practical terms, the files are encrypted with a key tied to your device passcode and are unreadable while the device is locked. This is why OmniDent requires a passcode-protected device to be meaningful — if you have no passcode, iOS has nothing to protect the files with.</p>
 <p>The Mac and Apple Vision Pro apps have no camera capture. Photos taken on your iPhone or iPad are not copied to them.</p>
 <h3 id="where-they-are-not-stored">Where they are not stored</h3>
@@ -400,7 +400,8 @@ own data and can still export it in its raw form; only the Pro tools stop.</p>
 <h3 id="care-reminders">Care reminders</h3>
 <p>Care reminders are <strong>off until you turn them on</strong> at <strong>Settings → Care reminders</strong>. Switching on a morning or evening reminder is the only thing in OmniDent that asks iOS for permission to send notifications. OmniDent then schedules local notifications on your device for about the next week — generic brushing nudges that name no person and no condition. Each has <strong>Confirm</strong>, <strong>Snooze</strong> and <strong>Not now</strong> buttons: Confirm records a brush (and, if the Apple Health switch is on, writes a toothbrushing entry), Snooze schedules one more reminder, and Not now does nothing. Nothing about a reminder is sent to Prameya or to any server. Turn them off on the same screen, or in iOS Settings → Notifications → OmniDent.</p>
 <h3 id="widget-and-lock-screen">Widget and Lock Screen</h3>
-<p>The Home Screen widget shows one care-status line (no photograph) that the app writes to a storage area shared only with its own widget. During a care session, a Live Activity on the iPhone Lock Screen and Dynamic Island shows the timer, the step, and <strong>the name of the person whose session it is</strong>. Anyone who can see your Lock Screen can see it. It is started and updated on the device; it uses no push.</p>
+<p>The Home Screen widget, <strong>Photo journal</strong>, shows one line that the app writes to a storage area shared only with its own widget: the date of the most recent photo in the active person's record (for example "Last photo Oct 6"), "Same spot" when two of that person's photos are of the same view (the view tag you gave them, or the view the set of photos asked for when you took them), and "You're set for today" once today's care is logged. With no photo yet it says "No photos yet" or "Keep one photo". It shows no photograph and no name. OmniDent on a Mac or Apple Vision Pro keeps no photos, so the widget it puts there never shows a photo date. If you add your iPhone's widgets to your Mac, a feature of macOS, the Mac shows your iPhone's line, photo date included: your iPhone passes it to your Mac, and OmniDent sends nothing for it. Anyone who can see a screen you put the widget on can see that line. Tapping it opens OmniDent at your photo journal, or, on iPhone and iPad, at the camera if there is no photo yet.</p>
+<p>During a care session, a Live Activity on the iPhone Lock Screen and Dynamic Island shows the timer, the step, and <strong>the name of the person whose session it is</strong>. Anyone who can see your Lock Screen can see it. It is started and updated on the device; it uses no push.</p>
 <hr />
 <h2 id="8-everything-the-app-sends-over-the-network-the-complete-list">8. Everything the app sends over the network — the complete list</h2>
 <div class="tablewrap"><table>
@@ -561,12 +562,13 @@ own data and can still export it in its raw form; only the Pro tools stop.</p>
 </tr>
 </tbody>
 </table></div>
-<p><strong>Delete All Scans &amp; Data</strong> removes: your photos and their files, thumbnails and analyses; habit logs; what-if scenarios; claimed promotions; 30-day programme progress; your oral-health profile; household people and mouths; visits, plan lines, documents and their files, visit packets, and marks you drew; the settings store behind them (care-day history, profile names, Smile Points, widget snapshot, reminder schedule, cost-model sliders, the Apple Health switch); whether you have seen the welcome screen and acknowledged the wellness disclaimer on this device; the widget's shared storage; every downloaded model and its bookkeeping; the record of brushes confirmed from Apple Watch, a reminder or the Log care action; the visit entries in Spotlight; care reminders already scheduled; the iCloud continue note, and the name your paired Apple Watch was showing; and it resets your synced preferences to their first-launch values.</p>
+<p><strong>Delete All Scans &amp; Data</strong> removes: your photos and their files, thumbnails and analyses; habit logs; what-if scenarios; claimed promotions; 30-day programme progress; your oral-health profile; household people and mouths; visits, plan lines, documents and their files, visit packets, and marks you drew; the settings store behind them (care-day history, profile names, Smile Points, widget snapshot, reminder schedule, cost-model sliders, the Apple Health switch); any old copy of the app's database that it moved aside because it could not open it at launch (the app tells you on screen when this happens); whether you have seen the welcome screen and acknowledged the wellness disclaimer on this device; the widget's shared storage, after which it asks the system to redraw the Home Screen widget, which then has no photo date to show; every downloaded model and its bookkeeping; the record of brushes confirmed from Apple Watch, a reminder or the Log care action; the visit entries in Spotlight; care reminders already scheduled; the iCloud continue note, and the name your paired Apple Watch was showing; and it resets your synced preferences to their first-launch values.</p>
 <p>It leaves, and we list them so you are not surprised:</p>
 <ul>
 <li><strong>your iCloud Sync switch</strong>, deliberately — deleting data does not change your sync choice;</li>
 <li>two device settings that are not about you: whether downloads may use cellular (on a Mac or Apple Vision Pro, a Personal Hotspot), and the camera framing choice;</li>
 <li>your Sign in with Apple entries in the Keychain (Delete Account removes them);</li>
+<li>in one rare case, the app's database file itself: when OmniDent can neither open it at launch nor move it aside, it says on screen that it is running on temporary storage, and Delete All in that session cannot reach the file (run Delete All again after a launch that does not say so, or delete the app);</li>
 <li>anything already written to Apple Health or copied to your Photos library, and Apple's own purchase records.</li>
 </ul>
 <p>If you want help with any of this, or you want us to confirm in writing that we hold nothing about you, write to admin@prameya.legal.</p>
@@ -678,6 +680,14 @@ own data and can still export it in its raw form; only the Pro tools stop.</p>
 <hr />
 <h2 id="19-changes-to-this-policy">19. Changes to this policy</h2>
 <p>We will update this policy when the app's behaviour changes — and we will update it <strong>before</strong> the change ships, not after.</p>
+<p><strong>7 October 2026 — what changed.</strong> OmniDent was changed, and this policy describes the app with those changes:</p>
+<ul>
+<li>The Home Screen widget is now a photo-journal glance: it shows the date of the active person's last photo and whether two of their photos are of the same view, as well as whether today's care is logged. It still shows no photograph and no name, and OmniDent sends nothing off your device for it. If you add your iPhone's widgets to your Mac, the Mac shows your iPhone's line; section 7 now says so. The previous version called it a care-status line.</li>
+<li>A photo you take on its own is no longer filed as Smile. Now only a photo you take as part of a set of photos is filed under a view, so the widget and the photo comparison can tell when two photos really show the same view. The previous version said every photo is filed under a view.</li>
+<li>If OmniDent cannot open its database when it starts, it moves the old file aside and starts fresh, and tells you so on screen. Delete All Scans &amp; Data, and so Delete Account &amp; All Data, did not remove that old file: it kept the records it held, including photo thumbnails, your health profile, habit logs and household names, until you deleted the app. Section 10 did not list it among the things Delete All leaves, and it should have. Delete All now removes it, and says so if it cannot. Section 10 now also names the one rare case Delete All cannot reach: a database the app could neither open nor move aside, while it runs on temporary storage.</li>
+<li>Delete All Scans &amp; Data now also asks the system to redraw the Home Screen widget. Before, the widget could keep showing its last line, including the date of a photo you had deleted, until you next opened the You or Do tab or ran a care session, or until midnight.</li>
+</ul>
+<p>Sections 1, 3, 7 and 10 are updated. The short version is unchanged. No category of data, source, purpose or recipient is added, and nothing is sent to Prameya.</p>
 <p><strong>27 September 2026, third revision — what changed.</strong> The short version and section 5 said Sign in with Apple "does not change what syncs". What syncs is the same whether or not you sign in, but signing in turns the iCloud Sync switch on and signing out turns it off. That was already true of the app, and this policy now says so in the short version and sections 5 and 6. iCloud Sync can still be turned on or off in Settings without signing in. No category of data, source, purpose or recipient is added, and nothing is sent to Prameya.</p>
 <p><strong>Later on 27 September 2026 — what changed.</strong> OmniDent was changed for the Mac and Apple Vision Pro, and this policy describes the app with those changes. iPhone and iPad are unchanged.</p>
 <ul>
@@ -750,7 +760,7 @@ OmniDent consumer health data policy: https://prameyallc.github.io/privacy/omnid
 <footer class="site"><div class="wrap">
   <p>Prameya LLC · <a href="mailto:admin@prameya.legal">admin@prameya.legal</a>
   · <a href="https://prameyallc.github.io/privacy/support/">Support</a></p>
-  <p>Effective 27 September 2026. <a href="https://prameyallc.github.io/privacy/">All app privacy policies</a></p>
+  <p>Effective 7 October 2026. <a href="https://prameyallc.github.io/privacy/">All app privacy policies</a></p>
 </div></footer>
 </body>
 </html>

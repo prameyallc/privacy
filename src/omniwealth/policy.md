@@ -1,6 +1,6 @@
 # OmniWealth Privacy Policy
 
-**Effective date:** 27 September 2026
+**Effective date:** 7 October 2026
 **Publisher:** Prameya LLC ("Prameya", "we", "us"), a United States limited liability company
 **Contact:** admin@prameya.legal
 **Applies to:** the OmniWealth app for iPhone, iPad, Mac and Apple Vision Pro, its Apple Watch app, its Apple TV app, and its Home Screen widget
@@ -102,7 +102,7 @@ Everything you enter into OmniWealth is stored locally, in the app's own storage
 | Ask questions | A question you type in Ask (see [Ask](#ask)) | Held in memory only, until you tap **New chat** or the app closes; not saved |
 | App preferences | Appearance, whether you have acknowledged the first-run disclosure, whether Ask is on, the weekly check-in reminder switch and its weekday, when you last marked the check-in reminder seen from Apple Watch, the age-range result described under [Children](#children), which version of the significant-change notice this device has been through, and a marker that the one-time cleanup of old model files has run | Device settings storage |
 
-The app also has a second local database set aside for a small set of preferences. It is created with cloud syncing turned off, and nothing in this version writes to it.
+The records marked "Local app database" above are kept in one local database on the device. Builds made before 6 October 2026 also create a second local database set aside for preferences, with cloud syncing turned off and no records in it. Builds made since 6 October 2026 do not create or open it. On iPhone, iPad and Apple Vision Pro, an empty copy left by an earlier build stays on the device until you delete the app. On a Mac it stays in the app's folder under `~/Library/Containers/legal.prameya.OmniWealth` until you remove that folder (see [Your choices and controls](#your-choices-and-controls)).
 
 This data is written to the app's private storage area, which the operating system protects from other apps. It is never uploaded to Prameya. We could not read it if we wanted to.
 
@@ -211,7 +211,7 @@ Each of these is a flat "no", not a "we limit this":
 
 ## iCloud and syncing
 
-**OmniWealth does not sync your financial or habit data to iCloud.** Your check-ins, envelope lines, goals, income figure, statement records and saved scenarios are stored in a local database on the device where you entered them. Both of the app's databases are created with cloud syncing turned off, and the app has no iCloud (CloudKit) container. If you use OmniWealth on two devices, those records on the two devices are separate and do not share data.
+**OmniWealth does not sync your financial or habit data to iCloud.** Your check-ins, envelope lines, goals, income figure, statement records and saved scenarios are stored in a local database on the device where you entered them. That database is created with cloud syncing turned off. The app makes no CloudKit calls and has no iCloud (CloudKit) container. If you use OmniWealth on two devices, those records on the two devices are separate and do not share data.
 
 **The iCloud key-value store.** On iPhone and iPad, if you are signed in to iCloud, the app keeps four small values in its iCloud key-value store, which Apple syncs to your other devices that use the same Apple Account:
 
@@ -269,7 +269,7 @@ Because your data stays on your device, you control it directly.
 - **Correct or delete one entry:** open a check-in from **Do**, or an envelope line from the Envelopes screen, to change it or delete it on its own. Each goal, each statement record and each saved scenario also has its own delete control: for a saved scenario, swipe it or open its menu under More ▸ Tools ▸ Your numbers, then confirm. Deleting a saved scenario does not need Pro.
 - **Get your data out:** **More ▸ Data ▸ Export everything in this app** writes one JSON file with every check-in, envelope line, statement record with its page image and that image's file type, saved scenario and your profile. **Export consistency summary** writes a smaller file of just the consistency measurement, and **Export formatted worksheet (CSV)** is a Pro export. Each file is written to this device and goes only where you send it.
 - **Delete everything you have entered:** **More ▸ Data ▸ "Delete all data in this app"**. After a confirmation prompt, this permanently deletes, on this device, every habit log, envelope / budget line, statement record and its page image, saved scenario, and your profile (goals and income figure), plus your age-range result, and leftover model files and settings from older installs if any remain. It also clears the four iCloud key-value values described under [iCloud and syncing](#icloud-and-syncing), turns off the weekly check-in reminder (its switch, weekday and the time you last marked it seen from Apple Watch) and removes any check-in or draft notice still waiting, and sends your Apple Watch a fresh list with no draft or topic prompts, so its complication goes back to "Learn.". If a later file removal fails after the database is emptied, the app says so rather than claiming a complete delete. It cannot be undone. It does **not** reset your appearance or Ask settings, and it cannot reach copies already in your device backups or in files you exported.
-- **Delete everything on a device, including preferences:** delete the app. That removes the app's local database and its preferences from that device. It does not remove the iCloud key-value values described under [iCloud and syncing](#icloud-and-syncing); use **Delete all data** before deleting the app if you want those gone too.
+- **Delete everything on a device, including preferences:** delete the app. On iPhone, iPad, Apple Watch, Apple TV and Apple Vision Pro, that removes the app's local data and its preferences from that device. On a Mac, moving the app to the Trash does not remove them: they stay in the app's folder under `~/Library/Containers/legal.prameya.OmniWealth`. Use **Delete all data** first, then remove that folder. Deleting the app does not remove the iCloud key-value values described under [iCloud and syncing](#icloud-and-syncing); use **Delete all data** before deleting the app if you want those gone too.
 - **Ask us to delete your data:** there is nothing for us to delete. We have never received it. If you write to us asking for deletion, that will be our honest answer.
 
 ---
@@ -310,7 +310,7 @@ Where the UK GDPR or EU GDPR applies, note that Prameya does not act as a contro
 
 ## Security
 
-- Your data is stored in the app's private storage, which the operating system isolates from other apps. On iPhone, iPad and Apple Vision Pro, the app's databases are set to Apple's "complete unless open" file protection: they are stored encrypted with a key tied to your device passcode, and once your device is locked they cannot be opened again until you unlock it (a database the app already has open stays readable). On Mac, the app runs in Apple's app sandbox and relies on your Mac's own disk encryption (FileVault, if you have turned it on).
+- Your data is stored in the app's private storage, which the operating system isolates from other apps. On iPhone, iPad and Apple Vision Pro, the app's database is set to Apple's "complete unless open" file protection: it is stored encrypted with a key tied to your device passcode, and once your device is locked it cannot be opened again until you unlock it (if the app already has it open, it stays readable). On Mac, the app runs in Apple's app sandbox and relies on your Mac's own disk encryption (FileVault, if you have turned it on).
 - The app downloads no model in this version, so there is no download request to protect.
 - The strongest control is architectural: there is no server holding your financial information, so there is no server to be breached.
 
@@ -337,6 +337,14 @@ If we change how OmniWealth handles data, we will update this policy before the 
 - We will change the effective date at the top.
 - We will describe what changed in plain language.
 - The previous version will remain available at this address's history.
+
+**7 October 2026 — what changed.** This revision corrects how the app's local storage is described, including what deleting the app does on a Mac. Nothing the app does with your data changed, and nothing is sent to Prameya:
+
+- **One local database.** The previous version said the app also had a second local database set aside for a small set of preferences, created with cloud syncing turned off, and that nothing in that version wrote to it. Builds made since 6 October 2026 no longer create or open it, and the app's unused CloudKit code is removed. Your records stay where they were, in the app's main local database. An empty copy left by an earlier build stays on the device until you delete the app on iPhone, iPad or Apple Vision Pro, or on a Mac until you remove the app's folder under `~/Library/Containers/legal.prameya.OmniWealth`.
+- **iCloud and syncing** and **Security** now describe that one database: it is created with cloud syncing turned off, the app makes no CloudKit calls, and on iPhone, iPad and Apple Vision Pro it has Apple's "complete unless open" file protection.
+- **Deleting the app on a Mac.** The previous version said that deleting the app removes its local database and its preferences from the device. On iPhone, iPad, Apple Watch, Apple TV and Apple Vision Pro, deleting the app does remove the app's local data and its preferences. On a Mac, moving the app to the Trash leaves them in the app's folder, so **Your choices and controls** now says to use **Delete all data** first and then remove that folder.
+
+The short version is unchanged.
 
 **27 September 2026 — what changed.** This revision corrects statements about the Mac, Apple Vision Pro and Apple TV apps. Nothing the app does with your data changed, and nothing is sent to Prameya:
 

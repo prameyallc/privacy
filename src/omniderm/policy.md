@@ -1,6 +1,6 @@
 # OmniDerm Privacy Policy
 
-**Effective date:** 27 September 2026 *(supersedes the 24 September 2026 version, and an earlier revision of the same date; what changed is listed under "Changes to this policy" at the end)*
+**Effective date:** 7 October 2026 *(supersedes the 27 September 2026 version, the later of two revisions that day; what changed is listed under "Changes to this policy" at the end)*
 **Publisher:** Prameya LLC ("Prameya", "we", "us"), a United States limited liability company
 **Contact:** admin@prameya.legal
 **This policy covers:** the OmniDerm app — bundle ID `legal.prameya.OmniDerm` — on iPhone, iPad, Mac and Apple Vision Pro, its Apple Watch app, its Apple TV app, and its Home Screen and Apple Watch widgets. Prameya's other apps have their own policies.
@@ -37,8 +37,8 @@ OmniDerm is published by Prameya LLC, a US limited liability company. You can re
 OmniDerm is a consumer app for skin-care habits and education. It helps you:
 
 - keep a private journal of notes and optional photographs on this device;
-- log daily habits (sunscreen in the morning, reapplying, barrier care, doing a self-check) and see your streak and consistency;
-- learn about sun protection and the ABCDE self-check ideas from topics built into the app;
+- log daily habits (sunscreen in the morning, reapplying, barrier care, and whether you looked at the same area of skin today) and see your streak and consistency;
+- read topics built into the app about sun protection and skin care, skin conditions, infections and infestations, and what looking at your own skin can and cannot show;
 - ask general skin-care questions in **Ask**, answered by a language model on your device.
 
 ## What OmniDerm will not do
@@ -47,7 +47,7 @@ OmniDerm is **not a medical device** and does **not** diagnose, screen for, or d
 
 Features that would produce an assessment of a photograph of your skin are behind a **clearance gate that is switched off**. In the version of OmniDerm on the App Store, the app does not produce observations, flags, ratings, or any other output about a photo of your skin. The photo self-check that earlier builds carried, closed behind that gate, was removed from the app on 26 September 2026: there is no button for it, no screen behind it and no vision model, and the app never downloads one. The gate itself stays in the code, closed, on the type that would carry such a result. A photo feature would come back only as a new feature, and only once it has the regulatory clearance it would need.
 
-In practice there is no **assessment** screen to open: Learn has no button for one. You can still save a journal photograph. **Settings → Legal & Safety** states what the app does and does not do.
+In practice there is no **assessment** screen to open: Understand has no button for one. You can still save a journal photograph. **Settings → Legal & Safety** states what the app does and does not do.
 
 **Ask never sees a photograph.** It is given only the question you type, the last few lines of the current conversation, and passages from OmniDerm's built-in topics. It is not given your journal, your photographs or your habit logs. The model is instructed not to assess anyone's skin, but OmniDerm does not check or filter what the model writes: the answer is shown as written and can be incomplete or wrong.
 
@@ -139,13 +139,13 @@ Two different things used to be described as if they were one. They are not.
 |---|---|---|
 | Journal entries: date, body area, note, lighting note, and whether a photograph is attached | On your device, in the app's local database | Only inside your device backup, if you back up your device. Never synced, never uploaded by OmniDerm. |
 | Journal photographs you save | On your device, as JPEG files under Application Support (`OmniDerm/JournalPhotos`), metadata removed. Excluded from device backup. Deleted with Clear All Local Data. Never assessed. | No |
-| Habit logs (date; whether you did morning SPF, reapplied, barrier care, a self-check; and where the log was made, for example Do or your Apple Watch) | On your device, in the app's local database | Only inside your device backup |
+| Habit logs (date; whether you did morning SPF, reapplied, did barrier care, or looked at the same area today; and where the log was made, for example Do or your Apple Watch) | On your device, in the app's local database | Only inside your device backup |
 | Your goals list, reminder on/off and hour, appearance, landing tab, first-run acknowledgement, the iCloud Sync and Handoff switch, and an internal reference to the journal entry you saved last | On your device, in app preferences | Only inside your device backup — and, **if** you turn on iCloud Sync and Handoff, the settings listed under "iCloud, Handoff and your other devices" |
 | Your reminder hour, only while reminders are on | On your Apple Watch, in storage that only the OmniDerm Watch app and its watch-face complication share | It comes from your iPhone over the connection between the two devices (see "Apple Watch"), and goes nowhere else |
 | Your answer to the Ask model download, with the model and version it was given for, and which of the offered models you chose | On your device, in app preferences | Only inside your device backup |
 | The downloaded Ask model's files, only if you chose to download one | On your device, under Application Support (`OmniDerm/HubCache`). Excluded from device backup. | No |
 | Questions you type in Ask, and the answers | In memory, for the conversation on screen. Not written to storage. | No |
-| The topic held for continuing, the next suggested topic, and the list of topics you opened in Learn while the switch was on (see "iCloud Sync") | In **your own iCloud key-value storage**, and in the Handoff activity, only while iCloud Sync and Handoff is on | Yes — to your iCloud and your own devices, not to us |
+| The topic held for continuing, the next suggested topic, and the list of topics you opened in Understand while the switch was on, which can also take in the topic held for continuing when you turn the switch on (see "iCloud Sync") | In **your own iCloud key-value storage**, and in the Handoff activity, only while iCloud Sync and Handoff is on | Yes — to your iCloud and your own devices, not to us. The topic held for continuing also goes to your Apple Watch when you tap **Read this topic** there, with the switch on or off (see "Apple Watch") |
 | A temporary copy of an export you make | A backup-excluded scratch folder, cleared afterwards | Only where you share it |
 | Diagnostic log messages | Apple's on-device system log | No |
 
@@ -213,7 +213,7 @@ What goes to the model is your question, up to the last six lines of the convers
 
 **1. A preference record in your private CloudKit database.** When you switch sync on, and each time the app launches while it is on, OmniDerm reads this record and applies it. It writes the record only when you tap **Sync Now**. The record can hold only these five settings, each checked in code against a fixed set of values before it is written, so free text cannot ride along: appearance mode, whether reminders are on, the reminder hour, which tab the app opens on, and whether you have acknowledged the app's disclosure. Your Ask model choice is not synced.
 
-**2. iCloud key-value storage, for continuing where you left off.** So that your Apple Watch, Apple TV and the Home Screen widget can offer to continue, OmniDerm stores: the tab you were on and, when that tab is Learn, the identifier of the **topic held for continuing**; your appearance choice; the next suggested topic for the widget (its identifier, title and a one-line summary); a topic you tapped in the widget until the app opens it; and **a list of the topics you have opened**. The topic held for continuing is the last topic you opened in Learn, by any route — browsing the library, Start here, a related topic, the Home Screen widget, your Apple Watch or Handoff — and each topic you open while the switch is on is added to that list. Topic identifiers name skin-care subjects, some of them skin conditions — so this list is, in effect, your reading history in Learn while the switch was on, stored in your iCloud account.
+**2. iCloud key-value storage, for continuing where you left off.** So that your Apple Watch, Apple TV and the Home Screen widget can offer to continue, OmniDerm stores: the tab you were on and, when that tab is Understand, the identifier of the **topic held for continuing**; your appearance choice; the next suggested topic for the widget (its identifier, its title and a fixed line of the app's own); a topic you tapped in the widget until the app opens it; and **a list of the topics you have opened**. The topic held for continuing is the last topic you opened in Understand, by any route — browsing the library, Start here, a related topic, the Home Screen widget, your Apple Watch or Handoff — and each topic you open while the switch is on is added to that list. When you turn the switch on, the topic held for continuing at that moment can be added to the list too, even if you opened it while the switch was off. Each topic identifier names its topic, and topics cover skin-care subjects, skin conditions, rare diseases (for example epidermolysis bullosa) and infections and infestations. They can also name sexually transmitted or sexual-contact conditions: for example, the pubic lice topic quotes its source as saying they usually spread through sexual contact. So this list is, in effect, your reading history in Understand while the switch was on, stored in your iCloud account, and it can show that you read about sexual health.
 
 **What iCloud Sync never carries:** journal entries and notes, journal photographs, habit logs, anything derived from your habit logs (streaks, consistency, trends), your goals, your Ask questions and answers, and any observation about your skin. No part of the app's local database is mirrored to iCloud. (If you use iCloud Backup, your device backup is a separate matter — see "Everything the app stores, and where".)
 
@@ -225,7 +225,7 @@ With sync off, the widget shows the first suggested topic, Apple TV has nothing 
 
 ### Handoff
 
-**Only while iCloud Sync and Handoff is on** and OmniDerm is open, iOS advertises it for Handoff so your other devices signed in to the same Apple Account can offer to continue. The Handoff record names the tab you are on and, when that tab is Learn, the identifier of the topic held for continuing (described under "iCloud Sync" above). **With the switch off, OmniDerm advertises nothing for Handoff.** Handoff is Apple's service; the record is not public and is not indexed for search. You can also turn Handoff off for every app in **iOS Settings → General → AirPlay & Continuity** (on a Mac, in System Settings → General → AirDrop & Handoff).
+**Only while iCloud Sync and Handoff is on** and OmniDerm is open, iOS advertises it for Handoff so your other devices signed in to the same Apple Account can offer to continue. The Handoff record names the tab you are on and, when that tab is Understand, the identifier of the topic held for continuing (described under "iCloud Sync" above). **With the switch off, OmniDerm advertises nothing for Handoff.** Handoff is Apple's service; the record is not public and is not indexed for search. You can also turn Handoff off for every app in **iOS Settings → General → AirPlay & Continuity** (on a Mac, in System Settings → General → AirDrop & Handoff).
 
 ### Apple Watch
 
@@ -237,9 +237,9 @@ The Apple Watch app shows the built-in topics, and cards the iPhone sends it ove
 
 ### Apple TV, Mac, Apple Vision Pro and the widget
 
-- **Apple TV** shows the built-in topic library, a Continue tab that reads iCloud key-value storage (so it has something to continue only when iCloud Sync is on in OmniDerm on another of your devices), and an About tab with the app's notice, the short version of this policy and the addresses of the policies and terms, as text built into the app. It keeps no journal and offers no Ask and no model download.
+- **Apple TV** shows the built-in topic library, a Continue tab that reads iCloud key-value storage (so it has something to continue only when iCloud Sync is on in OmniDerm on another of your devices), and an About tab with the app's notice, the short version of this policy and the addresses of the policies and terms, as text built into the app. Apple TV opens on the Continue tab, so when you were last in Understand on another of your devices, the topic held for continuing is the first thing it shows on the TV screen. It keeps no journal and offers no Ask and no model download.
 - **Mac and Apple Vision Pro** run the same app as iPhone and iPad, with the same journal, the same iCloud Sync and Handoff switch and the same Ask; on those devices everything in this policy about "this device" applies to them.
-- **The Home Screen widget** reads the next suggested topic from iCloud key-value storage; with sync off it shows the first topic.
+- **The Home Screen widget** (listed as "Journal" in the widget gallery) shows the title of a suggested topic, one of the ten Start here topics, read from iCloud key-value storage; with sync off it shows the first topic. With sync on, once you have opened all ten it shows the words "Private journal" instead, and if the app cannot load its topics the widget says so. The medium size adds a fixed line of the app's own, "It does not name the thing." It cannot read your journal and never shows an entry, a photograph or a habit log.
 
 ## Notifications
 
@@ -368,7 +368,7 @@ This is a privacy policy, but three facts about the app affect the choices you m
 
 **Ask is a general-purpose language model.** Its answers are shown as the model writes them, are not reviewed by a clinician, and can be incomplete or wrong. Do not use them to decide anything about your own skin.
 
-**Nothing in this app is screening.** Logging a self-check is a record of what you did. It is not a screening result and it does not mean anything was checked properly. See a clinician.
+**Nothing in this app is screening.** Marking that you looked at the same area is a record of what you did. It is not a self-check or a screening result, and it does not mean anything was checked properly. See a clinician.
 
 ---
 
@@ -379,6 +379,17 @@ If we change how OmniDerm handles your data, we will update this policy and chan
 - post the updated policy here before the change ships, and
 - tell you inside the app, and
 - ask for your consent again where the law requires it, including a fresh consent for any new collection or sharing of consumer health data under Washington's My Health My Data Act.
+
+**7 October 2026 — what changed.** The app's topic library grew and some of its words changed. This page had not caught up, and it now follows the app:
+
+- **Topics you open.** The built-in library added topics on rare skin diseases and a group on infections and infestations. One of them is pubic lice, which its source says usually spread through sexual contact. Like every topic, each of these can become the topic held for continuing and, while iCloud Sync and Handoff is on, join the list of topics you opened in your iCloud. So "iCloud Sync" now says what the identifiers can name, and that the list can show that you read about sexual health. What is stored, when, and where it goes are unchanged, and none of it reaches us. The app does not ask for a new consent for these topics. "Apple TV" now says that it opens on its Continue tab, and the storage table now names the Apple Watch's **Read this topic** card, which "iCloud Sync" already described.
+- **The list of topics you opened.** "iCloud Sync" and the storage table now say that when you turn the switch on, the topic held for continuing at that moment can join the list, even if you opened it while the switch was off. This page said the list held only topics opened while the switch was on.
+- **The widget.** It is listed as "Journal" in the widget gallery. It still shows a suggested Start here topic, or, with sync on, the words "Private journal" once you have opened all ten, and cannot read your journal; this page now says so. The line stored for the widget beside the topic's title is a fixed line of the app's own, not a summary of the topic.
+- **Habit logs.** The fourth habit mark is "Looked at the same area today", as the app labels it. This page called it a self-check.
+- **What OmniDerm is.** The ABCDE topic is withheld while the clearance gate is closed, so this page no longer says you can learn the ABCDE ideas in the app. It now lists what the topics cover.
+- **Understand.** The tab where you read topics is called Understand in the app, and this page now uses that name. The Apple Watch app's tab, and the watch-face complication's word, are still "Learn". Earlier entries below keep the name they used.
+
+The short version is unchanged. Nothing is sent to Prameya.
 
 **Later on 27 September 2026 — what changed.** The revision earlier the same day said iCloud Sync and Handoff carried the same things as before. It did not describe a change the app had made that morning, and it gave iPhone paths where a Mac has its own. This revision corrects that:
 

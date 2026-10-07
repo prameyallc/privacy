@@ -165,3 +165,78 @@ CORRECTED — "Sign in with Apple is optional. It does not change what syncs." (
 CASCADE — the sentence is in "The short version"
 - OmniDent's Apple TV About tab prints the short version (`Knowledge/LivingRoomLegalCopy.swift`, `privacySummary[8]`); it is updated in the same wave (OmniDent `fix/mac-child-session-copy-2026-09-27`).
 - App Store Connect's "Apple TV Privacy Policy" field carries the same short version; the owner updates it (Connect is not written from here).
+
+
+## 2026-10-07 — the photo-journal widget line, single photos without a view, and Delete All's two gaps
+
+Owner: "Implement all your recommendations" (2026-10-07). Both policies re-dated 7 October 2026; terms.md unchanged (still 27 August 2026). Code read from OmniDent `origin/main` at 48982dc (merge of PR #240; includes PR #238 `d5a8328` and PR #239 `79770f5`), plus the uncommitted fix on `fix/privacy-policy-2026-10-07` (`Persistence/MovedAsideStore.swift`, `AppDataService.swift`, `AppContainerView.swift`, `DeleteAllAftermath.swift`, `CareCompetitiveFeatures.swift`). Every finding was confirmed by a second reviewer before it was applied.
+
+CORRECTED — "care-status line" (main policy sections 1 and 7; health policy App Group care snapshot row)
+- The widget is `CareStatusWidget` with display name "Photo journal" and description "Same-spot photos and the care you logged." (`App/OmniDentWidget/CareStatusWidget.swift:95-110`). It shows `liveLine ?? "Keep one photo"` (`:15-17`; `CareWidgetShared.swift:50`) and reads only `statusLine` and `tapAction` from `care.widget.snapshot.v1` (`CareWidgetShared.swift:27-45`).
+- The host writes the line from the active mouth's photos: `JournalGlanceSnapshot.save` (`AppSurfaces/Features/Home/HomePhotoJournalViews.swift:291-317`, `fetchRecentScans(limit: 500)` plus `compareSpotKeys`) → `CareWidgetSnapshot.build` (`DentalCore/Services/CareCompetitiveFeatures.swift:123-153`) → `JournalGlanceCopy.line` (`DentalCore/Services/PhotoJournalCopy.swift:205-225`): "Same spot · Last photo <MMM d>", "Last photo <MMM d>" or "No photos yet", plus ". You're set for today" only when today's care is logged. Callers: `HomeView.swift:430`, `DoHubView.swift:293`, `CareSessionView.swift:574`.
+- "Same spot" = `SameSpotCompare.pair(frames:)?.sameSpot` (`DentitionKit/SameSpotCompare.swift:82-133`), where a frame's spot is its user view tag, else a recorded set slot that is not the old guessed Smile (`JournalSpot.key`, `:33-51`; `Persistence/CaptureSessionStore.swift:184-208`).
+- Tap: `"startCapture"` when there is no photo and `OmniPlatform.hasPhotoCapture`, else `"openJournal"` (`CareCompetitiveFeatures.swift:140`); `AppTabCoordinator.handleWidgetLogCare` opens capture or the You tab (`AppSurfaces/App/AppTabCoordinator.swift:296-316`; `presentCapture` is guarded by `hasPhotoCapture`, `:140-143`). The widget target is built for iOS, macOS and visionOS (`OmniDent.xcodeproj/project.pbxproj:1023`, `:1071`); OmniDent on the Mac and Vision Pro keeps no photos, so the widget it puts there never carries a photo date. A Mac that shows the iPhone's widgets shows the iPhone's line (review round below).
+- On-device only; `NSPrivacyCollectedDataTypes` unchanged in both app and widget manifests. No new category, source, purpose or recipient.
+
+CORRECTED — "the view of your mouth it is filed under" for every photo (main policy section 3)
+- `CaptureSessionStore.attachJournalScan` (`Persistence/CaptureSessionStore.swift:151-180`, PR #238) files a single photo with `viewSlot: nil`; at the baseline e3b50af it used `.smileFrontal`. Older single shots keep their stored Smile slot, which compare treats as no view (`guessedSmileSessionIDs`, `:212`). Policy now says a photo taken as part of a set is filed under the set's view, one taken on its own is not, and earlier versions filed it as Smile.
+
+FIXED IN THE APP, THEN DESCRIBED — Delete All left the moved-aside database (main policy section 10 removes list; health policy right-to-delete paragraph)
+- Pre-existing since ad5330b (2026-08-17): when `default.store` cannot open, `AppContainerView.openOrRecoverPrimaryContainer` moves it and `-wal`/`-shm` to `default.store.corrupt-<stamp>` in Application Support. Nothing on the Delete All path removed it.
+- Fix: `deleteAllUserData()` step 11 `purgeMovedAsideStores(&failures)` (`Persistence/AppDataService.swift:1577`, `:1732-1751`) removes only regular files matching `MovedAsideStore.isMovedAsideFile` (`Persistence/MovedAsideStore.swift`); a file it cannot remove is a failure, shown as "Could not delete everything" (`Features/Settings/SettingsView.swift:556-590`). The quarantine names the file through the same type (`AppContainerView.swift:288-291`). Both delete paths call `deleteAllUserData()` (`SettingsView.swift:556`, `Features/CloudSync/CloudSyncFeature.swift:277`). The banner now ends "Delete All Scans & Data in Settings removes it." (`AppContainerView.swift:140`).
+- Tests (stage 1): `MovedAsideStoreDeletionTests`, `MultiWindowStoreTests.deleteAllFindsExactlyWhatTheQuarantineMoved`, `PrivacyFixesContractTests.deleteAllRemovesTheMovedAsideStoreAndRedrawsTheWidget`.
+- The policy said section 10 listed "the few things it leaves"; that list was incomplete before this fix. Both "Changes" sections say so.
+
+FIXED IN THE APP, THEN DESCRIBED — the widget kept its last line after Delete All (MISSED-1)
+- `DeleteAllAftermath.run()` now calls `CareWidgetSnapshotStore.reloadWidget()` (`AppSurfaces/App/DeleteAllAftermath.swift:37`; `CareCompetitiveFeatures.swift:199`, `WidgetCenter.shared.reloadTimelines(ofKind: "CareStatusWidget")`) after the App Group purge. The redraw reads an empty suite ("Keep one photo") or a fresh "No photos yet" snapshot; either way no photo date. A reload is a request to WidgetKit, so the policy says "asks the system to redraw".
+
+CASCADE
+- Apple TV About: `LivingRoomLegalCopy.privacyEffective` now reads "effective 7 October 2026"; the short version is unchanged, so `privacySummary` is unchanged (`OmniDentKit/Sources/Knowledge/LivingRoomLegalCopy.swift:36-37`; pinned by `PlatformWaveContractTests`). App Store Connect's "Apple TV Privacy Policy" field carries the same text; the owner updates it.
+- No in-app notice: the policy promises one for a new destination, category, third party, change to what syncs, or advertising/analytics. None of these is one, and the app shows none.
+
+LEFT AS HISTORY
+- The 20 September 2026 entry in the main policy's section 19 still says "the Home Screen widget's care-status line"; it is dated history, superseded by the 7 October entry.
+
+STILL OPEN (not changed here)
+- Terms section 2 still says "It is not a diagnosis, it is not a medical device", while both policies make no blanket claim. No change in this range made it false; the owner may want the terms aligned.
+- The hub page's OmniDent card still links only /privacy/omnident/ (RCW 19.373.020(1)(b) wants the health-data policy linked distinctly); that is the generator's hub, outside `src/omnident/`.
+- `APP_STORE_CONNECT_SETUP.md` still lists an "OmniDent Plus" group and "Family Sharing ❌ NO"; the shipping `OmniDent.storekit` has three family-shareable Pro products.
+
+### Review round, 2026-10-07
+
+A second reviewer read the change above; each item was re-checked against the code before it was applied.
+
+CORRECTED — "a Mac or Apple Vision Pro keeps no photos, so there it never shows a photo date" (main policy section 7), "nothing leaves your device" (main policy section 19), "stays on your device" (health policy 7 October entry)
+- `CareStatusWidget` is an `AppIntentConfiguration` with `.supportedFamilies([.systemSmall, .systemMedium])` and no `.disfavoredLocations` (`App/OmniDentWidget/CareStatusWidget.swift:101-110`), so on macOS 14 and later a Mac can show the iPhone's widget, which the iPhone draws and the system passes to the Mac. That line can carry the iPhone's photo date.
+- OmniDent's own Mac and Vision Pro widget still never shows a photo date: only iOS code creates a `Scan` (`CaptureKit/CameraViewModel.swift` → `saveRawPhoto`, and `Features/Capture/CameraCaptureView.swift` → `attachJournalScan`, both under `#if os(iOS)`), and `OmniPlatform.hasPhotoCapture` is false off iOS (`PlatformCapabilities.swift:31-37`).
+- Section 7 now limits the claim to OmniDent's own widget on those devices and says what a Mac showing the iPhone's widgets shows. Section 19 and the health policy's 7 October entry say "OmniDent sends nothing off your device for it". The health policy's "Where this data lives" gets a Mac bullet, so that list stays complete.
+- Checked and not affected: the care-session Live Activity. Its compact and minimal presentations are an icon and the timer (`App/OmniDentWidget/CareSessionLiveActivity.swift:66-75`), so the Watch Smart Stack and a Mac menu bar, which use them, show no name.
+
+REWORDED — "the view a set of photos took them for" (main policy section 7) → "the view the set of photos asked for when you took them", matching section 3 (`JournalSpot.key`, `DentitionKit/SameSpotCompare.swift:33-51`).
+
+COMPLETED — App Group care snapshot row (health policy): adds `ctaLine`, "Open OmniDent" or `CareSessionEngine.startTodayCTA` ("Tonight's two minutes"), built from `careCompletedToday` (`CareCompetitiveFeatures.swift:145-147`). The widget does not read it (`CareWidgetShared.swift:27-34`).
+
+ADDED TO "IT LEAVES" — the store the quarantine could not move (main policy section 10; health policy "What it leaves")
+- When `moveItem` fails, the error is only logged (`AppContainerView.swift:291-301`), the reopen at the same URL fails, and the app runs on the in-memory container with `isEphemeral: true` (`:319-330`). The unreadable `default.store` stays under the live name, and Delete All works only through the in-memory store; `MovedAsideStore` matches only `.corrupt-<stamp>` names. A later launch either opens the file (Delete All then reaches its records) or moves it aside (Delete All then removes it).
+- Photo files do not linger in that case: `repairOrphanedScanFiles()` runs about 800 ms into every launch (`AppSurfaces/App/RootView.swift:173-178`) and removes every JPEG in `Documents/Scans` with no `Scan` record in the open store (`Persistence/AppDataService.swift`, `repairOrphanedScanFiles`).
+
+VERIFIED — `bash scripts/check-ios-build.sh` (with `KNOWLEDGE_REFRESH=off`, so the scheme pre-action refreshed no packs) compiles the app, the widget extension and the Watch app for the simulator with the stage-1 fix. Package-resolution noise in the app project's `Package.resolved` was restored.
+
+STILL OPEN (owner)
+- The terms nit above is a legal decision, not a factual correction, and is left for the owner.
+
+### Final check, 2026-10-07
+
+Every new or changed sentence in both policies was re-read against the OmniDent worktree (`fix/privacy-policy-2026-10-07` on 48982dc), including the stage-1 app fix.
+
+REWORDED — main policy section 10 "removes" list: the moved-aside database item now follows "the settings store behind them (…)" instead of preceding it, so "them" again refers to the records listed before it, not to the old database. No change in meaning.
+
+VERIFIED — the Delete All fix removes only moved-aside store files
+- `MovedAsideStore.files(in:)` lists Application Support as the file manager resolves it (`URL.applicationSupportDirectory` in the app, which is inside the app's sandbox on every platform; `OmniDent-macOS.entitlements` sets `com.apple.security.app-sandbox`) and keeps only regular files named `default.store.corrupt-<stamp>`, `…-wal` or `…-shm`, where `<stamp>` has exactly the shape `9999-99-99T99-99-99Z` in ASCII digits. The quarantine names files through the same type, and older builds wrote the same name (`ISO8601DateFormatter` with `:` replaced by `-`).
+- Under `swift test`, every test that reaches `AppDataService` carries `.isolatedDefaults` (enforced by `TestDefaultsIsolationContractTests`), which binds `OmniDentContainerPaths.fileManagerOverride` to the test's own folder, so the purge never lists the developer's real Application Support. `OmniDentTests.swift`, whose suite has no trait, is excluded from its target in `Package.swift`.
+- Mutation runs: dropping the stamp check, dropping the regular-file filter, or dropping `CareWidgetSnapshotStore.reloadWidget()` from `DeleteAllAftermath.run()` each turned `MovedAsideStoreDeletionTests` or `PrivacyFixesContractTests` red; the originals were restored byte for byte.
+- `bash scripts/check-ios-build.sh` (with `KNOWLEDGE_REFRESH=off`) passes again on the final tree, and the targeted kit suites pass (648 Swift Testing tests). The app project's `Package.resolved` noise it left was restored.
+
+VERIFIED — the rare unmoved-store case (`AppContainerView.swift:288-330`): when `moveItem` fails and the reopen fails, the app runs on the in-memory container with `isEphemeral: true` and the banner reads "running on temporary storage"; `default.store` keeps its live name, which `MovedAsideStore` never matches. A later launch either opens the file or moves it aside, so the policies' advice is true.
+
+VERIFIED — Apple TV: `LivingRoomLegalCopy.privacySummary` equals the published short version paragraph for paragraph (bold dropped), and `privacyEffective` reads "effective 7 October 2026", pinned by `PlatformWaveContractTests`.

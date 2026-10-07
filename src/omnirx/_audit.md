@@ -132,3 +132,52 @@ CORRECTED — "it can use cellular data, but not while Low Data Mode is on" name
 VERIFIED, NO CHANGE
 - Model table rows for Mac, Vision Pro, Apple TV and Watch (`Intelligence/…/RxModelTier.swift:196-297`); "Apple TV has no Ask" (`App/OmniRxTV/OmniRxTVApp.swift:7-10`, `:34-41`); TV writes the page ID (`:354-357`).
 - Not described and not contradicted: the Apple TV About tab (`OmniRxTVApp.swift:98-101`, `:436-481`) and the TV reader's safety blocks (#158).
+
+## Addendum 2026-10-07 — age assurance, the daily-check widget, one label link per medicine
+
+Re-audit of OmniRx origin/main `8b4b134` (merge of #176), covering PRs #159–#176 since `1be5679`. Each finding was confirmed by a second reviewer before the pages changed. Both pages move to 7 October 2026; terms.md is unchanged.
+
+CHANGED — age assurance (#176), policy.md Children, short version, data table, StoreKit, new "Apple's age tools", Delete all
+- `OmniRxKit/Sources/AppSurfaces/RootView.swift:63` mounts `AgeAssuranceHost` after the first-run notice, not DEBUG-gated; `AppContainerView.swift:60` is the iPhone, iPad, Mac and Vision Pro root. TV (`App/OmniRxTV`) and Watch (`WatchRootView`) do not mount it.
+- `OmniRxKit/Sources/AppSurfaces/AgeAssurance/AgeAssuranceHost.swift`: `:107` `AppStore.ageRatingCode`; `:127-142` `isEligibleForAgeFeatures`, `requiredRegulatoryFeatures`, `requestAgeRange` (gates 13/16/18, `RxCore/AgeAssurance/SignificantChange.swift:80-84`) when required or eligible and not yet asked; `:155-176` stores bounds, declined, declaration; `:183-197` adult acknowledgment on iOS only; `:58-71` PermissionKit `PermissionButton` `.askToApprove` ("Ask a parent to approve this change"), sent only when the reader taps it; `:200-213` `AskCenter` responses (and `:85-102` approve-in-person): an approval clears the pending change (`AgeAssuranceRecord.grantSignificantChange`, `:137-142`; `consentedEpoch` stays 1 because `currentEpoch == baselineEpoch`), so the record is the same as one that never saw a change; a denial only sets `permissionKitStatus = .called`, which `:111` already sets on every run, so it is not recorded. `shouldAskParent` (`:122-125`) stays true until an approval, so the sheet is offered again on every main-window open (`:118`, `:211`). `medicationClassIsAvailable`, `applyRevocation` and `ConsentRevocationPayload.notice(fromForwardedPayload:)` have no caller outside tests, so the answer changes nothing else and a later withdrawal never reaches the app. DeclaredAgeRange is absent from the visionOS, tvOS and watchOS SDKs (`#if canImport`), so Vision Pro only reads the rating.
+- `RxCore/AgeAssurance/AgeAssuranceRecord.swift`: fields `:25-46`; the only `pending.append` is an age-rating change (`:98-114`); `shouldAskParent` `:122-125`; `currentEpoch == baselineEpoch == 1` (`SignificantChange.swift:32-35`); `applyRevocation` has no caller. Stored in `UserDefaults.standard` under `rx.age.record` (`:198`, `:209-212`); not in CloudKit, KVS or either export.
+- Delete all: `Persistence/RxAppDataService.swift:955` purges the `rx.age.` prefix.
+- Entitlement `com.apple.developer.declared-age-range`: `App/OmniRx/OmniRx-iOS.entitlements`, `OmniRx-macOS.entitlements`, `OmniRx-Debug.entitlements`.
+
+CHANGED — Home Screen widget (#175), both pages
+- `Knowledge/HomeScreenGlance.swift:10-34`: "Nothing to log yet" with no medicine followed, else "Daily check" / "One medicine" (fixed, however many are followed). `AppSurfaces/Continuity/RxContinuityBridge.swift:143-155` writes it to KVS `homescreen.glance` (`Continuity/HomeScreenGlanceStore.swift:129-136`) from `MainTabView.swift:90-94` and `AppContainerView.swift:114`; a tap writes the fixed marker `daily-check` (`HomeScreenGlanceStore.swift:157-164`, `StartHomeTopicIntent.swift:16`) and opens You (`RxContinuityBridge.swift:158-161`). The widget is iPhone and iPad only (pbxproj `SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"`), `systemSmall` and `systemMedium` (`App/OmniRxWidgets/HomeScreenTopicWidget.swift:30`), so it can sit on the Home Screen, in Today View or StandBy, or on a Mac desktop as an iPhone widget; it shares the host's KVS identifier (`App/OmniRxWidgets/OmniRxWidgets.entitlements`).
+
+CHANGED — one label link per followed medicine (#174), both pages
+- `AppSurfaces/Features/Home/RxHomeView.swift:65-67`, `:154-174` (`labelPageLinks`, one per roster name) → `openLearnPack` → `RxLearnView.swift:66-70` `publish(surface: "understand", packID:)` → KVS, opened list, Handoff.
+
+CHANGED — topic page IDs can name a condition (missed by the first pass), both pages
+- `Knowledge/Resources/depression.pack.json:3` (`"pack_id": "depression"`), `type_2_diabetes_mellitus.pack.json:3`; `RxPackDetailView.swift:73` saves every opened page (`RxContinuityBridge.openedTopic`, #162).
+
+In-app mirror moved with the policy: `OmniRxKit/Sources/RxCore/Content/RxTVAboutCopy.swift` (effective line and the three changed short-version points, word for word; checked by script against policy.md) and `OmniRxKit/Tests/RxCoreTests/RxTVAboutCopyTests.swift`.
+
+VERIFIED, NO CHANGE
+- terms.md: no statement made false; `RxTerms` §5 still matches (`LegalSectionContractTests`).
+- No new host, URLSession, SDK, purpose string or background mode. `PrivacyInfo.xcprivacy` collects nothing; App Store privacy label unchanged (Data Not Collected).
+
+### Review pass, 2026-10-07 (same day)
+
+A second reviewer read the draft against the code. What changed:
+
+CORRECTED — the parent's answer. The draft said the app keeps the parent's answer and that the record holds "whether they approved". Neither is true (see the `AskCenter` line above). Children now says what an approval and a refusal do, that the app works the same either way, and that a later withdrawal through Apple does not reach the app; the table row names the pending rating change instead. The old page's "grant or revoke" is quoted in the dated entry.
+
+CHANGED IN THE APP — the list of opened pages (`homescreen.openedPacks`). It was written from `RxContinuityBridge.publish(surface:packID:)` (`HomeScreenGlanceStore.markOpened`, the only caller) and read by nothing in the kit, the widget, the Watch or the TV after #175, so both pages gave it a purpose the code no longer served. This run drops the write (`markOpened` and `openedPackIDs` are removed), adds `ContinuityKeys.retiredKVSKeys` and `UbiquitousContinueStore.removeRetiredKeys`, called from `AppContainerView`'s `.task` on every launch of the iPhone, iPad, Mac and Vision Pro app, and keeps the key in `allKVSKeys` so Delete all still clears it. `ContinueSyncDisclosureContractTests.everyKeyValueKeyIsTheOneTheDisclosuresDescribe` pins all three (no writer in `OmniRxKit/Sources` or `App`, the launch call, removal leaves the other keys). Both pages now describe one page ID (the last one opened, `continue.payload`) and say earlier versions kept a list that this version removes.
+
+CORRECTED — More's iCloud caption (`RxSettingsView.swift:249-260`) said Continue works on "the widget" and that the plate is "Daily check for the one medicine". It now says Continue on Apple Watch and Apple TV, the last page's ID, and what the widget shows.
+
+CORRECTED (nits) — "on this device only" (the record is in `UserDefaults.standard`, which a device backup includes); "Once you have answered, the app does not ask again" softened to "asks only until it has recorded an answer" (each window's `AgeAssuranceHost` loads at `:106` and saves at `:116`, after the acknowledgment sheet at `:115`, so two windows opening together can both ask); "You, or your parent or guardian, can decline"; StoreKit transaction data now says StoreKit also reads the age rating, which is not transaction data; "Apple's age tools" says the request is sent only after a tap on the app's button; the widget can show its line wherever it is placed; "label-page IDs" and "the IDs of the label pages" at the tiers list and the right to delete now name the last page.
+
+### Final check, 2026-10-07 (same day)
+
+CHANGED IN THE APP — the widget's line waits for the first-run notice. `AppContainerView`'s second `.task` published it at launch, outside `RootView`'s notice gate (`RootView.swift:36-63`), and `MainTabView`'s roster `onChange` could publish it after Delete all had cleared the acceptance (and the key). `RxContinuityBridge.publishHomeScreenGlance` (`:150-174`, guard at `:162`; still called from `AppContainerView.swift:119`) now writes nothing until `RxUserSettings.hasAcknowledgedDisclosure` (the current version of the notice), so no fact about the medicines you follow reaches iCloud first; `MainTabView.swift:90`, `:93` publish once it is accepted. The retired-key removal still runs before the notice, since it only deletes. `RxHomeScreenGlanceNoticeTests` (AppSurfaces) fails on the old code. Neither page says when the line is written, so no page text changed for this.
+
+CORRECTED — "the Continue values — including the ID of the last label page you opened" (policy.md, iCloud sync) read as if the last label page were kept apart from the last page; only the last page of either kind is kept. Children now says the app keeps offering the Ask a parent button until an approval, not only on each main-window open (`AgeAssuranceHost.swift:101`, `:118`, `:211`).
+
+OPEN (owner)
+- The first-run notice (`RxDisclosure` v11, `:135-139`) and `networkPosture` (`:208-218`) still say Continue works "on ... the widget", and the notice does not mention the widget's line or the age-range question. The Apple TV About tab shows `firstRunBody` directly above `RxTVAboutCopy.privacyShortVersion` (`App/OmniRxTV/OmniRxTVApp.swift:523`, `:526`), so one TV screen says both. health-data.md promises consent before a new use; the app has not asked for any. Accepting v11 is not consent to the widget's line, because v11 does not mention it; rewording the notice and bumping `RxDisclosure.currentVersion` is the owner's call. The final check made the line wait for whatever notice is current (below), so a bump now holds the write until it is accepted.
+- `SignificantChangeCatalog.currentEpoch` stays 1, so this privacy-policy change does not trigger the parent-approval or adult-acknowledgment flow. Whether it counts as an SB 2420 significant change is an owner decision.
+- Connect age-rating answers `ageAssurance = false`, `parentalControls = false` (`docs/APP_STORE.md:214`) predate #176.

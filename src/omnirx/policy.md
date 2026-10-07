@@ -1,6 +1,6 @@
 # OmniRx Privacy Policy
 
-**Effective date:** 27 September 2026
+**Effective date:** 7 October 2026
 **App:** OmniRx for iPhone and iPad, with its Apple Watch app, its Apple TV app, and its Mac and Apple Vision Pro versions — bundle ID `legal.prameya.OmniRx`
 **Publisher:** Prameya LLC ("Prameya", "we", "us"), a US limited liability company
 **Contact:** admin@prameya.legal
@@ -17,12 +17,12 @@ and wellness information you enter into this app.
 - **No account.** There is no sign-up, no login, no email required to use OmniRx.
 - **We run no server.** Prameya has no database of users, no profile store, and nowhere for your data to go.
 - **What you log stays on your device.** The medicines you follow, your Taken and Skipped records, the reasons you record, your notes, and your mood and energy entries are stored on the device you entered them on. The app does not upload them and does not put them in iCloud.
-- **Some things do go to your own iCloud account.** So your other devices, your Apple Watch and Apple TV can pick up where you left off, and the Home Screen widget can suggest a next topic, OmniRx keeps a few small values in your iCloud account: the tab you last used, and the IDs of the topic and medicine-label pages you opened. **A label page's ID includes the medicine's name** (for example `metformin_what_its_label_says`), so these values can show which medicines' labels you read — including a medicine you follow, if you open its label page from the You tab. Your appearance choice and the version of the first-run notice you accepted also sync. Prameya cannot read any of it. See [iCloud: preferences and Continue](#icloud-preferences-and-continue).
+- **Some things do go to your own iCloud account.** So your other devices, your Apple Watch and Apple TV can pick up where you left off, and the Home Screen widget can show your daily check, OmniRx keeps a few small values in your iCloud account: the tab you last used, and the ID of the last topic or medicine-label page you opened. **A label page's ID includes the medicine's name** (for example `metformin_what_its_label_says`), so this value can show which medicine's label you read last — including a medicine you follow, if you open its label page from the You tab. A topic page's ID can name a health condition (for example `depression` or `type_2_diabetes_mellitus`), so it can also show a condition you read about. The widget's line also syncs. It says whether you follow a medicine, never which one. Your appearance choice and the version of the first-run notice you accepted also sync. Prameya cannot read any of it. See [iCloud: preferences and Continue](#icloud-preferences-and-continue).
 - **Ask runs on your device.** If you turn on **Enable on-device Ask** in More, Ask answers with Apple's on-device model where Apple Intelligence is turned on and ready. Where it is not, on an iPhone, iPad, Mac or Apple Vision Pro with enough memory, the Ask screen offers an optional model that runs on the device; it downloads from **Hugging Face** only if you agree in a dialog that names the model and its size. Either way your question is not sent to us, to Apple, to Hugging Face or to any other AI provider, and it is not saved. See [Hugging Face: the optional Ask model](#hugging-face-the-optional-ask-model).
-- **Other paths off the device are Apple's** — the App Store for purchases, iCloud, Handoff to your nearby devices, and the connection between your iPhone and your Apple Watch — plus, only if you choose the optional Ask model, its download from Hugging Face.
+- **Other paths off the device are Apple's**: the App Store for purchases and the app's age rating, Apple's age-range service on iPhone, iPad and Mac, iCloud, Handoff to your nearby devices, the connection between your iPhone and your Apple Watch, and Apple's Ask to approve if a parent's approval is ever needed. The one other path is the optional Ask model's download from Hugging Face, only if you choose it.
 - **No ads. No analytics. No trackers.** OmniRx contains no advertising SDK, no analytics SDK, and no crash-reporting SDK.
 - **No camera, no photos, no microphone, no location, no contacts, no Apple Health.** The app does not ask for these and cannot use them.
-- **One optional permission.** You can turn on one daily reminder in More. It is off until you turn it on, and only then does the app ask to send notifications. The lock screen says “Reminder”, not a medicine name.
+- **One optional permission, and one age question where Apple's age rules apply.** You can turn on one daily reminder in More. It is off until you turn it on, and only then does the app ask to send notifications. The lock screen says “Reminder”, not a medicine name. On iPhone, iPad and Mac, where Apple's age rules apply to your Apple Account, the system may also ask you to share an age range. The answer stays on your device. See [Children](#children).
 - **You can delete your records from inside the app.** More → "Delete all my data". It also deletes a downloaded Ask model and resets your settings, so the first-run notice shows again. Read [Keeping and deleting data](#keeping-and-deleting-data) for the few things it does not reach.
 - **We do not sell your data.** We could not — we do not have it.
 - **This is an education and habit-tracking app, not medical advice.** It does not diagnose, does not calculate doses, does not check interactions, and does not identify medicines from photographs.
@@ -118,7 +118,8 @@ When you buy Pro, Apple processes the payment and keeps its own record of the tr
 Apple's terms. StoreKit, Apple's purchase system on your device, contacts the App Store to show the
 prices, to complete a purchase, and to check whether you have Pro. OmniRx asks StoreKit that question
 each time it needs the answer and keeps the answer only while it is running; it does not write its own
-copy of your transaction to its storage.
+copy of your transaction to its storage. StoreKit also reads OmniRx's App Store age rating (see
+[Children](#children)). That rating is not transaction data.
 
 This data:
 - Is never sent to Prameya — the app sends nothing about a purchase to us, and we never see your payment details
@@ -146,6 +147,7 @@ This table describes what the shipping app actually records:
 | Ask settings | whether **Enable on-device Ask** is on; your answer to the optional Ask model download and the model and version it named; a different model you chose on the Ask screen instead of the one offered first; and a marker that the app removed the switch earlier versions showed |
 | The optional Ask model | if you choose to download it: the model's files (weights, tokenizer, configuration and a prompt-formatting template) and a marker that their checksums were verified. They are not your data and hold nothing you typed |
 | Other settings | your appearance choice, and whether and when you accepted the first-run notice, and which version of it |
+| Age-assurance record | on iPhone, iPad, Mac and Apple Vision Pro: the App Store age rating the app last saw, whether a change to that rating is still waiting for a parent's approval or an adult's acknowledgment, and whether each Apple age check worked. On iPhone, iPad and Mac also: whether Apple says age rules apply to your Apple Account and, where they do, the age range Apple gives the app if you agree to share it (under 13, 13 to 15, 16 to 17, or 18 and over) or that you declined, and how it was declared. Never a birthdate. Kept in the app's settings storage on the device, so a device backup includes it (see [iCloud device backup](#icloud-device-backup)); see [Children](#children) |
 | Values the app works out from the above | a percentage of logged days with a dose recorded as taken, a current streak, the number of days logged, a mood and energy average over the last 30 days, and one sentence describing what was logged. They are calculated when shown, not stored. |
 
 The app's data model also contains fields for hours of sleep, symptoms, age, health conditions and
@@ -162,11 +164,12 @@ Most of what you log is **consumer health data**. It is covered in detail by the
 Medication records, journal entries, habit records and the profile record are kept on your device,
 inside the app's private storage area, in a database (Apple's SwiftData) that is created with iCloud
 sync switched off. On iPhone, iPad and Apple Vision Pro that database file is given the iOS file
-protection class "complete unless open", so it is encrypted when closed and cannot be reopened until
-the device is unlocked. On a Mac it is protected by the Mac's own disk encryption (FileVault) if you
-have it on. The medicines you follow, the reminder settings and the other settings above are kept in
-the app's own settings storage on the device. A downloaded Ask model is kept in the app's private
-storage too, in a folder excluded from device backup. Other apps cannot read any of it. We cannot read it.
+protection class "complete unless open", so it is encrypted when closed and cannot be reopened until the
+device is unlocked. On a Mac it is protected by the Mac's own disk encryption (FileVault) if you have it
+on. The medicines you follow, the reminder settings, the age-assurance record and the other settings
+above are kept in the app's own settings storage on the device. A downloaded Ask model is kept in the
+app's private storage too, in a folder excluded from device backup. Other apps cannot read any of it. We
+cannot read it.
 
 OmniRx does not store anything in the Keychain.
 
@@ -212,20 +215,31 @@ either of them.
   records and profile record are excluded by an allow-list in the code, a test in the codebase asserts
   they are absent, and the app refuses to set up CloudKit at all if that ever stops being true. If you
   are not signed in to iCloud, this part does not run.
-- **iCloud key-value storage** holds a few small values so that your other devices, Apple Watch, Apple
-  TV and the Home Screen widget can continue where you left off:
+- **iCloud key-value storage** holds a few small values so that your other devices, Apple Watch and
+  Apple TV can continue where you left off, and the Home Screen widget can show your daily check:
     - the tab you last used, and the ID of the last topic or label page you had open;
-    - the IDs of the topic and medicine-label pages you have opened from the You tab, from search
-      results in the Understand tab, from Continue, from Apple Watch or from the widget;
-    - the next topic the Home Screen widget suggests from the built-in label-literacy path, and a
-      topic you asked the widget to open until the app opens it;
+    - what the Home Screen widget shows: “Nothing to log yet” while you follow no medicine, and
+      “Daily check” (with “One medicine” on the medium size) once you follow at least one, however
+      many you follow. It never names a medicine and never says whether you took a dose, but it does
+      show that you follow at least one. Because the widget reads it from iCloud, a widget on another
+      device signed in to your Apple Account can show it too. Also a marker that you tapped the
+      widget, until the app opens the You tab;
     - your appearance choice.
 
-    **A medicine-label page's ID includes the medicine's name**, so this storage can show which medicines'
-    labels you read. It never holds the list of medicines you follow, your logs or your notes. But the
-    You tab links to the label page for the first medicine you follow, when the library has one; if
-    you open that link, the page's ID — which names a medicine you take — is stored here. Apple Watch
-    and Apple TV also write the ID of a page you open on them.
+    On iPhone and iPad, the OmniRx widget shows that line on your Home Screen, or wherever you place
+    the widget. Tapping it opens the You tab.
+
+    Earlier versions also kept here a list of the IDs of the topic and label pages you had opened,
+    for the widget. Nothing uses that list now. This version does not add to it, and removes it from
+    your iCloud account each time it opens on iPhone, iPad, Mac or Apple Vision Pro.
+
+    **A medicine-label page's ID includes the medicine's name**, so this storage can show which
+    medicine's label you read last. A topic page's ID can name a health condition (for example
+    `depression` or `type_2_diabetes_mellitus`), so it can also show a condition you read about. It
+    never holds the names of medicines you follow, your logs or your notes. But the You tab links to
+    the label page for each medicine you follow, when the library has one. If you open one of those
+    links, that page's ID, which names a medicine you take, is stored here. Apple Watch and Apple TV
+    also write the ID of a page you open on them.
 
 "Delete all my data" removes every one of the key-value values above from iCloud, and deletes the
 CloudKit preferences record, which iCloud then removes from your account the next time the device
@@ -233,12 +247,12 @@ syncs. See [Keeping and deleting data](#keeping-and-deleting-data).
 
 ### Handoff
 
-On iPhone, iPad, Mac and Apple Vision Pro, OmniRx offers Handoff to your nearby devices signed in to
-the same Apple Account. The Handoff message names the tab you are on and the ID of the last topic or
-label page you opened — which, for a label page, includes the medicine's name — and, once you have
-opened a medication record, an internal reference to the last one you opened. It does not contain the
-record itself; another device cannot open a record it does not already hold. "Delete all my data"
-resets it to the You tab, so it no longer names a page or a record.
+On iPhone, iPad, Mac and Apple Vision Pro, OmniRx offers Handoff to your nearby devices signed in to the
+same Apple Account. The Handoff message names the tab you are on and the ID of the last topic or label
+page you opened — which, for a label page, includes the medicine's name, and for a topic page can name a
+health condition — and, once you have opened a medication record, an internal reference to the last one
+you opened. It does not contain the record itself; another device cannot open a record it does not
+already hold. "Delete all my data" resets it to the You tab, so it no longer names a page or a record.
 
 ### Apple Watch
 
@@ -311,8 +325,17 @@ data" and deleting the app delete them too.
 
 ### StoreKit
 
-StoreKit contacts Apple's App Store to show Pro prices, complete a purchase, restore purchases, and
-check whether you have Pro. See [StoreKit transaction data](#storekit-transaction-data).
+StoreKit contacts Apple's App Store to show Pro prices, complete a purchase, restore purchases, check
+whether you have Pro, and read OmniRx's App Store age rating. See [StoreKit transaction
+data](#storekit-transaction-data).
+
+### Apple's age tools
+
+On iPhone, iPad and Mac, OmniRx asks Apple's age-range service whether age rules apply to your Apple
+Account and, where they do, the system asks you to share an age range. If a parent must approve a
+change to the app and you tap the app's "Ask a parent to approve this change" button, Apple's Ask to
+approve sends that request to the parent's device. These are Apple's services; neither sends anything
+to us. See [Children](#children) for what is asked and what is kept.
 
 ### Links you tap
 
@@ -371,8 +394,9 @@ added, this policy will be rewritten first.
 holding them is created with iCloud sync switched off, and the list of medicines you follow is kept in
 the app's settings storage on the device. What does go to your iCloud account is described under
 [iCloud: preferences and Continue](#icloud-preferences-and-continue): your appearance choice, the
-notice version you accepted, and the Continue values — including the IDs of the medicine-label pages
-you opened, which name the medicine.
+notice version you accepted, the Continue values — including the ID of the last page you opened,
+which for a label page names the medicine — and the Home Screen widget's line, which says whether you
+follow a medicine but never which one.
 
 ### Reminders and notifications
 
@@ -552,9 +576,26 @@ OmniRx is a medication education app written for adults. It is not directed to c
 - OmniRx's App Store age rating is shown on its App Store product page. If you are a parent or
   guardian and have a question, email **admin@prameya.legal**.
 
-We should also say what the app does *not* implement: OmniRx does not use any platform age-signal or
-age-verification API, and it has no in-app mechanism for a parent or guardian to grant or revoke
-consent.
+OmniRx uses Apple's age tools where Apple provides them. On iPhone, iPad and Mac, each time the app's
+main window opens, it asks the App Store for OmniRx's age rating, and asks Apple whether age rules apply
+to your Apple Account. Where they do, the system asks you, or your parent or guardian, to share an age
+range: under 13, 13 to 15, 16 to 17, or 18 and over. You, or your parent or guardian, can decline. The
+app asks only until it has recorded an answer. It keeps the answer on this device: the range or the
+fact that you declined, how it was declared, and which of Apple's rules apply. Like the app's other
+settings, it is in a device backup if you make one (see [iCloud device backup](#icloud-device-backup)).
+It never keeps a birthdate. The app does not send the answer to us, put it in iCloud or include it in
+either export. "Delete all my data" removes it, and the app may ask again afterwards. If Apple's rules
+say a parent must approve a significant change to the app, and OmniRx's App Store age rating changes
+(the one such change this version detects), the app offers a button that asks a parent to approve it
+through Apple's Ask to approve. That request carries one sentence describing the change and none of
+your records. The parent's answer comes back to this device. If they approve, the app stops offering
+the button. Until then, and after a refusal, it keeps offering the button, and offers it again each
+time the main window opens. Either way the app works the same. If a parent later withdraws an
+approval through Apple, the app is not told and does not change. On iPhone and iPad, where Apple
+only requires an adult to be told, the app shows Apple's acknowledgment screen instead. Apple TV and
+Apple Watch ask nothing, and Apple Vision Pro only reads the App Store age rating. There is still no
+screen where you type your age. Prameya runs no server, so we do not receive a parent's approval or
+Apple's consent notices.
 
 ---
 
@@ -582,21 +623,22 @@ consent.
 
 - Your OmniRx data stays on your device until you delete it.
 - **You can delete your records inside the app.** More → **"Delete all my data"** asks you to confirm,
-  then permanently removes every medication record, journal entry, habit record and profile record
-  from the device and resets the figures the app calculated from them. It also removes the medicines
-  you follow and have stopped following, your reminder settings, the Ask switch and your answer to
-  the Ask model download (so Ask is off again afterwards), any Ask model you downloaded, and any copy
-  of the database that the app set aside after it could not open it. It resets your appearance choice
-  to follow the system, turns "Show medicine names on Apple Watch" off, and clears your acceptance of
-  the first-run notice, so the notice shows again; when you accept it again, a device signed in to
-  iCloud writes a new preferences record holding the notice version (and the appearance, now following
-  the system), as a first launch does. It removes every iCloud key-value value OmniRx writes and
-  deletes the CloudKit preferences record, which iCloud removes from your account the next time the
-  device syncs. It cancels the daily reminder (and a snoozed one), resets the Handoff message, clears
-  the last Ask answer on your Apple Watch and sends the Watch a new reminder card, which names no
-  medicine because none is followed any more and carries no time because the reminder is off, so the
-  Watch's complication goes back to "Learn". It cannot be undone. If a file or the preferences record
-  cannot be removed from the device, the app tells you rather than claiming a complete delete.
+  then permanently removes every medication record, journal entry, habit record and profile record from
+  the device and resets the figures the app calculated from them. It also removes the medicines you
+  follow and have stopped following, your reminder settings, the Ask switch and your answer to the Ask
+  model download (so Ask is off again afterwards), any Ask model you downloaded, and any copy of the
+  database that the app set aside after it could not open it. It resets your appearance choice to follow
+  the system, turns "Show medicine names on Apple Watch" off, and clears your acceptance of the
+  first-run notice, so the notice shows again; when you accept it again, a device signed in to iCloud
+  writes a new preferences record holding the notice version (and the appearance, now following the
+  system), as a first launch does. It removes every iCloud key-value value OmniRx writes and deletes the
+  CloudKit preferences record, which iCloud removes from your account the next time the device syncs. It
+  cancels the daily reminder (and a snoozed one), resets the Handoff message, clears the last Ask answer
+  on your Apple Watch and sends the Watch a new reminder card, which names no medicine because none is
+  followed any more and carries no time because the reminder is off, so the Watch's complication goes
+  back to "Learn". It also removes the age-assurance record, so where age rules apply the system may ask
+  for an age range again. It cannot be undone. If a file or the preferences record cannot be removed
+  from the device, the app tells you rather than claiming a complete delete.
 - **What "Delete all my data" does not reach, stated plainly:**
     - **The CloudKit preferences record, if the device is not signed in to iCloud** when you delete:
       the app cannot reach it then. Sign in and delete again, or remove it with Apple's own controls
@@ -642,6 +684,38 @@ If we change how OmniRx handles data, we will update this policy and change the 
 top. Meaningful changes — a new network connection, a new permission, anything involving your health
 data — will be described in a short summary of what changed, at the top of this page, and will be
 announced in the app's release notes.
+
+**7 October 2026 — what changed.** With an app update:
+
+- **OmniRx now uses Apple's age tools.** This page said the app used no age-signal or age-verification
+  API and had no way for a parent to grant or revoke consent. The first half is no longer true. On
+  iPhone, iPad and Mac, the app asks Apple whether age rules apply to your Apple Account and, where
+  they do, the system asks you to share an age range, which you, or your parent or guardian, can
+  decline. The app reads OmniRx's App Store age rating on those devices and on Apple Vision Pro. If
+  Apple's rules require a parent's approval and the age rating changes, the app can ask a parent
+  through Apple's Ask to approve. An approval stops the app offering that request again; a refusal
+  is not recorded, and the app works the same either way. If a parent later withdraws an approval
+  through Apple, the app is not told. Your age-range answer, and whether a rating change is still
+  waiting for approval, stay on your device in a new age-assurance record, which "Delete all my data"
+  removes. The short version, the data table, StoreKit, a new "Apple's age tools" section, Children
+  and Delete all now say so. The age-range question is not a setting in More, so the short version
+  now names it beside the daily reminder.
+- **The Home Screen widget shows your daily check.** It used to suggest a next topic and could open a
+  page. It now shows “Nothing to log yet”, or “Daily check” once you follow a medicine, and a tap opens
+  the You tab. The app writes that line to your own iCloud account, where the widget reads it, so your
+  iCloud account now holds whether you follow a medicine, never which one. This page no longer lists a
+  suggested topic or pages opened from the widget.
+- **No more list of the pages you opened.** Earlier versions also kept in your iCloud account a list
+  of the IDs of the topic and label pages you had opened, for the widget's suggested topic. After the
+  widget changed, nothing read it. This version stops adding to it and removes it from your iCloud
+  account when it opens on iPhone, iPad, Mac or Apple Vision Pro. Of the pages you open, your iCloud
+  account now holds only the ID of the last one, for Continue.
+- **The You tab links to the label page for each medicine you follow**, not only the first. So
+  opening any of those links can put the ID of a label for any medicine you take in your iCloud
+  account and in the Handoff message.
+- **A topic page's ID can name a health condition** (for example `depression`), so the Continue
+  values and Handoff can show a condition you read about. That was already true; this page did not
+  say it.
 
 **27 September 2026 — what changed.** With an app update:
 
