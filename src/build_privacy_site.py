@@ -24,6 +24,8 @@ import datetime
 import markdown
 
 EFFECTIVE = "23 August 2026"
+# The hub's own date. It moves when the hub page changes; each policy carries its own date.
+HUB_EFFECTIVE = "7 October 2026"
 
 # (light accent, dark accent) — taken from each app's shipped brand file.
 APPS = [
@@ -35,9 +37,9 @@ APPS = [
     ("omniwealth", "OmniWealth", "Financial education and habit support",    "#816B22", "#9B853C", False),
     ("omnimath",   "OmniMathematics", "Discrete mathematics for computer science","#6D28D9", "#A78BFA", False),
     ("omnibuild",  "OmniBuild",  "Construction and skilled-trades reference","#854200", "#F28C06", False),
-    ("omniops",    "OmniOps",    "Personal operating discipline and habits", "#0B7D6E", "#159485", False),
-    ("omniavia",   "OmniAvia",   "ACS ground school on this device",         "#0C7A71", "#15998D", False),
-    ("omniphysics","OmniPhysics","Interactive physics lessons on this device","#0E7490", "#22D3EE", False),
+    ("omniops",    "OmniCadence", "Personal operating discipline and habits", "#0B7D6E", "#159485", False),
+    ("omniavia",   "OmniAvia",   "ACS ground school and your own study logs","#0C7A71", "#15998D", False),
+    ("omniphysics","OmniPhysics","Interactive physics lessons and labs","#0E7490", "#22D3EE", False),
 ]
 
 # --------------------------------------------------------------------------- contrast
@@ -118,15 +120,17 @@ th{ font-weight:650; background:var(--card); }
 .callout.distinct{ border-color:var(--accent); border-left-width:4px; }
 .cards{ list-style:none; padding:0; display:grid; gap:.75rem;
   grid-template-columns:repeat(auto-fill,minmax(15rem,1fr)); }
-.cards li{ margin:0; }
-.cards a{ display:block; height:100%; background:var(--card); border:1px solid var(--rule);
-  border-left:4px solid var(--dot,var(--accent)); border-radius:.75rem;
-  padding:.9rem 1rem; text-decoration:none; color:var(--ink); }
-.cards a:hover{ border-color:var(--dot,var(--accent)); }
+.cards li{ --dot:var(--dl); margin:0; display:flex; flex-direction:column;
+  background:var(--card); border:1px solid var(--rule);
+  border-left:4px solid var(--dot,var(--accent)); border-radius:.75rem; padding:.9rem 1rem; }
+.cards li:hover,.cards li:focus-within{ border-color:var(--dot,var(--accent)); }
+.cards a.p{ display:block; flex:1; text-decoration:none; color:var(--ink); }
+.cards a.p:hover .n{ text-decoration:underline; }
 .cards .n{ font-weight:650; display:block; }
 .cards .d{ color:var(--muted); font-size:.9375rem; display:block; margin-top:.15rem; }
-.cards .h{ color:var(--dot,var(--accent)); font-size:.8125rem; display:block;
+.cards a.h{ color:var(--dot,var(--accent)); font-size:.8125rem; display:inline-block;
   margin-top:.5rem; font-weight:600; }
+@media (prefers-color-scheme: dark){ .cards li{ --dot:var(--dd); } }
 footer.site{ border-top:1px solid var(--rule); color:var(--muted); font-size:.9375rem; }
 footer.site .wrap{ padding-block:1.5rem 3rem; }
 @media print{
@@ -379,11 +383,16 @@ def build(content_dir, out_dir, site_root):
         if not os.path.exists(os.path.join(out_dir, slug, "index.html")):
             continue
         hd = os.path.exists(os.path.join(out_dir, slug, "health-data", "index.html"))
+        # ⛔ RCW 19.373.020(1)(b): the consumer health data policy gets its OWN link. Until
+        #    2026-10-07 the card said "+ Consumer Health Data policy" inside the link to the main
+        #    policy, so the hub never linked the health-data page at all.
         cards.append(
-            f'<li><a href="{site_root}/{slug}/" style="--dot:{al}">'
-            f'<span class="n">{name}</span><span class="d">{tagline}</span>'
-            + (f'<span class="h">+ Consumer Health Data policy</span>' if hd else "")
-            + "</a></li>"
+            f'<li style="--dl:{al};--dd:{ad}"><a class="p" href="{site_root}/{slug}/">'
+            f'<span class="n">{name}</span><span class="d">{tagline}</span></a>'
+            + (f'<a class="h" href="{site_root}/{slug}/health-data/" '
+               f'aria-label="{name} Consumer Health Data Privacy Policy">'
+               f'Consumer Health Data Privacy Policy</a>' if hd else "")
+            + "</li>"
         )
 
     hub_body = f"""<h1>Privacy policies</h1>
@@ -408,7 +417,7 @@ policy. Those are linked above and from each app's policy.</p>
         desc="Privacy policies for Prameya LLC apps. Each app has its own policy.",
         canonical=f"{site_root}/", css=CSS,
         al="#1577A8", ad="#318CB9", ail="#ffffff", aid="#10151a",
-        root=site_root, crumb="", body=hub_body, effective=EFFECTIVE,
+        root=site_root, crumb="", body=hub_body, effective=HUB_EFFECTIVE,
     ))
     built.append("/ (hub)")
 

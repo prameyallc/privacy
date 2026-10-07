@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>OmniOps Privacy Policy — Prameya LLC</title>
+<title>OmniCadence Privacy Policy — Prameya LLC</title>
 <meta name="description" content="Effective date: 7 October 2026">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://prameyallc.github.io/privacy/omniops/">
@@ -63,15 +63,17 @@ th{ font-weight:650; background:var(--card); }
 .callout.distinct{ border-color:var(--accent); border-left-width:4px; }
 .cards{ list-style:none; padding:0; display:grid; gap:.75rem;
   grid-template-columns:repeat(auto-fill,minmax(15rem,1fr)); }
-.cards li{ margin:0; }
-.cards a{ display:block; height:100%; background:var(--card); border:1px solid var(--rule);
-  border-left:4px solid var(--dot,var(--accent)); border-radius:.75rem;
-  padding:.9rem 1rem; text-decoration:none; color:var(--ink); }
-.cards a:hover{ border-color:var(--dot,var(--accent)); }
+.cards li{ --dot:var(--dl); margin:0; display:flex; flex-direction:column;
+  background:var(--card); border:1px solid var(--rule);
+  border-left:4px solid var(--dot,var(--accent)); border-radius:.75rem; padding:.9rem 1rem; }
+.cards li:hover,.cards li:focus-within{ border-color:var(--dot,var(--accent)); }
+.cards a.p{ display:block; flex:1; text-decoration:none; color:var(--ink); }
+.cards a.p:hover .n{ text-decoration:underline; }
 .cards .n{ font-weight:650; display:block; }
 .cards .d{ color:var(--muted); font-size:.9375rem; display:block; margin-top:.15rem; }
-.cards .h{ color:var(--dot,var(--accent)); font-size:.8125rem; display:block;
+.cards a.h{ color:var(--dot,var(--accent)); font-size:.8125rem; display:inline-block;
   margin-top:.5rem; font-weight:600; }
+@media (prefers-color-scheme: dark){ .cards li{ --dot:var(--dd); } }
 footer.site{ border-top:1px solid var(--rule); color:var(--muted); font-size:.9375rem; }
 footer.site .wrap{ padding-block:1.5rem 3rem; }
 @media print{
@@ -665,7 +667,7 @@ app does with your data changed:</p>
 </ul>
 <p>The app still sends nothing to Prameya: no analytics, no account, and no server of ours. Earlier<br />
 versions of this policy remain in the public repository that publishes these pages:<br />
-<a href="https://github.com/prameyallc/privacy">https://github.com/prameyallc/privacy</a>.</p><div class="callout"><h3>Terms of Use</h3><p>The terms governing OmniOps, including subscription auto-renewal and cancellation, and dispute resolution:</p><p><strong><a href="https://prameyallc.github.io/privacy/omniops/terms/">OmniOps Terms of Use</a></strong></p></div>
+<a href="https://github.com/prameyallc/privacy">https://github.com/prameyallc/privacy</a>.</p><div class="callout"><h3>Terms of Use</h3><p>The terms governing OmniCadence, including subscription auto-renewal and cancellation, and dispute resolution:</p><p><strong><a href="https://prameyallc.github.io/privacy/omniops/terms/">OmniCadence Terms of Use</a></strong></p></div>
 </main>
 <footer class="site"><div class="wrap">
   <p>Prameya LLC · <a href="mailto:admin@prameya.legal">admin@prameya.legal</a>
