@@ -63,15 +63,17 @@ th{ font-weight:650; background:var(--card); }
 .callout.distinct{ border-color:var(--accent); border-left-width:4px; }
 .cards{ list-style:none; padding:0; display:grid; gap:.75rem;
   grid-template-columns:repeat(auto-fill,minmax(15rem,1fr)); }
-.cards li{ margin:0; }
-.cards a{ display:block; height:100%; background:var(--card); border:1px solid var(--rule);
-  border-left:4px solid var(--dot,var(--accent)); border-radius:.75rem;
-  padding:.9rem 1rem; text-decoration:none; color:var(--ink); }
-.cards a:hover{ border-color:var(--dot,var(--accent)); }
+.cards li{ --dot:var(--dl); margin:0; display:flex; flex-direction:column;
+  background:var(--card); border:1px solid var(--rule);
+  border-left:4px solid var(--dot,var(--accent)); border-radius:.75rem; padding:.9rem 1rem; }
+.cards li:hover,.cards li:focus-within{ border-color:var(--dot,var(--accent)); }
+.cards a.p{ display:block; flex:1; text-decoration:none; color:var(--ink); }
+.cards a.p:hover .n{ text-decoration:underline; }
 .cards .n{ font-weight:650; display:block; }
 .cards .d{ color:var(--muted); font-size:.9375rem; display:block; margin-top:.15rem; }
-.cards .h{ color:var(--dot,var(--accent)); font-size:.8125rem; display:block;
+.cards a.h{ color:var(--dot,var(--accent)); font-size:.8125rem; display:inline-block;
   margin-top:.5rem; font-weight:600; }
+@media (prefers-color-scheme: dark){ .cards li{ --dot:var(--dd); } }
 footer.site{ border-top:1px solid var(--rule); color:var(--muted); font-size:.9375rem; }
 footer.site .wrap{ padding-block:1.5rem 3rem; }
 @media print{
@@ -95,7 +97,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 <h1>Privacy policies</h1>
 <p class="lede">Prameya LLC publishes a separate privacy policy for each app, because the apps
 do genuinely different things with data. Pick the app you use.</p>
-<ul class="cards"><li><a href="https://prameyallc.github.io/privacy/omnisalub/" style="--dot:#1577A8"><span class="n">OmniSalub</span><span class="d">Chronic-condition companion</span><span class="h">+ Consumer Health Data policy</span></a></li><li><a href="https://prameyallc.github.io/privacy/omnident/" style="--dot:#037C84"><span class="n">OmniDent</span><span class="d">Dental photo analysis and coaching</span><span class="h">+ Consumer Health Data policy</span></a></li><li><a href="https://prameyallc.github.io/privacy/omniderm/" style="--dot:#875FA9"><span class="n">OmniDerm</span><span class="d">Private skin journal and sun-care education</span><span class="h">+ Consumer Health Data policy</span></a></li><li><a href="https://prameyallc.github.io/privacy/omnirx/" style="--dot:#3547EB"><span class="n">OmniRx</span><span class="d">Medication education and habit support</span><span class="h">+ Consumer Health Data policy</span></a></li><li><a href="https://prameyallc.github.io/privacy/omnilex/" style="--dot:#2D4D77"><span class="n">OmniLex</span><span class="d">On-device legal document assistant</span></a></li><li><a href="https://prameyallc.github.io/privacy/omniwealth/" style="--dot:#816B22"><span class="n">OmniWealth</span><span class="d">Financial education and habit support</span></a></li><li><a href="https://prameyallc.github.io/privacy/omnimath/" style="--dot:#6D28D9"><span class="n">OmniMathematics</span><span class="d">Discrete mathematics for computer science</span></a></li><li><a href="https://prameyallc.github.io/privacy/omnibuild/" style="--dot:#854200"><span class="n">OmniBuild</span><span class="d">Construction and skilled-trades reference</span></a></li><li><a href="https://prameyallc.github.io/privacy/omniops/" style="--dot:#0B7D6E"><span class="n">OmniOps</span><span class="d">Personal operating discipline and habits</span></a></li><li><a href="https://prameyallc.github.io/privacy/omniavia/" style="--dot:#0C7A71"><span class="n">OmniAvia</span><span class="d">ACS ground school on this device</span></a></li><li><a href="https://prameyallc.github.io/privacy/omniphysics/" style="--dot:#0E7490"><span class="n">OmniPhysics</span><span class="d">Interactive physics lessons on this device</span></a></li></ul>
+<ul class="cards"><li style="--dl:#1577A8;--dd:#318CB9"><a class="p" href="https://prameyallc.github.io/privacy/omnisalub/"><span class="n">OmniSalub</span><span class="d">Chronic-condition companion</span></a><a class="h" href="https://prameyallc.github.io/privacy/omnisalub/health-data/" aria-label="OmniSalub Consumer Health Data Privacy Policy">Consumer Health Data Privacy Policy</a></li><li style="--dl:#037C84;--dd:#2AA3AB"><a class="p" href="https://prameyallc.github.io/privacy/omnident/"><span class="n">OmniDent</span><span class="d">Dental photo analysis and coaching</span></a><a class="h" href="https://prameyallc.github.io/privacy/omnident/health-data/" aria-label="OmniDent Consumer Health Data Privacy Policy">Consumer Health Data Privacy Policy</a></li><li style="--dl:#875FA9;--dd:#9975B8"><a class="p" href="https://prameyallc.github.io/privacy/omniderm/"><span class="n">OmniDerm</span><span class="d">Private skin journal and sun-care education</span></a><a class="h" href="https://prameyallc.github.io/privacy/omniderm/health-data/" aria-label="OmniDerm Consumer Health Data Privacy Policy">Consumer Health Data Privacy Policy</a></li><li style="--dl:#3547EB;--dd:#7E89EA"><a class="p" href="https://prameyallc.github.io/privacy/omnirx/"><span class="n">OmniRx</span><span class="d">Medication education and habit support</span></a><a class="h" href="https://prameyallc.github.io/privacy/omnirx/health-data/" aria-label="OmniRx Consumer Health Data Privacy Policy">Consumer Health Data Privacy Policy</a></li><li style="--dl:#2D4D77;--dd:#7B93B2"><a class="p" href="https://prameyallc.github.io/privacy/omnilex/"><span class="n">OmniLex</span><span class="d">On-device legal document assistant</span></a></li><li style="--dl:#816B22;--dd:#9B853C"><a class="p" href="https://prameyallc.github.io/privacy/omniwealth/"><span class="n">OmniWealth</span><span class="d">Financial education and habit support</span></a></li><li style="--dl:#6D28D9;--dd:#A78BFA"><a class="p" href="https://prameyallc.github.io/privacy/omnimath/"><span class="n">OmniMathematics</span><span class="d">Discrete mathematics for computer science</span></a></li><li style="--dl:#854200;--dd:#F28C06"><a class="p" href="https://prameyallc.github.io/privacy/omnibuild/"><span class="n">OmniBuild</span><span class="d">Construction and skilled-trades reference</span></a></li><li style="--dl:#0B7D6E;--dd:#159485"><a class="p" href="https://prameyallc.github.io/privacy/omniops/"><span class="n">OmniCadence</span><span class="d">Personal operating discipline and habits</span></a></li><li style="--dl:#0C7A71;--dd:#15998D"><a class="p" href="https://prameyallc.github.io/privacy/omniavia/"><span class="n">OmniAvia</span><span class="d">ACS ground school and your own study logs</span></a></li><li style="--dl:#0E7490;--dd:#22D3EE"><a class="p" href="https://prameyallc.github.io/privacy/omniphysics/"><span class="n">OmniPhysics</span><span class="d">Interactive physics lessons and labs</span></a></li></ul>
 <div class="callout">
 <h2 style="border:0;padding-top:0;margin-top:0">How these apps are built</h2>
 <p>Prameya apps run their analysis <strong>on your device</strong>. We do not operate a server that
@@ -113,7 +115,7 @@ policy. Those are linked above and from each app's policy.</p>
 <footer class="site"><div class="wrap">
   <p>Prameya LLC · <a href="mailto:admin@prameya.legal">admin@prameya.legal</a>
   · <a href="https://prameyallc.github.io/privacy/support/">Support</a></p>
-  <p>Effective 23 August 2026. <a href="https://prameyallc.github.io/privacy/">All app privacy policies</a></p>
+  <p>Effective 7 October 2026. <a href="https://prameyallc.github.io/privacy/">All app privacy policies</a></p>
 </div></footer>
 </body>
 </html>
