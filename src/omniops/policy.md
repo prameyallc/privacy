@@ -1,7 +1,7 @@
 # OmniCadence — Privacy Policy
 
-**Effective date:** 27 September 2026
-**Last updated:** 27 September 2026  
+**Effective date:** 7 October 2026
+**Last updated:** 7 October 2026  
 **Publisher:** Prameya LLC (“Prameya”, “we”, “us”)  
 **App:** OmniCadence (called OmniOps in earlier versions of the app and of this policy) for iPhone, iPad, Mac and Apple Vision Pro, with an Apple Watch app and an Apple TV app — bundle ID `legal.prameya.OmniOps` (the Apple TV app uses the same ID; the Apple Watch app is `legal.prameya.OmniOps.watch`)  
 **Contact:** admin@prameya.legal  
@@ -9,10 +9,10 @@
 **Canonical public URL (slug stays `omniops`):** <https://prameyallc.github.io/privacy/omniops/>
 
 This policy describes **the app you actually install** — what the shipping build does, not what
-an earlier plan for it said. The version it replaces (last updated 26 August 2026) said the app
-opened no network connections, used no iCloud, sent no notifications and had no model download.
-The app can now do all of those things, as described below; the "what changed" entry in §10 lists
-each correction.
+an earlier plan for it said. The 23 September 2026 rewrite replaced a version (last updated
+26 August 2026) that said the app opened no network connections, used no iCloud, sent no
+notifications and had no model download. The app can now do all of those things, as described
+below; the 23 September 2026 "what changed" entry in §10 lists each correction.
 
 ---
 
@@ -100,12 +100,15 @@ Subscriptions are managed entirely through your Apple ID:
 
 ## StoreKit transaction data
 
-StoreKit on your device checks with Apple which OmniCadence Pro products you own. From that
-answer the app keeps one small record in its own settings on your device: whether you have
-Pro, when a subscription runs until, and whether a free trial is running. It uses that record
-to decide which tools to unlock. The app does not store a transaction ID, sends nothing about
-a purchase to Prameya, and the record is deleted when you delete the app (on Mac, when you also
-remove the sandbox container at `~/Library/Containers/legal.prameya.OmniOps`).
+StoreKit on your device tells the app which OmniCadence Pro products your Apple Account owns.
+The app asks when it starts, when you bring it to the front, after a purchase or restore, and
+whenever StoreKit reports a change such as a renewal or refund. It keeps the answer in memory
+only while it runs, and uses it to decide which tools to unlock. The app saves no copy of its
+own, does not store a transaction ID, and sends nothing about a purchase to Prameya. Earlier
+versions also wrote a small record to the app's settings (whether you had Pro, when a
+subscription ran until, and whether a free trial was running). This version neither writes nor
+reads it, and it is deleted when you delete the app (on Mac, when you also remove the sandbox
+container at `~/Library/Containers/legal.prameya.OmniOps`).
 
 If you restore purchases (by tapping "Restore Purchases" in the app), or redeem an offer code,
 StoreKit talks to Apple's servers. That communication is between your device and Apple; Prameya
@@ -143,7 +146,7 @@ sandboxed app container and are covered by FileVault if it is on. There is no Ke
 | Once iCloud sync has been turned on: a copy of the synced headlines, kept by Apple's iCloud sync. **Turn Off** leaves it; **Turn Off and Remove from iCloud** or Erase deletes the headlines | **On this device**, in the journal's protected folder, and in your iCloud (see §4) |
 | The decision you pinned from Apple Watch (its ID number) | **On this device**, the app's settings; while iCloud sync is on, also in the iCloud key-value items (§4) |
 | A request from the widget or the "Log a decision" shortcut to open the decision form, until the app opens it | **On this device**, the app's settings |
-| Settings: first-run acknowledgement and the date you gave it, appearance, whether Ask answers are on, your Ask-model choice with the model and version it was given for, which model was selected, whether reminders are on, whether iCloud sync is on (and whether it was ever on, any removal still waiting to reach iCloud, and that the one-time clean-up described in §4 has run), your Pro status | **On this device**, the app's settings |
+| Settings: first-run acknowledgement and the date you gave it, appearance, whether Ask answers are on, your Ask-model choice with the model and version it was given for, which model was selected, whether reminders are on, whether iCloud sync is on (and whether it was ever on, any removal still waiting to reach iCloud, and that the one-time clean-up described in §4 has run); on a device that had an earlier version, the old Pro record it may have left (see "StoreKit transaction data") | **On this device**, the app's settings |
 | A one-time marker that model files left by earlier versions were removed, and how much space that freed | **On this device**, the app's settings |
 | The optional Ask model's files, only if you chose to download them (see §4) | **On this device**, the app's Caches folder, excluded from backups |
 | An export you asked for | **On this device**, a temporary folder excluded from backups, only while More is on screen |
@@ -179,15 +182,15 @@ on on this device, deletes the synced headlines from your iCloud and turns sync 
 Vision Pro, which does not sync (§4), the same row is titled **Erase journal**; it deletes what is
 on that device and has nothing in iCloud to remove. Another device that still syncs keeps its own
 entries and can upload them again. Erase does not delete the downloaded Ask model (More ▸ Ask
-model ▸ **Remove the downloaded model** does), your settings or your Pro status. Erase also makes
-the app forget the reading you last opened and the entry you were editing, so their IDs are not
-put into later Handoff offers, and on iPhone it refreshes the Apple Watch's prompts from the
-now-empty journal and tells the Watch there is no reading to continue and no pinned decision; an
-Apple Watch app that is open drops its Continue row. Because Erase turns sync off on this device,
-nothing is saved to the key-value items after it until you turn sync on again. Erase does not
-reach the app's memory on your other devices: another device where sync is still on remembers the
-reading it last opened, and can save that reading's ID to the key-value items again at its next
-tab change.
+model ▸ **Remove the downloaded model** does) or your settings. Pro is not affected: this version
+does not store it, and StoreKit still reports it. Erase also makes the app forget the reading you
+last opened and the entry you were editing, so their IDs are not put into later Handoff offers,
+and on iPhone it refreshes the Apple Watch's prompts from the now-empty journal and tells the
+Watch there is no reading to continue and no pinned decision; an Apple Watch app that is open
+drops its Continue row. Because Erase turns sync off on this device, nothing is saved to the
+key-value items after it until you turn sync on again. Erase does not reach the app's memory on
+your other devices: another device where sync is still on remembers the reading it last opened,
+and can save that reading's ID to the key-value items again at its next tab change.
 
 **Deleting the app** removes the container on iPhone, iPad and Apple Vision Pro, including
 the journal and any downloaded model. On Mac the sandbox container under
@@ -216,7 +219,7 @@ reading you last opened: the iPhone tells the Watch which one over that connecti
 not sync is on, and while a device of yours has sync on the iCloud key-value items can tell it
 too (the newer of the two is used). The complications show the title of the reading named in
 the iCloud key-value items, which the Watch looks up from that reading's ID in the knowledge
-packs it ships, or a fixed prompt ("Review today's habit") when those items name no reading it
+packs it ships, or a fixed prompt ("Log a decision") when those items name no reading it
 ships, as while sync is off. The app does not save the title: the Watch looks it up each time the
 complication updates, and the key-value items still name the reading only by its ID. **More**
 shows the disclaimer. The Watch keeps no journal, has no Ask and sells nothing.
@@ -420,10 +423,15 @@ request.
 ## 5. Knowledge packs
 
 The knowledge packs on Understand ship inside the app (and inside the Apple Watch and Apple TV
-apps). The app does not fetch packs from the network. Opening a pack is recorded only on your
-device (§2), as the last pack opened in the iCloud key-value items while sync is on (§4), and on
-your paired Apple Watch (§2). Tapping **Open the source** under a reading opens the cited public
-page in your browser.
+apps). The app does not fetch packs from the network. When you open a reading on Understand
+(iPhone, iPad, Mac and Apple Vision Pro), the app records it on this device (§2) and treats it as
+the reading you last opened. It offers that reading through Handoff to your nearby devices signed
+in to the same Apple Account (iPhone, iPad, Mac and Apple Vision Pro, whether or not sync is on;
+§4). While Sync with iCloud is on (iPhone, iPad and Mac), it keeps the reading's ID in the iCloud
+key-value items (§4). On iPhone, it tells your paired Apple Watch (§2). What opening a reading
+adds to each of these is the pack's ID, never journal text. Opening a reading on Apple Watch or
+Apple TV records nothing. Tapping **Open the source** under a reading opens the cited public page
+in your browser.
 
 ---
 
@@ -484,6 +492,23 @@ ROI figures.
 We update this policy when the app changes what it stores or what leaves the device — where
 we can, before the change ships — and change the dates at the top. Each revision is described
 here.
+
+**7 October 2026 — what changed.** With an app update, and corrections:
+
+- The app no longer saves a record of your Pro status in its settings. It asks StoreKit and
+  keeps the answer in memory. Before, it wrote that record but never read it, so this page was
+  wrong to say the record decided which tools unlock. "StoreKit transaction data", the settings
+  row in §2 and the Erase paragraph say so now.
+- A reading you open on Understand (iPhone, iPad, Mac and Apple Vision Pro) now becomes the one
+  to continue, not only one you reached through the You tab's Continue, Handoff or iCloud. The
+  You tab on that device and Handoff offer it. Your Apple Watch offers it when you opened it on
+  your iPhone, or on an iPad or Mac with sync on. Apple TV, and the You tab on your other iPhone,
+  iPad or Mac with sync on, offer it when you opened it on an iPhone, iPad or Mac with sync on.
+  What is sent or saved still names it only by the pack's ID.
+- §5 now lists Handoff among the places the reading you opened goes, as §4 already said, and
+  says which devices each one applies to.
+- The Apple Watch complications' fixed prompt now reads "Log a decision" instead of "Review
+  today's habit". They still show only a reading's title or that prompt, never journal text.
 
 **Later on 27 September 2026 — what changed.** Corrections for the Mac and Apple TV; nothing the
 app does with your data changed:

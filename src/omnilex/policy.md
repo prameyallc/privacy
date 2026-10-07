@@ -1,6 +1,6 @@
 # OmniLex Privacy Policy
 
-**Effective date:** 27 September 2026
+**Effective date:** 7 October 2026
 **Publisher:** Prameya LLC ("Prameya", "we", "us"), a United States limited liability company
 **Contact:** admin@prameya.legal
 **Applies to:** the OmniLex app for iPhone, iPad, Mac and Apple Vision Pro, the Apple Watch app that comes with it, its Home Screen widget, and OmniLex for Apple TV — bundle ID `legal.prameya.OmniLex` (the Apple Watch app is `legal.prameya.OmniLex.watch`)
@@ -189,7 +189,7 @@ them grants exactly the same Pro — there are no separate feature tiers.
 Family Sharing is enabled on all three. Subscriptions renew until you cancel;
 Lifetime is a one-time non-consumable.
 
-**What is free and stays free.** Without paying anything you get the reference library and its citations, document import and reading, as many documents as you like, export of a document's extracted text, Ask, and a reading-priority review of the first document you have analysed (reviewing the sample NDA does not use it), with no account and no time limit. Pro adds on-device search across your imported documents, reading-priority review of further documents, and formatted PDF reports.
+**What is free and stays free.** Without paying anything you get the reference library and its citations, document import and reading, as many documents as you like, search of your documents (by title, summary, text and flagged clauses), export of a document's extracted text, Ask, drafting from templates, the clause library, the glossary, your saved notes, and a reading-priority review of the first document you have analysed (reviewing the sample NDA does not use it), with no account and no time limit. Pro adds on-device semantic search across your documents and the clause library (in Research), reading-priority review of further documents, and formatted PDF reports.
 
 **Pro does not add cloud sync, and there is no paid iCloud option.** OmniLex stores your
 documents on your device in every case, paid or not. If a subscription lapses you keep your
@@ -436,6 +436,8 @@ We want to flag two things about that:
 ## Changes to this policy
 
 If we change how OmniLex handles data, we will update this policy and change the effective date at the top.
+
+**7 October 2026 — what changed.** This revision corrects which search is part of Pro. Searching your documents in the document list, by title, summary, text and flagged clauses, is free. The search Pro adds is the semantic search in Research, across your documents and the clause library. The previous version listed "on-device search across your imported documents" as a Pro feature and left search out of what is free. The list of what is free now also names drafting from templates, the clause library, the glossary and your saved notes, which were already free. The app already worked this way; only the description was wrong. Both kinds of search run on your device. Nothing the app does with your data changed, and nothing is sent to Prameya. The short version is unchanged.
 
 **Later on 27 September 2026 — what changed.** This revision makes three statements true for the Mac, Apple Vision Pro and Apple TV. Nothing the app does with your data changed, and nothing is sent to Prameya:
 

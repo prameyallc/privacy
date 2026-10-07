@@ -1,7 +1,7 @@
 # OmniBuild Privacy Policy
 
-**Effective date:** 27 September 2026
-**Last updated:** 27 September 2026
+**Effective date:** 7 October 2026
+**Last updated:** 7 October 2026
 **Publisher:** Prameya LLC ("Prameya", "we", "us"), a United States limited liability company
 **App:** OmniBuild for iPhone, iPad, Mac and Apple Vision Pro, with its Apple Watch app and its Apple TV app — bundle ID `legal.prameya.OmniBuild` (Apple Watch: `legal.prameya.OmniBuild.watch`)
 **Contact:** admin@prameya.legal
@@ -63,7 +63,7 @@ Family Sharing is enabled on all three. Subscriptions renew until you cancel (ho
 device, is under Cancellation and refunds below); Lifetime is a one-time non-consumable. The prices, the trial and how to cancel are also shown on the paywall in the app and in the [OmniBuild Terms of Use](https://prameyallc.github.io/privacy/omnibuild/terms/).
 
 **The knowledge layer is free and stays free.** Without paying anything you get
-the full standards library, including every state pack, Ask, up to two projects with their notes, and an export of all your records, with no account and no time limit. Pro adds two things: keeping more than two projects, and a print-ready PDF of a project for the permit counter.
+the full standards library (every guide in the app), Ask, up to two projects with their notes, and an export of all your records, with no account and no time limit. Pro adds two things: keeping more than two projects, and a print-ready PDF of a project for the permit counter.
 
 **Pro does not change where your records go.** Sync with iCloud works the same, paid or not, and there is no paid iCloud option. If a subscription lapses you keep every project and note and can still export them in their raw form; only the Pro tools stop.
 
@@ -77,7 +77,7 @@ the full standards library, including every state pack, Ask, up to two projects 
 - No server of ours that receives your content
 - No account or login
 
-The difference is **which tools you get**, not data handling. The standards library — including every state pack — is free; Pro adds more than two projects and the permit-counter PDF. Neither unlocks data transmission.
+The difference is **which tools you get**, not data handling. The standards library, every guide in it, is free; Pro adds more than two projects and the permit-counter PDF. Neither unlocks data transmission.
 
 ## Cancellation and refunds
 
@@ -108,7 +108,7 @@ Everything in this table is stored by OmniBuild itself. None of it is sent to Pr
 | Decision entries | Made in earlier versions only: a title, the framework you used, the options, what you chose, your later reflection and your own estimate | App database on the device only |
 | A small profile | Created automatically with default values (two projects a quarter, two default focus areas). Nothing you type in this version goes into it | App database on the device only |
 | Where you left off, on this device | The identifier and name of the project you last opened, and the last guide and guided route you opened | Device settings storage |
-| Where you left off, for your other devices | The screen you were on, the identifier of the guide you had open, the random identifier of the last project you opened, and the time; the guide the Home Screen widget suggests, with its title; a guide the widget asked the app to open, until the app opens it; your appearance choice | iCloud key-value store, only while Sync with iCloud is on (see below) |
+| Where you left off, for your other devices | The screen you were on, the identifier of the guide you had open, the random identifier of the last project you opened, and the time; the last guide you opened, with its title, which the Home Screen widget shows (it shows "Open OmniBuild" until you open one); a guide the widget asked the app to open, until the app opens it; your appearance choice | iCloud key-value store, only while Sync with iCloud is on (see below) |
 | App preferences | Light/dark appearance, the **Sync with iCloud** switch, the **In-app answers** switch, the **Job-log reminders** switch, when you accepted the first-run notice, and which update notice this install has been through | Device settings storage |
 | Your age range, iPhone and iPad only | "Under 18", "18 or older" or "not shared" — never a birth date | Device settings storage |
 | The optional Ask model, Mac only | Your answer to "Download the on-device model?" with the model and commit it was given for, the model's files (about 6.8 GB), and the data needed to resume an interrupted download | App storage on the Mac, excluded from device backups |
@@ -123,7 +123,7 @@ The app database is included in Apple's normal device backup (iCloud Backup or a
 
 ## iCloud, Handoff and your other devices
 
-**Sync with iCloud is off until you turn it on**, in **More ▸ iCloud ▸ Sync with iCloud** on your iPhone, iPad, Mac or Apple Vision Pro. It is off on a new install. It is also off after this update on a device that ran an earlier pre-release build, where sync ran whenever the device was signed in to iCloud: there was no switch then, so there is no earlier choice to carry over, and being signed in to iCloud is not a choice to sync. On such a device, the first time the updated app opens it also removes the key-value items the earlier build put in iCloud (the "where you left off" row of the table above), as turning the switch off does; the copy of your records in your iCloud private database stays, as described below. The switch is set on each device separately.
+**Sync with iCloud is off until you turn it on**, in **More ▸ iCloud ▸ Sync with iCloud** on your iPhone, iPad, Mac or Apple Vision Pro (on a Mac, the same settings are also in **OmniBuild ▸ Settings…**). It is off on a new install. It is also off after this update on a device that ran an earlier pre-release build, where sync ran whenever the device was signed in to iCloud: there was no switch then, so there is no earlier choice to carry over, and being signed in to iCloud is not a choice to sync. On such a device, the first time the updated app opens it also removes the key-value items the earlier build put in iCloud (the "where you left off" row of the table above), as turning the switch off does; the copy of your records in your iCloud private database stays, as described below. The switch is set on each device separately.
 
 While Sync with iCloud is **on** (and the device is signed in to iCloud):
 
@@ -262,7 +262,7 @@ One line each, because each one deserves a plain answer.
 - **We do not show ads.** There is no ad SDK in the app.
 - **We do not track you across apps or websites.** The app declares no tracking, contains no attribution or tracking SDK, does not use the advertising identifier, and never shows the App Tracking Transparency prompt.
 - **We do not use analytics.** No usage events, no session recording, no telemetry.
-- **We do not collect crash reports ourselves.** No crash-reporting SDK is present. The app reads the performance summaries Apple's MetricKit prepares on the device (launch time, hangs, disk writes, exit counts) and writes them only to the device's own log; it does not send them anywhere.
+- **We do not collect crash reports ourselves.** No crash-reporting SDK is present. The app reads the performance summaries Apple's MetricKit prepares on the device (launch time, hangs, disk writes, exit counts) and writes them only to the device's own log; it does not send them anywhere. When StoreKit reports an error on a purchase, a restore or loading the Pro prices, the app also writes which of the three failed and the error's type and code to that log, with no price or product name, and does not send that anywhere either.
 - **We do not build a profile of you.** We have no user-profile database because we have no server.
 - **We do not use your content to train AI models.** We never receive it.
 - **We do not knowingly collect anything from children.** See below.
@@ -315,6 +315,8 @@ Your records are on your device and, if you turn on Sync with iCloud, in your ow
     - As you keep using OmniBuild, it records where you left off again: the screen you are on and the guide you open, and a project's identifier only once you open a project.
     - With Sync with iCloud off, the copy of your records already in your iCloud private database from when sync was on. The confirmation says so; to remove that copy too, turn sync on and clear again.
 4. **Erase everything on one device:** delete OmniBuild from that device. That removes that device's copy only. It does not empty your iCloud private database, which keeps any synced records until you use **Clear All My Logs & Decisions** on a device that still has OmniBuild with Sync with iCloud on, or delete OmniBuild's data from your iCloud storage in your device settings. It does not remove the iCloud key-value store entries either; turning Sync with iCloud off before you delete the app does.
+
+If OmniBuild cannot open its database on a device, it says so and offers **Reset local data**. That button appears only then. It deletes the app database on that device, with every record in it, and opens an empty one; the screen says so before you tap it. It does not remove the copy in your iCloud private database; while Sync with iCloud is on, your synced projects, notes, punch items and safety-reminder acknowledgements come back from it into the new database. Decision entries and the profile, which never sync, do not.
 
 Nothing survives on our side, because nothing was ever on our side. There is no request to file and no waiting period, because there is no account for us to look up, and no server-side copy for us to delete. If you want written confirmation of any of this, email admin@prameya.legal and we will send it.
 
@@ -417,6 +419,15 @@ If we change how OmniBuild handles data, we will update this policy and change t
 - For **material** changes — for example, adding an account system, adding any feature that sends your content to us or to a new party, adding advertising or analytics, or using a permission the app does not use today — we will not do it quietly. We will update this policy **before** the change ships where we can, describe plainly what changed, keep the previous version available, and where the change requires your consent, ask for it inside the app rather than assuming it.
 - For minor changes such as clarified wording or a corrected contact detail, we will update the effective date.
 
+**7 October 2026 — what changed.** Corrections and clarifications, so this page matches the app. None of them means anything new leaves your device.
+
+- **The free library.** "Available tiers" and "Free vs paid tier data collection" said the free standards library included "every state pack". OmniBuild bundles no state pack, so both now say that every guide in the app is free. Nothing that was free became paid.
+- **The Home Screen widget.** The "where you left off" row said the iCloud key-value store holds "the guide the Home Screen widget suggests". The widget no longer suggests a guide: it shows the last guide you opened, or "Open OmniBuild" until you open one. The row now says so. That entry carries nothing you typed and, as before, is written only while Sync with iCloud is on.
+- **One date.** A line at the end of this page still said "Effective 24 September 2026" after the date at the top had moved to 27 September 2026. That line is gone, so the page states one effective date.
+- **Three things the app does that this page did not describe.** "Deleting your data" now describes **Reset local data**, the button OmniBuild offers only when it cannot open its database, and what comes back from iCloud after it while Sync with iCloud is on. The crash-reports line now says that when StoreKit reports an error on a purchase, a restore or loading the Pro prices, the app writes which one failed and the error's type and code to the device's own log. The iCloud section now says that on a Mac the same settings are also in **OmniBuild ▸ Settings…**.
+
+Nothing is sent to Prameya, and that did not change.
+
 **27 September 2026 — what changed.**
 
 - **No state picker.** Earlier versions of this page described a **More ▸ Your Location** state picker, whose choice was neither saved nor sent. The picker did nothing and has been removed from the app, so this page no longer mentions it. OmniBuild has never asked for or used your location, and still does not.
@@ -461,5 +472,3 @@ The current version always lives at [https://prameyallc.github.io/privacy/omnibu
 ## Questions
 
 Email **admin@prameya.legal**. If something in this policy does not match what the app actually does, tell us — we would consider that a defect and we would fix it.
-
-*Prameya LLC · Effective 24 September 2026*

@@ -111,3 +111,58 @@ ADDED — Apple TV About tab
 NOTE FOR THE APP
 - `LivingRoomLegal.privacyParagraphs[0]` (`LivingRoomLegal.swift:29`) reads "OmniDerm Privacy Policy (Prameya LLC), effective 24 September 2026."; the policy has been dated 27 September 2026 since privacy #53.
 - Not changed (not platform-specific): a Reminders "on" value in the synced preference record is applied on another device (`OmniDermKit/Sources/Persistence/PreferenceRoamer.swift:49-74`, `adoptRoamedReminderPreferences`), which reschedules reminders there without that device's switch being touched; the policy's CloudKit paragraph already says the record is applied on launch.
+
+## 2026-10-07 — re-audit after OmniDerm PRs #152–#176: new topics, the same-area mark, the widget name, Understand
+
+Read against OmniDerm origin/main `ea51d0d` (merge of #176), baseline `82127d4`. Findings DERM-PP-1 to -7 and MISSED-1 of the 2026-10-07 portfolio privacy audit, each confirmed by a second reviewer. Both pages re-dated 7 October 2026; terms.md unchanged (no statement in it made false by this window). Short versions unchanged, so the Apple TV About copy changes only its date line.
+
+CORRECTED — what topic identifiers can name (health-data.md section 1 row and section 5 KVS bullet; not-collected paragraph; policy.md iCloud Sync item 2)
+- PRs #165–#167 (459e259, 7b42241, fc760fa) took the bundled packs from 36 to 52 (`OmniDermKit/Sources/Knowledge/Resources/*.pack.json`). All 16 new packs are ungated: only abcde, melanoma, keratinocyte and dermoscopy declare `requires_capability`, and `KnowledgeLibrary.swift:202-229` withholds only those.
+- New: rare-disease packs (`KnowledgeJourney.swift:232, 248-254`: pachyonychia congenita, epidermolysis bullosa, hidradenitis suppurativa, ichthyosis, scleroderma, pemphigus, Raynaud) and the `.infections` group "Infections and infestations" (`:50, :65, :266-276`), including `pubic_lice_what_the_page_says`. Its cards quote MedlinePlus: "They usually spread through sexual contact" and "checked for other sexually transmitted infections" (`pubic_lice_what_the_page_says.pack.json:96-112`).
+- Path unchanged since 2026-09-27: `LearnView.swift:66` `.onAppear { continueSession.openedTopic(packID) }` → `ContinueSession.swift:129-133` → `publish` → `ContinueStore.save` + `HomeScreenGlanceStore.markOpened` (`HomeScreenGlanceStore.swift:270-281`), every KVS write gated on `ContinuitySyncGate`.
+- Owner's choice (2026-10-07), pending counsel: the conservative disclosure. The pages say plainly that identifiers can name rare diseases and sexually transmitted or sexual-contact conditions (pubic lice), so the list can reveal sexual-health information, and that it stays in the user's own iCloud and Handoff. No legal conclusion is drawn on whether this is a new MHMDA category. The section 12 entry states that purpose, place and recipients are unchanged and that the app asks no new consent (true: there is no in-app consent or policy-change notice in the code).
+
+ADDED — Apple TV opens on Continue (health-data.md section 1; policy.md Apple TV bullet)
+- `App/OmniDermTV/OmniDermTVApp.swift:339-346` (`TVStoreCapture.initialTab` returns "continue" outside DEBUG), `:89-93` and `:135-147` (`ContinueStore.load()?.packID` shown full screen by `PackReader`). A pack id is in the payload only when the last tab was Understand (`MainTabView.swift:90-96`, `ContinueSession.publish` packID for `.understand` only), so the pages say "when you were last in Understand".
+
+ADDED — Watch "Read this topic" without the switch (health-data.md sections 1, 3 and 5; policy.md storage table)
+- `WristCommandApplier.swift:113-121`: `learnTonight` sends `session.currentPackID ?? session.payload.packID` by `WristTransport.broadcast(.continuePayload(...))`; `WristTransport.swift:154-160, 246-264` (updateApplicationContext / sendMessage, no `ContinuitySyncGate` check). `currentPackID` is set in memory whatever the switch (`ContinueSession.swift:129-133`). Watch: `WristInbox.swift:49-50`, `OmniDermWatchApp.swift:159-162, 233-236`. policy.md already said this in iCloud Sync; health-data.md did not.
+
+CORRECTED — the fourth habit mark (policy.md What OmniDerm is, storage table, Limitations; health-data.md section 1)
+- `CoachCopy.swift:31` ("Looked at the same area today", predates the baseline); `SkinHabitLog.swift:61-66` `markedHabitNames` ("looked at the same area"), used by the appointment pack and today's summary since #174 (64cbe86). The export JSON key is still `selfCheck` (`SkinDataService.swift:590`); the pages do not claim the word is gone from every output.
+
+CORRECTED — "the ABCDE self-check ideas" (policy.md What OmniDerm is)
+- `abcde_mnemonic_and_its_failure_modes.pack.json:288` requires `screeningCriteria`; `ReleaseGate.swift:214-217` enables it only when `FDAClearanceStatus.current.cleared` (false). The door is "Limits of looking" since #175 (`KnowledgeJourney.swift:124`).
+
+CORRECTED — the widget (policy.md widget bullet and iCloud Sync item 2; health-data.md section 5)
+- #175 (6064de7): `App/OmniDermWidgets/HomeScreenTopicWidget.swift:19-20` gallery name "Journal", description "A private skin journal. It does not say what a mark is." The stored supporting line is the fixed "It does not name the thing." (`HomeScreenGlance.swift:56-59`), not a summary. Door set still the ten `featuredProcedureIDs` (`KnowledgeJourney.swift:160-171`); widget entitlements are KVS only, no App Group.
+
+CORRECTED — Learn → Understand
+- `MainTabView.swift:55-58` tab label "Understand"; `KnowledgeLibraryView.swift:123` title "Understand"; TV empty state "open a topic in Understand" (`OmniDermTVApp.swift:153-154`). Kept "Learn" for the Watch tab (`OmniDermWatchApp.swift:102, 280`) and the complication fallback (`WatchComplicationStore.swift:47`). Dated history entries keep the name they used.
+
+VERIFIED, NO CHANGE
+- No new network host, dependency pins checked (swift-huggingface 0.13.0 keeps the expensive/constrained network flags), entitlements, Info.plists and privacy manifests unchanged since `82127d4`, CloudKit record still five fields, Handoff still gated and not indexed. App Store privacy label stays "Data Not Collected".
+
+APP MIRRORS (OmniDerm branch fix/privacy-policy-2026-10-07)
+- `OmniDermKit/Sources/DermCore/Legal/LivingRoomLegal.swift` first paragraph now "effective 7 October 2026."; `LivingRoomContractTests` and `LegalMirrorContractTests` follow; `docs/legal/PRIVACY_POLICY.md` and `docs/legal/CONSUMER_HEALTH_DATA_PRIVACY_POLICY.md` re-dated 2026-10-07 with the same corrections. The App Store Connect "Apple TV Privacy Policy" field needs the new first line.
+
+### 2026-10-07 — review pass on the same day's changes
+
+Each reviewer issue was re-checked against `ea51d0d` before editing.
+
+- health-data.md short version: added the Watch path (`WristCommandApplier.swift:113-121` broadcasts `.continuePayload` with no `ContinuitySyncGate` check) and that the opened topics can reveal sexual-health information. Nothing in the app mirrors this page's short version; policy.md's short version (mirrored by `LivingRoomLegal`) is unchanged.
+- health-data.md section 5: "can reveal your sexual health" read as a statement about the user's health status. It now says the identifiers are treated as consumer health data and that the list can reveal sexual-health information, as section 1 and policy.md say.
+- Held topic joining the opened list when sync is turned on: confirmed. `ContinueSession.openedTopic` (`:129-133`) sets `currentPackID` whatever the switch. `syncSwitchChanged(on: true)` (`:84-92`) publishes `payload.packID`, which on the Mac's separate Settings window (`OmniDermSettingsWindow`, Understand still selected in the main window) is the open topic. On iPhone the More tab's publish clears `payload.packID`, but the next Understand tab selection publishes with `packID: nil`, which falls back to `currentPackID` (`:105-109`) and `markOpened`s it. So the held topic "can join" the list; neither page says it always does. Added to health-data sections 1 and 5 and policy.md's storage table and iCloud Sync item 2. The app-side alternative (forget `currentPackID` while sync is off) is not done here.
+- "direct connection" dropped: `WristTransport.send` uses `updateApplicationContext` / `sendMessage`, Apple's transport, which is not necessarily a direct link. Also "It goes nowhere else" became "With the switch off, it goes nowhere else": with sync on, the same tap also runs `session.publish(surface: .understand, packID:)`, which writes iCloud key-value storage.
+- Widget: `HomeScreenGlanceSnapshot.empty` ("Private journal") once every `featuredProcedureIDs` topic is in the opened list; `.error` ("Couldn't load this topic"); `HomeScreenTopicView.showsSupportingLine` shows "It does not name the thing." on `.systemMedium` only. All three are written only with sync on; with sync off the widget shows `firstTopic` ("Sun care").
+- health-data.md section 7: added that, with sync off, the held topic reaches the Watch only from **Confirm** on the "Read this topic" card (`OmniDermWatchApp.swift` `WatchNowView`). Written "do not send it" rather than "send nothing": Snooze and Not now do send `.snooze` / `.decline` to the iPhone, which answers with the approvals list. With sync on the Watch also reads the topic from key-value storage, so the bullet is scoped to sync off. The approval notification category is registered but no notification uses it (`SkinDataService` schedules only `reminderCategory`), so there is no notification route.
+- policy.md 7 October entry: added "The app does not ask for a new consent for these topics", matching health-data.md.
+- Not changed, owner decision: the "tell you inside the app" / fresh-consent promises (policy.md "Changes to this policy", health-data.md section 12, CHD mirror Part B(i)). No policy-change notice exists in `OmniDermKit/Sources`.
+
+### 2026-10-07 — final check before publishing
+
+Every changed sentence re-read against `ea51d0d`; the fixup's points hold (no app behaviour changed; the only Swift source edit is the `LivingRoomLegal` date line). Three wording corrections:
+
+- health-data.md section 5, Apple row: "that topic's identifier" followed "the tab and topic you are on" and could be read as the Handoff topic. It now names "the identifier of the topic held for continuing", which is what `WristCommandApplier` `learnTonight` sends (`session.currentPackID ?? session.payload.packID`). Same fix in the CHD mirror Part A(iv).
+- health-data.md section 12, 7 October entry: the rare-disease examples were "epidermolysis bullosa, ichthyosis and pemphigus". The ichthyosis pack never calls it rare (`ichthyosis_what_is_known.pack.json`), so the example is now pachyonychia congenita, which its pack calls "a rare genetic disorder".
+- policy.md "Changes", 7 October widget bullet: "Private journal" appears only with sync on (`HomeScreenGlanceSnapshot.empty` is written to key-value storage only through `ContinuitySyncGate`; with sync off the widget shows `firstTopic`). The bullet now says "with sync on", as the widget bullet in the body already did; the privacy mirror's header and the CHANGELOG follow.

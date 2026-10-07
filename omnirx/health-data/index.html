@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>OmniRx Consumer Health Data Privacy Policy — Prameya LLC</title>
-<meta name="description" content="Effective date: 24 September 2026">
+<meta name="description" content="Effective date: 7 October 2026">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://prameyallc.github.io/privacy/omnirx/health-data/">
 <style>
@@ -93,7 +93,7 @@ footer.site .wrap{ padding-block:1.5rem 3rem; }
 </div></header>
 <main id="main" class="wrap">
 <h1 id="omnirx-consumer-health-data-privacy-policy">OmniRx Consumer Health Data Privacy Policy</h1>
-<p><strong>Effective date:</strong> 24 September 2026<br />
+<p><strong>Effective date:</strong> 7 October 2026<br />
 <strong>App:</strong> OmniRx for iPhone and iPad, with its Apple Watch app, its Apple TV app, and its Mac and Apple Vision Pro versions — bundle ID <code>legal.prameya.OmniRx</code><br />
 <strong>Publisher:</strong> Prameya LLC ("Prameya", "we", "us"), a US limited liability company<br />
 <strong>Contact:</strong> admin@prameya.legal</p>
@@ -109,13 +109,17 @@ medication records, journal entries and the list of medicines you follow do not 
 <p><strong>A few things do leave the device, and all of them go to places tied to your own Apple Account, not<br />
 to us:</strong></p>
 <ul>
-<li><strong>The IDs of the medicine-label pages you open go to your own iCloud account</strong>, so your other<br />
-  devices, Apple Watch and Apple TV can continue where you left off and the Home Screen widget can<br />
-  suggest a next topic. A label<br />
-  page's ID includes the medicine's name (for example <code>metformin_what_its_label_says</code>), so it can show<br />
-  which medicines' labels you read. The You tab links to the label page for the first medicine you<br />
-  follow, when the library has one, so opening that link stores the ID of a label for a medicine you<br />
-  take. Handoff also tells your nearby devices which page you last opened.</li>
+<li><strong>The ID of the last label or topic page you opened goes to your own iCloud account</strong>, so your<br />
+  other devices, Apple Watch and Apple TV can continue where you left off. A label page's ID includes<br />
+  the medicine's name (for example <code>metformin_what_its_label_says</code>), so it can show which medicine's<br />
+  label you read last. A topic page's ID can name a health condition (for example <code>depression</code> or<br />
+<code>type_2_diabetes_mellitus</code>), so it can also show a condition you read about. The You tab links to<br />
+  the label page for each medicine you follow, when the library has one, so opening one of those<br />
+  links stores the ID of a label for a medicine you take. Handoff also tells your nearby devices which<br />
+  page you last opened.</li>
+<li><strong>Whether you follow a medicine goes to your own iCloud account</strong>, so the Home Screen widget can<br />
+  show your daily check: it shows “Daily check” once you follow one, and “Nothing to log yet”<br />
+  otherwise. It never names the medicine or says whether you took a dose.</li>
 <li><strong>If you turn it on, the names of the medicines you follow go to your paired Apple Watch</strong>, to show<br />
   on its reminder card.</li>
 <li><strong>A question you type into Ask on Apple Watch goes to your paired iPhone</strong>, which answers it on the<br />
@@ -143,7 +147,8 @@ that argument comes out.</p>
 <h2 id="what-counts-as-consumer-health-data-in-omnirx">What counts as consumer health data in OmniRx</h2>
 <p>Consumer health data is personal information that identifies your past, present or future physical or<br />
 mental health status. In OmniRx that means the things you log about your medicines and your body, and<br />
-the things the app keeps that could reveal which medicines you take or read about.</p>
+the things the app keeps that could reveal which medicines you take, or which medicines and conditions<br />
+you read about.</p>
 <h3 id="categories-collected-and-why">Categories collected, and why</h3>
 <div class="tablewrap"><table>
 <thead>
@@ -159,7 +164,7 @@ the things the app keeps that could reveal which medicines you take or read abou
 <td><strong>Medicines you follow</strong></td>
 <td>The names you type in "as on the bottle", and the names of medicines you have stopped following</td>
 <td>So the daily check and the reminder know what to mark</td>
-<td>Shown back to you. Kept in the app's settings storage on the device. Sent to your Apple Watch only if you turn on "Show medicine names on Apple Watch"</td>
+<td>Shown back to you. Kept in the app's settings storage on the device. Sent to your Apple Watch only if you turn on "Show medicine names on Apple Watch". Whether you follow any medicine (not which) is written to your own iCloud key-value storage for the Home Screen widget, which can show it wherever you place the OmniRx widget on a device signed in to your Apple Account</td>
 </tr>
 <tr>
 <td><strong>Medication records</strong></td>
@@ -198,9 +203,9 @@ the things the app keeps that could reveal which medicines you take or read abou
 <td>Stored on the device</td>
 </tr>
 <tr>
-<td><strong>Label pages you opened</strong></td>
-<td>The IDs of the topic and medicine-label pages you have opened from the You tab (which links to the label for the first medicine you follow), from search results in the Understand tab, from Continue, from Apple Watch or from the widget, and the one you had open last (on iPhone, iPad, Mac, Apple Vision Pro, Apple Watch or Apple TV); a label page's ID names the medicine</td>
-<td>So your other devices, Apple Watch, Apple TV and the widget can continue where you left off</td>
+<td><strong>Label and topic pages you opened</strong></td>
+<td>The ID of the topic or medicine-label page you had open last, on iPhone, iPad, Mac, Apple Vision Pro, Apple Watch or Apple TV, including one you opened from the You tab (which links to the label for each medicine you follow); a label page's ID names the medicine, and a topic page's ID can name a condition. Earlier versions also kept a list of the pages you had opened; this version does not add to it and removes it</td>
+<td>So your other devices, Apple Watch and Apple TV can continue where you left off</td>
 <td>Written to your own iCloud key-value storage. Also named in the Handoff message to your nearby devices</td>
 </tr>
 <tr>
@@ -249,7 +254,7 @@ tier. <strong>Upgrading does NOT trigger new consumer health data collection.</s
 <p>Both tiers:<br />
 - Process the same categories of consumer health data (listed above)<br />
 - Use consumer health data for the same purposes<br />
-- Store data in the same places (on your device, with the label-page IDs in your own iCloud account)<br />
+- Store data in the same places (on your device, with the last page's ID and the widget's line in your own iCloud account)<br />
 - Send it to the same places (your own iCloud account and, if you turn it on, your Apple Watch — never to us)</p>
 <p><strong>Pro lets you follow every medicine you take instead of one, and log with no cap instead of 30 logs in<br />
 total. It does not change what data is collected, how it is processed, or where it goes.</strong></p>
@@ -316,17 +321,20 @@ health data, because no such data reaches us.</p>
 <p>The app itself sends a limited set of items to services Apple runs for <strong>your own Apple Account</strong>.<br />
 Prameya does not receive any of it and cannot read it:</p>
 <ul>
-<li><strong>iCloud key-value storage</strong> holds the IDs of the topic and medicine-label pages you opened (which<br />
-  name the medicine), the tab you last used, the next topic the widget suggests, and your appearance<br />
-  choice. Your Apple Watch and Apple TV read these values and add the ID of a page you open on them.</li>
+<li><strong>iCloud key-value storage</strong> holds the ID of the last topic or medicine-label page you opened (a<br />
+  label page's ID names the medicine, and a topic page's ID can name a condition), the tab you last<br />
+  used, the widget's line, which says whether you follow a medicine but never which one, and your<br />
+  appearance choice. Your Apple Watch and Apple TV read these values and save the ID of a page you<br />
+  open on them.</li>
 <li><strong>Your private CloudKit database</strong> holds one preferences record: your appearance choice, the version<br />
   of the first-run notice you accepted, and two settings no screen changes. It holds no health<br />
   information: your medication records, journal entries, habit records and profile record are excluded<br />
   by an allow-list in the code, a test asserts they are absent, and the app refuses to set up CloudKit<br />
   if that ever stops being true.</li>
 <li><strong>Handoff</strong> tells your nearby devices signed in to the same Apple Account which topic or label page<br />
-  you last opened — for a label page, its ID names the medicine — and, once you have opened a<br />
-  medication record, an internal reference to the last one, not its contents.</li>
+  you last opened — for a label page, its ID names the medicine, and for a topic page it can name a<br />
+  condition — and, once you have opened a medication record, an internal reference to the last one, not<br />
+  its contents.</li>
 <li><strong>Your paired Apple Watch</strong> receives the reminder card from your iPhone; it includes the names of the<br />
   medicines you follow only if you turn on "Show medicine names on Apple Watch". A question you type in<br />
   Ask on the Watch is sent to your iPhone to be answered.</li>
@@ -375,8 +383,12 @@ them.</p>
 <p><strong>Your medication records, journal entries, habit records, profile record and the list of medicines you<br />
 follow are not placed in iCloud by the app.</strong> The database holding the records is created with iCloud<br />
 sync switched off, and the list of medicines is kept in the app's settings storage on the device.</p>
-<p><strong>The IDs of the label pages you opened are placed in iCloud by the app</strong>, as described above, because<br />
-that is how Continue works across your devices. "Delete all my data" removes them.</p>
+<p><strong>The ID of the last label or topic page you opened, and the widget's line, are placed in iCloud by<br />
+the app</strong>, as described above, because that is how Continue and the Home Screen widget work across<br />
+your devices. The widget's line says whether you follow a medicine, never which one. Earlier versions<br />
+also placed there a list of the pages you had opened. This version does not add to it, and removes it<br />
+each time it opens on iPhone, iPad, Mac or Apple Vision Pro. "Delete all my data" removes all of<br />
+them.</p>
 <p>Separately from anything the app does, Apple's whole-device <strong>iCloud Backup</strong> can include the app's<br />
 data if you have that turned on — see <a href="#3-the-right-to-delete">the right to delete</a> below.</p>
 <hr />
@@ -451,8 +463,8 @@ it. Withdrawing consent does not undo processing that already happened on your o
   download (so Ask is off again), any Ask model you downloaded, "Show medicine names on Apple Watch"<br />
   (turned off), your appearance choice and your acceptance of the first-run notice (which shows again),<br />
   any copy of the database the app set aside after<br />
-  it could not open it, every iCloud key-value value OmniRx writes — including the IDs of the label<br />
-  pages you opened — and the CloudKit preferences record (appearance and notice version), which iCloud<br />
+  it could not open it, every iCloud key-value value OmniRx writes — including the ID of the last page<br />
+  you opened, and the list of opened pages an earlier version kept — and the CloudKit preferences record (appearance and notice version), which iCloud<br />
   removes from your account the next time the device syncs. It cancels the daily reminder (and a<br />
   snoozed one), resets the Handoff message to your nearby devices, clears the last Ask answer on your<br />
   Apple Watch and sends the Watch a new reminder card, which names no medicine because none is<br />
@@ -516,9 +528,9 @@ to wait for the Attorney General to act.</p>
 right of action.</p>
 <hr />
 <h2 id="how-long-your-data-is-kept">How long your data is kept</h2>
-<p>For as long as you keep it. It is on your device and, for the label-page IDs, in your own iCloud<br />
-account, so you decide. "Delete all my data" removes both; deleting the app removes the device copy.<br />
-A question you type into Ask is not kept at all.</p>
+<p>For as long as you keep it. It is on your device and, for the last page's ID and the widget's line,<br />
+in your own iCloud account, so you decide. "Delete all my data" removes both; deleting the app removes the<br />
+device copy. A question you type into Ask is not kept at all.</p>
 <p>We keep nothing, so there is nothing for us to retain or to age out.</p>
 <hr />
 <h2 id="consent">Consent</h2>
@@ -537,7 +549,9 @@ increases and the screen is shown again, so you see the change rather than being
 on-device Ask</strong>, <strong>Daily reminder</strong> (which is when the system asks for notification permission), and<br />
 <strong>Show medicine names on Apple Watch</strong>. The optional Ask model is a choice of its own, made on the Ask<br />
 screen in a dialog that names the model, its size and Hugging Face; nothing downloads before you tap<br />
-<strong>Download</strong> there.</p>
+<strong>Download</strong> there. On iPhone, iPad and Mac, where Apple's age rules apply to your Apple Account, the<br />
+system may also ask you, after the notice, to share an age range. It is not health data, stays on<br />
+your device, and is explained in the main policy under Children.</p>
 <hr />
 <h2 id="what-omnirx-is-not">What OmniRx is not</h2>
 <p>OmniRx is educational and habit-support software. It is <strong>not medical advice</strong>. It does not diagnose,<br />
@@ -554,6 +568,30 @@ here is that it stays on your device and in your own iCloud account — and the 
 date above, and summarize what changed at the top. We will not collect, use, or share a new category of<br />
 consumer health data, or use it for a new purpose, without disclosing it here first and obtaining your<br />
 affirmative consent.</p>
+<p><strong>7 October 2026 — what changed.</strong> With an app update:</p>
+<ul>
+<li><strong>The Home Screen widget shows your daily check.</strong> It used to suggest a next topic and could open a<br />
+  page. It now shows “Nothing to log yet”, or “Daily check” once you follow a medicine, and a tap opens<br />
+  the You tab. The app writes that line to your own iCloud account, where the widget reads it. So your<br />
+  iCloud account now holds one fact from the medicines you follow: whether you follow any, never which<br />
+  one. This page now lists it under the medicines you follow and in the iCloud items, and no longer<br />
+  lists a suggested topic or pages opened from the widget.</li>
+<li><strong>No more list of the pages you opened.</strong> Earlier versions also kept in your iCloud account a list<br />
+  of the IDs of the topic and label pages you had opened, for the widget's suggested topic. After the<br />
+  widget changed, nothing read it, so this page could no longer give it a purpose. This version stops<br />
+  adding to it and removes it from your iCloud account when it opens on iPhone, iPad, Mac or Apple<br />
+  Vision Pro. Of the pages you open, your iCloud account now holds only the ID of the last one, for<br />
+  Continue.</li>
+<li><strong>The You tab links to the label page for each medicine you follow</strong>, not only the first. So<br />
+  opening any of those links can put the ID of a label for any medicine you take in your iCloud<br />
+  account and in the Handoff message.</li>
+<li><strong>A topic page's ID can name a health condition</strong> (for example <code>depression</code>), so the values in your<br />
+  iCloud account and Handoff can show a condition you read about. That was already true; this page<br />
+  did not say it.</li>
+<li><strong>An age-range question.</strong> On iPhone, iPad and Mac, where Apple's age rules apply to your Apple<br />
+  Account, the system may ask you to share an age range after the first-run notice. It is not consumer<br />
+  health data. The Consent section now mentions it, and the main policy explains it under Children.</li>
+</ul>
 <p><strong>24 September 2026 — what changed.</strong> With an app update:</p>
 <ul>
 <li><strong>Ask can use an optional on-device model</strong>, downloaded from Hugging Face only after you agree in a<br />
@@ -634,7 +672,7 @@ Email: <strong>admin@prameya.legal</strong></p>
 <footer class="site"><div class="wrap">
   <p>Prameya LLC · <a href="mailto:admin@prameya.legal">admin@prameya.legal</a>
   · <a href="https://prameyallc.github.io/privacy/support/">Support</a></p>
-  <p>Effective 24 September 2026. <a href="https://prameyallc.github.io/privacy/">All app privacy policies</a></p>
+  <p>Effective 7 October 2026. <a href="https://prameyallc.github.io/privacy/">All app privacy policies</a></p>
 </div></footer>
 </body>
 </html>

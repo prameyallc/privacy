@@ -107,3 +107,29 @@ VERIFIED, NO CHANGE
 
 NOTE FOR THE APP
 - The in-app Terms give only the Settings route on every platform (`OmniBuildKit/Sources/BuildCore/Legal/BuildTermsOfUse.swift:230-232`); Terms are a separate owner decision.
+
+## Addendum, 7 October 2026 (re-audit of OmniBuild PRs #156–#178)
+
+Re-audited the 23 OmniBuild PRs merged after ca87a39, up to `c979b0f` (merge of PR #178), against this page. Each finding was confirmed by a second reviewer. The page moves to 7 October 2026 (minor wording, policy line "For minor changes ..."). Nothing new leaves the device; the App Store label answer and every privacy manifest are unchanged (no `PrivacyInfo.xcprivacy`, `*.entitlements`, `Info.plist` or `project.pbxproj` changed in the window).
+
+CORRECTED — "including every state pack" (Available tiers; Free vs paid)
+- No bundled pack is a state pack: of the 87 files in `OmniBuildKit/Sources/Knowledge/Resources/packs`, 60 have no `jurisdictional_scope` and 27 scope only to jurisdiction id "US" (`KnowledgePack+FeatureGate.swift:22` derives `stateCode` from that id). `PaywallCopy.swift:224-244` (PR #159) and `FeatureGate.swift:6-7, 53-54` (PR #160) say so in the app. The page now says "every guide in the app" and does not restate the paywall's wording (the library also holds a history text, `vitruvius_de_architectura_morgan_1914`, level `model_text_not_law`).
+
+CORRECTED — "the guide the Home Screen widget suggests" (on-device table)
+- `Knowledge/HomeScreenGlance.swift:55-72` (PR #176): the last opened pack, or `nil`. `AppSurfaces/HostHomeScreenGlance.swift:18-39` writes `.topic` (pack ID, title, "Continue") or `.empty` ("Open OmniBuild", `Continuity/HomeScreenGlanceStore.swift:93`). Writes still guarded by `syncWithICloud` (`HomeScreenGlanceStore.swift:184, 215, 234`). `App/OmniBuildWidgets/HomeScreenGuideWidget.swift:17-25`: parameterless `AppIntentConfiguration`.
+
+CORRECTED — closing line "Effective 24 September 2026"
+- Deleted. `build_privacy_site.py` prints the footer date from the `**Effective date:**` line.
+
+ADDED (the 2026-10-07 audit's open questions; true of the code)
+- RESET LOCAL DATA — `AppSurfaces/AppContainerView.swift:181-203` shows it only when the store fails to open; `Persistence/BuildStoreBootstrap.swift:153-205` deletes `build.store`, `build-local.store` and their sidecars and opens an empty store; the message above the button says so (`failureMessage`). No CloudKit record is deleted. `resetStore()` passes the live Sync with iCloud switch (`AppContainerView.swift:198-203`), and `resetAndOpen` reopens through `open(at:syncWithICloud:)` (`BuildStoreBootstrap.swift:185-191`), whose roam configuration (ProjectLog, HabitLog, PunchItem, SafetyAck) is `cloudKitDatabase: .automatic` while sync is on (lines 130-141). So with sync on, the new store imports the synced records back from the private database; DecisionEntry and BuildProfile (local configuration, always `.none`, lines 142-148) stay gone. The page says so (review, 7 October 2026). The on-screen `failureMessage` (lines 196-203) still says only "opens an empty store"; an app wording change is left to the owner.
+- STOREKIT FAILURE LOG — `BuildCore/Subscriptions/StoreFailureLog.swift:46-75` (PR #163) writes the operation and the error's type and case (or domain and code) to the unified log, category StoreKit; called from `SubscriptionManager.swift:94, 177, 181, 201`. No price, product name or `localizedDescription`; nothing is sent. The line names the failed call ("Purchase failed:", "Restore failed:", "Product load failed:", `StoreFailureLog.swift:46-49`), so the page says "which of the three failed" rather than "no other detail". An empty product list sets `loadState = .failed` without a log line (`SubscriptionManager.swift:92`), so the page says "when StoreKit reports an error", not "when loading fails". The page does not list every device-log line: other public lines (record IDs, database and age-range error descriptions, model and download keys; e.g. `AppDataService.swift:273, 387-389, 569, 612`, `BuildAgeAssurance.swift:375, 404, 420, 446`, `RobustDownloader.swift:134`, `MLXSelectedModelManager.swift:402, 597`) have not been audited, and no wider statement about the log was added.
+- MAC SETTINGS — `AppSurfaces/Settings/MacSettingsWindow.swift` (PR #159) shows the same `BuildSettingsView` as More; `App/OmniBuild/OmniBuildApp.swift:86` adds the `Settings` scene on macOS.
+
+APP MIRRORS (OmniBuild branch `fix/privacy-policy-2026-10-07`)
+- `OmniBuildKit/Sources/Knowledge/LivingRoomLegalCopy.swift:45` (Apple TV About) now says "effective 7 October 2026"; the short version (policy lines 15-23) is unchanged, and `LivingRoomLegalCopyTests.connectFieldSHA256` is re-pinned to the new text. The App Store Connect "Apple TV Privacy Policy" field must be updated with it.
+- `BuildPrivacyPolicyView.swift` and `PRIVACY_POLICY.md` say "Last updated 7 October 2026" (pinned by `DistroUXContractTests.privacyCopyLockstepsLastUpdatedAndLinkHandoff`). Neither repeats the state-pack or widget wording.
+
+STILL OPEN
+- BUILD-011: the host manifest declares UserDefaults and DiskSpace only; the linked `swift-huggingface` calls `FileManager.attributesOfItem(atPath:)` (File Timestamp category). The page's manifest sentence is true either way.
+- The EU/UK territory question.

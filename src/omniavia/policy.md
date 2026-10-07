@@ -1,6 +1,6 @@
 # OmniAvia — Privacy Policy
 
-**Effective date:** 27 September 2026
+**Effective date:** 7 October 2026
 **Publisher:** Prameya LLC (“Prameya”, “we”, “us”)
 **App:** OmniAvia for iPhone, iPad, Mac, Apple Vision Pro, Apple TV and Apple Watch — bundle ID `legal.prameya.OmniAvia` (the Apple Watch app is `legal.prameya.OmniAvia.watch`)
 **Contact:** admin@prameya.legal
@@ -52,6 +52,18 @@ Prameya LLC. Privacy contact: **admin@prameya.legal**.
 | An export you asked for | **This device**, a temporary file, only while you share it |
 | Photos from your library | **Not collected.** The app has no photo picker or camera, and a log has no place to hold an image: an unused image field, which no screen ever wrote, was removed from the flight log before release |
 | Analytics identifiers | **None** |
+
+**Preparation entries.** **Do** no longer asks for a preparation entry: its **Study this area**
+button opens ACS Area I study instead. Entries you made with an earlier version stay in your
+logbook, under **Do → Other logs → Your preparation entries** or **More → Your records → Your
+preparation entries**. They sync like your other logs, are in the export, and are removed by
+**Delete all my data**. You can correct an entry's weather and NOTAM ticks and its note, or
+delete it. Its fatigue self-check and rest, food and hydration ticks are kept as you left them
+and are in the export. No screen names them any more or lets you change them, though the
+delete confirmation still counts them among the entry's ticked habits, and the prep streak
+that **Export my data** shows still counts a day whose entry has one of them ticked. Deleting
+the entry removes them. A **Confirm** on the Apple Watch's pre-flight reminder is saved as a
+study entry, not a preparation entry.
 
 Your iCloud data sits in your Apple Account under Apple's iCloud terms. Prameya has no access
 to your private CloudKit database or your key-value storage, and we cannot read, export or
@@ -254,9 +266,9 @@ We do not respond to “Do Not Track” signals, because we do not track.
 
 ## 11. What this app is not
 
-OmniAvia is educational ground study and habit logs. It is **not** flight instruction,
-**not** a go/no-go determination, and **not** a substitute for a CFI, the FARs, or your own
-decision.
+OmniAvia is educational ground study and your own study and flight logs. It is **not** flight
+instruction, **not** a go/no-go determination, and **not** a substitute for a CFI, the FARs, or
+your own decision.
 
 ---
 
@@ -265,6 +277,15 @@ decision.
 Material changes update the effective date at the top of this page. When a change to the app
 affects what is stored or what leaves the device, we update this page and list the change
 below.
+
+**7 October 2026 — what changed.** The app changed, so this page now describes it. The app
+stores no new kind of data, and nothing is sent to Prameya:
+
+- **Do** no longer asks for a preparation entry (weather, NOTAMs, fatigue self-check, and rest,
+  food and hydration). Its **Study this area** button opens ACS Area I study instead. Entries
+  made with an earlier version are kept. Section 2 now says where to find them, what you can
+  correct, and that their fatigue and rest, food and hydration ticks are kept, synced and
+  exported, but no screen names them or lets you change them.
 
 **27 September 2026 — what changed.** Corrections for Apple TV and the Mac; nothing the app does
 with your data changed, and nothing is sent to Prameya:

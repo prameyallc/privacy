@@ -166,3 +166,74 @@ CORRECTED — "The download uses Wi-Fi unless you turn on Download over cellular
 
 CORRECTED — cancel path gave iOS only (section 2)
 - `PaywallCopy.cancelPath(for:)` (`CompanionKit/Sources/Monetization/ProCatalog.swift:321-330`): iPhone/iPad "Settings app → your name → Subscriptions → OmniSalub"; Mac "App Store app → your name → Account Settings → Subscriptions → Manage" (Apple support 118428); Vision Pro "Settings → your name → Subscriptions". Device switch `PaywallDevice.current` (`:176-197`).
+
+## 2026-10-07 — the Home Screen widget: the visit record behind one switch
+
+Basis: OmniSalub `origin/main` at 8d74749 (PR #207 visit-record widget, f4df8dd; PR #208 compile fix) plus the
+uncommitted widget opt-in fix on `fix/privacy-policy-2026-10-07` (SALUB-PP-2026-10-07-01). Code, not this repo's
+earlier text, decided each claim. Re-audited: what the App Group file holds with the switch off and on, what the
+widget shows (Home Screen, locked, StandBy, dimmed), the switch's label, Delete everything, and the TV About text.
+Both policies re-dated 7 October 2026 (policy sections 4, 8, 14, 18; health-data sections 8, 12). The short version
+did not change; the TV About summary changes only its "effective" line.
+
+- Switch off (default): the file is exactly `TodaySnapshot.homeScreenOff`, i.e. three false flags and no person's
+  content (`CompanionKit/Sources/WidgetSurfaces/TodayWidget.swift:166`, `forWidgetPublish` `:230`). Still written on
+  iPhone/iPad after first run whether or not a widget is installed (`CompanionModel.swift:1240`, `#if os(iOS)`,
+  `guard hasConsented else clear()`; built by `widgetSnapshotForPublish` `:1266`). The plate resolves to `.prompt`,
+  title "Visit record" plus "What you logged, your questions, and the dates." (`TodayWidget.swift:300-302`, `:381`);
+  a file without `showsVisitRecord` decodes false (`:273`), so an older file also shows only the title.
+- Switch on: name of the headline measurement (`loggedLabel`), date of its latest reading or the visit date when
+  there is none (`dateLine`, `TodayWidget.swift:101-137`), up to three saved visit questions in full (`questionLine`,
+  `CompanionModel.swift` `visitQuestionSlots.prefix(3)`), the next-to-log name (`nextAsk`, never displayed), and, only
+  when the headline reading is from today, its display value, VoiceOver label, timestamp and morning/evening label.
+  `dataIsIndeterminate` is never set true on the publish path. The same-day test runs when the app writes the file
+  (`forWidgetPublish`), and nothing republishes at midnight (publishing follows model changes and launch), so a
+  reading from today stays in the file after the day ends until the app next writes it; the plate stops showing it
+  (`WidgetGlance.resolve` re-checks the day). Policy section 4 and health-data section 8 say so (final check,
+  2026-10-07); it was already so before this revision, and both history entries say that.
+- Turning the switch off republishes at once (`setHomeScreenReadingVisible` `CompanionModel.swift:1288`). The switch
+  lives in `widget.preferences.v1.json` in the same container, written with the same protection and backup exclusion
+  (`savePreferences`, `TodayWidget.swift`). It is stored under a new key, `showsVisitRecord`; the old number-only
+  `revealsNumericHealth` key is never read (`WidgetSnapshotBridge.WidgetPreferences`, missing key decodes to off), so
+  an earlier "on" for today's number does not carry over and the new switch starts off for everyone. Both policies
+  say "the new one starts off" (policy section 18, health-data section 12). Test:
+  `WidgetPublishOptInTests.oldNumberOnlySwitchDoesNotCarryOver`.
+- Unchanged and re-confirmed: `.completeFileProtectionUntilFirstUserAuthentication` (`TodayWidget.swift:630`), backup
+  exclusion on every write (`:617`), redaction or reduced luminance → `.prompt` before any record (`:377-381`), Delete
+  everything → `resetPreferences()` and `clear()` (`CompanionModel.swift:717`, then `publishWidgetSnapshot` with
+  `hasConsented == false`). Tap: no `widgetURL`, `Link` or `Button` in the widget, so a tap opens the app
+  (`App/OmniSalubWidget/OmniSalubWidget.swift:77-98`).
+- Label: "Show your visit record on the Home Screen"; footer "Off by default, so the widget shows none of your
+  information. On, it shows what you logged, the dates and your visit questions, and a number only from today. All of
+  it hides on the Lock Screen." (`CompanionKit/Sources/AppSurfaces/SettingsView.swift:643-644`). Tests:
+  `WidgetPublishOptInTests`, `WidgetFidelityTests`, `MacVisionPlatformCopyTests`.
+- Locked / StandBy / dimmed: the plate is `.prompt` when `redactionReasons.contains(.privacy) || isLuminanceReduced`
+  (`WidgetView.isRedacted`). Nothing reads a StandBy-specific signal, so the policies say "while the device is locked
+  (including in StandBy until you unlock it) and while the always-on display is dimmed", not "in StandBy": an
+  unlocked device in StandBy at normal brightness shows a switch-on record.
+- Protection comparison: the widget file is weaker at rest than the health database ("complete"), not weaker than
+  everything else. The visit questions and visit date it copies are also held in `UserDefaults.standard`
+  (`PreferencesStore.swift:157-190`) at iOS's default class, and the export's temporary copy uses
+  `.completeFileProtectionUntilFirstUserAuthentication` (`ExportScratch.swift:66`). The policy now compares the file
+  with the health database only.
+- "Visit record" means the same thing everywhere: the measurement name, the date of its latest reading or the visit
+  date, and the saved visit questions. The next-to-log name (`nextAsk`, written only with the switch on, never shown)
+  is listed separately in policy section 4 (row and paragraph), section 18 and health-data sections 8 and 12.
+- Material-change promise (policy section 18): no in-app notice mechanism exists, and none is needed for this
+  revision, because nothing is widened without a new opt-in: the default holds less than the 27 September text said,
+  and the switch that now covers the record starts off.
+
+OPEN — not changed in this revision (separate pass)
+- The section 4 row for conditions, visit date and visit questions says "Leaves the device? **Never**". Those values
+  live in `UserDefaults.standard` (`omnisalub.user.preferences`, `PreferencesStore.swift:160-190`), in
+  Library/Preferences, which a device backup (including iCloud Backup) includes; no `isExcludedFromBackup` covers it
+  (the only exclusions are `LocalModelStore`, `OmniSalubContainerPaths`, `ExportScratch`, `StoreProtection` and
+  `TodayWidget`). Policy section 6.4 lists only the database, the widget's file and the model as excluded. Bears on
+  Guideline 5.1.3(ii). Fix in code (move these into a protected, backup-excluded file) or say in the row and in
+  section 6.4 that they are included in a device backup. Owner decision.
+
+Lead, 2026-10-07 (before publishing): the backup item above is now DISCLOSED, not fixed. Policy section 4's row says the
+values never reach us or iCloud sync but are included in a device backup; section 6.4's iCloud Backup bullet and
+health-data section 8's Backups bullet say the same, and both 7 October change entries record it. A Mac showing the
+iPhone's widgets is also disclosed (policy section 8, health-data section 8). Still OPEN for the owner: whether to move
+these preferences into a protected, backup-excluded file (Guideline 5.1.3(ii)), after which these sentences change back.
