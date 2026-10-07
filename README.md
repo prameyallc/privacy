@@ -7,13 +7,16 @@ Public privacy policies for **Prameya LLC** apps, published as a static site via
 ## Why one policy per app
 
 These apps do genuinely different things with data — one takes intraoral photographs, one reads
-HealthKit, one ingests privileged legal documents, one serves ads. A single shared policy cannot be
+HealthKit, one holds privileged legal documents. None of them serves ads. A single shared policy cannot be
 accurate for all of them, and an inaccurate privacy disclosure is both an App Review problem and an
 FTC Act §5 problem. So each app gets its own policy, written from an audit of that app's actual
 code (`PrivacyInfo.xcprivacy`, entitlements, `Info.plist` purpose strings, and the network,
 HealthKit, CloudKit and camera call sites).
 
 ## URLs for App Store Connect
+
+The rest of what this site supplies to App Store Connect (bundle IDs, the Apple TV privacy text,
+the App Privacy answers) is in [APP_STORE_CONNECT_SETUP.md](APP_STORE_CONNECT_SETUP.md).
 
 | App | Privacy Policy URL | Consumer Health Data Policy |
 |-----|--------------------|------------------------------|
@@ -25,7 +28,7 @@ HealthKit, CloudKit and camera call sites).
 | OmniWealth | https://prameyallc.github.io/privacy/omniwealth/ | — |
 | OmniMathematics | https://prameyallc.github.io/privacy/omnimath/ | — |
 | OmniBuild  | https://prameyallc.github.io/privacy/omnibuild/  | — |
-| OmniOps    | https://prameyallc.github.io/privacy/omniops/    | — |
+| OmniCadence | https://prameyallc.github.io/privacy/omniops/   | — |
 | OmniAvia   | https://prameyallc.github.io/privacy/omniavia/   | — |
 | OmniPhysics | https://prameyallc.github.io/privacy/omniphysics/ | — |
 
@@ -41,7 +44,7 @@ linked from the hub and from each app's main policy. Nevada SB 370 imposes analo
 Static HTML with `.nojekyll` — no build step on GitHub's side, so nothing can silently fail to
 render. (The previous version of this repo served `PRIVACY.md` as raw `text/markdown`.)
 
-Sources live in the generator, not here; pages are committed as built output. Each page is
+Sources are the Markdown files in `src/`, built by `src/build_privacy_site.py`; pages are committed as built output. Each page is
 responsive, supports light and dark, and has a print stylesheet.
 
 ## Support

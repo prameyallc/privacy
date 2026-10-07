@@ -67,8 +67,8 @@ Each app has distinct data-handling characteristics:
 - OmniWealth — financial education
 - OmniMathematics — discrete mathematics
 - OmniBuild — construction reference
-- OmniOps — personal discipline habits
-- OmniAero — ACS ground school
+- OmniCadence (slug `omniops`, bundle `legal.prameya.OmniOps`) — personal discipline habits
+- OmniAvia (slug `omniavia`; `/omniaero/` redirects there) — ACS ground school
 - OmniPhysics — interactive physics lessons
 
 ## Generator Implementation Details
@@ -147,7 +147,7 @@ When modifying policies:
 3. Run build command
 4. Review generated HTML locally
 5. Push and verify at live URL
-6. Update App Store Connect if necessary
+6. In the app's repo, update the Apple TV privacy text and its test, then paste it into App Store Connect, and update the App Privacy answers if collection changed (see `APP_STORE_CONNECT_SETUP.md`)
 
 **Change accent colors:**
 1. Edit `APPS` list in `build_privacy_site.py`
