@@ -1,7 +1,7 @@
 # OmniSalub Consumer Health Data Privacy Policy
 
-**Effective date:** 7 October 2026
-**Last updated:** 7 October 2026
+**Effective date:** 8 October 2026
+**Last updated:** 8 October 2026
 **Publisher:** Prameya LLC ("Prameya", "we", "us")
 **Applies to:** OmniSalub for iPhone, iPad, Mac, Apple Vision Pro and Apple TV (bundle identifier `legal.prameya.omnisalub`), and the OmniSalub Apple Watch app (`legal.prameya.omnisalub.watchkit`)
 **Contact:** admin@prameya.legal
@@ -84,7 +84,7 @@ The app **never** requests or uses precise location. It contains no location cod
 
 ## 8. How the data is processed, stored and protected — on your device, not by us
 
-- **What the app handles on your device.** The readings and symptoms you enter; the Apple Health data types you allow when you tap **Connect Apple Health** — the sheet lists every type the app can use, whichever conditions you track, unless you turn off **Import everything from Health** in Settings, which limits it to the types the conditions you track use — and the app imports the last 400 days of each of those types you allow (records of the symptom types it asks for in full), together with what Apple Health says about the app and device that recorded each reading (the full list is in section 3.1 of the [OmniSalub Privacy Policy](https://prameyallc.github.io/privacy/omnisalub/)); the alerts the app raises; the conditions you choose; your visit date and visit questions; and your answer to the food-and-weight screening question. The app reads no other Apple Health type; with **Import everything from Health** off it reads only your conditions' types, even where you allowed more on an earlier sheet. None of it reaches us.
+- **What the app handles on your device.** The readings and symptoms you enter; the Apple Health data types you allow when you tap **Connect Apple Health** — by default the sheet lists the types the conditions you track use; turning on **Import everything from Health** in Settings widens it to every type the app can use — and the app imports the last 400 days of each of those types you allow (records of the symptom types it asks for in full), together with what Apple Health says about the app and device that recorded each reading (the full list is in section 3.1 of the [OmniSalub Privacy Policy](https://prameyallc.github.io/privacy/omnisalub/)); the alerts the app raises; the conditions you choose; your visit date and visit questions; and your answer to the food-and-weight screening question. The app reads no other Apple Health type; with **Import everything from Health** left off it reads only your conditions' types, even where you allowed more on an earlier wider sheet. None of it reaches us.
 - **Where.** In a database in the app's private storage on your device. On iPhone, iPad and Apple Vision Pro it is set to Data Protection "complete", so it is encrypted with a key derived from your device passcode and is unreadable while the device is locked. On a Mac it is protected by the app sandbox and by FileVault if you have FileVault on. The app connects to Apple Health only on iPhone and iPad; the Apple Watch and Apple TV apps keep no readings.
 - **Not in iCloud.** Health data is never stored in iCloud by this app. The health database is created with iCloud syncing explicitly disabled, and an automated test blocks any health record, or any health-revealing field, from reaching the part of the app that does sync. Only six non-health preferences (theme, guideline set, onboarding state, app lock, the tab you last had open, timestamp) can sync, and only if you turn that on — it is off by default. Only while settings sync is on, the app also writes a small "where you left off" note (the tab you were on, the identifier of the Learn topic you were reading if that was the last thing you opened, your appearance choice) through Apple's iCloud key-value storage, which stores it in *your* iCloud account so your other devices can offer to continue — the Apple TV app shows that Learn topic, and only reads the note. It never contains a reading, we cannot read it, and turning sync off removes it.
 - **Handoff and Apple Watch.** Handoff passes the tab you are on, described in section 4, between your own devices; the Watch app's Ask iPhone passes your question and the answer between your Watch and your iPhone. Both use Apple's services between your own devices and reach no one else.
@@ -171,6 +171,10 @@ Washington residents should also know that a violation of the My Health My Data 
 If we change this policy, we will update the "Last updated" date above and publish the new version at [prameyallc.github.io/privacy/omnisalub/health-data](https://prameyallc.github.io/privacy/omnisalub/health-data/).
 
 If a change ever means we begin to collect consumer health data, we will say so in plain terms, obtain consent where the law requires it, and publish it before the version that does so is released — not after.
+
+**8 October 2026 — what changed.** Our answer is unchanged: Prameya collects, shares and sells no consumer health data. This revision describes an app update:
+
+- Section 8 says that **Connect Apple Health** now asks by default for the Apple Health types the conditions you track use. **Import everything from Health** is off unless you turn it on, and turning it on widens the sheet to every type the app can use. Before, the switch was on by default. What the app imports still stays on your device.
 
 **7 October 2026 — what changed.** Our answer is unchanged: Prameya collects, shares and sells no consumer health data. This revision describes an app update to the Home Screen widget, made so that none of your information reaches the widget's file or your Home Screen unless you turn that on:
 
